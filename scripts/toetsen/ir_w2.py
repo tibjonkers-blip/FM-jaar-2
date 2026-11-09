@@ -45,7 +45,7 @@ mc("ir2-r01", W, R, "Welke drie categorieën aanbestedingsplichtigen onderscheid
    "Categorie 1: overheden (art. 1.1 Aw). Categorie 2: publiekrechtelijke instellingen (art. 1.1 Aw). Categorie 3: gesubsidieerde instellingen (art. 2.8 Aw). Aankoopcentrales komen daarnaast aan bod.")
 mc("ir2-r02", W, R, "Welke voorwaarden gelden cumulatief voor een publiekrechtelijke instelling?",
    ["Opgericht voor behoeften van algemeen belang (niet industrieel of commercieel), rechtspersoonlijkheid en een bepaalde mate van overheidsinvloed", "Meer dan 50% subsidie, een werk of dienst en boven de drempel", "Overheidstoezicht, 80% van de werkzaamheden voor de overheid en geen privaat kapitaal", "Een wettelijke taak, een eigen begroting en ambtenaren in dienst"], 0,
-   "De drie cumulatieve voorwaarden staan in art. 1.1 Aw. Het tweede antwoord beschrijft de gesubsidieerde instelling, het derde de quasi-inbesteding.")
+   "De drie cumulatieve voorwaarden staan in art. 1.1 Aw. De optie met 50% subsidie beschrijft de gesubsidieerde instelling, die met 80% en toezicht de quasi-inbesteding.")
 mc("ir2-r03", W, R, "Waarom is zorgverzekeraar CZ volgens het oefenmateriaal geen publiekrechtelijke instelling?",
    ["Omdat CZ geen rechtspersoonlijkheid heeft", "Omdat CZ op commerciële beginselen werkt (rendement, doelmatigheid, rentabiliteit)", "Omdat CZ te weinig omzet heeft", "Omdat CZ in het buitenland gevestigd is"], 1,
    "CZ lijkt op een publiekrechtelijke instelling, maar werkt op commerciële beginselen. Daardoor voldoet CZ niet aan de eis 'anders dan van industriële of commerciële aard'.")
