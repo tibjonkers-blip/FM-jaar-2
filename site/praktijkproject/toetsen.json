@@ -3614,11 +3614,15 @@
    "versie": "E"
   }
  ],
- "eind": {
-  "titel": "Eindtoets over het hele verbetertraject",
-  "uitleg": "Een vaste toets met eigen vragen die niet in de weektoetsen zitten. Je volgt één organisatie van verbeterrichting tot overdracht en past de modellen van alle weken toe.",
-  "mc": 12,
-  "open": 4,
-  "casus": 2
- }
+ "eindtoetsen": [
+  {
+   "titel": "Eindtoets over het hele verbetertraject",
+   "uitleg": "Een vaste toets met eigen vragen die niet in de weektoetsen zitten. Je volgt één organisatie van verbeterrichting tot overdracht en past de modellen van alle weken toe.",
+   "key": "eind",
+   "versie": "E",
+   "mc": 12,
+   "open": 4,
+   "casus": 2
+  }
+ ]
 }

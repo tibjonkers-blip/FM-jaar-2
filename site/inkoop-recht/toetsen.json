@@ -3877,13 +3877,854 @@
     }
    ],
    "versie": "E"
+  },
+  {
+   "id": "ire2-i01",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een leverancier van werkplekverlichting verkoopt een lamp voor € 50. Hij rekent een winstmarge van 20% van de verkoopprijs. Wat is zijn kostprijs per lamp?",
+   "opties": [
+    "€ 40,00",
+    "€ 41,67",
+    "€ 45,00",
+    "€ 30,00"
+   ],
+   "juist": 0,
+   "uitleg": "De marge is 20% van de verkoopprijs, dus € 10. De kostprijs is dan 80% van € 50 = € 40. € 41,67 krijg je als je € 50 door 1,20 deelt; dat klopt alleen als de marge over de kostprijs gaat.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-i02",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een academisch ziekenhuis besteedt jaarlijks miljoenen aan het beheer van zijn ICT-werkplekken. Maar een paar aanbieders kunnen dat op deze schaal, en uitval legt de patiëntenzorg stil. Welke aanpak past volgens Kraljic?",
+   "opties": [
+    "Routineproduct: zo efficiënt mogelijk bestellen en bundelen",
+    "Hefboomproduct: aanbieders scherp tegen elkaar uitspelen op prijs",
+    "Knelpuntproduct: vooral een grote buffervoorraad aanleggen",
+    "Strategisch product: een lange partnership, vaak single sourcing"
+   ],
+   "juist": 3,
+   "uitleg": "Hoog financieel belang en hoog leveringsrisico: strategisch. Daar past een langdurige relatie of partnership, vaak met bewust één leverancier (single sourcing).",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-i03",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een Nederlandse verzekeraar laat de facilitaire meldingen van zijn medewerkers afhandelen door een servicedesk in Portugal, met één uur tijdsverschil. Welke vorm van uitbesteden is dit?",
+   "opties": [
+    "Nearshore en off-site",
+    "Offshore en on-site",
+    "Nearshore en on-site",
+    "Offshore en turnkey"
+   ],
+   "juist": 0,
+   "uitleg": "Nearshore: uitbesteden binnen korte reisafstand of in dezelfde of een naburige tijdzone. Off-site: de taak wordt buiten het eigen terrein uitgevoerd. Offshore is uitbesteden aan een organisatie in een ander, vaak ver, land.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-i04",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "De directie van een zorginstelling wil de komende jaren vooral investeren in de beleving van bewoners. De inkoper stemt de inkoopplannen daarom af met de afdelingen en zoekt in de markt wat daarbij past. Welke rol van inkoop zie je hier?",
+   "opties": [
+    "De brugfunctie tussen interne gebruikers en de markt",
+    "De make-or-buy-beslissing over zelf doen of uitbesteden",
+    "Maverick buying buiten de contracten om",
+    "Een should-cost-analyse van de kostprijs"
+   ],
+   "juist": 0,
+   "uitleg": "Inkoopbeleid is afgeleid van het organisatiebeleid en sluit aan op de wensen van interne gebruikers. Inkoop vertaalt die wensen naar de markt: de brugfunctie tussen gebruiker en markt.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-i05",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een hogeschool heeft als strategisch doel: 'studenten en medewerkers zijn tevreden over de catering'. Welke uitwerking hoort op operationeel niveau?",
+   "opties": [
+    "De tevredenheid over de catering is minimaal een 7,5",
+    "95% van de klanten wacht maximaal 5 minuten aan de kassa",
+    "Studenten en medewerkers zijn tevreden over het eten",
+    "De cateraar werkt met een gecertificeerd kwaliteitssysteem"
+   ],
+   "juist": 1,
+   "uitleg": "Strategisch is het doel zelf, tactisch de tevredenheidsnorm van 7,5, en operationeel een concreet meetbare prestatie in het dagelijkse werk, zoals de wachttijd. Elk niveau draagt bij aan het niveau erboven. Een certificaat is geen KPI.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-i06",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "In de SLA met een facilitaire dienstverlener staat: 'Een melding geldt als opgelost zodra de melder dat in het FMIS heeft bevestigd.' Welk onderdeel van een SLA is dit volgens Van der Honing?",
+   "opties": [
+    "Een definitie van een begrip",
+    "De overlegstructuur",
+    "Een prestatie-indicator met score",
+    "Een gunningscriterium"
+   ],
+   "juist": 0,
+   "uitleg": "De meeste SLA's bevatten definities van begrippen (zoals 'opgelost' of 'op tijd'), de overlegstructuur en de prestatie-indicatoren met de te behalen score. Deze zin legt vast wat 'opgelost' betekent.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-i07",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een schoonmaakbedrijf bepaalt zijn uurtarief door net onder de tarieven van de twee grootste concurrenten in de regio te gaan zitten. Welke methode van prijsstelling gebruikt het?",
+   "opties": [
+    "De kostprijsplusmethode",
+    "Concurrentiegeoriënteerde prijsstelling",
+    "Klantgeoriënteerde prijsstelling",
+    "Dumping op de Nederlandse markt"
+   ],
+   "juist": 1,
+   "uitleg": "Bij concurrentiegeoriënteerde prijsstelling zijn de prijzen van concurrenten leidend. Bij kostprijsplus tel je een opslag op de eigen kostprijs, bij klantgeoriënteerd is de waardeperceptie van de klant leidend. Dumping is een lagere prijs in het buitenland dan thuis.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-i08",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een inkoper ontdekt dat de leverancier van het nieuwe toegangssysteem bezoekersgegevens onbeveiligd opslaat. Hij meldt dit intern en laat het in het contract regelen. Bij welk principe van de NEVI-gedragscode hoort dit vooral?",
+   "opties": [
+    "Maatschappelijke waarde",
+    "Integriteit en objectiviteit",
+    "Deskundigheid en verantwoording",
+    "Transparantie (art. 1.9 Aw)"
+   ],
+   "juist": 2,
+   "uitleg": "Deskundigheid en verantwoording gaat steeds meer ook over cybersecurity in de keten en over zorgvuldig omgaan met data en algoritmen: risico's signaleren en melden hoort daarbij. Transparantie uit art. 1.9 Aw is een aanbestedingsbeginsel, geen NEVI-principe.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-r01",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een private sportvereniging laat een sportcomplex bouwen van € 6 miljoen. De gemeente betaalt daarvan € 4 miljoen subsidie. Moet de vereniging de bouw Europees aanbesteden?",
+   "opties": [
+    "Nee, een private vereniging is nooit een aanbestedende dienst",
+    "Ja, als gesubsidieerde instelling: ruim 50% subsidie voor een werk boven de drempel",
+    "Nee, want de subsidie zelf ligt onder de drempel voor werken",
+    "Ja, maar alleen de inrichting, want leveringen vallen altijd onder art. 2.8"
+   ],
+   "juist": 1,
+   "uitleg": "Art. 2.8 Aw: meer dan 50% subsidie (hier twee derde) voor een werk, en € 6 miljoen ligt boven € 5.404.000. De subsidieverlener moet de naleving afdwingen. Leveringen vallen juist niet onder art. 2.8, tenzij ze ondergeschikt zijn aan het werk of de dienst.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-r02",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een waterschap besteedt de schoonmaak van zijn kantoren aan in drie percelen, één per regio: € 70.000, € 90.000 en € 100.000. Mag het het perceel van € 70.000 met een beroep op de percelenregeling zonder Europese procedure gunnen?",
+   "opties": [
+    "Ja, want het perceel ligt onder € 80.000",
+    "Nee, € 70.000 is meer dan 20% van de totale waarde van € 260.000",
+    "Ja, want elk perceel ligt afzonderlijk onder de drempel van € 216.000",
+    "Nee, want de percelenregeling geldt alleen voor werken"
+   ],
+   "juist": 1,
+   "uitleg": "Bij leveringen en diensten moet het perceel ≤ € 80.000 zijn én mogen de percelen die je zo gunt samen maximaal 20% van de totale waarde zijn (art. 2.18 en 2.19 Aw). 20% van € 260.000 is € 52.000. Percelen tel je voor de raming bij elkaar op; los bekijken is splitsen.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-r03",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een gemeente laat een nieuw stadskantoor bouwen (€ 7 miljoen) en laat dezelfde aannemer daarna een jaar het technisch onderhoud doen (€ 150.000). Hoe kwalificeer je de opdracht?",
+   "opties": [
+    "Een werk, want de bouw is het hoofdvoorwerp; boven € 5.404.000",
+    "Een dienst, want onderhoud is altijd een dienst; boven € 216.000",
+    "Een concessie voor werken, want het gebouw wordt geëxploiteerd",
+    "Een levering, want bij leveringen en diensten telt de hoogste waarde"
+   ],
+   "juist": 0,
+   "uitleg": "Bij werken met diensten bepaal je het hoofdvoorwerp: wat is essentieel en kenmerkend (Gestion Hotelera). Hier is dat de bouw; het onderhoud is bijkomstig. Er is geen exploitatierisico, dus geen concessie.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-r04",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een gemeente wil het groenonderhoud zonder aanbesteding gunnen aan Groen B.V. Zij bezit alle aandelen en houdt toezicht als op een eigen dienst. Groen B.V. doet 70% van haar werk voor de gemeente en 30% voor bedrijven. Mag dat?",
+   "opties": [
+    "Ja, want de gemeente bezit alle aandelen en houdt toezicht als op een eigen dienst",
+    "Nee, want meer dan 80% van de werkzaamheden moet voor de gemeente zijn",
+    "Ja, zolang de opdrachtwaarde onder de drempel voor werken van € 5.404.000 blijft",
+    "Nee, want quasi-inbesteden is alleen toegestaan bij opdrachten voor werken"
+   ],
+   "juist": 1,
+   "uitleg": "Quasi-inbesteden (art. 2.24a Aw) vraagt drie cumulatieve voorwaarden: toezicht als op een eigen dienst, meer dan 80% van de werkzaamheden voor de dienst, en geen directe participatie van particulier kapitaal. Met 70% faalt de tweede voorwaarde.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-r05",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "In de algemene voorwaarden van een leverancier staat dat ziekte van zijn eigen personeel en vertraging bij zijn toeleveranciers als overmacht gelden. Wat doet de leverancier hiermee, en mag dat?",
+   "opties": [
+    "Hij verruimt zijn eigen overmacht; dat mag in beginsel, art. 6:75 BW is regelend",
+    "Niets, want art. 6:75 BW is dwingend recht en het beding is dus nietig",
+    "Hij beperkt de aansprakelijkheid van de wederpartij bij overmacht",
+    "Hij legt een eigendomsvoorbehoud vast tot volledige betaling (art. 3:92 BW)"
+   ],
+   "juist": 0,
+   "uitleg": "Overmacht (art. 6:75 BW) is regelend recht. Gebruikers breiden in hun AV het eigen overmachtsbegrip uit en perken dat van de wederpartij in (zoals Heijmans art. 10). De wederpartij kan zo'n beding wel aantasten als het onredelijk bezwarend is (art. 6:233 sub a), als zij daar een beroep op kan doen.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-r06",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een afgewezen inschrijver wil dat de rechter een al gesloten overeenkomst tussen de gemeente en de winnaar vernietigt en daarnaast volledige schadevergoeding toekent. Welke procedure past daarbij?",
+   "opties": [
+    "Een kort geding",
+    "Een bodemprocedure",
+    "Een klacht bij de ACM",
+    "Een bezwaarschrift bij de gemeente"
+   ],
+   "juist": 1,
+   "uitleg": "Vernietiging (art. 4.15 e.v. Aw) en schadevergoeding (art. 6:162 BW) zijn voorzieningen van de bodemprocedure. Een kort geding geeft alleen voorlopige voorzieningen, zoals een verbod tot gunning of een voorschot. De ACM kan een boete opleggen, maar vernietigt geen overeenkomst.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-r07",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een Nederlandse gemeente koopt meubilair bij een Belgisch bedrijf dat vanuit België levert. In de AV van de leverancier staat een onredelijk bezwarend beding. Geldt de Nederlandse AV-regeling (art. 6:231 e.v. BW) dwingend?",
+   "opties": [
+    "Ja, want de koper is gevestigd in Nederland en daar wordt het meubilair gebruikt",
+    "Nee, bij twee zakelijke partijen van wie er één buiten Nederland zit, niet dwingend",
+    "Ja, want voor een aanbestedende dienst geldt de regeling altijd dwingend",
+    "Nee, want bij een internationale koop is de AV-regeling nooit van toepassing"
+   ],
+   "juist": 1,
+   "uitleg": "Art. 6:247 lid 2 BW: zijn beide partijen zakelijk en zit er één niet in Nederland, dan geldt de regeling niet dwingend. Lid 1 (twee Nederlandse zakelijke partijen) en lid 4 (Nederlandse consument) zijn wel dwingend. Het gaat om de vestiging van waaruit gepresteerd wordt.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-r08",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een leverancier levert op 1 maart koffiemachines aan een bedrijf; de betaling is op 1 april opeisbaar. Het bedrijf betaalt niet. Op 1 juni wil de leverancier de machines, die nog onaangeroerd in de doos staan, terughalen met het recht van reclame. Kan dat?",
+   "opties": [
+    "Ja, want de machines zijn nog in dezelfde staat",
+    "Nee, de vervaltermijnen van 6 weken en 60 dagen zijn allebei verstreken",
+    "Ja, want het recht van reclame verjaart pas na twee jaar",
+    "Nee, want het recht van reclame bestaat alleen bij consumentenkoop"
+   ],
+   "juist": 1,
+   "uitleg": "Recht van reclame (art. 7:39 BW) heeft een korte vervaltermijn (art. 7:44 BW): 6 weken na opeisbaarheid is 13 mei, 60 dagen na aflevering is 30 april. Op 1 juni zijn beide verstreken. Dezelfde staat is wel een voorwaarde, maar niet genoeg. Verval kan, anders dan verjaring, niet worden gestuit.",
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-o1",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "open",
+   "vraag": "Een gemeente wil haar inkooppakket indelen met de matrix van Kraljic. Deel deze drie in en geef per product een passende sourcingkeuze met onderbouwing: (a) kantoorartikelen, (b) energie voor alle gemeentelijke gebouwen, (c) onderhoud van het besturingssysteem van de beweegbare stadsbrug, dat alleen de oorspronkelijke fabrikant kan leveren.",
+   "modelantwoord": "(a) Routineproduct: laag financieel belang en laag leveringsrisico. Efficiënt inkopen: bundelen in één raamcontract of catalogus en er zo min mogelijk tijd aan besteden. (b) Hefboomproduct: hoog financieel belang, veel aanbieders en een laag leveringsrisico. Concurrentie benutten, bijvoorbeeld met multiple of dual sourcing en regelmatig opnieuw aanbesteden. (c) Hoog leveringsrisico, want er is maar één aanbieder: sole sourcing, je hebt geen keus. Is het financiële belang beperkt, dan is het een knelpuntproduct: leveringszekerheid borgen (een lang onderhoudscontract, reserveonderdelen, kennis vastleggen) en zoeken naar alternatieven. Wie het financiële belang hoog inschat, kan ook strategisch onderbouwen: dan een lange relatie met de fabrikant.",
+   "punten": [
+    "Kantoorartikelen: routine met passende aanpak",
+    "Energie: hefboom met concurrentie benutten",
+    "Brugsysteem: knelpunt (of onderbouwd strategisch) met sole sourcing en leveringszekerheid",
+    "Steeds financieel belang én leveringsrisico genoemd"
+   ],
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-o2",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "open",
+   "vraag": "Formuleer voor het contract voor de receptiedienst van een gemeentehuis één kritieke succesfactor en twee KPI's, elk met een norm en een meetmethode. Noem daarnaast de drie onderdelen die volgens Van der Honing in de meeste SLA's staan, en leg uit bij welke NEVI-pijler je deze afspraken gebruikt.",
+   "modelantwoord": "KSF, bijvoorbeeld: bezoekers worden snel en gastvrij ontvangen. KPI 1: wachttijd aan de balie; norm: 90% van de bezoekers binnen 2 minuten geholpen; meting: maandelijkse steekproef of het bezoekersregistratiesysteem. KPI 2: bezoekerstevredenheid; norm: gemiddeld minimaal een 8; meting: korte enquête via een QR-code, per kwartaal gerapporteerd. (Ook goed: telefoon binnen drie keer overgaan opgenomen, 95%, gemeten via de telefooncentrale.) SLA: definities van begrippen, de overlegstructuur, en de prestatie-indicatoren met de te behalen score. Pijler 3, prestatiemanagement: prestaties meten en sturen met KPI's en SLA's, periodiek evalueren en samen verbeteren. Een KPI zonder norm is geen afspraak.",
+   "punten": [
+    "Eén passende KSF",
+    "Twee KPI's met norm én meetmethode",
+    "Drie onderdelen van een SLA",
+    "Pijler 3 prestatiemanagement met uitleg"
+   ],
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-o3",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "open",
+   "vraag": "Een provincie wil een compleet nieuw concept voor plaats- en tijdonafhankelijk werken voor haar 2.000 medewerkers. Welke combinatie van locaties, ICT, inrichting en financiering de beste is, weet zij nog niet; daarvoor heeft zij de kennis van de markt nodig. Welke procedure adviseer je? Noem het artikel, het minimumaantal gegadigden, de gunningsmethode en twee aandachtspunten tijdens de procedure.",
+   "modelantwoord": "De concurrentiegerichte dialoog (art. 2.28 Aw): de opdracht is zeer complex en de provincie kan objectief niet bepalen welke middelen en oplossingen nodig zijn, technisch, juridisch en financieel. Samen met marktpartijen stelt zij het programma van eisen en de oplossing vast. Selectie zoals bij de niet-openbare procedure, met minimaal 3 gegadigden (art. 2.99 lid 3 Aw). Gunnen altijd op beste prijs-kwaliteitverhouding, niet op laagste prijs (art. 2.29 sub i Aw volgens het antwoordmodel). Aandachtspunten: geen cherry picking (oplossingen van de een niet doorspelen aan een ander), vertrouwelijk omgaan met informatie, een functionele vraag, de criteria al in de aankondiging, en over de definitieve inschrijving wordt niet onderhandeld. Alternatief met onderbouwing: de mededingingsprocedure met onderhandeling (art. 2.30 Aw), waarbij je eerst inschrijft en daarna onderhandelt.",
+   "punten": [
+    "Concurrentiegerichte dialoog met art. 2.28 en de reden",
+    "Minimaal 3 (art. 2.99 lid 3)",
+    "Beste prijs-kwaliteitverhouding",
+    "Twee aandachtspunten zoals cherry picking en vertrouwelijkheid"
+   ],
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-o4",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "open",
+   "vraag": "Glazenwasserij Helder v.o.f. (12 medewerkers, geen openbare jaarrekening) koopt een hoogwerker bij een grote leverancier. Situatie 1: in de AV van de leverancier, waarnaar de offerte alleen verwijst ('gedeponeerd bij de KvK'), staat dat de leverancier nooit aansprakelijk is voor bedrijfsschade. Situatie 2: precies dezelfde exoneratieclausule staat in de koopovereenkomst zelf, die Helder heeft ondertekend. Beoordeel per situatie of en hoe Helder onder de clausule uit kan komen.",
+   "modelantwoord": "Situatie 1: de clausule staat in algemene voorwaarden (art. 6:231 sub a BW); de leverancier is gebruiker, Helder wederpartij. Helder is gebonden (art. 6:232), maar valt niet onder art. 6:235 (minder dan 50 personen, geen openbare jaarrekening) en kan dus een beroep doen op art. 6:233. Sub b jo. art. 6:234: de AV zijn niet ter hand gesteld, terwijl dat gewoon kon; alleen verwijzen naar de KvK is dan onvoldoende, dus vernietigbaar. Daarnaast eventueel sub a (onredelijk bezwarend). De zwarte en grijze lijst gelden niet, want Helder is geen consument. Situatie 2: de clausule staat niet in de AV maar in de overeenkomst zelf, dus art. 6:233 e.v. helpen niet. Alleen de beperkende werking van de redelijkheid en billijkheid (art. 6:248 lid 2 BW) blijft over. De rechter weegt dan onder meer schuld of opzet, groot tegenover klein bedrijf, verzekerbaarheid en soort schade, en is terughoudend.",
+   "punten": [
+    "Sit. 1: geen art. 6:235-partij, dus 6:233 beschikbaar",
+    "Sit. 1: sub b jo. 6:234, verwijzen naar KvK onvoldoende",
+    "Sit. 2: AV-regeling niet van toepassing",
+    "Sit. 2: alleen art. 6:248 lid 2 met gezichtspunten"
+   ],
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-c1",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "casus",
+   "titel": "Gemeente Lindewaard regelt haar afvalinzameling",
+   "casus": "Gemeente Lindewaard (fictief) wil de inzameling en verwerking van het bedrijfsafval van al haar gebouwen (stadhuis, sporthallen, bibliotheek en gemeentewerf) opnieuw regelen. De geraamde waarde is € 140.000 per jaar; het nieuwe contract loopt 3 jaar met een optie op twee keer één jaar verlenging. De wethouder wil het werk het liefst direct gunnen aan Lindewaard Afval B.V. Daarvan bezit de gemeente 60% van de aandelen en een particulier afvalbedrijf 40%; de B.V. werkt voor 90% voor de gemeente. Het college heeft ook een ambitie: 'We willen samen met leveranciers nieuwe oplossingen vinden om afval te voorkomen, en wie met goede ideeën komt, krijgt meer werk.'",
+   "subvragen": [
+    {
+     "vraag": "Is de opdracht Europees aanbestedingsplichtig? Gebruik de drie W's met artikelen.",
+     "modelantwoord": "Wie: de gemeente is een territoriaal lichaam en dus aanbestedende dienst (art. 1.1 Aw). Wat: een schriftelijke overeenkomst onder bezwarende titel tussen een aanbestedende dienst en een ondernemer, voor een dienst (inzameling en verwerking van afval). Waarde: opties en verlengingen tellen mee (art. 2.15 lid 2 Aw): 5 × € 140.000 = € 700.000. Dat ligt boven de drempel van € 216.000 voor andere aanbestedende diensten. Conclusie: aanbestedingsplichtig, tenzij een uitzondering geldt.",
+     "punten": [
+      "Wie met art. 1.1 Aw",
+      "Wat: dienst met de kenmerken van een overheidsopdracht",
+      "Waarde € 700.000 inclusief opties, boven € 216.000"
+     ]
+    },
+    {
+     "vraag": "Mag de gemeente de opdracht zonder aanbesteding gunnen aan Lindewaard Afval B.V.? En wat als zij in plaats daarvan gaat samenwerken met de afvalafdeling van de buurgemeente?",
+     "modelantwoord": "Quasi-inbesteden (art. 2.24a Aw) vraagt drie cumulatieve voorwaarden: toezicht als op een eigen dienst, meer dan 80% van de werkzaamheden voor de dienst (90%, dat klopt) en geen directe participatie van particulier kapitaal. Het particuliere afvalbedrijf heeft 40% van de aandelen, dus de derde voorwaarde faalt (en toezicht als op een eigen dienst is met 60% twijfelachtig). Direct gunnen mag dus niet. Samenwerken met de buurgemeente zonder aparte rechtspersoon kan als publiek-publieke samenwerking (art. 2.24c Aw), mits het gaat om openbare diensten die beide moeten leveren, de samenwerking alleen in het openbaar belang is en de buurgemeente maximaal 20% van die activiteiten op de open markt verricht (Stadtreinigung Hamburg). Dan hoeft er niet aanbesteed te worden.",
+     "punten": [
+      "Drie voorwaarden art. 2.24a genoemd",
+      "Particulier kapitaal (40%) laat inbesteden falen",
+      "Publiek-publieke samenwerking art. 2.24c met voorwaarden"
+     ]
+    },
+    {
+     "vraag": "De gemeente besteedt toch aan. In welke fase van het fasemodel duurzaam inkopen past de ambitie van het college? Geef twee concrete manieren om die ambitie in de aanbesteding en het contract te vertalen.",
+     "modelantwoord": "Fase 5, drijfveer voor innovatie: duurzaamheid moet tot nieuwe oplossingen leiden, leveranciers worden uitgedaagd en wie goede ideeën heeft krijgt meer opdrachten. Vertaling, bijvoorbeeld: (1) gunnen op beste prijs-kwaliteitverhouding met een kwaliteitscriterium 'plan voor afvalpreventie en hergebruik', met de weging vooraf bekend (art. 2.115 lid 4 Aw); (2) een KPI in de SLA, zoals 'minimaal 75% van het afval gescheiden ingezameld, maandelijks gerapporteerd', met jaarlijkse verbeterdoelen; (3) een contract gericht op samenwerking en flexibiliteit, met ruimte voor innovaties en een verlengingsoptie bij goede prestaties (pijler 5); (4) een marktconsultatie vooraf. Eisen moeten wel proportioneel blijven.",
+     "punten": [
+      "Fase 5 met kenmerken uit de casus",
+      "Twee concrete vertalingen in aanbesteding of contract",
+      "Weging vooraf bekend of KPI met norm"
+     ]
+    },
+    {
+     "vraag": "Een afgewezen inschrijver vindt het criterium 'plan voor afvalpreventie' te vaag en start op dag 12 na de afwijzingsbrief een kort geding. De uitspraak volgt pas over vijf weken. Mag de gemeente na dag 20 het contract tekenen? En wat kan de voorzieningenrechter bevelen?",
+     "modelantwoord": "Nee. De Alcatel-termijn van 20 dagen (art. 2.127 Aw) loopt door tot de uitspraak in kort geding, als de afgewezen partij binnen de termijn een kort geding is begonnen. In kort geding kan de rechter onder meer een verbod tot gunning, staking van de procedure, een herbeoordeling of een heraanbesteding bevelen. Inhoudelijk toetst de rechter de transparantie: criteria moeten duidelijk, precies en ondubbelzinnig zijn, zodat elke redelijk geïnformeerde en normaal zorgvuldige inschrijver ze hetzelfde begrijpt (art. 1.9 Aw).",
+     "punten": [
+      "Nee: standstill loopt door tot de uitspraak",
+      "Twee voorzieningen in kort geding",
+      "Transparantiemaatstaf met art. 1.9 Aw"
+     ]
+    }
+   ],
+   "versie": "E2"
+  },
+  {
+   "id": "ire2-c2",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "casus",
+   "titel": "Sportcentrum De Wielewaal koopt crosstrainers",
+   "casus": "Sportcentrum De Wielewaal v.o.f. (fictief, 30 medewerkers, maakt geen jaarrekening openbaar) vervangt 20 crosstrainers. Offerte A komt van een Chinese fabrikant: € 2.600 per stuk, onderhoud € 350 per jaar, restwaarde na vijf jaar € 0. Offerte B komt van FitPro B.V. uit Ede (250 medewerkers): € 3.400 per stuk, onderhoud € 150 per jaar, restwaarde na vijf jaar € 400. De Wielewaal kiest FitPro. In de offerte van FitPro staat alleen: 'Op deze offerte zijn onze algemene voorwaarden van toepassing; deze zijn gedeponeerd bij de Kamer van Koophandel.' Daarin staat: 'Garantie 6 maanden. Na afloop van de garantietermijn vervalt elke aanspraak op herstel of vervanging.' De verkoper van FitPro zei bij de demonstratie dat de toestellen 'minstens tien jaar meegaan'. Na negen maanden vallen zes crosstrainers uit door een kapotte aandrijving.",
+   "subvragen": [
+    {
+     "vraag": "Bereken de TCO per crosstrainer over vijf jaar voor A en B. Welke offerte is goedkoper, en welke verborgen kosten van offerte A zitten nog niet in je berekening?",
+     "modelantwoord": "A: € 2.600 + 5 × € 350 − € 0 = € 4.350. B: € 3.400 + 5 × € 150 − € 400 = € 3.750. B is € 600 per stuk goedkoper, voor 20 toestellen € 12.000, ondanks de hogere aanschafprijs. Verborgen kosten bij A: transport, invoerrechten en douane, wisselkoersrisico, een langere levertijd, kwaliteitsrisico en extra controle, lastiger communicatie en service op afstand (wie repareert er?), en mogelijk een kortere levensduur.",
+     "punten": [
+      "TCO A € 4.350 en B € 3.750 juist berekend",
+      "Conclusie B goedkoper (ook totaal)",
+      "Minstens drie verborgen kosten"
+     ]
+    },
+    {
+     "vraag": "Waar plaats je crosstrainers voor een sportcentrum in de matrix van Kraljic, en wat betekent dat voor de sourcingkeuze (aantal leveranciers, lokaal of global)?",
+     "modelantwoord": "Voor een sportcentrum is de apparatuur een groot deel van de uitgaven (hoog financieel belang), en er zijn veel aanbieders (laag leveringsrisico): een hefboomproduct. Dan benut je de concurrentie, bijvoorbeeld met multiple of dual sourcing en scherp onderhandelen. Wie het leveringsrisico hoger inschat (uitval van toestellen kost direct omzet), kan strategisch onderbouwen, met een langere relatie met één leverancier. Lokaal (FitPro): korte levertijd, service dichtbij, minder gedoe met douane en cultuurverschillen. Global: lagere kostprijs, maar verborgen kosten en meer risico. Gezien de TCO en de service ligt lokaal hier voor de hand.",
+     "punten": [
+      "Hefboom (of onderbouwd strategisch) met financieel belang en risico",
+      "Passend aantal leveranciers",
+      "Lokaal tegenover global met voor- en nadelen"
+     ]
+    },
+    {
+     "vraag": "Kan De Wielewaal de garantiebepaling in de AV van FitPro aantasten? Noem de artikelen.",
+     "modelantwoord": "De bepaling staat in algemene voorwaarden (art. 6:231 sub a BW): FitPro is gebruiker (sub b), De Wielewaal wederpartij (sub c). De Wielewaal is gebonden, ook zonder de AV te kennen (art. 6:232). Maar De Wielewaal valt niet onder art. 6:235 (minder dan 50 personen, geen openbare jaarrekening), dus kan zij een beroep doen op art. 6:233. Sub b jo. art. 6:234: FitPro heeft de AV niet ter hand gesteld, terwijl dat redelijkerwijs kon (gewoon meesturen); alleen verwijzen naar de KvK is dan onvoldoende. De bepaling is dus vernietigbaar. De zwarte en grijze lijst gelden niet, want De Wielewaal is geen consument.",
+     "punten": [
+      "Gebruiker en wederpartij met art. 6:231",
+      "Geen art. 6:235-partij",
+      "Vernietigbaar via 6:233 sub b jo. 6:234"
+     ]
+    },
+    {
+     "vraag": "Stel dat de garantiebepaling is vernietigd. Welke rechten heeft De Wielewaal bij de zes kapotte crosstrainers, en waar moet het sportcentrum op letten? Wat was de uitkomst geweest als de bepaling wél gold?",
+     "modelantwoord": "Zonder de bepaling geldt de wet. De verkoper zei dat de toestellen minstens tien jaar meegaan; na negen maanden kapot voldoet niet aan de redelijke verwachtingen, gelet op de mededelingen van de verkoper: non-conform (art. 7:17 BW). Recht op herstel of vervanging op kosten van de verkoper (art. 7:21 BW), en daarnaast de rechten uit Boek 6, zoals gedeeltelijke ontbinding en schadevergoeding. Let op de klachtplicht: binnen bekwame tijd na ontdekking klagen (art. 7:23 BW); de twee maanden is een regel voor consumenten. Gold de bepaling wel, dan was het een negatieve garantie, en die mag bij een zakelijke koop (regelend recht): dan had De Wielewaal na de zes maanden geen recht meer op herstel of vervanging.",
+     "punten": [
+      "Non-conformiteit art. 7:17 met de mededeling van de verkoper",
+      "Rechten art. 7:21 en Boek 6",
+      "Klachtplicht art. 7:23",
+      "Negatieve garantie mag bij zakelijke koop"
+     ]
+    }
+   ],
+   "versie": "E2"
+  },
+  {
+   "id": "ire3-i01",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een wasserij heeft € 240.000 vaste kosten per jaar en verwerkt 400.000 kilo wasgoed. De variabele kosten zijn € 0,90 per kilo. Wat is de kostprijs per kilo?",
+   "opties": [
+    "€ 1,50",
+    "€ 0,90",
+    "€ 0,60",
+    "€ 1,88"
+   ],
+   "juist": 0,
+   "uitleg": "Vaste kosten per kilo: € 240.000 / 400.000 = € 0,60. Plus € 0,90 variabel geeft een kostprijs van € 1,50. € 1,88 is al een verkoopprijs met 20% marge van de verkoopprijs (100/80 × € 1,50); de winst komt pas na de kostprijs.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-i02",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een cateraar runt het bedrijfsrestaurant van een verzekeraar. Welke kosten zijn voor de cateraar indirecte kosten (overhead)?",
+   "opties": [
+    "De ingrediënten voor de lunches",
+    "De uren van de kok in het restaurant",
+    "Het salaris van de planner op het hoofdkantoor",
+    "De wegwerpbekers die per kop koffie nodig zijn"
+   ],
+   "juist": 2,
+   "uitleg": "Directe kosten horen 100% bij het product of de dienst: ingrediënten, bekers en de uren van de kok op locatie. Indirecte kosten worden voor alle opdrachten gemaakt zonder duidelijke relatie met één opdracht, zoals de planner op het hoofdkantoor (vergelijk de receptioniste op de slide).",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-i03",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een gemeente koopt haar bedrijfskleding voortaan alleen bij leveranciers binnen Nederland. Welk nadeel hoort volgens de les bij deze keuze voor lokaal inkopen?",
+   "opties": [
+    "Langere levertijden en meer voorraad",
+    "Meer gedoe met douane en valuta",
+    "Je mist mogelijk betere of goedkopere producten",
+    "Meer cultuurverschillen in het contact"
+   ],
+   "juist": 2,
+   "uitleg": "Lokaal inkopen geeft juist korte levertijden en minder gedoe met douane, valuta en cultuurverschillen. Het nadeel: je kunt naast de beste producten grijpen, en kostprijzen buiten West-Europa liggen vaak lager.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-i04",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Welk kenmerk hoort volgens de les vooral bij privaat inkopen, zoals bij een bank of een kledingwinkel?",
+   "opties": [
+    "Maatschappelijke doelstellingen en politieke gevoeligheid",
+    "Aanbestedingswetgeving als juridisch kader",
+    "Onderhandelen, marktkennis en leveringsrisico's uitsluiten",
+    "Verantwoording over belastinggeld aan de gemeenteraad"
+   ],
+   "juist": 2,
+   "uitleg": "Privaat inkopen draait om winst maken, onderhandelen, kennis van de markt en leveringsrisico's uitsluiten, vaak ad hoc en met meer focus op prijs. Maatschappelijke doelen, aanbestedingsrecht en politieke gevoeligheid horen bij publiek inkopen.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-i05",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een fietsenfabrikant koopt aluminium frames voor zijn fietsen en laat zijn kantoor schoonmaken. Hoe deel je deze inkoop in?",
+   "opties": [
+    "Frames direct (primair), schoonmaak indirect",
+    "Frames indirect, schoonmaak direct (primair)",
+    "Allebei direct, want beide zijn nodig voor de bedrijfsvoering",
+    "Allebei indirect, want beide worden extern ingekocht"
+   ],
+   "juist": 0,
+   "uitleg": "Directe (primaire) inkoop is productgerelateerd: de frames komen in de fiets terecht. Indirecte inkoop is niet productgerelateerd; facilitaire inkoop zoals schoonmaak is meestal indirect.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-i06",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een inkoper werkt een ethisch dilemma uit met het NEVI-stappenplan. Het dilemma is benoemd, en de bekende feiten en de ontbrekende informatie zijn op een rij gezet. Wat is de volgende stap?",
+   "opties": [
+    "Bedenk minimaal twee oplossingen",
+    "Bepaal welke waarden en belangen een rol spelen",
+    "Kies de optie met de laagste prijs",
+    "Houd een pitch van één minuut voor de directie"
+   ],
+   "juist": 1,
+   "uitleg": "Het stappenplan: (1) wat is het dilemma, (2) welke feiten weten we en welke informatie missen we, (3) welke waarden en belangen spelen een rol, (4) minimaal twee oplossingen, (5) de beste optie, (6) drie argumenten, (7) een pitch, (8) reflectie. Ethische dilemma's vragen een zorgvuldige en transparante afweging.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-i07",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een gemeente kiest bewust voor een schoonmaakbedrijf dat mensen met een afstand tot de arbeidsmarkt in dienst neemt en eerlijke lonen in de keten borgt, ook al is het iets duurder. Bij welk principe van de NEVI-gedragscode past dit het best?",
+   "opties": [
+    "Maatschappelijke waarde",
+    "Integriteit en objectiviteit",
+    "Deskundigheid en verantwoording",
+    "Effectieve concurrentie"
+   ],
+   "juist": 0,
+   "uitleg": "Maatschappelijke waarde: meerwaarde voor organisatie én maatschappij, met een langetermijnvisie en aandacht voor duurzaamheid, mensenrechten en sociale omstandigheden in de keten. Effectieve concurrentie is een aanbestedingsbeginsel, geen NEVI-principe.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-i08",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "mc",
+   "vraag": "Een gemeente verlengt het contract met een slecht presterende glazenwasser niet en verdeelt het werk over twee leveranciers die het wel goed doen. Bij welk begrip uit de les hoort dit?",
+   "opties": [
+    "Leveranciersbeleid: relaties verbeteren, op peil houden of afbouwen",
+    "Maverick buying: inkopen buiten de contracten om",
+    "Co-makership: de leverancier wordt verantwoordelijk voor een deel",
+    "Make-or-buy: de keuze tussen zelf doen of uitbesteden"
+   ],
+   "juist": 0,
+   "uitleg": "Leveranciersbeleid is gericht op het systematisch verbeteren, op peil houden of afbouwen van relaties met leveranciers. Hier bouwt de gemeente een relatie af en verschuift het werk naar leveranciers die goed presteren.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-r01",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Defensie wil helikopters kopen die ook voor civiele reddingsvluchten bruikbaar zijn, en wil dat zonder aanbesteding doen met een beroep op de defensie-uitzondering. Kan dat?",
+   "opties": [
+    "Ja, alles wat Defensie aanschaft valt automatisch onder art. 346 VWEU en art. 2.23 Aw",
+    "Nee, uitzonderingen zijn strikt; ook civiel bruikbaar materieel valt er niet zomaar onder",
+    "Ja, want helikopters zijn leveringen en daarvoor geldt geen Europese aanbestedingsplicht",
+    "Nee, want het ministerie van Defensie is geen aanbestedende dienst in de zin van de Aw"
+   ],
+   "juist": 1,
+   "uitleg": "Uitzonderingen worden strikt uitgelegd en wie er een beroep op doet, moet ze bewijzen. Echte defensieopdrachten (zoals de JSF) vallen eronder, maar wat ook civiel bruikbaar is niet zomaar (Agusta). Defensie hoort bij de Staat en is dus wel een aanbestedende dienst.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-r02",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Hoe kan een aanbestedende dienst volgens de les de minimumtermijn voor inschrijving bij de openbare procedure verkorten?",
+   "opties": [
+    "Met een vooraankondiging, en met 5 dagen als elektronisch inschrijven kan",
+    "Door de opdracht op te splitsen in percelen onder de drempel",
+    "Door de Alcatel-termijn van 20 dagen in te korten tot 15 dagen",
+    "Door alleen inschrijvers uit Nederland toe te laten tot de procedure"
+   ],
+   "juist": 0,
+   "uitleg": "De termijn van 45 dagen (art. 2.71 Aw) kan korter met een vooraankondiging (art. 2.71 lid 5 en 6) en met 5 dagen als elektronisch inschrijven mogelijk is (art. 2.74b). Bij een dringende reden die niet aan de dienst zelf te wijten is, kan het ook (art. 2.74). Opsplitsen om onder de drempel te blijven is verboden.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-r03",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Wat is een elektronische veiling volgens de Aanbestedingswet?",
+   "opties": [
+    "Een zelfstandige procedure naast de openbare en niet-openbare",
+    "Een onderdeel binnen een andere procedure (art. 2.117 Aw)",
+    "Een nationale procedure voor opdrachten onder de drempel",
+    "Een raamovereenkomst waarbij leveranciers online bieden"
+   ],
+   "juist": 1,
+   "uitleg": "De elektronische veiling (art. 2.117 Aw) staat in het overzicht van procedures, maar is geen zelfstandige procedure: het is een onderdeel van een andere procedure. Hetzelfde geldt eigenlijk voor de raamovereenkomst, die geen echte procedure is.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-r04",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een gemeente gunt een concessie voor de exploitatie van de stadsparkeergarages, met een verwachte omzet van € 9 miljoen. Wat geldt voor de procedure?",
+   "opties": [
+    "Zij moet de openbare procedure van art. 2.26 Aw volgen",
+    "Vormvrij, mits zij de opzet beschrijft en de stappen documenteert",
+    "Geen enkele, want concessies zijn uitgezonderd van de Aw",
+    "Alleen de concurrentiegerichte dialoog is dan toegestaan"
+   ],
+   "juist": 1,
+   "uitleg": "€ 9 miljoen ligt boven de concessiedrempel van € 5.404.000, dus Deel 2A Aw geldt. De procedure is vormvrij (art. 2a.30 Aw), mits de dienst de organisatie van de procedure beschrijft en de stappen documenteert. Onderhandelen mag zolang de criteria gelijk blijven; aankondigen gaat via TenderNed.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-r05",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een hogeschool bestelt telefonisch 40 whiteboards, maar partijen spreken geen prijs af. De leverancier stuurt achteraf een factuur. Wat geldt?",
+   "opties": [
+    "Er is geen koop gesloten, want de prijs is een essentieel punt",
+    "De hogeschool moet een redelijke prijs betalen (art. 7:4 BW)",
+    "Er is niets op papier, dus de hogeschool hoeft niets te betalen",
+    "De leverancier mag elke prijs vragen die hij wil"
+   ],
+   "juist": 1,
+   "uitleg": "Een koop kan mondeling, schriftelijk en stilzwijgend ontstaan (vormvrijheid). Is er geen prijs afgesproken, dan is de koper een redelijke prijs verschuldigd (art. 7:4 BW); de verbintenis is zo bepaalbaar (art. 6:227 BW).",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-r06",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een gemeente en een ICT-leverancier willen tijdens de onderhandelingen afspraken vastleggen. Met welk middel moeten zij volgens de les oppassen, omdat het partijen al bindt?",
+   "opties": [
+    "Een gentlemen's agreement",
+    "Een voorovereenkomst",
+    "Een letter of intent met een voorbehoud",
+    "Een gespreksverslag zonder handtekeningen"
+   ],
+   "juist": 1,
+   "uitleg": "Om gerechtvaardigd vertrouwen te voorkomen kun je werken met een gentlemen's agreement, een letter of intent of een voorovereenkomst, maar pas op: een voorovereenkomst bindt al. Een voorbehoud (zoals instemming van het bestuur) helpt juist om niet te snel gebonden te raken.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-r07",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een schoonmaakbedrijf leent van de gemeente een schrobmachine en gebruikt die in het stadhuis. Wat is het schoonmaakbedrijf ten aanzien van de machine?",
+   "opties": [
+    "Houder: het houdt de machine voor een ander",
+    "Bezitter: het houdt de machine voor zichzelf",
+    "Eigenaar door bezitsverschaffing",
+    "Beschikkingsbevoegde vervreemder"
+   ],
+   "juist": 0,
+   "uitleg": "Een houder houdt een zaak voor een ander (hier de gemeente), een bezitter houdt de zaak voor zichzelf. De gemeente blijft eigenaar en bezitter. Het onderscheid is belangrijk bij levering zonder feitelijke overdracht (art. 3:115 BW), zoals brevi manu als het bedrijf de machine later koopt.",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-r08",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "mc",
+   "vraag": "Een particulier koopt bij een meubelzaak een kast en betaalt de factuur niet op tijd. Welke schadevergoeding kan de meubelzaak vorderen voor de vertraging?",
+   "opties": [
+    "De wettelijke rente (art. 6:119 BW)",
+    "Het positief contractsbelang van de koop",
+    "Een vaste boete van 15% van de koopprijs",
+    "Niets, dat is bij consumentenkoop uitgesloten"
+   ],
+   "juist": 0,
+   "uitleg": "Betaalt de koper niet, dan kan de verkoper schadevergoeding in de vorm van de wettelijke rente vorderen (art. 6:119 BW), en daarnaast nakoming of ontbinding, of het recht van reclame. Let op: bij consumentenkoop verjaart de vordering tot betaling na twee jaar (art. 7:28 BW).",
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-o1",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "open",
+   "vraag": "Leg voor de drie marktvormen uit hoeveel invloed een inkoper aan de vraagzijde heeft op de prijs, met per marktvorm een FM-voorbeeld. Wat betekent je machtspositie voor je inkoopstrategie? Leg ook uit waarom een leverancier met veel onbenutte capaciteit je onderhandelingspositie versterkt.",
+   "modelantwoord": "Monopolie aan de vraagzijde (één vrager): de inkoper heeft veel macht, bijvoorbeeld een fabriek die als enige in de regio bedrijfskleding afneemt. Oligopolie (een beperkte groep vragers die elkaars prijzen volgen): enige invloed, bijvoorbeeld ziekenhuizen in een regio die samen inkopen. Polypolie (veel vragers): geen invloed op de prijs, de inkoper volgt de markt, bijvoorbeeld bij kantoorartikelen. Strategie: hoe meer macht, hoe meer je kunt onderhandelen; met weinig macht kun je volume bundelen, bijvoorbeeld via horizontale samenwerking in een inkoopcombinatie, of efficiënt tegen marktprijs inkopen. Onbenutte capaciteit: de leverancier wil graag orders, want elke prijs boven de variabele kosten draagt bij aan zijn vaste kosten. Dat geeft de inkoper onderhandelingsruimte (capaciteitsbenutting is een van de manieren om de kostprijs te achterhalen).",
+   "punten": [
+    "Drie marktvormen met invloed en voorbeeld",
+    "Gevolg voor de strategie (onderhandelen of bundelen)",
+    "Onbenutte capaciteit uitgelegd met variabele en vaste kosten"
+   ],
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-o2",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "open",
+   "vraag": "Een hogeschool wil dat het nieuwe schoonmaakcontract bijdraagt aan haar MVO-beleid, dat op de SDG's is gebaseerd. Leg uit wat de SDG's zijn. Kies twee duurzaamheidsthema's die je goed in een FM-inkoopcontract kunt vangen, en vertaal elk thema naar een eis of KPI met norm. Is jouw voorstel groen of circulair inkopen?",
+   "modelantwoord": "De SDG's (Sustainable Development Goals) zijn de duurzame-ontwikkelingsdoelen van de VN voor 2015-2030; ze vervingen de millenniumdoelen. Organisaties gebruiken ze in hun MVO-beleid en inkopers vertalen ze naar contracten. Thema's die goed te vangen zijn: energie en klimaat (eis: schoonmaakmachines en vervoer zijn elektrisch; KPI: CO2-uitstoot van het vervoer daalt jaarlijks met 10%, gemeten via de kilometerregistratie), afval en grondstoffen (eis: navulsystemen voor middelen; KPI: minimaal 80% van het verpakkingsafval gerecycled, per kwartaal gerapporteerd), arbeidsomstandigheden (eis: cao en eerlijke lonen; KPI: ziekteverzuim onder 5% en een jaarlijkse audit). Groen gaat over minder milieu-impact (elektrische machines, ecologische middelen); circulair over het behouden van de waarde van producten en grondstoffen (navulsystemen, terugname van machines en textiel voor hergebruik). Een voorstel kan dus beide elementen hebben.",
+   "punten": [
+    "SDG's juist uitgelegd",
+    "Twee thema's met eis of KPI én norm",
+    "Groen en circulair juist onderscheiden en toegepast"
+   ],
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-o3",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "open",
+   "vraag": "Noor, medewerker van een hogeschool, koopt via een webshop een bureaustoel van € 350 voor thuis. (a) Na tien dagen wil Noor de stoel terugsturen, omdat de kleur tegenvalt. Kan dat? (b) Na vijf maanden breekt de rugleuning. De webshop verwijst naar de fabrikant en zegt dat de garantie van drie maanden voorbij is. Wat zijn Noors rechten? (c) De webshop is vergeten de stoel te factureren en stuurt pas 26 maanden na de aflevering een rekening. Moet Noor nog betalen?",
+   "modelantwoord": "(a) Ja. Het is een consumentenkoop op afstand (art. 6:230g jo. 6:230m BW): Noor heeft een ontbindingsrecht van 14 dagen zonder opgaaf van reden (art. 6:230o BW), met het modelformulier of een andere verklaring. (b) Consumentenkoop (art. 7:5 BW): de regeling is dwingend (art. 7:6) en een garantie neemt de wettelijke rechten niet weg (art. 7:6a); een negatieve garantie werkt dus niet. Een bureaustoel hoort jaren mee te gaan, dus hij is niet conform (art. 7:17). Het gebrek openbaart zich binnen 6 maanden, dus geldt het bewijsvermoeden van art. 7:18 lid 2 (de slide noemt 6 maanden). Noor heeft recht op herstel of vervanging (art. 7:21) en kan daarvoor bij de webshop terecht: de verkoper is het aanspreekpunt, niet de fabrikant. Klagen binnen twee maanden na ontdekking is in ieder geval op tijd (art. 7:23). (c) Nee, in beginsel niet: bij consumentenkoop verjaart de vordering tot betaling na twee jaar (art. 7:28 BW), tenzij de verjaring is gestuit. Er blijft een natuurlijke verbintenis over (art. 6:3 BW): betaalt Noor toch, dan kan dat niet worden teruggevorderd.",
+   "punten": [
+    "(a) Ontbindingsrecht 14 dagen bij koop op afstand",
+    "(b) Dwingend recht, 7:6a, non-conformiteit en bewijsvermoeden",
+    "(b) Verkoper is aanspreekpunt, art. 7:21",
+    "(c) Verjaring na twee jaar (art. 7:28) en natuurlijke verbintenis"
+   ],
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-o4",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "open",
+   "vraag": "Elektroservice Oost v.o.f. (15 medewerkers, geen openbare jaarrekening) koopt warmtepompen bij een groothandel en verkoopt en installeert ze bij particulieren. In de algemene voorwaarden van de groothandel staat: (1) 'De groothandel is niet aansprakelijk voor gebreken aan de geleverde zaken.' (2) 'Alle geschillen worden beslecht door arbitrage.' Een particuliere klant heeft na drie maanden een kapotte warmtepomp en spreekt Elektroservice aan. (a) Moet Elektroservice de klant helpen? (b) Kan Elektroservice de groothandel aanspreken ondanks beding 1? (c) Wat betekent beding 2, en hoe verschilt dat van mediation?",
+   "modelantwoord": "(a) Ja. Het is een consumentenkoop (art. 7:5 BW), dus grotendeels dwingend recht. Een warmtepomp die na drie maanden kapot is, is niet conform (art. 7:17); de klant heeft recht op herstel of vervanging (art. 7:21), en het bewijsvermoeden van art. 7:18 lid 2 helpt de klant. Elektroservice is als verkoper het aanspreekpunt. (b) Ja, waarschijnlijk wel. Art. 6:244 BW beschermt de 'beklemde detaillist': die mag niet klem komen te zitten tussen zijn ruimere aansprakelijkheid tegenover de consument en een exoneratie van zijn eigen leverancier. Bovendien valt Elektroservice niet onder art. 6:235 (minder dan 50 personen, geen openbare jaarrekening), dus kan het beding ook worden vernietigd als het onredelijk bezwarend is (art. 6:233 sub a), of via sub b als de AV niet ter hand zijn gesteld. (c) Bij arbitrage beslissen arbiters en is de gewone rechter niet meer bevoegd; dat is vaak sneller en meestal duurder. Bij mediation of een andere vorm van ADR blijft de rechter bevoegd.",
+   "punten": [
+    "(a) Consumentenkoop, non-conformiteit en art. 7:21",
+    "(b) Beklemde detaillist art. 6:244",
+    "(b) Geen art. 6:235-partij, dus ook 6:233",
+    "(c) Arbitrage tegenover mediation juist uitgelegd"
+   ],
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-c1",
+   "week": 0,
+   "onderdeel": "Recht",
+   "type": "casus",
+   "titel": "Waterschap Maas en Linge versterkt een dijk",
+   "casus": "Waterschap Maas en Linge (fictief) wil 6 kilometer dijk versterken; de geraamde waarde is € 18 miljoen. De dijkgraaf stelt voor het werk op te knippen in vier delen van 1,5 kilometer à € 4,5 miljoen, 'zodat we onder de Europese drempel blijven'. Het waterschap verwacht veel belangstelling van aannemers. In het concept van de aankondiging staat dat het waterschap 'de vijf beste gegadigden' selecteert op ervaring met dijkversterking; hoe de selectiecriteria wegen, wil het pas na de sluiting bepalen. Bij de selectie wil het ook kijken naar de indicatieve prijs die gegadigden opgeven. Na de dijkversterking wil het waterschap voor zes jaar een raamovereenkomst sluiten voor klein onderhoud aan al zijn dijken.",
+   "subvragen": [
+    {
+     "vraag": "Is de dijkversterking Europees aanbestedingsplichtig? Beoordeel het voorstel van de dijkgraaf, en geef aan of de percelenregeling hier helpt.",
+     "modelantwoord": "Wie: een waterschap is een territoriaal lichaam en dus aanbestedende dienst (art. 1.1 Aw). Wat: een werk, want het gaat om een civieltechnisch werk met een technische functie (CPV-code 45). Waarde: € 18 miljoen, boven de drempel van € 5.404.000. Opknippen om onder de drempel te blijven mag niet (splitsingsverbod, art. 2.14 Aw); bij percelen tel je de waarde van alle percelen bij elkaar op (art. 2.18 Aw), dus het blijft € 18 miljoen. De percelenregeling helpt niet: bij werken mag je alleen percelen tot € 1.000.000 zonder Europese procedure gunnen, samen maximaal 20% van de totale waarde (art. 2.18 en 2.19 Aw). Conclusie: Europees aanbesteden. In percelen verdelen mag wel (goed voor het mkb), maar dan elk perceel via een Europese procedure.",
+     "punten": [
+      "Drie W's met werk en € 5.404.000",
+      "Splitsingsverbod en optellen van percelen",
+      "Percelenregeling werken: max € 1 miljoen en 20%"
+     ]
+    },
+    {
+     "vraag": "Welke procedure adviseer je? Beoordeel daarnaast de opzet van de selectie, met arresten of artikelen.",
+     "modelantwoord": "De niet-openbare procedure (art. 2.27 Aw): bij veel verwachte gegadigden beperk je met een selectiefase het aantal inschrijvers, met minimaal 5 (art. 2.99 lid 3 Aw). Fouten in de opzet: (1) de weging van de selectiecriteria moet vooraf bekend zijn, niet pas na de sluiting (Universal Bau, C-470/99; transparantie, art. 1.9 Aw). (2) De indicatieve prijs is een gunningscriterium: die gebruiken in de selectiefase mag niet (Commissie/Italië, C-362/90). Selectie gaat over de ondernemer, gunning over de inschrijving, en het zijn aparte stappen (Beentjes, C-31/87).",
+     "punten": [
+      "Niet-openbare procedure met reden en minimaal 5",
+      "Weging vooraf bekend (Universal Bau)",
+      "Geen prijs in de selectie (Commissie/Italië)"
+     ]
+    },
+    {
+     "vraag": "Stel dat na de inschrijving alle inschrijvingen ruim boven het budget liggen. Mag het waterschap met de goedkoopste inschrijver over de prijs onderhandelen? Welke mogelijkheden heeft het wel?",
+     "modelantwoord": "Nee. Na de inschrijving onderhandelen met één inschrijver is in strijd met het gelijkheidsbeginsel (art. 1.8 Aw); niet-acceptabele inschrijvingen moet je afwijzen in plaats van erover te onderhandelen (Deense brug/Storebaelt). Inschrijvingen ver boven het geraamde budget zijn onaanvaardbaar. Dat is een grond om over te stappen op de mededingingsprocedure met onderhandeling of de concurrentiegerichte dialoog, zonder de opdracht fundamenteel te wijzigen (art. 2.28 Aw). Het waterschap kan ook de procedure stoppen en opnieuw aanbesteden met een aangepaste opdracht of een realistischer budget.",
+     "punten": [
+      "Nee: gelijkheid en Deense brug",
+      "Onaanvaardbare inschrijvingen als grond voor een andere procedure",
+      "Opdracht niet fundamenteel wijzigen of opnieuw aanbesteden"
+     ]
+    },
+    {
+     "vraag": "Mag de raamovereenkomst voor klein onderhoud zes jaar duren? En hoe raam je de waarde ervan?",
+     "modelantwoord": "Nee, in beginsel niet. Een raamovereenkomst duurt maximaal 4 jaar (art. 2.140 Aw; zoek het lid na in je bundel), alleen in uitzonderlijke, goed gemotiveerde gevallen langer. Een looptijd van zes jaar 'gewoon omdat het handig is' kan dus niet. De waarde raam je als de totale waarde van alle opdrachten die je onder de raamovereenkomst verwacht te plaatsen, excl. btw en inclusief opties en verlengingen (art. 2.15 lid 2 Aw). Die vergelijk je met de drempel voor werken (€ 5.404.000) of voor diensten (€ 216.000), afhankelijk van wat het onderhoud is.",
+     "punten": [
+      "Maximaal 4 jaar met art. 2.140",
+      "Raming: totale waarde van alle verwachte opdrachten, incl. opties",
+      "Juiste drempel genoemd"
+     ]
+    }
+   ],
+   "versie": "E3"
+  },
+  {
+   "id": "ire3-c2",
+   "week": 0,
+   "onderdeel": "Inkoop",
+   "type": "casus",
+   "titel": "Zorggroep De Linde koopt tilliften",
+   "casus": "Zorggroep De Linde (fictief, 800 medewerkers) hoeft in deze casus niet aan te besteden. De Linde wil 60 nieuwe tilliften. TilTech B.V. biedt € 4.800 per lift. De inkoper van De Linde schat met een should-cost-analyse: materialen € 1.900, directe arbeid € 900 en overhead € 600 per lift. In de branche is een marge van 25% van de verkoopprijs gebruikelijk, en bij TilTech staat sinds kort een productielijn stil. Na vijf maanden onderhandelen tekenen De Linde en TilTech een letter of intent: 'Partijen zijn pas gebonden na schriftelijke vastlegging en goedkeuring door de raad van bestuur van De Linde.' Twee weken later zegt de inkoopmanager van De Linde tegen TilTech: 'De goedkeuring is een formaliteit, begin maar vast met produceren.' TilTech maakt € 30.000 kosten voor de eerste 20 liften. Dan breekt De Linde de onderhandelingen af, omdat leverancier LiftPlus 10% goedkoper is.",
+   "subvragen": [
+    {
+     "vraag": "Welke prijs per lift verwacht de inkoper op basis van de should-cost-analyse? Hoeveel onderhandelingsruimte zie je, en welke informatie uit de casus versterkt de positie van De Linde nog meer?",
+     "modelantwoord": "Kostprijs: € 1.900 + € 900 + € 600 = € 3.400. Met 25% marge van de verkoopprijs: 100/75 × € 3.400 = € 4.533,33 (niet € 3.400 × 1,25 = € 4.250). De offerte van € 4.800 ligt dus ongeveer € 267 per lift hoger, voor 60 liften zo'n € 16.000. De stilstaande productielijn (onbenutte capaciteit) versterkt de positie van De Linde: TilTech wil graag orders, en elke prijs boven de variabele kosten draagt bij aan de vaste kosten. Andere hulpmiddelen: om een openboekcalculatie vragen, benchmarken met andere zorginstellingen, en per kostensoort nagaan of die beïnvloedbaar is (materiaal vaak wel, overhead soms).",
+     "punten": [
+      "Verkoopprijs € 4.533 met marge van de verkoopprijs",
+      "Ruimte van circa € 267 per lift",
+      "Onbenutte capaciteit uitgelegd"
+     ]
+    },
+    {
+     "vraag": "Mocht De Linde de onderhandelingen afbreken? Betrek de letter of intent, en geef aan wat TilTech kan vorderen.",
+     "modelantwoord": "Uitgangspunt is contractvrijheid: afbreken mag, tenzij dat op grond van gerechtvaardigd vertrouwen in een overeenkomst of door andere omstandigheden onaanvaardbaar is (CBB/JPO). Het voorbehoud in de letter of intent moest juist voorkomen dat er te snel vertrouwen ontstond. Maar De Linde hield zich er zelf niet aan: de inkoopmanager noemde de goedkeuring een formaliteit en zei dat TilTech kon gaan produceren. De Linde heeft dus zelf aan het vertrouwen bijgedragen, de onderhandelingen duurden lang, en een goedkopere concurrent is een zwakke reden op dit moment. Waarschijnlijk is het afbreken onrechtmatig. Grondslag: onrechtmatige daad (art. 6:162 BW), want er is nog geen overeenkomst. TilTech kan dooronderhandelen vorderen (lastig als De Linde al met LiftPlus heeft gecontracteerd) of schadevergoeding: in elk geval het negatief contractsbelang (de € 30.000 kosten), en het positief contractsbelang (gederfde winst) alleen bij hoge uitzondering.",
+     "punten": [
+      "Maatstaf CBB/JPO",
+      "Voorbehoud weegt mee, maar De Linde hield zich er zelf niet aan",
+      "Art. 6:162 BW met negatief en positief contractsbelang"
+     ]
+    },
+    {
+     "vraag": "De Linde koopt de tilliften uiteindelijk bij LiftPlus, een wederverkoper van een Duitse fabrikant. Na een jaar knapt bij een lift een draagband door een fabricagefout; een bewoner valt en raakt gewond. Wie is aansprakelijk voor de letselschade van de bewoner, en wat kan De Linde zelf tegen LiftPlus doen?",
+     "modelantwoord": "Voor schade door een gebrekkig product is de producent aansprakelijk (productaansprakelijkheid, art. 6:185 BW), hier de Duitse fabrikant; ook verkopen aan een wederverkoper geldt als in het verkeer brengen. De bijzondere aansprakelijkheid van de verkoper bij consumentenkoop (art. 7:24 BW) speelt hier niet, want De Linde is geen consument. De Linde zelf kan LiftPlus aanspreken op grond van de koopovereenkomst: een tillift met een draagband die na een jaar knapt, is niet conform (art. 7:17 BW). De Linde heeft recht op herstel of vervanging (art. 7:21 BW) en de rechten uit Boek 6, zoals schadevergoeding en ontbinding. Let op de klachtplicht: binnen bekwame tijd klagen (art. 7:23 BW).",
+     "punten": [
+      "Producent aansprakelijk, art. 6:185 BW",
+      "Non-conformiteit art. 7:17 tegenover LiftPlus",
+      "Rechten art. 7:21, Boek 6 en klachtplicht"
+     ]
+    },
+    {
+     "vraag": "De Linde laat LiftPlus ook het onderhoud en de jaarlijkse keuring van alle liften doen. Welke vorm van uitbesteden is dit? Noem twee risico's, en leg uit met welke pijlers van contractmanagement De Linde die risico's beheerst.",
+     "modelantwoord": "Partial (alleen het onderhoud gaat over, niet de hele activiteit) en on-site (LiftPlus werkt op de locaties van De Linde). Risico's: afhankelijkheid van één leverancier, kwaliteitsrisico (de veiligheid van bewoners), verlies van eigen kennis, verlies van regie en verborgen kosten. Beheersen: pijler 2 contractadministratie (keuringsdata, looptijd en verlengingen bewaken), pijler 3 prestatiemanagement (KPI's met normen, zoals 'storingen in 95% van de gevallen binnen 24 uur verholpen' en '100% van de liften op tijd gekeurd', met periodieke evaluaties en bijsturen), en eventueel pijler 4 relatiemanagement (regelmatig overleg, constructief conflicten oplossen).",
+     "punten": [
+      "Partial en on-site",
+      "Twee risico's van uitbesteden",
+      "Passende pijlers met concrete invulling"
+     ]
+    }
+   ],
+   "versie": "E3"
   }
  ],
- "eind": {
-  "titel": "Eindtoets over alle stof",
-  "uitleg": "Een vaste toets met eigen vragen die niet in de weektoetsen zitten. Inkoop en recht door elkaar, met casussen die meerdere weken combineren, zoals op het tentamen.",
-  "mc": 16,
-  "open": 4,
-  "casus": 2
- }
+ "eindtoetsen": [
+  {
+   "titel": "Eindtoets over alle stof",
+   "uitleg": "Een vaste toets met eigen vragen die niet in de weektoetsen zitten. Inkoop en recht door elkaar, met casussen die meerdere weken combineren, zoals op het tentamen.",
+   "key": "eind",
+   "versie": "E",
+   "mc": 16,
+   "open": 4,
+   "casus": 2
+  },
+  {
+   "titel": "Gemeente Lindewaard en Sportcentrum De Wielewaal",
+   "uitleg": "Een tweede vaste toets met nieuwe vragen over alle weken. De casussen gaan over de afvalinzameling van een gemeente en de aankoop van fitnessapparatuur, met inkoop en recht door elkaar.",
+   "key": "eind2",
+   "versie": "E2",
+   "mc": 16,
+   "open": 4,
+   "casus": 2
+  },
+  {
+   "titel": "Waterschap Maas en Linge en Zorggroep De Linde",
+   "uitleg": "Een derde vaste toets met nieuwe vragen over alle weken, met onderwerpen die in de andere toetsen minder aan bod komen. De casussen gaan over een dijkversterking en de aankoop van tilliften.",
+   "key": "eind3",
+   "versie": "E3",
+   "mc": 16,
+   "open": 4,
+   "casus": 2
+  }
+ ]
 }

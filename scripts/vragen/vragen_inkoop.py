@@ -1,4 +1,4 @@
-import json, sys
+import glob, json, sys
 
 lessen = [
     {"id": "ink-w1", "week": 1, "onderdeel": "Inkoop", "titel": "Inkoop en kosten, prijsstelling, TCO, marktvormen"},
@@ -146,6 +146,8 @@ V = [
 
 import os
 exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "inkoop_w27.py"), encoding="utf-8").read())
+for _f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "inkoop_extra*.py"))):
+    exec(open(_f, encoding="utf-8").read())
 
 out = {"vak": "Inkoop en recht voor de FM professional", "bijgewerkt": "2026-11-09", "lessen": lessen, "vragen": V}
 ids = [v["id"] for v in V]

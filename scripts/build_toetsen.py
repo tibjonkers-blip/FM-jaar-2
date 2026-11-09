@@ -3,8 +3,9 @@
 Elke week heeft een vraagbank met 3 x de samenstelling (bijv. 24 meerkeuzevragen, 6 open vragen
 en 3 casussen). Dit script verdeelt die over drie vaste, niet-overlappende versies (A, B, C),
 gelijk verdeeld over de onderdelen.
-Een optioneel bestand <vak>_eind.py bevat een eindtoets over alle weken met eigen vragen (week 0,
-versie E); die vragen komen niet in de weektoetsen, de mix of het proeftentamen.
+Optionele bestanden <vak>_eind.py, <vak>_eind2.py, ... bevatten eindtoetsen over alle weken met eigen vragen
+(week 0, versie E, E2, ...; titel en uitleg via EIND_TITEL en EIND_UITLEG). Die vragen komen niet in de
+weektoetsen, de mix of het proeftentamen.
 Gebruik: python3 scripts/build_toetsen.py <ir|hrm|pp> <uitvoerbestand>
 """
 import json, os, sys, glob, collections
@@ -33,15 +34,24 @@ EIND = {
                uitleg="Een vaste toets met eigen vragen die niet in de weektoetsen zitten. Je volgt één organisatie van verbeterrichting tot overdracht en past de modellen van alle weken toe."),
 }
 
-def load(prefix, extra=None):
+def load(prefix, eind_files=()):
+    """Laadt de weekbanken en daarna de eindtoetsen; geeft (items, eindtoetsen) terug."""
     ns = {}
     exec(open(os.path.join(HERE, "lib.py"), encoding="utf-8").read(), ns)
-    files = sorted(glob.glob(os.path.join(HERE, prefix + "*.py")))
-    if extra and os.path.exists(extra):
-        files.append(extra)
-    for f in files:
+    for f in sorted(glob.glob(os.path.join(HERE, prefix + "*.py"))):
         exec(open(f, encoding="utf-8").read(), ns)
-    return ns["T"]
+    eind = []
+    for nr, f in enumerate(eind_files, start=1):
+        start = len(ns["T"])
+        ns.pop("EIND_TITEL", None); ns.pop("EIND_UITLEG", None)
+        exec(open(f, encoding="utf-8").read(), ns)
+        versie = "E" if nr == 1 else f"E{nr}"
+        for t in ns["T"][start:]:
+            assert t["week"] == 0, f"{t['id']}: eindtoetsvraag moet week 0 hebben"
+            t["versie"] = versie
+        eind.append(dict(key="eind" if nr == 1 else f"eind{nr}", versie=versie,
+                         titel=ns.get("EIND_TITEL"), uitleg=ns.get("EIND_UITLEG")))
+    return ns["T"], eind
 
 def check(items):
     errs = []
@@ -63,9 +73,7 @@ def check(items):
 def assign_versions(items):
     by_week = collections.defaultdict(list)
     for t in items:
-        if t["week"] == 0:
-            t["versie"] = "E"
-        else:
+        if t["week"] > 0:
             by_week[t["week"]].append(t)
     report = {}
     for w, ts in sorted(by_week.items()):
@@ -86,22 +94,27 @@ def assign_versions(items):
 def main():
     key, out = sys.argv[1], sys.argv[2]
     c = CONFIG[key]
-    items = load(c["prefix"], os.path.join(HERE, f"{key}_eind.py"))
+    eind_files = sorted(glob.glob(os.path.join(HERE, f"{key}_eind*.py")))
+    items, eindtoetsen = load(c["prefix"], eind_files)
     errs = check(items)
     if errs:
         print("\n".join(errs)); sys.exit(1)
     report = assign_versions(items)
     weken = sorted({t["week"] for t in items if t["week"] > 0})
     data = dict(vak=c["vak"], samenstelling=c["samenstelling"], proef=c["proef"], weken=weken, items=items)
-    eind = [t for t in items if t["week"] == 0]
-    if eind:
-        tc = collections.Counter(t["type"] for t in eind)
-        data["eind"] = dict(EIND[key], mc=tc["mc"], open=tc["open"], casus=tc["casus"])
+    data["eindtoetsen"] = []
+    for i, e in enumerate(eindtoetsen):
+        tc = collections.Counter(t["type"] for t in items if t.get("versie") == e["versie"])
+        meta = dict(EIND[key]) if i == 0 and key in EIND else {}
+        if e["titel"]: meta["titel"] = e["titel"]
+        if e["uitleg"]: meta["uitleg"] = e["uitleg"]
+        assert meta.get("titel") and meta.get("uitleg"), f"{key} eindtoets {i + 1}: titel of uitleg ontbreekt"
+        data["eindtoetsen"].append(dict(meta, key=e["key"], versie=e["versie"], mc=tc["mc"], open=tc["open"], casus=tc["casus"]))
     json.dump(data, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     tc = collections.Counter(t["type"] for t in items)
     print(f"{key}: {len(items)} items {dict(tc)}")
     for w, r in report.items(): print(f"  week {w}: " + "  ".join(f"{v}={r[v]}" for v in VERSIES))
-    if "eind" in data: print(f"  eindtoets: {data['eind']['mc']} mc, {data['eind']['open']} open, {data['eind']['casus']} casus")
+    for e in data["eindtoetsen"]: print(f"  {e['key']}: {e['mc']} mc, {e['open']} open, {e['casus']} casus · {e['titel']}")
 
 if __name__ == "__main__":
     main()

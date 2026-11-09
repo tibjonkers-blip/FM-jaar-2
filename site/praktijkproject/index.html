@@ -315,7 +315,7 @@ details.model[open] > summary { margin-bottom: 8px; }
       <div class="grid-key" id="grid-key"></div>
       <div class="trows" id="trows"></div>
       <div class="proef" id="proef" hidden></div>
-      <div class="proef" id="eind" hidden></div>
+      <div id="eind-list" style="display:contents"></div>
     </section>
   </div>
 
@@ -659,11 +659,12 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
   // =====================================================================
   const item = (id) => toetsen.items.find((t) => t.id === id);
   const weekTopics = (w) => data ? data.lessen.filter((l) => l.week === w) : [];
-  const isWide = (key) => key === "proef" || key === "eind";
+  const isWide = (key) => key === "proef" || /^eind\d*$/.test(key);
+  const eindMeta = (key) => (toetsen.eindtoetsen || []).find((e) => e.key === key);
   const wkTag = (t) => t.week ? `week ${t.week}` : "alle weken";
   const keyLabel = (key) => {
     if (key === "proef") return toetsen.proef.titel;
-    if (key === "eind") return toetsen.eind.titel;
+    if (eindMeta(key)) return eindMeta(key).titel;
     const [w, v] = key.slice(1).split("-");
     return `Week ${w} · ${v === "mix" ? "nieuwe mix" : "versie " + v}`;
   };
@@ -690,7 +691,7 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
   }
   function buildIds(key) {
     const c = toetsen.samenstelling;
-    if (key === "eind") return sortItems(toetsen.items.filter((t) => t.versie === "E")).map((t) => t.id);
+    if (eindMeta(key)) return sortItems(toetsen.items.filter((t) => t.versie === eindMeta(key).versie)).map((t) => t.id);
     if (key === "proef") {
       const p = toetsen.proef; let list = [];
       const all = toetsen.items.filter((t) => t.week > 0);
@@ -783,10 +784,12 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
       rows.appendChild(r);
     });
     wideBlock("proef", "Alle weken door elkaar", toetsen.proef, plannedN("proef"));
-    if (toetsen.eind) wideBlock("eind", "Eigen vragen over alle weken", toetsen.eind, plannedN("eind"));
+    $("eind-list").innerHTML = "";
+    (toetsen.eindtoetsen || []).forEach((e, i, all) => wideBlock(e.key, all.length > 1 ? `Eindtoets ${i + 1} van ${all.length} · eigen vragen` : "Eigen vragen over alle weken", e, plannedN(e.key)));
   }
   function plannedN(key) {
-    if (key === "eind") return { mc: toetsen.eind.mc || 0, open: toetsen.eind.open || 0, casus: toetsen.eind.casus || 0 };
+    const em = eindMeta(key);
+    if (em) return { mc: em.mc || 0, open: em.open || 0, casus: em.casus || 0 };
     const p = toetsen.proef;
     return p.open_per_onderdeel
       ? { mc: 0, open: Object.values(p.open_per_onderdeel).reduce((x, y) => x + y, 0), casus: p.casus || 1 }
@@ -798,7 +801,9 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
     if (pe.lopend) last = "Je bent hiermee bezig.";
     else if (pe.laatste) { const s = score(pe.laatste); last = s.todo ? "Laatste poging: nog nakijken." : `Laatste poging: ${nl(s.cijfer)} (${datum(pe.laatste.ingeleverd)})`; }
     else if (pe.laatsteCijfer != null) last = `Laatste poging: ${nl(pe.laatsteCijfer)}`;
-    const el = $(key); el.hidden = false;
+    let el = $(key);
+    if (!el) { el = document.createElement("div"); el.className = "proef"; el.id = key; $("eind-list").appendChild(el); }
+    el.hidden = false;
     el.innerHTML = `<div class="txt"><span class="eyebrow">${esc(eyebrow)}</span><h3>${esc(p.titel)}</h3><p class="small">${esc(p.uitleg)}</p><div class="facts">${factsHTML(n)}</div><p class="last">${esc(last)}</p></div>
       <button class="btn primary" id="${key}-start">${pe.lopend ? "Verder" : "Bekijken"}</button>`;
     $(key + "-start").addEventListener("click", () => openIntro(key));
@@ -811,7 +816,7 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
     const n = ids ? composition(ids) : (key === "proef" ? plannedN("proef") : { ...toetsen.samenstelling });
     const v = $("intro-view");
     let topics = "";
-    if (isWide(key)) topics = `<p class="small">${esc(toetsen[key].uitleg)}</p>`;
+    if (isWide(key)) topics = `<p class="small">${esc((key === "proef" ? toetsen.proef : eindMeta(key)).uitleg)}</p>`;
     else {
       const w = Number(key.slice(1).split("-")[0]);
       topics = `<div class="stack" style="gap:6px"><span class="small">Stof van deze week:</span><ul class="topic-list">${weekTopics(w).map((l) => `<li><b>${esc(l.onderdeel)}</b>: ${esc(l.titel)}</li>`).join("")}</ul></div>`;
@@ -1038,7 +1043,7 @@ Geef alleen JSON terug in deze vorm:
   const startTab = (() => { const h = location.hash.slice(1); if (h === "toetsen" || h === "oefenen") return h; return lsGet(TAB_KEY, "oefenen"); })();
   Promise.all([
     fetch("vragen.json").then((r) => r.json()).then((d) => { data = d; $("n-oefenen").textContent = d.vragen.length; }),
-    fetch("toetsen.json").then((r) => r.json()).then((d) => { toetsen = d; $("n-toetsen").textContent = d.weken.length * 4 + 1; }).catch(() => { $("toets-intro").textContent = "De weektoetsen konden niet worden geladen. Herlaad de pagina."; }),
+    fetch("toetsen.json").then((r) => r.json()).then((d) => { toetsen = d; $("n-toetsen").textContent = d.weken.length * 4 + 1 + (d.eindtoetsen || []).length; }).catch(() => { $("toets-intro").textContent = "De weektoetsen konden niet worden geladen. Herlaad de pagina."; }),
   ]).then(() => setTab(startTab, true))
     .catch(() => { $("lesson-list").innerHTML = '<p class="small">De vragen konden niet worden geladen. Herlaad de pagina.</p>'; });
   initStore();

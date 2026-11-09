@@ -4,6 +4,9 @@ import json, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
 
+def eind_txt(n):
+    return "" if not n else (" en eindtoets" if n == 1 else f" en {n} eindtoetsen")
+
 def counts(slug):
     if not os.path.exists(os.path.join(SITE, slug, "vragen.json")):
         return None
@@ -11,7 +14,7 @@ def counts(slug):
     t = json.load(open(os.path.join(SITE, slug, "toetsen.json"), encoding="utf-8"))
     weken = t["weken"]
     return dict(vragen=len(v["vragen"]), lessen=len(v["lessen"]), weken=len(weken), toetsen=len(weken) * 3,
-                items=len(t["items"]), eind=bool(t.get("eind")))
+                items=len(t["items"]), eind=len(t.get("eindtoetsen", [])))
 
 FAVICON = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#14201c"/><path d="M17 18h18M17 18v28M17 31h14" stroke="#62c4d7" stroke-width="6" stroke-linecap="round" fill="none"/><circle cx="45" cy="44" r="5" fill="#e39ac9"/></svg>
 """
@@ -129,7 +132,7 @@ footer { font-size: 0.84rem; color: var(--ink-soft); border-top: 1px solid var(-
       <nav class="doors">
         __DOOR_SAM_HRM__
         <a class="door" href="hrm/#oefenen">__IC_Q__<b>Oefenvragen per les</b><small>__HRM_VRAGEN__ vragen, met herhaal- en foutenronde</small><span class="prog" id="p-hrm-q" hidden></span><span class="arr">→</span></a>
-        <a class="door" href="hrm/#toetsen">__IC_T__<b>Weektoetsen</b><small>__HRM_TOETSEN__ toetsen (A, B, C per week), mix en proefmondeling</small><span class="prog" id="p-hrm-t" hidden></span><span class="arr">→</span></a>
+        <a class="door" href="hrm/#toetsen">__IC_T__<b>Weektoetsen</b><small>__HRM_TOETSEN__ toetsen (A, B, C per week), mix, proefmondeling__HRM_EIND__</small><span class="prog" id="p-hrm-t" hidden></span><span class="arr">→</span></a>
       </nav>
     </section>
     <section class="vak ochre" aria-labelledby="v3">
@@ -199,14 +202,14 @@ def build():
     if pp:
         prog.append(["pp", "fm-quiz-praktijkproject", pp["vragen"], pp["toetsen"]])
         doors_pp = (f'<a class="door" href="praktijkproject/#oefenen">{ICONS["Q"]}<b>Oefenvragen per les</b><small>{pp["vragen"]} vragen over de modellen en de adviespresentatie</small><span class="prog" id="p-pp-q" hidden></span><span class="arr">→</span></a>\n'
-                    f'        <a class="door" href="praktijkproject/#toetsen">{ICONS["T"]}<b>Weektoetsen</b><small>{pp["toetsen"]} toetsen (A, B, C per week), mix{" en eindtoets" if pp["eind"] else ""}</small><span class="prog" id="p-pp-t" hidden></span><span class="arr">→</span></a>')
+                    f'        <a class="door" href="praktijkproject/#toetsen">{ICONS["T"]}<b>Weektoetsen</b><small>{pp["toetsen"]} toetsen (A, B, C per week), mix{eind_txt(pp["eind"])}</small><span class="prog" id="p-pp-t" hidden></span><span class="arr">→</span></a>')
     import build_bedrijfskunde
     bk = build_bedrijfskunde.counts()
     bk_doors = "".join(
         f'\n        <a class="door" href="bedrijfskunde/{slug}/">{ICONS["C"]}<b>{c["titel"]}</b><small>{c["open"]} casusvragen en {c["mc"]} meerkeuzevragen recht</small><span class="arr">→</span></a>'
         for slug, c in bk.items())
     vals = dict(
-        PROG=json.dumps(prog), DOORS_PP=doors_pp, IR_EIND=" en eindtoets" if ir["eind"] else "",
+        PROG=json.dumps(prog), DOORS_PP=doors_pp, IR_EIND=eind_txt(ir["eind"]), HRM_EIND=eind_txt(hrm["eind"]),
         BK=f'<p class="subhead">Bedrijfskunde periode 1 · casustoetsen</p>\n      <nav class="doors">{bk_doors}\n      </nav>',
         IR_VRAGEN=ir["vragen"], IR_TOETSEN=ir["toetsen"], HRM_VRAGEN=hrm["vragen"], HRM_TOETSEN=hrm["toetsen"],
         IC_Q=ICONS["Q"], IC_T=ICONS["T"], IC_L=ICONS["L"],
