@@ -1,0 +1,163 @@
+import json, sys, os, glob
+
+# Oefenvragen Praktijkproject Business Management, periode 2.
+# Gebaseerd op de samenvattingen in scripts/samenvattingen/praktijkproject/ (slides plus sprekersnotities).
+# Week 1-2 staan hier; de overige weken in pp_oefen_*.py (ingelezen met exec).
+
+lessen = [
+    {"id": "pp-w1", "week": 1, "onderdeel": "Verbeterproject", "titel": "Terugblik en verbeterrichtingen (Generate: divergeren)"},
+    {"id": "pp-w2", "week": 2, "onderdeel": "Verbeterproject", "titel": "Van verbeterrichtingen naar gekozen ontwerp (future state, PUGH)"},
+]
+
+def mc(id, les, tag, vraag, opties, juist, uitleg):
+    return {"id": id, "les": les, "type": "mc", "tag": tag, "vraag": vraag, "opties": opties, "juist": juist, "uitleg": uitleg}
+
+def open_(id, les, tag, vraag, model, punten):
+    return {"id": id, "les": les, "type": "open", "tag": tag, "vraag": vraag, "modelantwoord": model, "punten": punten}
+
+V = [
+    # ---------- WEEK 1 ----------
+    mc("pp-w1-01", "pp-w1", "DMAGIC",
+       "Waarom is de Generate-fase bewust toegevoegd aan het klassieke DMAIC-model?",
+       ["Omdat teams in de praktijk vaak de Analyze-fase overslaan",
+        "Omdat wie te snel naar de eerste oplossing springt, vaak de oplossing mist die echt waarde toevoegt",
+        "Om de metingen uit de Measure-fase nog een keer te controleren",
+        "Om borging al vroeg in het project te regelen"], 1,
+       "Generate dwingt je eerst breed te zoeken (divergeren) en pas daarna te kiezen (convergeren). Zo voorkom je dat de eerste oplossing die opkomt automatisch het advies wordt."),
+    mc("pp-w1-02", "pp-w1", "Kaizen en Gemba",
+       "Je wilt ontdekken waarom de vergaderzalen 's ochtends vaak niet op tijd klaarstaan. Wat past het best bij het Gemba-principe?",
+       ["De reserveringsdata uit het FMIS analyseren op je laptop",
+        "Een enquête sturen naar alle gebruikers van de zalen",
+        "Om 7.30 uur meelopen met de medewerkers die de zalen klaarzetten en vragen waar ze tegenaan lopen",
+        "Het probleem voorleggen aan de facilitair manager"], 2,
+       "Gemba is de plek waar het werk echt gebeurt. Daar zie je de kansen, en de mensen die het werk doen weten vaak precies wat er misgaat. Data en enquêtes kunnen aanvullen, maar vervangen de werkvloer niet."),
+    mc("pp-w1-03", "pp-w1", "Divergeren",
+       "Tijdens de brainstorm reageert een teamlid op bijna elk idee met 'dat kan toch niet, daar is geen budget voor'. Wat is hier het probleem?",
+       ["Er wordt in de divergeerfase al geoordeeld, waardoor goede ideeën te vroeg sneuvelen",
+        "De groep is niet divers genoeg samengesteld",
+        "Het teamlid moet zijn bezwaren pas in de retrospective noemen",
+        "Budget hoort helemaal geen rol te spelen in een verbeterproject"], 0,
+       "In week 1 verzamel je eerst zoveel mogelijk ideeën zonder oordeel. Te vroeg oordelen is de valkuil van divergeren. Haalbaarheid (ook budget) komt in week 2 terug bij het convergeren en de PUGH-matrix."),
+    mc("pp-w1-04", "pp-w1", "Omdenken vanuit klantwaarde",
+       "Welke vraag is geformuleerd vanuit klantwaarde in plaats van vanuit de interne organisatie?",
+       ["Hoe kunnen wij de meldingen sneller verwerken?",
+        "Hoe verlagen we de kosten van de servicedesk?",
+        "Hoe zorgen we dat de coördinator minder werk heeft?",
+        "Wat heeft iemand die een storing meldt eigenlijk nodig?"], 3,
+       "Omdenken betekent het knelpunt bekijken vanuit de gebruiker. De andere drie vragen gaan uit van 'zo doen wij het nu' en van belangen van de organisatie."),
+    mc("pp-w1-05", "pp-w1", "Lean · kwaliteit",
+       "Een meldformulier kan pas worden verstuurd als locatie, ruimte en type storing zijn ingevuld. Welk Lean-principe is dit?",
+       ["Heijunka", "Poka-Yoke", "Pull/Kanban", "Just in Time"], 1,
+       "Poka-Yoke: ontwerp het proces zo dat de fout niet gemaakt kán worden. Verplichte velden zijn het FM-voorbeeld uit de les, net als de simkaart met het afgeknipte hoekje."),
+    mc("pp-w1-06", "pp-w1", "Lean · snelheid",
+       "Een cateraar zet niet meer alle vergaderzalen om 8.45 uur tegelijk klaar, maar spreidt het werk over de ochtend op basis van de starttijden. Welk principe past hierbij?",
+       ["Jidoka", "5S", "Heijunka", "Stop de lijn"], 2,
+       "Heijunka is werkdruk en pieken spreiden. 'Vergaderzalen gespreid klaarzetten' is precies het FM-voorbeeld van de slide."),
+    mc("pp-w1-07", "pp-w1", "Lean · TOC",
+       "Bij de servicedesk lopen alle meldingen via één coördinator, die het werk niet bijhoudt. Wat zegt de Theory of Constraints hierover?",
+       ["De zwakste schakel bepaalt de output, dus verbeteren elders heeft weinig zin zolang de coördinator het knelpunt is",
+        "Alle stappen in het proces moeten tegelijk worden verbeterd",
+        "De coördinator moet worden vervangen door een systeem",
+        "De oplossing is altijd extra personeel op het knelpunt"], 0,
+       "TOC: verbeter de zwakste schakel (bottleneck), want die bepaalt de output van het hele proces. Hoe je dat doet (routering, Kanban-bord, anders verdelen) is een ontwerpkeuze, geen vaste regel."),
+    mc("pp-w1-08", "pp-w1", "11 toegevoegde waarden",
+       "Welke van deze vier hoort niet bij de 11 facilitaire toegevoegde waarden uit de les?",
+       ["Healing environment", "Flexibiliteit", "Marktaandeel", "Risico's beheren"], 2,
+       "De 11 zijn: productiviteit, kosten verlagen, risico's beheren, waardestijging, flexibiliteit, cultuur, imago, innovatie, tevredenheid, duurzaamheid en healing environment. Marktaandeel staat er niet bij."),
+    mc("pp-w1-09", "pp-w1", "Lean · snelheid",
+       "Op het Kanban-bord van de servicedesk pakt een monteur pas een nieuwe melding op als hij een vorige heeft afgerond. Welk idee zit hierachter?",
+       ["Push: werk zo snel mogelijk naar de volgende stap duwen",
+        "Pull: werk pas starten op een signaal, zodat er geen ophopingen ontstaan",
+        "Standaardisatie: iedereen doet het werk op dezelfde manier",
+        "Jidoka: fouten direct bij de bron oplossen"], 1,
+       "Pull/Kanban: start werk pas op een signaal. Het bord met nieuw, opgepakt en opgelost maakt dat zichtbaar en voorkomt dat er te veel werk tegelijk openstaat."),
+    open_("pp-w1-10", "pp-w1", "Impact/Effort-matrix",
+       "Jullie longlist staat in de Impact/Effort-matrix. Een teamlid wil alleen de quick wins uitvoeren, 'want die zijn snel klaar en de opdrachtgever ziet meteen resultaat'. Reageer kritisch en leg uit wat je in je advies kiest.",
+       "Quick wins (veel impact, weinig moeite) zijn nuttig: ze geven momentum en draagvlak. Maar ze lossen vaak alleen een symptoom op. Structurele verbeteringen (veel impact, meer moeite) pakken de oorzaak aan, maar kosten meer tijd en geld. Een advies dat alleen symptomen bestrijdt, is zwak. Kies daarom bewust minstens één quick win en één structurele verbetering, bijvoorbeeld bij de servicedesk: verplichte velden en een automatische ontvangstbevestiging als quick win, automatische routering en een meldingenbord als structurele verbetering. In de presentatie scoor je daarmee op theorie in de analyse én op een concreet advies met prioritering en fasering.",
+       ["Erkent de waarde van quick wins (momentum, draagvlak)",
+        "Benoemt dat quick wins vaak alleen een symptoom oplossen",
+        "Legt uit dat een structurele verbetering de oorzaak aanpakt en daarom in het advies hoort",
+        "Concreet voorbeeld van een quick win én een structurele verbetering"]),
+    open_("pp-w1-11", "pp-w1", "Meervoudige toegevoegde waarde",
+       "Een teamlid stelt voor de schoonmaakfrequentie in alle kantoren te halveren, 'want dat scheelt 30% op het contract'. Beoordeel dit voorstel met de 11 facilitaire toegevoegde waarden en de waarschuwing van de docent.",
+       "Het voorstel kijkt maar naar één waarde: kosten verlagen. De docent waarschuwt juist voor een eenzijdige focus op kostenreductie, omdat die elders schade kan aanrichten. Halveren kan ten koste gaan van tevredenheid van gebruikers, imago (klanten en bezoekers), productiviteit en verzuim (hygiëne), risico's beheren (bijvoorbeeld in sanitair of keukens) en mogelijk healing environment. Toets het voorstel daarnaast aan missie, visie en strategie: past bezuinigen op schoonmaak bij waar de organisatie naartoe wil? Beter is een afweging van financiële en niet-financiële waarde, bijvoorbeeld frequentie differentiëren naar gebruik (eventueel met sensoren) in plaats van overal halveren.",
+       ["Benoemt dat alleen de waarde 'kosten verlagen' wordt meegewogen",
+        "Noemt minstens twee andere toegevoegde waarden die onder druk komen, met uitleg",
+        "Koppelt aan de toets aan missie, visie en strategie",
+        "Geeft een alternatief of afweging tussen financiële en niet-financiële waarde"]),
+
+    # ---------- WEEK 2 ----------
+    mc("pp-w2-01", "pp-w2", "Future state",
+       "Wat is de juiste volgorde bij procesontwerp volgens Lean?",
+       ["Future state ontwerpen, dan current state meten, dan verspilling schrappen",
+        "Current state beschrijven, verspilling analyseren, dan pas de future state ontwerpen",
+        "Verspilling analyseren, future state ontwerpen, current state controleren",
+        "Oplossingen kiezen met PUGH, dan de future state tekenen"], 1,
+       "Eerst de huidige situatie (gedaan in periode 1), dan de verspilling analyseren, en pas daarna de toekomstige situatie. Bij die future state begin je bij het ideaal en redeneer je terug naar wat haalbaar is."),
+    mc("pp-w2-02", "pp-w2", "VA, BNVA, NVA",
+       "Een bezoeker moet zich bij de receptie laten registreren in verband met de BHV-lijst. Hoe classificeer je die stap?",
+       ["VA: de bezoeker wil ervoor betalen",
+        "NVA: pure verspilling, schrappen",
+        "BNVA: geen klantwaarde, wel noodzakelijk, dus minimaliseren",
+        "Mura: onnodige variatie in het proces"], 2,
+       "Registratie voor veiligheid of regelgeving voegt voor de bezoeker niets toe, maar is wel nodig. Dat is business non-value added: minimaliseren (bijvoorbeeld vooraf digitaal aanmelden), niet schrappen."),
+    mc("pp-w2-03", "pp-w2", "VA, BNVA, NVA",
+       "Een melding wordt eerst in de mailbox gezet, dan overgetypt in Excel en daarna nog eens in het FMIS. Wat is de ontwerpregel voor dit dubbele overtypen?",
+       ["Behouden en versterken", "Minimaliseren", "Elimineren", "Standaardiseren"], 2,
+       "Drie keer overtypen en wachten in een mailbox zijn de voorbeelden van NVA uit de les: pure verspilling. NVA elimineer je."),
+    mc("pp-w2-04", "pp-w2", "Vormen toekomstbeeld",
+       "Je wilt laten zien dat de receptie voor de bezoeker hetzelfde blijft voelen, terwijl het werk achter de schermen flink verandert. Welke vorm past het best?",
+       ["Service blueprint", "Future-state map", "Verbeterde flow (swimlane)", "PUGH-matrix"], 0,
+       "Een service blueprint scheidt frontstage (wat de gebruiker ziet) van backstage. Volgens de notities is een backstage-verbetering zonder verlies van frontstage-kwaliteit vaak goud waard."),
+    mc("pp-w2-05", "pp-w2", "Vier dimensies",
+       "Welke van de vier vergelijkingsdimensies vergeten studenten volgens de docent het vaakst?",
+       ["Haalbaarheid", "Impact", "Risico", "Aansluiting op de context"], 3,
+       "Een technisch briljant ontwerp dat botst met cultuur, systemen of de bedoeling van de organisatie strandt in de praktijk. Daarom benadrukt de docent de contexttoets."),
+    mc("pp-w2-06", "pp-w2", "PUGH-matrix",
+       "Wat krijgt de baseline in een PUGH-matrix?",
+       ["De gemiddelde score van alle alternatieven",
+        "Op elk criterium een 0, want de baseline is de huidige situatie",
+        "De hoogste score, omdat die al bewezen werkt",
+        "Een score die het team per criterium vrij kiest"], 1,
+       "De baseline is de huidige situatie en scoort overal 0. Elk alternatief scoor je ten opzichte daarvan, van −2 tot +2."),
+    mc("pp-w2-07", "pp-w2", "PUGH-matrix",
+       "Optie X scoort ten opzichte van de baseline: doorlooptijd +1 (weging 5), kosten −2 (weging 3), gebruiksgemak +2 (weging 4). Wat is het gewogen totaal?",
+       ["+1", "+7", "+13", "+19"], 1,
+       "(1 × 5) + (−2 × 3) + (2 × 4) = 5 − 6 + 8 = 7. Wie de min bij kosten vergeet, komt op 19."),
+    mc("pp-w2-08", "pp-w2", "PUGH-matrix",
+       "Waarom moet je de gewichten afspreken voordat je gaat scoren?",
+       ["Anders stuurt de weging stiekem het antwoord naar de favoriete optie",
+        "Omdat de opdrachtgever de gewichten moet ondertekenen",
+        "Omdat je anders meer dan zes criteria krijgt",
+        "Omdat de baseline anders geen 0 meer is"], 0,
+       "Als je eerst scoort en dan weegt, kun je (bewust of niet) de weging zo kiezen dat je voorkeur wint. De waarde van de matrix zit in transparantie en het gesprek, niet in het rekenwerk."),
+    mc("pp-w2-09", "pp-w2", "Risico afdekken",
+       "Het nieuwe meldproces wil je eerst vier weken op één afdeling testen, met meetafspraken en getrainde medewerkers. Hoe heet dit?",
+       ["Simulatie", "Gefaseerde invoering", "Pilot", "Big bang"], 2,
+       "Een pilot test op kleine schaal in de echte omgeving, met vooraf een plan, meetafspraken en getrainde medewerkers. Daarna evalueren, verfijnen en pas dan breed invoeren. Een simulatie bootst de werkelijkheid veilig na."),
+    open_("pp-w2-10", "pp-w2", "Drie perspectieven",
+       "Jullie voorkeursoplossing voor het storingsmeldproces (één digitaal formulier dat direct in het FMIS landt, FIFO-afhandeling, geen akkoordstap meer bij kleine standaardstoringen) wint de PUGH-matrix. De opdrachtgever vraagt: 'Waarom is dit ook echt beter?' Onderbouw de waarde vanuit de drie perspectieven uit de les.",
+       "Opdrachtgever: de oplossing draagt bij aan de KPI doorlooptijd en de missie, en spreekt diens taal: lagere kosten door minder handwerk, betrouwbaarder proces, beter imago. Gebruiker: de melder weet sneller dat de melding is opgepakt en de storing is binnen een dag verholpen in plaats van vijf dagen, dus een betere beleving. Proces: minder verspilling (geen drie keer overtypen, geen wachten in de mailbox), kortere doorlooptijd, betere flow door FIFO. Een sterke onderbouwing verbindt de drie: de oplossing dient het geheel en geen deelbelang.",
+       ["Perspectief opdrachtgever: koppeling aan KPI's, missie of diens taal (kosten, betrouwbaarheid, imago)",
+        "Perspectief gebruiker: klantwaarde en beleving, redenerend vanuit de melder",
+        "Perspectief proces: minder verspilling, kortere doorlooptijd of betere flow",
+        "Toegepast op de casus met concrete elementen (formulier, FIFO, akkoordstap)"]),
+    open_("pp-w2-11", "pp-w2", "PUGH kritisch",
+       "Na het invullen van de PUGH-matrix wint optie B met 1 punt verschil van optie A. Bijna het hele team en de medewerkers die meescoorden hebben echter een sterk gevoel dat A beter is. Wat doe je, en waarom? Gebruik de notities van de docent.",
+       "De matrix is een hulpmiddel, geen rechter. Een uitkomst die net niet klopt is een signaal om criteria en weging te heroverwegen, niet om het getal klakkeloos te volgen. Ga dus het gesprek aan: missen we een criterium (bijvoorbeeld aansluiting op de context), is een weging achteraf te laag, zijn de scores gedeeld begrepen? Pas wel op dat je niet alsnog de weging aanpast om je favoriet te laten winnen; leg vast waarom je iets wijzigt. Bij een verschil van 1 punt zijn de opties feitelijk gelijkwaardig, dus de discussie en de onderbouwing voor de drie perspectieven zijn doorslaggevend. Eventueel met een pilot het risico afdekken.",
+       ["Matrix is hulpmiddel, geen rechter; klein verschil is een signaal",
+        "Criteria en weging opnieuw bespreken, met het risico van achteraf sturen benoemd",
+        "Gesprek en transparante onderbouwing zijn de echte waarde van de matrix",
+        "Concrete vervolgstap (keuze onderbouwen, pilot of extra criterium)"]),
+]
+
+for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "pp_oefen_*.py"))):
+    exec(open(f, encoding="utf-8").read())
+
+out = {"vak": "Praktijkproject Business Management", "bijgewerkt": "2026-11-09", "lessen": lessen, "vragen": V}
+ids = [v["id"] for v in V]
+assert len(ids) == len(set(ids)), [i for i in ids if ids.count(i) > 1]
+les_ids = {l["id"] for l in lessen}
+assert all(v["les"] in les_ids for v in V)
+json.dump(out, open(sys.argv[1], "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+print(len(V), "vragen")

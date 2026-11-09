@@ -1,0 +1,62 @@
+<div class="shell">
+  <aside class="side" aria-label="Toetsoverzicht">
+    <div class="brand">
+      <nav class="crumbs" aria-label="Terug"><a href="../../">Studieplek</a><span aria-hidden="true">/</span><span>Business management</span></nav>
+      <div class="eyebrow">Facilitaire Bedrijfskunde · periode 1</div>
+      <h1>__H1__</h1>
+      <p>__LEAD__</p>
+      <p class="other">__OTHER__</p>
+    </div>
+
+    <section class="panel timer" aria-label="Timer">
+      <h3>Tijd</h3>
+      <div class="clock" id="clock">120:00</div>
+      <div class="row">
+        <button class="btn primary" id="t-start" type="button">Start</button>
+        <button class="btn ghost" id="t-reset" type="button">Opnieuw</button>
+        <select id="t-dur" aria-label="Duur van de toets">
+          <option value="30">30 min</option>
+          <option value="60">60 min</option>
+          <option value="90">90 min</option>
+          <option value="120" selected>120 min</option>
+          <option value="180">180 min</option>
+        </select>
+      </div>
+      <div class="hint" id="t-hint">__HINT__</div>
+    </section>
+
+    <section class="panel" aria-label="Onderwerpen">
+      <h3>Onderwerpen</h3>
+      <nav class="nav" id="nav"></nav>
+    </section>
+
+    <section class="panel score" aria-label="Score">
+      <h3>Score</h3>
+      <dl id="score"></dl>
+      <div class="note" id="claude-note">Zelf nakijken: vink bij het modelantwoord aan welke punten je hebt. Recht telt automatisch.</div>
+      <div style="margin-top:12px">
+        <button class="btn ghost danger" id="reset-all" type="button">Alles wissen</button>
+        <div class="confirm" id="confirm" hidden>
+          <span>Al je antwoorden, scores en beoordelingen worden gewist.</span>
+          <div class="row">
+            <button class="btn danger" id="confirm-yes" type="button">Ja, wis alles</button>
+            <button class="btn ghost" id="confirm-no" type="button">Annuleren</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </aside>
+
+  <main id="main">
+    <section class="intro" id="intro">
+      <h2>Zo werkt de proeftoets</h2>
+      <ol>
+        <li>Lees de casus en beantwoord de vragen eronder, zoals op het tentamen: model noemen, uitleggen en onderbouwen met de casus.</li>
+        <li>Klik op <strong>Modelantwoord</strong> en vink aan welke beoordelingspunten in jouw antwoord staan.</li>
+        <li class="claude-only" hidden>Wil je een tweede mening? Klik op <strong>Laat Claude nakijken</strong>. Je krijgt een score en wat er ontbreekt.</li>
+      </ol>
+      <p>__FICTIE__ Je antwoorden worden alleen in deze browser bewaard.</p>
+    </section>
+    <div id="topics"></div>
+  </main>
+</div>

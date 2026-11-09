@@ -2,7 +2,8 @@
 
 Gebruik:
   python3 scripts/build_site.py                 bouwt site/<vak>/ (index.html, vragen.json, toetsen.json),
-                                                site/samenvattingen/<vak>/ en de startpagina site/index.html
+                                                site/samenvattingen/<vak>/, de casustoetsen site/bedrijfskunde/<toets>/
+                                                en de startpagina site/index.html
   python3 scripts/build_site.py --artifact DIR  bouwt daarnaast de Claude-artifactversie in DIR/<vak>/
 """
 import os, subprocess, sys, shutil
@@ -67,6 +68,7 @@ def main():
             open(os.path.join(ad, "index.html"), "w", encoding="utf-8").write(render(tpl, c, "artifact", slug))
             for f in ("vragen.json", "toetsen.json"):
                 shutil.copy(os.path.join(out, f), os.path.join(ad, f))
+    subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_bedrijfskunde.py")], check=True)
     subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_samenvattingen.py")], check=True)
     subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_home.py")], check=True)
     print("site gebouwd in", SITE, "| artifacts in", art or "-")

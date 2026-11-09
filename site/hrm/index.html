@@ -315,6 +315,7 @@ details.model[open] > summary { margin-bottom: 8px; }
       <div class="grid-key" id="grid-key"></div>
       <div class="trows" id="trows"></div>
       <div class="proef" id="proef" hidden></div>
+      <div class="proef" id="eind" hidden></div>
     </section>
   </div>
 
@@ -658,8 +659,11 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
   // =====================================================================
   const item = (id) => toetsen.items.find((t) => t.id === id);
   const weekTopics = (w) => data ? data.lessen.filter((l) => l.week === w) : [];
+  const isWide = (key) => key === "proef" || key === "eind";
+  const wkTag = (t) => t.week ? `week ${t.week}` : "alle weken";
   const keyLabel = (key) => {
     if (key === "proef") return toetsen.proef.titel;
+    if (key === "eind") return toetsen.eind.titel;
     const [w, v] = key.slice(1).split("-");
     return `Week ${w} · ${v === "mix" ? "nieuwe mix" : "versie " + v}`;
   };
@@ -686,13 +690,15 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
   }
   function buildIds(key) {
     const c = toetsen.samenstelling;
+    if (key === "eind") return sortItems(toetsen.items.filter((t) => t.versie === "E")).map((t) => t.id);
     if (key === "proef") {
       const p = toetsen.proef; let list = [];
+      const all = toetsen.items.filter((t) => t.week > 0);
       if (p.open_per_onderdeel) {
-        Object.entries(p.open_per_onderdeel).forEach(([ond, n]) => { list = list.concat(spread(toetsen.items.filter((t) => t.type === "open" && t.onderdeel === ond), n)); });
-        list = list.concat(spread(toetsen.items.filter((t) => t.type === "casus" && t.onderdeel === p.casus_onderdeel), p.casus || 1));
+        Object.entries(p.open_per_onderdeel).forEach(([ond, n]) => { list = list.concat(spread(all.filter((t) => t.type === "open" && t.onderdeel === ond), n)); });
+        list = list.concat(spread(all.filter((t) => t.type === "casus" && t.onderdeel === p.casus_onderdeel), p.casus || 1));
       } else {
-        ["mc", "open", "casus"].forEach((typ) => { list = list.concat(spread(toetsen.items.filter((t) => t.type === typ), p[typ] || 0)); });
+        ["mc", "open", "casus"].forEach((typ) => { list = list.concat(spread(all.filter((t) => t.type === typ), p[typ] || 0)); });
       }
       return sortItems(list).map((t) => t.id);
     }
@@ -776,30 +782,36 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
       });
       rows.appendChild(r);
     });
-    const p = toetsen.proef, pe = T.proef || {};
+    wideBlock("proef", "Alle weken door elkaar", toetsen.proef, plannedN("proef"));
+    if (toetsen.eind) wideBlock("eind", "Eigen vragen over alle weken", toetsen.eind, plannedN("eind"));
+  }
+  function plannedN(key) {
+    if (key === "eind") return { mc: toetsen.eind.mc || 0, open: toetsen.eind.open || 0, casus: toetsen.eind.casus || 0 };
+    const p = toetsen.proef;
+    return p.open_per_onderdeel
+      ? { mc: 0, open: Object.values(p.open_per_onderdeel).reduce((x, y) => x + y, 0), casus: p.casus || 1 }
+      : { mc: p.mc || 0, open: p.open || 0, casus: p.casus || 0 };
+  }
+  function wideBlock(key, eyebrow, p, n) {
+    const pe = T[key] || {};
     let last = "Nog niet gemaakt.";
     if (pe.lopend) last = "Je bent hiermee bezig.";
     else if (pe.laatste) { const s = score(pe.laatste); last = s.todo ? "Laatste poging: nog nakijken." : `Laatste poging: ${nl(s.cijfer)} (${datum(pe.laatste.ingeleverd)})`; }
     else if (pe.laatsteCijfer != null) last = `Laatste poging: ${nl(pe.laatsteCijfer)}`;
-    const pn = p.open_per_onderdeel
-      ? { mc: 0, open: Object.values(p.open_per_onderdeel).reduce((x, y) => x + y, 0), casus: p.casus || 1 }
-      : { mc: p.mc || 0, open: p.open || 0, casus: p.casus || 0 };
-    const el = $("proef"); el.hidden = false;
-    el.innerHTML = `<div class="txt"><span class="eyebrow">Alle weken door elkaar</span><h3>${esc(p.titel)}</h3><p class="small">${esc(p.uitleg)}</p><div class="facts">${factsHTML(pn)}</div><p class="last">${esc(last)}</p></div>
-      <button class="btn primary" id="proef-start">${pe.lopend ? "Verder" : "Bekijken"}</button>`;
-    $("proef-start").addEventListener("click", () => openIntro("proef"));
+    const el = $(key); el.hidden = false;
+    el.innerHTML = `<div class="txt"><span class="eyebrow">${esc(eyebrow)}</span><h3>${esc(p.titel)}</h3><p class="small">${esc(p.uitleg)}</p><div class="facts">${factsHTML(n)}</div><p class="last">${esc(last)}</p></div>
+      <button class="btn primary" id="${key}-start">${pe.lopend ? "Verder" : "Bekijken"}</button>`;
+    $(key + "-start").addEventListener("click", () => openIntro(key));
   }
 
   // ---------- intro ----------
   function openIntro(key) {
     const e = T[key] || {};
     const ids = e.lopend ? e.lopend.ids : (key.endsWith("-mix") || key === "proef" ? null : buildIds(key));
-    const n = ids ? composition(ids) : (key === "proef"
-      ? (toetsen.proef.open_per_onderdeel ? { mc: 0, open: Object.values(toetsen.proef.open_per_onderdeel).reduce((x, y) => x + y, 0), casus: toetsen.proef.casus || 1 } : { mc: toetsen.proef.mc, open: toetsen.proef.open, casus: toetsen.proef.casus })
-      : { ...toetsen.samenstelling });
+    const n = ids ? composition(ids) : (key === "proef" ? plannedN("proef") : { ...toetsen.samenstelling });
     const v = $("intro-view");
     let topics = "";
-    if (key === "proef") topics = `<p class="small">${esc(toetsen.proef.uitleg)}</p>`;
+    if (isWide(key)) topics = `<p class="small">${esc(toetsen[key].uitleg)}</p>`;
     else {
       const w = Number(key.slice(1).split("-")[0]);
       topics = `<div class="stack" style="gap:6px"><span class="small">Stof van deze week:</span><ul class="topic-list">${weekTopics(w).map((l) => `<li><b>${esc(l.onderdeel)}</b>: ${esc(l.titel)}</li>`).join("")}</ul></div>`;
@@ -810,7 +822,7 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
       lastHTML = `<div class="row"><span class="small">Laatste poging (${datum(e.laatste.ingeleverd)}): <strong>${s.todo ? "nog nakijken" : nl(s.cijfer)}</strong>${e.beste != null && !s.todo ? ` · beste ${nl(e.beste)}` : ""}</span><button class="btn" id="see-last">${s.todo ? "Verder nakijken" : "Bekijk resultaat"}</button></div>`;
     }
     const extra = key.endsWith("-mix") || key === "proef" ? `<p class="note">Bij elke nieuwe start worden de vragen opnieuw getrokken uit ${key === "proef" ? "alle weken" : "de drie versies van deze week"}.</p>` : "";
-    v.innerHTML = `<div class="q-head"><span class="eyebrow">Weektoets</span><button class="btn quiet" id="intro-back">Terug</button></div>
+    v.innerHTML = `<div class="q-head"><span class="eyebrow">${isWide(key) ? "Toets over alle weken" : "Weektoets"}</span><button class="btn quiet" id="intro-back">Terug</button></div>
       <h2>${esc(keyLabel(key))}</h2>
       <div class="facts">${factsHTML(n)}</div>
       ${topics}
@@ -844,7 +856,7 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
     const blocks = a.ids.map((id) => {
       const t = item(id); if (!t) return "";
       n++;
-      const tags = `<div class="qmeta"><span class="tag">${esc(t.onderdeel)}</span>${a.key === "proef" ? `<span class="tag plain">week ${t.week}</span>` : ""}</div>`;
+      const tags = `<div class="qmeta"><span class="tag">${esc(t.onderdeel)}</span>${a.key === "proef" ? `<span class="tag plain">${wkTag(t)}</span>` : ""}</div>`;
       if (t.type === "mc") {
         const opts = a.order[id].map((oi, pos) => `<label class="opt${a.antwoorden[id] === oi ? " chosen" : ""}"><input type="radio" name="r-${id}" id="r-${id}-${oi}" value="${oi}" ${a.antwoorden[id] === oi ? "checked" : ""}><span class="bubble">${LETTERS[pos]}</span><span class="otext">${esc(t.opties[oi])}</span></label>`).join("");
         return `<article class="q"><div class="qnum">${n}</div><div class="qbody">${tags}<p class="q-text">${esc(t.vraag)}</p><div class="options" role="radiogroup" aria-label="Vraag ${n}">${opts}</div></div></article>`;
@@ -920,7 +932,7 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
     const blocks = a.ids.map((id) => {
       const t = item(id); if (!t) return "";
       const num = numOf[id];
-      const tags = `<div class="qmeta"><span class="tag">${esc(t.onderdeel)}</span><span class="tag plain">week ${t.week}</span></div>`;
+      const tags = `<div class="qmeta"><span class="tag">${esc(t.onderdeel)}</span><span class="tag plain">${wkTag(t)}</span></div>`;
       if (t.type === "mc") {
         const ch = a.antwoorden[id]; const ok = ch === t.juist;
         const opts = a.order[id].map((oi, pos) => `<div class="opt locked${oi === t.juist ? " right" : ""}${oi === ch && !ok ? " wrong" : ""}"><span class="bubble">${LETTERS[pos]}</span><span class="otext">${esc(t.opties[oi])}</span></div>`).join("");
