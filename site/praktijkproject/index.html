@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<title>Oefenen Business management</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+/* Layout: een tentamenbundel. Eén leeskolom; per vak een schakelaar Oefenen / Weektoetsen; de toetsen als rooster week x versie
+   met je cijfers erin; een toets leest als één lang tentamen met vraagnummers in de kantlijn en een vaste inleverbalk onderaan. */
+:root {
+  --paper: #f1f4f3;
+  --sheet: #ffffff;
+  --sunk: #e8eeec;
+  --ink: #14201c;
+  --ink-soft: #54625e;
+  --rule: #d5dedb;
+  --accent: #8a5a12;
+  --accent-soft: #f5ead9;
+  --on-accent: #ffffff;
+  --good: #1c7543;
+  --good-soft: #def1e5;
+  --warn: #8f5d00;
+  --warn-soft: #f8edd3;
+  --bad: #ae2a20;
+  --bad-soft: #f8e2df;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1514; --sheet: #172020; --sunk: #121a19; --ink: #e4ebe9; --ink-soft: #9badaa; --rule: #283432;
+    --accent: #e3b466; --accent-soft: #33260f; --on-accent: #0f1514;
+    --good: #6dd39a; --good-soft: #15301f; --warn: #efbd5a; --warn-soft: #33290f; --bad: #ff8b80; --bad-soft: #3b1a17;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1514; --sheet: #172020; --sunk: #121a19; --ink: #e4ebe9; --ink-soft: #9badaa; --rule: #283432;
+  --accent: #e3b466; --accent-soft: #33260f; --on-accent: #0f1514;
+  --good: #6dd39a; --good-soft: #15301f; --warn: #efbd5a; --warn-soft: #33290f; --bad: #ff8b80; --bad-soft: #3b1a17;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 0;
+}
+.wrap { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; padding-bottom: 72px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.12; }
+h1 { font-size: clamp(1.9rem, 5.2vw, 2.7rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.005em; }
+h3 { font-size: 1.02rem; font-weight: 700; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft); }
+.small { font-size: 0.9rem; color: var(--ink-soft); }
+.note { font-size: 0.84rem; color: var(--ink-soft); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+/* ---------- header ---------- */
+.top { display: flex; flex-direction: column; gap: 10px; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+.crumbs a { font-size: 0.88rem; font-weight: 500; text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--ink-soft); font-size: 0.92rem; }
+.meta strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+.examline { max-width: 62ch; color: var(--ink-soft); font-size: 0.93rem; }
+
+/* ---------- tabs ---------- */
+.tabs { display: flex; gap: 4px; padding: 4px; background: var(--sunk); border-radius: 12px; width: fit-content; max-width: 100%; flex-wrap: wrap; }
+.tab { border: 0; background: transparent; padding: 9px 16px; border-radius: 9px; font-weight: 600; color: var(--ink-soft); text-decoration: none; font-size: 0.95rem; display: inline-flex; gap: 8px; align-items: baseline; }
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { background: var(--sheet); color: var(--ink); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--rule); }
+.tab .n { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; color: var(--ink-soft); }
+.tab.ext::after { content: "↗"; font-size: 0.8em; color: var(--ink-soft); }
+
+/* ---------- panels ---------- */
+.stack { display: flex; flex-direction: column; gap: 18px; }
+.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.panel-head { display: flex; flex-direction: column; gap: 4px; }
+
+/* ---------- buttons ---------- */
+.btn { border: 1px solid var(--rule); background: var(--sheet); border-radius: 10px; padding: 10px 16px; font-weight: 600; font-size: 0.95rem; line-height: 1.3; }
+.btn:hover:not(:disabled) { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.primary:hover:not(:disabled) { filter: brightness(1.06); }
+.btn.quiet { border-color: transparent; background: transparent; color: var(--ink-soft); padding-inline: 8px; }
+.btn.quiet:hover:not(:disabled) { color: var(--ink); border-color: transparent; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn.good { border-color: var(--good); color: var(--good); } .btn.deels { border-color: var(--warn); color: var(--warn); } .btn.bad { border-color: var(--bad); color: var(--bad); }
+.btn.good.sel { background: var(--good); color: var(--on-accent); } .btn.deels.sel { background: var(--warn); color: var(--on-accent); } .btn.bad.sel { background: var(--bad); color: var(--on-accent); }
+.linkbtn { border: 0; background: none; padding: 0; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-size: 0.86rem; }
+
+/* ---------- oefenen: filters ---------- */
+.filters { display: flex; flex-direction: column; gap: 14px; }
+.filter-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; margin-bottom: 8px; }
+.filter-label { font-weight: 600; font-size: 0.9rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--rule); background: var(--paper); border-radius: 999px; padding: 7px 14px; font-weight: 500; display: inline-flex; gap: 8px; align-items: baseline; }
+.chip:hover { border-color: var(--accent); }
+.chip .n { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.chip[aria-pressed="true"] .n { color: var(--on-accent); opacity: 0.85; }
+.sel-summary { font-size: 0.92rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.sel-summary strong { color: var(--ink); }
+
+/* ---------- oefenen: lessons ---------- */
+.lesson-list { display: flex; flex-direction: column; gap: 2px; }
+.week { font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); letter-spacing: 0.08em; text-transform: uppercase; margin: 10px 0 2px 12px; }
+.lesson { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; align-items: center; text-align: left; width: 100%;
+  border: 1px solid transparent; background: transparent; border-radius: 10px; padding: 11px 12px; }
+.lesson:hover { background: var(--accent-soft); }
+.lesson .name { min-width: 0; display: flex; flex-direction: column; }
+.lesson .part { font-size: 0.78rem; color: var(--accent); font-weight: 600; }
+.lesson .title { font-weight: 500; }
+.lesson .count { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar { grid-column: 1 / -1; height: 5px; border-radius: 3px; background: var(--sunk); overflow: hidden; display: flex; }
+.bar span { display: block; height: 100%; }
+.bar .g { background: var(--good); } .bar .d { background: var(--warn); } .bar .f { background: var(--bad); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.8rem; color: var(--ink-soft); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+
+/* ---------- weektoetsen: rooster ---------- */
+.grid-key { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.8rem; color: var(--ink-soft); }
+.grid-key b { font-family: var(--font-mono); font-weight: 500; color: var(--ink); }
+.trows { display: flex; flex-direction: column; }
+.trow { display: grid; grid-template-columns: minmax(0, 1fr) repeat(4, 74px); gap: 8px; align-items: center; padding: 12px 0; border-top: 1px solid var(--rule); }
+.trow:first-child { border-top: 0; padding-top: 2px; }
+.tlabel { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.tlabel .wk { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+.tlabel .topics { font-size: 0.84rem; color: var(--ink-soft); }
+.cell { height: 58px; border: 1px solid var(--rule); background: var(--paper); border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; padding: 4px; line-height: 1.15; }
+.cell:hover { border-color: var(--accent); }
+.cell .v { font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-soft); letter-spacing: 0.04em; }
+.cell .c { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.cell .s { font-size: 0.76rem; font-weight: 600; color: var(--ink-soft); }
+.cell.pass { background: var(--good-soft); border-color: transparent; } .cell.pass .c { color: var(--good); }
+.cell.fail { background: var(--bad-soft); border-color: transparent; } .cell.fail .c { color: var(--bad); }
+.cell.open { background: var(--warn-soft); border-color: transparent; } .cell.open .s { color: var(--warn); }
+.proef { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px 20px; align-items: center; border-top: 1px solid var(--rule); padding-top: 16px; }
+.proef .txt { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.proef .last { font-size: 0.86rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+
+/* ---------- toets: intro ---------- */
+.facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.fact { font-family: var(--font-mono); font-size: 0.78rem; background: var(--sunk); border-radius: 6px; padding: 4px 9px; color: var(--ink); }
+.topic-list { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 2px; }
+.topic-list b { font-weight: 600; }
+.callout { border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; padding: 10px 14px; font-size: 0.93rem; }
+
+/* ---------- vragen (gedeeld door oefenen en toets) ---------- */
+.q { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 0 10px; padding-block: 22px; border-top: 1px solid var(--rule); }
+.q:first-of-type { border-top: 0; }
+.qnum { font-family: var(--font-mono); font-weight: 700; font-size: 1.05rem; color: var(--accent); padding-top: 1px; font-variant-numeric: tabular-nums; }
+.qbody { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.qmeta { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 2px 8px; }
+.tag.plain { color: var(--ink-soft); background: var(--sunk); }
+.q-text { font-size: 1.05rem; font-weight: 500; white-space: pre-wrap; }
+.options { display: flex; flex-direction: column; gap: 8px; }
+.opt { text-align: left; border: 1px solid var(--rule); background: var(--paper); border-radius: 12px; padding: 11px 14px 11px 11px; display: flex; gap: 12px; align-items: flex-start; width: 100%; position: relative; }
+.opt:hover:not(.locked) { border-color: var(--accent); }
+.opt input { position: absolute; opacity: 0; pointer-events: none; }
+.opt:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.bubble { flex: none; width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--ink-soft); display: grid; place-items: center; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; color: var(--ink-soft); margin-top: -2px; }
+.opt.chosen { border-color: var(--accent); background: var(--accent-soft); }
+.opt.chosen .bubble { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.opt.locked { cursor: default; }
+.opt.right { border-color: var(--good); background: var(--good-soft); }
+.opt.right .bubble { background: var(--good); border-color: var(--good); color: var(--on-accent); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.opt.wrong .bubble { background: var(--bad); border-color: var(--bad); color: var(--on-accent); }
+.opt .otext { min-width: 0; }
+textarea { width: 100%; min-height: 150px; resize: vertical; font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 12px 14px; line-height: 1.5; }
+textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.case { background: var(--sunk); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+.case .ctext { white-space: pre-wrap; }
+.sub { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 0 8px; }
+.sub .sl { font-family: var(--font-mono); font-weight: 700; color: var(--accent); }
+.sub .sb { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.subs { display: flex; flex-direction: column; gap: 18px; }
+
+/* ---------- feedback en nakijken ---------- */
+.feedback { border-left: 3px solid var(--rule); padding: 10px 14px; background: var(--paper); border-radius: 0 10px 10px 0; display: flex; flex-direction: column; gap: 8px; }
+.feedback.good { border-color: var(--good); } .feedback.deels { border-color: var(--warn); } .feedback.bad { border-color: var(--bad); }
+.feedback h3, .feedback h4 { font-size: 0.95rem; margin: 0; font-family: var(--font-display); }
+.yours { white-space: pre-wrap; background: var(--paper); border: 1px dashed var(--rule); border-radius: 10px; padding: 10px 12px; font-size: 0.95rem; }
+.yours.empty { color: var(--ink-soft); font-style: italic; }
+.rubric { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.rubric li.hit::marker { color: var(--good); } .rubric li.miss::marker { color: var(--bad); }
+.checks { display: flex; flex-direction: column; gap: 6px; }
+.check { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; align-items: start; padding: 8px 10px; border-radius: 9px; background: var(--paper); border: 1px solid var(--rule); cursor: pointer; font-size: 0.93rem; }
+.check input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--good); }
+.check.on { background: var(--good-soft); border-color: transparent; }
+.pts { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+.pts.full { color: var(--good); } .pts.part { color: var(--warn); } .pts.zero { color: var(--bad); } .pts.todo { color: var(--ink-soft); }
+details.model > summary { cursor: pointer; font-weight: 600; font-size: 0.92rem; color: var(--accent); }
+details.model[open] > summary { margin-bottom: 8px; }
+.claude-fb { font-size: 0.93rem; background: var(--accent-soft); border-radius: 10px; padding: 9px 12px; }
+
+/* ---------- toets: inleverbalk ---------- */
+.handin { position: sticky; bottom: 0; z-index: 5; margin-inline: -1px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px 14px 0 0;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.06); }
+.handin .count { font-variant-numeric: tabular-nums; font-size: 0.92rem; flex: 1 1 160px; display: flex; flex-direction: column; gap: 6px; }
+.meter { height: 5px; background: var(--sunk); border-radius: 3px; overflow: hidden; }
+.meter span { display: block; height: 100%; background: var(--accent); transition: width 0.2s; }
+.confirm { border: 1px solid var(--warn); background: var(--warn-soft); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+
+/* ---------- resultaat ---------- */
+.score { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 28px; align-items: center; }
+.cijfer { font-family: var(--font-display); font-weight: 800; font-size: clamp(3.6rem, 13vw, 5.2rem); line-height: 0.9; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.cijfer.pass { color: var(--good); } .cijfer.fail { color: var(--bad); } .cijfer.todo { color: var(--ink-soft); }
+.score .side { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.score .big { font-weight: 600; font-size: 1.05rem; }
+.split { display: flex; flex-direction: column; gap: 8px; }
+.split-row { display: grid; grid-template-columns: 130px minmax(0, 1fr) 64px; gap: 10px; align-items: center; font-size: 0.88rem; }
+.split-row .lbl { min-width: 0; overflow-wrap: anywhere; }
+.split-row .val { font-family: var(--font-mono); font-size: 0.8rem; text-align: right; font-variant-numeric: tabular-nums; }
+.track { height: 8px; background: var(--sunk); border-radius: 4px; overflow: hidden; }
+.track span { display: block; height: 100%; background: var(--accent); }
+.gradebar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; background: var(--warn-soft); border-radius: 12px; padding: 12px 16px; }
+.gradebar.done { background: var(--good-soft); }
+.summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.stat { border: 1px solid var(--rule); border-radius: 12px; padding: 12px 14px; font-size: 0.9rem; color: var(--ink-soft); }
+.stat b { display: block; font-family: var(--font-display); font-size: 1.9rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.progress { height: 4px; background: var(--sunk); border-radius: 2px; overflow: hidden; }
+.progress span { display: block; height: 100%; background: var(--accent); transition: width 0.2s; }
+.q-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+@media (max-width: 600px) {
+  .trow { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .tlabel { grid-column: 1 / -1; }
+  .proef { grid-template-columns: 1fr; }
+  .lesson { grid-template-columns: 1fr; } .lesson .count { white-space: normal; }
+  .q { grid-template-columns: 1fr; gap: 6px; }
+  .score { grid-template-columns: 1fr; }
+  .split-row { grid-template-columns: 96px minmax(0, 1fr) 56px; }
+}
+@media (max-width: 480px) { .summary-grid { grid-template-columns: 1fr; } .panel { padding: 16px; } .tabs { width: 100%; flex-wrap: nowrap; } .tab { flex: 1 1 auto; justify-content: center; padding: 8px 6px; font-size: 0.88rem; gap: 5px; } .tab .n { font-size: 0.66rem; } }
+@media (max-width: 374px) { .tab .n { display: none; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="crumbs"><a class="home" href="../">← Studieplek</a><span class="eyebrow">Facility Management · jaar 2 · periode 2</span></div>
+    <h1>Praktijkproject Business Management</h1>
+    <div class="meta">
+      <span>Toetsperiode <strong>11–22 januari 2027</strong></span>
+      <span id="countdown"></span>
+    </div>
+    <p class="examline">Geen schriftelijk tentamen: je cijfer komt uit de adviespresentatie (30 minuten plus 15 minuten vragen) en je portfolio moet voldoende zijn. Oefen hier de modellen die je in je advies moet kunnen uitleggen en toepassen.</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Onderdelen van deze pagina" id="tabs">
+    <button class="tab" role="tab" id="tab-oefenen" aria-controls="pane-oefenen" aria-selected="true">Oefenen <span class="n" id="n-oefenen"></span></button>
+    <button class="tab" role="tab" id="tab-toetsen" aria-controls="pane-toetsen" aria-selected="false">Weektoetsen <span class="n" id="n-toetsen"></span></button>
+    <a class="tab " href="../samenvattingen/praktijkproject/" >Samenvattingen</a>
+  </nav>
+
+  <!-- ===== Oefenen ===== -->
+  <div class="stack" id="pane-oefenen" role="tabpanel" aria-labelledby="tab-oefenen">
+    <section class="panel" aria-labelledby="select-title">
+      <div class="panel-head">
+        <h2 id="select-title">Kies wat je oefent</h2>
+        <p class="small">Kies één week of een combinatie. Maak daarna alle vragen, een korte ronde van 10 (wat je fout had of nog niet maakte komt eerst), of alleen je fouten.</p>
+      </div>
+      <div class="filters">
+        <div>
+          <div class="filter-head"><span class="filter-label" id="lbl-weeks">Weken</span><button class="linkbtn" id="weeks-all">alle weken</button><button class="linkbtn" id="weeks-none">geen</button></div>
+          <div class="chips" id="week-chips" role="group" aria-labelledby="lbl-weeks"></div>
+        </div>
+        <div>
+          <div class="filter-head"><span class="filter-label" id="lbl-parts">Onderdelen</span></div>
+          <div class="chips" id="part-chips" role="group" aria-labelledby="lbl-parts"></div>
+        </div>
+      </div>
+      <p class="sel-summary" id="sel-summary" aria-live="polite">Vragen laden...</p>
+      <div class="row">
+        <button class="btn primary" id="start-all" disabled>Alle vragen</button>
+        <button class="btn" id="start-kort" disabled>Korte ronde</button>
+        <button class="btn" id="start-fout" disabled>Alleen fouten</button>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="index-title">
+      <div class="panel-head">
+        <h2 id="index-title">Of kies één les</h2>
+        <div class="legend"><span><i style="background:var(--good)"></i>goed</span><span><i style="background:var(--warn)"></i>deels</span><span><i style="background:var(--bad)"></i>fout</span><span><i style="background:var(--sunk)"></i>nog niet gemaakt</span></div>
+      </div>
+      <div class="lesson-list" id="lesson-list"><p class="small">Vragen laden...</p></div>
+    </section>
+  </div>
+
+  <!-- ===== Weektoetsen ===== -->
+  <div class="stack" id="pane-toetsen" role="tabpanel" aria-labelledby="tab-toetsen" hidden>
+    <section class="panel" aria-labelledby="toets-title">
+      <div class="panel-head">
+        <h2 id="toets-title">Weektoetsen</h2>
+        <p class="small" id="toets-intro">Toetsen laden...</p>
+      </div>
+      <div class="grid-key" id="grid-key"></div>
+      <div class="trows" id="trows"></div>
+      <div class="proef" id="proef" hidden></div>
+      <div class="proef" id="eind" hidden></div>
+    </section>
+  </div>
+
+  <!-- ===== Losse views ===== -->
+  <section class="panel" id="quiz-view" hidden aria-live="polite"></section>
+  <section class="panel" id="intro-view" hidden></section>
+  <div id="toets-view" hidden></div>
+  <div class="stack" id="result-view" hidden></div>
+
+  <p class="note" id="store-note"></p>
+</div>
+
+<script>
+(() => {
+  const LS_KEY = "fm-quiz-praktijkproject";
+  const EXAM = Date.parse("2027-01-11T00:00:00");
+  const VERSIES = ["A", "B", "C"];
+  let data = null, toetsen = null, progress = {}, db = null, sample = null;
+  let queue = [], qi = 0, sessionResults = [];
+  const SEL_KEY = LS_KEY + ":selectie";
+  const TAB_KEY = LS_KEY + ":tab";
+  const T_KEY = LS_KEY + ":toetsen";
+  let sel = null, focusKey = null, T = {};
+
+  // ---------- helpers ----------
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
+  const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+  const shuffle = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const nl = (x, d = 1) => x.toFixed(d).replace(".", ",");
+  const datum = (iso) => { try { return new Date(iso).toLocaleDateString("nl-NL", { day: "numeric", month: "short" }); } catch { return ""; } };
+  const LETTERS = "ABCDEF";
+
+  const days = Math.ceil((EXAM - Date.now()) / 864e5);
+  $("countdown").innerHTML = days > 0 ? `Nog <strong>${days}</strong> dagen` : "De toetsperiode is begonnen";
+
+  // ---------- views ----------
+  const VIEWS = ["pane-oefenen", "pane-toetsen", "quiz-view", "intro-view", "toets-view", "result-view"];
+  function show(id) {
+    VIEWS.forEach((v) => ($(v).hidden = v !== id));
+    $("tabs").hidden = !id.startsWith("pane-");
+    window.scrollTo({ top: 0 });
+  }
+  function setTab(name, keepScroll) {
+    const t = name === "toetsen" ? "toetsen" : "oefenen";
+    $("tab-oefenen").setAttribute("aria-selected", String(t === "oefenen"));
+    $("tab-toetsen").setAttribute("aria-selected", String(t === "toetsen"));
+    VIEWS.forEach((v) => ($(v).hidden = v !== "pane-" + t));
+    $("tabs").hidden = false;
+    lsSet(TAB_KEY, t);
+    try { if (location.hash !== "#" + t) history.replaceState(null, "", "#" + t); } catch {}
+    if (t === "toetsen") renderToetsIndex(); else renderIndex();
+    if (!keepScroll) window.scrollTo({ top: 0 });
+  }
+  $("tab-oefenen").addEventListener("click", () => setTab("oefenen"));
+  $("tab-toetsen").addEventListener("click", () => setTab("toetsen"));
+  $("tabs").addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const next = document.activeElement === $("tab-oefenen") ? "toetsen" : "oefenen";
+    setTab(next, true); $("tab-" + next).focus();
+  });
+  window.addEventListener("hashchange", () => { const h = location.hash.slice(1); if (h === "toetsen" || h === "oefenen") setTab(h); });
+
+  // ---------- storage ----------
+  function storeNote(t) { $("store-note").textContent = t; }
+  async function initStore() {
+    progress = lsGet(LS_KEY, {});
+    T = lsGet(T_KEY, {});
+    try { db = window.claude && window.claude.use ? await window.claude.use("db") : null; } catch { db = null; }
+    if (!db) { storeNote("Je voortgang wordt in deze browser bewaard."); return; }
+    const timer = setTimeout(() => storeNote("Je voortgang wordt in deze browser bewaard."), 10000);
+    try {
+      const snap = await db.collection("voortgang").get();
+      snap.docs.forEach((d) => { const v = d.data(); if (v) progress[d.id] = v; });
+      lsSet(LS_KEY, progress);
+      try {
+        const ts = await db.collection("toetsresultaten").get();
+        ts.docs.forEach((d) => { const v = d.data(); if (!v) return; const e = T[d.id] || (T[d.id] = {}); if (v.beste != null && (e.beste == null || v.beste > e.beste)) e.beste = v.beste; if (!e.laatsteCijfer && v.cijfer != null) { e.laatsteCijfer = v.cijfer; e.laatsteDatum = v.datum; } });
+        lsSet(T_KEY, T);
+      } catch {}
+      clearTimeout(timer);
+      storeNote("Je voortgang en toetscijfers worden opgeslagen, zodat je studiecoach kan zien waar je punten laat liggen.");
+    } catch {
+      clearTimeout(timer); db = null; storeNote("Je voortgang wordt in deze browser bewaard.");
+    }
+    if (!$("pane-oefenen").hidden) renderIndex();
+    if (!$("pane-toetsen").hidden) renderToetsIndex();
+  }
+  async function record(q, status) {
+    const prev = progress[q.id] || { pogingen: 0, goed: 0 };
+    const rec = { les: q.les, status, pogingen: (prev.pogingen || 0) + 1, goed: (prev.goed || 0) + (status === "goed" ? 1 : 0), laatst: new Date().toISOString() };
+    progress[q.id] = rec;
+    lsSet(LS_KEY, progress);
+    if (db) { try { await db.doc("voortgang/" + q.id).set(rec); } catch {} }
+  }
+  const saveT = () => lsSet(T_KEY, T);
+
+  // =====================================================================
+  // OEFENEN
+  // =====================================================================
+  const allWeeks = () => [...new Set(data.lessen.map((l) => l.week))].sort((a, b) => a - b);
+  const allParts = () => [...new Set(data.lessen.map((l) => l.onderdeel))];
+  function lessonOf(q) { return data.lessen.find((l) => l.id === q.les) || { onderdeel: "", titel: "", week: "" }; }
+  function loadSel() {
+    const s = lsGet(SEL_KEY, null);
+    const W = allWeeks(), P = allParts();
+    const weeks = new Set(s && Array.isArray(s.weeks) && !s.alleWeken ? s.weeks.filter((w) => W.includes(w)) : W);
+    const parts = new Set(s && Array.isArray(s.parts) && !s.alleOnderdelen ? s.parts.filter((p) => P.includes(p)) : P);
+    sel = { weeks, parts };
+  }
+  function saveSel() { lsSet(SEL_KEY, { weeks: [...sel.weeks], parts: [...sel.parts], alleWeken: sel.weeks.size === allWeeks().length, alleOnderdelen: sel.parts.size === allParts().length }); }
+  const inSel = (q) => { const l = lessonOf(q); return sel.weeks.has(l.week) && sel.parts.has(l.onderdeel); };
+  function rangeLabel(ws) {
+    ws = [...ws].sort((a, b) => a - b); const out = [];
+    for (let i = 0; i < ws.length; ) { let j = i; while (j + 1 < ws.length && ws[j + 1] === ws[j] + 1) j++; out.push(i === j ? String(ws[i]) : `${ws[i]}–${ws[j]}`); i = j + 1; }
+    return out.join(", ");
+  }
+  function selLabel() {
+    let s = sel.weeks.size === allWeeks().length ? "Alle weken" : (sel.weeks.size === 1 ? "Week " : "Weken ") + rangeLabel(sel.weeks);
+    if (sel.parts.size !== allParts().length) s += " · " + allParts().filter((p) => sel.parts.has(p)).join(", ");
+    return s;
+  }
+  function chip(key, label, n, on, onClick) {
+    const b = document.createElement("button");
+    b.className = "chip"; b.dataset.key = key; b.setAttribute("aria-pressed", String(on));
+    b.innerHTML = `<span>${esc(label)}</span><span class="n">${n}</span>`;
+    b.setAttribute("aria-label", `${label}, ${n} vragen`);
+    b.addEventListener("click", () => { focusKey = key; onClick(); saveSel(); renderIndex(); });
+    return b;
+  }
+  const toggle = (set, v) => (set.has(v) ? set.delete(v) : set.add(v));
+  const rank = (q) => { const p = progress[q.id]; if (!p) return 1; if (p.status === "fout") return 0; if (p.status === "deels") return 2; return 3; };
+
+  $("weeks-all").addEventListener("click", () => { if (!sel) return; allWeeks().forEach((w) => sel.weeks.add(w)); saveSel(); renderIndex(); });
+  $("weeks-none").addEventListener("click", () => { if (!sel) return; sel.weeks.clear(); saveSel(); renderIndex(); });
+  $("start-all").addEventListener("click", () => startQuiz(shuffle(data.vragen.filter(inSel)), selLabel() + " · alle vragen"));
+  $("start-kort").addEventListener("click", () => {
+    const pool = shuffle(data.vragen.filter(inSel)).sort((a, b) => rank(a) - rank(b) || ((progress[a.id] || {}).laatst || "").localeCompare((progress[b.id] || {}).laatst || ""));
+    startQuiz(shuffle(pool.slice(0, 10)), selLabel() + " · korte ronde");
+  });
+  $("start-fout").addEventListener("click", () => startQuiz(shuffle(data.vragen.filter((q) => inSel(q) && progress[q.id] && progress[q.id].status !== "goed")), selLabel() + " · fouten"));
+
+  function renderIndex() {
+    if (!data) return;
+    if (!sel) loadSel();
+    const W = allWeeks(), P = allParts();
+    const wc = $("week-chips"); wc.innerHTML = "";
+    W.forEach((w) => {
+      const n = data.vragen.filter((q) => { const l = lessonOf(q); return l.week === w && sel.parts.has(l.onderdeel); }).length;
+      wc.appendChild(chip("w" + w, "Week " + w, n, sel.weeks.has(w), () => toggle(sel.weeks, w)));
+    });
+    const pc = $("part-chips"); pc.innerHTML = "";
+    P.forEach((p) => {
+      const n = data.vragen.filter((q) => { const l = lessonOf(q); return l.onderdeel === p && sel.weeks.has(l.week); }).length;
+      pc.appendChild(chip("p" + p, p, n, sel.parts.has(p), () => toggle(sel.parts, p)));
+    });
+    if (focusKey) { const el = [...document.querySelectorAll(".chip")].find((c) => c.dataset.key === focusKey); if (el) el.focus(); focusKey = null; }
+
+    const qs = data.vragen.filter(inSel);
+    const nieuw = qs.filter((q) => !progress[q.id]).length;
+    const goed = qs.filter((q) => (progress[q.id] || {}).status === "goed").length;
+    const fout = qs.filter((q) => progress[q.id] && progress[q.id].status !== "goed").length;
+    $("sel-summary").innerHTML = qs.length
+      ? `<strong>${esc(selLabel())}</strong>: ${qs.length} vragen · ${nieuw} nog niet gemaakt · ${goed} goed · ${fout} fout of deels`
+      : "Kies minstens één week en één onderdeel.";
+    $("start-all").textContent = `Alle vragen (${qs.length})`; $("start-all").disabled = !qs.length;
+    $("start-kort").textContent = `Korte ronde (${Math.min(10, qs.length)})`; $("start-kort").disabled = !qs.length;
+    $("start-fout").textContent = `Alleen fouten (${fout})`; $("start-fout").disabled = !fout;
+
+    const list = $("lesson-list");
+    list.innerHTML = "";
+    const shown = W.filter((w) => sel.weeks.has(w));
+    if (!shown.length || !sel.parts.size) { list.innerHTML = '<p class="small">Kies hierboven minstens één week en één onderdeel om de lessen te zien.</p>'; return; }
+    shown.forEach((w) => {
+      const ls = data.lessen.filter((l) => l.week === w && sel.parts.has(l.onderdeel));
+      if (!ls.length) return;
+      const h = document.createElement("div"); h.className = "week"; h.textContent = "Week " + w; list.appendChild(h);
+      ls.forEach((l) => {
+        const lq = data.vragen.filter((q) => q.les === l.id);
+        const c = { goed: 0, deels: 0, fout: 0 };
+        lq.forEach((q) => { const p = progress[q.id]; if (p && c[p.status] !== undefined) c[p.status]++; });
+        const done = c.goed + c.deels + c.fout;
+        const pct = (n) => (lq.length ? (n / lq.length) * 100 : 0);
+        const b = document.createElement("button");
+        b.className = "lesson";
+        b.innerHTML = `<span class="name"><span class="part">${esc(l.onderdeel)}</span><span class="title">${esc(l.titel)}</span></span>
+          <span class="count">${done}/${lq.length} gemaakt · ${c.goed} goed</span>
+          <span class="bar" aria-hidden="true"><span class="g" style="width:${pct(c.goed)}%"></span><span class="d" style="width:${pct(c.deels)}%"></span><span class="f" style="width:${pct(c.fout)}%"></span></span>`;
+        b.addEventListener("click", () => startQuiz(lq, `${l.onderdeel}: ${l.titel}`));
+        list.appendChild(b);
+      });
+    });
+  }
+
+  function startQuiz(qs, label) {
+    if (!qs.length) return;
+    queue = qs; qi = 0; sessionResults = [];
+    $("quiz-view").dataset.label = label;
+    show("quiz-view");
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const q = queue[qi];
+    const l = lessonOf(q);
+    const v = $("quiz-view");
+    v.innerHTML = `
+      <div class="q-head"><span class="eyebrow">${esc(v.dataset.label)} · vraag ${qi + 1} van ${queue.length}</span>
+        <button class="btn quiet" id="stop">Stoppen</button></div>
+      <div class="progress" aria-hidden="true"><span style="width:${(qi / queue.length) * 100}%"></span></div>
+      <div class="qmeta"><span class="tag">Week ${l.week} · ${esc(l.onderdeel)}</span>${q.tag ? `<span class="tag plain">${esc(q.tag)}</span>` : ""}</div>
+      <p class="q-text">${esc(q.vraag)}</p>
+      <div id="answer-area"></div>
+      <div id="feedback-area" class="stack" style="gap:12px"></div>
+      <div class="row" id="next-row" hidden><button class="btn primary" id="next">${qi + 1 < queue.length ? "Volgende vraag" : "Afronden"}</button></div>`;
+    $("stop").addEventListener("click", finish);
+    $("next").addEventListener("click", () => { qi++; qi < queue.length ? renderQuestion() : finish(); window.scrollTo({ top: 0 }); });
+    q.type === "mc" ? renderMC(q) : renderOpen(q);
+  }
+
+  function renderMC(q) {
+    const area = $("answer-area");
+    const box = document.createElement("div"); box.className = "options";
+    // Elke keer een nieuwe volgorde, zodat de plek van het juiste antwoord niets verraadt.
+    const order = shuffle(q.opties.map((_, i) => i));
+    const rightPos = order.indexOf(q.juist);
+    order.forEach((oi, pos) => {
+      const b = document.createElement("button"); b.className = "opt";
+      b.innerHTML = `<span class="bubble">${LETTERS[pos]}</span><span class="otext">${esc(q.opties[oi])}</span>`;
+      b.addEventListener("click", () => {
+        if (b.classList.contains("locked")) return;
+        const ok = oi === q.juist;
+        [...box.children].forEach((c, j) => { c.classList.add("locked"); c.setAttribute("aria-disabled", "true"); if (j === rightPos) c.classList.add("right"); if (j === pos && !ok) c.classList.add("wrong"); });
+        $("feedback-area").innerHTML = `<div class="feedback ${ok ? "good" : "bad"}"><h3>${ok ? "Goed" : "Fout, het juiste antwoord is " + LETTERS[rightPos]}</h3><p>${esc(q.uitleg)}</p></div>`;
+        done(q, ok ? "goed" : "fout");
+      });
+      box.appendChild(b);
+    });
+    area.appendChild(box);
+  }
+
+  function renderOpen(q) {
+    const area = $("answer-area");
+    const draftKey = LS_KEY + ":draft:" + q.id;
+    let draft = ""; try { draft = sessionStorage.getItem(draftKey) || ""; } catch {}
+    area.innerHTML = `<div class="stack" style="gap:10px"><label class="small" for="ans">Jouw antwoord. Schrijf het uit zoals op het tentamen.</label>
+      <textarea id="ans" placeholder="Typ je antwoord...">${esc(draft)}</textarea>
+      <div class="row">
+        <button class="btn primary" id="grade" ${sample ? "" : "hidden"}>Laat Claude streng nakijken</button>
+        <button class="btn" id="show">Toon modelantwoord</button>
+      </div>
+      <p class="note" id="grade-note">${sample ? "Claude beoordeelt je antwoord op de punten uit het modelantwoord. Je kunt ook zelf nakijken." : "Bekijk het modelantwoord en kijk jezelf eerlijk na."}</p></div>`;
+    const ta = $("ans");
+    ta.addEventListener("input", () => { try { sessionStorage.setItem(draftKey, ta.value); } catch {} });
+    $("show").addEventListener("click", () => showModel(q));
+    $("grade").addEventListener("click", () => gradeWithClaude(q));
+  }
+
+  function modelHTML(q, hits) {
+    const items = q.punten.map((p, i) => `<li class="${hits ? (hits[i] ? "hit" : "miss") : ""}">${esc(p)}</li>`).join("");
+    return `<div class="feedback"><h3>Modelantwoord</h3><p>${esc(q.modelantwoord)}</p><h3>Beoordelingspunten</h3><ol class="rubric">${items}</ol></div>`;
+  }
+  function selfAssess(q, suggested) {
+    const wrap = document.createElement("div"); wrap.className = "row";
+    wrap.innerHTML = `<span class="small">${suggested ? "Neem het oordeel over of pas het aan:" : "Hoe ging het?"}</span>
+      <button class="btn good" data-s="goed">Goed</button><button class="btn deels" data-s="deels">Deels</button><button class="btn bad" data-s="fout">Fout</button>`;
+    wrap.querySelectorAll("button").forEach((b) => {
+      if (b.dataset.s === suggested) b.classList.add("sel");
+      b.addEventListener("click", () => { wrap.querySelectorAll("button").forEach((x) => { x.disabled = true; x.classList.toggle("sel", x === b); }); done(q, b.dataset.s); });
+    });
+    $("feedback-area").appendChild(wrap);
+  }
+  function showModel(q) {
+    $("show").disabled = true; $("grade").disabled = true;
+    $("feedback-area").innerHTML = modelHTML(q, null);
+    selfAssess(q, null);
+  }
+  const STRENG = `Beoordeel streng maar eerlijk, zoals op een tentamen met open vragen: een punt is alleen behaald als het inhoudelijk juist en voldoende uitgewerkt in het antwoord staat. Vage formuleringen, een model noemen zonder het toe te passen, of een conclusie zonder onderbouwing tellen niet. Schrijf in het Nederlands, kort en concreet, en spreek de student aan met "je".`;
+  async function gradeWithClaude(q) {
+    const answer = $("ans").value.trim();
+    if (!answer) { $("grade-note").textContent = "Schrijf eerst een antwoord."; return; }
+    $("grade").disabled = true; $("show").disabled = true;
+    $("grade-note").textContent = "Claude kijkt je antwoord na...";
+    const prompt = `Je bent een strenge docent bij de hbo-opleiding Facility Management (HAN). Je beoordeelt een oefenantwoord van een tweedejaarsstudent voor het vak "${data.vak}". ${STRENG}
+
+VRAAG:
+${q.vraag}
+
+MODELANTWOORD (alleen voor jou als referentie):
+${q.modelantwoord}
+
+BEOORDELINGSPUNTEN:
+${q.punten.map((p, i) => `${i + 1}. ${p}`).join("\n")}
+
+ANTWOORD VAN DE STUDENT:
+${answer}
+
+Geef alleen JSON terug in deze vorm:
+{"punten": [true/false per beoordelingspunt, in dezelfde volgorde], "oordeel": "goed" | "deels" | "fout", "ontbreekt": "wat er ontbreekt of onjuist is, in 1-3 zinnen", "verbetertip": "één concrete tip om het antwoord tentamenwaardig te maken"}
+Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helft behaald is; anders "deels".`;
+    try {
+      const r = await sample.json(prompt, { modelTier: "default" });
+      const hits = Array.isArray(r.punten) ? q.punten.map((_, i) => !!r.punten[i]) : null;
+      const n = hits ? hits.filter(Boolean).length : 0;
+      const verdict = ["goed", "deels", "fout"].includes(r.oordeel) ? r.oordeel : null;
+      const cls = verdict === "goed" ? "good" : verdict === "deels" ? "deels" : "bad";
+      $("feedback-area").innerHTML = `<div class="feedback ${cls}"><h3>Oordeel: ${esc(verdict || "onbekend")} · ${n} van ${q.punten.length} punten</h3>
+        <p><strong>Wat ontbreekt:</strong> ${esc(r.ontbreekt || "-")}</p><p><strong>Tip:</strong> ${esc(r.verbetertip || "-")}</p></div>` + modelHTML(q, hits);
+      $("grade-note").textContent = "";
+      selfAssess(q, verdict);
+    } catch (e) {
+      $("grade-note").textContent = e && e.code === "rate_limited" ? "Even te veel aanvragen. Kijk deze vraag zelf na met het modelantwoord." : "Nakijken door Claude lukte niet. Kijk deze vraag zelf na met het modelantwoord.";
+      if (e && e.code === "not_granted") sample = null;
+      showModel(q);
+    }
+  }
+  function done(q, status) {
+    sessionResults.push({ q, status });
+    record(q, status);
+    $("next-row").hidden = false;
+    $("next").focus({ preventScroll: true });
+  }
+  function finish() {
+    const c = { goed: 0, deels: 0, fout: 0 };
+    sessionResults.forEach((r) => c[r.status]++);
+    const wrong = sessionResults.filter((r) => r.status !== "goed");
+    const v = $("quiz-view");
+    v.innerHTML = `<span class="eyebrow">${esc(v.dataset.label)} · afgerond</span>
+      <h2>${sessionResults.length ? `${c.goed} van ${sessionResults.length} goed` : "Geen vragen gemaakt"}</h2>
+      <div class="summary-grid"><div class="stat"><b style="color:var(--good)">${c.goed}</b>goed</div><div class="stat"><b style="color:var(--warn)">${c.deels}</b>deels</div><div class="stat"><b style="color:var(--bad)">${c.fout}</b>fout</div></div>
+      ${wrong.length ? `<div class="stack" style="gap:6px"><h3>Herhaal deze</h3><ul style="margin:0;padding-left:20px">${wrong.map((r) => `<li>${esc(r.q.tag || "")}${r.q.tag ? ": " : ""}${esc(r.q.vraag.slice(0, 110))}${r.q.vraag.length > 110 ? "..." : ""}</li>`).join("")}</ul></div>` : ""}
+      <div class="row"><button class="btn primary" id="back">Terug naar het overzicht</button>${wrong.length ? `<button class="btn" id="again">Deze fouten opnieuw</button>` : ""}</div>`;
+    $("back").addEventListener("click", () => setTab("oefenen"));
+    if (wrong.length) $("again").addEventListener("click", () => startQuiz(shuffle(wrong.map((r) => r.q)), "Fouten uit deze ronde"));
+    window.scrollTo({ top: 0 });
+  }
+
+  // =====================================================================
+  // WEEKTOETSEN
+  // =====================================================================
+  const item = (id) => toetsen.items.find((t) => t.id === id);
+  const weekTopics = (w) => data ? data.lessen.filter((l) => l.week === w) : [];
+  const isWide = (key) => key === "proef" || key === "eind";
+  const wkTag = (t) => t.week ? `week ${t.week}` : "alle weken";
+  const keyLabel = (key) => {
+    if (key === "proef") return toetsen.proef.titel;
+    if (key === "eind") return toetsen.eind.titel;
+    const [w, v] = key.slice(1).split("-");
+    return `Week ${w} · ${v === "mix" ? "nieuwe mix" : "versie " + v}`;
+  };
+
+  // Kies n items, verdeeld over de onderdelen en daarbinnen over de weken.
+  function spread(pool, n) {
+    const byOnd = {};
+    pool.forEach((t) => (byOnd[t.onderdeel] = byOnd[t.onderdeel] || []).push(t));
+    const lanes = Object.values(byOnd).map((list) => {
+      const byWeek = {};
+      shuffle(list).forEach((t) => (byWeek[t.week] = byWeek[t.week] || []).push(t));
+      const weeks = shuffle(Object.keys(byWeek)); const out = [];
+      for (let i = 0; out.length < list.length; i++) weeks.forEach((w) => { if (byWeek[w][i]) out.push(byWeek[w][i]); });
+      return out;
+    });
+    const order = shuffle(lanes); const picked = [];
+    for (let i = 0; picked.length < n && order.some((l) => l[i]); i++) order.forEach((l) => { if (picked.length < n && l[i]) picked.push(l[i]); });
+    return picked;
+  }
+  function sortItems(list) {
+    const typeRank = { mc: 0, open: 1, casus: 2 };
+    const onds = [...new Set(toetsen.items.map((t) => t.onderdeel))];
+    return list.slice().sort((a, b) => typeRank[a.type] - typeRank[b.type] || onds.indexOf(a.onderdeel) - onds.indexOf(b.onderdeel) || a.week - b.week);
+  }
+  function buildIds(key) {
+    const c = toetsen.samenstelling;
+    if (key === "eind") return sortItems(toetsen.items.filter((t) => t.versie === "E")).map((t) => t.id);
+    if (key === "proef") {
+      const p = toetsen.proef; let list = [];
+      const all = toetsen.items.filter((t) => t.week > 0);
+      if (p.open_per_onderdeel) {
+        Object.entries(p.open_per_onderdeel).forEach(([ond, n]) => { list = list.concat(spread(all.filter((t) => t.type === "open" && t.onderdeel === ond), n)); });
+        list = list.concat(spread(all.filter((t) => t.type === "casus" && t.onderdeel === p.casus_onderdeel), p.casus || 1));
+      } else {
+        ["mc", "open", "casus"].forEach((typ) => { list = list.concat(spread(all.filter((t) => t.type === typ), p[typ] || 0)); });
+      }
+      return sortItems(list).map((t) => t.id);
+    }
+    const [w, v] = key.slice(1).split("-");
+    const pool = toetsen.items.filter((t) => t.week === Number(w));
+    if (v === "mix") {
+      let list = [];
+      ["mc", "open", "casus"].forEach((typ) => { list = list.concat(spread(pool.filter((t) => t.type === typ), c[typ])); });
+      return sortItems(list).map((t) => t.id);
+    }
+    return sortItems(pool.filter((t) => t.versie === v)).map((t) => t.id);
+  }
+  function composition(ids) {
+    const n = { mc: 0, open: 0, casus: 0 };
+    ids.forEach((id) => { const t = item(id); if (t) n[t.type]++; });
+    return n;
+  }
+  const richttijd = (n) => Math.max(10, Math.round((n.mc * 1.5 + n.open * 6 + n.casus * 12) / 5) * 5);
+  function factsHTML(n) {
+    const f = [];
+    if (n.mc) f.push(`${n.mc} meerkeuze`);
+    if (n.open) f.push(`${n.open} open`);
+    if (n.casus) f.push(`${n.casus} ${n.casus === 1 ? "casus" : "casussen"}`);
+    f.push(`richttijd ±${richttijd(n)} min`);
+    return f.map((x) => `<span class="fact">${x}</span>`).join("");
+  }
+
+  // ---------- scoring ----------
+  // Elke meerkeuzevraag is 1 punt; open vragen en casusvragen zijn zoveel punten als er beoordelingspunten zijn.
+  function parts(a) {
+    const out = [];
+    a.ids.forEach((id) => {
+      const t = item(id); if (!t) return;
+      if (t.type === "mc") out.push({ key: id, t, max: 1 });
+      else if (t.type === "open") out.push({ key: id, t, max: t.punten.length, punten: t.punten, model: t.modelantwoord, vraag: t.vraag });
+      else t.subvragen.forEach((s, i) => out.push({ key: id + "-s" + i, t, sub: i, max: s.punten.length, punten: s.punten, model: s.modelantwoord, vraag: s.vraag }));
+    });
+    return out;
+  }
+  function score(a) {
+    let b = 0, tot = 0, todo = 0; const per = {}; const mc = { b: 0, t: 0 };
+    parts(a).forEach((p) => {
+      const o = p.t.onderdeel; per[o] = per[o] || { b: 0, t: 0 };
+      tot += p.max; per[o].t += p.max;
+      let got = 0;
+      if (p.t.type === "mc") { got = a.antwoorden[p.key] === p.t.juist ? 1 : 0; mc.t++; mc.b += got; }
+      else if (a.nakijk[p.key]) got = a.nakijk[p.key].filter(Boolean).length;
+      else todo++;
+      b += got; per[o].b += got;
+    });
+    const cijfer = tot ? Math.round((1 + 9 * (b / tot)) * 10) / 10 : null;
+    return { b, tot, todo, per, mc, cijfer };
+  }
+  const answered = (a, p) => p.t.type === "mc" ? a.antwoorden[p.key] != null : !!String(a.antwoorden[p.key] || "").trim();
+
+  // ---------- rooster ----------
+  function cellState(key) {
+    const e = T[key] || {};
+    if (e.lopend) return { cls: "open", main: `<span class="s">verder</span>` };
+    if (e.laatste) { const s = score(e.laatste); if (s.todo) return { cls: "open", main: `<span class="s">nakijken</span>` }; return { cls: s.cijfer >= 5.5 ? "pass" : "fail", main: `<span class="c">${nl(s.cijfer)}</span>` }; }
+    if (e.laatsteCijfer != null) return { cls: e.laatsteCijfer >= 5.5 ? "pass" : "fail", main: `<span class="c">${nl(e.laatsteCijfer)}</span>` };
+    return { cls: "", main: `<span class="s">start</span>` };
+  }
+  function renderToetsIndex() {
+    if (!toetsen) return;
+    const c = toetsen.samenstelling;
+    $("toets-intro").textContent = `Per week drie vaste versies (A, B en C) met elk ${c.mc} meerkeuzevragen, ${c.open} open vragen en ${c.casus} casus, plus een nieuwe mix die elke keer anders is. De versies hebben geen overlap, dus je kunt een week drie keer echt oefenen.`;
+    $("grid-key").innerHTML = `<span><b>A B C</b> vaste versies</span><span><b>MIX</b> elke keer nieuw</span><span>cijfer = je laatste poging, voldoende vanaf 5,5</span>`;
+    const rows = $("trows"); rows.innerHTML = "";
+    toetsen.weken.forEach((w) => {
+      const r = document.createElement("div"); r.className = "trow";
+      const topics = weekTopics(w);
+      r.innerHTML = `<div class="tlabel"><span class="wk">Week ${w}</span><span class="topics">${topics.map((l) => esc(l.titel)).join(" · ")}</span></div>`;
+      VERSIES.concat(["mix"]).forEach((v) => {
+        const key = `w${w}-${v}`; const s = cellState(key);
+        const b = document.createElement("button"); b.className = "cell " + s.cls;
+        b.innerHTML = `<span class="v">${v === "mix" ? "MIX" : v}</span>${s.main}`;
+        b.setAttribute("aria-label", `${keyLabel(key)}: ${b.textContent.replace(/^(MIX|[ABC])/, "").trim()}`);
+        b.addEventListener("click", () => openIntro(key));
+        r.appendChild(b);
+      });
+      rows.appendChild(r);
+    });
+    wideBlock("proef", "Alle weken door elkaar", toetsen.proef, plannedN("proef"));
+    if (toetsen.eind) wideBlock("eind", "Eigen vragen over alle weken", toetsen.eind, plannedN("eind"));
+  }
+  function plannedN(key) {
+    if (key === "eind") return { mc: toetsen.eind.mc || 0, open: toetsen.eind.open || 0, casus: toetsen.eind.casus || 0 };
+    const p = toetsen.proef;
+    return p.open_per_onderdeel
+      ? { mc: 0, open: Object.values(p.open_per_onderdeel).reduce((x, y) => x + y, 0), casus: p.casus || 1 }
+      : { mc: p.mc || 0, open: p.open || 0, casus: p.casus || 0 };
+  }
+  function wideBlock(key, eyebrow, p, n) {
+    const pe = T[key] || {};
+    let last = "Nog niet gemaakt.";
+    if (pe.lopend) last = "Je bent hiermee bezig.";
+    else if (pe.laatste) { const s = score(pe.laatste); last = s.todo ? "Laatste poging: nog nakijken." : `Laatste poging: ${nl(s.cijfer)} (${datum(pe.laatste.ingeleverd)})`; }
+    else if (pe.laatsteCijfer != null) last = `Laatste poging: ${nl(pe.laatsteCijfer)}`;
+    const el = $(key); el.hidden = false;
+    el.innerHTML = `<div class="txt"><span class="eyebrow">${esc(eyebrow)}</span><h3>${esc(p.titel)}</h3><p class="small">${esc(p.uitleg)}</p><div class="facts">${factsHTML(n)}</div><p class="last">${esc(last)}</p></div>
+      <button class="btn primary" id="${key}-start">${pe.lopend ? "Verder" : "Bekijken"}</button>`;
+    $(key + "-start").addEventListener("click", () => openIntro(key));
+  }
+
+  // ---------- intro ----------
+  function openIntro(key) {
+    const e = T[key] || {};
+    const ids = e.lopend ? e.lopend.ids : (key.endsWith("-mix") || key === "proef" ? null : buildIds(key));
+    const n = ids ? composition(ids) : (key === "proef" ? plannedN("proef") : { ...toetsen.samenstelling });
+    const v = $("intro-view");
+    let topics = "";
+    if (isWide(key)) topics = `<p class="small">${esc(toetsen[key].uitleg)}</p>`;
+    else {
+      const w = Number(key.slice(1).split("-")[0]);
+      topics = `<div class="stack" style="gap:6px"><span class="small">Stof van deze week:</span><ul class="topic-list">${weekTopics(w).map((l) => `<li><b>${esc(l.onderdeel)}</b>: ${esc(l.titel)}</li>`).join("")}</ul></div>`;
+    }
+    let lastHTML = "";
+    if (e.laatste) {
+      const s = score(e.laatste);
+      lastHTML = `<div class="row"><span class="small">Laatste poging (${datum(e.laatste.ingeleverd)}): <strong>${s.todo ? "nog nakijken" : nl(s.cijfer)}</strong>${e.beste != null && !s.todo ? ` · beste ${nl(e.beste)}` : ""}</span><button class="btn" id="see-last">${s.todo ? "Verder nakijken" : "Bekijk resultaat"}</button></div>`;
+    }
+    const extra = key.endsWith("-mix") || key === "proef" ? `<p class="note">Bij elke nieuwe start worden de vragen opnieuw getrokken uit ${key === "proef" ? "alle weken" : "de drie versies van deze week"}.</p>` : "";
+    v.innerHTML = `<div class="q-head"><span class="eyebrow">${isWide(key) ? "Toets over alle weken" : "Weektoets"}</span><button class="btn quiet" id="intro-back">Terug</button></div>
+      <h2>${esc(keyLabel(key))}</h2>
+      <div class="facts">${factsHTML(n)}</div>
+      ${topics}
+      <div class="callout">Werk zoals op het tentamen: zonder aantekeningen, en schrijf open antwoorden volledig uit. Je antwoorden worden tussendoor bewaard. Na het inleveren zie je meteen je meerkeuzescore; de open vragen ${sample ? "laat je door Claude nakijken of kijk je zelf na" : "kijk je zelf na met het modelantwoord en de beoordelingspunten"}.</div>
+      ${extra}
+      ${lastHTML}
+      <div class="row">
+        ${e.lopend ? `<button class="btn primary" id="go-resume">Verder waar je was</button><button class="btn" id="go-new">Opnieuw beginnen</button>` : `<button class="btn primary" id="go-new">Start de toets</button>`}
+      </div>`;
+    $("intro-back").addEventListener("click", () => setTab("toetsen"));
+    if (e.lopend) $("go-resume").addEventListener("click", () => runToets(e.lopend));
+    $("go-new").addEventListener("click", () => startToets(key));
+    if ($("see-last")) $("see-last").addEventListener("click", () => renderResult(key));
+    show("intro-view");
+  }
+
+  function startToets(key) {
+    const ids = buildIds(key);
+    const order = {};
+    ids.forEach((id) => { const t = item(id); if (t.type === "mc") order[id] = shuffle(t.opties.map((_, i) => i)); });
+    const a = { key, ids, order, antwoorden: {}, nakijk: {}, feedback: {}, gestart: new Date().toISOString() };
+    (T[key] = T[key] || {}).lopend = a; saveT();
+    runToets(a);
+  }
+
+  // ---------- toets maken ----------
+  let saveTimer = null;
+  function runToets(a) {
+    const v = $("toets-view");
+    let n = 0;
+    const blocks = a.ids.map((id) => {
+      const t = item(id); if (!t) return "";
+      n++;
+      const tags = `<div class="qmeta"><span class="tag">${esc(t.onderdeel)}</span>${a.key === "proef" ? `<span class="tag plain">${wkTag(t)}</span>` : ""}</div>`;
+      if (t.type === "mc") {
+        const opts = a.order[id].map((oi, pos) => `<label class="opt${a.antwoorden[id] === oi ? " chosen" : ""}"><input type="radio" name="r-${id}" id="r-${id}-${oi}" value="${oi}" ${a.antwoorden[id] === oi ? "checked" : ""}><span class="bubble">${LETTERS[pos]}</span><span class="otext">${esc(t.opties[oi])}</span></label>`).join("");
+        return `<article class="q"><div class="qnum">${n}</div><div class="qbody">${tags}<p class="q-text">${esc(t.vraag)}</p><div class="options" role="radiogroup" aria-label="Vraag ${n}">${opts}</div></div></article>`;
+      }
+      if (t.type === "open") {
+        return `<article class="q"><div class="qnum">${n}</div><div class="qbody">${tags}<p class="q-text">${esc(t.vraag)}</p><label class="note" for="a-${id}">Jouw antwoord op vraag ${n}</label><textarea id="a-${id}" data-k="${id}" placeholder="Schrijf je antwoord volledig uit...">${esc(a.antwoorden[id] || "")}</textarea></div></article>`;
+      }
+      const subs = t.subvragen.map((s, i) => {
+        const k = id + "-s" + i;
+        return `<div class="sub"><span class="sl">${"abcdef"[i]}</span><div class="sb"><p class="q-text">${esc(s.vraag)}</p><label class="note" for="a-${k}">Jouw antwoord op ${n}${"abcdef"[i]}</label><textarea id="a-${k}" data-k="${k}" placeholder="Schrijf je antwoord volledig uit...">${esc(a.antwoorden[k] || "")}</textarea></div></div>`;
+      }).join("");
+      return `<article class="q"><div class="qnum">${n}</div><div class="qbody">${tags}<div class="case"><span class="eyebrow">Casus</span><h3>${esc(t.titel)}</h3><p class="ctext">${esc(t.casus)}</p></div><div class="subs">${subs}</div></div></article>`;
+    }).join("");
+    v.innerHTML = `<div class="stack">
+      <section class="panel">
+        <div class="q-head"><span class="eyebrow">${isWide(a.key) ? "Toets over alle weken" : "Weektoets"} · gestart ${datum(a.gestart)}</span><button class="btn quiet" id="t-pause">Pauzeren</button></div>
+        <h2>${esc(keyLabel(a.key))}</h2>
+        <div class="facts">${factsHTML(composition(a.ids))}</div>
+        <div>${blocks}</div>
+        <div id="t-confirm"></div>
+      </section>
+      <div class="handin"><div class="count"><span id="t-count"></span><div class="meter"><span id="t-meter"></span></div></div><button class="btn primary" id="t-submit">Inleveren</button></div>
+    </div>`;
+    show("toets-view");
+    const save = () => { clearTimeout(saveTimer); saveTimer = setTimeout(() => { T[a.key].lopend = a; saveT(); }, 300); };
+    v.querySelectorAll('input[type="radio"]').forEach((r) => r.addEventListener("change", () => {
+      const id = r.name.slice(2); a.antwoorden[id] = Number(r.value);
+      r.closest(".options").querySelectorAll(".opt").forEach((o) => o.classList.toggle("chosen", o.contains(r)));
+      updateCount(a); save();
+    }));
+    v.querySelectorAll("textarea").forEach((ta) => ta.addEventListener("input", () => { a.antwoorden[ta.dataset.k] = ta.value; updateCount(a); save(); }));
+    $("t-pause").addEventListener("click", () => { T[a.key].lopend = a; saveT(); setTab("toetsen"); });
+    $("t-submit").addEventListener("click", () => askSubmit(a));
+    updateCount(a);
+  }
+  function updateCount(a) {
+    const ps = parts(a); const n = ps.filter((p) => answered(a, p)).length;
+    $("t-count").textContent = `${n} van ${ps.length} antwoorden ingevuld`;
+    $("t-meter").style.width = (ps.length ? (n / ps.length) * 100 : 0) + "%";
+  }
+  function askSubmit(a) {
+    const ps = parts(a); const open = ps.filter((p) => !answered(a, p)).length;
+    if (!open) return submit(a);
+    const box = $("t-confirm");
+    box.innerHTML = `<div class="confirm" role="alert"><strong>Je hebt nog ${open} ${open === 1 ? "antwoord" : "antwoorden"} niet ingevuld.</strong><span class="small">Lege antwoorden tellen als 0 punten.</span><div class="row"><button class="btn primary" id="c-yes">Toch inleveren</button><button class="btn" id="c-no">Verder maken</button></div></div>`;
+    box.scrollIntoView({ block: "center" });
+    $("c-yes").addEventListener("click", () => submit(a));
+    $("c-no").addEventListener("click", () => { box.innerHTML = ""; const first = ps.find((p) => !answered(a, p)); const el = first && (document.getElementById("a-" + first.key) || document.querySelector(`input[name="r-${first.key}"]`)); if (el) { el.scrollIntoView({ block: "center" }); el.focus({ preventScroll: true }); } });
+  }
+  function submit(a) {
+    clearTimeout(saveTimer);
+    a.ingeleverd = new Date().toISOString();
+    // Lege open antwoorden zijn meteen nagekeken: 0 punten.
+    parts(a).forEach((p) => { if (p.t.type !== "mc" && !answered(a, p)) a.nakijk[p.key] = p.punten.map(() => false); });
+    const e = T[a.key]; e.lopend = null; e.laatste = a; saveT();
+    afterGrade(a.key);
+    renderResult(a.key);
+  }
+  async function afterGrade(key) {
+    const e = T[key]; const a = e.laatste; if (!a) return;
+    const s = score(a); if (s.todo) return;
+    if (e.beste == null || s.cijfer > e.beste) e.beste = s.cijfer;
+    e.laatsteCijfer = s.cijfer; e.laatsteDatum = a.ingeleverd; saveT();
+    if (db) { try { await db.doc("toetsresultaten/" + key).set({ toets: keyLabel(key), cijfer: s.cijfer, beste: e.beste, behaald: s.b, totaal: s.tot, perOnderdeel: s.per, datum: a.ingeleverd }); } catch {} }
+  }
+
+  // ---------- resultaat ----------
+  function renderResult(key) {
+    const a = T[key].laatste; const v = $("result-view");
+    const ps = parts(a);
+    let n = 0; const numOf = {};
+    a.ids.forEach((id) => { numOf[id] = ++n; });
+    const blocks = a.ids.map((id) => {
+      const t = item(id); if (!t) return "";
+      const num = numOf[id];
+      const tags = `<div class="qmeta"><span class="tag">${esc(t.onderdeel)}</span><span class="tag plain">${wkTag(t)}</span></div>`;
+      if (t.type === "mc") {
+        const ch = a.antwoorden[id]; const ok = ch === t.juist;
+        const opts = a.order[id].map((oi, pos) => `<div class="opt locked${oi === t.juist ? " right" : ""}${oi === ch && !ok ? " wrong" : ""}"><span class="bubble">${LETTERS[pos]}</span><span class="otext">${esc(t.opties[oi])}</span></div>`).join("");
+        return `<article class="q"><div class="qnum">${num}</div><div class="qbody"><div class="q-head">${tags}<span class="pts ${ok ? "full" : "zero"}">${ok ? 1 : 0}/1</span></div><p class="q-text">${esc(t.vraag)}</p><div class="options">${opts}</div><div class="feedback ${ok ? "good" : "bad"}"><h4>${ch == null ? "Niet beantwoord" : ok ? "Goed" : "Fout"}</h4><p>${esc(t.uitleg)}</p></div></div></article>`;
+      }
+      const review = (p, label) => {
+        const ans = String(a.antwoorden[p.key] || "").trim();
+        const hits = a.nakijk[p.key];
+        const got = hits ? hits.filter(Boolean).length : null;
+        const cls = hits == null ? "todo" : got === p.max ? "full" : got ? "part" : "zero";
+        const checks = p.punten.map((pt, i) => `<label class="check${hits && hits[i] ? " on" : ""}"><input type="checkbox" data-k="${p.key}" data-i="${i}" ${hits && hits[i] ? "checked" : ""} ${ans ? "" : "disabled"}><span>${esc(pt)}</span></label>`).join("");
+        return `<div class="stack" style="gap:10px">
+          <div class="q-head"><p class="q-text" style="font-size:1rem">${label}${esc(p.vraag)}</p><span class="pts ${cls}" data-pts="${p.key}">${hits == null ? "?" : got}/${p.max}</span></div>
+          <div class="yours${ans ? "" : " empty"}">${ans ? esc(ans) : "Niet beantwoord"}</div>
+          ${a.feedback[p.key] ? `<div class="claude-fb"><strong>Claude:</strong> ${esc(a.feedback[p.key])}</div>` : ""}
+          <span class="small">${ans ? "Vink aan welke beoordelingspunten echt in jouw antwoord staan:" : "Leeg antwoord: 0 punten."}</span>
+          <div class="checks">${checks}</div>
+          <details class="model"${hits == null ? "" : ""}><summary>Modelantwoord</summary><p>${esc(p.model)}</p></details>
+        </div>`;
+      };
+      if (t.type === "open") {
+        const p = ps.find((x) => x.key === id);
+        return `<article class="q"><div class="qnum">${num}</div><div class="qbody">${tags}${review(p, "")}</div></article>`;
+      }
+      const subs = ps.filter((x) => x.t.id === id).map((p) => `<div class="sub"><span class="sl">${"abcdef"[p.sub]}</span><div class="sb">${review(p, "")}</div></div>`).join("");
+      return `<article class="q"><div class="qnum">${num}</div><div class="qbody">${tags}<details class="case"><summary class="eyebrow" style="cursor:pointer">Casus: ${esc(t.titel)} (tik om te lezen)</summary><p class="ctext" style="margin-top:8px">${esc(t.casus)}</p></details><div class="subs">${subs}</div></div></article>`;
+    }).join("");
+    v.innerHTML = `
+      <section class="panel" id="r-summary"></section>
+      <section class="panel"><div class="q-head"><h2>Je antwoorden</h2><span class="note">MC is automatisch nagekeken</span></div><div>${blocks}</div>
+        <div class="row"><button class="btn primary" id="r-back">Terug naar de weektoetsen</button><button class="btn" id="r-again">Nog een keer</button></div></section>`;
+    show("result-view");
+    renderSummary(key);
+    v.querySelectorAll('input[type="checkbox"]').forEach((cb) => cb.addEventListener("change", () => {
+      const k = cb.dataset.k; const p = ps.find((x) => x.key === k);
+      const hits = a.nakijk[k] || p.punten.map(() => false);
+      hits[Number(cb.dataset.i)] = cb.checked; a.nakijk[k] = hits;
+      cb.closest(".check").classList.toggle("on", cb.checked);
+      const got = hits.filter(Boolean).length; const el = v.querySelector(`[data-pts="${k}"]`);
+      el.textContent = `${got}/${p.max}`; el.className = "pts " + (got === p.max ? "full" : got ? "part" : "zero");
+      saveT(); afterGrade(key); renderSummary(key);
+    }));
+    $("r-back").addEventListener("click", () => setTab("toetsen"));
+    $("r-again").addEventListener("click", () => openIntro(key));
+  }
+  function renderSummary(key) {
+    const a = T[key].laatste; const s = score(a); const el = $("r-summary");
+    const done = !s.todo;
+    const cls = !done ? "todo" : s.cijfer >= 5.5 ? "pass" : "fail";
+    const split = Object.entries(s.per).map(([o, x]) => `<div class="split-row"><span class="lbl">${esc(o)}</span><span class="track"><span style="width:${x.t ? (x.b / x.t) * 100 : 0}%"></span></span><span class="val">${x.b}/${x.t}</span></div>`).join("");
+    const canClaude = sample && s.todo;
+    el.innerHTML = `<div class="q-head"><span class="eyebrow">${esc(keyLabel(key))} · ingeleverd ${datum(a.ingeleverd)}</span></div>
+      <div class="score"><div class="cijfer ${cls}" aria-label="Cijfer">${done ? nl(s.cijfer) : "?"}</div>
+        <div class="side"><span class="big">${done ? (s.cijfer >= 5.5 ? "Voldoende" : "Onvoldoende") + ` · ${s.b} van ${s.tot} punten` : `Nog ${s.todo} ${s.todo === 1 ? "antwoord" : "antwoorden"} na te kijken`}</span>
+          <span class="small">${s.mc.t ? `Meerkeuze: ${s.mc.b} van ${s.mc.t} goed. ` : ""}Oefencijfer = 1 + 9 × behaalde punten / totaal; voldoende vanaf 5,5. De echte normering van je tentamen kan anders zijn.</span></div></div>
+      <div class="split">${split}</div>
+      ${s.todo ? `<div class="gradebar"><span class="small" id="g-note">${canClaude ? "Laat Claude je open antwoorden streng nakijken, of vink zelf per antwoord de punten aan." : "Kijk je open antwoorden na: vink per antwoord aan welke beoordelingspunten erin staan."}</span>${canClaude ? `<button class="btn primary" id="g-claude">Laat Claude nakijken</button>` : ""}</div>` : `<div class="gradebar done"><span class="small">Alles is nagekeken. Je kunt de vinkjes hieronder nog aanpassen als je het niet eens bent.</span></div>`}`;
+    if (canClaude) $("g-claude").addEventListener("click", () => gradeToets(key));
+  }
+  async function gradeToets(key) {
+    const a = T[key].laatste;
+    const todo = parts(a).filter((p) => p.t.type !== "mc" && !a.nakijk[p.key]);
+    if (!todo.length) return;
+    const btn = $("g-claude"); btn.disabled = true; $("g-note").textContent = `Claude kijkt ${todo.length} ${todo.length === 1 ? "antwoord" : "antwoorden"} na...`;
+    const blocks = todo.map((p, i) => `### ANTWOORD ${i + 1} (id: ${p.key})
+${p.t.type === "casus" ? `CASUS "${p.t.titel}":\n${p.t.casus}\n\n` : ""}VRAAG: ${p.vraag}
+MODELANTWOORD (referentie): ${p.model}
+BEOORDELINGSPUNTEN:
+${p.punten.map((x, j) => `${j + 1}. ${x}`).join("\n")}
+ANTWOORD VAN DE STUDENT:
+${String(a.antwoorden[p.key] || "").trim()}`).join("\n\n");
+    const prompt = `Je bent een strenge docent bij de hbo-opleiding Facility Management (HAN). Je kijkt een oefentoets na van een tweedejaarsstudent voor het vak "${toetsen.vak}". ${STRENG}
+
+Beoordeel elk antwoord hieronder apart, alleen op de eigen beoordelingspunten.
+
+${blocks}
+
+Geef alleen JSON terug in deze vorm:
+{"beoordeling": [{"id": "de id van het antwoord", "punten": [true/false per beoordelingspunt, in dezelfde volgorde], "feedback": "wat ontbreekt of onjuist is, en één concrete tip, samen hooguit 2 zinnen"}]}`;
+    try {
+      const r = await sample.json(prompt, { modelTier: "default" });
+      const list = Array.isArray(r && r.beoordeling) ? r.beoordeling : [];
+      let n = 0;
+      todo.forEach((p) => {
+        const hit = list.find((x) => x && x.id === p.key);
+        if (!hit || !Array.isArray(hit.punten)) return;
+        a.nakijk[p.key] = p.punten.map((_, j) => !!hit.punten[j]);
+        if (hit.feedback) a.feedback[p.key] = String(hit.feedback);
+        n++;
+      });
+      saveT(); afterGrade(key);
+      renderResult(key);
+      if (n < todo.length) { const g = $("g-note"); if (g) g.textContent = `Claude heeft ${n} van ${todo.length} antwoorden nagekeken. Kijk de rest zelf na.`; }
+    } catch (e) {
+      if (e && e.code === "not_granted") sample = null;
+      const g = $("g-note");
+      if (g) g.textContent = e && e.code === "rate_limited" ? "Even te veel aanvragen. Probeer het zo opnieuw, of kijk zelf na." : "Nakijken door Claude lukte niet. Kijk zelf na met de beoordelingspunten.";
+      if (btn) btn.disabled = !sample;
+    }
+  }
+
+  // ---------- boot ----------
+  const startTab = (() => { const h = location.hash.slice(1); if (h === "toetsen" || h === "oefenen") return h; return lsGet(TAB_KEY, "oefenen"); })();
+  Promise.all([
+    fetch("vragen.json").then((r) => r.json()).then((d) => { data = d; $("n-oefenen").textContent = d.vragen.length; }),
+    fetch("toetsen.json").then((r) => r.json()).then((d) => { toetsen = d; $("n-toetsen").textContent = d.weken.length * 4 + 1; }).catch(() => { $("toets-intro").textContent = "De weektoetsen konden niet worden geladen. Herlaad de pagina."; }),
+  ]).then(() => setTab(startTab, true))
+    .catch(() => { $("lesson-list").innerHTML = '<p class="small">De vragen konden niet worden geladen. Herlaad de pagina.</p>'; });
+  initStore();
+  (async () => { try { sample = window.claude && window.claude.use ? await window.claude.use("sample") : null; } catch { sample = null; } })();
+})();
+</script>
+
+</body>
+</html>

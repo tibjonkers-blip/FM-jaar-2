@@ -35,6 +35,11 @@ VAKKEN = {
         ACCENT="#7a3566", ACCENT_SOFT="#f4e6ef", ACCENT_DARK="#e39ac9", ACCENT_SOFT_DARK="#34192b",
         CLAUDE_DOC="https://claude.ai/artifact/F5i831ZTxpUePeyVdzXz8C", LS_KEY="fm-quiz-hrm",
         EXAM_LINE="Mondeling tentamen van 30 minuten: een gesprek met een acteur, vier HRM-vragen en vier arbeidsrechtvragen over de hele periode. Zeg je antwoorden bij open vragen ook hardop."),
+    "praktijkproject": dict(gen="vragen_pp.py", toets="pp", artifact=None,
+        TITLE="Oefenen Business management", HEADING="Praktijkproject Business Management",
+        ACCENT="#8a5a12", ACCENT_SOFT="#f5ead9", ACCENT_DARK="#e3b466", ACCENT_SOFT_DARK="#33260f",
+        CLAUDE_DOC="https://claude.ai/artifact/MNHrxykYerRjrc76rQu4Qg", LS_KEY="fm-quiz-praktijkproject",
+        EXAM_LINE="Geen schriftelijk tentamen: je cijfer komt uit de adviespresentatie (30 minuten plus 15 minuten vragen) en je portfolio moet voldoende zijn. Oefen hier de modellen die je in je advies moet kunnen uitleggen en toepassen."),
 }
 
 def render(tpl, c, target, slug):
@@ -62,7 +67,7 @@ def main():
         open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(HEAD + render(tpl, c, "site", slug) + TAIL)
         subprocess.run([sys.executable, os.path.join(VRAGEN, c["gen"]), os.path.join(out, "vragen.json")], check=True)
         subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_toetsen.py"), c["toets"], os.path.join(out, "toetsen.json")], check=True)
-        if art:
+        if art and c["artifact"]:
             ad = os.path.join(art, c["artifact"])
             os.makedirs(ad, exist_ok=True)
             open(os.path.join(ad, "index.html"), "w", encoding="utf-8").write(render(tpl, c, "artifact", slug))

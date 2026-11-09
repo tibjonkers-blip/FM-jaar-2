@@ -25,10 +25,10 @@ VAKKEN = {
         line="Per week het theoriecollege HRM, het arbeidsrechtcollege en de workshop gespreksvoering, zodat je alles hardop kunt uitleggen op het mondeling.",
         quiz=("https://claude.ai/artifact/Y4EBH9n2uzMQ3i5KkDeVQY", "../../hrm/")),
     "praktijkproject": dict(
-        heading="Praktijkproject Business Management", oefen=None,
+        heading="Praktijkproject Business Management", oefen="../../praktijkproject/",
         doc="https://claude.ai/artifact/MNHrxykYerRjrc76rQu4Qg",
         accent=("#8a5a12", "#f5ead9", "#e3b466", "#33260f"),
-        line="Per week de modellen voor je adviespresentatie, met tips voor je portfolio. Je logboek voor het portfolio staat alleen in je Claude-document.",
+        line="Per week de modellen voor je adviespresentatie, met tips voor je portfolio. Oefenvragen, weektoetsen en een eindtoets staan op de oefenpagina. Je logboek voor het portfolio staat alleen in je Claude-document.",
         quiz=None),
 }
 
@@ -47,8 +47,10 @@ def clean_source(md, slug, c):
     md = md.replace("Lees vóór de les de samenvatting in de tab van die week.", "Lees vóór de les de samenvatting van die week.")
     md = md.replace("De oefenvragen staan in de quizpagina van dit vak.",
                     "De oefenvragen en weektoetsen staan op de oefenpagina van dit vak.")
+    md = md.replace("Er is geen tentamen, dus in dit document staan geen quizvragen.",
+                    "Er is geen tentamen. Om de modellen te oefenen staan er wel oefenvragen, weektoetsen en een eindtoets op de oefenpagina van dit vak.")
     md = md.replace("Wel vind je per les de modellen die je in je advies moet kunnen toepassen, en een logboek voor je portfolio.",
-                    "Wel vind je per les de modellen die je in je advies moet kunnen toepassen. Je logboek voor het portfolio staat niet op deze openbare site, alleen in je Claude-document.")
+                    "Hier vind je per les de modellen die je in je advies moet kunnen toepassen. Je logboek voor het portfolio staat niet op deze openbare site, alleen in je Claude-document.")
     md = md.replace('Vul daarom elke week de tab "Logboek portfolio" in',
                     f'Vul daarom elke week het logboek in (tab "Logboek portfolio" in je [Claude-document]({c["doc"]}))')
     return md

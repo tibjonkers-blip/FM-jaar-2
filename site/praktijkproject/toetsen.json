@@ -1,0 +1,3624 @@
+{
+ "vak": "Praktijkproject Business Management",
+ "samenstelling": {
+  "mc": 6,
+  "open": 2,
+  "casus": 1
+ },
+ "proef": {
+  "titel": "Mix over alle weken",
+  "mc": 12,
+  "open": 4,
+  "casus": 2,
+  "uitleg": "Elke keer een nieuwe trekking uit de vraagbanken van week 1 tot en met 7: modellen herkennen, uitleggen en toepassen op een FM-casus."
+ },
+ "weken": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "items": [
+  {
+   "id": "pp1-m01",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "In welke DMAGIC-fase heb je in periode 1 KSF's en KPI's afgeleid uit klantwaarde?",
+   "opties": [
+    "Define",
+    "Measure",
+    "Analyze",
+    "Generate"
+   ],
+   "juist": 0,
+   "uitleg": "In Define baken je de opdracht af vanuit missie, visie en strategie en leid je KSF's en KPI's af uit klantwaarde. In Measure meet je de huidige situatie, in Analyze zoek je oorzaken.",
+   "versie": "A"
+  },
+  {
+   "id": "pp1-m02",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Hoe is het project in periode 2 georganiseerd?",
+   "opties": [
+    "Als watervalproject met één grote oplevering aan het eind van week 7, zonder tussentijdse review",
+    "In Scrum-light: twee sprints (week 1-3 en 4-6), met review bij de opdrachtgever en retrospective",
+    "Als Kanban-project zonder sprints, met een doorlopend bord en alleen een eindpresentatie",
+    "Met een stuurgroep van docent en opdrachtgever die elke week de voortgang formeel goedkeurt"
+   ],
+   "juist": 1,
+   "uitleg": "Je werkt in Scrum-light: twee sprints, een review bij de opdrachtgever (go/no-go in week 4) en een retrospective in de tweede les.",
+   "versie": "B"
+  },
+  {
+   "id": "pp1-m03",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is Kaizen?",
+   "opties": [
+    "Een eenmalige grote verbetering, bedacht door externe experts",
+    "Continu verbeteren als gewoonte, in kleine stappen, door iedereen",
+    "Het vastleggen van de beste werkwijze in een werkinstructie",
+    "Het stilleggen van het proces zodra er een fout optreedt"
+   ],
+   "juist": 1,
+   "uitleg": "Kaizen is continu verbeteren in kleine stappen, door iedereen. Vastleggen is standaardisatie, stilleggen is 'stop de lijn'.",
+   "versie": "C"
+  },
+  {
+   "id": "pp1-m04",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "'Verspil nooit het creatieve potentieel van mensen.' Bij welk van de drie menselijke principes uit de les hoort deze uitspraak?",
+   "opties": [
+    "Kaizen",
+    "Gemba",
+    "Mensen",
+    "Jidoka"
+   ],
+   "juist": 2,
+   "uitleg": "De drie menselijke principes zijn Kaizen, Gemba en Mensen. Bij 'mensen' gaat het erom dat medewerkers zich veilig voelen om problemen te benoemen en zelf met ideeën komen.",
+   "versie": "A"
+  },
+  {
+   "id": "pp1-m05",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een team begint een brainstorm over de schoonmaak zonder klantfeedback, KPI's of ergernissen van medewerkers. Welke brainstormstap slaat het team over?",
+   "opties": [
+    "Stap 1: een diverse blik, mensen van verschillende afdelingen",
+    "Stap 2: de sessie voeden met klantfeedback, KPI's en ergernissen",
+    "Stap 3: geen idee te gek, eerst kwantiteit",
+    "Het convergeren met de PUGH-matrix"
+   ],
+   "juist": 1,
+   "uitleg": "De sessie moet gevoed worden met informatie, anders blijven ideeën los van het echte probleem. Convergeren hoort pas bij week 2.",
+   "versie": "B"
+  },
+  {
+   "id": "pp1-m06",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Volgens de notities zit klantwaarde niet alleen in snelheid. Welk model koppelt de docent hieraan?",
+   "opties": [
+    "De KKT-driehoek",
+    "SERVQUAL",
+    "De belang-invloed-grid",
+    "De PUGH-matrix"
+   ],
+   "juist": 1,
+   "uitleg": "Via SERVQUAL: klantwaarde zit ook in betrouwbaarheid, responsiviteit, deskundigheid en beleving. Verbeteren kan dus ook betrouwbaarder, veiliger of gastvrijer betekenen.",
+   "versie": "C"
+  },
+  {
+   "id": "pp1-m07",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Waarom toets je een verbeterrichting aan de strategie van de opdrachtgever?",
+   "opties": [
+    "Omdat een voorstel dat de strategie ondersteunt draagvlak krijgt; wat ertegenin gaat haalt het zelden",
+    "Omdat de strategie van de opdrachtgever bepaalt hoeveel budget er voor het project beschikbaar is",
+    "Omdat de docent die toets als vast onderdeel van het portfolio en de eindbeoordeling vraagt",
+    "Omdat je alleen met de strategie de criteria en weging van de PUGH-matrix kunt invullen"
+   ],
+   "juist": 0,
+   "uitleg": "Toets elke richting aan missie, visie en strategie. Een voorstel dat haaks op de strategie staat, haalt het zelden.",
+   "versie": "A"
+  },
+  {
+   "id": "pp1-m08",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "De cateraar maakt broodjes pas klaar als een vergadering definitief is bevestigd, en dan precies voor het aantal deelnemers. Welk Lean-principe is dit?",
+   "opties": [
+    "Just in Time",
+    "Heijunka",
+    "Poka-Yoke",
+    "5S"
+   ],
+   "juist": 0,
+   "uitleg": "Just in Time: precies wat nodig is, op het juiste moment. Zo voorkom je overproductie en weggegooide broodjes.",
+   "versie": "B"
+  },
+  {
+   "id": "pp1-m09",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Bij de receptie ligt elke ochtend een stapel post te wachten tot de interne bode om 14.00 uur langskomt. Welk principe wordt hier geschonden?",
+   "opties": [
+    "Flow: geen ophopingen tussen stappen",
+    "Jidoka: geen fout doorgeven",
+    "Standaardisatie: beste werkwijze vastleggen",
+    "Gemba: naar de werkvloer gaan"
+   ],
+   "juist": 0,
+   "uitleg": "Flow betekent dat het werk doorstroomt zonder ophopingen. De stapel post is een wachtrij tussen twee stappen.",
+   "versie": "C"
+  },
+  {
+   "id": "pp1-m10",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Na de eerste klacht over verkeerd geprinte bezoekersbadges stopt de receptie met uitgeven en zoekt eerst de oorzaak. Welk principe past hierbij?",
+   "opties": [
+    "Heijunka",
+    "Stop de lijn",
+    "Pull/Kanban",
+    "Just in Time"
+   ],
+   "juist": 1,
+   "uitleg": "Stop de lijn: bij een probleem direct stilleggen en oplossen, zodat de fout niet verder wordt doorgegeven. Het hoort bij de kwaliteitspijler (Jidoka).",
+   "versie": "A"
+  },
+  {
+   "id": "pp1-m11",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "De technische dienst hangt in de werkplaats een schaduwbord op, labelt alle kasten en ruimt elke vrijdag op. Wat wil het team hiermee vooral voorkomen?",
+   "opties": [
+    "Fouten en variatie (mura)",
+    "Overbelasting van de coördinator (muri)",
+    "Te hoge inkoopprijzen",
+    "Te weinig meldingen"
+   ],
+   "juist": 0,
+   "uitleg": "Dit is 5S: orde en netheid voorkomen fouten en variatie (mura). Iedereen vindt het gereedschap op dezelfde plek.",
+   "versie": "B"
+  },
+  {
+   "id": "pp1-m12",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Bij welke pijler van het Toyota Production System hoort standaardisatie?",
+   "opties": [
+    "Snelheid (Just in Time)",
+    "Kwaliteit (Jidoka)",
+    "Mensen (respect)",
+    "Kaizen (verbeteren)"
+   ],
+   "juist": 1,
+   "uitleg": "De kwaliteitspijler bevat Jidoka, stop de lijn, Poka-Yoke, standaardisatie en 5S. De snelheidspijler bevat JIT, flow, pull, Heijunka en TOC.",
+   "versie": "C"
+  },
+  {
+   "id": "pp1-m13",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een teamlid wil in elke ruimte een sensor ophangen, 'want dat is innovatief'. Wat is volgens de les de juiste toets voor zo'n FM Tech-idee?",
+   "opties": [
+    "Of de sensoren goedkoper en nieuwer zijn dan wat concurrenten in hun gebouwen gebruiken",
+    "Of het klantwaarde toevoegt en bij de strategie past; technologie is een middel",
+    "Of de ICT-afdeling er dit kwartaal tijd en budget voor heeft om het te installeren",
+    "Of het idee in de Impact/Effort-matrix rechtsboven valt, bij hoge impact en hoge effort"
+   ],
+   "juist": 1,
+   "uitleg": "FM Tech komt bewust kort aan bod: technologie is een middel. Toets steeds of het klantwaarde toevoegt en bij de strategie past.",
+   "versie": "A"
+  },
+  {
+   "id": "pp1-m14",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "In het servicedeskvoorbeeld is de doorlooptijd 6,5 dag. Wat is daar de quick win?",
+   "opties": [
+    "Automatische routering van meldingen naar het juiste team",
+    "Een digitaal meldingenbord voor het hele servicedeskteam",
+    "Verplichte velden en een automatische ontvangstbevestiging",
+    "Een tweede coördinator aannemen voor de piekmomenten"
+   ],
+   "juist": 2,
+   "uitleg": "Verplichte velden en een ontvangstbevestiging zijn snel geregeld en hebben direct effect. Routering en een meldingenbord zijn de structurele verbetering.",
+   "versie": "B"
+  },
+  {
+   "id": "pp1-m15",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een idee kost veel tijd en geld, maar heeft weinig effect op het probleem. In welk kwadrant van de Impact/Effort-matrix valt het?",
+   "opties": [
+    "Quick win",
+    "Structurele verbetering",
+    "Fill-in",
+    "Niet doen"
+   ],
+   "juist": 3,
+   "uitleg": "Weinig impact en veel moeite: niet doen. Fill-ins zijn weinig impact en weinig moeite.",
+   "versie": "C"
+  },
+  {
+   "id": "pp1-m16",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Waarom moet je de brainstorm met medewerkers en klanten tijdens de werkdag goed voorbereiden?",
+   "opties": [
+    "Omdat de opdrachtgever de vragen vooraf moet goedkeuren",
+    "Omdat je maar één kans hebt om het juiste op te halen",
+    "Omdat je de uitkomst meteen in de PUGH-matrix moet zetten",
+    "Omdat de brainstorm meetelt voor je cijfer"
+   ],
+   "juist": 1,
+   "uitleg": "Medewerkers en klanten maken één keer tijd voor je. Bereid dus goed voor wat je wilt ophalen, zodat je longlist echte input bevat.",
+   "versie": "A"
+  },
+  {
+   "id": "pp1-m17",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Waarom waarschuwt de docent voor een eenzijdige focus op kostenreductie bij het kiezen van verbeterrichtingen?",
+   "opties": [
+    "Omdat kosten in facilitair management bij het kiezen van verbeterrichtingen niet meetellen",
+    "Omdat het elders schade kan doen, zoals aan tevredenheid, imago of productiviteit",
+    "Omdat een opdrachtgever in FM liever investeert in groei dan dat er bespaard wordt",
+    "Omdat kostenreductie niet bij de elf vormen van toegevoegde waarde hoort"
+   ],
+   "juist": 1,
+   "uitleg": "Kosten verlagen is één van de 11 toegevoegde waarden, maar wie alleen daarop stuurt, kan andere waarden beschadigen. Het criterium meervoudige toegevoegde waarde (20%) vraagt financiële én niet-financiële waarde.",
+   "versie": "B"
+  },
+  {
+   "id": "pp1-m18",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat doe je in de Generate-fase in week 1, en wat pas in week 2?",
+   "opties": [
+    "Week 1 de beste oplossing kiezen, week 2 daar ideeën en varianten bij verzamelen",
+    "Week 1 ideeën verzamelen zonder oordeel, week 2 kiezen en onderbouwen",
+    "Week 1 de current state meten, week 2 met 5x Waarom de oorzaken zoeken",
+    "Week 1 de implementatie plannen, week 2 met een FMEA de risico's scoren"
+   ],
+   "juist": 1,
+   "uitleg": "Eerst breed (divergeren), dan smal (convergeren). Zo voorkom je dat je te vroeg oordeelt.",
+   "versie": "C"
+  },
+  {
+   "id": "pp1-o1",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Leg uit wat divergeren en convergeren zijn, en waarom ze in het project bewust over twee weken zijn verdeeld.",
+   "modelantwoord": "Divergeren is zoveel mogelijk ideeën verzamelen zonder te oordelen (week 1, longlist). Convergeren is kiezen en onderbouwen van één voorkeursoplossing (week 2, PUGH-matrix). Ze zijn gescheiden omdat te vroeg oordelen ('dat kan toch niet') de beste ideeën wegsnoeit. Wie meteen kiest, mist vaak de oplossing die echt waarde toevoegt; daarom is de Generate-fase ook aan DMAIC toegevoegd.",
+   "punten": [
+    "Divergeren juist uitgelegd",
+    "Convergeren juist uitgelegd",
+    "Reden van scheiden: te vroeg oordelen snoeit goede ideeën weg"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp1-o2",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Bezoekers van een gemeentehuis wachten soms twintig minuten bij de receptie om zich te registreren. Formuleer één interne vraag en één vraag vanuit klantwaarde over dit knelpunt. Noem daarnaast twee aspecten van klantwaarde (SERVQUAL) die hier naast snelheid een rol spelen.",
+   "modelantwoord": "Intern: 'Hoe registreren wij bezoekers sneller?' Vanuit klantwaarde: 'Wat heeft een bezoeker eigenlijk nodig als hij binnenkomt?' (bijvoorbeeld weten waar hij moet zijn en zich welkom voelen). Andere aspecten: betrouwbaarheid (de afspraak staat klaar), responsiviteit (snel geholpen), deskundigheid (de receptionist weet de weg) en beleving (gastvrij ontvangen).",
+   "punten": [
+    "Interne vraag juist geformuleerd",
+    "Klantwaardevraag juist geformuleerd vanuit de bezoeker",
+    "Twee SERVQUAL-aspecten passend bij de situatie"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp1-o3",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Leg de twee pijlers van het Toyota Production System uit. Noem bij elke pijler twee principes en geef bij elke pijler een FM-voorbeeld.",
+   "modelantwoord": "Snelheid (Just in Time): laat het werk stromen. Principes: Just in Time, flow, pull/Kanban, Heijunka, bottleneck/TOC. FM-voorbeeld: vergaderzalen gespreid klaarzetten of de drukste servicebalie eerst aanpakken. Kwaliteit (Jidoka): bouw kwaliteit in bij de bron, geef geen fout door. Principes: Jidoka, stop de lijn, Poka-Yoke, standaardisatie, 5S. FM-voorbeeld: verplichte velden op een meldformulier.",
+   "punten": [
+    "Pijler snelheid juist uitgelegd met twee principes",
+    "FM-voorbeeld bij snelheid",
+    "Pijler kwaliteit juist uitgelegd met twee principes",
+    "FM-voorbeeld bij kwaliteit"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp1-o4",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Een team stelt voor om storingsmeldingen voortaan via één digitaal formulier te laten lopen. Laat met drie van de 11 facilitaire toegevoegde waarden zien wat dit oplevert, waarvan minstens twee niet-financieel.",
+   "modelantwoord": "Voorbeelden: productiviteit (medewerkers verliezen minder tijd door storingen die lang blijven liggen), tevredenheid (melders weten dat hun melding is opgepakt), risico's beheren (geen meldingen meer kwijt, bijvoorbeeld bij veiligheidsgebreken), kosten verlagen (minder dubbel werk, overtypen), imago (een organisatie die snel reageert). Een sterk antwoord maakt de impact concreet en weegt financieel en niet-financieel tegen elkaar af.",
+   "punten": [
+    "Eerste toegevoegde waarde juist en concreet",
+    "Tweede toegevoegde waarde juist en concreet",
+    "Derde toegevoegde waarde juist, met minstens twee niet-financieel"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp1-o5",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Waarom gaat een verbeterteam naar de Gemba? Leg uit wat het oplevert voor je analyse én voor het draagvlak van je advies.",
+   "modelantwoord": "De Gemba is de werkvloer, waar het werk echt gebeurt. Daar zie je de kansen, en de mensen die het werk doen weten vaak precies wat er misgaat (vraag de receptionist, schoonmaker of technicus naar hun grootste ergernis). Voor het draagvlak: mensen die gehoord worden en hun ideeën terugzien, staan eerder achter de verandering. Volgens de notities hangt het al dan niet landen van een advies af van cultuur, weerstand en draagvlak, niet alleen van hoe slim de oplossing is.",
+   "punten": [
+    "Gemba juist uitgelegd",
+    "Opbrengst voor de analyse",
+    "Opbrengst voor draagvlak, met koppeling aan cultuur of betrokkenheid"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp1-o6",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Je organiseert een brainstorm over het afvalscheidingsproces op een hogeschool. Werk de drie stappen van een goede brainstorm uit voor deze situatie.",
+   "modelantwoord": "Stap 1, diverse blik: schoonmakers, iemand van de kantine, een student, een docent en de facilitair coördinator. Stap 2, de sessie voeden: cijfers over restafval en scheidingspercentage, klachten of opmerkingen van gebruikers, ergernissen van schoonmakers (bijvoorbeeld volle bakken op vaste plekken). Stap 3, geen idee te gek: eerst zoveel mogelijk ideeën, voortbouwen op elkaar en nog niet oordelen; het doel is een longlist van minstens tien ideeën.",
+   "punten": [
+    "Stap 1 concreet ingevuld",
+    "Stap 2 concreet ingevuld met data of ergernissen",
+    "Stap 3: kwantiteit, niet oordelen, voortbouwen"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp1-c1",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Servicedesk Hogeschool Rijnstad",
+   "casus": "Bij de facilitaire servicedesk van Hogeschool Rijnstad (fictief) komen meldingen binnen via mail, telefoon en de balie. Alle meldingen gaan langs één coördinator, die ze verdeelt over de technici. De gemiddelde doorlooptijd is 5 werkdagen; studenten en docenten verwachten binnen één dag te horen dat hun melding is opgepakt. Een derde van de meldingen is onvolledig ('lamp kapot'), zodat de technicus eerst moet uitzoeken waar het om gaat. Technici pakken meldingen op in de volgorde die de coördinator die ochtend kiest.",
+   "subvragen": [
+    {
+     "vraag": "Welke drie Lean-principes kun je inzetten om dit proces te verbeteren? Koppel elk principe aan een concreet knelpunt uit de casus.",
+     "modelantwoord": "Bottleneck/TOC: de coördinator is de zwakste schakel en bepaalt de output; die eerst ontlasten, bijvoorbeeld met automatische routering. Poka-Yoke: verplichte velden (locatie, ruimte, soort storing) tegen onvolledige meldingen. Pull/Kanban: technici pakken zelf de volgende melding van een bord met nieuw, opgepakt, opgelost, in plaats van wachten op de verdeling. Flow of FIFO zijn ook goed als ze aan een knelpunt gekoppeld zijn.",
+     "punten": [
+      "Eerste principe juist en gekoppeld aan een knelpunt",
+      "Tweede principe juist en gekoppeld",
+      "Derde principe juist en gekoppeld"
+     ]
+    },
+    {
+     "vraag": "Plaats vier verbeterideeën voor deze servicedesk in de Impact/Effort-matrix en kies welke quick win en welke structurele verbetering je adviseert. Waarom allebei?",
+     "modelantwoord": "Bijvoorbeeld: verplichte velden en een automatische ontvangstbevestiging (quick win: veel impact, weinig moeite), automatische routering naar technici via het FMIS (structureel: veel impact, meer moeite), een poster bij de balie over hoe je meldt (fill-in), een eigen app laten bouwen (niet doen: veel moeite, weinig extra impact). Allebei: de quick win geeft momentum en draagvlak, maar bestrijdt vooral het symptoom; de structurele verbetering pakt de oorzaak (de bottleneck) aan.",
+     "punten": [
+      "Vier ideeën logisch in de kwadranten geplaatst",
+      "Quick win en structurele verbetering gekozen",
+      "Uitleg: momentum/draagvlak tegenover oorzaak aanpakken"
+     ]
+    }
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp1-c2",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Patiëntmaaltijden in het Maasziekenhuis",
+   "casus": "In het Maasziekenhuis (fictief) bereidt de keuken alle patiëntmaaltijden tussen 11.00 en 12.00 uur, omdat alle afdelingen om 12.00 uur willen eten. Op dat uur is de keuken overbelast en gaan er vaak fouten in de dieetmaaltijden. Er wordt elke dag zo'n 15% van de maaltijden weggegooid, omdat de keuken vooraf een vast aantal maakt. Het hoofd voeding wil de verspilling aanpakken en stelt voor 'gewoon 15% minder te koken en het menu te versoberen'.",
+   "subvragen": [
+    {
+     "vraag": "Beoordeel het voorstel van het hoofd voeding met de 11 facilitaire toegevoegde waarden. Noem minstens twee waarden die onder druk komen.",
+     "modelantwoord": "Het voorstel kijkt vooral naar kosten verlagen. Onder druk komen bijvoorbeeld healing environment (eten draagt bij aan herstel), tevredenheid (patiënten), risico's beheren (te weinig maaltijden of verkeerde dieetmaaltijden) en imago. De docent waarschuwt voor een eenzijdige focus op kostenreductie. Beter is de oorzaak van de verspilling aanpakken (vast aantal vooraf, piekbelasting) dan alleen minder koken.",
+     "punten": [
+      "Herkent eenzijdige focus op kostenreductie",
+      "Twee andere toegevoegde waarden die onder druk komen, met uitleg",
+      "Alternatief: oorzaak van verspilling aanpakken"
+     ]
+    },
+    {
+     "vraag": "Welke twee Lean-principes uit de snelheidspijler passen bij dit probleem? Werk beide uit voor de keuken.",
+     "modelantwoord": "Heijunka: de werkdruk spreiden, bijvoorbeeld afdelingen in twee of drie tijdsloten laten eten, zodat de piek tussen 11.00 en 12.00 verdwijnt en er minder fouten zijn. Just in Time / Pull: niet een vast aantal vooraf maken, maar koken op basis van de bestellingen van patiënten op de dag zelf (signaal), zodat er minder wordt weggegooid.",
+     "punten": [
+      "Heijunka juist toegepast op de piek",
+      "JIT of pull juist toegepast op de verspilling",
+      "Koppeling aan de gevolgen (minder fouten, minder weggooien)"
+     ]
+    }
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp1-c3",
+   "week": 1,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Flexplekken bij Waterschap Veluwerand",
+   "casus": "Waterschap Veluwerand (fictief) werkt met flexplekken. Medewerkers klagen dat ze 's ochtends lang zoeken naar een vrije werkplek en dat sommige plekken de hele dag 'bezet' zijn door een jas. Missie: 'Wij zorgen voor schoon en veilig water voor iedereen in de regio.' Strategie voor de komende jaren: duurzaam werken en kosten van huisvesting omlaag. Een teamlid stelt voor om 400 bezettingssensoren met een app aan te schaffen.",
+   "subvragen": [
+    {
+     "vraag": "Toets het sensorvoorstel aan de les over FM Tech en aan missie, visie en strategie. Wat zou je het team adviseren voordat het dit idee in de longlist hoger zet?",
+     "modelantwoord": "Technologie is een middel, geen doel. Eerst bepalen welke klantwaarde het oplevert: weten waar een vrije plek is en minder zoeken. Het past bij de strategie als het ook bezettingsdata oplevert om vierkante meters af te stoten (kosten huisvesting omlaag, duurzaamheid). Advies: eerst klantwaarde en strategische bijdrage expliciet maken en goedkopere alternatieven meenemen (bijvoorbeeld een clean-desk-afspraak tegen 'jassenclaims'), en het idee daarna eerlijk in de Impact/Effort-matrix zetten.",
+     "punten": [
+      "Technologie als middel, geen doel",
+      "Koppeling aan strategie (huisvestingskosten, duurzaamheid) of missie",
+      "Concreet advies, bijvoorbeeld klantwaarde eerst of alternatieven meenemen"
+     ]
+    },
+    {
+     "vraag": "Formuleer drie ontwerpeisen waaraan elke oplossing voor dit probleem moet voldoen. Leid ze af van klantwaarde en strategie.",
+     "modelantwoord": "Voorbeelden: (1) een medewerker vindt binnen 5 minuten een vrije werkplek (klantwaarde, snelheid); (2) de oplossing verhoogt het aantal benodigde werkplekken niet (strategie: kosten huisvesting); (3) de oplossing kost geen extra energie of materiaal, of draagt bij aan duurzaam werken (strategie); (4) de oplossing is eenvoudig te gebruiken zonder training. Goede ontwerpeisen zijn concreet en toetsbaar.",
+     "punten": [
+      "Drie ontwerpeisen geformuleerd",
+      "Afgeleid van klantwaarde én strategie",
+      "Concreet en toetsbaar geformuleerd"
+     ]
+    }
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp2-m01",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is een future state in Lean?",
+   "opties": [
+    "Een geordende lijst met alle verbeterideeën die uit de brainstorm zijn gekomen",
+    "Een samenhangend beeld van het ideale proces, met alleen waardetoevoegende stappen",
+    "De huidige situatie van het proces, maar dan met actuele meetgegevens erbij",
+    "Het implementatieplan met mijlpalen, middelen en verantwoordelijken per stap"
+   ],
+   "juist": 1,
+   "uitleg": "De future state is het beeld van het ideale proces zonder verspilling. Het is geen losse verzameling verbeteringen, maar een samenhangend beeld van hoe een melding of aanvraag straks doorstroomt.",
+   "versie": "A"
+  },
+  {
+   "id": "pp2-m02",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Waarom ontwerp je de future state eerst vanuit het ideaal en redeneer je pas daarna terug naar wat haalbaar is?",
+   "opties": [
+    "Omdat de opdrachtgever bij een verbeterproject meestal de meest ambitieuze oplossing wil zien",
+    "Om niet te blijven hangen in kleine aanpassingen aan een proces dat in de kern niet deugt",
+    "Omdat haalbaarheid in Lean pas meetelt als de pilot is afgerond en geëvalueerd",
+    "Omdat je anders de criteria en de weging van de PUGH-matrix niet kunt invullen"
+   ],
+   "juist": 1,
+   "uitleg": "Wie begint bij het bestaande proces, schaaft vaak alleen wat bij. Door eerst de 'droom' te ontwerpen, zie je wat er in de kern anders kan.",
+   "versie": "B"
+  },
+  {
+   "id": "pp2-m03",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een storingsmelding is vijf dagen onderweg, terwijl het herstel een uur kost. Waar zit volgens de les de winst in de future state?",
+   "opties": [
+    "In harder werken van de monteurs",
+    "In het wegnemen van wachten en overdragen",
+    "In het aannemen van extra monteurs",
+    "In een duurder FMIS"
+   ],
+   "juist": 1,
+   "uitleg": "Het herstel zelf kost maar een uur; de rest is wachten en overdragen. Die verspilling haal je weg.",
+   "versie": "C"
+  },
+  {
+   "id": "pp2-m04",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een stap voegt volgens de notities pas echt waarde toe als aan drie voorwaarden is voldaan. Welke van deze vier is géén van die voorwaarden?",
+   "opties": [
+    "De klant wil ervoor betalen",
+    "De stap verandert het product of de dienst volgens de wens van de klant",
+    "Het gaat in één keer goed",
+    "De stap is wettelijk verplicht"
+   ],
+   "juist": 3,
+   "uitleg": "Een wettelijk verplichte stap zonder klantwaarde is BNVA: noodzakelijk, maar niet waardetoevoegend. Die minimaliseer je.",
+   "versie": "A"
+  },
+  {
+   "id": "pp2-m05",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Op maandag komen bij de servicedesk 40 meldingen binnen, op vrijdag maar 5. Welke vorm van verspilling is dit?",
+   "opties": [
+    "Muda",
+    "Mura",
+    "Muri",
+    "Poka-Yoke"
+   ],
+   "juist": 1,
+   "uitleg": "Mura is onnodige variatie of ongelijkmatigheid. Muri is overbelasting; dat kan een gevolg zijn van de maandagpiek.",
+   "versie": "B"
+  },
+  {
+   "id": "pp2-m06",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Eén technicus moet alle spoedklussen in het weekend oppakken en raakt uitgeput. Welke vorm van verspilling is dit?",
+   "opties": [
+    "Mura",
+    "Muri",
+    "NVA",
+    "BNVA"
+   ],
+   "juist": 1,
+   "uitleg": "Muri is overbelasting van mensen of middelen. Let er in je ontwerp op dat je die niet vergroot.",
+   "versie": "C"
+  },
+  {
+   "id": "pp2-m07",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke vorm van een toekomstbeeld laat de volledige waardestroom zien van begin tot eind, met tijden en informatiestromen?",
+   "opties": [
+    "Future-state map",
+    "Service blueprint",
+    "Verbeterde flow",
+    "Impact/Effort-matrix"
+   ],
+   "juist": 0,
+   "uitleg": "De future-state map is de meest complete vorm. De service blueprint scheidt frontstage en backstage; de verbeterde flow is pragmatisch.",
+   "versie": "A"
+  },
+  {
+   "id": "pp2-m08",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Je wilt de opdrachtgever snel laten zien welke stappen in de swimlane zijn geschrapt, samengevoegd of verplaatst. Welke vorm past?",
+   "opties": [
+    "Service blueprint",
+    "Verbeterde flow",
+    "Future-state map",
+    "RACI"
+   ],
+   "juist": 1,
+   "uitleg": "De verbeterde flow is een aangepaste flowchart of swimlane. Pragmatisch, en goed om te tonen wat er is veranderd.",
+   "versie": "B"
+  },
+  {
+   "id": "pp2-m09",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een servicedesk is 480 minuten per dag open en krijgt gemiddeld 60 meldingen per dag. Wat is de takttijd (gangbare definitie)?",
+   "opties": [
+    "4 minuten",
+    "8 minuten",
+    "60 minuten",
+    "480 minuten"
+   ],
+   "juist": 1,
+   "uitleg": "Takttijd = beschikbare tijd / klantvraag = 480 / 60 = 8 minuten. Elke 8 minuten vraagt de klant om een nieuwe melding. Let op: de slide noemt takttijd zonder uitleg; dit is de gangbare invulling.",
+   "versie": "C"
+  },
+  {
+   "id": "pp2-m10",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat betekent FIFO in de future state van het storingsproces?",
+   "opties": [
+    "Eerst de makkelijkste meldingen oppakken",
+    "Meldingen oppakken in volgorde van binnenkomst",
+    "De meldingen van de directie eerst",
+    "Alle meldingen van één dag in één keer afhandelen"
+   ],
+   "juist": 1,
+   "uitleg": "FIFO is first in, first out. Zo blijft geen melding eindeloos liggen.",
+   "versie": "A"
+  },
+  {
+   "id": "pp2-m11",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "De wet van de concentratie (80/20) helpt bij de dimensie haalbaarheid. Wat betekent dat voor je keuze?",
+   "opties": [
+    "Je verbetert 80% van alle processtappen en laat de rest voorlopig zoals het is",
+    "Je pakt de vitale 20% aan die vaak 80% van de problemen veroorzaakt",
+    "Je besteedt 80% van het projectbudget aan de pilot en 20% aan de uitrol",
+    "Je kiest de oplossing waar minstens 80% van de medewerkers voor stemt"
+   ],
+   "juist": 1,
+   "uitleg": "Vaak veroorzaakt 20% van de activiteiten 80% van de problemen. Door je daarop te richten, blijft je oplossing haalbaar binnen tijd en middelen.",
+   "versie": "B"
+  },
+  {
+   "id": "pp2-m12",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat leert de KKT- of duivelsdriehoek je bij de dimensie impact?",
+   "opties": [
+    "Dat kwaliteit in FM altijd voorgaat op kosten en tijd",
+    "Dat je zelden kwaliteit, kosten en tijd tegelijk verbetert",
+    "Dat kosten de enige harde maatstaf zijn voor impact",
+    "Dat tijd in FM-processen nauwelijks meetelt bij impact"
+   ],
+   "juist": 1,
+   "uitleg": "Kwaliteit, kosten en tijd beïnvloeden elkaar. Verbeter je de een, dan kost dat vaak iets bij een ander.",
+   "versie": "C"
+  },
+  {
+   "id": "pp2-m13",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Waarom is binnen Lean een matrix nodig om tussen oplossingen te kiezen, in plaats van op gevoel?",
+   "opties": [
+    "Omdat een matrix objectief altijd de goedkoopste en snelste oplossing naar boven haalt",
+    "Omdat consensus een kernwaarde is: de keuze moet gedragen en navolgbaar zijn",
+    "Omdat de docent de keuze anders niet kan beoordelen in het portfolio",
+    "Omdat gevoel en ervaring in een Lean-verbeterproject geen enkele rol mogen spelen"
+   ],
+   "juist": 1,
+   "uitleg": "Kies je op gevoel of op de hardste stem, dan volgt discussie en verlies je draagvlak. De waarde zit in de transparantie en het gesprek.",
+   "versie": "A"
+  },
+  {
+   "id": "pp2-m14",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Hoeveel criteria gebruik je maximaal in de PUGH-matrix?",
+   "opties": [
+    "Drie",
+    "Vier",
+    "Zes",
+    "Tien"
+   ],
+   "juist": 2,
+   "uitleg": "Maximaal zes vitale criteria, waarbij je de zwaarste een hoger gewicht geeft.",
+   "versie": "B"
+  },
+  {
+   "id": "pp2-m15",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Optie D scoort: doorlooptijd +1 (weging 4), kosten +2 (weging 3), gebruiksgemak −1 (weging 5). Wat is het gewogen totaal?",
+   "opties": [
+    "+2",
+    "+5",
+    "+15",
+    "+17"
+   ],
+   "juist": 1,
+   "uitleg": "(1 × 4) + (2 × 3) + (−1 × 5) = 4 + 6 − 5 = 5.",
+   "versie": "C"
+  },
+  {
+   "id": "pp2-m16",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een optie krijgt in de PUGH-matrix een gewogen totaal van −1. Wat betekent dat?",
+   "opties": [
+    "De optie is ongeveer even goed als de beste optie",
+    "De optie scoort slechter dan de huidige situatie",
+    "Er is een rekenfout, want totalen kunnen niet negatief zijn",
+    "De optie moet eerst als pilot worden getest"
+   ],
+   "juist": 1,
+   "uitleg": "De baseline (huidige situatie) staat op 0. Een negatief totaal betekent slechter dan nu. Dat zag je ook bij optie C in het voorbeeld uit de les.",
+   "versie": "A"
+  },
+  {
+   "id": "pp2-m17",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Tijdens de werkdag vullen jullie de PUGH-matrix in met medewerkers. Jullie team komt uiteindelijk tot een andere keuze dan de medewerkers. Wat zegt de les daarover?",
+   "opties": [
+    "Dat mag niet: de keuze van de medewerkers is bindend",
+    "Dat mag, het is jullie advies, maar je moet het onderbouwen",
+    "Dan moet de opdrachtgever een nieuwe matrix laten invullen",
+    "Dan stem je opnieuw tot er een meerderheid is"
+   ],
+   "juist": 1,
+   "uitleg": "Uiteindelijk is het jullie advies. Afwijken mag, maar onderbouw waarom.",
+   "versie": "B"
+  },
+  {
+   "id": "pp2-m18",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een technisch briljant ontwerp vraagt dat alle medewerkers voortaan met tablets werken, terwijl de organisatie nauwelijks digitaal werkt. Op welke dimensie scoort het ontwerp zwak?",
+   "opties": [
+    "Impact",
+    "Aansluiting op de context",
+    "Haalbaarheid volgens 80/20",
+    "Takttijd"
+   ],
+   "juist": 1,
+   "uitleg": "Aansluiting op de context: past het bij cultuur, systemen en de bedoeling van de organisatie? Dit is de toets die studenten het vaakst vergeten.",
+   "versie": "C"
+  },
+  {
+   "id": "pp2-o1",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Een bezoeker meldt zich bij de receptie van een kantoor. Deel deze vier stappen in als VA, BNVA of NVA en geef bij elk de ontwerpregel: (1) wachten tot de receptionist klaar is met een telefoontje, (2) een identiteitsbewijs laten zien voor de toegangsregistratie, (3) de gastheer wordt gebeld en haalt de bezoeker op, (4) de receptionist typt de gegevens over van de papieren lijst in het systeem.",
+   "modelantwoord": "(1) NVA, wachten is pure verspilling: elimineren. (2) BNVA, nodig voor veiligheid maar geen klantwaarde: minimaliseren, bijvoorbeeld vooraf digitaal aanmelden. (3) VA, de bezoeker komt hiervoor: behouden en versterken. (4) NVA, overtypen: elimineren, bijvoorbeeld direct digitaal registreren.",
+   "punten": [
+    "Stap 1 en 4 als NVA met elimineren",
+    "Stap 2 als BNVA met minimaliseren",
+    "Stap 3 als VA met behouden/versterken"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp2-o2",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Noem de drie manieren om een toekomstbeeld vast te leggen. Welke kies je voor het verbeteren van de catering bij vergaderingen, als de opdrachtgever vooral wil weten wat de gast merkt van de veranderingen? Onderbouw.",
+   "modelantwoord": "Future-state map (complete waardestroom met tijden en informatiestromen), service blueprint (scheidt frontstage, wat de gebruiker ziet, van backstage) en verbeterde flow (aangepaste flowchart of swimlane). Hier past de service blueprint: catering is dienstverlening en de opdrachtgever wil zien wat de gast ervaart. Je laat zien welke backstage-verbeteringen er zijn zonder verlies van frontstage-kwaliteit.",
+   "punten": [
+    "Drie vormen juist genoemd",
+    "Service blueprint gekozen",
+    "Onderbouwing met frontstage/backstage en beleving"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp2-o3",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Een team twijfelt tussen twee richtingen voor het schoonmaakproces: (A) schoonmaken op basis van gebruik met sensoren, (B) vaste schoonmaakrondes met een betere checklist. Vergelijk A en B op de vier dimensies uit de les.",
+   "modelantwoord": "Haalbaarheid: B is binnen tijd en middelen goed haalbaar; A vraagt sensoren, koppeling en budget. Impact: A kan meer impact hebben (minder onnodig schoonmaken, meer waar het nodig is), B verbetert vooral de kwaliteit; volgens de KKT-driehoek kun je zelden alles tegelijk verbeteren. Risico: A heeft meer risico (techniek, data, acceptatie); eenvoud is bijna altijd een deugd. Context: past A bij de systemen en de cultuur van de organisatie en het schoonmaakbedrijf? Conclusie bijvoorbeeld: B als basis en A eerst als pilot.",
+   "punten": [
+    "Haalbaarheid vergeleken",
+    "Impact vergeleken, met KKT of 80/20",
+    "Risico vergeleken",
+    "Context vergeleken"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp2-o4",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Beschrijf de vijf stappen van de PUGH-matrix. Welke valkuil noemt de docent bij de weging, en hoe voorkom je die?",
+   "modelantwoord": "1. Representatieve groep samenstellen: team plus stakeholders van wie je het oordeel vertrouwt. 2. Maximaal zes vitale criteria bepalen en de zwaarste een hoger gewicht geven. 3. De baseline (huidige situatie) krijgt op elk criterium 0. 4. Elk alternatief scoren ten opzichte van de baseline, van −2 tot +2. 5. Score × gewicht, optellen per alternatief; de hoogste totaalscore wint. Valkuil: als je de gewichten pas na het scoren afspreekt, stuurt de weging stiekem het antwoord. Voorkomen: gewichten vooraf afspreken en de cijfers samen bespreken.",
+   "punten": [
+    "Stap 1 en 2 juist",
+    "Stap 3 en 4 juist (baseline 0, −2 tot +2)",
+    "Stap 5 juist",
+    "Valkuil weging en oplossing: gewichten vooraf afspreken"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp2-o5",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Leg het verschil uit tussen een pilot, een simulatie en een gefaseerde invoering. Geef bij elk een FM-situatie waarin je die vorm kiest.",
+   "modelantwoord": "Pilot: op kleine schaal testen in de echte omgeving, met plan, meetafspraken en getrainde medewerkers; daarna evalueren en verfijnen. Bijvoorbeeld een nieuw meldproces vier weken op één afdeling. Simulatie: de werkelijkheid veilig nabootsen als een echte test te ingrijpend is, bijvoorbeeld een ontruimingsprocedure of een nieuwe looproute op een OK-complex. Gefaseerd: stap voor stap uitrollen bij grote veranderingen, bijvoorbeeld een nieuw FMIS per gebouw invoeren.",
+   "punten": [
+    "Pilot juist met passend voorbeeld",
+    "Simulatie juist met passend voorbeeld",
+    "Gefaseerd juist met passend voorbeeld"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp2-o6",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "De voorkeursoplossing voor de catering bij vergaderingen is een online bestelformulier dat direct bij de keuken binnenkomt, met een vaste besteldeadline. Onderbouw de waarde voor de opdrachtgever, de gebruiker en het proces.",
+   "modelantwoord": "Opdrachtgever: minder weggegooid eten en minder spoedbestellingen (kosten, duurzaamheid), betrouwbaarder dienstverlening en beter imago bij bezoekers. Gebruiker: bestellen kost minder moeite, de bestelling klopt en staat op tijd klaar (beleving, betrouwbaarheid). Proces: minder verspilling (geen mails die worden overgetypt), kortere doorlooptijd en minder variatie voor de keuken. Een sterk antwoord laat zien dat de oplossing het geheel dient.",
+   "punten": [
+    "Opdrachtgever: koppeling aan doelen of KPI's in zijn taal",
+    "Gebruiker: klantwaarde vanuit de vergaderaar",
+    "Proces: minder verspilling, kortere doorlooptijd of minder variatie"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp2-c1",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Aanvraag van een toegangspas",
+   "casus": "Bij een gemeentehuis vraagt een nieuwe medewerker een toegangspas aan. Huidige situatie: (1) de leidinggevende mailt een formulier naar de receptie; (2) de mail ligt gemiddeld 2 dagen in een gedeelde mailbox; (3) de receptie print het formulier en laat het tekenen door het hoofd beveiliging; (4) het getekende formulier gaat per interne post naar de afdeling ICT (1 dag); (5) ICT typt de gegevens over in het toegangssysteem; (6) de pas wordt gemaakt (10 minuten); (7) de medewerker haalt de pas op bij de receptie. De doorlooptijd is gemiddeld 6 werkdagen; nieuwe medewerkers lopen hun eerste week met een dagpas.",
+   "subvragen": [
+    {
+     "vraag": "Deel de zeven stappen in als VA, BNVA of NVA.",
+     "modelantwoord": "VA: 6 (de pas maken) en eventueel 7 (de medewerker krijgt de pas). BNVA: 1 (de aanvraag moet er zijn) en 3 (een controle door beveiliging is nodig, maar kan eenvoudiger). NVA: 2 (wachten in de mailbox), 4 (interne post, transport en wachten) en 5 (overtypen).",
+     "punten": [
+      "NVA-stappen juist (2, 4, 5)",
+      "BNVA-stappen juist (1, 3)",
+      "VA-stap(pen) juist (6, eventueel 7)"
+     ]
+    },
+    {
+     "vraag": "Ontwerp de future state. Beschrijf hoe het proces straks loopt en wat je doet met elk soort stap.",
+     "modelantwoord": "Bijvoorbeeld: de leidinggevende vult één digitaal formulier in dat direct in het toegangssysteem landt (overtypen en interne post geëlimineerd); het hoofd beveiliging keurt digitaal goed, of standaardaanvragen worden zonder akkoordstap goedgekeurd (BNVA geminimaliseerd); aanvragen worden op FIFO-basis opgepakt; de pas ligt op dag 1 klaar. Doorlooptijd van 6 dagen naar 1 dag. Regels: NVA elimineren, BNVA minimaliseren, VA behouden.",
+     "punten": [
+      "NVA geëlimineerd met concrete maatregel",
+      "BNVA geminimaliseerd met concrete maatregel",
+      "Samenhangend beeld met nieuwe doorlooptijd of flow (FIFO)"
+     ]
+    },
+    {
+     "vraag": "Welke vorm kies je om dit toekomstbeeld aan de opdrachtgever te laten zien? Onderbouw.",
+     "modelantwoord": "Verbeterde flow (swimlane) is pragmatisch: je laat zien welke stappen geschrapt en samengevoegd zijn tussen leidinggevende, receptie, beveiliging en ICT. Een future-state map kan ook, als je de tijden en informatiestromen volledig wilt tonen. Een service blueprint is minder logisch, omdat het hier vooral om backstage gaat.",
+     "punten": [
+      "Passende vorm gekozen",
+      "Onderbouwing gekoppeld aan wat de vorm laat zien"
+     ]
+    }
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp2-c2",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "PUGH-matrix voor het afvalproces",
+   "casus": "Een team wil het afvalproces van een kantoorgebouw verbeteren. Er zijn drie opties naast de huidige situatie (baseline): (A) centrale afvalstations per verdieping, (B) persoonlijke prullenbakken weghalen en scheiden bij de bron, (C) een externe partij die het afval na ophalen sorteert. Criteria en wegingen: scheidingspercentage (5), kosten (3), gebruiksgemak (4), invoeringsrisico (2). Scores: A: +2, −1, +1, 0. B: +2, +1, −1, −1. C: +1, −2, +2, +1.",
+   "subvragen": [
+    {
+     "vraag": "Bereken het gewogen totaal van A, B en C en geef aan welke optie wint.",
+     "modelantwoord": "A: (2×5) + (−1×3) + (1×4) + (0×2) = 10 − 3 + 4 + 0 = 11. B: 10 + 3 − 4 − 2 = 7. C: 5 − 6 + 8 + 2 = 9. Optie A wint met 11.",
+     "punten": [
+      "A = 11 juist",
+      "B = 7 en C = 9 juist",
+      "A als winnaar"
+     ]
+    },
+    {
+     "vraag": "Het team ontdekt dat het gewicht van kosten pas na het scoren van 4 naar 3 is verlaagd. Wat is daar mis mee, en wat zou je doen?",
+     "modelantwoord": "Gewichten spreek je af vóór het scoren; anders stuurt de weging stiekem het antwoord. Met kosten op 4 wordt het A: 11 − 1 = 10, B: 7 + 1 = 8, C: 9 − 2 = 7; A wint nog steeds, maar dat moet je laten zien. Doe het transparant: leg vast waarom het gewicht zou moeten veranderen, bespreek het met de groep en reken beide varianten door. De matrix is een hulpmiddel, geen rechter.",
+     "punten": [
+      "Benoemt dat gewichten vooraf moeten worden vastgesteld",
+      "Rekent de variant door of laat zien dat de uitkomst gelijk blijft",
+      "Transparante aanpak: bespreken en vastleggen"
+     ]
+    },
+    {
+     "vraag": "Benoem één risico van de winnende optie en doe een voorstel om dat risico te beheersen.",
+     "modelantwoord": "Risico bij A: medewerkers blijven hun afval toch op de werkplek weggooien of lopen niet naar het station, waardoor het scheidingspercentage tegenvalt. Voorstel: eerst een pilot van vier weken op één verdieping, met vooraf een meetafspraak (scheidingspercentage per week), communicatie en uitleg aan medewerkers, en daarna evalueren en verfijnen voordat het gebouwbreed wordt ingevoerd.",
+     "punten": [
+      "Reëel risico van optie A",
+      "Pilot (of simulatie/gefaseerd) passend gekozen",
+      "Met meetafspraken of evaluatie"
+     ]
+    }
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp2-c3",
+   "week": 2,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Vergaderzalen bij een zorgverzekeraar",
+   "casus": "Bij een zorgverzekeraar staan vergaderzalen vaak niet klaar: de opstelling klopt niet, de beamer werkt niet of de koffie ontbreekt. Reserveren gaat via Outlook, opstelling via een mail aan de facilitaire dienst en catering via een apart formulier. De organisatie wil de komende jaren vooral kosten besparen en heeft een cultuur waarin alles via de leidinggevende moet. Het team overweegt twee richtingen: (1) één reserveringsformat waarin zaal, opstelling en catering samen worden aangevraagd, plus een gereedmaak-checklist; (2) een volledig zelfbedieningsconcept waarin medewerkers zelf de zaal inrichten en koffie halen.",
+   "subvragen": [
+    {
+     "vraag": "Vergelijk de twee richtingen op haalbaarheid, risico en aansluiting op de context.",
+     "modelantwoord": "Haalbaarheid: richting 1 is met bestaande middelen snel in te voeren; richting 2 vraagt herinrichting van zalen en voorzieningen. Risico: bij 2 is de kans groter dat zalen rommelig achterblijven en dat externe gasten een slechte indruk krijgen; eenvoud is een deugd, dus 1 is risicoarmer. Context: in een cultuur waarin alles via de leidinggevende gaat, past volledige zelfbediening slecht; richting 1 sluit beter aan, al kan 2 wel bij het besparingsdoel passen.",
+     "punten": [
+      "Haalbaarheid juist vergeleken",
+      "Risico juist vergeleken",
+      "Context: cultuur van de organisatie meegenomen"
+     ]
+    },
+    {
+     "vraag": "Welke richting adviseer je? Onderbouw de waarde voor opdrachtgever, gebruiker en proces.",
+     "modelantwoord": "Bijvoorbeeld richting 1. Opdrachtgever: minder verspilde zaaltijd en spoedwerk, past bij kosten besparen en een betrouwbare uitstraling naar externe gasten. Gebruiker: één aanvraag in plaats van drie, en de zaal staat klaar zoals afgesproken. Proces: minder overdrachten en dubbele registratie, kortere doorlooptijd en minder variatie door de checklist. Een andere keuze kan ook goed zijn als ze met de drie perspectieven wordt onderbouwd.",
+     "punten": [
+      "Keuze gemaakt en logisch na de vergelijking",
+      "Waarde voor opdrachtgever en gebruiker",
+      "Waarde voor het proces"
+     ]
+    }
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp3-m01",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke twee succesfactoren noemt de les voor elke verandering?",
+   "opties": [
+    "Een ruim budget en een externe adviseur die de verandering begeleidt",
+    "De uitvoerders betrekken en zichtbare steun van het management",
+    "Een goed werkend FMIS en duidelijke KPI's op een dashboard",
+    "Een strakke planning en een snelle big-bang-invoering in één keer"
+   ],
+   "juist": 1,
+   "uitleg": "Verandering loopt langs ratio en gevoel. De twee succesfactoren: betrek de mensen die het moeten doen, en zorg voor zichtbare betrokkenheid van het management.",
+   "versie": "A"
+  },
+  {
+   "id": "pp3-m02",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wie is volgens de les een stakeholder?",
+   "opties": [
+    "Alleen wie in het organogram boven het proces staat en erover beslist",
+    "Iedereen die invloed heeft op je verbetering óf er gevolgen van ondervindt",
+    "Alleen de opdrachtgever, de sponsor en de beoogde proceseigenaar",
+    "Iedereen die in de RACI van het project een R of een A heeft"
+   ],
+   "juist": 1,
+   "uitleg": "Invloed hebben óf gevolgen ondervinden is genoeg. Let ook op het rimpeleffect: afdelingen die denken er niets mee te maken te hebben.",
+   "versie": "B"
+  },
+  {
+   "id": "pp3-m03",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke rol heeft de lijnmanager die verantwoordelijk is voor het proces dat je verbetert?",
+   "opties": [
+    "Sponsor",
+    "Proceseigenaar",
+    "Uitvoerder",
+    "Gebruiker"
+   ],
+   "juist": 1,
+   "uitleg": "De proceseigenaar is de lijnmanager die verantwoordelijk is voor het proces. De sponsor maakt mensen en middelen vrij en heeft mandaat.",
+   "versie": "C"
+  },
+  {
+   "id": "pp3-m04",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "De schoonmakers merken veel van het nieuwe rooster, maar hebben weinig invloed op de beslissing. Welke aanpak hoort volgens de belang-invloed-grid bij hen?",
+   "opties": [
+    "Nauw betrekken",
+    "Tevreden houden",
+    "Informeren",
+    "Monitoren"
+   ],
+   "juist": 2,
+   "uitleg": "Veel belang en weinig invloed: informeren. Houd ze goed op de hoogte; vaak loont het om ze ook bij de uitvoering te betrekken.",
+   "versie": "A"
+  },
+  {
+   "id": "pp3-m05",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Het hoofd van de technische dienst heeft veel invloed en wordt sterk geraakt door het nieuwe meldproces. Welke aanpak past?",
+   "opties": [
+    "Monitoren",
+    "Informeren",
+    "Tevreden houden",
+    "Nauw betrekken"
+   ],
+   "juist": 3,
+   "uitleg": "Veel invloed en veel belang: nauw betrekken. Deze persoon kan het project maken of breken.",
+   "versie": "B"
+  },
+  {
+   "id": "pp3-m06",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "De facilitair coördinator heeft het huidige meldsysteem tien jaar geleden zelf bedacht en reageert afwijzend op jullie voorstel. Welke aanpak past bij deze oorzaak van weerstand?",
+   "opties": [
+    "Tijd vrijmaken",
+    "Waardering voor het verleden",
+    "Training en geruststelling",
+    "Ruimte geven"
+   ],
+   "juist": 1,
+   "uitleg": "De oorzaak is gezichtsverlies. Laat zien dat het oude systeem destijds goed werkte en dat je erop voortbouwt.",
+   "versie": "C"
+  },
+  {
+   "id": "pp3-m07",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Medewerkers horen op vrijdag via via dat ze vanaf maandag met een nieuw roostersysteem moeten werken. Welke oorzaak van weerstand roep je hiermee op, en wat had je moeten doen?",
+   "opties": [
+    "Verlies aan controle; ruimte geven",
+    "Overvallen worden; voorbereiden",
+    "Meer werk; tijd vrijmaken",
+    "Gezichtsverlies; waardering voor het verleden"
+   ],
+   "juist": 1,
+   "uitleg": "Wie overvallen wordt, verzet zich. Bereid mensen tijdig voor.",
+   "versie": "A"
+  },
+  {
+   "id": "pp3-m08",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Medewerkers vragen steeds: 'Waar gaat dit naartoe, en wat betekent het straks voor mijn functie?' Welke aanpak past bij deze weerstand?",
+   "opties": [
+    "Duidelijke visie",
+    "Tijd vrijmaken",
+    "Waardering voor het verleden",
+    "Training en geruststelling"
+   ],
+   "juist": 0,
+   "uitleg": "Te veel onzekerheid vraagt om een duidelijke visie: waar gaan we naartoe en waarom.",
+   "versie": "B"
+  },
+  {
+   "id": "pp3-m09",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een medewerker zegt over het nieuwe meldportaal: 'Dat komt er toch nooit, dat hebben ze al drie keer gezegd.' In welke fase van Carnall zit deze medewerker?",
+   "opties": [
+    "Ontkenning",
+    "Verdediging",
+    "Verwerking",
+    "Internalisatie"
+   ],
+   "juist": 0,
+   "uitleg": "De fasen van Carnall zijn ontkenning, verdediging, verwerking, aanpassing en internalisatie. Niet geloven dat de verandering doorgaat, is ontkenning.",
+   "versie": "C"
+  },
+  {
+   "id": "pp3-m10",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat doe je in de stap 'coalitie' van Kotter-light?",
+   "opties": [
+    "Je laat de noodzaak voelen met cijfers over het probleem",
+    "Je zoekt een zichtbare sponsor plus invloedrijke ambassadeurs",
+    "Je vertelt de visie zo vaak mogelijk, in alle overleggen",
+    "Je viert de eerste quick win samen met de werkvloer"
+   ],
+   "juist": 1,
+   "uitleg": "Coalitie: sponsor en ambassadeurs. Urgentie, communicatie en betrokkenheid zijn de andere drie stappen.",
+   "versie": "A"
+  },
+  {
+   "id": "pp3-m11",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een team geeft één goede presentatie over de verandering en vindt de communicatie daarmee klaar. Wat zeggen de notities daarover?",
+   "opties": [
+    "Dat is genoeg, als de presentatie maar duidelijk was en alle medewerkers erbij waren",
+    "Communiceren is een doorlopende dialoog: vaak, consistent en in twee richtingen",
+    "Communicatie is de taak van de sponsor en het management, niet van het studentteam",
+    "Communicatie hoort pas bij de borging in week 5, als de oplossing vaststaat"
+   ],
+   "juist": 1,
+   "uitleg": "Vertel de visie vaak, consistent en in twee richtingen, en neem zorgen serieus.",
+   "versie": "B"
+  },
+  {
+   "id": "pp3-m12",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Hoe verhoudt Kotter-light zich tot het oorspronkelijke model van Kotter?",
+   "opties": [
+    "Het is hetzelfde model van acht stappen, alleen met andere namen voor de stappen",
+    "Het vereenvoudigt Kotters oorspronkelijke acht stappen tot vier stappen",
+    "Het voegt vier extra stappen toe aan het veranderingsmodel van Carnall",
+    "Het is Kotters model zonder de eerste stap, omdat urgentie al vaststaat"
+   ],
+   "juist": 1,
+   "uitleg": "Kotter heeft acht stappen; Kotter-light is een vereenvoudiging voor dit vak. Kotters stap 8, 'borg in de cultuur', komt in week 5 terug.",
+   "versie": "C"
+  },
+  {
+   "id": "pp3-m13",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Waar staan de TBV's voor die je per activiteit vastlegt?",
+   "opties": [
+    "Tijd, budget en voorwaarden",
+    "Taken, bevoegdheden en verantwoordelijkheden",
+    "Toetsing, borging en verbetering",
+    "Teams, belanghebbenden en verwachtingen"
+   ],
+   "juist": 1,
+   "uitleg": "Je legt per activiteit de taken, bevoegdheden en verantwoordelijkheden vast, met de RACI-methode.",
+   "versie": "A"
+  },
+  {
+   "id": "pp3-m14",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is volgens de notities de meest gehoorde klacht bij mislukte veranderingen?",
+   "opties": [
+    "'Het kostte te veel geld'",
+    "'Het was niet duidelijk wat de leiding wilde'",
+    "'Het systeem werkte niet'",
+    "'Er was te weinig tijd voor training'"
+   ],
+   "juist": 1,
+   "uitleg": "Daarom stuur je op resultaat en leg je de rollen per activiteit vast.",
+   "versie": "B"
+  },
+  {
+   "id": "pp3-m15",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "In de RACI uit de les is de FM-manager bij 'KPI's monitoren en bijsturen' zowel A als R. Wat is juist?",
+   "opties": [
+    "Dat is fout: A en R mogen in een RACI nooit bij dezelfde persoon liggen",
+    "Dat mag, al is uitvoeren en goedkeuren scheiden vaak beter",
+    "Dat mag alleen als er voor die taak ook een tweede A wordt aangewezen",
+    "Dat mag alleen tijdens de pilot, niet na de organisatiebrede invoering"
+   ],
+   "juist": 1,
+   "uitleg": "In de les is A/R bij die rij toegestaan. Het scheiden van R en A voorkomt wel dat iemand zijn eigen werk goedkeurt.",
+   "versie": "C"
+  },
+  {
+   "id": "pp3-m16",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke betekenis heeft de S in RASCI?",
+   "opties": [
+    "Sponsor",
+    "Support: ondersteunt actief",
+    "Stakeholder",
+    "Signed off: heeft getekend"
+   ],
+   "juist": 1,
+   "uitleg": "RASCI voegt Support toe; CAIRO voegt ook O toe, Out of the loop: expliciet níet betrokken. Op hoofdlijnen is RACI vaak genoeg.",
+   "versie": "A"
+  },
+  {
+   "id": "pp3-m17",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat bedoelt de les met 'het gaat om rollen, niet om personen' in een RACI?",
+   "opties": [
+    "Je zet geen namen in de RACI, alleen afdelingen",
+    "Dezelfde persoon kan per activiteit een andere rol hebben",
+    "Elke persoon heeft in het hele project maar één rol",
+    "Alleen managers kunnen Accountable zijn"
+   ],
+   "juist": 1,
+   "uitleg": "In het voorbeeld zijn de baliemedewerkers bij het inrichten Consulted en bij training en pilot Responsible.",
+   "versie": "B"
+  },
+  {
+   "id": "pp3-m18",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Het team laat de baliemedewerkers het concept-stappenplan aanvullen voordat het definitief wordt. Hoe heet dit?",
+   "opties": [
+    "Catchball",
+    "Schaduwdraaien",
+    "Heijunka",
+    "Tollgate"
+   ],
+   "juist": 0,
+   "uitleg": "Catchball: betrokkenen vullen het plan aan, zodat ze mede-eigenaar worden.",
+   "versie": "C"
+  },
+  {
+   "id": "pp3-o1",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Een team presenteert aan de medewerkers van de facilitaire dienst een rapport met cijfers waaruit blijkt dat het meldproces beter moet. Na een maand werkt niemand anders. Verklaar dit met de les over ratio en gevoel, en geef twee dingen die het team anders had moeten doen.",
+   "modelantwoord": "Volgens Kotter loopt verandering langs ratio (feiten, cijfers) en gevoel (vertrouwen, betrokkenheid, motivatie). Cijfers brengen de noodzaak in beeld, maar motiveren zelden tot nieuw gedrag. Anders doen: de mensen betrekken die het moeten doen (bijvoorbeeld meedenken over de nieuwe werkwijze, catchball), zorgen voor zichtbare betrokkenheid van het management (sponsor), en urgentie laten voelen met hun eigen voorbeelden en quick wins vieren.",
+   "punten": [
+    "Ratio en gevoel juist uitgelegd",
+    "Verklaring: cijfers alleen brengen mensen niet in beweging",
+    "Twee concrete verbeteringen, gekoppeld aan de succesfactoren of Kotter-light"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp3-o2",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Voor een nieuw reserveringssysteem voor vergaderzalen zijn deze stakeholders betrokken: de directeur (beslist over budget, merkt er weinig van), het zaalteam (moet anders werken, weinig zeggenschap), de afdeling ICT (moet het systeem koppelen, kan het project vertragen) en bezoekers van buiten (merken alleen het resultaat). Plaats ze in de belang-invloed-grid en geef per stakeholder de aanpak.",
+   "modelantwoord": "Directeur: veel invloed, weinig belang: tevreden houden. Zaalteam: veel belang, weinig invloed: informeren (en bij de uitvoering betrekken). ICT: veel invloed en, omdat ze het moeten koppelen, veel belang: nauw betrekken (vooraf raadplegen). Bezoekers: weinig invloed, beperkt belang: monitoren. Andere indelingen zijn goed als ze worden onderbouwd.",
+   "punten": [
+    "Directeur juist geplaatst met aanpak",
+    "Zaalteam juist geplaatst met aanpak",
+    "ICT juist geplaatst met aanpak",
+    "Bezoekers geplaatst met aanpak"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp3-o3",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Leg de 20-60-20-verdeling uit. Wat betekent die voor de manier waarop je je energie verdeelt bij een verandering?",
+   "modelantwoord": "Bij elke verandering zijn er grofweg 20% voorstanders, 60% onbesliste middenmoot en 20% tegenstanders. De middengroep kiest de kant van de sterkste groep. Daarom stop je je energie niet vooral in het overtuigen van tegenstanders, maar laat je de voorstanders zichtbaar succes boeken met een quick win. Dan kiest de middengroep jouw kant.",
+   "punten": [
+    "De drie groepen juist genoemd",
+    "De middengroep kiest de kant van de sterkste groep",
+    "Strategie: voorstanders met quick win zichtbaar maken, niet alles op tegenstanders"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp3-o4",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Werk Kotter-light in vier stappen uit voor de invoering van afvalscheiding op alle verdiepingen van een kantoor.",
+   "modelantwoord": "Urgentie: laat met eigen cijfers zien hoeveel restafval er is en wat het kost, of dat de organisatie haar duurzaamheidsdoel niet haalt. Coalitie: de facilitair manager als zichtbare sponsor plus per verdieping een ambassadeur. Communicatie: vaak, consistent en in twee richtingen, bijvoorbeeld een korte uitleg in teamoverleggen en een plek voor vragen en zorgen. Betrokkenheid: medewerkers kiezen mee waar de afvalstations komen en de eerste resultaten (bijvoorbeeld 30% minder restafval na een maand) worden zichtbaar gevierd.",
+   "punten": [
+    "Urgentie met eigen cijfers",
+    "Coalitie met sponsor en ambassadeurs",
+    "Communicatie als doorlopende dialoog",
+    "Betrokkenheid: rol geven en quick wins vieren"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp3-o5",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Leg het verschil uit tussen Consulted en Informed in een RACI. Wat gaat er mis als je ze verwart, in beide richtingen?",
+   "modelantwoord": "Consulted: wordt vooraf om advies gevraagd, tweerichtingsverkeer. Informed: wordt achteraf op de hoogte gebracht, eenrichtingsverkeer. Maak je te veel mensen Consulted, dan krijg je onnodige vertraging. Maak je iemand Informed die Consulted had moeten zijn, dan voelt die persoon zich gepasseerd en mis je belangrijke input. Volgens de docent is dit in de praktijk het belangrijkste onderscheid.",
+   "punten": [
+    "Consulted juist uitgelegd",
+    "Informed juist uitgelegd",
+    "Gevolg te veel Consulted: vertraging",
+    "Gevolg te weinig Consulted: gepasseerd voelen"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp3-o6",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Noem vier oorzaken van weerstand uit de les, met bij elke oorzaak de passende aanpak.",
+   "modelantwoord": "Verlies aan controle: ruimte geven. Te veel onzekerheid: duidelijke visie. Overvallen worden: voorbereiden. Twijfel of je het kunt: training en geruststelling. Het kost eerst meer werk: tijd vrijmaken. Gezichtsverlies: waardering voor het verleden. Weerstand is geen onwil maar een voorspelbare reactie.",
+   "punten": [
+    "Eerste paar oorzaak en aanpak juist",
+    "Tweede paar juist",
+    "Derde paar juist",
+    "Vierde paar juist"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp3-c1",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Clean desk bij de gemeente Lindehoven",
+   "casus": "De gemeente Lindehoven (fictief) wil overstappen op flexwerken met een clean-desk-beleid, om een verdieping te kunnen afstoten. De facilitair manager is enthousiast en wil het trekken. Teamleiders van Burgerzaken vinden dat hun mensen 'een vaste plek nodig hebben om goed te kunnen werken'. Medewerkers van Burgerzaken werken er gemiddeld vijftien jaar en hebben hun bureau ingericht met foto's en planten. ICT moet een reserveringsapp koppelen aan het netwerk. De wethouder heeft het besluit genomen, maar is verder niet betrokken. Het projectteam wil de app volgende maand in één keer invoeren.",
+   "subvragen": [
+    {
+     "vraag": "Geef voor vier stakeholders hun rol (sponsor, proceseigenaar, uitvoerder of gebruiker) of hun plaats in de belang-invloed-grid, met de aanpak.",
+     "modelantwoord": "Facilitair manager: sponsor of proceseigenaar, veel invloed en veel belang: nauw betrekken. Teamleiders Burgerzaken: veel invloed op hun mensen en veel belang: nauw betrekken. Medewerkers Burgerzaken: gebruikers, veel belang en weinig invloed: informeren en betrekken bij de inrichting. ICT: uitvoerder van de koppeling, vooraf raadplegen. Wethouder: veel invloed, weinig belang in de uitvoering: tevreden houden.",
+     "punten": [
+      "Twee stakeholders juist met aanpak",
+      "Nog twee stakeholders juist met aanpak",
+      "Aanpak logisch gekoppeld aan de grid"
+     ]
+    },
+    {
+     "vraag": "Benoem bij de medewerkers van Burgerzaken twee oorzaken van weerstand en de passende aanpak.",
+     "modelantwoord": "Verlies aan controle (geen eigen plek, foto's en planten weg): ruimte geven, bijvoorbeeld meebeslissen over teamzones of persoonlijke lockers. Te veel onzekerheid (werkt dit wel voor ons werk?): duidelijke visie, wat er verandert en waarom. Overvallen worden (invoering volgende maand in één keer): voorbereiden. Gezichtsverlies of twijfel kunnen ook, mits onderbouwd.",
+     "punten": [
+      "Eerste oorzaak met aanpak, gekoppeld aan de casus",
+      "Tweede oorzaak met aanpak, gekoppeld aan de casus"
+     ]
+    },
+    {
+     "vraag": "Geef twee Kotter-light-acties die het team nu moet nemen, en een kritische kanttekening bij het invoeren 'in één keer'.",
+     "modelantwoord": "Urgentie: met cijfers laten zien hoeveel werkplekken leeg staan en wat de verdieping kost. Coalitie: de facilitair manager zichtbaar als sponsor, met één teamleider van Burgerzaken als ambassadeur. Betrokkenheid: eerst met één team proberen en het succes zichtbaar maken. Kanttekening: invoeren in één keer vergroot het risico op weerstand en overvallen worden; een pilot met één afdeling geeft de 20% voorstanders de kans om zichtbaar succes te boeken.",
+     "punten": [
+      "Twee Kotter-light-acties concreet",
+      "Kritische kanttekening bij de invoering in één keer"
+     ]
+    }
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp3-c2",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Een RACI met fouten",
+   "casus": "Een studententeam maakt een RACI voor de invoering van een nieuw schoonmaakrooster bij een hogeschool. Rollen: facilitair manager (FM), studententeam (ST), teamleider schoonmaak (TL), schoonmaakbedrijf (SB), docenten (DO). Rij 1, rooster opstellen: FM = A, ST = R, TL = A, SB = I, DO = I. Rij 2, schoonmakers instrueren: FM = I, ST = C, TL = C, SB = C, DO = I. Rij 3, contract met het schoonmaakbedrijf aanpassen: FM = A/R, ST = I, TL = I, SB = I, DO = –.",
+   "subvragen": [
+    {
+     "vraag": "Welke fouten zie je in rij 1 en rij 2? Leg uit waarom het fouten zijn.",
+     "modelantwoord": "Rij 1 heeft twee A's (FM en TL): met twee A's geeft niemand de doorslag; er moet precies één A zijn. Rij 2 heeft geen A en geen R: niemand voert het uit en niemand is eindverantwoordelijk, dus het gebeurt waarschijnlijk niet. Controle per rij: precies één A en minstens één R.",
+     "punten": [
+      "Rij 1: twee A's als fout met uitleg",
+      "Rij 2: geen A en geen R als fout",
+      "Controleregel: één A, minstens één R"
+     ]
+    },
+    {
+     "vraag": "Bij rij 3 staat het schoonmaakbedrijf op Informed. Is dat verstandig? Geef een verbeterde rij 3 en licht toe.",
+     "modelantwoord": "Niet verstandig: het schoonmaakbedrijf is de contractpartij en moet vooraf worden geraadpleegd (Consulted), anders voelt het zich gepasseerd en sluit het contract niet aan op wat uitvoerbaar is. Verbeterd: FM = A, ST = C of I, TL = C, SB = C (of R bij het uitwerken van het aangepaste contract), DO = –. FM mag A én R zijn, maar het scheiden van uitvoeren en goedkeuren is vaak beter.",
+     "punten": [
+      "SB moet Consulted zijn, met uitleg over gepasseerd voelen of input",
+      "Verbeterde rij met precies één A en minstens één R"
+     ]
+    },
+    {
+     "vraag": "Herstel rij 2 en leg uit welke rol de teamleider schoonmaak daar volgens jou moet hebben.",
+     "modelantwoord": "Bijvoorbeeld: FM = A, TL = R (geeft de instructie aan de eigen mensen), ST = R of C (maakt de instructiekaart), SB = C, DO = I. De teamleider is de logische uitvoerder, omdat die de schoonmakers dagelijks aanstuurt; zo wordt de nieuwe werkwijze ook eerder van de organisatie zelf.",
+     "punten": [
+      "Rij 2 hersteld met één A en minstens één R",
+      "Onderbouwde rol voor de teamleider"
+     ]
+    }
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp3-c3",
+   "week": 3,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Tablets voor housekeeping in Hotel De Waalkade",
+   "casus": "Hotel De Waalkade (fictief) wil dat de 30 roomattendants hun kamerstatus voortaan op een tablet bijhouden in plaats van op papier. Ongeveer zes attendants zijn enthousiast, zes zijn uitgesproken tegen en de rest twijfelt. De tegenstanders zeggen vooral dat ze 'niet met zo'n ding overweg kunnen' en dat 'het invullen meer tijd kost dan het oplevert'. De hotelmanager wil 'eerst de tegenstanders overtuigen, dan komt de rest vanzelf'.",
+   "subvragen": [
+    {
+     "vraag": "Reageer met de 20-60-20-verdeling op het plan van de hotelmanager.",
+     "modelantwoord": "Ongeveer 20% is voor, 60% twijfelt en 20% is tegen. De middengroep kiest de kant van de sterkste groep. Beter is de voorstanders als eersten te laten werken met de tablet en hun succes zichtbaar te maken (quick win), bijvoorbeeld snellere vrijgave van kamers aan de receptie. Dan kiest de middengroep die kant. Al je energie in de tegenstanders stoppen, levert weinig op.",
+     "punten": [
+      "20-60-20 juist toegepast op de 30 attendants",
+      "Middengroep volgt de sterkste groep",
+      "Advies: voorstanders met quick win zichtbaar maken"
+     ]
+    },
+    {
+     "vraag": "Benoem de twee oorzaken van weerstand bij de tegenstanders en geef per oorzaak een concrete aanpak.",
+     "modelantwoord": "'Niet met zo'n ding overweg kunnen': twijfel aan het eigen kunnen; aanpak training en geruststelling, bijvoorbeeld een collega-ambassadeur die naast hen de eerste dagen meeloopt. 'Kost meer tijd': het kost eerst meer werk; aanpak tijd vrijmaken, bijvoorbeeld in de eerste twee weken minder kamers per dienst plannen en het invullen zo simpel mogelijk maken.",
+     "punten": [
+      "Twijfel aan kunnen met training en geruststelling",
+      "Meer werk met tijd vrijmaken",
+      "Concrete acties voor het hotel"
+     ]
+    }
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp4-m01",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is implementeren volgens de les?",
+   "opties": [
+    "Het kiezen van de beste oplossing met de PUGH-matrix en de opdrachtgever",
+    "Het invoeren van de gekozen oplossing, met alle activiteiten en wie wat wanneer doet",
+    "Het meten van de huidige situatie met een nulmeting en procesanalyse",
+    "Het overdragen van het project aan de proceseigenaar bij de Tollgate"
+   ],
+   "juist": 1,
+   "uitleg": "In een implementatieplan beschrijf je álle activiteiten en wie, wat en wanneer in actie komt. Het Lean-boek benadrukt discipline.",
+   "versie": "A"
+  },
+  {
+   "id": "pp4-m02",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke van deze vier is een mijlpaal in een implementatieplan?",
+   "opties": [
+    "Een budget van € 5.000 voor training",
+    "Training afgerond",
+    "80% van de meldingen via het portaal",
+    "Een werkende koppeling met het FMIS vóór de start"
+   ],
+   "juist": 1,
+   "uitleg": "Een mijlpaal is een controleerbaar ijkmoment in de planning. Het budget is een middel, 80% via het portaal is een succescriterium, en de werkende koppeling is een randvoorwaarde.",
+   "versie": "B"
+  },
+  {
+   "id": "pp4-m03",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is volgens de les belangrijk bij de bouwsteen middelen?",
+   "opties": [
+    "Alle middelen bij de opdrachtgever neerleggen",
+    "Kritieke resources op naam zetten",
+    "Middelen pas na de pilot bepalen",
+    "Alleen het budget noemen"
+   ],
+   "juist": 1,
+   "uitleg": "Middelen zijn mensen, budget, systemen en tijd. Zet de kritieke resources op naam, zodat duidelijk is wie of wat je echt nodig hebt.",
+   "versie": "C"
+  },
+  {
+   "id": "pp4-m04",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Je rekent terug vanaf de gewenste invoerdatum en ziet dat de planning niet past. Wat raadt de les aan?",
+   "opties": [
+    "De invoerdatum altijd verschuiven",
+    "Activiteiten inkorten of parallel uitvoeren",
+    "De training schrappen, want die kost de meeste tijd",
+    "De mijlpalen weglaten"
+   ],
+   "juist": 1,
+   "uitleg": "Reken terug vanaf de wensdatum. Te laat? Kort in of voer activiteiten parallel uit, met oog voor de afhankelijkheden.",
+   "versie": "A"
+  },
+  {
+   "id": "pp4-m05",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "'De training kan pas starten als de werkinstructie klaar is.' Waar moet je in de planning dus op letten?",
+   "opties": [
+    "Op de afhankelijkheden tussen activiteiten",
+    "Op de RPN-score van de training in de FMEA",
+    "Op de span of control van de trainer",
+    "Op de takttijd van het nieuwe proces"
+   ],
+   "juist": 0,
+   "uitleg": "Bewaak afhankelijkheden: activiteit 2 kan pas starten als activiteit 1 klaar is.",
+   "versie": "B"
+  },
+  {
+   "id": "pp4-m06",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Waarom geef je per resultaat maar één persoon de eindverantwoordelijkheid?",
+   "opties": [
+    "Omdat gedeelde eindverantwoordelijkheid in de praktijk van niemand is",
+    "Omdat de opdrachtgever in het implementatieplan maar één naam wil zien",
+    "Omdat de anderen dan als Informed op de hoogte gehouden kunnen worden",
+    "Omdat de FMEA per risico precies één verantwoordelijke voorschrijft"
+   ],
+   "juist": 0,
+   "uitleg": "Met meerdere A's geeft niemand de doorslag en voelt niemand zich echt eigenaar.",
+   "versie": "C"
+  },
+  {
+   "id": "pp4-m07",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is het doel van FMEA?",
+   "opties": [
+    "Achteraf onderzoeken waarom een project mislukte",
+    "Potentiële fouten in een proces opsporen en aanpakken voordat ze optreden",
+    "De beste oplossing kiezen uit een aantal alternatieven",
+    "Bepalen wie welke rol heeft in het project"
+   ],
+   "juist": 1,
+   "uitleg": "FMEA (Failure Mode and Effect Analysis) stelt bij elke processtap de vraag: wat zou hier fout kunnen gaan? De methode komt van de NASA.",
+   "versie": "A"
+  },
+  {
+   "id": "pp4-m08",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is het hoogst mogelijke RPN in de FMEA-light uit de les?",
+   "opties": [
+    "15",
+    "25",
+    "100",
+    "125"
+   ],
+   "juist": 3,
+   "uitleg": "Elke factor loopt van 1 tot 5, dus het maximum is 5 × 5 × 5 = 125.",
+   "versie": "B"
+  },
+  {
+   "id": "pp4-m09",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een risico scoort Ernst 3, Kans 4 en Detectie 3. Wat is het RPN?",
+   "opties": [
+    "10",
+    "12",
+    "36",
+    "48"
+   ],
+   "juist": 2,
+   "uitleg": "3 × 4 × 3 = 36.",
+   "versie": "C"
+  },
+  {
+   "id": "pp4-m10",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welk risico krijgt de hoogste prioriteit? (1) E5, K1, D4. (2) E2, K5, D3. (3) E4, K3, D2.",
+   "opties": [
+    "Risico 1, want de ernst is het hoogst",
+    "Risico 2, met RPN 30",
+    "Risico 3, met RPN 24",
+    "Risico 1, met RPN 20"
+   ],
+   "juist": 1,
+   "uitleg": "RPN 1 = 20, RPN 2 = 30, RPN 3 = 24. Niet de hoogste ernst bepaalt de prioriteit, maar de combinatie.",
+   "versie": "A"
+  },
+  {
+   "id": "pp4-m11",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Na de maatregel 'monitoring en automatische alert bij uitval van de koppeling' scoor je het risico opnieuw. Welke score daalt vooral?",
+   "opties": [
+    "Ernst",
+    "Kans",
+    "Detectie",
+    "Geen enkele"
+   ],
+   "juist": 2,
+   "uitleg": "Met monitoring en een alert ontdek je de fout sneller, dus de detectiescore daalt. De koppeling valt niet minder vaak uit, en de ernst blijft meestal gelijk.",
+   "versie": "B"
+  },
+  {
+   "id": "pp4-m12",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Na de maatregel 'minder en duidelijkere categorieën in het portaal' scoor je het risico 'melding in de verkeerde categorie' opnieuw. Welke score daalt vooral?",
+   "opties": [
+    "Ernst",
+    "Kans",
+    "Detectie",
+    "Alle drie evenveel"
+   ],
+   "juist": 1,
+   "uitleg": "Met minder, heldere categorieën kiezen melders minder vaak de verkeerde: de kans daalt.",
+   "versie": "C"
+  },
+  {
+   "id": "pp4-m13",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke techniek gebruik je volgens de notities binnen FMEA om de kernoorzaak van een faalmogelijkheid te vinden?",
+   "opties": [
+    "5x Waarom",
+    "PUGH-matrix",
+    "RACI",
+    "Belang-invloed-grid"
+   ],
+   "juist": 0,
+   "uitleg": "Met 5x Waarom vraag je door tot de kernoorzaak. Zo richt je je maatregel op de oorzaak in plaats van op het symptoom.",
+   "versie": "A"
+  },
+  {
+   "id": "pp4-m14",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke invoeringsstrategie heeft volgens de les het laagste risico?",
+   "opties": [
+    "Big-bang",
+    "Schaduwdraaien",
+    "Gefaseerd",
+    "Pilot"
+   ],
+   "juist": 3,
+   "uitleg": "Pilot heeft het laagste risico, big-bang het hoogste. Gefaseerd en schaduwdraaien zitten daartussen.",
+   "versie": "B"
+  },
+  {
+   "id": "pp4-m15",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke van deze vier is géén leidend criterium bij de keuze van een invoeringsstrategie?",
+   "opties": [
+    "Het risico voor de operationele dienstverlening",
+    "De mogelijkheid tot schaduwdraaien",
+    "De technische mogelijkheid om te faseren",
+    "De voorkeur van het studententeam voor een snelle afronding"
+   ],
+   "juist": 3,
+   "uitleg": "De drie leidende criteria uit de notities zijn operationeel risico, schaduwdraaien en faseren. Kies samen met de operationele organisatie en laat de managers accorderen.",
+   "versie": "C"
+  },
+  {
+   "id": "pp4-m16",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Bij welke randvoorwaarde voor een goede pilot leg je vast welke data je verzamelt, door wie en wanneer?",
+   "opties": [
+    "Plan",
+    "Datacollectieplan",
+    "Communicatie",
+    "Evaluatie"
+   ],
+   "juist": 1,
+   "uitleg": "Het datacollectieplan. Zonder data kun je bij de evaluatie niet vaststellen of de pilot de doelen haalt.",
+   "versie": "A"
+  },
+  {
+   "id": "pp4-m17",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welk van deze vier hoort níet bij de vijf vakken van de zeester in de retrospective?",
+   "opties": [
+    "Blijven doen",
+    "Meer van",
+    "Stoppen",
+    "Meer budget"
+   ],
+   "juist": 3,
+   "uitleg": "De zeester heeft vijf vakken: blijven doen, meer van, minder van, stoppen en starten.",
+   "versie": "B"
+  },
+  {
+   "id": "pp4-m18",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Hoe eindigt het teamdeel van de retrospective volgens de les?",
+   "opties": [
+    "Met een cijfer voor elk teamlid",
+    "Met maximaal twee concrete teamacties",
+    "Met een nieuwe PUGH-matrix",
+    "Met een lijst van alle verbeterpunten zonder keuze"
+   ],
+   "juist": 1,
+   "uitleg": "Eindig met maximaal twee concrete teamacties. Leg als team een foto van de zeester, een korte samenvatting en de twee actiepunten vast.",
+   "versie": "C"
+  },
+  {
+   "id": "pp4-o1",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Noem de zes bouwstenen van een implementatieplan en geef bij elke bouwsteen in één zin wat je vastlegt.",
+   "modelantwoord": "1. Activiteiten: hoofd- en subacties, inclusief opleiding en instructies. 2. Mijlpalen: controleerbare ijkmomenten, zoals 'pilot gestart' of 'go/no-go'. 3. Verantwoordelijkheden: wie doet wat, belegd met RACI, één Accountable per resultaat. 4. Middelen: mensen, budget, systemen en tijd, kritieke resources op naam. 5. Randvoorwaarden: wat moet kloppen vóór de start, zoals een werkende koppeling. 6. Succescriteria: SMART en gekoppeld aan KPI's en klantwaarde.",
+   "punten": [
+    "Twee bouwstenen juist met uitleg",
+    "Nog twee bouwstenen juist met uitleg",
+    "Laatste twee bouwstenen juist met uitleg"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp4-o2",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Een team schrijft als succescriteria: 'de schoonmaak wordt beter' en 'gebruikers zijn tevredener'. Herschrijf beide SMART en leg uit waarom dat nodig is.",
+   "modelantwoord": "Bijvoorbeeld: 'Binnen 10 weken is het percentage afgekeurde ruimtes bij de kwaliteitsmeting gedaald van 15% naar maximaal 5%' en 'In de gebruikersenquête van maart scoort de schoonmaak gemiddeld minstens een 7,5 (nu 6,4)'. Nodig omdat zonder vooraf afgesproken criteria elke evaluatie een kwestie van gevoel wordt; met criteria voer je het gesprek met de opdrachtgever op basis van feiten.",
+   "punten": [
+    "Eerste criterium SMART (meetbaar, met termijn)",
+    "Tweede criterium SMART",
+    "Uitleg: zonder criteria wordt evaluatie een kwestie van gevoel"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp4-o3",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Leg de detectielogica in de FMEA uit. Waarom krijgt de meest voorkomende fout niet automatisch de hoogste prioriteit?",
+   "modelantwoord": "Detectie gaat over hoe moeilijk een fout te ontdekken is. Een lage score betekent dat de fout makkelijk wordt opgemerkt, een hoge score dat hij ongezien schade aanricht. Slechte detecteerbaarheid verhoogt dus het RPN. Prioriteit volgt uit RPN = E × K × D: een fout die vaak voorkomt maar weinig ernstig en goed zichtbaar is (zoals 'gebruiker blijft bellen', RPN 30) kan lager eindigen dan een zeldzame fout die ernstig is en lang onopgemerkt blijft (zoals 'FMIS-koppeling valt uit', RPN 50).",
+   "punten": [
+    "Hoge detectiescore = moeilijk te ontdekken, verhoogt RPN",
+    "RPN als combinatie van ernst, kans en detectie",
+    "Voorbeeld of uitleg waarom frequentie alleen niet beslist"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp4-o4",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Beschrijf de zes stappen van de FMEA-light. Wat betekent het dat FMEA iteratief is?",
+   "modelantwoord": "1. Kies de belangrijkste processtappen. 2. Benoem per stap de faalmogelijkheid. 3. Beschrijf het effect op klant en proces. 4. Scoor ernst, kans en detectie (1-5). 5. Bereken het RPN en sorteer van hoog naar laag. 6. Bepaal per toprisico een beheersmaatregel en een verantwoordelijke. Iteratief: na de maatregelen scoor je opnieuw op kans en detectie om te zien of het risico echt daalt; de ernst blijft meestal gelijk.",
+   "punten": [
+    "Stap 1 t/m 3 juist",
+    "Stap 4 en 5 juist",
+    "Stap 6 met maatregel én verantwoordelijke",
+    "Iteratief: opnieuw scoren, ernst blijft meestal gelijk"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp4-o5",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Leg uit wat een OCAP is en wat catchball is. Geef bij beide een voorbeeld bij de invoering van een nieuw meldportaal.",
+   "modelantwoord": "OCAP (Out of Control Action Plan): een vooraf klaarliggend noodplan met triggers en acties voor als het toch misgaat. Voorbeeld: als het portaal langer dan een uur niet werkt (trigger), schakelt de servicedesk over op de fallback-mailbox en meldt ICT het binnen 15 minuten (actie). Catchball: de oplossing met mensen invoeren door hen om feedback te vragen, zodat ze eigenaar worden. Voorbeeld: baliemedewerkers bepalen mee welke meldcategorieën er komen.",
+   "punten": [
+    "OCAP juist uitgelegd",
+    "OCAP-voorbeeld met trigger en actie",
+    "Catchball juist uitgelegd met voorbeeld"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp4-o6",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Na de retrospective leg je individueel een aantal dingen vast voor je portfolio. Welke vier vragen beantwoord je volgens de les, en waarom is het belangrijk om ook terug te kijken op de afspraken van de vorige keer?",
+   "modelantwoord": "Welke feedback kreeg ik? Wat zegt dit over mijn gedrag in de groep? Wat ga ik bewust uitproberen? Waar wil ik opnieuw feedback op? Terugkijken op vorige afspraken is belangrijk omdat elke retrospective anders een losse evaluatie wordt; zo zie je je ontwikkeling over meerdere sprints, en kun je checken of je actie nog bij je leerdoel past (een leerdoel bijstellen hoort bij ontwikkeling).",
+   "punten": [
+    "Minstens drie van de vier vragen juist",
+    "Alle vier de vragen juist",
+    "Reden: ontwikkeling over meerdere sprints zichtbaar, geen losse evaluatie"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp4-c1",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Digitale bezoekersregistratie bij een ministerie",
+   "casus": "Een ministerie wil de papieren bezoekerslijst bij de receptie vervangen door digitale vooraanmelding: de gastheer meldt de bezoeker vooraf aan en de bezoeker krijgt een QR-code. Het concept-implementatieplan van het team bestaat uit: (1) software selecteren, (2) koppeling met het toegangssysteem maken, (3) systeem live zetten op 1 maart. Verantwoordelijk: 'de facilitaire dienst'. Succescriterium: 'de receptie wordt minder druk'.",
+   "subvragen": [
+    {
+     "vraag": "Wat ontbreekt er aan de activiteiten? Noem minstens drie ontbrekende activiteiten en leg uit waarom de les dit de klassieke beginnersfout noemt.",
+     "modelantwoord": "Ontbrekend: training van receptionisten en beveiliging, werkinstructie voor de receptie, communicatie naar alle medewerkers die gasten ontvangen (gastheren), procesbeschrijving, begeleiding in de eerste weken, een terugvaloptie. De beginnersfout is alleen de zichtbare verandering plannen ('systeem aanzetten') en training, instructies en begeleiding vergeten; daar zit het echte werk.",
+     "punten": [
+      "Drie relevante ontbrekende activiteiten",
+      "Uitleg beginnersfout: alleen zichtbare verandering gepland"
+     ]
+    },
+    {
+     "vraag": "Verbeter de bouwstenen verantwoordelijkheden en succescriteria.",
+     "modelantwoord": "Verantwoordelijkheden: niet 'de facilitaire dienst', maar per activiteit een RACI met één Accountable, bijvoorbeeld hoofd facilitaire dienst A voor de invoering, ICT R voor de koppeling, teamleider receptie R voor de training, beveiliging C. Succescriteria SMART, bijvoorbeeld: 'binnen 6 weken na livegang is 90% van de bezoekers vooraf aangemeld' en 'de gemiddelde wachttijd bij de receptie is binnen 2 maanden onder 2 minuten'.",
+     "punten": [
+      "RACI met één Accountable per resultaat",
+      "Minstens één SMART succescriterium",
+      "Tweede SMART criterium of koppeling aan klantwaarde"
+     ]
+    },
+    {
+     "vraag": "Noem drie mijlpalen en één randvoorwaarde voor dit plan.",
+     "modelantwoord": "Mijlpalen: software gekozen, testomgeving gereed, training afgerond, pilot gestart, go/no-go, organisatiebreed live. Randvoorwaarde: de koppeling met het toegangssysteem werkt en voldoet aan de beveiligingseisen, of het budget is goedgekeurd, of alle gastheren hebben toegang tot het aanmeldsysteem.",
+     "punten": [
+      "Drie controleerbare mijlpalen",
+      "Eén randvoorwaarde die vóór de start moet kloppen"
+     ]
+    }
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp4-c2",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "FMEA-light voor het nieuwe cateringbestelsysteem",
+   "casus": "Een team maakt een FMEA-light voor een nieuw online bestelsysteem voor vergadercatering. Risico's met scores (E, K, D): (A) besteller vergeet het aantal personen aan te passen: 2, 4, 3. (B) bestelling komt niet bij de keuken aan door een storing: 5, 2, 4. (C) dieetwensen worden niet doorgegeven: 4, 3, 4. (D) besteller bestelt na de deadline: 2, 5, 1.",
+   "subvragen": [
+    {
+     "vraag": "Bereken de RPN van alle vier de risico's en zet ze in volgorde van prioriteit.",
+     "modelantwoord": "A: 2 × 4 × 3 = 24. B: 5 × 2 × 4 = 40. C: 4 × 3 × 4 = 48. D: 2 × 5 × 1 = 10. Volgorde: C (48), B (40), A (24), D (10).",
+     "punten": [
+      "RPN A en D juist",
+      "RPN B en C juist",
+      "Juiste volgorde"
+     ]
+    },
+    {
+     "vraag": "Bepaal voor de twee hoogste risico's een beheersmaatregel en een verantwoordelijke. Geef aan welke score door je maatregel daalt.",
+     "modelantwoord": "C (dieetwensen): verplicht veld 'dieetwensen' in het formulier (Poka-Yoke), verlaagt de kans; en de keuken controleert dieetbestellingen met een checklist, verlaagt de detectiescore. Verantwoordelijke: bijvoorbeeld de teamleider catering. B (storing): automatische bevestiging aan de keuken en een melding als een bestelling niet binnenkomt, verlaagt de detectiescore; een fallback per mail verkleint de gevolgen. Verantwoordelijke: bijvoorbeeld de applicatiebeheerder.",
+     "punten": [
+      "Maatregel voor C met verantwoordelijke",
+      "Maatregel voor B met verantwoordelijke",
+      "Juist aangegeven welke score daalt (kans of detectie)"
+     ]
+    },
+    {
+     "vraag": "Risico D komt het vaakst voor. Waarom krijgt het toch de laagste prioriteit?",
+     "modelantwoord": "De prioriteit volgt uit de combinatie van ernst, kans en detectie. D komt vaak voor, maar de gevolgen zijn klein (ernst 2) en het wordt direct opgemerkt (detectie 1), dus RPN 10. Niet de meest voorkomende fout krijgt prioriteit, maar de combinatie.",
+     "punten": [
+      "Uitleg met lage ernst en goede detectie",
+      "Principe: combinatie bepaalt de prioriteit"
+     ]
+    }
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp4-c3",
+   "week": 4,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Nieuw toegangssysteem in het Rivierenland Ziekenhuis",
+   "casus": "Het Rivierenland Ziekenhuis (fictief) vervangt de sleutels van alle 1.200 deuren door een pas-systeem. Het oude sleutelsysteem kan tijdelijk blijven werken. De leverancier biedt aan om in één nacht alle deuren om te bouwen ('dan is het in één keer klaar'). Op de afdelingen spoedeisende hulp en de OK moeten medewerkers altijd direct overal bij kunnen.",
+   "subvragen": [
+    {
+     "vraag": "Welke invoeringsstrategie adviseer je? Onderbouw met de criteria uit de les en zeg waarom je het aanbod van de leverancier wel of niet volgt.",
+     "modelantwoord": "Het aanbod is een big-bang: snel, maar met het hoogste risico. Het risico voor de operationele dienstverlening is hier groot (SEH en OK). Het oude systeem kan blijven werken, dus schaduwdraaien is mogelijk, en faseren per afdeling is technisch mogelijk. Advies: start met een pilot op een minder kritische afdeling (bijvoorbeeld kantoren), daarna gefaseerd per afdeling, en houd op SEH en OK tijdelijk de sleutels als schaduwsysteem. Kies dit samen met de operationele organisatie en laat het door de managers accorderen.",
+     "punten": [
+      "Big-bang afgewezen vanwege hoogste risico",
+      "Criteria gebruikt: operationeel risico, schaduwdraaien, faseren",
+      "Concreet advies met pilot, gefaseerd of schaduwdraaien"
+     ]
+    },
+    {
+     "vraag": "Noem vier van de zes randvoorwaarden voor een goede pilot en werk ze uit voor dit ziekenhuis.",
+     "modelantwoord": "Plan: pilot van drie weken op de kantoorvleugel, met doel en betrokkenen. Datacollectieplan: aantal mislukte toegangspogingen en storingsmeldingen per dag, bijgehouden door beveiliging. Communicatie: medewerkers weten wanneer hun deur omgaat en wat ze moeten doen bij problemen. Training: beveiliging en receptie kunnen passen aanmaken en blokkeren. Uitvoering volgens plan inclusief dataverzameling. Evaluatie: resultaten tegen de doelen, voordat de volgende fase start.",
+     "punten": [
+      "Twee randvoorwaarden concreet voor het ziekenhuis",
+      "Nog twee randvoorwaarden concreet",
+      "Evaluatie tegen doelen of datacollectie genoemd"
+     ]
+    }
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp5-m01",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat betekent 'borgen' volgens de les van week 5?",
+   "opties": [
+    "De verbetering loskoppelen van de aanwezigheid van het studentteam, zodat ze blijft werken",
+    "De verbetering zo snel mogelijk organisatiebreed invoeren na een geslaagde pilot",
+    "De verbetering opnemen in het adviesrapport met een duidelijke onderbouwing",
+    "De verbetering laten goedkeuren door de opdrachtgever voordat de pilot start"
+   ],
+   "juist": 0,
+   "uitleg": "Zonder bewuste borging zakt een organisatie vrijwel altijd terug in oude gewoonten. Een geslaagde pilot is het begin, niet het eindpunt.",
+   "versie": "A"
+  },
+  {
+   "id": "pp5-m02",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke bouwsteen van het borgingsplan borgt niet het proces, maar de kennis?",
+   "opties": [
+    "Standaardisatie",
+    "KPI-opvolging",
+    "Overdracht",
+    "Lessons learned"
+   ],
+   "juist": 3,
+   "uitleg": "Lessons learned leggen vast wat goed ging, wat stroef liep en welke aannames niet klopten. Dat is waardevol voor de opdrachtgever, een volgend team en je eigen transfer naar stage.",
+   "versie": "B"
+  },
+  {
+   "id": "pp5-m03",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is het doel van visueel management bij standaardisatie?",
+   "opties": [
+    "Het proces mooier presenteren aan de opdrachtgever",
+    "Zichtbaar maken of er volgens de standaard gewerkt wordt",
+    "De SOP vervangen door pictogrammen",
+    "Bijhouden hoeveel tijd elke medewerker aan een taak besteedt"
+   ],
+   "juist": 1,
+   "uitleg": "Visueel management maakt afwijkingen van de standaard direct zichtbaar. FM-voorbeeld: een SOP voor het melden van storingen die zichtbaar bij de servicedesk hangt.",
+   "versie": "C"
+  },
+  {
+   "id": "pp5-m04",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Met welke S uit 5S hangt borging het sterkst samen?",
+   "opties": [
+    "Scheiden",
+    "Schikken",
+    "Schoonmaken",
+    "Standhouden"
+   ],
+   "juist": 3,
+   "uitleg": "De vijfde S, Standhouden (Sustain), vraagt de discipline om de afspraak dag in dag uit te blijven volgen.",
+   "versie": "A"
+  },
+  {
+   "id": "pp5-m05",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "In de Control-fase meet je vaak dezelfde KPI's als in de Measure-fase. Wat is het verschil?",
+   "opties": [
+    "In Control meet je alleen nog de klanttevredenheid en niet meer het proces",
+    "In Measure toon je het probleem aan, in Control zie je vroeg dat het afdrijft",
+    "In Control meet de docent de KPI's, in Measure doet het studentteam dat",
+    "Er is geen verschil, in Control herhaal je simpelweg de nulmeting"
+   ],
+   "juist": 1,
+   "uitleg": "Dezelfde KPI's, ander doel: niet het probleem aantonen, maar vroeg zien dat het proces 'out of control' raakt.",
+   "versie": "B"
+  },
+  {
+   "id": "pp5-m06",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een team schrijft in het borgingsplan: 'KPI: doorlooptijd van meldingen, norm maximaal 4 dagen.' Wat ontbreekt nog volgens de eerste stap van KPI-sturing?",
+   "opties": [
+    "Een ingrijpgrens",
+    "Een PUGH-matrix",
+    "Een RPN-score",
+    "Een tweede sponsor"
+   ],
+   "juist": 0,
+   "uitleg": "Stap 1 is de norm én de grens waarbij je ingrijpt bepalen. Daarna volgen een vast ritme en ingrijpen bij afwijking.",
+   "versie": "C"
+  },
+  {
+   "id": "pp5-m07",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "'Een KPI die niemand bekijkt, borgt niets.' Welke stap van KPI-sturing voorkomt dit vooral?",
+   "opties": [
+    "Een norm en een ingrijpgrens bepalen",
+    "Een vast ritme waarop iemand de cijfers bekijkt",
+    "De KPI opnemen in de SOP bij de balie",
+    "De KPI maandelijks naar de opdrachtgever mailen"
+   ],
+   "juist": 1,
+   "uitleg": "KPI-sturing: (1) norm en ingrijpgrens, (2) een vast ritme, wekelijks of maandelijks, (3) ingrijpen bij afwijking.",
+   "versie": "A"
+  },
+  {
+   "id": "pp5-m08",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Hoe noemt de docent een verbetering zonder eigenaar?",
+   "opties": [
+    "Een quick win",
+    "Een wees",
+    "Een los eindje",
+    "Een pilot"
+   ],
+   "juist": 1,
+   "uitleg": "Zonder eigenaar is een verbetering 'een wees', door niemand bewaakt. Daarom krijgt elke verbetering een naam: proceseigenaar, teamleider of coördinator.",
+   "versie": "B"
+  },
+  {
+   "id": "pp5-m09",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Aan welke Lean-waarde koppelt de les het eigenaarschap?",
+   "opties": [
+    "Respect voor mensen",
+    "Just-in-time",
+    "Jidoka",
+    "Flow"
+   ],
+   "juist": 0,
+   "uitleg": "Betrek medewerkers, neem hun zorgen serieus en vier successen. Hún verbetering overleeft jullie vertrek.",
+   "versie": "C"
+  },
+  {
+   "id": "pp5-m10",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Bij een evaluatiemoment blijkt dat het proces onvoldoende presteert. Wat gebeurt er dan in de Act-stap?",
+   "opties": [
+    "De standaard wordt bijgewerkt en vastgezet",
+    "Er start een nieuwe verbeterronde",
+    "De KPI wordt geschrapt",
+    "Het project wordt overgedragen"
+   ],
+   "juist": 1,
+   "uitleg": "Presteert het goed, dan werk je de standaard bij. Presteert het onvoldoende, dan start een nieuwe verbeterronde.",
+   "versie": "A"
+  },
+  {
+   "id": "pp5-m11",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is Kaizen?",
+   "opties": [
+    "Een grote eenmalige reorganisatie",
+    "Kleine, dagelijkse verbeteringen",
+    "Een methode om fouten te scoren",
+    "Een formele projectafsluiting"
+   ],
+   "juist": 1,
+   "uitleg": "PDCA (van Deming) is de motor van continu verbeteren, in Lean Kaizen: kleine dagelijkse verbeteringen.",
+   "versie": "B"
+  },
+  {
+   "id": "pp5-m12",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Waarom moeten evaluatiemomenten volgens de les gekoppeld zijn aan de KPI's én de eigenaar?",
+   "opties": [
+    "Anders zakt het evaluatiemoment weg",
+    "Omdat de opdrachtgever dat verplicht stelt",
+    "Omdat de KPI's anders niet SMART zijn",
+    "Zodat de docent de evaluatie kan beoordelen"
+   ],
+   "juist": 0,
+   "uitleg": "Een evaluatiemoment dat niet vast staat, niet over de KPI's gaat en niemand als eigenaar heeft, verdwijnt uit de agenda.",
+   "versie": "C"
+  },
+  {
+   "id": "pp5-m13",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat betekent 'actief overdragen' van het overdrachtsdossier?",
+   "opties": [
+    "Het dossier op tijd mailen naar de opdrachtgever",
+    "Toelichten, vragen beantwoorden en checken of de eigenaar ermee uit de voeten kan",
+    "Het dossier laten ondertekenen door de docent",
+    "Het dossier op het intranet zetten zodat iedereen het kan lezen"
+   ],
+   "juist": 1,
+   "uitleg": "Niet alleen aanleveren, maar toelichten en checken. Zo wordt jullie werk onafhankelijk van jullie zelf.",
+   "versie": "A"
+  },
+  {
+   "id": "pp5-m14",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "In het praktijkvoorbeeld van de zorginstelling (vijf meldkanalen) borgde het team de verbetering met twee KPI's. Welke combinatie was dat?",
+   "opties": [
+    "Klanttevredenheid van bewoners en het aantal meldingen per maand",
+    "Doorlooptijd maximaal 4 dagen en minstens 90% via het centrale meldpunt",
+    "Doorlooptijd maximaal 11 dagen en minder dan vijf meldkanalen in gebruik",
+    "Aantal gele briefjes per week en aantal telefoontjes naar de servicedesk"
+   ],
+   "juist": 1,
+   "uitleg": "De doorlooptijd daalde in de pilot van 11 naar 3 dagen. Met de twee KPI's bewaakt de teamleider Facilitair dat het zo blijft.",
+   "versie": "B"
+  },
+  {
+   "id": "pp5-m15",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een team vult bij eigenaarschap in: 'iemand van de facilitaire afdeling'. Welke vraag stelt de docent dan volgens de notities?",
+   "opties": [
+    "Hoeveel uur per week kan die persoon hieraan besteden?",
+    "Is het een echte naam of rol, en weet die persoon het eigenlijk al?",
+    "Heeft die persoon een Lean-certificaat?",
+    "Staat die persoon in het organogram boven de opdrachtgever?"
+   ],
+   "juist": 1,
+   "uitleg": "Teams haken vooral af bij de KPI-normen en het eigenaarschap. Vaak blijkt de beoogde eigenaar van niets te weten.",
+   "versie": "C"
+  },
+  {
+   "id": "pp5-m16",
+   "week": 5,
+   "onderdeel": "Presentatie",
+   "type": "mc",
+   "vraag": "Bij welke fase van je project hoort het PROA-blok Oorzaak?",
+   "opties": [
+    "Define",
+    "Measure",
+    "Analyze",
+    "Control"
+   ],
+   "juist": 2,
+   "uitleg": "Probleem: Define en Measure. Risico: Measure. Oorzaak: Analyze. Advies: Generate, Improve en Control.",
+   "versie": "A"
+  },
+  {
+   "id": "pp5-m17",
+   "week": 5,
+   "onderdeel": "Presentatie",
+   "type": "mc",
+   "vraag": "Welke tip over visualiseren geeft de training?",
+   "opties": [
+    "Gebruik visuals om het denken te ontlasten, niet om te versieren",
+    "Zet op elke slide minstens twee afbeeldingen",
+    "Gebruik zo veel mogelijk kleuren zodat de slides opvallen",
+    "Zet de volledige tekst onder elke visual, voor wie het later naleest"
+   ],
+   "juist": 0,
+   "uitleg": "Beperk visuele ruis, één boodschap per slide, en een adviespresentatie is geen rapport.",
+   "versie": "B"
+  },
+  {
+   "id": "pp5-m18",
+   "week": 5,
+   "onderdeel": "Presentatie",
+   "type": "mc",
+   "vraag": "Vanuit wie moet je volgens de training vooral denken bij een adviespresentatie?",
+   "opties": [
+    "Vanuit de docent die de presentatie beoordeelt",
+    "Vanuit de beslisser: wat is nodig om ja te zeggen?",
+    "Vanuit de medewerkers die ermee gaan werken",
+    "Vanuit je eigen team en wat jullie trots maakt"
+   ],
+   "juist": 1,
+   "uitleg": "Denk vanuit de beslisser: wat heeft die nodig om JA te zeggen, en wat maakt dat de opdrachtgever wil investeren?",
+   "versie": "C"
+  },
+  {
+   "id": "pp5-o1",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Waarom is borging nodig, ook na een geslaagde pilot? Noem de kernvraag van de Control-fase en geef een FM-voorbeeld van wat er zonder borging gebeurt.",
+   "modelantwoord": "Zonder bewuste borging zakt een organisatie vrijwel altijd terug in oude gewoonten; de winst verdampt en na een paar maanden is het alsof er nooit een project was. Een geslaagde pilot is het begin, niet het eindpunt. Kernvraag: 'Wat moet blijven bestaan als het studentteam weg is?' Voorbeeld: een nieuw schoonmaakschema werkt zolang de student meekijkt, maar verwatert zodra die weg is; of een centraal meldpunt waarna de afdeling binnen enkele maanden terug is bij de gele briefjes.",
+   "punten": [
+    "Terugval in oude gewoonten uitgelegd",
+    "Kernvraag van Control juist",
+    "Passend FM-voorbeeld"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp5-o2",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Werk de drie stappen van KPI-sturing uit voor de KPI 'percentage vergaderzalen dat op tijd gereed staat'.",
+   "modelantwoord": "Stap 1, norm en ingrijpgrens: bijvoorbeeld norm 95% op tijd gereed, ingrijpen als het onder 90% zakt. Stap 2, vast ritme: de facilitair coördinator bekijkt het percentage elke week in het teamoverleg (of maandelijks). Stap 3, ingrijpen bij afwijking: bij minder dan 90% zoekt de coördinator met het zaalteam naar de oorzaak en past de checklist of planning aan, eventueel een nieuwe PDCA-ronde.",
+   "punten": [
+    "Norm én ingrijpgrens met getallen",
+    "Vast ritme met wie het bekijkt",
+    "Concrete actie bij afwijking"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp5-o3",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Leg uit hoe de PDCA-cyclus een verbetering levend houdt na de pilot. Welke twee stappen zijn bij borging het belangrijkst en wat gebeurt er in die stappen?",
+   "modelantwoord": "PDCA (Deming) is de motor van continu verbeteren (Kaizen). Bij borging draait het vooral om Check en Act. Check: met gegevens meten of het proces nog presteert zoals afgesproken; hier grijpt de KPI-opvolging op aan. Act: presteert het goed, dan werk je de standaard bij; presteert het onvoldoende, dan start een nieuwe verbeterronde. Evaluatiemomenten moeten vast ingepland zijn en gekoppeld aan KPI's en eigenaar, bijvoorbeeld maandelijks in het teamoverleg.",
+   "punten": [
+    "Check juist uitgelegd met koppeling aan KPI's",
+    "Act juist: standaard bijwerken of nieuwe ronde",
+    "Vaste evaluatiemomenten of Kaizen genoemd"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp5-o4",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Wat is het verschil tussen de bouwstenen overdracht en lessons learned? Leg bij overdracht uit wat 'actief' overdragen betekent.",
+   "modelantwoord": "Overdracht maakt de verbetering overdraagbaar: je bundelt SOP's, KPI-definities, eigenaarschap en evaluatie-afspraken in één overdrachtsdossier. Actief betekent: niet alleen aanleveren, maar toelichten, vragen beantwoorden en checken of de eigenaar ermee uit de voeten kan. Lessons learned borgen niet het proces maar de kennis: wat ging goed, wat liep stroef, welke aannames klopten niet, wat zou een volgend team anders doen.",
+   "punten": [
+    "Overdracht: dossier met de juiste inhoud",
+    "Actief overdragen juist uitgelegd",
+    "Lessons learned borgen kennis, niet het proces"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp5-o5",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Hoe leg je een nieuwe werkwijze vast zodat ze blijft? Gebruik de begrippen SOP, mura, 5S en visueel management.",
+   "modelantwoord": "Zonder vastgelegde werkwijze ontstaat variatie, in Lean mura, een vorm van verspilling. Daarom leg je standaardwerk vast in een SOP met afbakening, KPI's en voorschriften, volgorde van stappen en vastleggen. De vijfde S van 5S, Standhouden, vraagt de discipline om de afspraak elke dag te volgen. Visueel management maakt zichtbaar of er volgens de standaard gewerkt wordt, bijvoorbeeld een SOP die zichtbaar bij de servicedesk hangt.",
+   "punten": [
+    "Mura juist gekoppeld aan ontbreken van standaard",
+    "SOP met (een deel van) de vier onderdelen",
+    "5S Standhouden en visueel management juist"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp5-o6",
+   "week": 5,
+   "onderdeel": "Presentatie",
+   "type": "open",
+   "vraag": "Jullie advies is een centraal meldpunt voor storingen bij een zorginstelling. De doorlooptijd was 11 dagen, meldingen raakten kwijt via vijf kanalen. Zet de kern van je adviespresentatie in de PROA-structuur: wat vertel je per blok?",
+   "modelantwoord": "Probleem: meldingen raken kwijt doordat ze via vijf kanalen binnenkomen (Define en Measure). Risico: de omvang, gemiddeld 11 dagen doorlooptijd, met gevolgen voor bewoners en medewerkers (Measure). Oorzaak: er is geen centraal registratiepunt en geen vaste afhandelvolgorde (Analyze). Advies: één digitaal meldpunt (mogelijkheden en keuze), hoe je het invoert (pilot, training, planning) en hoe je grip houdt (SOP, KPI doorlooptijd maximaal 4 dagen, eigenaar).",
+   "punten": [
+    "Probleem en Risico juist gescheiden",
+    "Oorzaak passend bij Analyze",
+    "Advies met keuze, implementatie én borging"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp5-c1",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Afvalscheiding op de campus van Hogeschool Lingewaard",
+   "casus": "Hogeschool Lingewaard (fictief) heeft op twee verdiepingen een pilot gedaan met nieuwe afvalstations met duidelijke pictogrammen. De vervuiling van de papierstroom daalde van 30% naar 12%. De opdrachtgever, het hoofd Facilitaire Zaken, wil dat de stations na de zomer in het hele gebouw staan. Het studentteam vertrekt over vier weken.",
+   "subvragen": [
+    {
+     "vraag": "Werk vier van de zes bouwstenen van het borgingsplan concreet uit voor deze verbetering.",
+     "modelantwoord": "Standaardisatie: een werkinstructie voor schoonmaak (wat gaat waar, wanneer legen) plus pictogrammen en een bord bij elk station (visueel management). KPI-opvolging: percentage vervuiling van de papierstroom, norm maximaal 12%, ingrijpen boven 15%, maandelijks gemeten. Eigenaarschap: de coördinator schoonmaak of het hoofd Facilitaire Zaken met naam. Evaluatie: maandelijks in het facilitaire overleg de KPI bespreken en de instructie bijstellen (PDCA). Overdracht: dossier met instructie, KPI-definitie en afspraken, mondeling toegelicht. Lessons learned: bijvoorbeeld 'pictogrammen werkten beter dan tekst'.",
+     "punten": [
+      "Twee bouwstenen concreet en passend",
+      "Nog twee bouwstenen concreet",
+      "KPI met norm en ingrijpgrens"
+     ]
+    },
+    {
+     "vraag": "Het hoofd Facilitaire Zaken stelt voor: 'De conciërge let er wel op.' Beoordeel dit voorstel met de les over eigenaarschap.",
+     "modelantwoord": "Onvoldoende: eigenaarschap vraagt een vaste verantwoordelijke met naam of rol die de KPI bewaakt en kan ingrijpen. 'Wel op letten' is geen afspraak. Vragen van de docent: is het een echte naam of rol, en weet die persoon het al? De conciërge heeft mogelijk geen mandaat over schoonmaak. Beter: een proceseigenaar met mandaat die het weet en heeft ingestemd, gekoppeld aan de KPI en de evaluatiemomenten.",
+     "punten": [
+      "Voorstel kritisch beoordeeld",
+      "Eis: naam of rol, en de persoon weet het",
+      "Koppeling aan mandaat, KPI of evaluatie"
+     ]
+    },
+    {
+     "vraag": "Waarom is Kotter stap 8 hier van belang, en wat kan het team in de laatste vier weken doen om die stap te ondersteunen?",
+     "modelantwoord": "Kotter stap 8 is 'borg in de cultuur': pas als afval scheiden 'zo doen wij dat hier' wordt, blijft het bestaan. Dat vraagt dat normen en gedrag meebewegen. In vier weken: medewerkers en schoonmakers betrekken bij de uitrol, hun zorgen serieus nemen (respect voor mensen), de resultaten van de pilot zichtbaar maken en vieren, en de eigenaar nu al de KPI laten bespreken.",
+     "punten": [
+      "Stap 8 juist uitgelegd",
+      "Minstens twee concrete acties"
+     ]
+    }
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp5-c2",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Een zwakke borgingsparagraaf",
+   "casus": "Een team levert deze borgingsparagraaf in voor de verbeterde uitgifte van werkplekken: 'Standaardisatie: de nieuwe werkwijze is bekend bij iedereen. KPI: tevredenheid van medewerkers. Eigenaar: het team. Evaluatie: als het nodig is. Overdracht: we mailen het rapport naar de opdrachtgever. Lessons learned: het project ging goed.'",
+   "subvragen": [
+    {
+     "vraag": "Benoem per bouwsteen wat er zwak aan is.",
+     "modelantwoord": "Standaardisatie: niets vastgelegd, geen SOP of visueel management; 'bekend bij iedereen' leidt tot variatie (mura). KPI: geen norm, ingrijpgrens of meetritme, en tevredenheid alleen is vaag. Eigenaar: 'het team' is niemand; er hoort een naam of rol bij. Evaluatie: 'als het nodig is' is geen vast moment, dus het zakt weg. Overdracht: mailen is niet actief overdragen. Lessons learned: een dooddoener, geen concrete les.",
+     "punten": [
+      "Drie bouwstenen juist bekritiseerd",
+      "Alle zes bouwstenen juist bekritiseerd"
+     ]
+    },
+    {
+     "vraag": "Herschrijf de bouwstenen KPI, eigenaar en evaluatie zodat ze voldoen.",
+     "modelantwoord": "KPI: percentage medewerkers dat binnen 5 minuten een werkplek heeft, norm 95%, ingrijpen onder 90%, wekelijks gemeten via het reserveringssysteem. Eigenaar: de facilitair coördinator (naam), die heeft ingestemd en het mandaat heeft om de werkwijze aan te passen. Evaluatie: elke eerste maandag van de maand bespreekt de coördinator de KPI in het teamoverleg; bij afwijking start een nieuwe PDCA-ronde.",
+     "punten": [
+      "KPI met norm, grens en ritme",
+      "Eigenaar met naam of rol die het weet",
+      "Vast evaluatiemoment gekoppeld aan KPI en eigenaar"
+     ]
+    }
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp5-c3",
+   "week": 5,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Terugval bij de servicedesk van gemeente Overbetuwe",
+   "casus": "Bij gemeente Overbetuwe (fictief) voerde een studentteam vorig jaar een digitaal meldformulier in. De pilot was een succes. Vier maanden na hun vertrek komen meldingen weer per telefoon en via briefjes binnen, en niemand weet wie het formulier beheert. Er hangt geen instructie meer bij de balie. De nieuwe teamleider vraagt jullie om advies.",
+   "subvragen": [
+    {
+     "vraag": "Welke bouwstenen van het borgingsplan zijn vermoedelijk niet goed ingevuld? Onderbouw met de signalen uit de casus.",
+     "modelantwoord": "Eigenaarschap: niemand weet wie het formulier beheert, dus de verbetering is een wees. Standaardisatie en visueel management: er hangt geen instructie meer, dus variatie sluipt terug. KPI-opvolging: niemand merkte de terugval op, dus er werd niet gemeten of er was geen ingrijpgrens. Evaluatiemomenten: geen vast moment waarop dit besproken werd. Overdracht: kennelijk niet actief overgedragen.",
+     "punten": [
+      "Eigenaarschap met signaal",
+      "Standaardisatie of visueel management met signaal",
+      "KPI of evaluatie met signaal"
+     ]
+    },
+    {
+     "vraag": "Stel een herstelplan op met de PDCA-cyclus.",
+     "modelantwoord": "Plan: wijs de teamleider aan als proceseigenaar, stel de KPI's vast (percentage meldingen via het formulier, norm 90%; doorlooptijd) met ingrijpgrens. Do: hang de SOP weer zichtbaar bij de balie, instrueer de baliemedewerkers. Check: meet maandelijks de KPI's in het teamoverleg. Act: bij goed presteren de standaard bijwerken, bij onvoldoende presteren een nieuwe verbeterronde, bijvoorbeeld met 5x Waarom naar de reden dat mensen weer bellen.",
+     "punten": [
+      "Plan met eigenaar en KPI",
+      "Do en Check concreet",
+      "Act juist: standaard bijwerken of nieuwe ronde"
+     ]
+    }
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp6-m01",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wanneer is het project volgens de les van week 6 pas echt af?",
+   "opties": [
+    "Als het adviesrapport is ingeleverd",
+    "Als de proceseigenaar het kan overnemen",
+    "Als de pilot geslaagd is",
+    "Als de eindpresentatie is gegeven"
+   ],
+   "juist": 1,
+   "uitleg": "Het project is pas af als de proceseigenaar het kan overnemen, niet als jullie adviesrapport klaar is.",
+   "versie": "A"
+  },
+  {
+   "id": "pp6-m02",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welk moment noemt de les het kwetsbaarste moment van het verbetertraject?",
+   "opties": [
+    "De start van de pilot op één afdeling",
+    "Het moment dat het studentteam vertrekt",
+    "De keuze met de PUGH-matrix in week 2",
+    "De nulmeting aan het begin van het project"
+   ],
+   "juist": 1,
+   "uitleg": "Zodra de aandacht verslapt, sluipt variatie (mura) terug. Daarom is het einde van het traject net zo cruciaal als de start.",
+   "versie": "B"
+  },
+  {
+   "id": "pp6-m03",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wanneer hoort de overdracht volgens de notities idealiter in de projectplanning te staan?",
+   "opties": [
+    "Vanaf de start van het project",
+    "Pas na de eindpresentatie",
+    "Zodra de pilot is afgerond",
+    "Als de opdrachtgever erom vraagt"
+   ],
+   "juist": 0,
+   "uitleg": "Overdracht is een geplande activiteit, geen formaliteit achteraf. Idealiter staat ze vanaf de start in de planning.",
+   "versie": "C"
+  },
+  {
+   "id": "pp6-m04",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke instrumenten helpen volgens de notities om eigenaarschap al vóór de overdracht op te bouwen?",
+   "opties": [
+    "Een FMEA en een PUGH-matrix samen met de eigenaar",
+    "Visual control met KPI-borden en een dagstart",
+    "Een RACI-matrix en een stakeholdersanalyse",
+    "Een enquête onder klanten over het nieuwe proces"
+   ],
+   "juist": 1,
+   "uitleg": "Eigenaarschap ontstaat niet vanzelf op het overdrachtsmoment. Je bouwt het op door de eigenaar nu al te betrekken, bijvoorbeeld met KPI-borden en een dagstart.",
+   "versie": "A"
+  },
+  {
+   "id": "pp6-m05",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Maak de uitspraak uit de notities af: 'Een standaard die van niemand is, ...'",
+   "opties": [
+    "... wordt vanzelf beter.",
+    "... verstoft.",
+    "... hoort in het archief.",
+    "... is een quick win."
+   ],
+   "juist": 1,
+   "uitleg": "Zonder eigenaar wordt de standaard niet gevolgd en niet bijgewerkt.",
+   "versie": "B"
+  },
+  {
+   "id": "pp6-m06",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke van deze vier hoort níét in het overdrachtsdossier?",
+   "opties": [
+    "De werkstandaard (SOP of EPL)",
+    "Het borgingsplan met KPI's, normen en evaluatieritme",
+    "De individuele portfolio's van de teamleden",
+    "De losse eindjes en de lessons learned"
+   ],
+   "juist": 2,
+   "uitleg": "Het dossier bevat: werkstandaard, borgingsplan, eigenaarschap, projectdocumentatie (analyse, current en future state) en losse eindjes plus lessons learned. Je portfolio is voor je eigen beoordeling.",
+   "versie": "C"
+  },
+  {
+   "id": "pp6-m07",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is de vuistregel voor de volledigheid van het overdrachtsdossier?",
+   "opties": [
+    "Zo kort mogelijk, hooguit twee pagina's",
+    "Zo compleet dat iemand zónder jullie ermee verder kan",
+    "Precies even lang als het adviesrapport",
+    "Alleen wat de opdrachtgever expliciet heeft gevraagd"
+   ],
+   "juist": 1,
+   "uitleg": "Het dossier moet de verbetering onafhankelijk maken van het studentteam.",
+   "versie": "A"
+  },
+  {
+   "id": "pp6-m08",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welk punt staat níét op de agenda van een Tollgate-gesprek?",
+   "opties": [
+    "Een korte samenvatting met een storyboard",
+    "Toetsen aan de vooraf afgesproken succescriteria",
+    "Nieuwe oplossingen brainstormen voor het probleem",
+    "De verandering formeel overdragen"
+   ],
+   "juist": 2,
+   "uitleg": "Op de agenda: storyboard, wat ging goed en fout, toetsen aan de succescriteria en formeel overdragen. Oplossingen bedenk je veel eerder in het traject.",
+   "versie": "B"
+  },
+  {
+   "id": "pp6-m09",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is de gouden regel bij de overdracht?",
+   "opties": [
+    "Draag pas over als de proceseigenaar het echt kan dragen; daarna pas ontbind je het team",
+    "Draag over op de laatste werkdag, ook als niet alles af is",
+    "Draag over aan de docent, die het doorgeeft aan de organisatie",
+    "Draag over zodra het adviesrapport een voldoende heeft gekregen"
+   ],
+   "juist": 0,
+   "uitleg": "Je ontbindt het team pas als de eigenaar de verbetering echt kan dragen.",
+   "versie": "C"
+  },
+  {
+   "id": "pp6-m10",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke stap uit het zesstappenplan komt direct na 'draag over, formeel, aan de proceseigenaar'?",
+   "opties": [
+    "Toets succes aan de vooraf gestelde criteria",
+    "Veranker en archiveer de verandering",
+    "Documenteer alles in het dossier",
+    "Projectafsluiting met belanghebbenden"
+   ],
+   "juist": 1,
+   "uitleg": "1 Documenteer, 2 Projectafsluiting, 3 Toets succes, 4 Draag over, 5 Veranker en archiveer, 6 Borg de lessen.",
+   "versie": "A"
+  },
+  {
+   "id": "pp6-m11",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "'Beslissingen gelden alleen voor de toekomst.' Wat betekent dat voor lessons learned?",
+   "opties": [
+    "Lessons learned hebben na het afronden van het project geen echte waarde meer",
+    "Het rendement zit niet in je eigen project, maar bij het volgende team en de opdrachtgever",
+    "Je mag lessons learned pas opschrijven als het besluit een jaar in werking is",
+    "Alleen de opdrachtgever mag besluiten welke lessen voor de toekomst gelden"
+   ],
+   "juist": 1,
+   "uitleg": "Je kunt je eigen project niet meer veranderen. De waarde is dat anderen niet in dezelfde valkuil trappen.",
+   "versie": "B"
+  },
+  {
+   "id": "pp6-m12",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat gebeurt er in Lean met een geleerde les?",
+   "opties": [
+    "Hij wordt opgenomen in de bijgewerkte standaard",
+    "Hij gaat naar het archief van de docent",
+    "Hij wordt alleen in de portfolio opgenomen",
+    "Hij wordt besproken en daarna losgelaten"
+   ],
+   "juist": 0,
+   "uitleg": "Observeren, verbeteren, vastleggen: zo leert niet alleen het individu, maar de hele organisatie.",
+   "versie": "C"
+  },
+  {
+   "id": "pp6-m13",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke aanname bleek in het praktijkvoorbeeld van de vergaderzalen niet te kloppen?",
+   "opties": [
+    "Dat het zaalteam de checklist zou omarmen",
+    "Dat iedereen digitaal reserveert",
+    "Dat de keuken de deadline zou halen",
+    "Dat de coördinator proceseigenaar wilde worden"
+   ],
+   "juist": 1,
+   "uitleg": "Een deel van de medewerkers bleef bellen. De checklist werd juist direct omarmd.",
+   "versie": "A"
+  },
+  {
+   "id": "pp6-m14",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "In welke kolom van het lessons-learned-format zit volgens de notities de echte waarde?",
+   "opties": [
+    "Wat ging goed of kon beter",
+    "Concrete les: wat doe je voortaan",
+    "Voor wie",
+    "Best practice ja of nee"
+   ],
+   "juist": 1,
+   "uitleg": "Een goede les is concreet en gedragen, geen algemene dooddoener.",
+   "versie": "B"
+  },
+  {
+   "id": "pp6-m15",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat bedoelt de les met een 'best practice'?",
+   "opties": [
+    "Het hoogste cijfer dat een team in de klas heeft gehaald",
+    "Een sterk inzicht dat herbruikbaar is in vergelijkbare projecten",
+    "Een les die alleen voor het eigen projectteam geldt",
+    "De oplossing die het hoogst scoorde in de PUGH-matrix"
+   ],
+   "juist": 1,
+   "uitleg": "Je tilt de sterkste inzichten uit de lessons learned naar best practice, zodat andere projecten ze kunnen gebruiken.",
+   "versie": "C"
+  },
+  {
+   "id": "pp6-m16",
+   "week": 6,
+   "onderdeel": "Presentatie",
+   "type": "mc",
+   "vraag": "Bij de generale repetitie duurt jullie presentatie 42 minuten. Wat doe je?",
+   "opties": [
+    "Niets, want de vragenronde mag dan gewoon korter",
+    "Inkorten tot 30 minuten, want er volgen 15 minuten vragen",
+    "De vragenronde schrappen zodat alles erin past",
+    "Sneller praten zodat alle slides aan bod komen"
+   ],
+   "juist": 1,
+   "uitleg": "Het echte moment is 30 minuten presenteren plus 15 minuten vragen. Spreek af wie de tijd bijhoudt.",
+   "versie": "A"
+  },
+  {
+   "id": "pp6-m17",
+   "week": 6,
+   "onderdeel": "Presentatie",
+   "type": "mc",
+   "vraag": "Wat doe je volgens de training met de mondelinge feedback op je generale repetitie?",
+   "opties": [
+    "Onthouden en meteen in de eindpresentatie verwerken",
+    "Dezelfde dag in je logboek, met de naam van de gever",
+    "Laten ondertekenen door de docent voor je portfolio",
+    "Alleen opschrijven als de feedback kritisch was"
+   ],
+   "juist": 1,
+   "uitleg": "Peerfeedback telt als extra feedbackbron voor je portfolio.",
+   "versie": "B"
+  },
+  {
+   "id": "pp6-m18",
+   "week": 6,
+   "onderdeel": "Presentatie",
+   "type": "mc",
+   "vraag": "Een groep begint de generale repetitie met hun advies en legt daarna pas uit wat het probleem is. Welke opbouw raadt de training aan voor de kern?",
+   "opties": [
+    "Advies, Oorzaak, Risico, Probleem",
+    "Probleem, Risico, Oorzaak, Advies",
+    "Oorzaak, Probleem, Advies, Risico",
+    "Risico, Advies, Probleem, Oorzaak"
+   ],
+   "juist": 1,
+   "uitleg": "PROA: Probleem (Define, Measure), Risico of omvang (Measure), Oorzaak (Analyze), Advies (Generate, Improve, Control).",
+   "versie": "C"
+  },
+  {
+   "id": "pp6-o1",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Leg uit waarom overdracht een geplande activiteit is en geen formaliteit achteraf. Gebruik het begrip 'Lean Back'.",
+   "modelantwoord": "Het vertrek van het studentteam is het kwetsbaarste moment: zodra de aandacht verslapt, sluipt variatie terug en binnen enkele maanden is het oude patroon terug. Eigenaarschap ontstaat niet vanzelf op het overdrachtsmoment; je bouwt het op door de eigenaar vanaf het begin te betrekken. Daarom staat overdracht idealiter vanaf de start in de planning. Lean Back: het studentteam stuurt en faciliteert, de proceseigenaar heeft het mandaat en is verantwoordelijk voor de uitvoering; de organisatie blijft eigenaar van haar eigen proces.",
+   "punten": [
+    "Kwetsbaar moment of terugval uitgelegd",
+    "Eigenaarschap moet vooraf opgebouwd worden",
+    "Lean Back juist uitgelegd"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp6-o2",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Een team heeft de schoonmaakrondes in een kantoorgebouw verbeterd. Stel het overdrachtsdossier samen: welke vijf onderdelen horen erin en wat stop je er bij dit project in?",
+   "modelantwoord": "1 Werkstandaard: SOP of EPL van de nieuwe schoonmaakronde. 2 Borgingsplan: KPI's (bijvoorbeeld percentage ruimtes dat bij controle schoon is, norm en ingrijpgrens) en evaluatieritme. 3 Eigenaarschap: bijvoorbeeld de objectleider schoonmaak als proceseigenaar, met afspraken over mandaat. 4 Projectdocumentatie: analyse, current state en future state van de rondes. 5 Losse eindjes: openstaande acties (bijvoorbeeld nieuwe trolleys bestellen) plus de lessons learned.",
+   "punten": [
+    "Minstens drie onderdelen juist",
+    "Alle vijf onderdelen juist",
+    "Concreet ingevuld voor de schoonmaakrondes"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp6-o3",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Noem de zes stappen van project naar overdracht. Wanneer geldt het project als afgerond?",
+   "modelantwoord": "1 Documenteer alles in het dossier. 2 Projectafsluiting met belanghebbenden. 3 Toets het succes aan de vooraf gestelde criteria. 4 Draag formeel over aan de proceseigenaar. 5 Veranker en archiveer de verandering. 6 Borg de lessen (lessons learned). Het project geldt pas als afgerond wanneer álle stappen zijn voltooid.",
+   "punten": [
+    "Minstens vier stappen juist",
+    "Alle zes in de juiste volgorde",
+    "Pas afgerond na alle stappen"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp6-o4",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Een team schrijft als lesson learned: 'De communicatie had beter gekund.' Waarom is dit geen goede les? Maak er een goede les van en zeg voor wie die waardevol is.",
+   "modelantwoord": "Het is een algemene dooddoener: niet concreet, niet gedragen en je weet niet wat je voortaan anders doet. Een goede les zegt wat je voortaan doet, bijvoorbeeld: 'Plan vanaf week 1 een wekelijkse update van tien minuten met de receptie en de technische dienst, want zij hoorden pas in week 5 van de wijziging.' Waardevol voor het volgende team (vermijdt de valkuil), de opdrachtgever (verbetert verder) en jezelf (transfer naar stage). Eventueel tillen naar best practice.",
+   "punten": [
+    "Uitleg waarom het een dooddoener is",
+    "Concrete les: wat doe je voortaan",
+    "Voor wie waardevol"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp6-o5",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Wat is een Tollgate? Wie zijn erbij en wat staat er op de agenda?",
+   "modelantwoord": "Een Tollgate is het formele overdrachtsgesprek of de projectafsluiting, het scharnierpunt waarop de verantwoordelijkheid overgaat naar de proceseigenaar. Erbij: de belanghebbenden, zoals opdrachtgever, proceseigenaar (bijvoorbeeld facilitair coördinator) en betrokken teams zoals technische dienst of zaalteam. Agenda: korte samenvatting (storyboard), wat ging goed en fout, toetsen aan de vooraf afgesproken succescriteria, de verandering formeel overdragen.",
+   "punten": [
+    "Tollgate juist omschreven",
+    "Juiste deelnemers",
+    "Minstens drie agendapunten"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp6-o6",
+   "week": 6,
+   "onderdeel": "Presentatie",
+   "type": "open",
+   "vraag": "Bij de generale repetitie krijg je de feedback: 'Ik weet niet wat jullie van de opdrachtgever willen.' Welke vragen over de ontvanger had je vooraf moeten beantwoorden, en hoe pas je het slot van je presentatie aan?",
+   "modelantwoord": "Vragen over de ontvanger: wat weet de ontvanger al, wat zijn de belangen, wat heeft de ontvanger nodig (wie beslist, focus op financiën of argumenten) en, nieuw in training 4, wat wil de ontvanger? Denk vanuit de beslisser: wat heeft die nodig om ja te zeggen? Aanpassing: eindig met een duidelijke vraag of beslissing die je van de opdrachtgever vraagt, bijvoorbeeld akkoord op de uitrol en het aanwijzen van een proceseigenaar, gekoppeld aan de opbrengst en het implementatieplan.",
+   "punten": [
+    "Minstens drie vragen over de ontvanger",
+    "'Wat wil de ontvanger' genoemd",
+    "Concreet slot met een vraag aan de beslisser"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp6-c1",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Nieuw sleutelbeheer bij woningcorporatie Waalwonen",
+   "casus": "Bij woningcorporatie Waalwonen (fictief) heeft een studentteam het sleutelbeheer voor monteurs verbeterd: een sleutelkast met registratie en een vaste uitgifteprocedure. Het team wil volgende week overdragen. In het dossier staat als proceseigenaar 'de teamleider vastgoedonderhoud'. Bij navraag blijkt die nog nooit van het project gehoord te hebben. Het team stelt voor het dossier op de laatste dag te mailen en dan af te sluiten.",
+   "subvragen": [
+    {
+     "vraag": "Wat gaat er mis met het eigenaarschap, en wat moet het team doen voordat het overdraagt?",
+     "modelantwoord": "De beoogde eigenaar weet van niets; dat is volgens de notities een veelvoorkomend probleem. Eigenaarschap ontstaat niet op het overdrachtsmoment. Het team moet de teamleider nu betrekken: het project uitleggen, akkoord vragen, mandaat vastleggen, en de teamleider laten meekijken bij de KPI's, bijvoorbeeld via een weekstart met het KPI-bord. Pas als de teamleider het echt kan dragen, wordt er overgedragen.",
+     "punten": [
+      "Probleem benoemd: eigenaar weet het niet",
+      "Concrete acties om eigenaarschap op te bouwen",
+      "Gouden regel: pas overdragen als de eigenaar het kan dragen"
+     ]
+    },
+    {
+     "vraag": "Beoordeel het plan om het dossier te mailen en af te sluiten. Wat stel je voor in plaats daarvan?",
+     "modelantwoord": "Mailen is geen actieve overdracht en geen formele afsluiting. Voorstel: een Tollgate-gesprek met de opdrachtgever, de teamleider vastgoedonderhoud en een vertegenwoordiger van de monteurs. Agenda: storyboard, wat ging goed en fout, toetsen aan de succescriteria, formeel overdragen. Daarna verankeren (procedures bijwerken), archiveren en lessons learned borgen.",
+     "punten": [
+      "Mailen afgewezen met reden",
+      "Tollgate met juiste deelnemers en agenda",
+      "Verankeren, archiveren of lessons learned genoemd"
+     ]
+    }
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp6-c2",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Lessons-learned-sessie na de verhuizing van een afdeling",
+   "casus": "Een team begeleidde de verhuizing van een afdeling naar een flexplekkenconcept. Hun lessons learned: (1) 'Het ging over het algemeen goed.' (2) 'Planning was lastig.' (3) 'De IT-afdeling werd pas betrokken toen de werkplekken al waren ingericht, waardoor de dockingstations niet pasten.' (4) 'We gingen ervan uit dat iedereen thuis zou werken op vrijdag, maar 70% kwam toch.'",
+   "subvragen": [
+    {
+     "vraag": "Welke lessen zijn bruikbaar en welke niet? Leg uit waarom.",
+     "modelantwoord": "Les 1 en 2 zijn dooddoeners: niet concreet en je weet niet wat je voortaan anders doet. Les 3 is bruikbaar: concrete oorzaak en gevolg. Les 4 is een aanname die niet klopte, ook bruikbaar. Maar 3 en 4 zijn nog als probleem geformuleerd, niet als 'wat doe je voortaan'.",
+     "punten": [
+      "1 en 2 als dooddoener herkend",
+      "3 en 4 als bruikbaar herkend met reden"
+     ]
+    },
+    {
+     "vraag": "Maak van les 3 en 4 een concrete les en geef aan of het een best practice is en voor wie die waardevol is.",
+     "modelantwoord": "Les 3: 'Betrek IT vanaf de eerste ontwerpsessie bij de inrichting van werkplekken.' Best practice: ja, herbruikbaar bij elke inrichting. Waardevol voor het volgende team en de opdrachtgever. Les 4: 'Toets aannames over bezetting met een bezettingsmeting vóór het ontwerp, niet achteraf.' Best practice: ja. Waardevol voor de opdrachtgever (bij volgende afdelingen) en voor jezelf op stage.",
+     "punten": [
+      "Les 3 als concrete 'voortaan'-les",
+      "Les 4 als concrete 'voortaan'-les",
+      "Best practice en doelgroep benoemd"
+     ]
+    }
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp6-c3",
+   "week": 6,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Overdracht van het nieuwe receptieproces bij Hotel Nijmeegse Poort",
+   "casus": "Bij Hotel Nijmeegse Poort (fictief) verbeterde een team het inchecken: online voorregistratie en een vaste checklist aan de balie. De wachttijd daalde van 9 naar 4 minuten. De front office manager wordt proceseigenaar. Het team heeft twee weken over.",
+   "subvragen": [
+    {
+     "vraag": "Plan de overdracht met het zesstappenplan. Wat doet het team concreet bij elke stap?",
+     "modelantwoord": "1 Documenteren: dossier met checklist (werkstandaard), KPI wachttijd met norm, eigenaarschap, analyse en current/future state, losse eindjes. 2 Projectafsluiting: Tollgate met hotelmanager, front office manager en receptieteam. 3 Succes toetsen: wachttijd 4 minuten tegen het vooraf gestelde criterium. 4 Formeel overdragen aan de front office manager. 5 Verankeren in de werkinstructies van de receptie en archiveren. 6 Lessons learned vastleggen.",
+     "punten": [
+      "Minstens vier stappen concreet",
+      "Alle zes stappen concreet in de juiste volgorde"
+     ]
+    },
+    {
+     "vraag": "Hoe zorgt het team dat het eigenaarschap van de front office manager al vóór de Tollgate groeit?",
+     "modelantwoord": "Nu al betrekken: de manager de KPI laten bespreken in de dagstart of weekstart van de receptie, een visual control bord met de wachttijd bij de back office, samen de checklist bijstellen, en vragen beantwoorden zodat het geen verrassing is. 'Een standaard die van niemand is, verstoft.'",
+     "punten": [
+      "Concreet instrument zoals dagstart of KPI-bord",
+      "Eigenaar actief betrekken vóór de overdracht"
+     ]
+    }
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp7-m01",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke activiteit hoort volgens de docent níét bij de les van week 7?",
+   "opties": [
+    "Het einddossier compleet en consistent maken",
+    "De eindpresentatie oefenen",
+    "De overdracht aan de proceseigenaar plannen",
+    "Een retrospective houden"
+   ],
+   "juist": 1,
+   "uitleg": "Vandaag draait alles om documenteren, borgen, overdragen en terugkijken. De notities waarschuwen voor het misverstand dat deze les over de eindpresentatie gaat.",
+   "versie": "A"
+  },
+  {
+   "id": "pp7-m02",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Maak de uitspraak uit de les af: 'Eén keer goed werken is geen verbetering, dat is ...'",
+   "opties": [
+    "... een pilot.",
+    "... toeval.",
+    "... een quick win.",
+    "... een begin."
+   ],
+   "juist": 1,
+   "uitleg": "In Control zorg je dat het verbeterde proces betrouwbaar, voorspelbaar en herhaalbaar blijft.",
+   "versie": "B"
+  },
+  {
+   "id": "pp7-m03",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke van deze vier levert de Control-fase volgens de les níét op?",
+   "opties": [
+    "Minder variatie in het proces",
+    "Een voorspelbaar resultaat",
+    "Snel kunnen bijsturen bij afwijking",
+    "Een nieuwe keuze tussen oplossingen"
+   ],
+   "juist": 3,
+   "uitleg": "Control levert minder variatie, een voorspelbaar resultaat en snel bijsturen op. Kiezen tussen oplossingen hoort bij Generate en Improve.",
+   "versie": "C"
+  },
+  {
+   "id": "pp7-m04",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Een servicedesk pakt een melding één keer binnen de termijn op. Wanneer spreek je volgens de les van een geborgde verbetering?",
+   "opties": [
+    "Als de opdrachtgever tevreden is over de oplossing",
+    "Als een melding elke keer binnen de termijn wordt opgepakt",
+    "Als de pilot volgens plan is afgerond en geëvalueerd",
+    "Als de nieuwe SOP is geschreven en goedgekeurd"
+   ],
+   "juist": 1,
+   "uitleg": "Het gaat om herhaalbaarheid: niet één keer, maar elke keer binnen de termijn.",
+   "versie": "A"
+  },
+  {
+   "id": "pp7-m05",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Van wie komt de PDCA-cyclus volgens de les van week 7?",
+   "opties": [
+    "Kotter en Carnall",
+    "Shewhart en Deming",
+    "Mintzberg en Handy",
+    "Ohno en Toyoda"
+   ],
+   "juist": 1,
+   "uitleg": "PDCA komt van Shewhart en Deming. Na de Act-stap begint de cyclus opnieuw (Kaizen).",
+   "versie": "B"
+  },
+  {
+   "id": "pp7-m06",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "'Borgen is vastleggen én zorgen dat mensen de nieuwe werkwijze echt volgen.' Wat voor vraagstuk is dat tweede deel volgens de notities?",
+   "opties": [
+    "Een administratief vraagstuk",
+    "Een mens- en communicatievraagstuk",
+    "Een financieel vraagstuk",
+    "Een juridisch vraagstuk"
+   ],
+   "juist": 1,
+   "uitleg": "Een SOP in een la borgt niets. Mensen moeten de werkwijze begrijpen en willen volgen.",
+   "versie": "C"
+  },
+  {
+   "id": "pp7-m07",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke functie heeft standaardwerk volgens Lean níét?",
+   "opties": [
+    "Het borgt de verbetering",
+    "Het dient als training en naslagwerk",
+    "Het is het ijkpunt om het werkelijke proces mee te vergelijken",
+    "Het is de basis voor de beoordeling van individuele medewerkers"
+   ],
+   "juist": 3,
+   "uitleg": "Standaardwerk is de basis van verbetering: het borgt, dient als training en naslag, en is het ijkpunt. Het is geen beoordelingsinstrument.",
+   "versie": "A"
+  },
+  {
+   "id": "pp7-m08",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Bij de einddossier-check vraag je: 'Begrijpt de proceseigenaar het dossier zelfstandig, zonder ons erbij?' Bij welk criterium hoort die vraag?",
+   "opties": [
+    "Volledig",
+    "Consistent",
+    "Toegankelijk",
+    "Actueel"
+   ],
+   "juist": 2,
+   "uitleg": "Volledig: is elke claim onderbouwd? Consistent: sluiten probleem, knelpunten, oplossing en plan op elkaar aan? Toegankelijk: begrijpt de eigenaar het zelfstandig?",
+   "versie": "B"
+  },
+  {
+   "id": "pp7-m09",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "In het einddossier gaat het probleem over doorlooptijd, maar het implementatieplan meet alleen klanttevredenheid. Welk criterium is geschonden?",
+   "opties": [
+    "Volledig",
+    "Consistent",
+    "Toegankelijk",
+    "Geen, dit mag"
+   ],
+   "juist": 1,
+   "uitleg": "Probleem, knelpunten, oplossing en plan moeten logisch op elkaar aansluiten. Meet je iets anders dan het probleem, dan klopt de rode draad niet.",
+   "versie": "C"
+  },
+  {
+   "id": "pp7-m10",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Moet de implementatie volledig af zijn voordat je het einddossier overdraagt?",
+   "opties": [
+    "Ja, anders mag je het dossier niet overdragen aan de opdrachtgever",
+    "Nee, wel genoeg om over te nemen, met de losse eindjes expliciet benoemd",
+    "Nee, de implementatie hoort niet in het einddossier maar in een apart plan",
+    "Ja, en de docent controleert dat bij de Tollgate met de opdrachtgever"
+   ],
+   "juist": 1,
+   "uitleg": "Belangrijke nuance uit de les: niet alles hoeft af, maar losse eindjes benoem je expliciet.",
+   "versie": "A"
+  },
+  {
+   "id": "pp7-m11",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Waarvoor dient een storyboard van één pagina volgens de notities?",
+   "opties": [
+    "Om de rode draad van het dossier toegankelijk te maken",
+    "Om de planning van de pilot in één beeld te tonen",
+    "Om de RPN-scores van de FMEA samen te vatten",
+    "Om de uitkomsten van de retrospective te notuleren"
+   ],
+   "juist": 0,
+   "uitleg": "Een storyboard laat in één oogopslag zien hoe probleem, oorzaak, oplossing en borging samenhangen.",
+   "versie": "B"
+  },
+  {
+   "id": "pp7-m12",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke stap van het tienstappenplan noemen de notities het scharnierpunt?",
+   "opties": [
+    "Project documenteren in het dossier",
+    "De projectafsluiting-bijeenkomst (Tollgate)",
+    "Archiveren van alle projectdocumenten",
+    "De eindevaluatie met de opdrachtgever"
+   ],
+   "juist": 1,
+   "uitleg": "Op de Tollgate stel je samen met opdrachtgever en docent vast dat het werk klaar is en gaat de verantwoordelijkheid over.",
+   "versie": "C"
+  },
+  {
+   "id": "pp7-m13",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke stap van het tienstappenplan komt direct na 'succes of falen toetsen'?",
+   "opties": [
+    "Lessons learned benoemen",
+    "Project overdragen",
+    "Verandering verankeren",
+    "Archiveren"
+   ],
+   "juist": 1,
+   "uitleg": "4 Lessons learned benoemen, 5 Succes of falen toetsen, 6 Project overdragen, 7 Verandering verankeren, 8 Archiveren.",
+   "versie": "A"
+  },
+  {
+   "id": "pp7-m14",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Waar komt de structuur van de drie retrospective-vragen volgens de notities vandaan?",
+   "opties": [
+    "Uit de dagstart, verbreed naar de hele projectperiode",
+    "Uit de FMEA, toegepast op de samenwerking in het team",
+    "Uit de PUGH-matrix, met de teamleden als criteria",
+    "Uit het borgingsplan van week 5, bij de bouwsteen evaluatie"
+   ],
+   "juist": 0,
+   "uitleg": "Dagstart: wat gedaan, wat hadden we moeten doen, wat gaan we doen. In de retro: wat ging goed, wat kon beter, wat nemen we mee.",
+   "versie": "B"
+  },
+  {
+   "id": "pp7-m15",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat is de tip uit de notities voor de volgorde bij het invullen van de borgingskaart?",
+   "opties": [
+    "Eerst de KPI's, daarna pas de afbakening",
+    "Eerst afbakening en proceseigenaar, daarna pas de KPI's",
+    "Eerst de losse eindjes, daarna de proceseigenaar",
+    "Eerst de lessons learned, daarna de KPI's"
+   ],
+   "juist": 1,
+   "uitleg": "Zo passen de meetpunten logisch bij het proces. Een KPI is pas meetbaar met een concreet getal plus norm.",
+   "versie": "C"
+  },
+  {
+   "id": "pp7-m16",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Welke KPI is volgens de les van week 7 pas echt meetbaar?",
+   "opties": [
+    "'De doorlooptijd van meldingen moet korter worden'",
+    "'Gemiddelde doorlooptijd maximaal 2 werkdagen'",
+    "'Meldingen sneller en beter afhandelen dan nu'",
+    "'Zo veel mogelijk tevreden klanten en gebruikers'"
+   ],
+   "juist": 1,
+   "uitleg": "Een KPI is pas meetbaar met een concreet getal plus norm.",
+   "versie": "A"
+  },
+  {
+   "id": "pp7-m17",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat was in het praktijkvoorbeeld van het meldproces (vier kanalen, 5 werkdagen) de kernoorzaak?",
+   "opties": [
+    "Te weinig monteurs bij de technische dienst",
+    "Het ontbreken van één centraal registratiepunt",
+    "Een verouderd FMIS dat meldingen kwijtraakte",
+    "Te veel meldingen per dag voor de servicedesk"
+   ],
+   "juist": 1,
+   "uitleg": "Vier losse kanalen (telefoon, e-mail, papier, balie) zonder één registratiepunt. Let op: het voorbeeld uit week 5 had vijf kanalen en 11 dagen.",
+   "versie": "B"
+  },
+  {
+   "id": "pp7-m18",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Wat was in datzelfde praktijkvoorbeeld het losse eindje dat bij de Tollgate expliciet werd benoemd?",
+   "opties": [
+    "De training van de servicedesk",
+    "De aanschaf van software",
+    "De keuze van de proceseigenaar",
+    "De KPI-normen"
+   ],
+   "juist": 1,
+   "uitleg": "De proceseigenaar was het hoofd Facilitair Bedrijf. De software was nog niet aangeschaft en werd als los eindje overgedragen.",
+   "versie": "C"
+  },
+  {
+   "id": "pp7-o1",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Wat betekent Control in de les van week 7? Leg uit wat het oplevert en waarom één keer goed werken nog geen verbetering is.",
+   "modelantwoord": "In Improve heb je oplossingen getest en ingevoerd; in Control zorg je dat het verbeterde proces betrouwbaar, voorspelbaar en herhaalbaar blijft. Het levert minder variatie op (het proces loopt elke keer hetzelfde), een voorspelbaar resultaat (afwijkingen vallen direct op) en snel kunnen bijsturen (actie zodra je van de norm afwijkt). Eén keer goed is toeval: pas als het elke keer goed gaat, bijvoorbeeld elke melding binnen de termijn, is het een verbetering.",
+   "punten": [
+    "Betrouwbaar, voorspelbaar, herhaalbaar",
+    "Minstens twee opbrengsten van Control",
+    "Uitleg 'één keer goed is toeval'"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp7-o2",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Op welke drie criteria toets je je einddossier? Geef bij elk criterium de toetsvraag.",
+   "modelantwoord": "Volledig: is elke claim onderbouwd met data, observatie of bron, en ontbreekt er geen bijlage? Consistent: sluiten probleem, knelpunten, oplossing en plan logisch op elkaar aan? Toegankelijk: begrijpt de proceseigenaar het dossier zelfstandig, zonder het team erbij?",
+   "punten": [
+    "Volledig met toetsvraag",
+    "Consistent met toetsvraag",
+    "Toegankelijk met toetsvraag"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp7-o3",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Wat is het verschil tussen lessons learned en een retrospective? Noem de drie retro-vragen.",
+   "modelantwoord": "Lessons learned gaan over de aanpak van het project (wat werkte wel en niet, welke aannames klopten niet); de retrospective gaat over jullie samenwerking als team. Retro-vragen: 1 Wat hebben we gedaan, wat ging goed in onze samenwerking en willen we behouden? 2 Wat hadden we beter gekund, waar liep het stroef? 3 Wat nemen we mee, naar een volgend project en naar onze stage?",
+   "punten": [
+    "Verschil aanpak versus samenwerking",
+    "Minstens twee retro-vragen",
+    "Alle drie de retro-vragen"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp7-o4",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Vergelijk het tienstappenplan van week 7 met het zesstappenplan van week 6. Wat is de overeenkomst, en welke stappen van het tienstappenplan zitten niet letterlijk in het zesstappenplan?",
+   "modelantwoord": "Beide volgen dezelfde logica: documenteren, een afsluitende bijeenkomst, succes toetsen, overdragen, verankeren en archiveren, en lessen borgen. Het tienstappenplan is uitgebreider: het heeft daarnaast 'voorbereiden op afsluiting', 'eindevaluatie' en 'afsluiting voltooien', en splitst verankeren en archiveren in twee stappen. Het zesstappenplan is de compacte versie.",
+   "punten": [
+    "Overeenkomst: dezelfde logica",
+    "Minstens twee extra stappen juist genoemd"
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp7-o5",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Leg uit waarom afronden de Act-stap van de PDCA-cyclus is, en waarom borgen meer is dan een SOP schrijven.",
+   "modelantwoord": "Act betekent: borg en maak het standaard. 'Werk de standaardwerkvoorschriften bij en zorg dat iedereen de nieuwe werkwijze volgt.' Daarna begint de cyclus opnieuw en draag je het stokje over aan een organisatie die zelf blijft verbeteren (Kaizen). Borgen is meer dan vastleggen: mensen moeten de werkwijze echt volgen, en dat is een mens- en communicatievraagstuk, geen administratie. Bijvoorbeeld: uitleg in de dagstart, een eigenaar die erop let en een KPI op het visuele bord.",
+   "punten": [
+    "Act juist: standaard bijwerken en laten volgen",
+    "Cyclus begint opnieuw (Kaizen)",
+    "Borgen als mens- en communicatievraagstuk met voorbeeld"
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp7-o6",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "In je eindpresentatie kun je de vraag verwachten: 'Welke twee KPI's houden jullie verbetering in control?' Geef een goed antwoord voor een verbeterd proces van vergaderzaalreserveringen.",
+   "modelantwoord": "Bijvoorbeeld KPI 1: percentage zalen dat op het afgesproken tijdstip gereed staat, norm minstens 95%. KPI 2: percentage cateringaanvragen dat vóór de deadline binnen is, norm minstens 90%. Beide met een concreet getal plus norm, passend bij de afbakening van het proces (van reservering tot gereed staan), zichtbaar op een visueel bord en bewaakt door de proceseigenaar, bijvoorbeeld de coördinator Facilitair.",
+   "punten": [
+    "Twee KPI's passend bij het proces",
+    "Beide met concreet getal plus norm",
+    "Wie bewaakt of waar zichtbaar"
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "pp7-c1",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Borgingskaart voor de uitgifte van parkeervergunningen",
+   "casus": "Bij een hogeschool verbeterde een team de uitgifte van parkeervergunningen aan medewerkers. Vroeger mailden medewerkers de receptie, die het doorstuurde naar Facilitaire Zaken; de doorlooptijd was gemiddeld 8 werkdagen en 25% van de aanvragen moest opnieuw worden ingediend. Nu is er één digitaal aanvraagformulier met verplichte velden, dat direct bij de medewerker parkeerbeheer binnenkomt. De software voor automatische koppeling met het slagboomsysteem moet nog worden aangeschaft.",
+   "subvragen": [
+    {
+     "vraag": "Vul de borgingskaart in: proces en afbakening, proceseigenaar, KPI 1 en KPI 2 met norm, hoe geborgd en losse eindjes.",
+     "modelantwoord": "Proces en afbakening: van aanvraag door de medewerker (klant) tot actieve vergunning; leverancier is de medewerker, klant ook. Proceseigenaar: de medewerker of teamleider parkeerbeheer, die het weet en mandaat heeft. KPI 1: gemiddelde doorlooptijd, norm maximaal 2 werkdagen. KPI 2: percentage aanvragen in één keer compleet, norm minstens 95%. Hoe geborgd: mini-SOP voor parkeerbeheer, KPI's op een visueel bord of in het weekoverleg. Losse eindjes: aanschaf van de koppelingssoftware, besluit over budget.",
+     "punten": [
+      "Afbakening met begin, eind en klant",
+      "Proceseigenaar met rol",
+      "Twee KPI's met concreet getal en norm",
+      "Losse eindje software genoemd"
+     ]
+    },
+    {
+     "vraag": "Waarom raadt de docent aan eerst de afbakening en de proceseigenaar in te vullen en pas daarna de KPI's?",
+     "modelantwoord": "Dan passen de meetpunten logisch bij het proces: je meet pas als je weet waar het proces begint en eindigt en wie verantwoordelijk is voor de cijfers. Anders kies je KPI's die buiten het proces vallen of die niemand bewaakt.",
+     "punten": [
+      "Meetpunten moeten bij het proces passen",
+      "Koppeling aan de eigenaar die de KPI's bewaakt"
+     ]
+    }
+   ],
+   "versie": "A"
+  },
+  {
+   "id": "pp7-c2",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Einddossier-check bij een schoonmaakproject",
+   "casus": "Een team doet de einddossier-check. Ze vinden: (1) In de probleemanalyse staat 'medewerkers zijn ontevreden over de schoonmaak', zonder bron. (2) De oorzaakanalyse wijst op een onlogische looproute, maar het advies is een nieuw schoonmaakmiddel. (3) Het dossier staat vol afkortingen uit de lessen, zoals RPN, SIPOC en PUGH, zonder uitleg. (4) Er staat niet in dat de nieuwe trolleys nog besteld moeten worden.",
+   "subvragen": [
+    {
+     "vraag": "Koppel elke bevinding aan het juiste criterium (volledig, consistent of toegankelijk) en leg uit waarom.",
+     "modelantwoord": "1 Volledig: een claim zonder data, observatie of bron. 2 Consistent: oorzaak en advies sluiten niet op elkaar aan. 3 Toegankelijk: de proceseigenaar begrijpt het dossier niet zelfstandig door onverklaard jargon. 4 Volledig (losse eindjes moeten expliciet benoemd worden); ook verdedigbaar als toegankelijk voor de overname, mits uitgelegd.",
+     "punten": [
+      "Bevinding 1 en 2 juist gekoppeld",
+      "Bevinding 3 en 4 juist gekoppeld met uitleg"
+     ]
+    },
+    {
+     "vraag": "Maak een actielijst met per actie een eigenaar.",
+     "modelantwoord": "1 Bron toevoegen: de resultaten van de tevredenheidsmeting of observaties opnemen (eigenaar: teamlid A). 2 Advies herzien: de looproute aanpassen in plaats van of naast het middel, en de rode draad herschrijven (teamlid B). 3 Begrippenlijst toevoegen of afkortingen uitschrijven en een storyboard van één pagina maken (teamlid C). 4 Losse eindjes-lijst met de bestelling van de trolleys en wie het oppakt (teamlid D, af te stemmen met de proceseigenaar).",
+     "punten": [
+      "Vier concrete acties",
+      "Per actie een eigenaar"
+     ]
+    }
+   ],
+   "versie": "B"
+  },
+  {
+   "id": "pp7-c3",
+   "week": 7,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Overdrachtsplan voor het nieuwe bezoekersproces van Zorgcentrum De Linde",
+   "casus": "Een team heeft bij Zorgcentrum De Linde (fictief) het ontvangen van bezoekers verbeterd: een aanmeldzuil bij de ingang en een vaste route naar de afdelingen. Het hoofd Facilitair Bedrijf wordt proceseigenaar. De teamleider receptie, de beveiliging en de afdelingshoofden zijn betrokken. Twee dingen zijn nog niet geregeld: de training van vrijwilligers en een besluit over openingstijden van de zuil in het weekend.",
+   "subvragen": [
+    {
+     "vraag": "Plan de projectafsluiting-bijeenkomst: wie nodig je uit, wat staat er op de agenda en welke documenten neem je mee?",
+     "modelantwoord": "Wie: het hoofd Facilitair Bedrijf (proceseigenaar), de opdrachtgever, de teamleider receptie, beveiliging, eventueel een afdelingshoofd en de docent. Agenda: storyboard, wat ging goed en fout, toetsen aan de vooraf afgesproken succescriteria, formeel overdragen, losse eindjes en afspraken. Documenten: einddossier, borgingskaart (mini-SOP), KPI-overzicht, lijst losse eindjes, lessons learned.",
+     "punten": [
+      "Juiste deelnemers met proceseigenaar",
+      "Agenda met succescriteria en formele overdracht",
+      "Passende documenten"
+     ]
+    },
+    {
+     "vraag": "Formuleer drie lessons learned en drie retro-uitkomsten die dit team zou kunnen vastleggen. Let op het verschil.",
+     "modelantwoord": "Lessons learned (aanpak): 'Betrek de vrijwilligers vanaf de eerste week, want zij ontvangen in het weekend de meeste bezoekers.' 'Meet de bezoekersstromen per dagdeel vóór je een oplossing kiest.' 'Leg besluiten over openingstijden vroeg bij de beslisser neer.' Retro-uitkomsten (samenwerking): 'De dagstart hield ons scherp, dat behouden we.' 'We verdeelden taken te laat, voortaan in de eerste sprint.' 'Ik neem mee naar stage: eerder om feedback vragen.' Verschil: lessons over de aanpak, retro over de samenwerking.",
+     "punten": [
+      "Drie lessons over de aanpak, concreet",
+      "Drie retro-uitkomsten over de samenwerking",
+      "Verschil zichtbaar"
+     ]
+    }
+   ],
+   "versie": "C"
+  },
+  {
+   "id": "ppe-m01",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal. Het team houdt een sessie met verpleging, keuken en twee patiënten en verzamelt 25 ideeën, zonder er al iets van af te schieten. In welke fase en werkwijze zit het team?",
+   "opties": [
+    "Analyze: oorzaken zoeken met 5x Waarom",
+    "Generate: divergeren, eerst breed",
+    "Generate: convergeren, kiezen en onderbouwen",
+    "Improve: draagvlak bouwen met Kotter-light"
+   ],
+   "juist": 1,
+   "uitleg": "Week 1 is Generate, divergeren: zoveel mogelijk ideeën, nog niet oordelen. Te vroeg oordelen snoeit de beste ideeën weg. In week 2 kies je (convergeren).",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m02",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal. Patiënten die een warme maaltijd krijgen die bij hun wens past, eten beter en herstellen sneller. Bij welke facilitaire toegevoegde waarde past dit het best?",
+   "opties": [
+    "Flexibiliteit",
+    "Healing environment",
+    "Waardestijging",
+    "Innovatie"
+   ],
+   "juist": 1,
+   "uitleg": "Healing environment is een van de 11 facilitaire toegevoegde waarden. Daarnaast spelen hier duurzaamheid (minder verspilling) en kosten mee: meervoudige toegevoegde waarde.",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m03",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal. Een idee is dat de keuken pas kookt en portioneert op basis van de definitieve bestellingen van die dag. Bij welk Lean-principe past dit?",
+   "opties": [
+    "Jidoka: stop de lijn bij een fout",
+    "Pull: start werk pas op een signaal",
+    "Heijunka: spreid de werkdruk",
+    "5S: orde en netheid"
+   ],
+   "juist": 1,
+   "uitleg": "Pull (pijler Just in Time): je produceert wat nodig is, op het juiste moment, op een signaal van de klant. Dat pakt de overproductie aan.",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m04",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal. Op de bestel-tablet kan een maaltijd pas worden verstuurd als er een dieetcode is gekozen. Hoe heet dit principe?",
+   "opties": [
+    "Poka-Yoke",
+    "Heijunka",
+    "Kanban",
+    "Gemba"
+   ],
+   "juist": 0,
+   "uitleg": "Poka-Yoke: ontwerp het proces zo dat de fout niet gemaakt kán worden. Het hoort bij de pijler kwaliteit (Jidoka).",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m05",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal. Hoe classificeer je de stap 'keukenmedewerker typt de papieren lijsten over in het keukensysteem'?",
+   "opties": [
+    "VA: de patiënt heeft er direct baat bij",
+    "BNVA: geen klantwaarde, wel noodzakelijk",
+    "NVA: pure verspilling, elimineren",
+    "VA, mits de medewerker zorgvuldig typt"
+   ],
+   "juist": 2,
+   "uitleg": "Overtypen voegt niets toe voor de patiënt en is niet nodig als de bestelling digitaal binnenkomt. NVA elimineer je. Een dieetcontrole door de diëtist zou BNVA zijn: geen klantwaarde, wel noodzakelijk.",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m06",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal, PUGH-matrix. Criteria en gewicht: verspilling 5, werkdruk verpleging 4, invoeringskosten 3, patiënttevredenheid 4. Optie A (bestellen aan bed met tablet) scoort +2, +1, −2, +2. Wat is het gewogen totaal van optie A?",
+   "opties": [
+    "10",
+    "16",
+    "22",
+    "28"
+   ],
+   "juist": 1,
+   "uitleg": "(2 × 5) + (1 × 4) + (−2 × 3) + (2 × 4) = 10 + 4 − 6 + 8 = 16. De baseline (huidige situatie) staat op 0.",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m07",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal. Het keukensysteem kan niet koppelen met tablets, en op de afdelingen is het gewoonte om alles op papier te doen. Op welke dimensie scoort de tabletoplossing dan zwak?",
+   "opties": [
+    "Haalbaarheid via de 80/20-regel",
+    "Impact volgens de KKT-driehoek",
+    "Aansluiting op de context",
+    "Geen, dit zijn uitvoeringsdetails"
+   ],
+   "juist": 2,
+   "uitleg": "Aansluiting op de context: past het bij cultuur, systemen en de bedoeling van de organisatie? Volgens de notities de toets die studenten het vaakst vergeten.",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m08",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal. De cliëntenraad heeft veel belang bij de maaltijdservice, maar weinig formele invloed op de keuze. Wat is de strategie volgens de belang-invloed-grid?",
+   "opties": [
+    "Monitoren",
+    "Informeren",
+    "Tevreden houden",
+    "Nauw betrekken"
+   ],
+   "juist": 1,
+   "uitleg": "Veel belang, weinig invloed: informeren. Veel belang en veel invloed (bijvoorbeeld het hoofd voedingsdienst): nauw betrekken.",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m09",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal. Verpleegkundigen zeggen: 'Bestellen aan bed kost ons de eerste weken juist meer tijd.' Welke aanpak van weerstand past hierbij?",
+   "opties": [
+    "Ruimte geven",
+    "Tijd vrijmaken",
+    "Waardering voor het verleden",
+    "Een duidelijke visie geven"
+   ],
+   "juist": 1,
+   "uitleg": "Oorzaak 'het kost (eerst) meer werk' koppel je aan de aanpak 'tijd vrijmaken'. Weerstand is geen onwil, maar een voorspelbare reactie.",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m10",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal, FMEA-light. Risico: 'verkeerde dieetcode gekozen, patiënt krijgt een maaltijd met een allergeen'. Ernst 5, Kans 2, Detectie 4. Wat is het RPN?",
+   "opties": [
+    "11",
+    "20",
+    "40",
+    "50"
+   ],
+   "juist": 2,
+   "uitleg": "5 × 2 × 4 = 40. Een zeldzame maar ernstige fout die moeilijk te ontdekken is, kan hoger eindigen dan een fout die vaak voorkomt maar direct opvalt.",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m11",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal. De leverancier wil alle twaalf afdelingen in één weekend omzetten. Hoe heet die strategie en wat is het grootste bezwaar?",
+   "opties": [
+    "Gefaseerd; de uitrol duurt dan te lang",
+    "Big-bang; het hoogste risico voor de zorg",
+    "Schaduwdraaien; het levert dubbel werk op",
+    "Pilot; je verzamelt te weinig data"
+   ],
+   "juist": 1,
+   "uitleg": "Big-bang is snel, maar heeft het hoogste risico. In een ziekenhuis weegt het risico voor de operationele dienstverlening zwaar; een pilot op één afdeling en daarna gefaseerd ligt meer voor de hand.",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-m12",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "mc",
+   "vraag": "Ziekenhuis Maaswaal. Wie is na het vertrek van het studentteam het meest logisch de proceseigenaar van de maaltijdbestelling?",
+   "opties": [
+    "De manager zorg, die als sponsor middelen vrijmaakte",
+    "Het hoofd voedingsdienst, verantwoordelijk voor het proces",
+    "De diëtist, die de dieetcodes heeft bepaald",
+    "De docent, die het project heeft begeleid"
+   ],
+   "juist": 1,
+   "uitleg": "De proceseigenaar is de lijnmanager die verantwoordelijk is voor het proces en het mandaat heeft (Lean Back). De sponsor maakt mensen en middelen vrij, maar draagt het proces niet dagelijks.",
+   "versie": "E"
+  },
+  {
+   "id": "ppe-o1",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Ziekenhuis Maaswaal (fictief) laat patiënten hun maaltijd kiezen op een papieren lijst. De verpleging vult die lijst 's ochtends om 9.00 uur in voor lunch en diner; om 10.30 uur haalt een voedingsassistent de lijsten op en typt een keukenmedewerker ze over in het keukensysteem. Wijzigingen (nieuwe opname, ontslag, nuchter voor een operatie) belt de verpleging door. Uit de metingen van periode 1: 18% van de maaltijden komt ongeopend terug, patiënten klagen over lauwe maaltijden en de verpleging besteedt per afdeling ruim een uur per dag aan bestellijsten en telefoontjes. Kies uit deze situatie één quick win en één structurele verbetering. Leg met de Impact/Effort-matrix uit waarom je allebei kiest.",
+   "modelantwoord": "Quick win (hoge impact, lage moeite): bijvoorbeeld een vaste afmeldregel bij ontslag of nuchter via één telefoonnummer of een korte checklist, of de bestellijst later op de ochtend laten invullen zodat er minder wijzigingen zijn. Structureel (hoge impact, hoge moeite): digitaal bestellen aan bed dat direct in het keukensysteem landt, met koken op bestelling (pull). Quick wins geven momentum en draagvlak, maar lossen vaak alleen een symptoom op; de structurele verbetering pakt de oorzaak aan (overtypen, te vroeg bestellen) maar kost meer tijd en geld. Een advies met alleen symptoombestrijding is zwak.",
+   "punten": [
+    "Passende quick win",
+    "Passende structurele verbetering",
+    "Uitleg: momentum en draagvlak versus oorzaak aanpakken"
+   ],
+   "versie": "E"
+  },
+  {
+   "id": "ppe-o2",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Ziekenhuis Maaswaal. Het team kiest voor bestellen aan bed met een tablet. Onderbouw de waarde van deze oplossing voor de drie perspectieven uit week 2, en laat zien dat er sprake is van meervoudige (financiële én niet-financiële) toegevoegde waarde.",
+   "modelantwoord": "Opdrachtgever: minder verspilling (18% retour) betekent lagere kosten en past bij duurzaamheidsdoelen en imago; draagt bij aan KPI's. Gebruiker (patiënt): kiest dichter bij het moment zelf, krijgt wat hij of zij wil, warmer en beter passend bij het dieet, wat het herstel ondersteunt (healing environment). Proces: geen overtypen (NVA weg), minder telefoontjes, minder wijzigingen, kortere doorlooptijd en minder werkdruk voor de verpleging. Meervoudig: financieel (minder weggegooid voedsel, minder uren) én niet-financieel (tevredenheid, duurzaamheid, healing environment). Geen eenzijdige focus op kosten.",
+   "punten": [
+    "Opdrachtgever-perspectief concreet",
+    "Gebruiker- en procesperspectief concreet",
+    "Financiële én niet-financiële waarde benoemd"
+   ],
+   "versie": "E"
+  },
+  {
+   "id": "ppe-o3",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "open",
+   "vraag": "Ziekenhuis Maaswaal. Van de verpleegkundigen is ongeveer een vijfde enthousiast, een vijfde fel tegen en de rest twijfelt. Stel met de 20-60-20-verdeling en Kotter-light een aanpak op om draagvlak te bouwen.",
+   "modelantwoord": "20-60-20: stop niet al je energie in de tegenstanders; laat de voorstanders zichtbaar succes boeken, dan kiest de middengroep (60%) de kant van de sterkste groep. Kotter-light: 1 Urgentie: laat de eigen cijfers zien (18% retour, ruim een uur per dag per afdeling aan lijsten). 2 Coalitie: een zichtbare sponsor (manager zorg) plus enkele invloedrijke verpleegkundigen als ambassadeurs. 3 Communicatie: vaak, consistent en in twee richtingen, zorgen serieus nemen (bijvoorbeeld de extra tijd in het begin). 4 Betrokkenheid: verpleegkundigen een rol geven in het testen en vier een zichtbare quick win op de pilotafdeling.",
+   "punten": [
+    "20-60-20 juist toegepast",
+    "Minstens drie Kotter-light-stappen concreet",
+    "Alle vier de stappen concreet voor deze casus"
+   ],
+   "versie": "E"
+  },
+  {
+   "id": "ppe-o4",
+   "week": 0,
+   "onderdeel": "Presentatie",
+   "type": "open",
+   "vraag": "Ziekenhuis Maaswaal. Je presenteert je advies aan de raad van bestuur. Zet de kern van je presentatie in de PROA-structuur, en benoem per blok de projectfase(n) en wat je laat zien.",
+   "modelantwoord": "Probleem (Define en Measure): maaltijdbestelling via papieren lijsten leidt tot verspilling en ontevredenheid. Risico (Measure): de omvang, 18% van de maaltijden ongeopend retour, lauwe maaltijden, ruim een uur verpleegtijd per afdeling per dag; eventueel in euro's. Oorzaak (Analyze): te vroeg bestellen, overtypen en wijzigingen per telefoon, dus geen directe koppeling tussen vraag en productie. Advies (Generate, Improve, Control): mogelijkheden en keuze (PUGH, bestellen aan bed met pull), implementatie (pilot op één afdeling, daarna gefaseerd, RACI, FMEA-maatregelen) en grip op resultaten (KPI verspilling met norm en ingrijpgrens, proceseigenaar hoofd voedingsdienst). Visueel: één boodschap per slide, het proces tekenen in plaats van vertellen, en denken vanuit wat de raad nodig heeft om ja te zeggen.",
+   "punten": [
+    "Probleem en Risico juist gescheiden met cijfers",
+    "Oorzaak bij Analyze",
+    "Advies met keuze, implementatie én borging",
+    "Afgestemd op de beslisser of visueel uitgewerkt"
+   ],
+   "versie": "E"
+  },
+  {
+   "id": "ppe-c1",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Ziekenhuis Maaswaal, deel 1: van analyse naar keuze en pilot",
+   "casus": "Ziekenhuis Maaswaal (fictief) laat patiënten hun maaltijd kiezen op een papieren lijst. De verpleging vult die lijst 's ochtends om 9.00 uur in voor lunch en diner; om 10.30 uur haalt een voedingsassistent de lijsten op en typt een keukenmedewerker ze over in het keukensysteem. Wijzigingen (nieuwe opname, ontslag, nuchter voor een operatie) belt de verpleging door. Uit de metingen van periode 1: 18% van de maaltijden komt ongeopend terug, patiënten klagen over lauwe maaltijden en de verpleging besteedt per afdeling ruim een uur per dag aan bestellijsten en telefoontjes. Het team wil van de analyse naar een gekozen ontwerp en een pilot op de afdeling Orthopedie.",
+   "subvragen": [
+    {
+     "vraag": "Deel de volgende stappen in als VA, BNVA of NVA en zeg wat je ermee doet in de future state: (a) lijsten ophalen bij de afdeling, (b) dieetcontrole door de diëtist, (c) de maaltijd bereiden, (d) wijzigingen telefonisch doorgeven en noteren.",
+     "modelantwoord": "(a) NVA: transport van informatie, elimineren door digitaal bestellen. (b) BNVA: geen directe klantwaarde, wel noodzakelijk voor veiligheid, minimaliseren (bijvoorbeeld automatische controle op dieetcode, de diëtist alleen bij afwijkingen). (c) VA: hier wil de patiënt voor betalen, behouden en versterken. (d) NVA: herstelwerk door te vroeg bestellen, elimineren door later en digitaal te bestellen.",
+     "punten": [
+      "Minstens drie stappen juist ingedeeld",
+      "Alle vier juist met de bijbehorende ontwerpregel"
+     ]
+    },
+    {
+     "vraag": "Het team scoorde de opties eerst en bepaalde daarna de gewichten, 'zodat de beste optie er goed uitkomt'. Wat is hier mis, en hoe hoort het volgens de vijf stappen van de PUGH-matrix?",
+     "modelantwoord": "De gewichten moet je vóór het scoren afspreken, anders stuurt de weging stiekem het antwoord en is de keuze niet navolgbaar. Volgens de vijf stappen: representatieve groep (team plus stakeholders zoals verpleging en keuken), maximaal zes vitale criteria met gewicht, baseline is de huidige situatie met score 0, alternatieven scoren van −2 tot +2 ten opzichte van de baseline, score maal gewicht optellen. De matrix is een hulpmiddel, geen rechter; de waarde zit in de transparantie en het gesprek.",
+     "punten": [
+      "Fout benoemd: weging na scoren stuurt de uitkomst",
+      "Minstens vier van de vijf stappen juist"
+     ]
+    },
+    {
+     "vraag": "Formuleer twee SMART-succescriteria voor de pilot en noem drie randvoorwaarden voor een goede pilot op Orthopedie.",
+     "modelantwoord": "Succescriteria, bijvoorbeeld: 'Binnen zes weken na de start van de pilot op Orthopedie komt maximaal 8% van de maaltijden ongeopend terug (nu 18%).' 'Na zes weken besteedt de verpleging op Orthopedie gemiddeld maximaal 20 minuten per dag aan maaltijdbestellingen.' Randvoorwaarden: een plan (doel, duur, betrokkenen), een datacollectieplan (wie meet retouren en tijd, hoe), communicatie naar verpleging en patiënten, training van verpleging en voedingsassistenten, uitvoering volgens plan en evaluatie tegen de doelen vóór verdere uitrol.",
+     "punten": [
+      "Twee criteria die echt SMART zijn",
+      "Drie passende randvoorwaarden"
+     ]
+    }
+   ],
+   "versie": "E"
+  },
+  {
+   "id": "ppe-c2",
+   "week": 0,
+   "onderdeel": "Verbeterproject",
+   "type": "casus",
+   "titel": "Ziekenhuis Maaswaal, deel 2: van invoering naar overdracht",
+   "casus": "De pilot op Orthopedie is geslaagd: het retourpercentage daalde van 18% naar 7%. Het ziekenhuis wil gefaseerd uitrollen naar de andere elf afdelingen. Het hoofd voedingsdienst wordt proceseigenaar. Uit de FMEA-light kwamen twee toprisico's: (1) de wifi op sommige afdelingen valt weg, zodat bestellingen niet aankomen (E4, K3, D4); (2) een tablet is leeg bij de bestelronde (E2, K4, D1). Het studentteam vertrekt over drie weken; de aanschaf van extra tablets is nog niet goedgekeurd.",
+   "subvragen": [
+    {
+     "vraag": "Bereken het RPN van beide risico's en bedenk voor het hoogste risico een beheersmaatregel met een verantwoordelijke. Welke score daalt door je maatregel?",
+     "modelantwoord": "Risico 1: 4 × 3 × 4 = 48. Risico 2: 2 × 4 × 1 = 8. Risico 1 heeft prioriteit. Maatregel: een automatische ontvangstbevestiging en een melding aan de keuken als een afdeling op een vast tijdstip nog niets heeft besteld; de detectiescore daalt. Of: de wifi op die afdelingen laten verbeteren door ICT, dan daalt de kans. Plus een OCAP: bij uitval valt de afdeling terug op de papieren lijst. Verantwoordelijke: bijvoorbeeld de applicatiebeheerder of ICT.",
+     "punten": [
+      "Beide RPN's juist",
+      "Maatregel met verantwoordelijke",
+      "Juist aangegeven welke score daalt"
+     ]
+    },
+    {
+     "vraag": "Vul de borgingskaart in voor deze verbetering: afbakening, proceseigenaar, twee KPI's met norm, hoe geborgd, losse eindjes.",
+     "modelantwoord": "Afbakening: van de keuze van de patiënt op de tablet tot de geleverde maaltijd; leverancier en klant zijn patiënt en afdeling, de keuken levert. Proceseigenaar: hoofd voedingsdienst, die het weet en mandaat heeft. KPI 1: percentage ongeopend geretourneerde maaltijden, norm maximaal 8%, ingrijpen boven 10%. KPI 2: percentage bestellingen dat vóór de deadline binnen is, norm minstens 95%. Hoe geborgd: SOP of één-punt-les voor verpleging en voedingsassistenten, KPI's maandelijks in het overleg van de voedingsdienst en op een visueel bord. Losse eindjes: goedkeuring en aanschaf van extra tablets, wifi op de afdelingen.",
+     "punten": [
+      "Afbakening en proceseigenaar juist",
+      "Twee KPI's met concreet getal en norm",
+      "Borging zichtbaar gemaakt",
+      "Losse eindjes benoemd"
+     ]
+    },
+    {
+     "vraag": "Het team stelt voor om in de laatste week het dossier te mailen en meteen afscheid te nemen. Wat adviseer je op basis van de gouden regel en de Tollgate, en welke concrete les zou dit team kunnen vastleggen?",
+     "modelantwoord": "Niet doen: draag pas over als de proceseigenaar het echt kan dragen, en daarna pas ontbind je het team. Plan een Tollgate met de manager zorg (sponsor), het hoofd voedingsdienst, een vertegenwoordiger van de verpleging en de keuken: storyboard, wat ging goed en fout, toetsen aan de succescriteria (7% retour), formeel overdragen, losse eindjes (tablets) expliciet benoemen. Daarna verankeren en archiveren. Concrete les, bijvoorbeeld: 'Test de wifi op elke afdeling vóórdat de afdeling overgaat, en neem ICT vanaf de pilot op in de RACI.'",
+     "punten": [
+      "Mailen afgewezen met de gouden regel",
+      "Tollgate met deelnemers en agenda",
+      "Concrete les ('wat doe je voortaan')"
+     ]
+    }
+   ],
+   "versie": "E"
+  }
+ ],
+ "eind": {
+  "titel": "Eindtoets over het hele verbetertraject",
+  "uitleg": "Een vaste toets met eigen vragen die niet in de weektoetsen zitten. Je volgt één organisatie van verbeterrichting tot overdracht en past de modellen van alle weken toe.",
+  "mc": 12,
+  "open": 4,
+  "casus": 2
+ }
+}

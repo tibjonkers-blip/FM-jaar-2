@@ -864,7 +864,7 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
     }).join("");
     v.innerHTML = `<div class="stack">
       <section class="panel">
-        <div class="q-head"><span class="eyebrow">Weektoets · gestart ${datum(a.gestart)}</span><button class="btn quiet" id="t-pause">Pauzeren</button></div>
+        <div class="q-head"><span class="eyebrow">${isWide(a.key) ? "Toets over alle weken" : "Weektoets"} · gestart ${datum(a.gestart)}</span><button class="btn quiet" id="t-pause">Pauzeren</button></div>
         <h2>${esc(keyLabel(a.key))}</h2>
         <div class="facts">${factsHTML(composition(a.ids))}</div>
         <div>${blocks}</div>
