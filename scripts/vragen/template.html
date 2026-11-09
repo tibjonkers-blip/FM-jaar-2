@@ -1,0 +1,475 @@
+<title>__TITLE__</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one calm column like an exam booklet; a lesson index, then a single question card at a time. */
+:root {
+  --paper: #f5f7f6;
+  --sheet: #ffffff;
+  --ink: #17201e;
+  --ink-soft: #55625f;
+  --rule: #dce3e1;
+  --accent: __ACCENT__;
+  --accent-soft: __ACCENT_SOFT__;
+  --good: #1f7a45;
+  --good-soft: #e3f3e8;
+  --warn: #9a6200;
+  --warn-soft: #fbf0d9;
+  --bad: #b3261e;
+  --bad-soft: #fbe6e4;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111716; --sheet: #182120; --ink: #e6edeb; --ink-soft: #9db0ac; --rule: #2a3533;
+    --accent: __ACCENT_DARK__; --accent-soft: __ACCENT_SOFT_DARK__;
+    --good: #6fd39a; --good-soft: #17301f; --warn: #f0be5c; --warn-soft: #33290f; --bad: #ff8a80; --bad-soft: #3a1a18;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111716; --sheet: #182120; --ink: #e6edeb; --ink-soft: #9db0ac; --rule: #2a3533;
+  --accent: __ACCENT_DARK__; --accent-soft: __ACCENT_SOFT_DARK__;
+  --good: #6fd39a; --good-soft: #17301f; --warn: #f0be5c; --warn-soft: #33290f; --bad: #ff8a80; --bad-soft: #3a1a18;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px 64px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 1.25rem; font-weight: 600; }
+p { margin: 0; }
+a { color: var(--accent); }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, textarea:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+header { display: flex; flex-direction: column; gap: 10px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 20px; color: var(--ink-soft); font-size: 0.92rem; }
+.meta strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+.stack { display: flex; flex-direction: column; gap: 24px; }
+.filters { display: flex; flex-direction: column; gap: 14px; }
+.filter-head { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; margin-bottom: 8px; }
+.filter-label { font-weight: 600; font-size: 0.92rem; }
+.linkbtn { border: none; background: none; padding: 0; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-size: 0.88rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--rule); background: var(--paper); border-radius: 999px; padding: 7px 14px; font-weight: 500; display: inline-flex; gap: 8px; align-items: baseline; }
+.chip:hover { border-color: var(--accent); }
+.chip .n { font-family: var(--font-mono); font-size: 0.75rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--sheet); }
+.chip[aria-pressed="true"] .n { color: var(--sheet); opacity: 0.85; }
+.sel-summary { font-size: 0.92rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.sel-summary strong { color: var(--ink); }
+.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.lesson-list { display: flex; flex-direction: column; gap: 4px; }
+.week { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-soft); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px; }
+.lesson { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; align-items: center; text-align: left; width: 100%;
+  border: 1px solid transparent; background: transparent; border-radius: 10px; padding: 12px; }
+.lesson:hover { background: var(--accent-soft); }
+.lesson .name { min-width: 0; }
+.lesson .part { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+.lesson .title { font-weight: 500; }
+.lesson .count { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: var(--rule); overflow: hidden; display: flex; }
+.bar span { display: block; height: 100%; }
+.bar .g { background: var(--good); } .bar .d { background: var(--warn); } .bar .f { background: var(--bad); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.82rem; color: var(--ink-soft); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.q-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.tag { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 2px 8px; }
+.q-text { font-size: 1.08rem; font-weight: 500; white-space: pre-wrap; }
+.options { display: flex; flex-direction: column; gap: 8px; }
+.opt { text-align: left; border: 1px solid var(--rule); background: var(--paper); border-radius: 10px; padding: 12px 14px; display: flex; gap: 12px; align-items: flex-start; }
+.opt:hover:not(:disabled) { border-color: var(--accent); }
+.opt .letter { font-family: var(--font-mono); font-weight: 500; color: var(--ink-soft); min-width: 1.2em; }
+.opt:disabled { cursor: default; }
+.opt.right { border-color: var(--good); background: var(--good-soft); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.feedback { border-left: 4px solid var(--rule); padding: 10px 14px; background: var(--paper); border-radius: 0 10px 10px 0; display: flex; flex-direction: column; gap: 8px; }
+.feedback.good { border-color: var(--good); } .feedback.deels { border-color: var(--warn); } .feedback.bad { border-color: var(--bad); }
+.feedback h3 { font-size: 1rem; }
+textarea { width: 100%; min-height: 160px; resize: vertical; font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn { border: 1px solid var(--rule); background: var(--sheet); border-radius: 10px; padding: 10px 16px; font-weight: 500; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--sheet); }
+.btn.good { border-color: var(--good); color: var(--good); } .btn.deels { border-color: var(--warn); color: var(--warn); } .btn.bad { border-color: var(--bad); color: var(--bad); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.rubric { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.rubric li.hit::marker { color: var(--good); } .rubric li.miss::marker { color: var(--bad); }
+.small { font-size: 0.88rem; color: var(--ink-soft); }
+.progress { height: 4px; background: var(--rule); border-radius: 2px; overflow: hidden; }
+.progress span { display: block; height: 100%; background: var(--accent); transition: width 0.2s; }
+.summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.stat { border: 1px solid var(--rule); border-radius: 10px; padding: 12px; }
+.stat b { display: block; font-family: var(--font-display); font-size: 1.8rem; font-variant-numeric: tabular-nums; }
+.note { font-size: 0.85rem; color: var(--ink-soft); }
+@media (max-width: 560px) { .lesson { grid-template-columns: 1fr; } .lesson .count { white-space: normal; } }
+@media (max-width: 480px) { .summary-grid { grid-template-columns: 1fr; } .panel { padding: 16px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Facility Management · jaar 2 · periode 2</span>
+    <h1>__HEADING__</h1>
+    <div class="meta">
+      <span>Toetsperiode: <strong>11–22 januari 2027</strong></span>
+      <span id="countdown"></span>
+      <span><a href="__DOC_URL__" target="_blank" rel="noopener">Samenvattingen openen</a></span>
+    </div>
+    <p class="small">__EXAM_LINE__</p>
+  </header>
+
+  <div class="stack" id="index-view">
+    <section class="panel" aria-labelledby="select-title">
+      <h2 id="select-title">Kies wat je oefent</h2>
+      <p class="small">Kies één week of een combinatie van weken. Daarna maak je alle vragen uit je selectie, een korte ronde van 10 (wat je fout had of nog niet maakte komt eerst), of alleen je fouten.</p>
+      <div class="filters">
+        <div>
+          <div class="filter-head"><span class="filter-label" id="lbl-weeks">Weken</span><button class="linkbtn" id="weeks-all">alle weken</button><button class="linkbtn" id="weeks-none">niets</button></div>
+          <div class="chips" id="week-chips" role="group" aria-labelledby="lbl-weeks"></div>
+        </div>
+        <div>
+          <div class="filter-head"><span class="filter-label" id="lbl-parts">Onderdelen</span></div>
+          <div class="chips" id="part-chips" role="group" aria-labelledby="lbl-parts"></div>
+        </div>
+      </div>
+      <p class="sel-summary" id="sel-summary" aria-live="polite">Vragen laden...</p>
+      <div class="row">
+        <button class="btn primary" id="start-all" disabled>Alle vragen</button>
+        <button class="btn" id="start-kort" disabled>Korte ronde</button>
+        <button class="btn" id="start-fout" disabled>Alleen fouten</button>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="index-title">
+      <h2 id="index-title">Of kies één les</h2>
+      <div class="legend"><span><i style="background:var(--good)"></i>goed</span><span><i style="background:var(--warn)"></i>deels</span><span><i style="background:var(--bad)"></i>fout</span><span><i style="background:var(--rule)"></i>nog niet gemaakt</span></div>
+      <div class="lesson-list" id="lesson-list"><p class="small">Vragen laden...</p></div>
+      <p class="note" id="store-note"></p>
+    </section>
+  </div>
+
+  <section class="panel" id="quiz-view" hidden aria-live="polite"></section>
+</div>
+
+<script>
+(() => {
+  const DATA_URL = "vragen.json";
+  const LS_KEY = "__LS_KEY__";
+  const EXAM = Date.parse("2027-01-11T00:00:00");
+  let data = null, progress = {}, db = null, sample = null;
+  let queue = [], qi = 0, sessionResults = [];
+  const SEL_KEY = LS_KEY + ":selectie";
+  let sel = null, focusKey = null;
+
+  // ---------- helpers ----------
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const lsLoad = () => { try { return JSON.parse(localStorage.getItem(LS_KEY) || "{}"); } catch { return {}; } };
+  const lsSave = () => { try { localStorage.setItem(LS_KEY, JSON.stringify(progress)); } catch {} };
+  const shuffle = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+  const days = Math.ceil((EXAM - Date.now()) / 864e5);
+  $("countdown").innerHTML = days > 0 ? `Nog <strong>${days}</strong> dagen` : "De toetsperiode is begonnen";
+
+  // ---------- storage ----------
+  async function initStore() {
+    progress = lsLoad();
+    try {
+      db = window.claude && window.claude.use ? await window.claude.use("db") : null;
+    } catch { db = null; }
+    if (db) {
+      const timer = setTimeout(() => { $("store-note").textContent = "Je voortgang wordt in deze browser bewaard."; }, 10000);
+      try {
+        const snap = await db.collection("voortgang").get();
+        clearTimeout(timer);
+        snap.docs.forEach((d) => { const v = d.data(); if (v) progress[d.id] = v; });
+        lsSave();
+        $("store-note").textContent = "Je voortgang wordt opgeslagen, zodat je studiecoach kan zien waar je punten laat liggen.";
+      } catch (e) {
+        clearTimeout(timer);
+        db = null;
+        $("store-note").textContent = "Je voortgang wordt in deze browser bewaard.";
+      }
+    } else {
+      $("store-note").textContent = "Je voortgang wordt in deze browser bewaard.";
+    }
+    renderIndex();
+  }
+  async function record(q, status) {
+    const prev = progress[q.id] || { pogingen: 0, goed: 0 };
+    const rec = { les: q.les, status, pogingen: (prev.pogingen || 0) + 1, goed: (prev.goed || 0) + (status === "goed" ? 1 : 0), laatst: new Date().toISOString() };
+    progress[q.id] = rec;
+    lsSave();
+    if (db) { try { await db.doc("voortgang/" + q.id).set(rec); } catch {} }
+  }
+
+  // ---------- selection ----------
+  const allWeeks = () => [...new Set(data.lessen.map((l) => l.week))].sort((a, b) => a - b);
+  const allParts = () => [...new Set(data.lessen.map((l) => l.onderdeel))];
+  function loadSel() {
+    let s = null; try { s = JSON.parse(localStorage.getItem(SEL_KEY) || "null"); } catch {}
+    const W = allWeeks(), P = allParts();
+    const weeks = new Set(s && Array.isArray(s.weeks) && !s.alleWeken ? s.weeks.filter((w) => W.includes(w)) : W);
+    const parts = new Set(s && Array.isArray(s.parts) && !s.alleOnderdelen ? s.parts.filter((p) => P.includes(p)) : P);
+    sel = { weeks, parts };
+  }
+  function saveSel() {
+    try { localStorage.setItem(SEL_KEY, JSON.stringify({ weeks: [...sel.weeks], parts: [...sel.parts], alleWeken: sel.weeks.size === allWeeks().length, alleOnderdelen: sel.parts.size === allParts().length })); } catch {}
+  }
+  const inSel = (q) => { const l = lessonOf(q); return sel.weeks.has(l.week) && sel.parts.has(l.onderdeel); };
+  function rangeLabel(ws) {
+    ws = [...ws].sort((a, b) => a - b); const out = [];
+    for (let i = 0; i < ws.length; ) { let j = i; while (j + 1 < ws.length && ws[j + 1] === ws[j] + 1) j++; out.push(i === j ? String(ws[i]) : `${ws[i]}–${ws[j]}`); i = j + 1; }
+    return out.join(", ");
+  }
+  function selLabel() {
+    let s = sel.weeks.size === allWeeks().length ? "Alle weken" : (sel.weeks.size === 1 ? "Week " : "Weken ") + rangeLabel(sel.weeks);
+    if (sel.parts.size !== allParts().length) s += " · " + allParts().filter((p) => sel.parts.has(p)).join(", ");
+    return s;
+  }
+  function chip(key, label, n, on, onClick) {
+    const b = document.createElement("button");
+    b.className = "chip"; b.dataset.key = key; b.setAttribute("aria-pressed", String(on));
+    b.innerHTML = `<span>${esc(label)}</span><span class="n">${n}</span>`;
+    b.setAttribute("aria-label", `${label}, ${n} vragen`);
+    b.addEventListener("click", () => { focusKey = key; onClick(); saveSel(); renderIndex(); });
+    return b;
+  }
+  const toggle = (set, v) => (set.has(v) ? set.delete(v) : set.add(v));
+  const rank = (q) => { const p = progress[q.id]; if (!p) return 1; if (p.status === "fout") return 0; if (p.status === "deels") return 2; return 3; };
+
+  $("weeks-all").addEventListener("click", () => { if (!sel) return; allWeeks().forEach((w) => sel.weeks.add(w)); saveSel(); renderIndex(); });
+  $("weeks-none").addEventListener("click", () => { if (!sel) return; sel.weeks.clear(); saveSel(); renderIndex(); });
+  $("start-all").addEventListener("click", () => startQuiz(shuffle(data.vragen.filter(inSel)), selLabel() + " · alle vragen"));
+  $("start-kort").addEventListener("click", () => {
+    const pool = shuffle(data.vragen.filter(inSel)).sort((a, b) => rank(a) - rank(b) || ((progress[a.id] || {}).laatst || "").localeCompare((progress[b.id] || {}).laatst || ""));
+    startQuiz(shuffle(pool.slice(0, 10)), selLabel() + " · korte ronde");
+  });
+  $("start-fout").addEventListener("click", () => startQuiz(shuffle(data.vragen.filter((q) => inSel(q) && progress[q.id] && progress[q.id].status !== "goed")), selLabel() + " · fouten"));
+
+  // ---------- index ----------
+  function renderIndex() {
+    if (!data) return;
+    if (!sel) loadSel();
+    const W = allWeeks(), P = allParts();
+    const wc = $("week-chips"); wc.innerHTML = "";
+    W.forEach((w) => {
+      const n = data.vragen.filter((q) => { const l = lessonOf(q); return l.week === w && sel.parts.has(l.onderdeel); }).length;
+      wc.appendChild(chip("w" + w, "Week " + w, n, sel.weeks.has(w), () => toggle(sel.weeks, w)));
+    });
+    const pc = $("part-chips"); pc.innerHTML = "";
+    P.forEach((p) => {
+      const n = data.vragen.filter((q) => { const l = lessonOf(q); return l.onderdeel === p && sel.weeks.has(l.week); }).length;
+      pc.appendChild(chip("p" + p, p, n, sel.parts.has(p), () => toggle(sel.parts, p)));
+    });
+    if (focusKey) { const el = [...document.querySelectorAll(".chip")].find((c) => c.dataset.key === focusKey); if (el) el.focus(); focusKey = null; }
+
+    const qs = data.vragen.filter(inSel);
+    const nieuw = qs.filter((q) => !progress[q.id]).length;
+    const goed = qs.filter((q) => (progress[q.id] || {}).status === "goed").length;
+    const fout = qs.filter((q) => progress[q.id] && progress[q.id].status !== "goed").length;
+    $("sel-summary").innerHTML = qs.length
+      ? `<strong>${esc(selLabel())}</strong>: ${qs.length} vragen · ${nieuw} nog niet gemaakt · ${goed} goed · ${fout} fout of deels`
+      : "Kies minstens één week en één onderdeel.";
+    $("start-all").textContent = `Alle vragen (${qs.length})`; $("start-all").disabled = !qs.length;
+    $("start-kort").textContent = `Korte ronde (${Math.min(10, qs.length)})`; $("start-kort").disabled = !qs.length;
+    $("start-fout").textContent = `Alleen fouten (${fout})`; $("start-fout").disabled = !fout;
+
+    const list = $("lesson-list");
+    list.innerHTML = "";
+    const shown = W.filter((w) => sel.weeks.has(w));
+    if (!shown.length || !sel.parts.size) { list.innerHTML = '<p class="small">Kies hierboven minstens één week en één onderdeel om de lessen te zien.</p>'; return; }
+    shown.forEach((w) => {
+      const ls = data.lessen.filter((l) => l.week === w && sel.parts.has(l.onderdeel));
+      if (!ls.length) return;
+      const h = document.createElement("div"); h.className = "week"; h.textContent = "Week " + w; list.appendChild(h);
+      ls.forEach((l) => {
+        const qs = data.vragen.filter((q) => q.les === l.id);
+        const c = { goed: 0, deels: 0, fout: 0 };
+        qs.forEach((q) => { const p = progress[q.id]; if (p && c[p.status] !== undefined) c[p.status]++; });
+        const done = c.goed + c.deels + c.fout;
+        const pct = (n) => (qs.length ? (n / qs.length) * 100 : 0);
+        const b = document.createElement("button");
+        b.className = "lesson";
+        b.innerHTML = `<span class="name"><span class="part">${esc(l.onderdeel)}</span><br><span class="title">${esc(l.titel)}</span></span>
+          <span class="count">${done}/${qs.length} gemaakt · ${c.goed} goed</span>
+          <span class="bar" aria-hidden="true"><span class="g" style="width:${pct(c.goed)}%"></span><span class="d" style="width:${pct(c.deels)}%"></span><span class="f" style="width:${pct(c.fout)}%"></span></span>`;
+        b.addEventListener("click", () => startQuiz(qs, `${l.onderdeel}: ${l.titel}`));
+        list.appendChild(b);
+      });
+    });
+  }
+
+  function showIndex() { $("quiz-view").hidden = true; $("index-view").hidden = false; renderIndex(); window.scrollTo({ top: 0 }); }
+
+  // ---------- quiz ----------
+  function startQuiz(qs, label) {
+    if (!qs.length) return;
+    queue = qs; qi = 0; sessionResults = [];
+    $("index-view").hidden = true; $("quiz-view").hidden = false;
+    $("quiz-view").dataset.label = label;
+    renderQuestion();
+    window.scrollTo({ top: 0 });
+  }
+
+  function lessonOf(q) { return data.lessen.find((l) => l.id === q.les) || { onderdeel: "", titel: "", week: "" }; }
+
+  function renderQuestion() {
+    const q = queue[qi];
+    const l = lessonOf(q);
+    const v = $("quiz-view");
+    v.innerHTML = `
+      <div class="q-head"><span class="eyebrow">${esc(v.dataset.label)} · vraag ${qi + 1} van ${queue.length}</span>
+        <button class="btn" id="stop">Stoppen</button></div>
+      <div class="progress" aria-hidden="true"><span style="width:${(qi / queue.length) * 100}%"></span></div>
+      <div class="row"><span class="tag">Week ${l.week} · ${esc(l.onderdeel)}</span><span class="tag">${esc(q.tag || "")}</span></div>
+      <p class="q-text">${esc(q.vraag)}</p>
+      <div id="answer-area"></div>
+      <div id="feedback-area"></div>
+      <div class="row" id="next-row" hidden><button class="btn primary" id="next">${qi + 1 < queue.length ? "Volgende vraag" : "Afronden"}</button></div>`;
+    $("stop").addEventListener("click", finish);
+    $("next").addEventListener("click", () => { qi++; qi < queue.length ? renderQuestion() : finish(); });
+    q.type === "mc" ? renderMC(q) : renderOpen(q);
+  }
+
+  function renderMC(q) {
+    const area = $("answer-area");
+    const box = document.createElement("div"); box.className = "options";
+    // Show the options in a fresh random order each time, so the position of the right answer gives nothing away.
+    const order = shuffle(q.opties.map((_, i) => i));
+    const rightPos = order.indexOf(q.juist);
+    order.forEach((oi, pos) => {
+      const b = document.createElement("button"); b.className = "opt";
+      b.innerHTML = `<span class="letter">${"ABCDEF"[pos]}</span><span>${esc(q.opties[oi])}</span>`;
+      b.addEventListener("click", () => {
+        const ok = oi === q.juist;
+        [...box.children].forEach((c, j) => { c.disabled = true; if (j === rightPos) c.classList.add("right"); if (j === pos && !ok) c.classList.add("wrong"); });
+        $("feedback-area").innerHTML = `<div class="feedback ${ok ? "good" : "bad"}"><h3>${ok ? "Goed" : "Fout, het juiste antwoord is " + "ABCDEF"[rightPos]}</h3><p>${esc(q.uitleg)}</p></div>`;
+        done(q, ok ? "goed" : "fout");
+      });
+      box.appendChild(b);
+    });
+    area.appendChild(box);
+  }
+
+  function renderOpen(q) {
+    const area = $("answer-area");
+    const draftKey = LS_KEY + ":draft:" + q.id;
+    let draft = ""; try { draft = sessionStorage.getItem(draftKey) || ""; } catch {}
+    area.innerHTML = `<label class="small" for="ans">Jouw antwoord (schrijf het uit zoals op het tentamen)</label>
+      <textarea id="ans" placeholder="Typ je antwoord...">${esc(draft)}</textarea>
+      <div class="row">
+        <button class="btn primary" id="grade" ${sample ? "" : "hidden"}>Laat Claude streng nakijken</button>
+        <button class="btn" id="show">Toon modelantwoord</button>
+      </div>
+      <p class="note" id="grade-note">${sample ? "Claude beoordeelt je antwoord op de punten uit het modelantwoord. Je kunt ook zelf nakijken." : "Bekijk het modelantwoord en kijk jezelf eerlijk na."}</p>`;
+    const ta = $("ans");
+    ta.addEventListener("input", () => { try { sessionStorage.setItem(draftKey, ta.value); } catch {} });
+    $("show").addEventListener("click", () => showModel(q));
+    $("grade").addEventListener("click", () => gradeWithClaude(q));
+  }
+
+  function modelHTML(q, hits) {
+    const items = q.punten.map((p, i) => {
+      const cls = hits ? (hits[i] ? "hit" : "miss") : "";
+      return `<li class="${cls}">${esc(p)}</li>`;
+    }).join("");
+    return `<div class="feedback"><h3>Modelantwoord</h3><p>${esc(q.modelantwoord)}</p><h3>Beoordelingspunten</h3><ol class="rubric">${items}</ol></div>`;
+  }
+
+  function selfAssess(q, suggested) {
+    const fb = $("feedback-area");
+    const wrap = document.createElement("div"); wrap.className = "row";
+    wrap.innerHTML = `<span class="small">${suggested ? "Neem het oordeel over of pas het aan:" : "Hoe ging het?"}</span>
+      <button class="btn good" data-s="goed">Goed</button><button class="btn deels" data-s="deels">Deels</button><button class="btn bad" data-s="fout">Fout</button>`;
+    wrap.querySelectorAll("button").forEach((b) => {
+      if (b.dataset.s === suggested) b.classList.add("primary");
+      b.addEventListener("click", () => { wrap.querySelectorAll("button").forEach((x) => (x.disabled = true)); done(q, b.dataset.s); });
+    });
+    fb.appendChild(wrap);
+  }
+
+  function showModel(q) {
+    $("show").disabled = true; $("grade").disabled = true;
+    $("feedback-area").innerHTML = modelHTML(q, null);
+    selfAssess(q, null);
+  }
+
+  async function gradeWithClaude(q) {
+    const answer = $("ans").value.trim();
+    if (!answer) { $("grade-note").textContent = "Schrijf eerst een antwoord."; return; }
+    $("grade").disabled = true; $("show").disabled = true;
+    $("grade-note").textContent = "Claude kijkt je antwoord na...";
+    const prompt = `Je bent een strenge docent bij de hbo-opleiding Facility Management (HAN). Je beoordeelt een oefenantwoord van een tweedejaarsstudent voor het vak "${data.vak}". Beoordeel streng maar eerlijk, zoals op een tentamen met open vragen: een punt is alleen behaald als het inhoudelijk juist en voldoende uitgewerkt in het antwoord staat. Vage formuleringen, een model noemen zonder het toe te passen, of een conclusie zonder onderbouwing tellen niet. Schrijf in het Nederlands, kort en concreet, en spreek de student aan met "je".
+
+VRAAG:
+${q.vraag}
+
+MODELANTWOORD (alleen voor jou als referentie):
+${q.modelantwoord}
+
+BEOORDELINGSPUNTEN:
+${q.punten.map((p, i) => `${i + 1}. ${p}`).join("\n")}
+
+ANTWOORD VAN DE STUDENT:
+${answer}
+
+Geef alleen JSON terug in deze vorm:
+{"punten": [true/false per beoordelingspunt, in dezelfde volgorde], "oordeel": "goed" | "deels" | "fout", "ontbreekt": "wat er ontbreekt of onjuist is, in 1-3 zinnen", "verbetertip": "één concrete tip om het antwoord tentamenwaardig te maken"}
+Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helft behaald is; anders "deels".`;
+    try {
+      const r = await sample.json(prompt, { modelTier: "default" });
+      const hits = Array.isArray(r.punten) ? q.punten.map((_, i) => !!r.punten[i]) : null;
+      const n = hits ? hits.filter(Boolean).length : 0;
+      const verdict = ["goed", "deels", "fout"].includes(r.oordeel) ? r.oordeel : null;
+      const cls = verdict === "goed" ? "good" : verdict === "deels" ? "deels" : "bad";
+      $("feedback-area").innerHTML = `<div class="feedback ${cls}"><h3>Oordeel: ${esc(verdict || "onbekend")} · ${n} van ${q.punten.length} punten</h3>
+        <p><strong>Wat ontbreekt:</strong> ${esc(r.ontbreekt || "-")}</p><p><strong>Tip:</strong> ${esc(r.verbetertip || "-")}</p></div>` + modelHTML(q, hits);
+      $("grade-note").textContent = "";
+      selfAssess(q, verdict);
+    } catch (e) {
+      $("grade-note").textContent = e && e.code === "rate_limited" ? "Even te veel aanvragen. Kijk deze vraag zelf na met het modelantwoord." : "Nakijken door Claude lukte niet. Kijk deze vraag zelf na met het modelantwoord.";
+      if (e && e.code === "not_granted") { sample = null; }
+      showModel(q);
+    }
+  }
+
+  function done(q, status) {
+    sessionResults.push({ q, status });
+    record(q, status);
+    $("next-row").hidden = false;
+    $("next").focus();
+  }
+
+  function finish() {
+    const c = { goed: 0, deels: 0, fout: 0 };
+    sessionResults.forEach((r) => c[r.status]++);
+    const wrong = sessionResults.filter((r) => r.status !== "goed");
+    const v = $("quiz-view");
+    v.innerHTML = `<span class="eyebrow">${esc(v.dataset.label)} · afgerond</span>
+      <h2>${sessionResults.length ? `${c.goed} van ${sessionResults.length} goed` : "Geen vragen gemaakt"}</h2>
+      <div class="summary-grid"><div class="stat"><b style="color:var(--good)">${c.goed}</b>goed</div><div class="stat"><b style="color:var(--warn)">${c.deels}</b>deels</div><div class="stat"><b style="color:var(--bad)">${c.fout}</b>fout</div></div>
+      ${wrong.length ? `<div><h3>Herhaal deze</h3><ul>${wrong.map((r) => `<li>${esc(r.q.tag)}: ${esc(r.q.vraag.slice(0, 110))}${r.q.vraag.length > 110 ? "..." : ""}</li>`).join("")}</ul></div>` : ""}
+      <div class="row"><button class="btn primary" id="back">Terug naar het overzicht</button>${wrong.length ? `<button class="btn" id="again">Deze fouten opnieuw</button>` : ""}</div>`;
+    $("back").addEventListener("click", showIndex);
+    if (wrong.length) $("again").addEventListener("click", () => startQuiz(shuffle(wrong.map((r) => r.q)), "Fouten uit deze ronde"));
+  }
+
+  // ---------- boot ----------
+  fetch(DATA_URL).then((r) => r.json()).then((d) => { data = d; renderIndex(); })
+    .catch(() => { $("lesson-list").innerHTML = '<p class="small">De vragen konden niet worden geladen. Herlaad de pagina.</p>'; });
+  initStore();
+  (async () => { try { sample = window.claude && window.claude.use ? await window.claude.use("sample") : null; } catch { sample = null; } })();
+})();
+</script>

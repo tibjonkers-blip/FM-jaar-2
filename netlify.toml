@@ -1,0 +1,4 @@
+# Statische site: geen build op Netlify, de gebouwde bestanden staan in site/.
+[build]
+  publish = "site"
+  command = ""

@@ -1,0 +1,2409 @@
+{
+ "vak": "HRM voor de FM-professional",
+ "bijgewerkt": "2026-11-09",
+ "lessen": [
+  {
+   "id": "hrm-w1",
+   "week": 1,
+   "onderdeel": "HRM-theorie",
+   "titel": "Introductie HRM en werving en selectie"
+  },
+  {
+   "id": "ar-w1",
+   "week": 1,
+   "onderdeel": "Arbeidsrecht",
+   "titel": "Inleiding arbeidsrecht en de arbeidsovereenkomst"
+  },
+  {
+   "id": "gv-w1",
+   "week": 1,
+   "onderdeel": "Gespreksvoering",
+   "titel": "Basisvaardigheden gespreksvoering"
+  },
+  {
+   "id": "hrm-w2",
+   "week": 2,
+   "onderdeel": "HRM-theorie",
+   "titel": "Beoordelen, opleiden en ontwikkelen, belonen"
+  },
+  {
+   "id": "ar-w2",
+   "week": 2,
+   "onderdeel": "Arbeidsrecht",
+   "titel": "Flexibele arbeid en gelijke behandeling"
+  },
+  {
+   "id": "gv-w2",
+   "week": 2,
+   "onderdeel": "Gespreksvoering",
+   "titel": "Sollicitatiegesprek"
+  },
+  {
+   "id": "ar-w3",
+   "week": 3,
+   "onderdeel": "Arbeidsrecht",
+   "titel": "Bijzondere bedingen en overgang van onderneming"
+  },
+  {
+   "id": "gv-w3",
+   "week": 3,
+   "onderdeel": "Gespreksvoering",
+   "titel": "Diversiteit en inclusie in gesprekken"
+  },
+  {
+   "id": "hrm-w4",
+   "week": 4,
+   "onderdeel": "HRM-theorie",
+   "titel": "Motivatie, teamdynamiek en leiderschap"
+  },
+  {
+   "id": "ar-w4",
+   "week": 4,
+   "onderdeel": "Arbeidsrecht",
+   "titel": "Geen arbeid wel loon: ziekte, vakantie, verlof"
+  },
+  {
+   "id": "gv-w4",
+   "week": 4,
+   "onderdeel": "Gespreksvoering",
+   "titel": "Ontwikkelgesprek"
+  },
+  {
+   "id": "hrm-w5",
+   "week": 5,
+   "onderdeel": "HRM-theorie",
+   "titel": "Diversiteit en inclusie"
+  },
+  {
+   "id": "ar-w5",
+   "week": 5,
+   "onderdeel": "Arbeidsrecht",
+   "titel": "Ontslagrecht op hoofdlijnen"
+  },
+  {
+   "id": "gv-w5",
+   "week": 5,
+   "onderdeel": "Gespreksvoering",
+   "titel": "Slechtnieuwsgesprek"
+  },
+  {
+   "id": "hrm-w6",
+   "week": 6,
+   "onderdeel": "HRM-theorie",
+   "titel": "Ziekteverzuim en Wet verbetering poortwachter"
+  },
+  {
+   "id": "gv-w6",
+   "week": 6,
+   "onderdeel": "Gespreksvoering",
+   "titel": "Verzuimgesprek"
+  },
+  {
+   "id": "mix-w7",
+   "week": 7,
+   "onderdeel": "Mondeling",
+   "titel": "Proeftentamen: mondelinge mixvragen"
+  }
+ ],
+ "vragen": [
+  {
+   "id": "hrm-w1-01",
+   "les": "hrm-w1",
+   "type": "mc",
+   "tag": "Niveaus van HRM",
+   "vraag": "Het bestuur van een facilitair dienstverlener vraagt zich af welke gevolgen robotisering van de schoonmaak heeft voor de taken en competenties van het personeel. Op welk niveau van HRM speelt deze vraag?",
+   "opties": [
+    "Operationeel",
+    "Tactisch / organisatorisch",
+    "Strategisch",
+    "Institutioneel"
+   ],
+   "juist": 2,
+   "uitleg": "Vragen over de toekomst en de richting van de organisatie zijn strategisch HRM (strategische regulering). De slide noemt bijna letterlijk dit voorbeeld: welke gevolgen heeft automatisering voor taken en competenties?"
+  },
+  {
+   "id": "hrm-w1-02",
+   "les": "hrm-w1",
+   "type": "mc",
+   "tag": "Niveaus van HRM",
+   "vraag": "Wie voert operationeel HRM vooral uit?",
+   "opties": [
+    "De HR-afdeling",
+    "De direct leidinggevende, ondersteund door HR",
+    "De ondernemingsraad",
+    "De overheid en vakbonden"
+   ],
+   "juist": 1,
+   "uitleg": "Operationeel HRM is de dagelijkse aansturing en begeleiding door de direct leidinggevende, zoals de facility manager. Het is het meest zichtbare deel, ondersteund door een HRM-afdeling."
+  },
+  {
+   "id": "hrm-w1-03",
+   "les": "hrm-w1",
+   "type": "mc",
+   "tag": "Niveaus van HRM",
+   "vraag": "Een werkgever mag niet minder betalen dan het wettelijk minimumloon. Bij welk niveau van regulering hoort dit?",
+   "opties": [
+    "Directe gedragsregulering",
+    "Organisatorische regulering",
+    "Strategische regulering",
+    "Institutionele regulering"
+   ],
+   "juist": 3,
+   "uitleg": "Institutionele regulering zijn de spelregels van buitenaf: overheid (wetgeving zoals minimumloon, arbeids- en rusttijden), vakbonden, SER, sectorafspraken en informele normen."
+  },
+  {
+   "id": "hrm-w1-04",
+   "les": "hrm-w1",
+   "type": "mc",
+   "tag": "Michigan en Harvard",
+   "vraag": "Welke uitspraak past bij het Michigan-model?",
+   "opties": [
+    "Stakeholders en welzijn van medewerkers staan centraal",
+    "Prestatie, controle en het organisatiebelang staan centraal (hard HRM)",
+    "Werknemersinvloed is een van de vier beleidsgebieden",
+    "Het model gaat uit van betrokkenheid als belangrijkste doel"
+   ],
+   "juist": 1,
+   "uitleg": "Michigan (de HR-cyclus van Fombrun) is hard HRM: prestatie, controle en organisatiebelang. Harvard is soft HRM: stakeholders, betrokkenheid en welzijn, met de vier beleidsgebieden werksystemen, beloningssystemen, personeelsstromen en werknemersinvloed."
+  },
+  {
+   "id": "hrm-w1-05",
+   "les": "hrm-w1",
+   "type": "mc",
+   "tag": "Michigan en Harvard",
+   "vraag": "Welk van deze is GEEN beleidsgebied van het Harvard-model?",
+   "opties": [
+    "Werksystemen",
+    "Beloningssystemen",
+    "Prestatiebeoordeling",
+    "Werknemersinvloed"
+   ],
+   "juist": 2,
+   "uitleg": "De vier beleidsgebieden van Harvard zijn werksystemen, beloningssystemen, personeelsstromen en werknemersinvloed. Beoordeling is juist een stap in de Michigan-cyclus."
+  },
+  {
+   "id": "hrm-w1-06",
+   "les": "hrm-w1",
+   "type": "open",
+   "tag": "Michigan en Harvard · mondeling",
+   "vraag": "Mondelinge oefenvraag: leg het verschil uit tussen hard en soft HRM aan de hand van het Michigan- en het Harvard-model. Geef bij beide een voorbeeld uit de facilitaire praktijk en zeg welke visie jij realistischer vindt, met argument.",
+   "modelantwoord": "Michigan (Fombrun) is hard HRM: medewerkers zijn een middel om organisatiedoelen te halen; prestatie, controle en organisatiebelang staan centraal, via een cyclus van selectie, beoordeling, beloning en ontwikkeling. Voorbeeld: schoonmakers belonen op basis van gemeten kwaliteitsscores. Harvard is soft HRM: meerdere stakeholders, betrokkenheid en welzijn staan centraal, uitgewerkt in vier beleidsgebieden (werksystemen, beloningssystemen, personeelsstromen, werknemersinvloed). Voorbeeld: schoonmakers laten meepraten over een nieuw rooster. Eigen standpunt met argument, bijvoorbeeld: in de praktijk zie je een mix, omdat een facilitair bedrijf zowel prestaties moet leveren als personeel moet vasthouden op een krappe arbeidsmarkt.",
+   "punten": [
+    "Michigan = hard HRM met kern (prestatie, controle, organisatiebelang)",
+    "Harvard = soft HRM met kern (stakeholders, betrokkenheid, welzijn) en bij voorkeur de vier beleidsgebieden",
+    "Een concreet FM-voorbeeld bij beide",
+    "Een eigen standpunt met een argument"
+   ]
+  },
+  {
+   "id": "hrm-w1-07",
+   "les": "hrm-w1",
+   "type": "mc",
+   "tag": "Werving en selectie",
+   "vraag": "In welke fase van werving en selectie heeft de facility manager volgens de les een cruciale rol en meestal beslissingsbevoegdheid?",
+   "opties": [
+    "Voorbereidingsfase",
+    "Wervingsfase",
+    "Sollicitatiefase",
+    "Selectiefase"
+   ],
+   "juist": 3,
+   "uitleg": "In de selectiefase (voorselectie, selectiegesprekken en selectiekeuze) is de facility manager cruciaal en meestal beslissingsbevoegd. In de wervingsfase is de rol klein; die ligt vaak bij HR."
+  },
+  {
+   "id": "hrm-w1-08",
+   "les": "hrm-w1",
+   "type": "mc",
+   "tag": "Werving en selectie",
+   "vraag": "Waar staat STAR(R) voor?",
+   "opties": [
+    "Situatie, Taak, Actie, Resultaat, (Reflectie)",
+    "Selectie, Training, Assessment, Referentie",
+    "Sterkte, Talent, Ambitie, Resultaat",
+    "Situatie, Toon, Aanpak, Reactie"
+   ],
+   "juist": 0,
+   "uitleg": "Met STAR(R) vraag je naar gedrag uit het verleden: Situatie, Taak, Actie, Resultaat en Reflectie. Gedrag uit het verleden is de beste voorspeller voor toekomstig gedrag."
+  },
+  {
+   "id": "hrm-w1-09",
+   "les": "hrm-w1",
+   "type": "open",
+   "tag": "Werving en selectie · onboarding",
+   "vraag": "Mondelinge oefenvraag: waarom is onboarding belangrijk, en wat kun jij als facility manager doen bij de onboarding van een nieuwe medewerker?",
+   "modelantwoord": "Onboarding is een zorgvuldig introductie- en inwerktraject. Voordelen: de medewerker is sneller wegwijs en productief, voelt zich meer betrokken, het helpt bij verwachtingsmanagement en geeft helderheid over normen en waarden. \"Werving haalt iemand binnen, onboarding laat iemand blijven.\" Als facility manager regel je praktische zaken, zorg je voor een overdracht en inwerkplan, informeer je het team, en begeleid je de nieuwe medewerker zelf of stel je een collega aan als mentor of buddy.",
+   "punten": [
+    "Noemt minstens twee voordelen (productief, betrokkenheid, verwachtingen, normen en waarden)",
+    "Koppelt onboarding aan behoud van medewerkers",
+    "Noemt concrete acties van de facility manager (inwerkplan, praktische zaken, buddy)"
+   ]
+  },
+  {
+   "id": "hrm-w1-10",
+   "les": "hrm-w1",
+   "type": "open",
+   "tag": "Werving en selectie · voorbereiding",
+   "vraag": "Je gaat als facilitair manager een vacature voor een gastvrouw/gastheer voorbereiden. Uit welke onderdelen bestaan een functieprofiel en een competentieprofiel?",
+   "modelantwoord": "Functieprofiel: organisatieomschrijving (korte introductie van de organisatie), functieomschrijving (inhoud van de functie), functievereisten (noodzakelijke opleiding en ervaring) en aanbod (wat de organisatie te bieden heeft). Competentieprofiel: de benodigde kennis, vaardigheden en persoonlijke kwaliteiten om de functie succesvol uit te oefenen. Uitgangspunt: eerst het werk begrijpen, dan pas mensen zoeken.",
+   "punten": [
+    "De vier onderdelen van het functieprofiel",
+    "Competentieprofiel = kennis, vaardigheden en persoonlijke kwaliteiten",
+    "Toepassing op de functie gastvrouw/gastheer (bijvoorbeeld gastvrijheid, representativiteit)"
+   ]
+  },
+  {
+   "id": "ar-w1-01",
+   "les": "ar-w1",
+   "type": "mc",
+   "tag": "Soorten recht",
+   "vraag": "Van een wetsartikel mag alleen bij cao worden afgeweken. Wat voor recht is dit?",
+   "opties": [
+    "Aanvullend recht",
+    "Semidwingend recht",
+    "5/8e dwingend recht",
+    "Driekwartdwingend recht"
+   ],
+   "juist": 3,
+   "uitleg": "Driekwartdwingend recht: afwijken alleen bij cao. Semidwingend: bij schriftelijke overeenkomst. 5/8e dwingend: bij overeenkomst tussen werkgever en ondernemingsraad."
+  },
+  {
+   "id": "ar-w1-02",
+   "les": "ar-w1",
+   "type": "mc",
+   "tag": "Soorten recht",
+   "vraag": "Van een wetsartikel mag worden afgeweken bij schriftelijke overeenkomst, in de praktijk meestal de arbeidsovereenkomst. Wat voor recht is dit?",
+   "opties": [
+    "Aanvullend recht",
+    "Semidwingend recht",
+    "5/8e dwingend recht",
+    "Dwingend recht"
+   ],
+   "juist": 1,
+   "uitleg": "Semidwingend recht: afwijking bij schriftelijke overeenkomst."
+  },
+  {
+   "id": "ar-w1-03",
+   "les": "ar-w1",
+   "type": "mc",
+   "tag": "Soorten recht",
+   "vraag": "Bij 5/8e dwingend recht mag worden afgeweken bij een overeenkomst tussen...",
+   "opties": [
+    "werkgever en werknemer, schriftelijk",
+    "werkgever en ondernemingsraad",
+    "werkgever en vakbond in een cao",
+    "werknemer en UWV"
+   ],
+   "juist": 1,
+   "uitleg": "5/8e dwingend recht: afwijking bij overeenkomst tussen werkgever en ondernemingsraad."
+  },
+  {
+   "id": "ar-w1-04",
+   "les": "ar-w1",
+   "type": "mc",
+   "tag": "Arbeidsovereenkomst",
+   "vraag": "Waar staat de definitie van de arbeidsovereenkomst?",
+   "opties": [
+    "Art. 7:400 BW",
+    "Art. 7:610 BW",
+    "Art. 7:750 BW",
+    "Art. 6:248 BW"
+   ],
+   "juist": 1,
+   "uitleg": "Art. 7:610 BW. Art. 7:400 BW is de overeenkomst van opdracht, art. 7:750 BW de aanneming van werk."
+  },
+  {
+   "id": "ar-w1-05",
+   "les": "ar-w1",
+   "type": "mc",
+   "tag": "Arbeidsovereenkomst",
+   "vraag": "Wat houdt het materiële gezagscriterium in?",
+   "opties": [
+    "De werknemer werkt minimaal een jaar bij dezelfde werkgever",
+    "De werkgever is bevoegd om tijdens het werk eenzijdig instructies te geven; die bevoegdheid is voldoende",
+    "De werkgever geeft daadwerkelijk elke dag instructies",
+    "De werknemer ontvangt een vast maandloon"
+   ],
+   "juist": 1,
+   "uitleg": "Materieel gezag = de bevoegdheid van de werkgever om eenzijdig instructies te geven tijdens het werk. Of hij die bevoegdheid ook gebruikt, maakt niet uit. Formele aanwijzingen zijn onder meer continuïteit, eindverantwoordelijkheid en wijze van loonbetaling."
+  },
+  {
+   "id": "ar-w1-06",
+   "les": "ar-w1",
+   "type": "mc",
+   "tag": "Arbeidsovereenkomst",
+   "vraag": "Wat is volgens het arrest Groen/Schoevers bepalend voor de vraag of er een arbeidsovereenkomst is?",
+   "opties": [
+    "Alleen hoe partijen het contract hebben genoemd",
+    "Wat partijen bij het sluiten voor ogen stond, mede gelet op hoe ze er feitelijk uitvoering aan hebben gegeven",
+    "Alleen of er loonbelasting wordt ingehouden",
+    "Of de werknemer een vaste werkplek heeft"
+   ],
+   "juist": 1,
+   "uitleg": "Groen/Schoevers: de bedoeling van partijen, mede gelet op de feitelijke uitvoering. Je kijkt dus naar alle omstandigheden van het geval."
+  },
+  {
+   "id": "ar-w1-07",
+   "les": "ar-w1",
+   "type": "mc",
+   "tag": "Andere overeenkomsten",
+   "vraag": "Een aannemer verbouwt buiten dienstbetrekking het bedrijfsrestaurant en levert het op tegen een vaste prijs. Welke overeenkomst is dit?",
+   "opties": [
+    "Arbeidsovereenkomst (7:610 BW)",
+    "Overeenkomst van opdracht (7:400 BW)",
+    "Aanneming van werk (7:750 BW)",
+    "Uitzendovereenkomst"
+   ],
+   "juist": 2,
+   "uitleg": "Aanneming van werk: buiten dienstbetrekking een werk van stoffelijke aard tot stand brengen en opleveren tegen een prijs in geld."
+  },
+  {
+   "id": "ar-w1-08",
+   "les": "ar-w1",
+   "type": "open",
+   "tag": "Arbeidsovereenkomst · casus",
+   "vraag": "Mondelinge oefenvraag: een facilitair bedrijf huurt een 'zzp-schoonmaker' in. Hij werkt al drie jaar elke werkdag volgens het rooster en de instructies van de teamleider, krijgt elke maand een vast bedrag en kan niet zelf een vervanger sturen. Is er sprake van een arbeidsovereenkomst? Onderbouw je antwoord.",
+   "modelantwoord": "Toets de vier elementen van art. 7:610 BW. Arbeid: hij verricht persoonlijk productief werk (hij kan geen vervanger sturen). Loon: een vast maandbedrag als tegenprestatie. Gedurende zekere tijd: drie jaar, al is dit element weinig onderscheidend. Gezag: hij werkt volgens rooster en instructies van de teamleider, dus de werkgever is bevoegd eenzijdig instructies te geven (materieel gezag); de continuïteit en vaste betaling zijn formele aanwijzingen. Volgens Groen/Schoevers telt naast de bedoeling ook de feitelijke uitvoering, dus het etiket 'zzp' is niet beslissend. Conclusie: waarschijnlijk een arbeidsovereenkomst, met dwingend arbeidsrecht en werknemersverzekeringen van toepassing.",
+   "punten": [
+    "Noemt art. 7:610 BW en loopt de vier elementen langs",
+    "Past gezag correct toe (rooster en instructies = materieel gezag)",
+    "Noemt Groen/Schoevers: feitelijke uitvoering telt, niet het etiket",
+    "Duidelijke conclusie met gevolg (dwingend recht / verzekeringen)"
+   ]
+  },
+  {
+   "id": "ar-w1-09",
+   "les": "ar-w1",
+   "type": "mc",
+   "tag": "Arbeidsovereenkomst · loon",
+   "vraag": "Een medewerker in het bedrijfsrestaurant krijgt fooien van gasten. Zijn die fooien loon in de zin van de arbeidsovereenkomst?",
+   "opties": [
+    "Ja, alles wat je tijdens het werk ontvangt is loon",
+    "Nee, loon is de tegenprestatie van de werkgever; fooien komen niet van de werkgever",
+    "Alleen als ze meer dan 10% van het salaris zijn",
+    "Ja, op grond van art. 7:626 BW"
+   ],
+   "juist": 1,
+   "uitleg": "Loon is de tegenprestatie van de werkgever voor de verrichte arbeid. Fooien zijn dat niet."
+  },
+  {
+   "id": "ar-w1-10",
+   "les": "ar-w1",
+   "type": "open",
+   "tag": "Arbeidsovereenkomst · gevolgen",
+   "vraag": "Waarom maakt het in de praktijk uit of iemand een arbeidsovereenkomst heeft of een overeenkomst van opdracht? Noem drie gevolgen.",
+   "modelantwoord": "Alleen bij een arbeidsovereenkomst gelden: (1) het dwingende arbeidsrecht, bijvoorbeeld over vakantie, verlof, loon, loondoorbetaling bij ziekte en beëindiging; (2) de werknemersverzekeringen zoals ZW, WIA en WW; (3) de toepasselijke cao en pensioenregeling.",
+   "punten": [
+    "Dwingend arbeidsrecht met een voorbeeld",
+    "Werknemersverzekeringen (ZW, WIA, WW)",
+    "Cao en pensioenregeling"
+   ]
+  },
+  {
+   "id": "ar-w1-11",
+   "les": "ar-w1",
+   "type": "mc",
+   "tag": "Arbeidsovereenkomst · arbeid",
+   "vraag": "Een stagiair in een reguliere opleiding doet vooral praktijkervaring op en verricht pas geleidelijk productief werk. Is aan het element 'arbeid' voldaan?",
+   "opties": [
+    "Ja, elke stagiair verricht arbeid",
+    "Nee, volgens de literatuur niet",
+    "Alleen als er stagevergoeding is",
+    "Alleen na drie maanden"
+   ],
+   "juist": 1,
+   "uitleg": "Volgens Verhulp (T&C Arbeidsrecht) voldoet zo'n stagiair niet aan het element arbeid, omdat er geen of pas geleidelijk productieve arbeid is. Ter vergelijking: de deelnemer aan De Gouden Kooi verrichtte wel arbeid (HR 2011); het begrip wordt ruim uitgelegd."
+  },
+  {
+   "id": "gv-w1-01",
+   "les": "gv-w1",
+   "type": "mc",
+   "tag": "Ruis",
+   "vraag": "Een medewerker hoort tijdens een gesprek over de nieuwe werkroosters steeds maar half wat je zegt, omdat hij bang is voor de reorganisatie. Welk type ruis is dit?",
+   "opties": [
+    "Fysiek",
+    "Fysiologisch",
+    "Psychologisch",
+    "Semantisch"
+   ],
+   "juist": 2,
+   "uitleg": "Stress en angst zijn psychologische ruis. Lawaai is fysiek, hoofdpijn fysiologisch, jargon semantisch."
+  },
+  {
+   "id": "gv-w1-02",
+   "les": "gv-w1",
+   "type": "mc",
+   "tag": "Ruis",
+   "vraag": "Je legt een nieuwe gastvrouw uit dat 'de SLA-KPI's in het FMIS worden gemonitord'. Ze kijkt je niet-begrijpend aan. Welke ruis speelt hier?",
+   "opties": [
+    "Fysiek",
+    "Fysiologisch",
+    "Psychologisch",
+    "Semantisch"
+   ],
+   "juist": 3,
+   "uitleg": "Jargon is semantische ruis: de ontvanger kan de codes niet decoderen."
+  },
+  {
+   "id": "gv-w1-03",
+   "les": "gv-w1",
+   "type": "mc",
+   "tag": "Communicatiemodel",
+   "vraag": "Waar ontstaat in het communicatiemodel het misverstand 'Kun jij de presentatie afmaken?' uit de les?",
+   "opties": [
+    "Bij het coderen door de zender",
+    "Bij het decoderen door de ontvanger vanuit zijn eigen referentiekader",
+    "Door fysieke ruis",
+    "Door een verkeerd kanaal"
+   ],
+   "juist": 1,
+   "uitleg": "Student B gaf zelf betekenis aan de boodschap vanuit zijn referentiekader (decoderen). Doorvragen en samenvatten hadden het misverstand voorkomen."
+  },
+  {
+   "id": "gv-w1-04",
+   "les": "gv-w1",
+   "type": "mc",
+   "tag": "Gespreksvaardigheden",
+   "vraag": "Een gesprek openen, richting geven, structuur bewaken en afronden. Bij welke soort gespreksvaardigheden horen deze?",
+   "opties": [
+    "Luistervaardigheden",
+    "Regulerende vaardigheden",
+    "Zendervaardigheden",
+    "Feedbackvaardigheden"
+   ],
+   "juist": 1,
+   "uitleg": "Regulerende vaardigheden sturen het gesprek. Luistervaardigheden: actief luisteren, samenvatten, doorvragen, aandacht tonen. Zendervaardigheden: duidelijk communiceren, informatie geven, uitleggen, feedback geven."
+  },
+  {
+   "id": "gv-w1-05",
+   "les": "gv-w1",
+   "type": "mc",
+   "tag": "Afkortingen",
+   "vraag": "Waar staat NIVEA voor in gespreksvoering?",
+   "opties": [
+    "Nooit Ingrijpen, Vragen En Antwoorden",
+    "Niet Invullen Voor Een Ander",
+    "Neem Initiatief, Vat Eerst Af",
+    "Niet Interrumperen, Vriendelijk En Attent"
+   ],
+   "juist": 1,
+   "uitleg": "NIVEA: Niet Invullen Voor Een Ander. Vul het verhaal van je medewerker niet in met je eigen beleving. Dit was ook de boodschap van het filmpje in de les."
+  },
+  {
+   "id": "gv-w1-06",
+   "les": "gv-w1",
+   "type": "open",
+   "tag": "Open vragen",
+   "vraag": "Herschrijf deze drie gesloten vragen tot open vragen, alsof je ze aan een schoonmaakmedewerker stelt: (1) Gaat het goed met het nieuwe rooster? (2) Heb je genoeg materiaal? (3) Is de samenwerking met de receptie prettig?",
+   "modelantwoord": "Voorbeelden: (1) Hoe ervaar je het nieuwe rooster? / Wat merk je van het nieuwe rooster? (2) Wat heb je nodig om je werk goed te kunnen doen? / Hoe staat het met je materiaal? (3) Hoe verloopt de samenwerking met de receptie? / Wat gaat er goed en wat kan beter in de samenwerking met de receptie?",
+   "punten": [
+    "Alle drie beginnen met een vraagwoord (hoe, wat, welke) en zijn niet met ja/nee te beantwoorden",
+    "De vragen blijven bij hetzelfde onderwerp",
+    "De vragen zijn neutraal en niet sturend (geen 'Vind je ook niet dat...')"
+   ]
+  },
+  {
+   "id": "gv-w1-07",
+   "les": "gv-w1",
+   "type": "open",
+   "tag": "Voorbereiding sollicitatiegesprek",
+   "vraag": "Bereid je voor op workshop 2: formuleer drie verdiepingsvragen volgens de STAR-methode voor de vacature Coördinator Facilitair Servicepunt (aansturen van 6 medewerkers, storingsmeldingen coördineren, plannen, contact met interne klanten, servicekwaliteit bewaken, meedenken over procesverbetering).",
+   "modelantwoord": "Voorbeelden: (1) Vertel eens over een situatie waarin je een team moest aansturen terwijl er een hoge werkdruk was. Wat was jouw taak, wat deed je precies en wat was het resultaat? (2) Beschrijf een keer dat een storing of klacht uit de hand dreigde te lopen. Hoe pakte je dat aan en wat leverde het op? (3) Geef een voorbeeld van een werkproces dat je hebt verbeterd. Wat was de aanleiding, wat deed jij en hoe merkte je het effect? Doorvraag: wat zou je de volgende keer anders doen (Reflectie)?",
+   "punten": [
+    "Elke vraag vraagt naar een concrete situatie uit het verleden (niet hypothetisch 'wat zou je doen als')",
+    "Vragen sluiten aan op taken uit de vacature",
+    "Bevat doorvragen naar Taak, Actie en Resultaat (en eventueel Reflectie)"
+   ]
+  },
+  {
+   "id": "hrm-w2-01",
+   "les": "hrm-w2",
+   "type": "mc",
+   "tag": "Beoordelen · gesprekscyclus",
+   "vraag": "Welk gesprek in de HR-gesprekscyclus vindt halverwege het jaar plaats en bekijkt de vooruitgang en de obstakels?",
+   "opties": [
+    "Planningsgesprek",
+    "Functioneringsgesprek",
+    "Beoordelingsgesprek",
+    "Exitgesprek"
+   ],
+   "juist": 1,
+   "uitleg": "Begin van het jaar: planningsgesprek (prestatie- en ontwikkeldoelen afspreken). Halverwege: functioneringsgesprek (vooruitgang en obstakels). Einde van het jaar: beoordelingsgesprek (prestaties beoordelen, nieuwe doelen). Daarnaast is er het persoonlijk ontwikkelingsgesprek, vaak met een POP."
+  },
+  {
+   "id": "hrm-w2-02",
+   "les": "hrm-w2",
+   "type": "mc",
+   "tag": "Beoordelen · beoordelingsfouten",
+   "vraag": "Een leidinggevende beoordeelt een schoonmaker vooral op een groot incident van vorige week, terwijl de rest van het jaar goed ging. Welke beoordelingsfout is dit?",
+   "opties": [
+    "Primacy-effect",
+    "Recency-effect",
+    "Halo-effect",
+    "Centrale tendentie-effect"
+   ],
+   "juist": 1,
+   "uitleg": "Recency-effect: wat het laatst gebeurde, weegt te zwaar. Primacy-effect: de eerste indruk weegt te zwaar. De slide noemt alleen de namen van de effecten; de uitleg is de gangbare invulling. Tegenmiddel: het hele jaar door feiten noteren."
+  },
+  {
+   "id": "hrm-w2-03",
+   "les": "hrm-w2",
+   "type": "mc",
+   "tag": "Beoordelen · beoordelingsfouten",
+   "vraag": "Omdat een gastvrouw erg vriendelijk is tegen bezoekers, beoordeelt haar leidinggevende ook haar administratieve nauwkeurigheid hoog, terwijl die tegenvalt. Welke fout is dit?",
+   "opties": [
+    "Horn-effect",
+    "Halo-effect",
+    "Contrasteffect",
+    "Projectie-effect"
+   ],
+   "juist": 1,
+   "uitleg": "Halo-effect: één positieve eigenschap kleurt het hele oordeel. Het horn-effect is het omgekeerde: één negatieve eigenschap kleurt alles. Contrasteffect: je beoordeelt iemand in vergelijking met een ander in plaats van met de criteria. Projectie: je ziet je eigen eigenschappen in de ander. (Gangbare invulling van de namen op de slide.)"
+  },
+  {
+   "id": "hrm-w2-04",
+   "les": "hrm-w2",
+   "type": "mc",
+   "tag": "Beoordelen · beoordelingsfouten",
+   "vraag": "Een leidinggevende geeft al zijn medewerkers een 'voldoende' om discussies te vermijden. Welke fout is dit?",
+   "opties": [
+    "Stemmingseffect",
+    "Centrale tendentie-effect",
+    "Stereotypering",
+    "Primacy-effect"
+   ],
+   "juist": 1,
+   "uitleg": "Centrale tendentie: iedereen in het midden beoordelen, waardoor verschillen in prestatie onzichtbaar worden. De slide zegt dat beoordelingscriteria nodig zijn voor de objectiviteit en dat rechtvaardigheid de basis is."
+  },
+  {
+   "id": "hrm-w2-05",
+   "les": "hrm-w2",
+   "type": "mc",
+   "tag": "Belonen · grondslagen",
+   "vraag": "Bij welke grondslag van belonen hoort een onregelmatigheidstoeslag (ORT) voor avonddiensten?",
+   "opties": [
+    "Functie",
+    "Prestatie",
+    "Lidmaatschap",
+    "Omstandigheden"
+   ],
+   "juist": 3,
+   "uitleg": "Omstandigheden: toeslagen voor bijzondere omstandigheden, zoals ORT, consignatiediensten, overwerk, zwaar of gevaarlijk werk en arbeidsmarkttoeslag. Functie = vast inkomen via functiewaardering; prestatie = variabel inkomen; lidmaatschap = secundaire arbeidsvoorwaarden."
+  },
+  {
+   "id": "hrm-w2-06",
+   "les": "hrm-w2",
+   "type": "mc",
+   "tag": "Belonen · grondslagen",
+   "vraag": "Een fiets van de zaak, een goede pensioenregeling en een sportabonnement: bij welke grondslag van belonen horen die?",
+   "opties": [
+    "Functie",
+    "Prestatie",
+    "Lidmaatschap",
+    "Omstandigheden"
+   ],
+   "juist": 2,
+   "uitleg": "Lidmaatschap: beloning omdat je 'lid' bent van de organisatie, ook wel de secundaire arbeidsvoorwaarden. Doel: betrokkenheid en saamhorigheid. Op een krappe arbeidsmarkt ook een middel om mensen aan te trekken en te behouden (employer branding)."
+  },
+  {
+   "id": "hrm-w2-07",
+   "les": "hrm-w2",
+   "type": "mc",
+   "tag": "Opleiden en ontwikkelen · vormen van leren",
+   "vraag": "Een nieuwe receptiemedewerker leert het bezoekersregistratiesysteem doordat een ervaren collega haar een week lang begeleidt op de werkplek. Welke vorm van leren is dit?",
+   "opties": [
+    "Leren door doen (informeel leren)",
+    "Leren door begeleiden (formeel leren op de werkplek)",
+    "Leren door studeren",
+    "Leren door vernieuwen"
+   ],
+   "juist": 1,
+   "uitleg": "Formeel leren op de werkplek, opleiden op de werkplek: leren door begeleiden. De les noemt zes vormen: leren door doen, delen, vernieuwen, begeleiden, samenwerken en studeren. Leren is niet hetzelfde als opleiden, en vormen versterken elkaar vaak."
+  },
+  {
+   "id": "hrm-w2-08",
+   "les": "hrm-w2",
+   "type": "mc",
+   "tag": "Beoordelen · alternatieve vormen",
+   "vraag": "Wat is 360-gradenfeedback?",
+   "opties": [
+    "Feedback van de leidinggevende, collega's, ondergeschikten en eventueel klanten, naast een zelfbeoordeling",
+    "Alleen een zelfbeoordeling",
+    "Een beoordeling van het team als geheel",
+    "Een jaarlijkse competentietest door een extern bureau"
+   ],
+   "juist": 0,
+   "uitleg": "De slide noemt groepsbeoordelingen, zelfbeoordelingen, 180- en 360-gradenfeedback en competentiemetingen. De uitleg van 360 graden is de gangbare invulling: feedback uit alle richtingen. Bij 180 graden komt de feedback meestal van de leidinggevende en collega's."
+  },
+  {
+   "id": "hrm-w2-09",
+   "les": "hrm-w2",
+   "type": "open",
+   "tag": "Beoordelen · mondeling",
+   "vraag": "Mondelinge oefenvraag: je bent leidinggevende van een schoonmaakteam. Leg uit hoe je de HR-gesprekscyclus inzet, en noem twee beoordelingsfouten die je wilt voorkomen en hoe je dat doet.",
+   "modelantwoord": "Cyclus: begin van het jaar een planningsgesprek met concrete (SMART) prestatie- en ontwikkeldoelen; halverwege een functioneringsgesprek over voortgang en obstakels (tweerichtingsverkeer); aan het eind een beoordelingsgesprek met een oordeel en nieuwe doelen; daarnaast een ontwikkelgesprek of POP. Twee fouten, bijvoorbeeld het recency-effect (alleen de laatste weken zien; voorkom het door het hele jaar feiten te noteren) en het halo-effect (één sterke eigenschap kleurt alles; voorkom het door per criterium apart te beoordelen). Andere goede voorbeelden: centrale tendentie, stereotypering, projectie. Doel van beoordelen: gedrag sturen en prestaties nu en later verbeteren, eerlijk en objectief.",
+   "punten": [
+    "Noemt de gesprekken in de juiste volgorde met hun doel",
+    "Noemt twee beoordelingsfouten en legt ze juist uit",
+    "Geeft per fout een concrete manier om die te voorkomen"
+   ]
+  },
+  {
+   "id": "hrm-w2-10",
+   "les": "hrm-w2",
+   "type": "open",
+   "tag": "Belonen · mondeling",
+   "vraag": "Mondelinge oefenvraag: leg de vier grondslagen van belonen uit en geef bij elk een voorbeeld uit een facilitaire organisatie.",
+   "modelantwoord": "Functie: beloning op basis van inhoud en zwaarte van de functie, vastgelegd via functiewaardering in een functiehuis en een salaristabel (vast inkomen: basissalaris, vakantiegeld, eventueel dertiende maand), bijvoorbeeld de schaal van een facilitair coördinator. Prestatie: beloning gekoppeld aan individuele, groeps- of organisatieprestatie met SMART-doelen (variabel inkomen), bijvoorbeeld een bonus voor een team dat de KPI voor klanttevredenheid haalt. Lidmaatschap: secundaire arbeidsvoorwaarden voor betrokkenheid en employer branding, bijvoorbeeld pensioen of een fiets van de zaak. Omstandigheden: toeslagen, bijvoorbeeld ORT voor avond- en weekendschoonmaak of een consignatiedienst voor storingen. Vaak worden grondslagen gecombineerd.",
+   "punten": [
+    "Functie, met voorbeeld",
+    "Prestatie, met voorbeeld",
+    "Lidmaatschap (secundair), met voorbeeld",
+    "Omstandigheden (toeslagen), met voorbeeld"
+   ]
+  },
+  {
+   "id": "ar-w2-01",
+   "les": "ar-w2",
+   "type": "mc",
+   "tag": "Flexibele arbeid · oproepkrachten",
+   "vraag": "Wat is volgens de les het verschil tussen een voorovereenkomst en een nulurencontract?",
+   "opties": [
+    "Er is geen verschil",
+    "Bij een voorovereenkomst ontstaat pas bij elke oproep een arbeidsovereenkomst; een nulurencontract is al een arbeidsovereenkomst",
+    "Een nulurencontract is een overeenkomst van opdracht",
+    "Een voorovereenkomst is altijd voor onbepaalde tijd"
+   ],
+   "juist": 1,
+   "uitleg": "Voorovereenkomst: nog geen arbeidsovereenkomst; die ontstaat op het moment van oproepen. Nulurencontract (MUP): al een arbeidsovereenkomst, zonder vaste uren. Min-maxcontract: recht op een minimum aantal uren en oproepbaar tot het maximum. Let op de minimumaanspraak per oproep (art. 7:628a lid 1 BW)."
+  },
+  {
+   "id": "ar-w2-02",
+   "les": "ar-w2",
+   "type": "mc",
+   "tag": "Flexibele arbeid · oproepkrachten",
+   "vraag": "Een oproepkracht wordt op dinsdag gebeld voor een dienst op woensdag. Er is geen cao die iets anders regelt. Moet zij komen?",
+   "opties": [
+    "Ja, een oproepkracht moet altijd komen",
+    "Nee, zij hoeft alleen te komen als ze ten minste vier dagen van tevoren schriftelijk of elektronisch is opgeroepen",
+    "Ja, als het binnen de referentie-uren valt",
+    "Nee, oproepkrachten mogen elke oproep weigeren"
+   ],
+   "juist": 1,
+   "uitleg": "Art. 7:628a lid 2 BW: bij een oproep minstens vier dagen van tevoren is de werknemer verplicht te komen; bij een cao kan die termijn korter (lid 4). Buiten de vooraf schriftelijk vastgelegde referentiedagen en -uren mag een oproep altijd worden geweigerd (7:628b)."
+  },
+  {
+   "id": "ar-w2-03",
+   "les": "ar-w2",
+   "type": "mc",
+   "tag": "Flexibele arbeid · oproepkrachten",
+   "vraag": "De werkgever trekt een oproep twee dagen voor de dienst weer in. Moet hij dan toch loon betalen?",
+   "opties": [
+    "Nee, er is niet gewerkt",
+    "Ja, wie korter dan vier dagen van tevoren intrekt, moet het loon voor die oproep betalen",
+    "Alleen de helft van het loon",
+    "Alleen als de cao dat zegt"
+   ],
+   "juist": 1,
+   "uitleg": "Art. 7:628a lid 3 BW: intrekken tot uiterlijk vier dagen van tevoren kan zonder loon; later intrekken betekent dat het loon toch verschuldigd is. Bij cao kan de termijn korter (lid 4)."
+  },
+  {
+   "id": "ar-w2-04",
+   "les": "ar-w2",
+   "type": "mc",
+   "tag": "Flexibele arbeid · oefenmateriaal",
+   "vraag": "Jan werkt al drie jaar als oproepkracht met een nulurencontract en wordt sinds het begin elke week 30 uur opgeroepen. Hij heeft nooit een aanbod voor vaste uren gekregen. Nu hij ziek is, roept de werkgever hem 15 uur per week op en betaalt hij 15 uur. Heeft de werkgever juist gehandeld?",
+   "opties": [
+    "Ja, oproepkrachten krijgen alleen betaald voor gewerkte uren",
+    "Nee: na elke 12 maanden moet de werkgever een vaste urenomvang aanbieden gelijk aan het gemiddelde; doet hij dat niet, dan heeft Jan recht op loon over dat gemiddelde",
+    "Ja, bij ziekte vervalt de loonbetaling",
+    "Nee, Jan heeft automatisch een contract voor 40 uur"
+   ],
+   "juist": 1,
+   "uitleg": "Antwoordmodel van de docent: art. 7:628a lid 5 BW (aanbod vaste omvang na 12 maanden, gelijk aan het gemiddelde van de afgelopen 12 maanden) en lid 8 (verzuimt de werkgever dat, dan recht op loon over het gemiddelde). Hier dus loon over 30 uur."
+  },
+  {
+   "id": "ar-w2-05",
+   "les": "ar-w2",
+   "type": "mc",
+   "tag": "Flexibele arbeid · rechtsvermoeden",
+   "vraag": "Wat moet een werknemer aantonen om het rechtsvermoeden van een arbeidsovereenkomst (art. 7:610a BW) in te roepen?",
+   "opties": [
+    "Dat hij drie opeenvolgende maanden wekelijks of minstens 20 uur per maand tegen beloning arbeid voor een ander heeft verricht",
+    "Dat er een schriftelijk contract is",
+    "Dat hij minstens zes maanden in dienst is",
+    "Dat hij een loonstrook heeft"
+   ],
+   "juist": 0,
+   "uitleg": "Dan gaat de rechter uit van een arbeidsovereenkomst, tenzij de werkgever het tegendeel bewijst. Het rechtsvermoeden van 7:610b gaat over de omvang: na drie maanden geldt de gemiddelde omvang van de afgelopen drie maanden, tenzij de werkgever aantoont dat die periode niet representatief is."
+  },
+  {
+   "id": "ar-w2-06",
+   "les": "ar-w2",
+   "type": "mc",
+   "tag": "Gelijke behandeling · oefenmateriaal",
+   "vraag": "Schoonmaakbedrijf Proper verbiedt schoonmakers om een hoofddoek te dragen, omdat dat 'niet past bij de bedrijfscultuur'. Andere religieuze uitingen mogen wel. Is dat toegestaan?",
+   "opties": [
+    "Ja, het is indirect onderscheid met een objectieve rechtvaardiging",
+    "Nee, het is direct onderscheid op grond van godsdienst, en daarvoor biedt de Awgb hier geen rechtvaardigingsgrond",
+    "Ja, een werkgever bepaalt zelf de bedrijfscultuur",
+    "Nee, maar alleen omdat het over schoonmakers gaat"
+   ],
+   "juist": 1,
+   "uitleg": "Antwoordmodel: direct onderscheid (art. 1 lid 1 sub b Awgb), want het verbod raakt alleen een uiting van één godsdienst. Direct onderscheid is alleen toegestaan bij de uitzonderingen die in de wet staan, en 'bedrijfscultuur' is er daar geen van."
+  },
+  {
+   "id": "ar-w2-07",
+   "les": "ar-w2",
+   "type": "mc",
+   "tag": "Gelijke behandeling · oefenmateriaal",
+   "vraag": "Taxibedrijf Snel verbiedt alle chauffeurs om op enige manier uiting te geven aan een geloof (kruisjes, keppeltjes, hoofddoeken, tulbanden), zodat iedereen zich welkom voelt. Wat zegt het antwoordmodel van de docent?",
+   "opties": [
+    "Dit is direct onderscheid en dus verboden",
+    "Dit is toegestaan: het is indirect onderscheid met een objectieve rechtvaardiging (art. 2 lid 1 Awgb)",
+    "Dit is geen onderscheid",
+    "Dit mag alleen bij een kerkgenootschap"
+   ],
+   "juist": 1,
+   "uitleg": "Het verbod geldt voor alle religies gelijk, dus geen direct onderscheid, wel mogelijk indirect onderscheid. Volgens de docent is dat gerechtvaardigd: legitiem doel en een passend en noodzakelijk middel (art. 2 lid 1 Awgb). Kritische noot: in de praktijk toetst het College voor de Rechten van de Mens zo'n neutraliteitsbeleid streng, onder meer of het consequent wordt toegepast. Noem op het tentamen dus de drie toetsvragen."
+  },
+  {
+   "id": "ar-w2-08",
+   "les": "ar-w2",
+   "type": "mc",
+   "tag": "Gelijke behandeling · uitzonderingen",
+   "vraag": "Bij inkoopbureau TBD mogen zwangere werknemers een middagdutje doen in een speciale ruimte; mannen mogen daar geen gebruik van maken. Is dat toegestaan?",
+   "opties": [
+    "Nee, dat is direct onderscheid op grond van geslacht",
+    "Ja, op grond van art. 2 lid 2 sub b Awgb (bescherming van de vrouw bij zwangerschap en moederschap)",
+    "Ja, omdat het om een klein bedrijf gaat",
+    "Nee, tenzij de cao het toestaat"
+   ],
+   "juist": 1,
+   "uitleg": "Antwoordmodel: toegestaan op grond van art. 2 lid 2 sub b Awgb. Art. 2 lid 2 sub a Awgb gaat over gevallen waarin geslacht bepalend is, bijvoorbeeld een advertentie voor actrices."
+  },
+  {
+   "id": "ar-w2-09",
+   "les": "ar-w2",
+   "type": "mc",
+   "tag": "Gelijke behandeling · leeftijd",
+   "vraag": "Wat is volgens de les het belangrijke verschil tussen de Wet gelijke behandeling op grond van leeftijd en de Awgb?",
+   "opties": [
+    "Bij leeftijd kan ook direct onderscheid objectief gerechtvaardigd worden",
+    "Leeftijd is niet beschermd",
+    "Bij leeftijd is alleen indirect onderscheid verboden",
+    "De leeftijdswet geldt alleen voor werknemers boven de 50"
+   ],
+   "juist": 0,
+   "uitleg": "Bij de Awgb kan alleen indirect onderscheid objectief gerechtvaardigd worden (legitiem doel, passend en noodzakelijk middel). Bij leeftijd kan dat ook bij direct onderscheid. Let bij werving op woorden als 'jong', 'junior' of 'senior'."
+  },
+  {
+   "id": "ar-w2-10",
+   "les": "ar-w2",
+   "type": "mc",
+   "tag": "Gelijke behandeling · handhaving",
+   "vraag": "Een sollicitant vindt dat zij is afgewezen vanwege haar zwangerschap. Waar kan zij terecht?",
+   "opties": [
+    "Bij het College voor de Rechten van de Mens (vroeger Commissie Gelijke Behandeling) of bij de kantonrechter",
+    "Alleen bij het UWV",
+    "Bij de ACM",
+    "Nergens, want ze was nog geen werknemer"
+   ],
+   "juist": 0,
+   "uitleg": "Klacht bij het College voor de Rechten van de Mens, of een procedure bij de kantonrechter. De gelijkebehandelingswetten gelden ook bij werving en selectie, en de bewijslast is verlicht (art. 10 Awgb). Afwijzen wegens zwangerschap is direct onderscheid op grond van geslacht."
+  },
+  {
+   "id": "ar-w2-11",
+   "les": "ar-w2",
+   "type": "open",
+   "tag": "Gelijke behandeling · werving",
+   "vraag": "Je schrijft een vacature: 'Wij zoeken een jonge, dynamische gastvrouw met Nederlands als moedertaal.' Leg uit wat hier juridisch mis mee is en herschrijf de zin.",
+   "modelantwoord": "'Jonge' (en mogelijk 'dynamische'): onderscheid naar leeftijd (Wet gelijke behandeling op grond van leeftijd). 'Gastvrouw': alleen vrouwen, dus onderscheid naar geslacht (art. 7:646 BW en de Wet gelijke behandeling mannen en vrouwen). 'Nederlands als moedertaal': indirect onderscheid naar afkomst of nationaliteit (Awgb). Een taaleis mag alleen als de functie die objectief vraagt, en dan als beheersingsniveau, niet als moedertaal. Herschreven bijvoorbeeld: 'Wij zoeken een gastvrouw/gastheer (m/v/x) die energiek en klantgericht is en de Nederlandse taal goed beheerst in woord en geschrift.'",
+   "punten": [
+    "Herkent leeftijd (jong/dynamisch)",
+    "Herkent geslacht (gastvrouw)",
+    "Herkent indirect onderscheid via de taaleis (moedertaal)",
+    "Geeft een neutrale herschrijving met functiegerichte eisen"
+   ]
+  },
+  {
+   "id": "gv-w2-01",
+   "les": "gv-w2",
+   "type": "mc",
+   "tag": "Drie soorten vaardigheden",
+   "vraag": "Bij welke soort gespreksvaardigheden horen aandacht tonen, samenvatten en doorvragen?",
+   "opties": [
+    "Luistervaardigheden",
+    "Regulerende vaardigheden",
+    "Zendervaardigheden",
+    "STARR-vaardigheden"
+   ],
+   "juist": 0,
+   "uitleg": "Luistervaardigheden: aandacht tonen, samenvatten, doorvragen. Regulerend: openen, richting geven, structuur bewaken, afronden. Zender: duidelijk informeren, uitleg geven, neutraal reageren. Een professioneel sollicitatiegesprek vraagt alle drie."
+  },
+  {
+   "id": "gv-w2-02",
+   "les": "gv-w2",
+   "type": "mc",
+   "tag": "Gespreksstructuur",
+   "vraag": "Wat is de juiste volgorde van de fasen na 'openen en contact maken'?",
+   "opties": [
+    "Doel en procedure bespreken, informatie verzamelen, informeren en vragen beantwoorden, samenvatten en afsluiten",
+    "Informeren, informatie verzamelen, doel en procedure, afsluiten",
+    "Samenvatten, doel en procedure, informatie verzamelen, informeren",
+    "Informatie verzamelen, afsluiten, doel en procedure, informeren"
+   ],
+   "juist": 0,
+   "uitleg": "Zes fasen: voorbereiden; openen en contact maken; doel en procedure bespreken; informatie verzamelen; informeren en vragen beantwoorden; samenvatten en afsluiten. Structuur geeft de kandidaat rust en helpt de interviewer de juiste informatie te verzamelen."
+  },
+  {
+   "id": "gv-w2-03",
+   "les": "gv-w2",
+   "type": "mc",
+   "tag": "Openen",
+   "vraag": "Wat hoort NIET bij een professionele opening volgens de workshop?",
+   "opties": [
+    "De kandidaat verwelkomen en de gesprekspartners voorstellen",
+    "Doel en duur noemen en de opbouw uitleggen",
+    "Toestemming vragen voor het maken van aantekeningen",
+    "Direct uitgebreid vertellen hoe geweldig de organisatie is"
+   ],
+   "juist": 3,
+   "uitleg": "De zes stappen: verwelkomen, gesprekspartners voorstellen, doel en duur noemen, opbouw uitleggen, toestemming vragen voor aantekeningen, starten met een open vraag. Informeren komt later, en dan eerlijk en realistisch, zonder verkooppraatje."
+  },
+  {
+   "id": "gv-w2-04",
+   "les": "gv-w2",
+   "type": "mc",
+   "tag": "STARR",
+   "vraag": "Waar staat de tweede R in STARR voor?",
+   "opties": [
+    "Resultaat",
+    "Reflectie",
+    "Relatie",
+    "Reactie"
+   ],
+   "juist": 1,
+   "uitleg": "Situatie, Taak, Actie, Resultaat, Reflectie (wat heb je geleerd en wat zou je anders doen?). Kernboodschap: vraag naar één werkelijk gebeurde situatie."
+  },
+  {
+   "id": "gv-w2-05",
+   "les": "gv-w2",
+   "type": "mc",
+   "tag": "Gedragsgericht interviewen",
+   "vraag": "Een kandidaat zegt: 'Ik kan goed omgaan met klachten.' Wat is de beste vervolgvraag?",
+   "opties": [
+    "'Dus u bent klantgericht?'",
+    "'Beschrijf een concrete klacht die u zelf hebt afgehandeld. Wat deed u precies?'",
+    "'Hoe zou u een klacht afhandelen?'",
+    "'Vindt u klachten moeilijk?'"
+   ],
+   "juist": 1,
+   "uitleg": "Van bewering naar gedrag: vraag naar een werkelijk gebeurde situatie. De eerste en vierde vraag zijn gesloten en sturend. De derde is hypothetisch; die meet wat iemand denkt te doen, niet wat hij heeft gedaan (die laatste toelichting is de gangbare invulling)."
+  },
+  {
+   "id": "gv-w2-06",
+   "les": "gv-w2",
+   "type": "mc",
+   "tag": "Afsluiten",
+   "vraag": "Welke afsluiting is het meest professioneel?",
+   "opties": [
+    "'We laten nog wel van ons horen.'",
+    "'Dank voor het gesprek. We ronden deze week de eerste gesprekken af. Uiterlijk vrijdag ontvangt u bericht over het vervolg.'",
+    "'Je was eigenlijk de beste, maar dat mag ik nog niet zeggen.'",
+    "'Nog vragen? Nee? Dan zijn we klaar.'"
+   ],
+   "juist": 1,
+   "uitleg": "Checklist: kort samenvatten, vragen of de kandidaat iets wil aanvullen, ruimte voor laatste vragen, vervolgprocedure uitleggen, een concrete reactietermijn noemen en bedanken. De opmerking 'je was eigenlijk de beste' wekt valse verwachtingen."
+  },
+  {
+   "id": "gv-w2-07",
+   "les": "gv-w2",
+   "type": "mc",
+   "tag": "Informeren",
+   "vraag": "Hoe informeer je de kandidaat volgens de workshop het best over de functie?",
+   "opties": [
+    "Eerst vragen wat de kandidaat al weet, en dan gericht en eerlijk aanvullen",
+    "De functie zo positief mogelijk verkopen",
+    "Alleen vragen van de kandidaat beantwoorden",
+    "De vacaturetekst voorlezen"
+   ],
+   "juist": 0,
+   "uitleg": "Vraag eerst: 'Wat weet je al over onze organisatie en deze functie?' Vul dan aan met doel van de functie, werkzaamheden, team, verwachtingen, uitdagingen en praktische voorwaarden. Geef een realistisch functiebeeld: de kandidaat wil ook kunnen beslissen of de functie past."
+  },
+  {
+   "id": "gv-w2-08",
+   "les": "gv-w2",
+   "type": "open",
+   "tag": "Voorbereiden · STARR-vragen",
+   "vraag": "Vacature: Coördinator Facilitair Servicepunt (stuurt zes medewerkers aan, coördineert storingsmeldingen, plant werk, contact met interne klanten, bewaakt servicekwaliteit, werkt aan procesverbetering). Kies het selectiecriterium 'prioriteiten stellen'. Formuleer een startvraag, een vraag voor elke letter van STARR en een samenvatting.",
+   "modelantwoord": "Startvraag: 'Vertel eens over een drukke dag waarop er meer meldingen binnenkwamen dan je kon afhandelen.' S: 'Wat speelde er precies, welke meldingen waren er?' T: 'Wat was jouw verantwoordelijkheid daarin?' A: 'Wat deed je concreet? Hoe bepaalde je wat eerst moest?' R: 'Wat was het resultaat? Hoe reageerden de klanten of collega's?' R: 'Wat heb je ervan geleerd, en wat zou je nu anders doen?' Samenvatting: 'Als ik het goed begrijp, heb je de meldingen ingedeeld naar urgentie en impact, de veiligheidsmelding eerst opgepakt en de rest teruggekoppeld met een verwachte oplostijd. Klopt dat?' Goede vragen zijn open, gaan over één werkelijk gebeurde situatie en vragen naar 'jij', niet naar 'wij'.",
+   "punten": [
+    "Een open startvraag over een echte situatie",
+    "Passende vragen voor S, T, A, R en R",
+    "Een samenvatting met controlevraag",
+    "Vragen gaan over het eigen gedrag van de kandidaat"
+   ]
+  },
+  {
+   "id": "gv-w2-09",
+   "les": "gv-w2",
+   "type": "open",
+   "tag": "Doel sollicitatiegesprek · mondeling",
+   "vraag": "Mondelinge oefenvraag: waarom is een sollicitatiegesprek volgens de workshop 'geen verhoor en geen vrijblijvende kennismaking'? Leg de twee perspectieven uit en wat dat betekent voor jouw aanpak.",
+   "modelantwoord": "Het gesprek heeft twee doelen. De organisatie wil betrouwbare informatie over geschiktheid en potentieel; de kandidaat wil een realistisch beeld van functie, team en organisatie. Geen verhoor: je zorgt voor contact, rust en structuur en geeft de kandidaat ruimte voor vragen. Geen vrijblijvende kennismaking: je bereidt je voor vanuit de functiecriteria, stelt gerichte (STARR-)vragen en legt antwoorden vast zodat je een onderbouwde beslissing kunt nemen. Kernvraag bij de voorbereiding: welke informatie heb je nodig voor een onderbouwde beslissing?",
+   "punten": [
+    "Noemt het perspectief van de organisatie",
+    "Noemt het perspectief van de kandidaat",
+    "Vertaalt dat naar aanpak: voorbereiden op criteria, structuur, eerlijk informeren"
+   ]
+  },
+  {
+   "id": "ar-w3-01",
+   "les": "ar-w3",
+   "type": "mc",
+   "tag": "Bedingen · concurrentiebeding",
+   "vraag": "Aan welke eisen moet een concurrentiebeding in een arbeidsovereenkomst voor onbepaalde tijd voldoen (art. 7:653 lid 1 BW)?",
+   "opties": [
+    "Schriftelijk overeengekomen met een meerderjarige werknemer",
+    "Mondeling is genoeg",
+    "Het moet in de cao staan",
+    "Het mag alleen bij een contract voor bepaalde tijd"
+   ],
+   "juist": 0,
+   "uitleg": "Lid 1: schriftelijk, meerderjarige werknemer, onbepaalde tijd. Lid 2: bij bepaalde tijd alleen met een schriftelijke motivering van zwaarwegende bedrijfs- of dienstbelangen. Lid 3: de rechter kan het beding geheel of gedeeltelijk vernietigen. Het beding raakt aan de vrije arbeidskeuze (art. 19 lid 3 Grondwet)."
+  },
+  {
+   "id": "ar-w3-02",
+   "les": "ar-w3",
+   "type": "mc",
+   "tag": "Bedingen · concurrentiebeding",
+   "vraag": "Een schoonmaakbedrijf neemt in een jaarcontract een concurrentiebeding op, zonder enige motivering. Is het beding geldig?",
+   "opties": [
+    "Ja, als het schriftelijk is",
+    "Nee, bij een contract voor bepaalde tijd is een schriftelijke motivering nodig waaruit blijkt dat het beding noodzakelijk is vanwege zwaarwegende bedrijfs- of dienstbelangen",
+    "Ja, als de werknemer meerderjarig is",
+    "Alleen als er ook een boetebeding is"
+   ],
+   "juist": 1,
+   "uitleg": "Art. 7:653 lid 2 BW. Zonder die motivering is het beding nietig. Een motivering in algemene bewoordingen is volgens de rechtspraak vaak ook niet genoeg (die laatste opmerking is gangbare invulling)."
+  },
+  {
+   "id": "ar-w3-03",
+   "les": "ar-w3",
+   "type": "mc",
+   "tag": "Bedingen · proeftijd",
+   "vraag": "Een receptionist krijgt een contract van zes maanden met een proeftijd van één maand. Is die proeftijd geldig?",
+   "opties": [
+    "Ja, één maand is altijd toegestaan",
+    "Nee, bij een contract van zes maanden of korter mag geen proeftijd worden afgesproken",
+    "Ja, als het schriftelijk is",
+    "Alleen als de cao dat toestaat"
+   ],
+   "juist": 1,
+   "uitleg": "Art. 7:652 lid 4 BW: geen proeftijd bij een contract van zes maanden of korter. Bij onbepaalde tijd mag hoogstens twee maanden (lid 3). De proeftijd moet schriftelijk (lid 2) en voor beide partijen gelijk zijn (lid 1)."
+  },
+  {
+   "id": "ar-w3-04",
+   "les": "ar-w3",
+   "type": "mc",
+   "tag": "Bedingen · proeftijd (oefenmateriaal)",
+   "vraag": "Laura heeft een vast contract als inkoper en had daarbij al een proeftijd. Ze wordt nu leidinggevende van een team inkopers. Mag de werkgever voor de nieuwe functie opnieuw een proeftijd van twee maanden afspreken?",
+   "opties": [
+    "Nee, een proeftijd mag maar één keer per werkgever",
+    "Ja, want de nieuwe functie vraagt duidelijk andere vaardigheden of verantwoordelijkheden (art. 7:652 lid 3 en lid 6 sub b BW)",
+    "Ja, maar maximaal één maand",
+    "Alleen als Laura daar zelf om vraagt"
+   ],
+   "juist": 1,
+   "uitleg": "Antwoordmodel van de docent. In principe mag je bij een opvolgende overeenkomst geen nieuwe proeftijd afspreken, behalve als de nieuwe functie duidelijk andere vaardigheden of verantwoordelijkheden vraagt."
+  },
+  {
+   "id": "ar-w3-05",
+   "les": "ar-w3",
+   "type": "mc",
+   "tag": "Bedingen · boetebeding (oefenvraag docent)",
+   "vraag": "Dion verdient €4.500 bruto per maand. Hij krijgt voor de tweede keer een boete van €500 omdat hij geen veiligheidshandschoenen draagt; het boetebeding staat in het personeelshandboek dat deel is van zijn contract. De boete gaat naar de werkgever. Is dit toegestaan?",
+   "opties": [
+    "Nee, een boete mag nooit meer zijn dan een halve dag loon per week",
+    "Ja, omdat Dion meer dan het minimumloon verdient, mag worden afgeweken van de maximale hoogte (lid 5) en de bestemming (lid 3)",
+    "Nee, de boete mag nooit naar de werkgever gaan",
+    "Ja, maar alleen bij een eerste overtreding"
+   ],
+   "juist": 1,
+   "uitleg": "Antwoordmodel: art. 7:650 BW is alleen volledig dwingend recht als de werknemer het minimumloon verdient (lid 6). Het boetebeding moet wel schriftelijk zijn en duidelijk vermelden waarvoor en hoe hoog (lid 1 en 2). Art. 7:651: boete of schadevergoeding, niet allebei."
+  },
+  {
+   "id": "ar-w3-06",
+   "les": "ar-w3",
+   "type": "mc",
+   "tag": "Bedingen · wijzigingsbeding",
+   "vraag": "Wat heeft een werkgever nodig om een schriftelijk wijzigingsbeding (art. 7:613 BW) te gebruiken?",
+   "opties": [
+    "Een zodanig zwaarwichtig belang dat het belang van de werknemer daarvoor naar redelijkheid en billijkheid moet wijken",
+    "Toestemming van het UWV",
+    "Niets, het beding is genoeg",
+    "Instemming van elke werknemer apart"
+   ],
+   "juist": 0,
+   "uitleg": "Het wijzigingsbeding is vooral bedoeld voor collectieve wijzigingen. Zonder schriftelijk wijzigingsbeding kan wijzigen alleen via goed werkgeverschap en goed werknemerschap: de dubbele redelijkheidstoets."
+  },
+  {
+   "id": "ar-w3-07",
+   "les": "ar-w3",
+   "type": "mc",
+   "tag": "Bedingen · nevenwerkzaamheden",
+   "vraag": "Mag een werkgever zonder reden verbieden dat een receptionist in het weekend als zelfstandig fotograaf werkt?",
+   "opties": [
+    "Ja, dat mag altijd",
+    "Nee, een verbod op nevenwerkzaamheden mag alleen met een objectieve rechtvaardiging (art. 7:653a BW), zoals gezondheid, veiligheid of de Arbeidstijdenwet",
+    "Ja, als het in de cao staat",
+    "Nee, nevenwerk mag nooit worden verboden"
+   ],
+   "juist": 1,
+   "uitleg": "Sinds augustus 2022 in de wet. Ook als het verbod is gekoppeld aan toestemming, mag de werkgever toestemming alleen met een objectieve rechtvaardiging weigeren. Lid 2 is een benadelingsverbod."
+  },
+  {
+   "id": "ar-w3-08",
+   "les": "ar-w3",
+   "type": "mc",
+   "tag": "Overgang van onderneming (oefenmateriaal)",
+   "vraag": "Schoonmaakbedrijf Proper verliest de opdracht bij energieleverancier Nuom aan schoonmaakbedrijf Goedkoper. Goedkoper neemt al het personeel over dat bij Nuom schoonmaakt, maar geen schoonmaakmiddelen of materialen. Is er sprake van overgang van onderneming?",
+   "opties": [
+    "Nee, want er gaan geen materiële activa over",
+    "Ja, want schoonmaak is arbeidsintensief en al het personeel wordt overgenomen",
+    "Nee, want het gaat om een nieuwe opdracht",
+    "Alleen bij een fusie"
+   ],
+   "juist": 1,
+   "uitleg": "Antwoordmodel: een economische eenheid (de schoonmaak bij Nuom) gaat over en behoudt haar identiteit (art. 7:662 BW). Bij een arbeidsintensieve activiteit kan de overname van (vrijwel al) het personeel doorslaggevend zijn. Bij een kapitaalintensieve activiteit, zoals busvervoer, gaat het vooral om de overname van de bedrijfsmiddelen (80% van de bussen: ook OvO)."
+  },
+  {
+   "id": "ar-w3-09",
+   "les": "ar-w3",
+   "type": "mc",
+   "tag": "Overgang van onderneming · gevolgen",
+   "vraag": "Wat zijn de gevolgen van een overgang van onderneming voor de werknemers?",
+   "opties": [
+    "Rechten en plichten uit hun arbeidsovereenkomst gaan van rechtswege over, de oude werkgever blijft nog een jaar mede aansprakelijk, en er geldt een opzegverbod wegens de overgang",
+    "De nieuwe werkgever mag nieuwe contracten met slechtere voorwaarden aanbieden",
+    "De werknemers moeten opnieuw solliciteren",
+    "De werknemers krijgen een transitievergoeding"
+   ],
+   "juist": 0,
+   "uitleg": "Art. 7:663 BW (overgang van rechten en plichten, oude werkgever nog een jaar aansprakelijk voor de naleving) en art. 7:670 lid 8 BW (opzegverbod wegens de overgang)."
+  },
+  {
+   "id": "ar-w3-10",
+   "les": "ar-w3",
+   "type": "open",
+   "tag": "Overgang van onderneming · mondeling",
+   "vraag": "Mondelinge oefenvraag: een hogeschool kiest na een aanbesteding een nieuw schoonmaakbedrijf. De nieuwe schoonmaker neemt een groot deel van de schoonmakers over. Wat betekent dit voor de schoonmakers?",
+   "modelantwoord": "Mogelijk is er een overgang van onderneming: de overgang van een economische eenheid die haar identiteit behoudt, ook op grond van een nieuwe gunning (art. 7:662 BW). Je weegt de Spijkers-factoren samen: aard van de onderneming, overdracht van materiële en immateriële activa, overname van personeel, overgang van de klantenkring, gelijkenis van de activiteiten en duur van een eventuele onderbreking. Schoonmaak is arbeidsintensief, dus het overnemen van een wezenlijk deel van het personeel weegt zwaar. Is het een OvO, dan gaan de arbeidsovereenkomsten met dezelfde rechten en plichten van rechtswege over (art. 7:663 BW), blijft de oude werkgever een jaar mede aansprakelijk, en mag niet worden opgezegd wegens de overgang (art. 7:670 lid 8 BW).",
+   "punten": [
+    "Definitie (art. 7:662 BW), ook bij nieuwe gunning",
+    "Spijkers-factoren, samen gewogen",
+    "Arbeidsintensief: personeel weegt zwaar",
+    "Gevolgen: 7:663 BW en opzegverbod 7:670 lid 8 BW"
+   ]
+  },
+  {
+   "id": "ar-w3-11",
+   "les": "ar-w3",
+   "type": "open",
+   "tag": "Bedingen · casus",
+   "vraag": "Een facilitair adviseur met een vast contract heeft mondeling met zijn werkgever afgesproken dat hij na zijn vertrek twee jaar niet voor een concurrent gaat werken. Nu wil hij overstappen naar een concurrent. Kan de werkgever hem dat verbieden?",
+   "modelantwoord": "Nee. Een concurrentiebeding is alleen geldig als het schriftelijk is afgesproken met een meerderjarige werknemer (art. 7:653 lid 1 BW). Een mondelinge afspraak is niet genoeg, dus het beding is nietig. Was het wel schriftelijk, dan nog kan de rechter het geheel of gedeeltelijk vernietigen als de werknemer onbillijk wordt benadeeld in verhouding tot het belang van de werkgever (lid 3), en eventueel een vergoeding toekennen (lid 5).",
+   "punten": [
+    "Concludeert: niet geldig, want niet schriftelijk",
+    "Noemt de vereisten van art. 7:653 lid 1 BW",
+    "Noemt de toetsing door de rechter (lid 3)"
+   ]
+  },
+  {
+   "id": "gv-w3-01",
+   "les": "gv-w3",
+   "type": "mc",
+   "tag": "Waarnemen zonder oordeel",
+   "vraag": "Welke opening is 'waarnemen zonder oordeel'?",
+   "opties": [
+    "'Je bent niet betrokken bij het team.'",
+    "'Tijdens de laatste drie overleggen heb je niets ingebracht.'",
+    "'In jouw cultuur zijn mensen nu eenmaal stiller.'",
+    "'Waarom doe je nooit mee?'"
+   ],
+   "juist": 1,
+   "uitleg": "Je beschrijft feitelijk gedrag, zonder interpretatie of etiket. De eerste optie is een oordeel, de derde koppelt gedrag aan afkomst, de vierde is verwijtend en generaliserend ('nooit')."
+  },
+  {
+   "id": "gv-w3-02",
+   "les": "gv-w3",
+   "type": "mc",
+   "tag": "Begrippen",
+   "vraag": "Waar staat OEN voor?",
+   "opties": [
+    "Open, eerlijk, nieuwsgierig",
+    "Observeren, evalueren, noteren",
+    "Openen, exploreren, navragen",
+    "Objectief, empathisch, neutraal"
+   ],
+   "juist": 0,
+   "uitleg": "OEN: open, eerlijk en nieuwsgierig, bijvoorbeeld 'Hoe ervaar jij onze overleggen?'. Samen met waarnemen zonder oordeel, LSD en ANNA, en belangen verbinden vormen ze de vier gespreksvaardigheden bij verschillen."
+  },
+  {
+   "id": "gv-w3-03",
+   "les": "gv-w3",
+   "type": "mc",
+   "tag": "Van verschil naar afspraak",
+   "vraag": "Welke stap komt in het zevenstappenplan direct na 'onderzoek het perspectief'?",
+   "opties": [
+    "Vat samen en controleer",
+    "Maak een concrete afspraak",
+    "Benoem het organisatiebelang",
+    "Plan een evaluatiemoment"
+   ],
+   "juist": 0,
+   "uitleg": "Zeven stappen: feitelijk gedrag benoemen, perspectief onderzoeken, samenvatten en controleren, organisatiebelang benoemen, mogelijkheden verkennen, concrete afspraak maken, evaluatiemoment plannen. Motto: eerst begrijpen, dan begrenzen of bijsturen."
+  },
+  {
+   "id": "gv-w3-04",
+   "les": "gv-w3",
+   "type": "mc",
+   "tag": "Waarden en gewoontes",
+   "vraag": "'Koffie om 10.30 uur' en 'iedereen spreekt elkaar met je aan': wat zijn dat volgens de workshop?",
+   "opties": [
+    "Waarden",
+    "Gewoontes",
+    "Shared values uit het 7S-model",
+    "Wettelijke normen"
+   ],
+   "juist": 1,
+   "uitleg": "Gewoontes beschrijven hoe een organisatie iets nu organiseert; waarden beschrijven wat belangrijk is (respect, veiligheid, integriteit). Over een gewoonte kun je onderhandelen, over de waarde erachter minder. Gedeelde waarden helpen bij inclusie, maar leiden er niet vanzelf toe."
+  },
+  {
+   "id": "gv-w3-05",
+   "les": "gv-w3",
+   "type": "mc",
+   "tag": "Casus · directe feedback",
+   "vraag": "Een medewerker van 23 met een Turkse achtergrond reageert direct op feedback, en een oudere collega voelde zich daardoor aangevallen. Welke aanpak past het best bij de workshop?",
+   "opties": [
+    "Het concrete gedrag en het effect benoemen, zijn perspectief onderzoeken en een werkafspraak maken",
+    "Uitleggen dat dit 'in Nederland anders gaat'",
+    "Tegen de oudere collega zeggen dat hij er maar tegen moet kunnen",
+    "Het laten rusten, want het is cultuur"
+   ],
+   "juist": 0,
+   "uitleg": "Achtergrond kan gedrag beïnvloeden, maar verklaart nooit automatisch het gedrag van één persoon. De valkuil is het gedrag aan afkomst koppelen in plaats van aan concreet gedrag en effect."
+  },
+  {
+   "id": "gv-w3-06",
+   "les": "gv-w3",
+   "type": "open",
+   "tag": "Casus · instructies",
+   "vraag": "Een zorgvuldige, gemotiveerde medewerker uit Oekraïne maakt kleine fouten bij reserveringen en werkopdrachten en zegt dan: 'Sorry, ik dacht dat het anders bedoeld werd.' Hoe open je het gesprek, welke vragen stel je en welke afspraak kun je maken?",
+   "modelantwoord": "Feitelijk openen: 'Bij de reserveringen van deze week gingen er twee dingen anders dan bedoeld. Ik wil samen kijken hoe dat komt.' OEN-vragen: 'Hoe ervaar jij de instructies die je krijgt?' 'Wat helpt jou om een opdracht goed te begrijpen?' LSD en ANNA: samenvatten en controleren ('Als ik je goed begrijp, is een mondelinge instructie soms lastig. Klopt dat?'). Kijk ook naar je eigen kant: de valkuil is de fout bij de medewerker leggen in plaats van bij hoe de instructie is overgedragen. Organisatiebelang: reserveringen moeten foutloos zijn. Afspraak: instructies ook schriftelijk of met een voorbeeld geven, de medewerker de opdracht in eigen woorden laten herhalen, een vast aanspreekpunt, en over twee weken evalueren.",
+   "punten": [
+    "Feitelijke opening zonder verwijt",
+    "Open, nieuwsgierige vragen naar het perspectief, met samenvatting",
+    "Kijkt ook naar de eigen instructie (niet alleen de medewerker)",
+    "Concrete afspraak plus evaluatiemoment"
+   ]
+  },
+  {
+   "id": "hrm-w4-01",
+   "les": "hrm-w4",
+   "type": "mc",
+   "tag": "Motivatie · definitie",
+   "vraag": "Uit welke drie hoofdelementen bestaat motivatie volgens de definitie uit de les?",
+   "opties": [
+    "Intensiteit, richting en volharding",
+    "Autonomie, competentie en verbondenheid",
+    "Taakvariatie, taakidentiteit en autonomie",
+    "Forming, storming en norming"
+   ],
+   "juist": 0,
+   "uitleg": "Motivatie is 'het proces in de persoon dat de intensiteit, de richting en de volharding bepaalt van zijn pogingen om een doel te bereiken'. Intensiteit = hoe hard iemand zijn best doet; richting = de kwaliteit van de inspanning; volharding = hoe lang iemand het volhoudt, ook bij tegenslag."
+  },
+  {
+   "id": "hrm-w4-02",
+   "les": "hrm-w4",
+   "type": "mc",
+   "tag": "Motivatie · zelfdeterminatietheorie",
+   "vraag": "Een facilitair manager laat schoonmakers zelf hun looproute en de volgorde van hun werk bepalen. Welke basisbehoefte uit de zelfdeterminatietheorie (Ryan en Deci) versterkt dit vooral?",
+   "opties": [
+    "Autonomie",
+    "Competentie",
+    "Verbondenheid",
+    "Billijkheid"
+   ],
+   "juist": 0,
+   "uitleg": "Drie basisbehoeften: autonomie (controle over eigen keuzes), competentie (vertrouwen in eigen kunnen) en verbondenheid (ergens bij horen). Billijkheid hoort bij een andere theorie."
+  },
+  {
+   "id": "hrm-w4-03",
+   "les": "hrm-w4",
+   "type": "mc",
+   "tag": "Motivatie · overige theorieën",
+   "vraag": "Een receptionist raakt gedemotiveerd als ze ontdekt dat een nieuwe collega voor hetzelfde werk meer verdient. Welke theorie verklaart dit?",
+   "opties": [
+    "Doelstellingstheorie",
+    "Self-efficacytheorie",
+    "Billijkheidstheorie",
+    "Taakkenmerkenmodel"
+   ],
+   "juist": 2,
+   "uitleg": "Billijkheidstheorie: mensen vergelijken zichzelf voortdurend met anderen, en die vergelijking beïnvloedt hun motivatie. Doelstellingstheorie: specifieke en uitdagende doelen met feedback verhogen de motivatie. Self-efficacy: geloof in eigen kunnen."
+  },
+  {
+   "id": "hrm-w4-04",
+   "les": "hrm-w4",
+   "type": "mc",
+   "tag": "Motivatie · Herzberg",
+   "vraag": "Volgens de twee-factorentheorie van Herzberg is een goed salaris vooral een...",
+   "opties": [
+    "motivator die zorgt voor tevredenheid",
+    "hygiënefactor: voorkomt ontevredenheid, maar motiveert niet echt",
+    "intrinsieke beloning",
+    "taakkenmerk"
+   ],
+   "juist": 1,
+   "uitleg": "Let op: de slide 'Wat motiveert mensen echt?' is een afbeelding; vermoedelijk gaat het om Herzberg. Hygiënefactoren (salaris, arbeidsomstandigheden, beleid) voorkomen ontevredenheid; motivatoren (erkenning, verantwoordelijkheid, groei, het werk zelf) zorgen voor tevredenheid. Voor FM: eerst de basis op orde (rooster, materiaal), dan erkenning en groei."
+  },
+  {
+   "id": "hrm-w4-05",
+   "les": "hrm-w4",
+   "type": "mc",
+   "tag": "Motivatie · verwachtingstheorie",
+   "vraag": "Een medewerker zet zich alleen in als hij verwacht dat zijn inspanning tot een prestatie leidt, dat die prestatie wordt beloond en dat hij die beloning waardevol vindt. Welke theorie is dit?",
+   "opties": [
+    "Verwachtingstheorie (vermoedelijk Vroom)",
+    "Zelfdeterminatietheorie",
+    "Billijkheidstheorie",
+    "Doelstellingstheorie"
+   ],
+   "juist": 0,
+   "uitleg": "De verwachtingstheorie staat op een afbeelding in de slides; de uitwerking is de gangbare invulling. Wat je als FM'er doet: haalbare doelen stellen, zorgen dat de beloning echt volgt, en vragen wat de medewerker belangrijk vindt."
+  },
+  {
+   "id": "hrm-w4-06",
+   "les": "hrm-w4",
+   "type": "mc",
+   "tag": "Interventiekaart · taakontwerp",
+   "vraag": "Een schoonmaker krijgt naast het schoonmaken ook de verantwoordelijkheid voor het bestellen van middelen en het inwerken van nieuwe collega's. Welke interventie is dit?",
+   "opties": [
+    "Taakroulatie",
+    "Taakverbreding",
+    "Taakverrijking",
+    "Alternatieve werkregeling"
+   ],
+   "juist": 2,
+   "uitleg": "Taakverrijking: meer verantwoordelijkheid en zeggenschap (verticaal). Taakverbreding: meer taken van hetzelfde niveau (horizontaal). Taakroulatie: wisselen tussen taken. De interventiekaart noemt de namen; deze uitleg is de gangbare invulling."
+  },
+  {
+   "id": "hrm-w4-07",
+   "les": "hrm-w4",
+   "type": "mc",
+   "tag": "Leiderschap · theorieën",
+   "vraag": "'Effectief leiderschap hangt af van de situatie; daar pas je je stijl op aan.' Bij welke groep theorieën hoort dit?",
+   "opties": [
+    "Persoonlijkheidstheorieën",
+    "Theorieën over leiderschapsgedrag",
+    "Contingentietheorieën",
+    "De Big Five"
+   ],
+   "juist": 2,
+   "uitleg": "Contingentietheorieën, bijvoorbeeld het model van Fiedler, situationeel leiderschap, de pad-doeltheorie en participatief leiderschap. Persoonlijkheidstheorieën gaan uit van kenmerken (Big Five, EQ); gedragstheorieën zeggen dat effectief leiderschap aan te leren is (taakgericht tegenover relatiegericht)."
+  },
+  {
+   "id": "hrm-w4-08",
+   "les": "hrm-w4",
+   "type": "mc",
+   "tag": "Leiderschap · situationeel",
+   "vraag": "Je krijgt een nieuwe, enthousiaste gastvrouw zonder ervaring met het reserveringssysteem. Welke stijl past volgens situationeel leiderschap?",
+   "opties": [
+    "S1 Instrueren",
+    "S2 Overtuigen/coachen",
+    "S3 Participeren/steunen",
+    "S4 Delegeren"
+   ],
+   "juist": 0,
+   "uitleg": "Weinig ervaring, wel enthousiast: veel sturing, weinig ondersteuning (instrueren). Naarmate ze groeit, verschuif je je stijl. De vier stijlen staan niet in de slidetekst; dit is de gangbare indeling van Hersey en Blanchard."
+  },
+  {
+   "id": "hrm-w4-09",
+   "les": "hrm-w4",
+   "type": "mc",
+   "tag": "Leiderschap · situationeel",
+   "vraag": "Een ervaren, deskundige en zeer gemotiveerde facilitair coördinator kan zijn werk volledig zelfstandig. Welke stijl past?",
+   "opties": [
+    "S1 Instrueren",
+    "S2 Overtuigen/coachen",
+    "S3 Participeren/steunen",
+    "S4 Delegeren"
+   ],
+   "juist": 3,
+   "uitleg": "Delegeren: weinig sturing, weinig ondersteuning, de medewerker kan het en wil het. S3 past bij iemand die het kan, maar wisselend gemotiveerd of onzeker is: weinig sturing, veel ondersteuning."
+  },
+  {
+   "id": "hrm-w4-10",
+   "les": "hrm-w4",
+   "type": "mc",
+   "tag": "Teams · ontwikkelfasen",
+   "vraag": "In een nieuw samengesteld facilitair team ontstaan conflicten over wie waarvoor verantwoordelijk is en hoe het werk moet. In welke fase zit het team (Tuckman)?",
+   "opties": [
+    "Forming",
+    "Storming",
+    "Norming",
+    "Performing"
+   ],
+   "juist": 1,
+   "uitleg": "Storming: strijd om rollen en werkwijze. Forming = kennismaken; norming = afspraken en normen; performing = presteren; adjourning = afscheid. De fasen staan op een afbeelding; dit is de gangbare invulling. Als leidinggevende help je in de stormingfase met duidelijke rollen en afspraken."
+  },
+  {
+   "id": "hrm-w4-11",
+   "les": "hrm-w4",
+   "type": "open",
+   "tag": "Motivatie · mondeling",
+   "vraag": "Mondelinge oefenvraag: na een reorganisatie is een schoonmaakteam gedemotiveerd. Kies twee motivatietheorieën en onderbouw daarmee drie interventies van de interventiekaart.",
+   "modelantwoord": "Bijvoorbeeld de zelfdeterminatietheorie: autonomie versterken met inspraak in roosters en werkvolgorde (participatief leiderschap, alternatieve werkregelingen), competentie met training en waardering voor vakmanschap, verbondenheid met vaste teams per locatie. En Herzberg: eerst de hygiënefactoren op orde (goed materiaal, duidelijke roosters, marktconform loon), daarna motivatoren zoals erkenning en verantwoordelijkheid (taakverrijking, bijvoorbeeld een teamlid als aanspreekpunt voor de klant). Of de verwachtingstheorie: haalbare doelen en een beloning die echt volgt (variabel beloningssysteem). Een goed antwoord koppelt elke interventie expliciet aan de theorie en aan de situatie na de reorganisatie.",
+   "punten": [
+    "Noemt twee motivatietheorieën en legt ze kort uit",
+    "Kiest drie interventies van de interventiekaart",
+    "Koppelt elke interventie aan een theorie en aan de casus"
+   ]
+  },
+  {
+   "id": "ar-w4-01",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Geen arbeid wel loon · uitgangspunt",
+   "vraag": "Wat is het uitgangspunt van art. 7:628 BW?",
+   "opties": [
+    "Geen arbeid, geen loon",
+    "Geen arbeid, wel loon, tenzij het niet werken in redelijkheid voor rekening van de werknemer komt",
+    "Alleen loon bij ziekte",
+    "Alleen loon bij schorsing"
+   ],
+   "juist": 1,
+   "uitleg": "Voorbeelden voor rekening van de werkgever: schorsing of non-actiefstelling, bedrijfsrisico's, een nietig ontslag terwijl de werknemer bereid is te werken. Voor rekening van de werknemer: bijvoorbeeld werkweigering. Bij stakingen speelt lid 5."
+  },
+  {
+   "id": "ar-w4-02",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Ziekte · loondoorbetaling",
+   "vraag": "Hoe lang en hoeveel moet de werkgever bij ziekte van een werknemer met een vast contract doorbetalen (art. 7:629 lid 1 BW)?",
+   "opties": [
+    "52 weken 100%",
+    "104 weken 70%, en het eerste jaar minimaal het minimumloon",
+    "104 weken 100%",
+    "26 weken 70%"
+   ],
+   "juist": 1,
+   "uitleg": "104 weken 70%; de eerste 52 weken minimaal het minimumloon, de tweede 52 weken ook als dat eronder ligt. Er geldt een maximum (70% van het maximumdagloon). De slide rekent met het bedrag van 2021; dat is verouderd. Veel cao's vullen aan, maar dat is gangbare invulling, geen slidestof."
+  },
+  {
+   "id": "ar-w4-03",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Ziekte · oefenmateriaal",
+   "vraag": "Karel is ziek en heeft de AOW-leeftijd al bereikt. Hoe lang moet de werkgever het loon doorbetalen?",
+   "opties": [
+    "104 weken",
+    "52 weken",
+    "13 weken",
+    "6 weken"
+   ],
+   "juist": 3,
+   "uitleg": "Antwoordmodel: 6 weken (art. 7:629 lid 2 sub b BW)."
+  },
+  {
+   "id": "ar-w4-04",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Ziekte · sancties",
+   "vraag": "Karel weigert zich te laten controleren door de bedrijfsarts. Wat kan of moet de werkgever doen?",
+   "opties": [
+    "Direct de loonbetaling stoppen zonder terugwerkende kracht",
+    "Eerst waarschuwen en daarna het loon opschorten",
+    "Karel op staande voet ontslaan",
+    "Niets, controle is vrijwillig"
+   ],
+   "juist": 1,
+   "uitleg": "Antwoordmodel: eerst waarschuwen (art. 7:629 lid 7 BW), dan loonopschorting (lid 6). Bij opschorting krijgt hij het loon met terugwerkende kracht zodra hij meewerkt. Loonstaking (lid 3, bijvoorbeeld bij het belemmeren van genezing of weigeren van passende arbeid) betekent geen loon, ook niet met terugwerkende kracht."
+  },
+  {
+   "id": "ar-w4-05",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Ziekte · wachtdagen",
+   "vraag": "Hoeveel wachtdagen mag een werkgever maximaal hanteren bij ziekte?",
+   "opties": [
+    "Geen",
+    "Maximaal twee, mits in de arbeidsovereenkomst opgenomen",
+    "Drie",
+    "Vijf"
+   ],
+   "juist": 1,
+   "uitleg": "Art. 7:629 lid 9 BW: maximaal twee wachtdagen, en alleen als dat is afgesproken."
+  },
+  {
+   "id": "ar-w4-06",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Vakantie · oefenvraag docent",
+   "vraag": "Dennis werkt 4 dagen per week en heeft volgens zijn contract 18 vakantiedagen. In zijn contract staat dat vakantiedagen doorlopen als je tijdens je vakantie ziek wordt. Hij is 4 dagen ziek tijdens zijn vakantie. Hoeveel ziektedagen mag de werkgever van zijn vakantiedagen afhalen?",
+   "opties": [
+    "0",
+    "2",
+    "4",
+    "18"
+   ],
+   "juist": 1,
+   "uitleg": "Hoofdregel: ziektedagen tellen niet als vakantiedagen (art. 7:638 lid 8 BW). Vooraf afspreken mag, maar alleen voor bovenwettelijke dagen. Wettelijk: 4 × 4 = 16 dagen (art. 7:634 BW), dus Dennis heeft 2 bovenwettelijke dagen. Alleen die 2 mogen worden verrekend."
+  },
+  {
+   "id": "ar-w4-07",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Vakantie · verval",
+   "vraag": "Wanneer vervallen wettelijke vakantiedagen die in 2026 zijn opgebouwd?",
+   "opties": [
+    "Op 31 december 2026",
+    "Op 1 juli 2027",
+    "Na 5 jaar",
+    "Nooit"
+   ],
+   "juist": 1,
+   "uitleg": "Wettelijke dagen vervallen een half jaar na het jaar van opbouw (art. 7:640a BW). Bovenwettelijke dagen verjaren pas 5 jaar na het jaar van opbouw (art. 7:642 BW)."
+  },
+  {
+   "id": "ar-w4-08",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Vakantie · afkoop",
+   "vraag": "Mag een werkgever tijdens het dienstverband vakantiedagen uitbetalen?",
+   "opties": [
+    "Ja, alle dagen",
+    "Wettelijke dagen niet (art. 7:640 BW), bovenwettelijke wel; bij het einde van het dienstverband mogen alle resterende dagen worden uitbetaald (art. 7:641 BW)",
+    "Nee, nooit, ook niet bij het einde van het dienstverband",
+    "Alleen als de werknemer ziek is"
+   ],
+   "juist": 1,
+   "uitleg": "Bij het einde van het dienstverband krijgt de werknemer een verklaring over de resterende dagen (7:641 lid 2). De vakantieregeling is dwingend recht, tenzij het artikel iets anders zegt (7:645)."
+  },
+  {
+   "id": "ar-w4-09",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Vakantie · vaststellen",
+   "vraag": "Een medewerker vraagt vakantie aan en de werkgever reageert niet binnen twee weken. Wat is het gevolg?",
+   "opties": [
+    "De aanvraag geldt als afgewezen",
+    "De vakantie is vastgesteld volgens de wens van de werknemer (art. 7:638 lid 2 BW)",
+    "De werkgever mag later alsnog weigeren zonder gevolgen",
+    "De werknemer krijgt geen vakantie"
+   ],
+   "juist": 1,
+   "uitleg": "De werkgever kan alleen bij gewichtige redenen weigeren (niet snel, bijvoorbeeld een seizoenspiek). Verandert hij later wegens gewichtige redenen de vakantieperiode, dan moet hij de schade vergoeden (lid 5)."
+  },
+  {
+   "id": "ar-w4-10",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Verlof · WAZO",
+   "vraag": "Hoeveel geboorteverlof heeft de partner direct na de bevalling, en is het betaald?",
+   "opties": [
+    "Eén keer de arbeidsduur per week, op te nemen binnen 4 weken, met behoud van loon (art. 4:2 WAZO)",
+    "16 weken onbetaald",
+    "26 keer de arbeidsduur per week, deels betaald",
+    "Alleen calamiteitenverlof op de dag zelf"
+   ],
+   "juist": 0,
+   "uitleg": "Daarna is er aanvullend geboorteverlof (art. 4:2a WAZO): volgens het oefenmateriaal 5 keer de arbeidsduur per week, binnen 6 maanden, zonder loon maar met een uitkering. Op de dag van de bevalling kan de partner calamiteiten- en ander kort verzuimverlof opnemen (art. 4:1, met loon)."
+  },
+  {
+   "id": "ar-w4-11",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Verlof · WAZO",
+   "vraag": "Wat geldt voor kortdurend zorgverlof (art. 5:1 WAZO)?",
+   "opties": [
+    "Per 12 maanden maximaal twee keer de arbeidsduur per week, met 70% loon (minimaal het minimumloon)",
+    "Per 12 maanden 6 weken, onbetaald",
+    "Onbeperkt met 100% loon",
+    "26 keer de arbeidsduur per week, onbetaald"
+   ],
+   "juist": 0,
+   "uitleg": "Kortdurend zorgverlof is voor noodzakelijke verzorging van bijvoorbeeld partner, kind of bloedverwant in de eerste of tweede graad. Langdurend zorgverlof (art. 5:9 WAZO): per 12 maanden maximaal 6 keer de arbeidsduur per week, zonder recht op loon."
+  },
+  {
+   "id": "ar-w4-12",
+   "les": "ar-w4",
+   "type": "mc",
+   "tag": "Verlof · ouderschapsverlof",
+   "vraag": "Wat is juist over ouderschapsverlof (art. 6:1 e.v. WAZO)?",
+   "opties": [
+    "26 keer de arbeidsduur per week per kind; 9 weken daarvan met een UWV-uitkering als je ze opneemt vóór het kind 1 jaar is; opnemen tot het kind 8 jaar wordt",
+    "10 weken met volledig loon",
+    "Alleen voor moeders",
+    "Eén keer per gezin, niet per kind"
+   ],
+   "juist": 0,
+   "uitleg": "Ouderschapsverlof is in principe onbetaald. Sinds augustus 2022 is er voor 9 weken een uitkering, mits opgenomen in het eerste levensjaar. Ruim van tevoren melden bij de werkgever (art. 6:5 WAZO)."
+  },
+  {
+   "id": "ar-w4-13",
+   "les": "ar-w4",
+   "type": "open",
+   "tag": "Vakantie · oefenmateriaal",
+   "vraag": "Ad werkt 40 uur per week verdeeld over 5 dagen. In zijn contract staat: hij heeft 5 vakantiedagen per jaar; de werkgever bepaalt wanneer hij vakantie opneemt; niet opgenomen dagen vervallen aan het einde van het jaar; ziek tijdens vakantie is zijn probleem (de dagen tellen als vakantie); en ziektedagen buiten de vakantie gaan ook van zijn vakantiedagen af. Noem vijf afspraken die in strijd zijn met de wet, met de artikelen.",
+   "modelantwoord": "1. Te weinig dagen: minimaal 4 keer de arbeidsduur per week, dus 20 dagen (art. 7:634 lid 1 BW). 2. Vakantie wordt vastgesteld volgens de wensen van de werknemer, tenzij een periode vooraf in contract of cao is vastgelegd; 'wanneer het de werkgever schikt' is geen vastgelegde periode (art. 7:638 lid 2 BW). 3. Wettelijke dagen vervallen pas een half jaar na het jaar van opbouw (art. 7:640a BW). 4. Ziek tijdens vakantie: die dagen tellen niet als vakantie, behalve als vooraf afgesproken voor bovenwettelijke dagen, en Ad heeft die niet (art. 7:638 lid 8 BW). 5. Ziektedagen buiten de vakantie mogen alleen bij schriftelijke afspraak met bovenwettelijke dagen worden verrekend (art. 7:637 BW).",
+   "punten": [
+    "Aantal dagen (7:634)",
+    "Vaststelling volgens wens werknemer (7:638 lid 2)",
+    "Verval na een half jaar (7:640a)",
+    "Ziek tijdens vakantie (7:638 lid 8)",
+    "Ziektedagen als vakantiedagen (7:637)"
+   ]
+  },
+  {
+   "id": "gv-w4-01",
+   "les": "gv-w4",
+   "type": "mc",
+   "tag": "Soorten gesprekken",
+   "vraag": "Wat is het belangrijkste verschil tussen een beoordelingsgesprek en een ontwikkelgesprek?",
+   "opties": [
+    "In een beoordelingsgesprek geeft de leidinggevende een oordeel over de prestaties, vaak met gevolgen (bijvoorbeeld voor salaris); een ontwikkelgesprek gaat over groei, ambities en loopbaan",
+    "Er is geen verschil",
+    "Een ontwikkelgesprek gaat alleen over ziekte",
+    "Een beoordelingsgesprek is altijd informeel"
+   ],
+   "juist": 0,
+   "uitleg": "Het functioneringsgesprek is een gesprek in twee richtingen over het werk, de samenwerking en obstakels. Het beoordelingsgesprek is een (vooral eenzijdig) oordeel met gevolgen. Het ontwikkelgesprek gaat over ontwikkeling binnen de functie en op langere termijn (ambities, loopbaan, duurzame inzetbaarheid, doorstroom). De workshop vraagt je dit verschil uit te leggen; de uitwerking is deels de gangbare invulling."
+  },
+  {
+   "id": "gv-w4-02",
+   "les": "gv-w4",
+   "type": "mc",
+   "tag": "Structuur",
+   "vraag": "Wat is de inhoudelijke volgorde van een ontwikkelgesprek na de opening?",
+   "opties": [
+    "Huidige situatie, ontwikkelmogelijkheden, toekomstperspectief, acties",
+    "Acties, huidige situatie, toekomstperspectief, ontwikkelmogelijkheden",
+    "Toekomstperspectief, acties, huidige situatie, ontwikkelmogelijkheden",
+    "Ontwikkelmogelijkheden, acties, huidige situatie, toekomstperspectief"
+   ],
+   "juist": 0,
+   "uitleg": "Eerst waar de medewerker nu staat, dan wat er mogelijk is, dan waar hij over een aantal jaar wil staan, en ten slotte concrete (SMART) acties."
+  },
+  {
+   "id": "gv-w4-03",
+   "les": "gv-w4",
+   "type": "mc",
+   "tag": "Voorbereiding",
+   "vraag": "Wat is volgens de workshop de belangrijke vraag bij de voorbereiding van een ontwikkelgesprek?",
+   "opties": [
+    "Waar staat de medewerker nu, en waar zou hij of zij over drie tot vier jaar kunnen staan?",
+    "Hoeveel verdient de medewerker?",
+    "Hoe vaak was de medewerker ziek?",
+    "Wie is de beste van het team?"
+   ],
+   "juist": 0,
+   "uitleg": "Je bereidt beide kanten voor. Medewerker: sterke punten, ontwikkelpunten, ambities en eerdere afspraken (hoe concreter, hoe beter: SMART). Organisatie: groeimogelijkheden, opleidingen, nieuwe taken en doorgroeimogelijkheden. Zorg voor een rustige omgeving en voldoende tijd."
+  },
+  {
+   "id": "gv-w4-04",
+   "les": "gv-w4",
+   "type": "mc",
+   "tag": "Casus · overambitieuze medewerker",
+   "vraag": "Een medewerker wil binnen één jaar manager worden, eigenlijk op jouw plek. Wat is de beste reactie?",
+   "opties": [
+    "'Dat gaat niet gebeuren.'",
+    "'Mooi dat je die ambitie hebt. Wat trekt je in die rol? Laten we kijken welke stappen daarvoor nodig zijn en wat op welke termijn realistisch is.'",
+    "'Prima, ik regel het.'",
+    "'Dan moet je maar ergens anders solliciteren.'"
+   ],
+   "juist": 1,
+   "uitleg": "Opdracht in de workshop: een realistisch ontwikkelperspectief bespreken en de relatie goed houden. Je erkent de ambitie, onderzoekt de motivatie en maakt het concreet, zonder iets te beloven wat je niet kunt waarmaken."
+  },
+  {
+   "id": "gv-w4-05",
+   "les": "gv-w4",
+   "type": "mc",
+   "tag": "Confronteren",
+   "vraag": "Wanneer is confronteren in een ontwikkel- of beoordelingsgesprek volgens de workshop aan de orde?",
+   "opties": [
+    "Als je al een paar keer dezelfde feedback hebt gegeven",
+    "Altijd in het eerste gesprek",
+    "Nooit, want het schaadt de relatie",
+    "Alleen schriftelijk"
+   ],
+   "juist": 0,
+   "uitleg": "Confronteren betekent heel goed weten welk gedrag of welke houding je verwacht, en de ander verantwoordelijk houden voor verandering."
+  },
+  {
+   "id": "gv-w4-06",
+   "les": "gv-w4",
+   "type": "open",
+   "tag": "Casus · verborgen ambitie",
+   "vraag": "Een medewerker functioneert goed, maar zegt weinig over haar toekomstplannen. Formuleer voor elk van de vier stappen van het ontwikkelgesprek een open vraag, en eindig met een SMART-afspraak.",
+   "modelantwoord": "Huidige situatie: 'Welke onderdelen van je werk geven je de meeste energie?' Ontwikkelmogelijkheden: 'Welke kennis of vaardigheid zou je graag verder ontwikkelen?' Toekomstperspectief: 'Waar zie je jezelf over drie jaar, en wat zou je dan graag doen?' Acties: 'Wat is een eerste stap die je de komende maanden kunt zetten, en wat heb je daarvoor van mij nodig?' SMART-afspraak, bijvoorbeeld: 'Je loopt vóór 1 maart twee dagen mee met de coördinator servicedesk, en op 15 maart bespreken we wat dat heeft opgeleverd.' Gebruik LSD (luisteren, samenvatten, doorvragen) en geef niet te snel zelf oplossingen.",
+   "punten": [
+    "Een passende open vraag bij elk van de vier stappen",
+    "Vragen nodigen echt uit (geen sturende of gesloten vragen)",
+    "Een SMART-afspraak met datum en evaluatie"
+   ]
+  },
+  {
+   "id": "hrm-w5-01",
+   "les": "hrm-w5",
+   "type": "mc",
+   "tag": "Diversiteit · surface en deep",
+   "vraag": "Welke van deze kenmerken is deep-level diversity?",
+   "opties": [
+    "Leeftijd",
+    "Taalaccent",
+    "Werkstijl en communicatiestijl",
+    "Huidskleur"
+   ],
+   "juist": 2,
+   "uitleg": "Deep-level: minder zichtbaar en pas later duidelijk, zoals waarden en overtuigingen, werkstijl, communicatiestijl, houding tegenover autoriteit, motivatie, en normen en verwachtingen over werk. Surface-level: zichtbaar, zoals leeftijd, geslacht, huidskleur, kleding, accent."
+  },
+  {
+   "id": "hrm-w5-02",
+   "les": "hrm-w5",
+   "type": "mc",
+   "tag": "Theorieën · sociale identiteit",
+   "vraag": "Wat betekent in-group favoritisme volgens de sociale identiteitstheorie?",
+   "opties": [
+    "De eigen groep positiever beoordelen en de andere groep negatiever",
+    "Iedereen gelijk behandelen",
+    "Een voorkeur voor nieuwe collega's",
+    "Een beloning voor het beste team"
+   ],
+   "juist": 0,
+   "uitleg": "SIT: sociale categorisatie (mensen in groepen indelen, bijvoorbeeld schoonmakers tegenover cateraars), sociale identificatie (jezelf bij een in-group indelen) en sociale vergelijking, waarbij in-group favoritisme optreedt. Gevaar: wij-zijdenken en polarisatie."
+  },
+  {
+   "id": "hrm-w5-03",
+   "les": "hrm-w5",
+   "type": "mc",
+   "tag": "Theorieën",
+   "vraag": "'Mensen voelen zich aangetrokken tot gelijken, en gebrek aan gelijkheid vormt een kiem voor conflicten.' Welke theorie is dit?",
+   "opties": [
+    "Gelijkheids-attractiehypothese",
+    "Contacthypothese",
+    "Self-efficacytheorie",
+    "Verwachtingstheorie"
+   ],
+   "juist": 0,
+   "uitleg": "De gelijkheids-attractiehypothese leidt tot wij- en zij-groepen, met out-group denigration en in-group favoritism. De contacthypothese gaat juist over hoe je wij-zijdenken vermindert."
+  },
+  {
+   "id": "hrm-w5-04",
+   "les": "hrm-w5",
+   "type": "mc",
+   "tag": "Wij-zijdenken · contacthypothese",
+   "vraag": "Welke van deze is GEEN voorwaarde voor succesvol contact tussen groepen volgens de contacthypothese?",
+   "opties": [
+    "Gelijke status",
+    "Gemeenschappelijke doelen",
+    "Optreden van leidinggevenden bij het naleven van de normen",
+    "De groepen zoveel mogelijk gescheiden laten werken"
+   ],
+   "juist": 3,
+   "uitleg": "Voorwaarden: gelijke status, weerlegde stereotypen, gemeenschappelijke doelen, gelijkheidsbevorderende normen, optreden van superieuren bij de naleving, en contact. Verder: een gezamenlijke identiteit creëren, stempels vermijden, iedereen een stem geven en fysieke eilandjes doorbreken."
+  },
+  {
+   "id": "hrm-w5-05",
+   "les": "hrm-w5",
+   "type": "mc",
+   "tag": "Biografische kenmerken",
+   "vraag": "Welk biografisch kenmerk heeft volgens de les een positief verband met productiviteit en werktevredenheid, en een negatief verband met verzuim en verloop?",
+   "opties": [
+    "Anciënniteit (aantal dienstjaren)",
+    "Gender",
+    "Leeftijd",
+    "Godsdienst"
+   ],
+   "juist": 0,
+   "uitleg": "Bij leeftijd is er geen eenduidig verband met prestaties. Bij gender zijn er weinig verschillen in prestatie, al worden mannen vaker voor een leiderschapsrol gekozen."
+  },
+  {
+   "id": "hrm-w5-06",
+   "les": "hrm-w5",
+   "type": "mc",
+   "tag": "Participatiewet · instrumenten",
+   "vraag": "Welke instrumenten noemt de les die een werkgever helpen iemand met een afstand tot de arbeidsmarkt in dienst te nemen?",
+   "opties": [
+    "Loonkostensubsidie, no-riskpolis en jobcoach",
+    "Transitievergoeding en aanzegvergoeding",
+    "Concurrentiebeding en proeftijd",
+    "WW-uitkering en bijstand"
+   ],
+   "juist": 0,
+   "uitleg": "Wat je moet doen als leidinggevende: duidelijkheid en structuur bieden en draagvlak in het team creëren. Gemeenten voeren de Participatiewet uit, dus er zijn lokale verschillen."
+  },
+  {
+   "id": "hrm-w5-07",
+   "les": "hrm-w5",
+   "type": "mc",
+   "tag": "Participatiewet · SROI",
+   "vraag": "Wat is SROI (Social Return on Investment) bij aanbestedingen?",
+   "opties": [
+    "Een eis dat de opdrachtnemer een deel van de opdrachtwaarde besteedt aan werk voor mensen met een afstand tot de arbeidsmarkt",
+    "Een belasting voor bedrijven die niet duurzaam zijn",
+    "Een subsidie voor werknemers",
+    "Een andere naam voor de transitievergoeding"
+   ],
+   "juist": 0,
+   "uitleg": "Hier raken HRM en Inkoop en recht elkaar. Kritische noot: de slide spreekt van een 'verplicht SROI-percentage bij aanbestedingen'. Volgens mij is SROI niet wettelijk verplicht; veel overheden nemen het op als contractvoorwaarde, en dan is het voor de opdrachtnemer wel verplicht."
+  },
+  {
+   "id": "hrm-w5-08",
+   "les": "hrm-w5",
+   "type": "mc",
+   "tag": "Inclusief leiderschap",
+   "vraag": "Welke van deze is GEEN kenmerk van inclusief leiderschap volgens de les?",
+   "opties": [
+    "Nederigheid: bescheiden over eigen kunnen en fouten toegeven",
+    "Bewustzijn van vooroordelen",
+    "Nieuwsgierigheid naar anderen",
+    "Verschillen negeren, zodat niemand opvalt"
+   ],
+   "juist": 3,
+   "uitleg": "Kenmerken: zichtbare betrokkenheid, nederigheid, bewustzijn van vooroordelen, nieuwsgierigheid naar anderen, culturele intelligentie en effectieve samenwerking (psychologische veiligheid, teamcohesie). Diversiteitsmanagement wil verschillen juist erkennen en benutten. De taak van de FM'er is niet verschillen wegnemen, maar een gedeelde identiteit en samenwerking stimuleren."
+  },
+  {
+   "id": "hrm-w5-09",
+   "les": "hrm-w5",
+   "type": "open",
+   "tag": "Casus uit de les",
+   "vraag": "Een 32-jarige Turkse vrouw is doorgegroeid tot objectleidster van een groot pand met zo'n 60 schoonmakers uit ongeveer tien culturen. Na een klacht van de klant spreekt zij de 50-plus Marokkaanse voorman van het schrobteam aan. Hij reageert heftig en dreigt zich ziek te melden. Het blijkt dat hij niet de klacht, maar het aangesproken worden door een jongere vrouwelijke leidinggevende niet accepteert. Wat doe je als rayonmanager?",
+   "modelantwoord": "Eerst begrijpen: beide perspectieven apart en feitelijk horen, zonder te generaliseren over 'Marokkaanse mannen' (let op je eigen vooroordelen). Dan duidelijk zijn over de waarde: de objectleidster heeft haar positie op basis van opleiding en ervaring, en respect voor de leidinggevende is niet onderhandelbaar, ongeacht geslacht, leeftijd of afkomst. Haar positie dus zichtbaar steunen in plaats van haar taak over te nemen. Het gesprek met de voorman: erkennen wat het voor hem betekent, het concrete gedrag en het effect benoemen, het organisatiebelang uitleggen (de klacht moet worden opgelost) en een werkafspraak maken, met een evaluatie. Over de dreiging met ziekmelden: niet op ingaan als drukmiddel, maar wel wijzen op de gewone verzuimregels. Eventueel daarna een gezamenlijk gesprek. Op langere termijn: een gezamenlijke teamidentiteit, inclusief leiderschap en culturele intelligentie.",
+   "punten": [
+    "Hoort beide perspectieven feitelijk en zonder generaliseren",
+    "Steunt de positie van de objectleidster en benoemt de niet-onderhandelbare waarde",
+    "Maakt een concrete werkafspraak met evaluatie",
+    "Gaat zorgvuldig om met de dreiging van ziekmelden"
+   ]
+  },
+  {
+   "id": "hrm-w5-10",
+   "les": "hrm-w5",
+   "type": "open",
+   "tag": "Business case · mondeling",
+   "vraag": "Mondelinge oefenvraag: een directeur van een facilitair dienstverlener vraagt waarom hij in diversiteit zou investeren. Geef drie argumenten uit de business case van diversiteit.",
+   "modelantwoord": "Interne organisatie: kostenreductie door minder verzuim en verloop; hogere productiviteit door betere probleemoplossing, meer creativiteit en synergie; een open bedrijfscultuur en betere sfeer; het aantrekken van nieuw personeel. Wisselwerking: meer commitment en identificatie, betere flexibiliteit, een PR-effect en employer branding. Externe omgeving: demografische veranderingen en krapte op de arbeidsmarkt (je hebt iedereen nodig), koopkracht van minderheidsgroepen, integratie, antidiscriminatiewetgeving en maatschappelijk verantwoord ondernemen (bijvoorbeeld SROI-eisen bij aanbestedingen). Voor FM extra relevant: veel functies op de werkvloer (schoonmaak, catering, beveiliging) en veel mensen met een afstand tot de arbeidsmarkt.",
+   "punten": [
+    "Drie argumenten uit de business case",
+    "Argumenten zijn toegepast op een facilitaire organisatie"
+   ]
+  },
+  {
+   "id": "ar-w5-01",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Einde arbeidsovereenkomst",
+   "vraag": "Op welke vier manieren kan een arbeidsovereenkomst eindigen?",
+   "opties": [
+    "Van rechtswege, met wederzijds goedvinden, door opzegging en door ontbinding",
+    "Door ziekte, pensioen, verhuizing en faillissement",
+    "Alleen door opzegging of ontbinding",
+    "Door de cao, het UWV, de OR en de rechter"
+   ],
+   "juist": 0,
+   "uitleg": "Antwoordmodel van de docent. Van rechtswege speelt vooral bij contracten voor bepaalde tijd, maar ook bij overlijden (art. 7:674 BW)."
+  },
+  {
+   "id": "ar-w5-02",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Einde van rechtswege · ketenregeling",
+   "vraag": "Wanneer ontstaat volgens de ketenregeling (art. 7:668a BW) een contract voor onbepaalde tijd?",
+   "opties": [
+    "Bij de vierde opeenvolgende tijdelijke overeenkomst, of als de keten langer dan drie jaar duurt; tussenpozen van zes maanden of korter tellen mee",
+    "Na twee tijdelijke contracten",
+    "Na vijf jaar",
+    "Nooit automatisch"
+   ],
+   "juist": 0,
+   "uitleg": "Let op: één contract van langer dan drie jaar mag nog eenmaal met hoogstens drie maanden worden verlengd (lid 3). Lid 2 gaat over draaideurconstructies, en de volgende leden bevatten uitzonderingen."
+  },
+  {
+   "id": "ar-w5-03",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Einde van rechtswege · aanzegplicht",
+   "vraag": "Een jaarcontract met een einddatum loopt af. De werkgever laat een maand van tevoren niets weten over wel of niet voortzetten. Wat is het gevolg?",
+   "opties": [
+    "Het contract wordt automatisch voor onbepaalde tijd",
+    "Het contract eindigt wel, maar de werknemer heeft recht op een vergoeding wegens het niet nakomen van de aanzegplicht (art. 7:668 lid 3 BW)",
+    "De rechter moet het contract ontbinden",
+    "Er is geen gevolg"
+   ],
+   "juist": 1,
+   "uitleg": "De aanzegplicht geldt niet als er geen kalenderdatum als einde is afgesproken of als het contract korter is dan zes maanden (lid 2). Werkt de werknemer na de einddatum gewoon door, dan wordt het contract verlengd onder dezelfde voorwaarden en voor dezelfde duur (maximaal een jaar)."
+  },
+  {
+   "id": "ar-w5-04",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Wederzijds goedvinden (oefenmateriaal)",
+   "vraag": "Peter tekent een beëindigingsovereenkomst zonder ontslagvergoeding en heeft daar later spijt van. Kan hij erop terugkomen?",
+   "opties": [
+    "Nee, getekend is getekend",
+    "Ja, hij kan de overeenkomst binnen 14 dagen schriftelijk en zonder reden ontbinden; staat dat recht niet in de overeenkomst, dan wordt de termijn drie weken",
+    "Alleen via de kantonrechter",
+    "Alleen als de werkgever instemt"
+   ],
+   "juist": 1,
+   "uitleg": "Art. 7:670b lid 2 en 3 BW. Dit kan maar één keer per zes maanden. Een transitievergoeding is bij wederzijds goedvinden niet verschuldigd, want die situatie staat niet in art. 7:673 BW; partijen onderhandelen zelf over een vergoeding. Voor de werknemer belangrijk in de overeenkomst: initiatief werkgever, geen dringende reden, fictieve opzegtermijn (vanwege de WW). Voor de werkgever: finale kwijting."
+  },
+  {
+   "id": "ar-w5-05",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Route · oefenmateriaal",
+   "vraag": "Peter functioneert al twee jaar onvoldoende, een verbetertraject van anderhalf jaar heeft niet geholpen en er is geen passende andere functie. Peter wil niet meewerken aan wederzijds goedvinden. Welke route moet de werkgever volgen?",
+   "opties": [
+    "Opzeggen met toestemming van het UWV",
+    "Ontbinding door de kantonrechter (art. 7:671b BW) op grond van disfunctioneren (art. 7:669 lid 3 sub d BW)",
+    "Ontslag op staande voet",
+    "Wachten tot het contract van rechtswege eindigt"
+   ],
+   "juist": 1,
+   "uitleg": "Het UWV beslist alleen over de a-grond (bedrijfseconomisch) en de b-grond (twee jaar ziekte). Voor de gronden c tot en met i ga je naar de kantonrechter."
+  },
+  {
+   "id": "ar-w5-06",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Opzegtermijn",
+   "vraag": "Een werknemer is 12 jaar in dienst. Wat is de wettelijke opzegtermijn voor de werkgever?",
+   "opties": [
+    "1 maand",
+    "2 maanden",
+    "3 maanden",
+    "4 maanden"
+   ],
+   "juist": 2,
+   "uitleg": "Art. 7:672 lid 2 BW: korter dan 5 jaar 1 maand; 5 tot 10 jaar 2 maanden; 10 tot 15 jaar 3 maanden; 15 jaar of langer 4 maanden. Voor de werknemer geldt 1 maand (lid 4). Opzeggen tegen het einde van de maand, tenzij anders afgesproken (lid 1)."
+  },
+  {
+   "id": "ar-w5-07",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Opzegtermijn · oefenmateriaal",
+   "vraag": "Dirk werkt 16 jaar bij de visafslag en is twee jaar ziek. Het UWV geeft toestemming voor opzegging; de procedure duurde precies een maand. De werkgever zegt op 15 maart 2026 op. Wanneer eindigt de arbeidsovereenkomst?",
+   "opties": [
+    "15 juli 2026",
+    "30 juni 2026",
+    "31 juli 2026",
+    "15 juni 2026"
+   ],
+   "juist": 1,
+   "uitleg": "Opzegtermijn 4 maanden (art. 7:672 lid 2 BW), minus de proceduretijd van 1 maand (er moet minstens een maand overblijven) = 3 maanden. 15 maart + 3 maanden = 15 juni, en opzegging gebeurt tegen het einde van de maand: 30 juni 2026. Let op: het antwoordmodel noemt voor de aftrek van de proceduretijd lid 5, de slide noemt lid 6. Kijk in je bundel welk lid het is."
+  },
+  {
+   "id": "ar-w5-08",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Ontslag op staande voet",
+   "vraag": "Aan welke voorwaarden moet een ontslag op staande voet voldoen (art. 7:677 BW)?",
+   "opties": [
+    "Een dringende reden, onverwijlde opzegging en onverwijlde mededeling van de reden",
+    "Toestemming van het UWV",
+    "Een opzegtermijn en een schriftelijke bevestiging",
+    "Een transitievergoeding"
+   ],
+   "juist": 0,
+   "uitleg": "De dringende reden wordt objectief en subjectief beoordeeld. Onverwijld betekent snel, al mag er tijd zijn voor zorgvuldig onderzoek. Geef de reden volledig. Gaat het mis (geen dringende reden, in strijd met een opzegverbod, en dergelijke), dan kan de werknemer actie ondernemen op grond van art. 7:681 BW, wat voor de werkgever duur kan worden."
+  },
+  {
+   "id": "ar-w5-09",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Opzegverboden",
+   "vraag": "Een werknemer is drie maanden ziek. Mag de werkgever nu met toestemming van het UWV opzeggen wegens bedrijfseconomische redenen?",
+   "opties": [
+    "Ja, bedrijfseconomische redenen gaan altijd voor",
+    "In principe niet: tijdens ziekte geldt een opzegverbod (art. 7:670 BW), behoudens de uitzonderingen van art. 7:670a BW",
+    "Ja, als de werknemer korter dan twee jaar ziek is",
+    "Ja, als de transitievergoeding wordt betaald"
+   ],
+   "juist": 1,
+   "uitleg": "Opzegverboden gelden 'tijdens' of 'wegens' bepaalde omstandigheden: onder meer ziekte, zwangerschap, OR- en vakbondslidmaatschap, en de gelijkebehandelingsbepalingen (7:646 lid 14, 7:648 lid 4, 7:649 lid 4). Welke uitzonderingen er zijn, staat in art. 7:670a BW; lees die na."
+  },
+  {
+   "id": "ar-w5-10",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Transitievergoeding",
+   "vraag": "Hoe hoog is de transitievergoeding (art. 7:673 BW)?",
+   "opties": [
+    "Een derde maandsalaris per dienstjaar, en naar rato voor een deel van een jaar",
+    "Een heel maandsalaris per dienstjaar",
+    "Een vast bedrag van €5.000",
+    "Een half maandsalaris per jaar, pas na 10 jaar"
+   ],
+   "juist": 0,
+   "uitleg": "Verschuldigd bij opzegging of ontbinding op initiatief van de werkgever, bij einde van rechtswege op initiatief van de werkgever, en als de werknemer vertrekt door ernstig verwijtbaar handelen van de werkgever. Niet bij wederzijds goedvinden en meestal niet bij ernstig verwijtbaar handelen van de werknemer (lid 7). Kritische noot: de slide noemt een maximum van €84.000; dat is het bedrag uit 2021. Het maximum wordt elk jaar aangepast en ligt nu hoger. Zoek het actuele bedrag op."
+  },
+  {
+   "id": "ar-w5-11",
+   "les": "ar-w5",
+   "type": "mc",
+   "tag": "Transitievergoeding · oefenmateriaal",
+   "vraag": "De visafslag heeft Dirk twee jaar doorbetaald tijdens ziekte en ziet een transitievergoeding niet zitten. Moet die worden betaald, en draait de werkgever er zelf voor op?",
+   "opties": [
+    "Er is geen transitievergoeding verschuldigd bij ziekte",
+    "Ja, Dirk heeft recht op een transitievergoeding, maar de werkgever kan compensatie aanvragen bij het UWV",
+    "Het UWV betaalt de vergoeding direct aan Dirk",
+    "Alleen als Dirk minder dan 10 jaar in dienst is"
+   ],
+   "juist": 1,
+   "uitleg": "Antwoordmodel: transitievergoeding verschuldigd (art. 7:673 lid 1 sub a BW). Omdat de reden twee jaar ziekte is (b-grond), kan de werkgever compensatie bij het UWV aanvragen."
+  },
+  {
+   "id": "ar-w5-12",
+   "les": "ar-w5",
+   "type": "open",
+   "tag": "Ontslagroute · casus",
+   "vraag": "Een facilitair dienstverlener verliest een groot schoonmaakcontract bij een hogeschool en wil tien schoonmakers laten gaan. Welke ontslagroute geldt, aan welke voorwaarden moet de werkgever voldoen, en welke vergoeding is verschuldigd? Waar moet hij nog meer op letten?",
+   "modelantwoord": "Reden: bedrijfseconomisch (art. 7:669 lid 3 sub a BW), dus opzegging met toestemming van het UWV (art. 7:671a BW), tenzij de werknemers instemmen of er wederzijds goedvinden komt. Voorwaarden: een redelijke grond, en herplaatsing binnen een redelijke termijn is niet mogelijk (art. 7:669 lid 1 BW); bij de keuze wie vertrekt gelden het afspiegelings- en anciënniteitsbeginsel. Na toestemming binnen vier weken opzeggen, met inachtneming van de opzegtermijn minus de proceduretijd. Let op opzegverboden (bijvoorbeeld zieke schoonmakers of OR-leden). Vergoeding: transitievergoeding, een derde maandsalaris per dienstjaar (art. 7:673 BW). Belangrijk extra punt: als een nieuwe schoonmaker de opdracht bij de hogeschool overneemt, kan er sprake zijn van een overgang van onderneming (art. 7:662 BW). Dan gaan de schoonmakers van rechtswege mee naar de nieuwe werkgever (art. 7:663 BW), en geldt een opzegverbod wegens de overgang (art. 7:670 lid 8 BW).",
+   "punten": [
+    "Herkent de a-grond en de UWV-route",
+    "Noemt herplaatsing en afspiegeling",
+    "Noemt opzegtermijn en opzegverboden",
+    "Noemt de transitievergoeding",
+    "Signaleert de mogelijke overgang van onderneming"
+   ]
+  },
+  {
+   "id": "gv-w5-01",
+   "les": "gv-w5",
+   "type": "mc",
+   "tag": "Boodschap direct brengen",
+   "vraag": "Welke formulering is professioneel?",
+   "opties": [
+    "'Er zijn wat ontwikkelingen en mogelijk ontstaan er kansen, maar er kunnen ook gevolgen zijn.'",
+    "'Je huidige functie vervalt door de reorganisatie. Of je kunt worden herplaatst, is nog niet bekend.'",
+    "'Je wordt ontslagen, maar misschien komt het nog goed.'",
+    "'Eerst wil ik uitgebreid uitleggen waarom de organisatie moet bezuinigen...'"
+   ],
+   "juist": 1,
+   "uitleg": "Direct, duidelijk en met onderscheid tussen wat vaststaat en wat onzeker is. De eerste formulering is vaag en kan valse hoop wekken; de derde zegt iets wat nog niet besloten is en geeft ook valse hoop; de vierde stelt de kernboodschap uit met veel argumenten vooraf."
+  },
+  {
+   "id": "gv-w5-02",
+   "les": "gv-w5",
+   "type": "mc",
+   "tag": "Fasemodel",
+   "vraag": "In welke volgorde verloopt een slechtnieuwsgesprek?",
+   "opties": [
+    "Breng het slechte nieuws, vang de reactie op, bespreek vervolgstappen",
+    "Vang de reactie op, breng het nieuws, bespreek vervolgstappen",
+    "Bespreek vervolgstappen, breng het nieuws, vang de reactie op",
+    "Leg de achtergrond uit, breng het nieuws, sluit af"
+   ],
+   "juist": 0,
+   "uitleg": "Vooraf bereid je voor: wat staat vast, wat is onzeker, wat is je kernboodschap (maximaal twee zinnen)? Fase 1: kort aankondigen, kernboodschap, wat vaststaat, korte toelichting, stoppen en ruimte geven."
+  },
+  {
+   "id": "gv-w5-03",
+   "les": "gv-w5",
+   "type": "mc",
+   "tag": "Gevoel reflecteren",
+   "vraag": "Welke gevoelsreflectie past het best bij de workshop?",
+   "opties": [
+    "'Je bent woedend.'",
+    "'Ik merk dat dit veel bij je oproept. Klopt het dat je vooral boos bent over de manier waarop dit besluit tot stand is gekomen?'",
+    "'Rustig maar, zo erg is het niet.'",
+    "'Ik weet precies hoe je je voelt.'"
+   ],
+   "juist": 1,
+   "uitleg": "Benoem een gevoel als mogelijke interpretatie en controleer die. 'Je bent woedend' is te stellig; 'zo erg is het niet' bagatelliseert; 'ik weet precies hoe je je voelt' vult in. Starters: 'Ik zie dat dit je raakt…', 'Het klinkt alsof…', 'Klopt het dat…?'"
+  },
+  {
+   "id": "gv-w5-04",
+   "les": "gv-w5",
+   "type": "mc",
+   "tag": "Reageren op boosheid",
+   "vraag": "Wat moet je NIET doen als de medewerker boos reageert?",
+   "opties": [
+    "Een grens stellen aan onacceptabel gedrag",
+    "De emotie erkennen",
+    "De inhoud samenvatten",
+    "Meteen de positieve kanten noemen of alsnog onderhandelen over het besluit"
+   ],
+   "juist": 3,
+   "uitleg": "Niet doen: terugvechten, jezelf uitgebreid verdedigen, het persoonlijk maken, bagatelliseren, direct positieve kanten noemen of alsnog onderhandelen over een vaststaand besluit. Wel: grens stellen, emotie erkennen, samenvatten, de kernboodschap vasthouden, en zo nodig pauzeren of een nieuwe afspraak maken."
+  },
+  {
+   "id": "gv-w5-05",
+   "les": "gv-w5",
+   "type": "mc",
+   "tag": "Vervolgstappen",
+   "vraag": "Wanneer ga je over naar vervolgstappen?",
+   "opties": [
+    "Direct na de kernboodschap",
+    "Als de medewerker daar signalen voor geeft, zoals 'Wat betekent dit nu voor mij?' of 'Wanneer hoor ik meer?'",
+    "Als de medewerker is gestopt met huilen",
+    "Nooit in hetzelfde gesprek"
+   ],
+   "juist": 1,
+   "uitleg": "Is de medewerker er nog niet aan toe, dan kun je zeggen: 'We hoeven dit nu niet allemaal af te ronden. Ik stel voor dat we morgen opnieuw spreken. Ik zet intussen de procedure en contactpersonen voor je op een rij.'"
+  },
+  {
+   "id": "gv-w5-06",
+   "les": "gv-w5",
+   "type": "mc",
+   "tag": "Casus Jane",
+   "vraag": "Jane, die altijd goede beoordelingen kreeg, hoort dat haar functie vervalt en zegt: 'Maar mijn beoordelingen waren altijd goed!' Wat is de beste reactie?",
+   "opties": [
+    "'Dat klopt, en daarom kom je vast in aanmerking voor een nieuwe functie.'",
+    "'Ik hoor dat je dit niet begrijpt, juist omdat je beoordelingen altijd goed waren. Het besluit gaat over de functie, niet over hoe jij werkt.'",
+    "'Beoordelingen zeggen hier niets.'",
+    "'Laten we het daar niet over hebben.'"
+   ],
+   "juist": 1,
+   "uitleg": "Erken de persoonlijke impact (parafraseren) en houd de kernboodschap vast, zonder valse hoop. De reactie 'daarom kom je vast in aanmerking' belooft iets wat nog niet vaststaat. Uitdaging bij Jane: erkenning geven zonder de beslissing te veranderen of valse hoop te wekken."
+  },
+  {
+   "id": "gv-w5-07",
+   "les": "gv-w5",
+   "type": "open",
+   "tag": "Voorbereiden · casus Jan",
+   "vraag": "Bereid het slechtnieuwsgesprek met Jan voor: 58 jaar, 32 jaar in dienst, loyaal, verwachtte bij deze organisatie met pensioen te gaan, weinig recente sollicitatie-ervaring. Zijn functie vervalt door de reorganisatie; of hij kan worden herplaatst, is nog niet bekend. Formuleer: de kernboodschap (maximaal twee zinnen), wat definitief is, wat onzeker is, één parafrase, één gevoelsreflectie, één grens en de eerstvolgende concrete stap.",
+   "modelantwoord": "Kernboodschap: 'Jan, ik heb slecht nieuws. Door de reorganisatie vervalt jouw huidige functie; of er een passende nieuwe functie voor je is, is nog niet bekend.' Definitief: de structuur verandert, zijn functie vervalt. Onzeker: of hij in aanmerking komt voor een nieuwe functie, en wie uiteindelijk moet uitstromen. Parafrase: 'Je zegt dat je na 32 jaar nooit had verwacht dat dit jou zou overkomen.' Gevoelsreflectie: 'Ik merk dat dit je raakt. Klopt het dat het vooral voelt als verlies van iets waar je je hele loopbaan aan hebt gegeven?' Grens: 'Ik begrijp dat je dit oneerlijk vindt. Het besluit over de functie staat vast; wat we wel samen kunnen doen, is kijken naar de volgende stappen.' Eerstvolgende stap: bijvoorbeeld een vervolggesprek binnen een paar dagen, uitleg over de procedure en wanneer er duidelijkheid komt, en een contactpersoon of ondersteuning. Valkuil bij Jan: geen aannames doen over leeftijd, inzetbaarheid of zijn kansen.",
+   "punten": [
+    "Directe, duidelijke kernboodschap zonder valse hoop",
+    "Onderscheid tussen definitief en onzeker",
+    "Parafrase en gevoelsreflectie als hypothese",
+    "Een grens en een concrete vervolgstap",
+    "Geen aannames over leeftijd"
+   ]
+  },
+  {
+   "id": "hrm-w6-01",
+   "les": "hrm-w6",
+   "type": "mc",
+   "tag": "Ziekteverzuim · soorten",
+   "vraag": "Een medewerker is moe en ongemotiveerd, maar fysiek in staat om te werken, en meldt zich ziek. Welke soort verzuim is dit?",
+   "opties": [
+    "Wit verzuim",
+    "Grijs verzuim",
+    "Zwart verzuim",
+    "Middellang verzuim"
+   ],
+   "juist": 1,
+   "uitleg": "Wit: aantoonbaar ziek (fysiek of psychisch). Grijs: onduidelijk ziektebeeld, wel fysiek in staat maar moe of niet gemotiveerd. Zwart: geen ziekte, toch ziekmelden."
+  },
+  {
+   "id": "hrm-w6-02",
+   "les": "hrm-w6",
+   "type": "mc",
+   "tag": "Ziekteverzuim · duur",
+   "vraag": "Een medewerker is drie weken afwezig. Hoe heet dat volgens de les?",
+   "opties": [
+    "Kortdurend verzuim",
+    "Middellangdurend verzuim",
+    "Langdurend verzuim",
+    "Frequent verzuim"
+   ],
+   "juist": 1,
+   "uitleg": "Kortdurend: maximaal een week. Middellang: één tot zes weken. Langdurend: langer dan zes weken."
+  },
+  {
+   "id": "hrm-w6-03",
+   "les": "hrm-w6",
+   "type": "mc",
+   "tag": "Kengetallen",
+   "vraag": "Een team van 10 medewerkers heeft elk 220 werkdagen per jaar. Samen verzuimen ze 154 dagen. Wat is het verzuimpercentage?",
+   "opties": [
+    "1,5%",
+    "7%",
+    "15,4%",
+    "70%"
+   ],
+   "juist": 1,
+   "uitleg": "Verzuimpercentage = verzuimde dagen / beschikbare dagen × 100 = 154 / 2.200 × 100 = 7%. De formules staan in de les als afbeelding (bron: vzinfo.nl); dit is de gangbare berekening. Andere kengetallen zijn de meldingsfrequentie en de gemiddelde verzuimduur."
+  },
+  {
+   "id": "hrm-w6-04",
+   "les": "hrm-w6",
+   "type": "mc",
+   "tag": "AVG",
+   "vraag": "Wat mag een facilitair manager volgens de les WEL?",
+   "opties": [
+    "Medische informatie vragen en registreren",
+    "Oordelen of iemand medisch geschikt is",
+    "Verzuim feitelijk administreren en contact houden zonder medische druk",
+    "Aantekeningen over de klachten bijhouden"
+   ],
+   "juist": 2,
+   "uitleg": "Gezondheidsgegevens zijn een bijzondere categorie onder de AVG. Wel: functioneel informeren (alleen werkgerelateerd), verzuim feitelijk administreren, re-integratie organiseren via de bedrijfsarts, contact houden zonder medische druk. Niet: medische informatie vragen of vastleggen, oordelen over medische geschiktheid, medische dossiers of aantekeningen bijhouden, druk zetten op herstel."
+  },
+  {
+   "id": "hrm-w6-05",
+   "les": "hrm-w6",
+   "type": "mc",
+   "tag": "Bedrijfsarts",
+   "vraag": "Wat is de rol van de bedrijfsarts?",
+   "opties": [
+    "Onafhankelijk medisch adviseur die zich richt op belastbaarheid en werkvermogen, en de medische schakel is in het verzuimproces",
+    "De behandelend arts die de medewerker geneest",
+    "Een medewerker van HR die de diagnose aan de leidinggevende doorgeeft",
+    "De keuringsarts van het UWV die over de uitkering beslist"
+   ],
+   "juist": 0,
+   "uitleg": "Taken: medische beoordeling van het werkvermogen, re-integratieadvies (Poortwachter), verzuimbegeleiding en spreekuren, preventie en arbeidsomstandigheden. Werkt binnen een arbodienst, als zzp'er of in dienst van de organisatie."
+  },
+  {
+   "id": "hrm-w6-06",
+   "les": "hrm-w6",
+   "type": "mc",
+   "tag": "Wet verbetering poortwachter",
+   "vraag": "Wanneer moet de bedrijfsarts uiterlijk de probleemanalyse maken?",
+   "opties": [
+    "In week 2",
+    "In week 6",
+    "In week 8",
+    "In week 42"
+   ],
+   "juist": 1,
+   "uitleg": "Week 6: probleemanalyse. Uiterlijk week 8 (twee weken later): plan van aanpak. Ongeveer elke 6 tot 8 weken evalueren. Week 42: ziekmelding bij het UWV. Week 52: eerstejaarsevaluatie. Rond week 91: eindevaluatie en re-integratieverslag richting de WIA-aanvraag."
+  },
+  {
+   "id": "hrm-w6-07",
+   "les": "hrm-w6",
+   "type": "mc",
+   "tag": "Wet verbetering poortwachter",
+   "vraag": "Wat kan het UWV doen als de werkgever onvoldoende aan de re-integratie heeft gedaan?",
+   "opties": [
+    "De loondoorbetalingsplicht verlengen, met maximaal een jaar",
+    "De werknemer een boete geven",
+    "De arbeidsovereenkomst ontbinden",
+    "Niets"
+   ],
+   "juist": 0,
+   "uitleg": "Het UWV controleert bij de WIA-aanvraag of de werkgever aan zijn re-integratieverplichtingen heeft voldaan. Zo niet, dan volgt verlenging van de loondoorbetaling (vaak 'loonsanctie' genoemd; die term is gangbare invulling). Werkgever en werknemer zijn samen verantwoordelijk."
+  },
+  {
+   "id": "hrm-w6-08",
+   "les": "hrm-w6",
+   "type": "mc",
+   "tag": "Re-integratie · sporen",
+   "vraag": "Wat is het verschil tussen re-integratie in spoor 1 en spoor 2?",
+   "opties": [
+    "Spoor 1: terug naar eigen of ander passend werk bij de eigen werkgever; spoor 2: re-integratie bij een andere werkgever",
+    "Spoor 1 is voor kortdurend verzuim, spoor 2 voor langdurend",
+    "Spoor 1 is via de huisarts, spoor 2 via de bedrijfsarts",
+    "Er is geen verschil"
+   ],
+   "juist": 0,
+   "uitleg": "De slide over spoor 1 en 2 is een afbeelding; dit is de gangbare invulling. Spoor 2 komt in beeld als terugkeer bij de eigen werkgever niet (meer) haalbaar is."
+  },
+  {
+   "id": "hrm-w6-09",
+   "les": "hrm-w6",
+   "type": "open",
+   "tag": "Casus uit de les",
+   "vraag": "Je bent facilitair manager bij een bedrijf met 150 medewerkers in schoonmaak, receptie en catering. Het verzuim is in een jaar gestegen van 4% naar 9%. Noem mogelijke oorzaken in categorieën, twee onderzoeksvragen, en per domein (fysiek, mentaal, sociaal) een FM-interventie.",
+   "modelantwoord": "Oorzaken: werkgerelateerd (hoge werkdruk, fysiek zwaar werk, onregelmatige diensten, slechte werkplekken of materialen), organisatorisch (reorganisatie, onderbezetting, leiderschapsstijl, weinig inspraak), sociaal (conflicten, slechte sfeer, wij-zijdenken), persoonlijk of privé (mantelzorg, gezondheid) en registratie (andere manier van meten). Onderzoeksvragen: 'Is de stijging vooral kort frequent verzuim of langdurig verzuim?' 'Bij welke afdelingen, locaties of diensten zit de stijging?' 'Wat zegt de bedrijfsarts over werkgerelateerde factoren?' Interventies: fysiek, bijvoorbeeld ergonomische hulpmiddelen en lichtere schoonmaakmachines; mentaal, bijvoorbeeld een werkdrukgesprek en realistische roosters; sociaal, bijvoorbeeld vaste teams per locatie en teamoverleg. Kernzin uit de les: FM is niet verantwoordelijk voor de gezondheid zelf, wel voor de omstandigheden waarin die gezondheid behouden, versterkt of belast wordt.",
+   "punten": [
+    "Oorzaken in categorieën",
+    "Twee zinvolle onderzoeksvragen",
+    "Per domein een passende interventie",
+    "Begrijpt de rol van FM (omstandigheden, niet gezondheid zelf)"
+   ]
+  },
+  {
+   "id": "hrm-w6-10",
+   "les": "hrm-w6",
+   "type": "open",
+   "tag": "Poortwachter · mondeling",
+   "vraag": "Mondelinge oefenvraag: leg de Wet verbetering poortwachter uit. Wat is het doel, wat zijn de belangrijkste stappen met de weken, en wat gebeurt er als de werkgever tekortschiet?",
+   "modelantwoord": "Doel: langdurig verzuim voorkomen, snelle terugkeer naar werk stimuleren, gedeelde verantwoordelijkheid van werkgever en werknemer, en focus op wat iemand nog wel kan. Stappen: week 6 probleemanalyse door de bedrijfsarts; uiterlijk week 8 plan van aanpak (werkgever en werknemer samen, met een casemanager of begeleider); elke 6 tot 8 weken evalueren; week 42 ziekmelding bij het UWV; week 52 eerstejaarsevaluatie; rond week 91 eindevaluatie en het re-integratieverslag, dat de werknemer uiterlijk 13 weken voor het einde van de wachttijd met zijn WIA-aanvraag naar het UWV stuurt. Werkt de werkgever niet goed mee, dan verlengt het UWV de loondoorbetaling met maximaal een jaar. Werkt de werknemer niet mee, dan kan de werkgever het loon opschorten of stoppen (art. 7:629 BW). E-HRM helpt met procesbewaking en dossieropbouw.",
+   "punten": [
+    "Doel van de wet",
+    "Stappen met de juiste weken (6, 8, 42, 52, ~91)",
+    "Gevolg bij tekortschieten werkgever: verlenging loondoorbetaling",
+    "Rol en verplichtingen van de werknemer"
+   ]
+  },
+  {
+   "id": "gv-w6-01",
+   "les": "gv-w6",
+   "type": "mc",
+   "tag": "Verzuimquiz · wat mag je vragen",
+   "vraag": "Welke vraag mag een leidinggevende in een verzuimgesprek stellen?",
+   "opties": [
+    "'Wat is je diagnose?'",
+    "'Welke medicijnen gebruik je?'",
+    "'Welke werkzaamheden kun je volgens het actuele advies uitvoeren?'",
+    "'Waardoor ben je ziek geworden?'"
+   ],
+   "juist": 2,
+   "uitleg": "Wel bespreken: werk, contact, het advies van de bedrijfsarts, functionele mogelijkheden, werkaanpassingen, impact op het team en re-integratieafspraken. Niet uitvragen: diagnose, behandeling, medicatie, medische geschiedenis of details van klachten."
+  },
+  {
+   "id": "gv-w6-02",
+   "les": "gv-w6",
+   "type": "mc",
+   "tag": "Doel verzuimgesprek",
+   "vraag": "Wat is NIET het doel van een verzuimgesprek?",
+   "opties": [
+    "Afspraken maken over contact en bereikbaarheid",
+    "Functionele mogelijkheden en werkaanpassingen bespreken",
+    "Controleren of iemand 'echt' ziek is",
+    "Concrete vervolgafspraken maken"
+   ],
+   "juist": 2,
+   "uitleg": "Het doel is ook niet: een diagnose achterhalen, de medische behandeling bespreken of schuld vaststellen. Het doel verschilt per situatie: bij frequent kortdurend verzuim het patroon en preventie, bij langdurig verzuim re-integratie en voortgang, bij spanningen de werkcontext."
+  },
+  {
+   "id": "gv-w6-03",
+   "les": "gv-w6",
+   "type": "mc",
+   "tag": "Feitelijke opening",
+   "vraag": "Welke opening van een verzuimgesprek past bij de workshop?",
+   "opties": [
+    "'Je bent de laatste tijd wel erg vaak ziek.'",
+    "'In de afgelopen zes maanden heb je je drie keer kortdurend ziekgemeld. Ik wil dit patroon met je bespreken en onderzoeken wat nodig is rond werk, inzetbaarheid en ondersteuning.'",
+    "'Volgens mij kun je best gedeeltelijk werken.'",
+    "'Wat heb je eigenlijk precies?'"
+   ],
+   "juist": 1,
+   "uitleg": "Van oordeel naar waarneming: feiten, het doel en het kader. 'Volgens mij kun je best gedeeltelijk werken' is een eigen medisch oordeel; beter: 'De bedrijfsarts adviseert een opbouw met aangepaste werkzaamheden. Ik wil bespreken hoe we dat praktisch kunnen organiseren.'"
+  },
+  {
+   "id": "gv-w6-04",
+   "les": "gv-w6",
+   "type": "mc",
+   "tag": "Medische grens",
+   "vraag": "De medewerker begint uit zichzelf uitgebreid te vertellen over zijn medische klachten. Wat doe je?",
+   "opties": [
+    "Alles noteren in het personeelsdossier",
+    "Doorvragen om een goed beeld te krijgen",
+    "'Dank dat je dat deelt. Ik leg medische details niet vast. Voor de medische beoordeling is de bedrijfsarts de juiste gesprekspartner. Laten we kijken wat dit betekent voor het werk en onze afspraken.'",
+    "Het doorsturen naar HR"
+   ],
+   "juist": 2,
+   "uitleg": "Je bewaakt de medische grens zonder de medewerker af te kappen, en je stuurt terug naar werk en afspraken. Dit hangt samen met de AVG uit theoriecollege 6."
+  },
+  {
+   "id": "gv-w6-05",
+   "les": "gv-w6",
+   "type": "mc",
+   "tag": "Poortwachter",
+   "vraag": "In welke week moet de werkgever een langdurig zieke werknemer ziekmelden bij het UWV?",
+   "opties": [
+    "Week 6",
+    "Week 8",
+    "Week 42",
+    "Week 52"
+   ],
+   "juist": 2,
+   "uitleg": "Week 6 probleemanalyse, uiterlijk week 8 plan van aanpak, ongeveer elke 6 weken voortgang, week 42 melding UWV, week 52 eerstejaarsevaluatie, week 91 eindevaluatie richting WIA."
+  },
+  {
+   "id": "gv-w6-06",
+   "les": "gv-w6",
+   "type": "mc",
+   "tag": "Casus Robin · conflict",
+   "vraag": "Robin meldde zich drie weken geleden ziek, vlak na een stevige confrontatie met een senior collega. Er is nog niet over de werksituatie gesproken. Wat past bij de workshop?",
+   "opties": [
+    "Het verzuimgesprek gebruiken om het conflict helemaal uit te praten",
+    "Contact houden, bespreken wat volgens het advies mogelijk is, de werkcontext onderzoeken en een afzonderlijke vervolgactie voor het conflict afspreken",
+    "Wachten tot Robin beter is",
+    "Robin vragen of het wel echt ziekte is"
+   ],
+   "juist": 1,
+   "uitleg": "Opdracht in de workshop: voorkomen dat het verzuimgesprek een volledig conflictgesprek wordt, en bepalen welke afzonderlijke vervolgactie nodig is (bijvoorbeeld een apart gesprek of bemiddeling; dat laatste is gangbare invulling)."
+  },
+  {
+   "id": "gv-w6-07",
+   "les": "gv-w6",
+   "type": "open",
+   "tag": "Casus Sam · frequent verzuim",
+   "vraag": "Sam werkt op een facilitaire servicedesk, functioneert goed en klanten zijn tevreden, maar heeft zich in zes maanden vijf keer kortdurend ziekgemeld. Collega's nemen regelmatig diensten over en de werkdruk loopt op. Formuleer de opening, drie onderzoekende vragen en twee concrete afspraken. Wat bespreek je niet?",
+   "modelantwoord": "Opening: 'Sam, in de afgelopen zes maanden heb je je vijf keer kortdurend ziekgemeld. Ik wil dat patroon met je bespreken en samen kijken wat nodig is rond je werk en je inzetbaarheid. Het gaat me niet om de medische kant, die hoort bij de bedrijfsarts.' Onderzoekende vragen: 'Hoe kijk jij zelf naar dit patroon?' 'Welke werkgerelateerde omstandigheden spelen voor jou mee?' 'Wat zou helpen om minder vaak uit te vallen?' 'Welke ondersteuning verwacht je van mij, en wat kun je zelf bijdragen?' Ook de teamimpact zorgvuldig benoemen. Afspraken: bijvoorbeeld een aanpassing in het rooster of de taakverdeling, een doorverwijzing naar het spreekuur van de bedrijfsarts, en een evaluatiegesprek over zes weken. Niet bespreken of uitvragen: diagnose, behandeling, medicatie of details van klachten, en geen eigen conclusies trekken over 'echt ziek zijn'.",
+   "punten": [
+    "Feitelijke opening met doel en kader",
+    "Open, werkgerichte vragen naar perspectief en omstandigheden",
+    "Twee concrete afspraken met evaluatiemoment",
+    "Bewaakt de medische grens"
+   ]
+  },
+  {
+   "id": "mix-w7-01",
+   "les": "mix-w7",
+   "type": "open",
+   "tag": "HRM + arbeidsrecht · werving",
+   "vraag": "Mondelinge mixvraag: je voert een sollicitatiegesprek voor een receptiefunctie. Welke vragen mag je niet stellen op grond van de gelijkebehandelingswetgeving, en hoe stel je wel vast of de kandidaat geschikt is?",
+   "modelantwoord": "Niet vragen naar onder meer zwangerschap of kinderwens, godsdienst, seksuele geaardheid, afkomst, leeftijd (tenzij objectief gerechtvaardigd) of gezondheid in het algemeen (een aanstellingskeuring mag alleen bij bijzondere medische functie-eisen). Wet: Awgb, Wgbl, Wet gelijke behandeling mannen en vrouwen en art. 7:646 BW, ook bij werving en selectie. Wel: vooraf functiecriteria bepalen (bijvoorbeeld klantgerichtheid, stressbestendigheid), gedragsgerichte STARR-vragen stellen over echte situaties, antwoorden vastleggen, en een eerlijk en realistisch beeld van de functie geven. Afwijzen moet op functiegerichte gronden gebeuren.",
+   "punten": [
+    "Noemt verboden onderwerpen met de juiste wetgeving",
+    "Weet dat dit al geldt bij werving en selectie",
+    "Legt uit hoe je wel functiegericht selecteert (criteria, STARR)"
+   ]
+  },
+  {
+   "id": "mix-w7-02",
+   "les": "mix-w7",
+   "type": "open",
+   "tag": "HRM + arbeidsrecht · verzuim",
+   "vraag": "Mondelinge mixvraag: een schoonmaker is al 14 maanden ziek. Wat moet je als leidinggevende in deze fase doen, wat mag je niet vragen, en wat kan er na twee jaar gebeuren?",
+   "modelantwoord": "In deze fase: het plan van aanpak uitvoeren en regelmatig evalueren, de eerstejaarsevaluatie (week 52) is gedaan, contact houden, samen met de bedrijfsarts kijken naar passend werk in spoor 1 of eventueel spoor 2, en alles vastleggen in het re-integratiedossier. Loon: 70% (art. 7:629 BW; het eerste jaar minimaal het minimumloon, in het tweede jaar niet meer). Niet vragen: diagnose, behandeling, medicatie (AVG; dat hoort bij de bedrijfsarts). Na 104 weken: de werkgever kan met toestemming van het UWV opzeggen op de b-grond (art. 7:669 lid 3 sub b BW), als re-integratie niet is gelukt en herplaatsing niet mogelijk is. Dan is een transitievergoeding verschuldigd, waarvoor de werkgever compensatie bij het UWV kan aanvragen. Heeft de werkgever niet genoeg gedaan aan re-integratie, dan verlengt het UWV de loondoorbetaling.",
+   "punten": [
+    "Noemt Poortwachter-verplichtingen in deze fase",
+    "Bewaakt de medische grens (AVG, bedrijfsarts)",
+    "Noemt de b-grond via het UWV na twee jaar",
+    "Noemt transitievergoeding en compensatie of de loonsanctie"
+   ]
+  },
+  {
+   "id": "mix-w7-03",
+   "les": "mix-w7",
+   "type": "open",
+   "tag": "HRM-theorie · beoordelen en ontwikkelen",
+   "vraag": "Mondelinge mixvraag: een medewerker krijgt al twee keer dezelfde feedback over te laat starten. Welk gesprek voer je nu, hoe pak je het aan, en welke beoordelingsfout moet je vermijden?",
+   "modelantwoord": "Nu is confronteren aan de orde, in een functionerings- of beoordelingsgesprek: je weet precies welk gedrag je verwacht en houdt de medewerker verantwoordelijk voor verandering. Aanpak: feitelijk openen ('In de afgelopen vier weken ben je zes keer later gestart dan 7.00 uur'), het effect noemen, het perspectief onderzoeken (LSD, ANNA), de verwachting duidelijk maken en een concrete afspraak met evaluatiedatum maken. Vermijden: bijvoorbeeld het horn-effect (dit ene punt kleurt je hele oordeel over de medewerker) of het recency-effect. Koppel het aan de HR-cyclus: afspraken vastleggen, en in het beoordelingsgesprek terugkomen op de voortgang.",
+   "punten": [
+    "Kiest het juiste gesprek en noemt confronteren",
+    "Feitelijke aanpak met concrete afspraak",
+    "Noemt een passende beoordelingsfout en hoe je die vermijdt"
+   ]
+  },
+  {
+   "id": "mix-w7-04",
+   "les": "mix-w7",
+   "type": "open",
+   "tag": "HRM-theorie · leiderschap en team",
+   "vraag": "Mondelinge mixvraag: je wordt leidinggevende van een nieuw samengesteld cateringteam met een paar ervaren krachten en een paar starters. Hoe stuur je het team in de eerste maanden aan?",
+   "modelantwoord": "Teamfase: waarschijnlijk forming, daarna storming (gangbare invulling: Tuckman); help met duidelijke rollen, doelen en afspraken. Situationeel leiderschap: starters instrueren (veel sturing), ervaren krachten met wisselende motivatie steunen of participeren, zeer ervaren en gemotiveerde krachten delegeren; schuif mee als mensen groeien. Motivatie: autonomie, competentie en verbondenheid (zelfdeterminatietheorie), bijvoorbeeld inspraak in roosters, training en een vast team. Diversiteit: let op wij-zijdenken tussen 'oud' en 'nieuw', creëer een gezamenlijke identiteit en geef iedereen een stem (contacthypothese).",
+   "punten": [
+    "Herkent de teamfase en wat je dan doet",
+    "Past situationeel leiderschap per medewerker toe",
+    "Gebruikt minstens één motivatietheorie",
+    "Let op wij-zijdenken of teamidentiteit"
+   ]
+  },
+  {
+   "id": "mix-w7-05",
+   "les": "mix-w7",
+   "type": "open",
+   "tag": "Arbeidsrecht · flexibel en einde",
+   "vraag": "Mondelinge mixvraag: een oproepkracht in het bedrijfsrestaurant werkt al 14 maanden gemiddeld 24 uur per week. Haar contract voor bepaalde tijd loopt over twee maanden af en de werkgever wil haar laten gaan. Welke regels spelen hier?",
+   "modelantwoord": "Oproepkracht: na 12 maanden had de werkgever binnen een maand een contract met een vaste omvang van gemiddeld 24 uur moeten aanbieden (art. 7:628a lid 5 BW); deed hij dat niet, dan heeft zij recht op loon over dat gemiddelde (lid 8). Oproepen minstens vier dagen van tevoren (lid 2). Einde: een tijdelijk contract eindigt van rechtswege (art. 7:667 BW), maar de werkgever moet uiterlijk een maand voor het einde schriftelijk laten weten of hij het contract voortzet (aanzegplicht, art. 7:668 BW), anders is een vergoeding verschuldigd. Check ook de ketenregeling (art. 7:668a BW): bij een vierde contract of een keten langer dan drie jaar ontstaat een vast contract. Eindigt het contract op initiatief van de werkgever, dan is een transitievergoeding verschuldigd (art. 7:673 BW).",
+   "punten": [
+    "Aanbod vaste omvang na 12 maanden (7:628a lid 5 en 8)",
+    "Einde van rechtswege met aanzegplicht (7:667 en 7:668)",
+    "Ketenregeling (7:668a)",
+    "Transitievergoeding bij einde op initiatief werkgever"
+   ]
+  }
+ ]
+}

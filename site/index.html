@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FM jaar 2 · Studieplek</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --paper: #f5f7f6; --sheet: #ffffff; --ink: #17201e; --ink-soft: #55625f; --rule: #dce3e1;
+  --teal: #0b6a7d; --teal-soft: #e0eff2; --plum: #7a3566; --plum-soft: #f4e6ef; --ochre: #8a5a00; --ochre-soft: #f7ecd6;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111716; --sheet: #182120; --ink: #e6edeb; --ink-soft: #9db0ac; --rule: #2a3533;
+    --teal: #62c4d7; --teal-soft: #13313a; --plum: #e39ac9; --plum-soft: #34192b; --ochre: #f0be5c; --ochre-soft: #33290f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111716; --sheet: #182120; --ink: #e6edeb; --ink-soft: #9db0ac; --rule: #2a3533;
+  --teal: #62c4d7; --teal-soft: #13313a; --plum: #e39ac9; --plum-soft: #34192b; --ochre: #f0be5c; --ochre-soft: #33290f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+  padding: 32px max(16px, env(safe-area-inset-right, 0px)) 64px max(16px, env(safe-area-inset-left, 0px)); }
+.wrap { max-width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+h1, h2 { font-family: var(--font-display); margin: 0; line-height: 1.1; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 6vw, 3rem); font-weight: 700; letter-spacing: -0.015em; }
+h2 { font-size: 1.35rem; font-weight: 600; }
+p { margin: 0; }
+a { color: inherit; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+header { display: flex; flex-direction: column; gap: 12px; }
+.lead { color: var(--ink-soft); max-width: 60ch; }
+.count { display: inline-flex; align-items: baseline; gap: 8px; font-variant-numeric: tabular-nums; }
+.count strong { font-family: var(--font-display); font-size: 1.6rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.vak { background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; border-top: 5px solid var(--c); }
+.vak .toets { font-size: 0.9rem; color: var(--ink-soft); }
+.links { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+.link { display: flex; justify-content: space-between; align-items: center; gap: 12px; text-decoration: none; padding: 12px 14px; border-radius: 10px; background: var(--c-soft); font-weight: 500; }
+.link:hover { outline: 2px solid var(--c); }
+.link:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
+.link small { font-family: var(--font-mono); font-size: 0.75rem; color: var(--ink-soft); font-weight: 400; }
+.link.soon { background: transparent; border: 1px dashed var(--rule); color: var(--ink-soft); pointer-events: none; }
+.teal { --c: var(--teal); --c-soft: var(--teal-soft); }
+.plum { --c: var(--plum); --c-soft: var(--plum-soft); }
+.ochre { --c: var(--ochre); --c-soft: var(--ochre-soft); }
+footer { font-size: 0.85rem; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Facility Management · jaar 2 · periode 2</span>
+    <h1>Studieplek periode 2</h1>
+    <p class="lead">Samenvattingen, oefenvragen per les en oefentoetsen per week, om vanaf de eerste les te leren voor de toetsweken.</p>
+    <p class="count"><span>Toetsperiode 11–22 januari 2027 ·</span><strong id="days">–</strong><span>dagen te gaan</span></p>
+  </header>
+
+  <div class="grid">
+    <section class="vak teal" aria-labelledby="v1">
+      <h2 id="v1">Inkoop en recht</h2>
+      <p class="toets">Schriftelijk casustentamen in ANS: inkoop 50%, recht 50%.</p>
+      <div class="links">
+        <a class="link" href="inkoop-recht/">Oefenvragen per les <small>130 vragen</small></a>
+        <span class="link soon">Oefentoetsen per week <small>binnenkort</small></span>
+        <a class="link" href="https://claude.ai/artifact/VHXx8mhoAqU8B2DEmeEpsg" target="_blank" rel="noopener">Samenvattingen <small>in Claude</small></a>
+      </div>
+    </section>
+    <section class="vak plum" aria-labelledby="v2">
+      <h2 id="v2">HRM</h2>
+      <p class="toets">Mondeling: gesprek met een acteur, vier HRM-vragen en vier arbeidsrechtvragen.</p>
+      <div class="links">
+        <a class="link" href="hrm/">Oefenvragen per les <small>156 vragen</small></a>
+        <span class="link soon">Oefentoetsen per week <small>binnenkort</small></span>
+        <a class="link" href="https://claude.ai/artifact/F5i831ZTxpUePeyVdzXz8C" target="_blank" rel="noopener">Samenvattingen <small>in Claude</small></a>
+      </div>
+    </section>
+    <section class="vak ochre" aria-labelledby="v3">
+      <h2 id="v3">Praktijkproject BM</h2>
+      <p class="toets">Adviespresentatie (30 min + 15 min vragen) en portfolio (V/NV).</p>
+      <div class="links">
+        <a class="link" href="https://claude.ai/artifact/MNHrxykYerRjrc76rQu4Qg" target="_blank" rel="noopener">Samenvattingen en logboek <small>in Claude</small></a>
+      </div>
+    </section>
+  </div>
+
+  <footer>Je voortgang bij de oefenvragen wordt in deze browser bewaard. Samenvattingen openen in Claude zolang ze nog niet op deze site staan.</footer>
+</div>
+<script>
+  const d = Math.ceil((Date.parse("2027-01-11T00:00:00") - Date.now()) / 864e5);
+  document.getElementById("days").textContent = d > 0 ? d : 0;
+</script>
+</body>
+</html>
