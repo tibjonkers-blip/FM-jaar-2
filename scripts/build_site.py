@@ -67,6 +67,7 @@ def main():
         open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(HEAD + render(tpl, c, "site", slug) + TAIL)
         subprocess.run([sys.executable, os.path.join(VRAGEN, c["gen"]), os.path.join(out, "vragen.json")], check=True)
         subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_toetsen.py"), c["toets"], os.path.join(out, "toetsen.json")], check=True)
+        subprocess.run([sys.executable, os.path.join(SCRIPTS, "add_toelichting.py"), slug, out], check=True)
         if art and c["artifact"]:
             ad = os.path.join(art, c["artifact"])
             os.makedirs(ad, exist_ok=True)

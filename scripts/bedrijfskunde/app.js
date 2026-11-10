@@ -48,6 +48,7 @@
       <section class="panel-model" hidden>
         <h4>Modelantwoord</h4>
         <div class="model-body">${q.model}</div>
+        ${typeof TOELICHTING !== "undefined" && TOELICHTING[q.id] ? `<div class="why"><h4>Waarom dit klopt</h4><p>${esc(TOELICHTING[q.id])}</p></div>` : ""}
         <h4>Beoordelingspunten · vink aan wat in jouw antwoord staat</h4>
         <ul class="rubric">${q.rubric.map((r, i) => `<li><label><input type="checkbox" id="r-${q.id}-${i}" data-i="${i}"><span>${esc(r[0])}</span><span class="rp">${r[1]} p</span></label></li>`).join("")}</ul>
         <div class="selfscore"></div>

@@ -124,7 +124,8 @@
     "Juiste TCO voor B (€21.000)",
     "Conclusie dat A goedkoper is over de levensduur en dus advies A",
     "Benoemt dat de inkoper alleen naar aanschafprijs kijkt en dat TCO verborgen kosten meeneemt, eventueel met ontbrekende kostenposten"
-   ]
+   ],
+   "toelichting": "TCO telt alle kosten over de hele levensduur op: aanschaf, plus de jaarlijkse kosten maal het aantal jaren, min wat je er aan het eind nog voor terugkrijgt. Bij A maakt de restwaarde het verschil: die verlaagt de totale kosten. B lijkt goedkoper omdat je alleen de aanschafprijs ziet, maar de hogere onderhoudskosten tellen vijf keer mee. Het advies is pas sterk als je ook zegt welke kosten nog ontbreken, want een TCO is zo goed als de posten die erin zitten."
   },
   {
    "id": "ink-w1-04",
@@ -168,7 +169,8 @@
     "Noemt onbenutte capaciteit als voorwaarde om toch te accepteren",
     "Legt uit dat €80 de variabele kosten dekt en €20 bijdraagt aan de vaste kosten",
     "Noemt dat een prijs onder de variabele kosten altijd wordt geweigerd"
-   ]
+   ],
+   "toelichting": "Een leverancier kijkt op korte termijn anders naar een order dan op lange termijn. Op lange termijn moet de prijs alle kosten dekken (€110), dus €80 is te laag. Heeft hij capaciteit over, dan zijn de vaste kosten er toch al; elke euro boven de variabele kosten is dan winst ten opzichte van niets doen. Daarom is de variabele kostprijs de ondergrens: onder €60 verliest hij op elk stuk extra."
   },
   {
    "id": "ink-w1-07",
@@ -226,7 +228,8 @@
     "Brugfunctie: tussen interne gebruikers en externe markt",
     "Inkoopbeleid volgt uit organisatiebeleid omdat inkoop bijdraagt aan organisatiedoelen",
     "Concreet en passend facilitair voorbeeld dat de koppeling laat zien"
-   ]
+   ],
+   "toelichting": "Brugfunctie betekent dat inkoop verbindt: binnen zitten de gebruikers met hun behoefte, buiten de markt met haar aanbod. Inkoop staat niet op zichzelf maar helpt de organisatie haar doelen te halen, dus het inkoopbeleid volgt uit het organisatiebeleid. Een goed voorbeeld laat die koppeling zien: een doel uit de strategie (zoals duurzaamheid) wordt een concrete eis in de inkoop."
   },
   {
    "id": "ink-w1-11",
@@ -360,7 +363,8 @@
     "Noemt non-discriminatie (art. 1.8 Aw) en legt de indirecte discriminatie naar nationaliteit uit",
     "Past toe op de feiten: gelijkwaardig certificaat moet worden geaccepteerd",
     "Trekt een duidelijke conclusie"
-   ]
+   ],
+   "toelichting": "De eis 'alleen een Nederlandse certificeerder' klinkt neutraal, maar sluit in de praktijk buitenlandse bedrijven uit. Daarom is het indirecte discriminatie naar nationaliteit (art. 1.8 Aw). Wederzijdse erkenning werkt dit uit: een gelijkwaardig bewijs uit een andere lidstaat moet je accepteren, zoals het Hof in Vestergaard aangaf. Het antwoord is pas compleet met de toepassing (het Belgische certificaat is gelijkwaardig) en een conclusie."
   },
   {
    "id": "rec-w1-08",
@@ -374,7 +378,8 @@
     "Noemt gelijkheid (art. 1.8 Aw): criteria de hele procedure hetzelfde toepassen",
     "Past het toe op deze feiten (inschrijvers hebben op de oude weging ingeschreven)",
     "Conclusie: onrechtmatig"
-   ]
+   ],
+   "toelichting": "Inschrijvers stemmen hun prijs en kwaliteit af op de weging die vooraf bekend is. Verander je die achteraf, dan beoordeel je ze op iets anders dan waarop ze hebben ingeschreven. Dat maakt de procedure onvoorspelbaar (transparantie) en behandelt inschrijvers ongelijk, omdat de uitkomst afhangt van een keuze die pas na het openen van de inschrijvingen is gemaakt. Daarom moet de gemeente bij de oorspronkelijke weging blijven."
   },
   {
    "id": "rec-w1-09",
@@ -432,7 +437,8 @@
     "Vooraf: toegankelijke aankondiging / openbaarheid (TenderNed)",
     "Tijdens: duidelijke criteria en weging, niet wijzigen",
     "Na: motivering van de gunning en beperkte verduidelijking"
-   ]
+   ],
+   "toelichting": "Transparantie loopt door de hele procedure heen, dus de fasen volgen de tijdlijn van een aanbesteding. Vooraf moeten bedrijven de opdracht kunnen vinden, tijdens de procedure moeten ze weten waarop ze worden beoordeeld, en na de gunning moeten ze kunnen nagaan of dat eerlijk is gebeurd. Als je per fase de vraag 'wat moet een inschrijver op dit moment kunnen weten?' stelt, kom je vanzelf op deze plichten."
   },
   {
    "id": "ink-w2-01",
@@ -551,7 +557,8 @@
     "Drie passende argumenten tegen uitbesteden, toegepast op het ziekenhuis",
     "Een onderbouwd advies (bijvoorbeeld turnkey of partial, met voorwaarden zoals een SLA)",
     "Noemt welke informatie ontbreekt, zoals kosten/TCO, huidige kwaliteit of personeel"
-   ]
+   ],
+   "toelichting": "Bij uitbesteden weeg je af wat je wint (schaal, specialistische kennis, focus op de kerntaak) tegen wat je kwijtraakt (regie, kennis, onafhankelijkheid). In een ziekenhuis is patiëntenvoeding deel van de zorg, en juist daar weegt regie zwaar. Daarom is een tussenvorm zoals partial outsourcing vaak sterker dan alles of niets. Een goed advies noemt ook welke informatie ontbreekt, omdat je zonder huidige kosten en kwaliteit niet kunt vergelijken."
   },
   {
    "id": "ink-w3-01",
@@ -654,7 +661,8 @@
     "Een passende strategische doelstelling en KSF",
     "Twee KPI's die echt meetbaar zijn, met een norm en meetmoment",
     "De SLA-onderdelen: definities, overlegstructuur, KPI's met score"
-   ]
+   ],
+   "toelichting": "Je werkt van boven naar beneden: een strategisch doel zegt wat de organisatie wil, de KSF zegt wat daarvoor moet lukken, en een KPI maakt dat meetbaar. Een KPI zonder norm en meetmoment is geen KPI, want je kunt dan niet vaststellen of de leverancier presteert. In de SLA leg je vast wat de woorden betekenen, hoe je overlegt en welke score je verwacht, zodat beide partijen hetzelfde verstaan onder 'goed'."
   },
   {
    "id": "ink-w4-01",
@@ -683,7 +691,8 @@
     "Noemt de omzetregel (maximaal 3x de geraamde waarde, art. 2.90 lid 5 sub a Aw)",
     "Noemt het proportionaliteitsbeginsel (art. 1.10 Aw of Gids Proportionaliteit)",
     "Geeft minstens één concrete verbetering"
-   ]
+   ],
+   "toelichting": "Geschiktheidseisen moeten passen bij de opdracht. De wet geeft een concreet houvast: de omzeteis mag in principe niet hoger zijn dan drie keer de geraamde waarde. €10 miljoen tegen €2 miljoen is vijf keer, dus te hoog. Dat valt onder proportionaliteit: je mag alleen vragen wat nodig is om te weten of een bedrijf de opdracht aankan. Een sterk antwoord eindigt met een concrete verbetering, zoals de eis verlagen of percelen maken."
   },
   {
    "id": "ink-w4-03",
@@ -696,7 +705,8 @@
     "Een relevant argument voor de stelling",
     "Een relevant argument tegen de stelling (beginselen, Gids Proportionaliteit, openbaarheid)",
     "Twee realistische maatregelen voor het mkb"
-   ]
+   ],
+   "toelichting": "Een stelling bespreek je van twee kanten. De praktijk (zware eisen en veel papierwerk) maakt het mkb kwetsbaar, maar de regels (gelijkheid, proportionaliteit, openbaarheid via TenderNed) moeten dat juist voorkomen. De maatregelen zijn het sterkst als ze direct ingaan op de drempels: percelen maken een opdracht kleiner, proportionele eisen houden de lat redelijk, en combinaties laten kleine bedrijven samen inschrijven."
   },
   {
    "id": "ink-w5-01",
@@ -785,7 +795,8 @@
     "Minstens drie NEVI-pijlers correct verwerkt",
     "Noemt wie je spreekt en aan wie je verantwoording aflegt",
     "Concrete, meetbare indicatoren voor de voortgang"
-   ]
+   ],
+   "toelichting": "Contractmanagement begint met weten wat je hebt: zonder register weet je niet welke contracten er lopen en wanneer ze aflopen. Daarna volg je de NEVI-pijlers: administratie, relaties, governance, prestaties en leveranciersontwikkeling. Prioriteren met Kraljic voorkomt dat je overal tegelijk begint. Voortgang meet je met concrete cijfers, zoals het percentage contracten in het register of het aantal bestellingen buiten contract."
   },
   {
    "id": "ink-w6-01",
@@ -889,7 +900,8 @@
     "Onderscheidt feiten van ontbrekende informatie",
     "Noemt relevante waarden en belangen, liefst met de NEVI-principes",
     "Twee oplossingen en een onderbouwd advies"
-   ]
+   ],
+   "toelichting": "Het NEVI-stappenplan dwingt je om eerst te begrijpen en pas daarna te kiezen. Het dilemma is een botsing tussen twee waarden (kosten en sociale omstandigheden). Het onderscheid tussen feiten en signalen is belangrijk, omdat 'signalen' nog niet bewezen zijn. Twee oplossingen laten zien dat je echt hebt afgewogen. De opmerking over aanbesteden laat zien dat een publieke instelling niet achteraf op gevoel mag kiezen: sociale eisen moeten vooraf in de criteria staan."
   },
   {
    "id": "rec-w2-01",
@@ -1083,7 +1095,8 @@
     "Past de drempel voor werken toe (€5.404.000) en concludeert: niet aanbestedingsplichtig",
     "De subsidieverlener is verantwoordelijk",
     "Naleving via voorwaarden bij de subsidie en intrekking"
-   ]
+   ],
+   "toelichting": "De wet kijkt bij een gesubsidieerde instelling naar twee dingen: is meer dan de helft van de opdracht gesubsidieerd, en gaat het om het soort opdracht dat artikel 2.8 noemt? Hier is het 60% van een werk, dus GoedVast valt eronder. Maar ook dan geldt de Europese plicht pas boven de drempel, en €2 miljoen ligt onder de drempel voor werken. Omdat GoedVast zelf geen overheid is, legt de wet de verantwoordelijkheid bij wie de subsidie geeft."
   },
   {
    "id": "rec-w2-14",
@@ -1096,7 +1109,8 @@
     "DUO: publiekrechtelijke instelling met de drie voorwaarden",
     "Politie: aanbestedingsplichtig als Staat (of met goede onderbouwing als publiekrechtelijke instelling)",
     "Verwijst naar art. 1.1 Aw"
-   ]
+   ],
+   "toelichting": "Je toetst eerst of een organisatie de Staat zelf is (een ministerie of daaronder). Is het een aparte rechtspersoon, dan kijk je naar de drie voorwaarden van een publiekrechtelijke instelling: algemeen belang, rechtspersoonlijkheid en overheidsinvloed. DUO voldoet aan alle drie. Bij de politie is het verschil tussen de routes klein omdat de uitkomst gelijk blijft. Benoem op het tentamen welke route je kiest en waarom."
   },
   {
    "id": "rec-w3-01",
@@ -1245,7 +1259,8 @@
     "Wat en waarde: dienst, boven €216.000",
     "Concessie: onder €5.404.000, dus niet aanbestedingsplichtig",
     "Grensoverschrijdend belang: beginselen uit afdeling 1.2.2 Aw"
-   ]
+   ],
+   "toelichting": "De drie W's zijn een vaste volgorde: wie besteedt aan, wat wordt er aanbesteed, en is de waarde boven de drempel? Alleen als alle drie 'ja' zijn, is de opdracht Europees aanbestedingsplichtig. Bij een concessie verandert de drempel, en die is veel hoger. Onder de drempel ben je niet helemaal vrij: bij een duidelijk grensoverschrijdend belang gelden de beginselen nog steeds, zodat bedrijven uit andere landen een eerlijke kans houden."
   },
   {
    "id": "rec-w3-11",
@@ -1258,7 +1273,8 @@
     "Nee, splitsingsverbod (art. 2.14 Aw)",
     "Totale waarde telt (art. 2.15 Aw): €400.000 boven €216.000",
     "Legt uit waarom de percelenregeling niet helpt"
-   ]
+   ],
+   "toelichting": "De drempel gaat over de hele opdracht, niet over de losse contracten. Daarom tel je de totale waarde over de looptijd, inclusief opties en verlengingen. Opknippen om onder de drempel te blijven is precies wat het splitsingsverbod wil voorkomen. De percelenregeling is een kleine uitzondering voor een paar kleine delen, geen manier om een hele opdracht onderhands te gunnen."
   },
   {
    "id": "rec-w4-01",
@@ -1406,7 +1422,8 @@
     "Niet verstandig: Alcatel-termijn van 20 dagen (art. 2.127 lid 3 Aw)",
     "Afgewezen inschrijver: vernietiging van de overeenkomst (art. 4.15 Aw)",
     "ACM-boete tot 15% (art. 4.21 Aw)"
-   ]
+   ],
+   "toelichting": "De standstilltermijn bestaat zodat afgewezen inschrijvers tijd hebben om de gunning aan te vechten voordat het contract er ligt. Sla je die termijn over, dan ontneem je hun dat recht, en daarom kan de rechter het gesloten contract vernietigen. Blijft het contract toch staan, dan grijpt de ACM in met een boete. Volg in je antwoord die logica: eerst de regel, dan wat de inschrijver kan doen, dan wat de overheid kan doen."
   },
   {
    "id": "rec-w4-11",
@@ -1419,7 +1436,8 @@
     "Nee, merkeis verboden (art. 2.76 lid 3 Aw)",
     "Noemt de uitzondering met beide voorwaarden (lid 4: niet anders te omschrijven + 'of gelijkwaardig')",
     "Past het toe op de casus: computers zijn wel te omschrijven"
-   ]
+   ],
+   "toelichting": "Een merkeis bevoordeelt één fabrikant en sluit gelijkwaardige producten uit, dus het raakt het gelijkheidsbeginsel. De wet verbiedt het daarom, met een smalle uitzondering: alleen als je het product echt niet anders kunt omschrijven, en dan nog met 'of gelijkwaardig'. Tevredenheid over HP is geen reden, want je kunt computers prima omschrijven op prestaties en eisen."
   },
   {
    "id": "rec-w5-01",
@@ -1598,7 +1616,8 @@
     "Noemt gerechtvaardigd vertrouwen en contractsvrijheid als uitgangspunt",
     "Noemt beide vorderingen en kiest met argumenten",
     "Onderscheidt negatief en positief contractsbelang en schat de kans in"
-   ]
+   ],
+   "toelichting": "Uitgangspunt is contractsvrijheid: je mag onderhandelingen afbreken. Dat wordt pas onrechtmatig als de ander er gerechtvaardigd op mocht vertrouwen dat er een contract zou komen, of door andere omstandigheden. Daarom loop je de feiten langs: hoe lang, hoe ver, wat er is gezegd en waarom er werd afgebroken. Hoe verder de onderhandelingen, hoe meer schade kan worden vergoed: eerst de gemaakte kosten (negatief), in een vergevorderde fase ook de gemiste winst (positief)."
   },
   {
    "id": "rec-w5-13",
@@ -1612,7 +1631,8 @@
     "50+: alleen 6:248 lid 2 (6:235 BW)",
     "Minder dan 50: 6:233/6:234, geen lijsten",
     "Consument (en daarmee vergelijkbaar): ook zwarte en grijze lijst (eventueel reflexwerking)"
-   ]
+   ],
+   "toelichting": "De bescherming tegen algemene voorwaarden hangt af van hoe kwetsbaar de wederpartij is. Een grote onderneming kan zichzelf beschermen en krijgt alleen de redelijkheid en billijkheid. Hoe kleiner en consumentachtiger de wederpartij, hoe meer bescherming: eerst de open normen van 6:233 en 6:234, en voor de consument ook de zwarte en grijze lijst. Onthoud het als een trap die oploopt van groot bedrijf naar consument."
   },
   {
    "id": "rec-w6-01",
@@ -1806,7 +1826,8 @@
     "Betaling is geen voorwaarde, dus eigenaar",
     "Eigendomsvoorbehoud (art. 3:92 BW) of vooraf laten betalen",
     "Noemt eventueel het recht van reclame (art. 7:39 BW) met voorwaarden"
-   ]
+   ],
+   "toelichting": "Eigendom gaat over als aan drie voorwaarden is voldaan: een geldige titel, beschikkingsbevoegdheid en levering. Betaling staat daar niet tussen, en dat is precies het risico voor de verkoper: na de levering is de koper eigenaar, ook als hij nooit betaalt. In een faillissement wordt de groothandel dan een gewone schuldeiser. Een eigendomsvoorbehoud draait dat om, omdat de eigendom dan pas overgaat als er betaald is."
   },
   {
    "id": "rec-w7-01",
@@ -1819,7 +1840,8 @@
     "Wie: publiekrechtelijke instelling met de drie voorwaarden (art. 1.1 Aw)",
     "Wat: levering, omdat de waarde doorslaggevend is",
     "Waarde: boven €216.000"
-   ]
+   ],
+   "toelichting": "Je loopt de drie W's in vaste volgorde af. Bij 'wie' check je de drie voorwaarden van een publiekrechtelijke instelling. Bij 'wat' bepaal je het soort opdracht: als een opdracht levering en dienst combineert, beslist welk deel de grootste waarde heeft. Hier is 90% levering, dus het is een leveringsopdracht. Pas daarna vergelijk je de waarde met de juiste drempel."
   },
   {
    "id": "rec-w7-02",
@@ -1846,7 +1868,8 @@
    "punten": [
     "Verwijst naar art. 2.44 Aw",
     "Noemt minstens vier van de zes procedures correct"
-   ]
+   ],
+   "toelichting": "Een raamovereenkomst is geen aparte procedure maar een vorm van contract. Daarom mag je hem aanbesteden met de gewone procedures uit de wet; art. 2.44 Aw noemt welke. Leer de procedures als rijtje, zodat je bij zo'n opsommingsvraag de punten niet laat liggen."
   },
   {
    "id": "rec-w7-04",
@@ -1861,7 +1884,8 @@
     "Geen proces-verbaal",
     "Geen Alcatel-termijn",
     "Geen aankondiging van de gegunde opdracht"
-   ]
+   ],
+   "toelichting": "Zet de stappen van de openbare procedure naast wat de HAN doet. Eerst sluit je bedrijven uit die niet mee mogen doen (uitsluitingsgronden), pas daarna toets je of de rest de opdracht aankan (geschiktheid). Selectie hoort alleen bij procedures met twee fasen. Na de gunningsbeslissing komt eerst de standstilltermijn, en na het sluiten volgt een aankondiging van de gegunde opdracht. Benoem ook wat géén fout is: een langere inschrijftermijn mag."
   },
   {
    "id": "rec-w7-05",
@@ -1874,7 +1898,8 @@
     "a) gelijkheid, art. 1.8 Aw",
     "b) evenredigheid, art. 1.10 Aw",
     "c) objectiviteit, art. 1.4 Aw"
-   ]
+   ],
+   "toelichting": "Koppel elke handeling aan het beginsel dat de kern raakt. Met één inschrijver onderhandelen geeft die een voordeel dat de anderen niet krijgen: gelijkheid. Iedereen met een afhankelijkheidsrelatie absoluut uitsluiten is zwaarder dan nodig, want het belang kan ook anders worden beschermd: evenredigheid. Uitsluiten op een gevoel van 'slechte ervaring' is niet gebaseerd op vooraf vastgestelde, toetsbare gronden: objectiviteit."
   },
   {
    "id": "rec-w7-06",
@@ -1886,7 +1911,8 @@
    "punten": [
     "Deels terecht: wel een nieuwe procedure",
     "Termijnen verkorten wegens dringende reden (art. 2.74 Aw)"
-   ]
+   ],
+   "toelichting": "Een nieuwe opdracht betekent een nieuwe procedure; de wet geeft geen vrijbrief om het contract zomaar elders onder te brengen. Wel houdt de wet rekening met spoed: bij een dringende reden mag je de termijnen verkorten. Die reden mag niet door de dienst zelf zijn veroorzaakt; een faillissement van de leverancier is dat niet. Daarom is het antwoord 'deels'."
   },
   {
    "id": "rec-w7-07",
@@ -1943,7 +1969,8 @@
    "punten": [
     "Kort geding geeft voorlopige voorzieningen met een tijdelijk karakter",
     "Daarom alleen een voorschot; volledige schadevergoeding in de bodemprocedure"
-   ]
+   ],
+   "toelichting": "Een kort geding is bedoeld voor snelle, voorlopige maatregelen en niet om een zaak definitief te beslissen. De rechter kan daar daarom geen volledige schadevergoeding vaststellen, alleen een voorschot. Wie de hele schade vergoed wil zien, moet naar de bodemprocedure. Het antwoord draait om het verschil tussen voorlopig en definitief."
   },
   {
    "id": "rec-w7-11",
@@ -1971,7 +1998,8 @@
     "Geen consumentenkoop, dus regelend recht (7:5 en 7:6 BW)",
     "Negatieve garantie perkt de verwachtingen in (7:17 BW)",
     "Conclusie: na de garantie geen recht op herstel of vervanging (7:21 BW)"
-   ]
+   ],
+   "toelichting": "Eerst bepaal je of het een consumentenkoop is, want dan is de koper extra beschermd. De HAN is geen consument, dus partijen mogen van de wettelijke koopregels afwijken. Met een garantie van twee jaar geeft de leverancier aan wat de koper mag verwachten, en daarmee perkt hij de verwachting in (negatieve garantie). Na die twee jaar is er dus geen recht meer op kosteloos herstel."
   },
   {
    "id": "rec-w7-13",
@@ -1984,7 +2012,8 @@
     "Herkent dat de HAN een 6:235-onderneming is (50+)",
     "Dus geen beroep op 6:233 sub b",
     "Alleen 6:248 lid 2 BW, met kleine kans van slagen"
-   ]
+   ],
+   "toelichting": "Bij algemene voorwaarden check je eerst wie de wederpartij is. De HAN heeft meer dan 50 werknemers en valt daardoor onder art. 6:235 BW: zo'n partij kan zichzelf beschermen en mist het beroep op 6:233 sub b, ook al heeft ze de voorwaarden nooit gekregen. Alleen de redelijkheid en billijkheid blijft over, en die wordt maar zelden met succes ingeroepen."
   },
   {
    "id": "ink-w1-x01",
@@ -2087,7 +2116,8 @@
     "Direct versus indirect juist uitgelegd",
     "Passend voorbeeld bij beide",
     "Make-or-buy genoemd en uitgelegd"
-   ]
+   ],
+   "toelichting": "Het verschil zit in de relatie met het primaire proces. Directe inkoop gaat in het product of de dienst van de organisatie zelf zitten; in een ziekenhuis zijn medicijnen nodig voor de zorg. Indirecte inkoop ondersteunt dat proces, zoals de facilitaire diensten. Make-or-buy komt eerst, omdat je pas over inkopen nadenkt als je hebt besloten iets niet zelf te doen."
   },
   {
    "id": "ink-w2-x01",
@@ -2190,7 +2220,8 @@
     "Indeling a met beide assen onderbouwd",
     "Indeling b en c met beide assen onderbouwd",
     "Passende sourcingstrategie bij elk"
-   ]
+   ],
+   "toelichting": "Kraljic deelt in op twee assen: hoeveel geld er omgaat (financieel belang) en hoe groot het risico is als het misgaat of als er weinig leveranciers zijn (leveringsrisico). Elke combinatie geeft een kwadrant met een eigen strategie. Daarom moet je bij elke dienst beide assen noemen; het kwadrant volgt daaruit. Een andere indeling kan goed zijn, zolang je met beide assen uitlegt waarom."
   },
   {
    "id": "ink-w3-x01",
@@ -2293,7 +2324,8 @@
     "Definities",
     "Overlegstructuur",
     "Minstens twee KPI's mét norm"
-   ]
+   ],
+   "toelichting": "De drie elementen zorgen samen dat er geen discussie kan ontstaan over wat 'goed' is. Definities maken woorden als 'op tijd' meetbaar, de overlegstructuur regelt wie wanneer met wie praat, en de KPI's met norm geven de lat. Zonder norm kun je niet vaststellen of de leverancier zijn afspraak nakomt, daarom is 'met norm' een eis in de vraag."
   },
   {
    "id": "ink-w4-x01",
@@ -2366,7 +2398,8 @@
     "Twee argumenten voor",
     "Eén argument tegen",
     "Minstens twee begrippen juist gebruikt (EMVI/BPKV, TCO, BVP, maatschappelijke waarde)"
-   ]
+   ],
+   "toelichting": "Begrippen uit de les maken je argumenten sterker dan een mening. EMVI en BPKV laten zien dat de wet zelf verder kijkt dan de prijs, TCO laat zien dat de laagste aanschafprijs over de levensduur duur kan uitpakken, en maatschappelijke waarde is een wettelijke opdracht. Het tegenargument is ook echt: bij simpele routineproducten voegt een kwaliteitsbeoordeling weinig toe en is prijs een logisch criterium."
   },
   {
    "id": "ink-w4-x06",
@@ -2378,7 +2411,8 @@
    "punten": [
     "Twee keuzes met juiste koppeling",
     "Vier keuzes met juiste koppeling"
-   ]
+   ],
+   "toelichting": "Elke keuze haalt een drempel weg die kleine bedrijven tegenhoudt. Percelen maken de opdracht kleiner, proportionele eisen houden de lat bij de opdracht, vooraf bekende criteria geven iedereen dezelfde informatie, en geen merk of bestaande partij voortrekken voorkomt ongelijkheid. De koppeling aan een artikel of beginsel laat zien dat het geen goede bedoeling is maar een regel uit de wet."
   },
   {
    "id": "ink-w5-x01",
@@ -2481,7 +2515,8 @@
     "Prestatiemanagement concreet toegepast",
     "Tweede pijler concreet toegepast",
     "Actieplan of vastleggen van afspraken"
-   ]
+   ],
+   "toelichting": "Een slechte prestatie pak je aan met de pijlers van contractmanagement, niet alleen met een boze mail. Met prestatiemanagement meet je, zoek je de oorzaak en maak je een plan. Met relatiemanagement houd je het gesprek constructief, zodat de cateraar wil verbeteren. Met contractadministratie weet je wat er precies is afgesproken en welke sancties mogelijk zijn. Kijk ook naar je eigen organisatie, want soms ligt de oorzaak daar."
   },
   {
    "id": "ink-w6-x01",
@@ -2584,7 +2619,8 @@
     "Dilemma en feiten (ook wat ontbreekt)",
     "Waarden en belangen met NEVI-principe of maatschappelijke waarde",
     "Minstens twee oplossingen en een onderbouwde keuze"
-   ]
+   ],
+   "toelichting": "Het stappenplan laat zien dat je zorgvuldig afweegt in plaats van op gevoel te kiezen. Het onderscheid tussen feiten en signalen is nodig, omdat een melding van de vakbond nog geen vastgesteld feit is. Bij een gemeente horen ook publieke waarden, zoals zuinig zijn met belastinggeld en maatschappelijke waarde. Een goede oplossing combineert die, bijvoorbeeld door sociale eisen vooraf in de aanbesteding op te nemen."
   },
   {
    "id": "rec-w1-x01",
@@ -2657,7 +2693,8 @@
     "Beginsel met artikel",
     "Indirecte discriminatie toegepast op de feiten",
     "Conclusie, eventueel met evenredigheid en een beter alternatief"
-   ]
+   ],
+   "toelichting": "De vaste opbouw (beginsel, inhoud, toepassing, conclusie) helpt je niets te vergeten. De eis noemt geen nationaliteit, maar wie Nederlands als moedertaal heeft, is meestal Nederlander. Daarom is het indirecte discriminatie. Wat de opdracht echt nodig heeft, is dat receptionisten goed Nederlands spreken; een taalniveau-eis bereikt dat zonder onnodig uit te sluiten."
   },
   {
    "id": "rec-w2-x01",
@@ -2745,7 +2782,8 @@
     "Wie met artikel",
     "Wat: dienst met de kenmerken",
     "Waarde inclusief optie juist en conclusie"
-   ]
+   ],
+   "toelichting": "Bij de drie W's is de waarde vaak de valkuil. Je telt alle jaren én de optie op verlenging mee, omdat de wet naar de totale mogelijke waarde kijkt. Drie jaar is €240.000, maar met de optie wordt het €320.000. Beide liggen boven €216.000, maar je moet laten zien dat je de optie meetelt. Een waterschap is een territoriaal lichaam, dus het 'wie' is snel duidelijk."
   },
   {
    "id": "rec-w3-x01",
@@ -2818,7 +2856,8 @@
     "Geschiktheidseis juist met voorbeeld",
     "Selectiecriterium juist met voorbeeld en twee fasen",
     "Gunningscriterium juist met voorbeeld"
-   ]
+   ],
+   "toelichting": "Het verschil zit in wat je beoordeelt en wanneer. Geschiktheid en selectie gaan over het bedrijf: kan het de opdracht aan, en wie mag door naar de volgende fase. Gunning gaat over de inschrijving zelf: welk aanbod is het beste. Selectie bestaat alleen als er twee fasen zijn, omdat je pas dan een groep bedrijven moet terugbrengen tot een kleiner aantal inschrijvers."
   },
   {
    "id": "rec-w4-x01",
@@ -2906,7 +2945,8 @@
     "Juiste procedure met artikel",
     "Reden: zeer complex, oplossing niet objectief te bepalen",
     "Minstens twee aandachtspunten"
-   ]
+   ],
+   "toelichting": "De keuze voor een procedure volgt uit de situatie. Hier weet de provincie wel wat ze wil bereiken, maar niet welke technische oplossing daarvoor nodig is. De concurrentiegerichte dialoog is juist daarvoor bedoeld: je ontwikkelt de oplossing samen met de markt. Omdat je met meerdere partijen praat, moet je hun ideeën vertrouwelijk houden en vooraf vastleggen hoe je gunt."
   },
   {
    "id": "rec-w5-x01",
@@ -2994,7 +3034,8 @@
     "Gebruiker en wederpartij juist",
     "Zwarte lijst art. 6:236 sub b genoemd",
     "Gevolg: vernietigbaar zonder tegenbewijs"
-   ]
+   ],
+   "toelichting": "Eerst bepaal je de rollen: wie gebruikt de voorwaarden en wie is de wederpartij. Omdat het lid een consument is, krijgt het de meeste bescherming, dus ook de zwarte lijst. Een beding dat ontbinden uitsluit staat op die lijst en geldt daarom altijd als onredelijk bezwarend; de sportschool kan niet bewijzen dat het toch redelijk is. Na vernietiging van het beding kan het lid gewoon ontbinden."
   },
   {
    "id": "rec-w6-x01",
@@ -3082,7 +3123,8 @@
     "Recht van reclame art. 7:39 BW",
     "Termijnen en dezelfde staat juist",
     "Toegepast op de feiten met conclusie"
-   ]
+   ],
+   "toelichting": "Het recht van reclame helpt een verkoper die niet heeft betaald gekregen, ook zonder eigendomsvoorbehoud en ook bij faillissement. Het werkt alleen binnen strakke grenzen: de zaak moet nog in dezelfde staat zijn, en de termijnen (6 weken na opeisbaarheid, 60 dagen na aflevering) mogen niet verstreken zijn. Reken de termijnen uit met de data uit de casus; daar zit de toepassing."
   }
  ]
 }

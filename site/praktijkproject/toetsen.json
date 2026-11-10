@@ -322,7 +322,8 @@
     "Convergeren juist uitgelegd",
     "Reden van scheiden: te vroeg oordelen snoeit goede ideeën weg"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "Divergeren en convergeren vragen een andere manier van denken. Bij divergeren wil je zoveel mogelijk ideeën, ook rare, omdat een slecht idee een goed idee kan opleveren. Bij convergeren ga je juist kritisch kiezen. Als je die twee door elkaar doet, schiet je ideeën af voordat ze kunnen groeien. Daarom staan ze in het project in aparte weken, en daarom is er in DMAIC een aparte Generate-fase toegevoegd."
   },
   {
    "id": "pp1-o2",
@@ -336,7 +337,8 @@
     "Klantwaardevraag juist geformuleerd vanuit de bezoeker",
     "Twee SERVQUAL-aspecten passend bij de situatie"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "Een interne vraag kijkt naar het proces van de organisatie, terwijl een klantwaardevraag vertrekt bij wat de bezoeker nodig heeft. Dat verschil is belangrijk: sneller registreren lost het wachten op, maar misschien wil de bezoeker vooral weten waar die moet zijn en zich welkom voelen. SERVQUAL laat zien dat klantwaarde uit meer bestaat dan snelheid, zoals betrouwbaarheid en een gastvrije ontvangst. Zo kom je op oplossingen die de bezoeker echt merkt."
   },
   {
    "id": "pp1-o3",
@@ -351,7 +353,8 @@
     "Pijler kwaliteit juist uitgelegd met twee principes",
     "FM-voorbeeld bij kwaliteit"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "Het Toyota Production System rust op twee pijlers die elkaar aanvullen. Snelheid gaat over stroming: werk moet doorlopen zonder wachten of opstapelen. Kwaliteit gaat over fouten bij de bron voorkomen, zodat een fout niet verder in het proces terechtkomt. Een FM-voorbeeld laat zien dat je de principes kunt vertalen: verplichte velden op een meldformulier zijn een Poka-Yoke, omdat een onvolledige melding dan niet kan worden verstuurd."
   },
   {
    "id": "pp1-o4",
@@ -365,7 +368,8 @@
     "Tweede toegevoegde waarde juist en concreet",
     "Derde toegevoegde waarde juist, met minstens twee niet-financieel"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "Een sterke onderbouwing laat zien dat een verbetering op meer vlakken waarde heeft dan alleen kosten. Door minstens twee niet-financiële waarden te noemen, laat je zien dat je breder kijkt, zoals de docent vraagt. Elke waarde moet concreet worden gemaakt: niet alleen 'tevredenheid', maar waarom melders tevredener worden. Risico's beheren is hier sterk, omdat een kwijtgeraakte melding over een veiligheidsgebrek echte gevolgen kan hebben."
   },
   {
    "id": "pp1-o5",
@@ -379,7 +383,8 @@
     "Opbrengst voor de analyse",
     "Opbrengst voor draagvlak, met koppeling aan cultuur of betrokkenheid"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "De mensen op de werkvloer zien elke dag wat er misgaat, en daarom vind je op de Gemba informatie die je in documenten niet ziet. Dat maakt je analyse beter. Het tweede voordeel is draagvlak: wie gehoord wordt en de eigen ideeën terugziet in het advies, steunt de verandering eerder. Volgens de docent slaagt een advies niet alleen door een slimme oplossing, maar vooral door cultuur, weerstand en draagvlak."
   },
   {
    "id": "pp1-o6",
@@ -393,7 +398,8 @@
     "Stap 2 concreet ingevuld met data of ergernissen",
     "Stap 3: kwantiteit, niet oordelen, voortbouwen"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "Elke stap van een goede brainstorm heeft een eigen doel. Een diverse groep levert meer verschillende ideeën op, omdat iedereen het proces vanuit een andere hoek ziet. Data en ergernissen geven de sessie een concreet startpunt, zodat ideeën aansluiten bij het echte probleem. Niet oordelen zorgt dat mensen ook ongewone ideeën durven te noemen. Kwantiteit gaat voor kwaliteit, omdat je bij convergeren pas gaat kiezen."
   },
   {
    "id": "pp1-c1",
@@ -410,7 +416,8 @@
       "Eerste principe juist en gekoppeld aan een knelpunt",
       "Tweede principe juist en gekoppeld",
       "Derde principe juist en gekoppeld"
-     ]
+     ],
+     "toelichting": "Een Lean-principe is pas nuttig als het een echt knelpunt oplost. Alle meldingen gaan langs één coördinator, en dat is een bottleneck: die stap bepaalt hoe snel het hele proces gaat. Onvolledige meldingen zijn fouten die verderop in het proces worden ontdekt, en een Poka-Yoke voorkomt dat bij de bron. Technici die wachten op een verdeling werken met push; met pull pakken ze zelf de volgende melding. Elk principe raakt zo een ander knelpunt uit de casus."
     },
     {
      "vraag": "Plaats vier verbeterideeën voor deze servicedesk in de Impact/Effort-matrix en kies welke quick win en welke structurele verbetering je adviseert. Waarom allebei?",
@@ -419,7 +426,8 @@
       "Vier ideeën logisch in de kwadranten geplaatst",
       "Quick win en structurele verbetering gekozen",
       "Uitleg: momentum/draagvlak tegenover oorzaak aanpakken"
-     ]
+     ],
+     "toelichting": "De matrix sorteert ideeën op wat ze opleveren en wat ze kosten. Verplichte velden zijn snel geregeld en lossen direct veel onvolledige meldingen op, dus een quick win. Automatische routering kost meer moeite, maar haalt de bottleneck bij de coördinator weg en raakt daarmee de oorzaak. Een eigen app kost veel en levert weinig extra op ten opzichte van het bestaande FMIS. Met een quick win én een structurele verbetering krijg je snel resultaat en een blijvende oplossing."
     }
    ],
    "versie": "A"
@@ -439,7 +447,8 @@
       "Herkent eenzijdige focus op kostenreductie",
       "Twee andere toegevoegde waarden die onder druk komen, met uitleg",
       "Alternatief: oorzaak van verspilling aanpakken"
-     ]
+     ],
+     "toelichting": "Minder koken bespaart geld, maar de 11 toegevoegde waarden laten zien wat er nog meer op het spel staat. In een ziekenhuis draagt eten bij aan herstel, en te weinig of verkeerde dieetmaaltijden zijn een risico voor patiënten. Het voorstel pakt bovendien niet de oorzaak aan: er wordt verspild omdat de keuken vooraf een vast aantal maakt en alles op één uur moet. Daarom waarschuwt de docent voor een eenzijdige focus op kosten."
     },
     {
      "vraag": "Welke twee Lean-principes uit de snelheidspijler passen bij dit probleem? Werk beide uit voor de keuken.",
@@ -448,7 +457,8 @@
       "Heijunka juist toegepast op de piek",
       "JIT of pull juist toegepast op de verspilling",
       "Koppeling aan de gevolgen (minder fouten, minder weggooien)"
-     ]
+     ],
+     "toelichting": "De twee problemen in de casus passen bij twee principes uit de snelheidspijler. De fouten ontstaan door een piek, en Heijunka spreidt het werk zodat die piek verdwijnt. De verspilling ontstaat doordat de keuken vooraf een vast aantal maakt (push). Met Just in Time of pull maak je alleen wat er besteld is, op basis van een signaal van de patiënt. Door elk principe aan een gevolg te koppelen, laat je zien waarom het werkt."
     }
    ],
    "versie": "B"
@@ -468,7 +478,8 @@
       "Technologie als middel, geen doel",
       "Koppeling aan strategie (huisvestingskosten, duurzaamheid) of missie",
       "Concreet advies, bijvoorbeeld klantwaarde eerst of alternatieven meenemen"
-     ]
+     ],
+     "toelichting": "Een dure technische oplossing is pas goed als die iets oplevert wat de gebruiker en de organisatie nodig hebben. De klantwaarde is minder zoeken, en de strategische waarde is data om huisvesting af te bouwen. Als je die vooraf scherp maakt, kun je ook goedkopere alternatieven eerlijk vergelijken, zoals een clean-desk-afspraak tegen jassen op plekken. Pas daarna hoort het idee in de matrix, zodat je impact en moeite eerlijk afweegt."
     },
     {
      "vraag": "Formuleer drie ontwerpeisen waaraan elke oplossing voor dit probleem moet voldoen. Leid ze af van klantwaarde en strategie.",
@@ -477,7 +488,8 @@
       "Drie ontwerpeisen geformuleerd",
       "Afgeleid van klantwaarde én strategie",
       "Concreet en toetsbaar geformuleerd"
-     ]
+     ],
+     "toelichting": "Ontwerpeisen zijn de meetlat waaraan je elke oplossing toetst. Als je ze afleidt van klantwaarde en strategie, kies je straks een oplossing die past bij wat medewerkers nodig hebben en waar de organisatie heen wil. Een eis als 'binnen 5 minuten een plek vinden' kun je meten, terwijl 'makkelijk vinden' voor iedereen iets anders betekent. Daarom moeten ontwerpeisen concreet en toetsbaar zijn."
     }
    ],
    "versie": "C"
@@ -782,7 +794,8 @@
     "Stap 2 als BNVA met minimaliseren",
     "Stap 3 als VA met behouden/versterken"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "Je kijkt naar elke stap vanuit de bezoeker. Opgehaald worden door de gastheer is waarvoor de bezoeker komt, dus VA. Het identiteitsbewijs is nodig voor de veiligheid van de organisatie, maar voegt voor de bezoeker niets toe; dat is BNVA en minimaliseer je. Wachten en overtypen voegen niets toe en zijn NVA. De ontwerpregels volgen daar direct uit: VA versterken, BNVA zo klein mogelijk maken, NVA weghalen."
   },
   {
    "id": "pp2-o2",
@@ -796,7 +809,8 @@
     "Service blueprint gekozen",
     "Onderbouwing met frontstage/backstage en beleving"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "De drie vormen laten elk iets anders zien. Een future-state map laat de hele waardestroom zien met tijden, en een verbeterde flow laat vooral de nieuwe stappen en rollen zien. Een service blueprint scheidt wat de gast ziet (frontstage) van wat erachter gebeurt (backstage). Omdat de opdrachtgever wil weten wat de gast merkt, past de service blueprint het best: je laat zien dat de backstage efficiënter wordt terwijl de gast hetzelfde of beter ervaart."
   },
   {
    "id": "pp2-o3",
@@ -811,7 +825,8 @@
     "Risico vergeleken",
     "Context vergeleken"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "De vier dimensies voorkomen dat je alleen kiest op wat het meest oplevert. Sensoren kunnen meer impact hebben, maar zijn moeilijker te regelen en riskanter, omdat techniek, data en acceptatie allemaal moeten werken. De context bepaalt of een oplossing past bij de organisatie en het schoonmaakbedrijf. Eenvoud is bijna altijd een deugd, en daarom ligt een eenvoudige basis met een pilot voor de ambitieuze optie voor de hand."
   },
   {
    "id": "pp2-o4",
@@ -826,7 +841,8 @@
     "Stap 5 juist",
     "Valkuil weging en oplossing: gewichten vooraf afspreken"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "De stappen maken een keuze controleerbaar: je vergelijkt alles met dezelfde baseline en dezelfde gewogen criteria. Maximaal zes criteria houdt het overzichtelijk en dwingt je te kiezen wat echt telt. De valkuil is dat je na het scoren al ziet welke optie wint, en dan kun je de gewichten onbewust zo kiezen dat je favoriet bovenaan komt. Door de gewichten vooraf vast te leggen, voorkom je dat."
   },
   {
    "id": "pp2-o5",
@@ -840,7 +856,8 @@
     "Simulatie juist met passend voorbeeld",
     "Gefaseerd juist met passend voorbeeld"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "De drie vormen verschillen in hoe echt en hoe groot de test is. Een pilot test in de echte omgeving op kleine schaal, zodat je leert voordat je overal invoert. Een simulatie gebruik je als echt testen te gevaarlijk of te ingrijpend is, zoals bij een ontruiming. Gefaseerd invoeren is geen test maar een manier van uitrollen, stap voor stap, zodat de organisatie niet in één keer alles moet veranderen."
   },
   {
    "id": "pp2-o6",
@@ -854,7 +871,8 @@
     "Gebruiker: klantwaarde vanuit de vergaderaar",
     "Proces: minder verspilling, kortere doorlooptijd of minder variatie"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "Een oplossing wordt pas overtuigend als je laat zien wat elke partij eraan heeft. De opdrachtgever wil resultaat op doelen als kosten en duurzaamheid, de vergaderaar wil makkelijk bestellen en een zaal die klopt, en het proces wordt beter door minder overtypen en minder spoedwerk. Een vaste besteldeadline geeft de keuken voorspelbaarheid, en dat vermindert variatie. Door de drie perspectieven te verbinden, laat je zien dat de oplossing het geheel dient."
   },
   {
    "id": "pp2-c1",
@@ -871,7 +889,8 @@
       "NVA-stappen juist (2, 4, 5)",
       "BNVA-stappen juist (1, 3)",
       "VA-stap(pen) juist (6, eventueel 7)"
-     ]
+     ],
+     "toelichting": "De vraag bij elke stap is of de nieuwe medewerker ervoor zou betalen. De pas maken en ontvangen is precies wat de medewerker wil, dus VA. De aanvraag en de controle door beveiliging zijn nodig, maar de medewerker heeft er zelf niets aan; dat is BNVA. Wachten in de mailbox, interne post en overtypen voegen niets toe, en daar zit bijna alle doorlooptijd. De pas maken kost maar tien minuten van de zes werkdagen."
     },
     {
      "vraag": "Ontwerp de future state. Beschrijf hoe het proces straks loopt en wat je doet met elk soort stap.",
@@ -880,7 +899,8 @@
       "NVA geëlimineerd met concrete maatregel",
       "BNVA geminimaliseerd met concrete maatregel",
       "Samenhangend beeld met nieuwe doorlooptijd of flow (FIFO)"
-     ]
+     ],
+     "toelichting": "De future state volgt de ontwerpregels: wat niets toevoegt, haal je weg, en wat nodig is, maak je zo klein mogelijk. Eén digitaal formulier dat direct in het systeem landt, haalt de mailbox, de interne post en het overtypen in één keer weg. De controle door beveiliging blijft, maar wordt digitaal of vervalt bij standaardaanvragen. Doordat het wachten verdwijnt, daalt de doorlooptijd van zes dagen naar één."
     },
     {
      "vraag": "Welke vorm kies je om dit toekomstbeeld aan de opdrachtgever te laten zien? Onderbouw.",
@@ -888,7 +908,8 @@
      "punten": [
       "Passende vorm gekozen",
       "Onderbouwing gekoppeld aan wat de vorm laat zien"
-     ]
+     ],
+     "toelichting": "Je kiest de vorm die het beste laat zien wat er verandert. Het probleem zit hier in overdrachten tussen afdelingen, en een swimlane laat precies zien welke overdrachten verdwijnen. Een service blueprint is minder geschikt, omdat die vooral het verschil tussen wat de klant ziet en wat erachter gebeurt laat zien, terwijl dit proces bijna helemaal achter de schermen speelt."
     }
    ],
    "versie": "A"
@@ -908,7 +929,8 @@
       "A = 11 juist",
       "B = 7 en C = 9 juist",
       "A als winnaar"
-     ]
+     ],
+     "toelichting": "Bij een gewogen PUGH-matrix vermenigvuldig je elke score met het gewicht van het criterium, en tel je dat per optie op. Zo tellen belangrijke criteria zwaarder. Optie A scoort hoog op het zwaarste criterium (scheidingspercentage) en niet slecht op de rest, en wint daarom. Een veelgemaakte fout is de scores optellen zonder gewicht, of een min-teken vergeten."
     },
     {
      "vraag": "Het team ontdekt dat het gewicht van kosten pas na het scoren van 4 naar 3 is verlaagd. Wat is daar mis mee, en wat zou je doen?",
@@ -917,7 +939,8 @@
       "Benoemt dat gewichten vooraf moeten worden vastgesteld",
       "Rekent de variant door of laat zien dat de uitkomst gelijk blijft",
       "Transparante aanpak: bespreken en vastleggen"
-     ]
+     ],
+     "toelichting": "Gewichten die na het scoren veranderen, wekken de indruk dat het antwoord is gestuurd, ook als de uitkomst niet verandert. Daarom reken je beide varianten door: dan zie je dat A in beide gevallen wint, en is de keuze sterker onderbouwd. Als een gewicht echt anders moet, doe je dat openlijk, met een reden die je vastlegt en met de hele groep bespreekt."
     },
     {
      "vraag": "Benoem één risico van de winnende optie en doe een voorstel om dat risico te beheersen.",
@@ -926,7 +949,8 @@
       "Reëel risico van optie A",
       "Pilot (of simulatie/gefaseerd) passend gekozen",
       "Met meetafspraken of evaluatie"
-     ]
+     ],
+     "toelichting": "Elke winnende optie heeft een zwak punt, en een goed advies benoemt dat. Bij centrale afvalstations hangt het succes af van gedrag: lopen medewerkers echt naar het station? Een pilot test dat op kleine schaal, met een meetafspraak, zodat je ziet of het scheidingspercentage stijgt. Zo kun je bijsturen voordat je het hele gebouw omzet, en dat verkleint het risico."
     }
    ],
    "versie": "B"
@@ -946,7 +970,8 @@
       "Haalbaarheid juist vergeleken",
       "Risico juist vergeleken",
       "Context: cultuur van de organisatie meegenomen"
-     ]
+     ],
+     "toelichting": "De richtingen verschillen vooral in hoeveel er moet veranderen. Een gezamenlijk reserveringsformat werkt met bestaande middelen en is daarom haalbaarder en minder riskant. Zelfbediening vraagt nieuwe voorzieningen en ander gedrag, en dat past slecht bij een cultuur waarin alles via de leidinggevende gaat. De context weegt hier zwaar: een oplossing die niet bij de cultuur past, wordt in de praktijk niet gebruikt."
     },
     {
      "vraag": "Welke richting adviseer je? Onderbouw de waarde voor opdrachtgever, gebruiker en proces.",
@@ -955,7 +980,8 @@
       "Keuze gemaakt en logisch na de vergelijking",
       "Waarde voor opdrachtgever en gebruiker",
       "Waarde voor het proces"
-     ]
+     ],
+     "toelichting": "Een advies volgt logisch uit de vergelijking: als richting 1 haalbaarder, minder riskant en beter passend is, ligt die keuze voor de hand. Daarna laat je de waarde zien voor de drie perspectieven. Eén aanvraag in plaats van drie maakt het voor de gebruiker makkelijker, en een checklist zorgt dat zalen consequent goed klaarstaan. Een andere keuze kan ook, zolang je die net zo goed onderbouwt."
     }
    ],
    "versie": "C"
@@ -1260,7 +1286,8 @@
     "Verklaring: cijfers alleen brengen mensen niet in beweging",
     "Twee concrete verbeteringen, gekoppeld aan de succesfactoren of Kotter-light"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "Mensen veranderen niet alleen door feiten. Een rapport overtuigt het verstand dat er iets moet gebeuren, maar zorgt niet voor de motivatie om anders te werken. Daarvoor is het gevoel nodig: vertrouwen, betrokkenheid en zien dat het werkt. Daarom helpt het om mensen te laten meedenken, het management zichtbaar te laten zijn, en de urgentie te laten zien met voorbeelden uit het eigen werk."
   },
   {
    "id": "pp3-o2",
@@ -1275,7 +1302,8 @@
     "ICT juist geplaatst met aanpak",
     "Bezoekers geplaatst met aanpak"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "De grid bepaalt hoeveel aandacht en welke vorm van betrekken elke groep krijgt. De directeur beslist over budget maar merkt er weinig van, en die houd je tevreden. ICT kan het project vertragen en moet zelf werk doen, en daarom betrek je die groep nauw. Het zaalteam moet anders werken, en informeren en betrekken bij de uitvoering voorkomt weerstand. Bezoekers merken alleen het resultaat, dus die monitor je."
   },
   {
    "id": "pp3-o3",
@@ -1289,7 +1317,8 @@
     "De middengroep kiest de kant van de sterkste groep",
     "Strategie: voorstanders met quick win zichtbaar maken, niet alles op tegenstanders"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "De middengroep is het grootst en bepaalt uiteindelijk of een verandering slaagt. Omdat die groep meegaat met de sterkste kant, heeft het weinig zin om al je energie te steken in de tegenstanders. Door de voorstanders zichtbaar succes te laten boeken, bijvoorbeeld met een quick win, laat je zien dat de verandering werkt. Dan schuift de middengroep mee."
   },
   {
    "id": "pp3-o4",
@@ -1304,7 +1333,8 @@
     "Communicatie als doorlopende dialoog",
     "Betrokkenheid: rol geven en quick wins vieren"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "Kotter-light zet de verandering in vier stappen op gang. Urgentie met eigen cijfers is sterker dan algemene argumenten, omdat mensen zien dat het over hun eigen gebouw gaat. Een coalitie met een sponsor en ambassadeurs laat zien dat de verandering gesteund wordt. Communicatie in twee richtingen haalt zorgen op tijd naar boven. Meekiezen en successen vieren geeft mensen het gevoel dat het hun verandering is."
   },
   {
    "id": "pp3-o5",
@@ -1319,7 +1349,8 @@
     "Gevolg te veel Consulted: vertraging",
     "Gevolg te weinig Consulted: gepasseerd voelen"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "Het verschil zit in de richting en de timing: Consulted denkt vooraf mee, Informed hoort het achteraf. Als je te veel mensen raadpleegt, moet je op iedereen wachten en loopt het project vertraging op. Als je iemand alleen informeert die eigenlijk had moeten meedenken, mis je belangrijke kennis en voelt die persoon zich overgeslagen, wat weerstand oplevert. Daarom noemt de docent dit het belangrijkste onderscheid."
   },
   {
    "id": "pp3-o6",
@@ -1334,7 +1365,8 @@
     "Derde paar juist",
     "Vierde paar juist"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "Weerstand is een voorspelbare reactie met een oorzaak, en de aanpak moet bij die oorzaak passen. Wie controle verliest, heeft invloed nodig, en wie onzeker is, heeft een duidelijke visie nodig. Wie twijfelt of het lukt, heeft training nodig, en wie er eerst extra werk aan heeft, heeft tijd nodig. Een verkeerde koppeling, zoals training geven aan iemand die zich overvallen voelt, lost de weerstand niet op."
   },
   {
    "id": "pp3-c1",
@@ -1351,7 +1383,8 @@
       "Twee stakeholders juist met aanpak",
       "Nog twee stakeholders juist met aanpak",
       "Aanpak logisch gekoppeld aan de grid"
-     ]
+     ],
+     "toelichting": "De rol en de plek in de grid bepalen hoe je iemand betrekt. De teamleiders hebben veel invloed op hun medewerkers en zijn nu tegen, dus als je ze niet nauw betrekt, kunnen ze de invoering blokkeren. De medewerkers moeten zelf anders werken en hebben veel belang, en daarom laat je ze meedenken over de inrichting. ICT voert de koppeling uit en moet vooraf worden geraadpleegd. De wethouder heeft het besluit genomen, maar is niet bij de uitvoering betrokken, en die houd je tevreden."
     },
     {
      "vraag": "Benoem bij de medewerkers van Burgerzaken twee oorzaken van weerstand en de passende aanpak.",
@@ -1359,7 +1392,8 @@
      "punten": [
       "Eerste oorzaak met aanpak, gekoppeld aan de casus",
       "Tweede oorzaak met aanpak, gekoppeld aan de casus"
-     ]
+     ],
+     "toelichting": "De casus geeft duidelijke signalen. Medewerkers die al vijftien jaar een eigen bureau met foto's en planten hebben, verliezen controle over hun eigen plek. Daar past ruimte geven bij, zoals meebeslissen over teamzones of lockers. De vraag of het werkt voor hun werk is onzekerheid, en dan helpt een duidelijke visie. Invoering volgende maand in één keer kan het gevoel geven overvallen te worden, en dan is goed voorbereiden de aanpak."
     },
     {
      "vraag": "Geef twee Kotter-light-acties die het team nu moet nemen, en een kritische kanttekening bij het invoeren 'in één keer'.",
@@ -1367,7 +1401,8 @@
      "punten": [
       "Twee Kotter-light-acties concreet",
       "Kritische kanttekening bij de invoering in één keer"
-     ]
+     ],
+     "toelichting": "Kotter-light helpt om eerst draagvlak te bouwen voordat je invoert. Eigen cijfers over lege werkplekken maken de urgentie concreet, en een teamleider van Burgerzaken als ambassadeur overtuigt de eigen afdeling beter dan de facilitair manager alleen. Invoeren in één keer is riskant, omdat de weerstand al groot is en mensen zich overvallen voelen. Een pilot met één team laat de voorstanders succes boeken, en dan kan de middengroep volgen."
     }
    ],
    "versie": "A"
@@ -1387,7 +1422,8 @@
       "Rij 1: twee A's als fout met uitleg",
       "Rij 2: geen A en geen R als fout",
       "Controleregel: één A, minstens één R"
-     ]
+     ],
+     "toelichting": "De twee controles per rij vangen precies deze fouten. Met twee A's in rij 1 is niet duidelijk wie de knoop doorhakt, en dan kunnen beslissingen blijven hangen of elkaar tegenspreken. In rij 2 staat niemand op R en niemand op A, dus er is niemand die het werk doet of erop wordt aangesproken. Zo'n activiteit gebeurt in de praktijk vaak niet. Daarom check je elke rij op precies één A en minstens één R."
     },
     {
      "vraag": "Bij rij 3 staat het schoonmaakbedrijf op Informed. Is dat verstandig? Geef een verbeterde rij 3 en licht toe.",
@@ -1395,7 +1431,8 @@
      "punten": [
       "SB moet Consulted zijn, met uitleg over gepasseerd voelen of input",
       "Verbeterde rij met precies één A en minstens één R"
-     ]
+     ],
+     "toelichting": "Bij een contract heeft het schoonmaakbedrijf zelf een belang en kennis over wat uitvoerbaar is. Als het bedrijf alleen achteraf hoort wat er verandert, mis je die kennis en voelt het bedrijf zich gepasseerd, wat de samenwerking schaadt. Daarom wordt het Consulted. De FM'er mag A en R tegelijk zijn, maar uitvoeren en goedkeuren scheiden is vaak beter, omdat iemand dan het werk van een ander controleert."
     },
     {
      "vraag": "Herstel rij 2 en leg uit welke rol de teamleider schoonmaak daar volgens jou moet hebben.",
@@ -1403,7 +1440,8 @@
      "punten": [
       "Rij 2 hersteld met één A en minstens één R",
       "Onderbouwde rol voor de teamleider"
-     ]
+     ],
+     "toelichting": "De teamleider schoonmaak stuurt de schoonmakers dagelijks aan en is daarom de logische persoon om ze te instrueren. Als het studententeam dat doet, blijft de nieuwe werkwijze 'van de studenten', en verdwijnt die als het team weg is. Met de teamleider als R wordt de verandering van de organisatie zelf. De herstelde rij heeft precies één A en minstens één R, en voldoet daarmee aan beide controles."
     }
    ],
    "versie": "B"
@@ -1423,7 +1461,8 @@
       "20-60-20 juist toegepast op de 30 attendants",
       "Middengroep volgt de sterkste groep",
       "Advies: voorstanders met quick win zichtbaar maken"
-     ]
+     ],
+     "toelichting": "De 20-60-20-verdeling laat zien waar je energie het meeste oplevert. Van de 30 attendants zijn er zes voor en zes tegen, en de rest twijfelt. De twijfelaars kiezen de kant die het sterkst lijkt. Als de voorstanders zichtbaar succes boeken, bijvoorbeeld doordat kamers sneller worden vrijgegeven, gaat de middengroep mee. Al je energie in de tegenstanders stoppen levert weinig op en geeft hun bezwaren juist meer aandacht."
     },
     {
      "vraag": "Benoem de twee oorzaken van weerstand bij de tegenstanders en geef per oorzaak een concrete aanpak.",
@@ -1432,7 +1471,8 @@
       "Twijfel aan kunnen met training en geruststelling",
       "Meer werk met tijd vrijmaken",
       "Concrete acties voor het hotel"
-     ]
+     ],
+     "toelichting": "De twee bezwaren hebben elk een andere oorzaak en vragen daarom elk een eigen aanpak. 'Niet met zo'n ding overweg kunnen' is twijfel aan het eigen kunnen, en dat los je op met training en geruststelling, het liefst door een collega die het al kan. 'Meer tijd' is het idee dat het eerst meer werk kost, en dat klopt vaak in het begin. Dan helpt alleen echt tijd vrijmaken, zoals tijdelijk minder kamers per dienst."
     }
    ],
    "versie": "C"
@@ -1737,7 +1777,8 @@
     "Nog twee bouwstenen juist met uitleg",
     "Laatste twee bouwstenen juist met uitleg"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "Een implementatieplan moet zo compleet zijn dat iedereen weet wat er wanneer gebeurt en door wie. Activiteiten en mijlpalen geven de volgorde en de controlemomenten. Verantwoordelijkheden met één Accountable voorkomen dat niemand zich eigenaar voelt. Middelen en randvoorwaarden laten zien wat er nodig is en wat moet kloppen voordat je begint. Succescriteria maken vooraf duidelijk wanneer het project geslaagd is."
   },
   {
    "id": "pp4-o2",
@@ -1751,7 +1792,8 @@
     "Tweede criterium SMART",
     "Uitleg: zonder criteria wordt evaluatie een kwestie van gevoel"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "'Beter' en 'tevredener' zijn niet meetbaar, en dan kun je achteraf altijd zeggen dat het gelukt is, of juist niet. SMART-criteria leggen vooraf vast wat er gemeten wordt, wat de doelwaarde is en wanneer. Met een startwaarde (nu 6,4) en een doelwaarde (7,5) zie je ook hoeveel er verbeterd moet worden. Zo voer je het gesprek met de opdrachtgever op basis van feiten en niet op basis van gevoel."
   },
   {
    "id": "pp4-o3",
@@ -1765,7 +1807,8 @@
     "RPN als combinatie van ernst, kans en detectie",
     "Voorbeeld of uitleg waarom frequentie alleen niet beslist"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "Detectie werkt omgekeerd aan wat je zou verwachten: een hoge score betekent dat een fout moeilijk te zien is. Een fout die lang onopgemerkt blijft, kan veel schade aanrichten voordat iemand ingrijpt, en daarom verhoogt slechte detectie het RPN. Omdat het RPN ernst, kans en detectie vermenigvuldigt, kan een zeldzame maar ernstige en onzichtbare fout hoger eindigen dan een fout die vaak voorkomt maar weinig schade doet."
   },
   {
    "id": "pp4-o4",
@@ -1780,7 +1823,8 @@
     "Stap 6 met maatregel én verantwoordelijke",
     "Iteratief: opnieuw scoren, ernst blijft meestal gelijk"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "De stappen gaan van proces naar risico naar maatregel. Je begint bij de belangrijkste stappen, omdat je niet alles kunt analyseren. Het effect beschrijven helpt om de ernst goed te scoren. Een maatregel zonder verantwoordelijke wordt vaak niet uitgevoerd. Iteratief betekent dat je na de maatregel opnieuw scoort: een maatregel verlaagt meestal de kans of maakt de fout beter zichtbaar, maar de gevolgen van de fout zelf blijven even ernstig."
   },
   {
    "id": "pp4-o5",
@@ -1794,7 +1838,8 @@
     "OCAP-voorbeeld met trigger en actie",
     "Catchball juist uitgelegd met voorbeeld"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "OCAP en catchball pakken twee verschillende risico's aan. Een OCAP is er voor als de techniek of het proces faalt: omdat het plan vooraf klaarligt, weet iedereen bij een storing meteen wat te doen. Een trigger maakt duidelijk wanneer het plan ingaat. Catchball pakt het menselijke risico aan: door de mensen die ermee werken om feedback te vragen, worden ze eigenaar van de oplossing, en dat vermindert weerstand."
   },
   {
    "id": "pp4-o6",
@@ -1808,7 +1853,8 @@
     "Alle vier de vragen juist",
     "Reden: ontwikkeling over meerdere sprints zichtbaar, geen losse evaluatie"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "De vier vragen gaan van wat je hoorde, naar wat het over jou zegt, naar wat je gaat doen en waar je opnieuw feedback op vraagt. Zo wordt feedback een leerproces en geen los moment. Terugkijken op de vorige afspraken laat zien of je je gedrag echt hebt veranderd. Voor het portfolio is dat belangrijk, omdat je ontwikkeling over meerdere sprints moet laten zien. Een leerdoel bijstellen hoort er ook bij en is geen zwakte."
   },
   {
    "id": "pp4-c1",
@@ -1824,7 +1870,8 @@
      "punten": [
       "Drie relevante ontbrekende activiteiten",
       "Uitleg beginnersfout: alleen zichtbare verandering gepland"
-     ]
+     ],
+     "toelichting": "Het plan bevat alleen de technische stappen, maar een systeem werkt pas als mensen het goed gebruiken. Receptionisten en beveiliging moeten weten wat ze anders doen, gastheren moeten weten dat ze bezoekers vooraf aanmelden, en er moet een plan zijn voor als het misgaat. Dat is de klassieke beginnersfout: je plant wat je ziet, het systeem aanzetten, en vergeet het werk eromheen. Juist daar mislukken veel invoeringen."
     },
     {
      "vraag": "Verbeter de bouwstenen verantwoordelijkheden en succescriteria.",
@@ -1833,7 +1880,8 @@
       "RACI met één Accountable per resultaat",
       "Minstens één SMART succescriterium",
       "Tweede SMART criterium of koppeling aan klantwaarde"
-     ]
+     ],
+     "toelichting": "'De facilitaire dienst' is een afdeling, en een afdeling kun je niet aanspreken: iedereen denkt dat een ander het doet. Een RACI per activiteit met één Accountable maakt duidelijk wie eindverantwoordelijk is. 'De receptie wordt minder druk' kun je niet meten, en dan weet je achteraf niet of het gelukt is. SMART-criteria met een percentage en een termijn maken de evaluatie objectief."
     },
     {
      "vraag": "Noem drie mijlpalen en één randvoorwaarde voor dit plan.",
@@ -1841,7 +1889,8 @@
      "punten": [
       "Drie controleerbare mijlpalen",
       "Eén randvoorwaarde die vóór de start moet kloppen"
-     ]
+     ],
+     "toelichting": "Mijlpalen zijn momenten waarop je kunt controleren of het project op schema ligt. Ze moeten concreet zijn, zodat je zonder discussie kunt zeggen of ze gehaald zijn. Een go/no-go is extra waardevol, omdat je daar bewust beslist of je verder gaat. Een randvoorwaarde moet kloppen voordat je begint: zonder werkende koppeling of budget heeft starten geen zin, en dan loop je vast."
     }
    ],
    "versie": "A"
@@ -1861,7 +1910,8 @@
       "RPN A en D juist",
       "RPN B en C juist",
       "Juiste volgorde"
-     ]
+     ],
+     "toelichting": "Het RPN is ernst maal kans maal detectie. Je vermenigvuldigt, en telt dus niet op, omdat elk van de drie het risico groter maakt. Risico C eindigt bovenaan, omdat het op alle drie de scores redelijk hoog scoort. Risico D komt het vaakst voor, maar eindigt onderaan, omdat de gevolgen klein zijn en het direct wordt opgemerkt. Let bij het rekenen goed op de volgorde E, K, D uit de casus."
     },
     {
      "vraag": "Bepaal voor de twee hoogste risico's een beheersmaatregel en een verantwoordelijke. Geef aan welke score door je maatregel daalt.",
@@ -1870,7 +1920,8 @@
       "Maatregel voor C met verantwoordelijke",
       "Maatregel voor B met verantwoordelijke",
       "Juist aangegeven welke score daalt (kans of detectie)"
-     ]
+     ],
+     "toelichting": "Een maatregel werkt op kans of op detectie, bijna nooit op de ernst. Een verplicht veld voor dieetwensen maakt het moeilijker om ze te vergeten, en dat verlaagt de kans. Een checklist in de keuken maakt een fout zichtbaar voordat de maaltijd de deur uit gaat, en dat verlaagt de detectiescore. Bij storingen zorgt een automatische melding dat een ontbrekende bestelling snel opvalt. Een verantwoordelijke met een rol zorgt dat de maatregel ook echt wordt ingevoerd."
     },
     {
      "vraag": "Risico D komt het vaakst voor. Waarom krijgt het toch de laagste prioriteit?",
@@ -1878,7 +1929,8 @@
      "punten": [
       "Uitleg met lage ernst en goede detectie",
       "Principe: combinatie bepaalt de prioriteit"
-     ]
+     ],
+     "toelichting": "Hoe vaak een fout voorkomt, is maar één van de drie factoren. D komt vaak voor, maar een late bestelling heeft weinig gevolgen en wordt meteen gezien, omdat het systeem de deadline kent. Daardoor is het RPN laag. Een fout die zelden voorkomt maar ernstig is en lang onopgemerkt blijft, kan veel meer schade doen. Daarom bepaalt de combinatie de prioriteit en niet de frequentie alleen."
     }
    ],
    "versie": "B"
@@ -1898,7 +1950,8 @@
       "Big-bang afgewezen vanwege hoogste risico",
       "Criteria gebruikt: operationeel risico, schaduwdraaien, faseren",
       "Concreet advies met pilot, gefaseerd of schaduwdraaien"
-     ]
+     ],
+     "toelichting": "Big-bang is snel, maar als er iets misgaat, gaat het overal tegelijk mis. In een ziekenhuis met een SEH en OK kan dat direct gevolgen hebben voor patiënten, en daarom is het operationele risico te hoog. De casus geeft twee kansen: het oude systeem kan blijven werken (schaduwdraaien) en de deuren kunnen per afdeling worden omgebouwd (faseren). Een pilot op een rustige afdeling laat je fouten vinden zonder dat de kritische afdelingen er last van hebben."
     },
     {
      "vraag": "Noem vier van de zes randvoorwaarden voor een goede pilot en werk ze uit voor dit ziekenhuis.",
@@ -1907,7 +1960,8 @@
       "Twee randvoorwaarden concreet voor het ziekenhuis",
       "Nog twee randvoorwaarden concreet",
       "Evaluatie tegen doelen of datacollectie genoemd"
-     ]
+     ],
+     "toelichting": "Een pilot levert alleen iets op als je vooraf weet wat je wilt leren en hoe je dat meet. Het plan legt doel en duur vast, en het datacollectieplan zegt welke cijfers je bijhoudt en wie dat doet. Communicatie voorkomt dat medewerkers voor een dichte deur staan zonder te weten wat ze moeten doen. Training zorgt dat beveiliging problemen snel kan oplossen. De evaluatie tegen de doelen bepaalt of je naar de volgende fase gaat."
     }
    ],
    "versie": "C"
@@ -2212,7 +2266,8 @@
     "Kernvraag van Control juist",
     "Passend FM-voorbeeld"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "Een verbetering voelt na een pilot vaak klaar, maar oude gewoonten zijn sterk. Zolang het projectteam meekijkt, houden mensen zich aan de nieuwe werkwijze; als het team weg is, zakt het terug. Daarom is de kernvraag van de Control-fase wat er moet blijven bestaan als het team weg is. Het FM-voorbeeld laat zien hoe snel dat gaat: binnen een paar maanden ben je terug bij de gele briefjes."
   },
   {
    "id": "pp5-o2",
@@ -2226,7 +2281,8 @@
     "Vast ritme met wie het bekijkt",
     "Concrete actie bij afwijking"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "Een KPI wordt pas een stuurinstrument als je weet wat goed is, wanneer je ingrijpt en wie kijkt. De norm geeft het doel aan, en de ingrijpgrens voorkomt dat je reageert op elke kleine schommeling. Een vast ritme zorgt dat het meten niet stilletjes stopt. De actie bij afwijking moet de oorzaak zoeken, anders blijf je symptomen bestrijden. Zo blijft de verbetering in leven."
   },
   {
    "id": "pp5-o3",
@@ -2240,7 +2296,8 @@
     "Act juist: standaard bijwerken of nieuwe ronde",
     "Vaste evaluatiemomenten of Kaizen genoemd"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "PDCA is een cyclus, en daardoor is verbeteren nooit klaar. Na de pilot heb je gepland en gedaan, en bij borging gaat het om controleren en bijsturen. In Check kijk je met cijfers of het proces nog presteert, en daar sluit de KPI-opvolging op aan. In Act maak je de standaard beter als het goed gaat, of start je een nieuwe ronde als het tegenvalt. Vaste evaluatiemomenten zorgen dat die cyclus blijft draaien."
   },
   {
    "id": "pp5-o4",
@@ -2254,7 +2311,8 @@
     "Actief overdragen juist uitgelegd",
     "Lessons learned borgen kennis, niet het proces"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "Overdracht en lessons learned borgen twee verschillende dingen. Overdracht zorgt dat het proces blijft lopen bij de nieuwe eigenaar, en daarom moet die eigenaar het dossier ook echt begrijpen. Een dossier alleen mailen is niet genoeg: door het toe te lichten en te controleren of de eigenaar ermee verder kan, voorkom je dat het in een la verdwijnt. Lessons learned bewaren de kennis van het project, zodat een volgend team niet dezelfde fouten maakt."
   },
   {
    "id": "pp5-o5",
@@ -2268,7 +2326,8 @@
     "SOP met (een deel van) de vier onderdelen",
     "5S Standhouden en visueel management juist"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "Als iedereen het werk op een eigen manier doet, ontstaat variatie, en Lean noemt dat mura, een vorm van verspilling. Een SOP legt de afgesproken werkwijze vast, zodat er één standaard is. Een SOP alleen is niet genoeg: de laatste S van 5S, Standhouden, vraagt dat je de afspraak elke dag volgt. Visueel management helpt daarbij, omdat iedereen direct ziet of er volgens de standaard gewerkt wordt."
   },
   {
    "id": "pp5-o6",
@@ -2282,7 +2341,8 @@
     "Oorzaak passend bij Analyze",
     "Advies met keuze, implementatie én borging"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "PROA volgt de logica van DMAIC, en daardoor sluit je presentatie aan op je analyse. Probleem en Risico scheid je, omdat het probleem zegt wat er misgaat en het risico laat zien hoe groot en ernstig het is. Dat maakt de urgentie duidelijk. De oorzaak komt uit je analyse; zonder oorzaak lijkt het advies uit de lucht te vallen. Een sterk advies gaat verder dan de oplossing: het laat ook zien hoe je invoert en hoe je de verbetering vasthoudt."
   },
   {
    "id": "pp5-c1",
@@ -2299,7 +2359,8 @@
       "Twee bouwstenen concreet en passend",
       "Nog twee bouwstenen concreet",
       "KPI met norm en ingrijpgrens"
-     ]
+     ],
+     "toelichting": "Het studentteam vertrekt over vier weken, en daarom moet het borgingsplan nu staan. Elke bouwsteen pakt een andere oorzaak van terugval aan. Een werkinstructie en pictogrammen maken duidelijk hoe het moet. Een KPI met norm en ingrijpgrens laat zien wanneer de vervuiling weer stijgt. Een eigenaar met naam zorgt dat er iemand ingrijpt. Omdat de stations in het hele gebouw komen, moeten deze afspraken ook voor het hele gebouw werken."
     },
     {
      "vraag": "Het hoofd Facilitaire Zaken stelt voor: 'De conciërge let er wel op.' Beoordeel dit voorstel met de les over eigenaarschap.",
@@ -2308,7 +2369,8 @@
       "Voorstel kritisch beoordeeld",
       "Eis: naam of rol, en de persoon weet het",
       "Koppeling aan mandaat, KPI of evaluatie"
-     ]
+     ],
+     "toelichting": "'Er wel op letten' is geen afspraak, en daardoor voelt niemand zich echt verantwoordelijk. De docent noemt twee vragen: is het een echte naam of rol, en weet die persoon het al? Een conciërge die niet over de schoonmaak gaat, kan ook niet ingrijpen als het misgaat. Een proceseigenaar heeft mandaat nodig, moet hebben ingestemd en moet gekoppeld zijn aan de KPI en de evaluatiemomenten. Anders verwatert de verbetering."
     },
     {
      "vraag": "Waarom is Kotter stap 8 hier van belang, en wat kan het team in de laatste vier weken doen om die stap te ondersteunen?",
@@ -2316,7 +2378,8 @@
      "punten": [
       "Stap 8 juist uitgelegd",
       "Minstens twee concrete acties"
-     ]
+     ],
+     "toelichting": "Een verbetering blijft pas bestaan als die onderdeel wordt van de cultuur: 'zo doen wij dat hier'. Procedures alleen zijn niet genoeg, omdat gedrag ook moet veranderen. In de laatste weken kan het team daar al aan werken door gebruikers te betrekken, de resultaten van de pilot te vieren en de eigenaar nu al de KPI te laten bespreken. Zo zit de verandering al in de organisatie voordat het team vertrekt."
     }
    ],
    "versie": "A"
@@ -2335,7 +2398,8 @@
      "punten": [
       "Drie bouwstenen juist bekritiseerd",
       "Alle zes bouwstenen juist bekritiseerd"
-     ]
+     ],
+     "toelichting": "Elke bouwsteen klinkt ingevuld, maar geen ervan kun je controleren. 'Bekend bij iedereen' is niet vastgelegd, en dan doet iedereen het een beetje anders. Een KPI zonder norm of ritme zegt niet wanneer je moet ingrijpen. 'Het team' vertrekt, dus er is geen eigenaar. Evaluatie 'als het nodig is' gebeurt in de praktijk nooit. Een rapport mailen is geen overdracht, en 'het ging goed' leert een volgend team niets."
     },
     {
      "vraag": "Herschrijf de bouwstenen KPI, eigenaar en evaluatie zodat ze voldoen.",
@@ -2344,7 +2408,8 @@
       "KPI met norm, grens en ritme",
       "Eigenaar met naam of rol die het weet",
       "Vast evaluatiemoment gekoppeld aan KPI en eigenaar"
-     ]
+     ],
+     "toelichting": "De herschreven bouwstenen zijn concreet en controleerbaar. Een KPI over binnen 5 minuten een werkplek hebben meet het resultaat voor de medewerker, en norm, ingrijpgrens en ritme maken duidelijk wanneer er actie nodig is. Een eigenaar die heeft ingestemd en mandaat heeft, kan ook echt bijsturen. Een vast evaluatiemoment koppelt KPI en eigenaar, zodat de PDCA-cyclus blijft draaien."
     }
    ],
    "versie": "B"
@@ -2364,7 +2429,8 @@
       "Eigenaarschap met signaal",
       "Standaardisatie of visueel management met signaal",
       "KPI of evaluatie met signaal"
-     ]
+     ],
+     "toelichting": "De signalen in de casus wijzen elk naar een bouwsteen. Niemand weet wie het formulier beheert, dus er is geen eigenaar. De instructie is weg, dus er is geen zichtbare standaard meer. Niemand merkte dat meldingen weer per telefoon kwamen, en dat betekent dat er niet gemeten werd of dat niemand naar de cijfers keek. Een geslaagde pilot zonder borging valt terug, en dat is precies wat hier gebeurd is."
     },
     {
      "vraag": "Stel een herstelplan op met de PDCA-cyclus.",
@@ -2373,7 +2439,8 @@
       "Plan met eigenaar en KPI",
       "Do en Check concreet",
       "Act juist: standaard bijwerken of nieuwe ronde"
-     ]
+     ],
+     "toelichting": "PDCA geeft het herstel een vaste volgorde. In Plan wijs je eerst een eigenaar aan en stel je KPI's vast, omdat het ontbreken daarvan de oorzaak van de terugval was. In Do maak je de standaard weer zichtbaar. In Check meet je op een vast moment. In Act stuur je bij: werkt het, dan wordt het de standaard, en werkt het niet, dan zoek je met 5x Waarom waarom mensen weer gaan bellen."
     }
    ],
    "versie": "C"
@@ -2678,7 +2745,8 @@
     "Eigenaarschap moet vooraf opgebouwd worden",
     "Lean Back juist uitgelegd"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "Na het vertrek van het team valt de aandacht weg, en dan komen oude gewoonten terug. Eigenaarschap kun je niet op de laatste dag overdragen; de eigenaar moet het project al kennen en mee hebben gestuurd. Daarom plan je de overdracht vanaf het begin. Lean Back beschrijft die rolverdeling: het team ondersteunt en faciliteert, maar de proceseigenaar beslist en voert uit. Zo blijft het proces van de organisatie."
   },
   {
    "id": "pp6-o2",
@@ -2692,7 +2760,8 @@
     "Alle vijf onderdelen juist",
     "Concreet ingevuld voor de schoonmaakrondes"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "Het dossier moet de nieuwe eigenaar alles geven om zonder het team verder te kunnen. De werkstandaard zegt hoe de ronde gaat, het borgingsplan hoe je de kwaliteit bewaakt, en het eigenaarschap wie daarop let. De projectdocumentatie legt uit waarom de ronde zo is ingericht, zodat een volgende verandering daarop kan voortbouwen. Losse eindjes zoals nieuwe trolleys horen erbij, omdat ze anders vergeten worden."
   },
   {
    "id": "pp6-o3",
@@ -2706,7 +2775,8 @@
     "Alle zes in de juiste volgorde",
     "Pas afgerond na alle stappen"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "De stappen bouwen op elkaar voort: eerst vastleggen, dan samen afsluiten, dan toetsen of het gelukt is, en pas daarna overdragen en verankeren. Succes toetsen aan vooraf gestelde criteria maakt de afsluiting objectief. Lessons learned komen aan het eind, zodat ook de ervaringen van de overdracht meetellen. Een project dat halverwege stopt, bijvoorbeeld na de overdracht zonder verankering, loopt het risico dat de verbetering verwatert."
   },
   {
    "id": "pp6-o4",
@@ -2720,7 +2790,8 @@
     "Concrete les: wat doe je voortaan",
     "Voor wie waardevol"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "'De communicatie had beter gekund' is waar voor bijna elk project, en daarom leert niemand er iets van. Een goede les noemt wat je voortaan anders doet en waarom, zodat een ander die les kan toepassen. Het voorbeeld werkt omdat het concreet is (wekelijkse update vanaf week 1) en de reden noemt (de receptie hoorde het pas in week 5). Zo'n les helpt het volgende team, de opdrachtgever en jezelf op stage."
   },
   {
    "id": "pp6-o5",
@@ -2734,7 +2805,8 @@
     "Juiste deelnemers",
     "Minstens drie agendapunten"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "De Tollgate is het moment waarop de verantwoordelijkheid formeel overgaat, en daarom moeten de proceseigenaar en de opdrachtgever erbij zijn. Door terug te kijken en te toetsen aan de succescriteria, is voor iedereen duidelijk wat het project heeft opgeleverd. De formele overdracht maakt zichtbaar dat de eigenaar het vanaf nu draagt. Zonder zo'n moment blijft onduidelijk wie verantwoordelijk is."
   },
   {
    "id": "pp6-o6",
@@ -2748,7 +2820,8 @@
     "'Wat wil de ontvanger' genoemd",
     "Concreet slot met een vraag aan de beslisser"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "De feedback laat zien dat de presentatie niet eindigt bij een beslissing. Een adviespresentatie is bedoeld om de opdrachtgever iets te laten besluiten, en dan moet je weten wat die persoon wil en nodig heeft om ja te zeggen. Een slot met een concrete vraag, zoals akkoord op de uitrol en het aanwijzen van een eigenaar, maakt duidelijk wat je verwacht. Door die vraag te koppelen aan de opbrengst, wordt het makkelijker om ja te zeggen."
   },
   {
    "id": "pp6-c1",
@@ -2765,7 +2838,8 @@
       "Probleem benoemd: eigenaar weet het niet",
       "Concrete acties om eigenaarschap op te bouwen",
       "Gouden regel: pas overdragen als de eigenaar het kan dragen"
-     ]
+     ],
+     "toelichting": "Een eigenaar die van niets weet, kan het proces niet dragen, en dan valt het na de overdracht terug. Volgens de docent komt dit vaak voor. Eigenaarschap moet je opbouwen: uitleggen, akkoord vragen en het mandaat vastleggen. Door de teamleider nu al met de KPI's te laten werken, bijvoorbeeld in een weekstart, raakt die persoon vertrouwd met het proces. Pas dan is overdragen verantwoord."
     },
     {
      "vraag": "Beoordeel het plan om het dossier te mailen en af te sluiten. Wat stel je voor in plaats daarvan?",
@@ -2774,7 +2848,8 @@
       "Mailen afgewezen met reden",
       "Tollgate met juiste deelnemers en agenda",
       "Verankeren, archiveren of lessons learned genoemd"
-     ]
+     ],
+     "toelichting": "Een dossier mailen op de laatste dag laat de eigenaar alleen met een document dat die persoon niet kent. Een Tollgate maakt de overdracht formeel en geeft ruimte voor vragen. Door ook iemand van de monteurs uit te nodigen, sluit de overdracht aan bij de mensen die met de sleutelkast werken. Na de overdracht moet de verandering in de procedures komen en worden gearchiveerd, anders bestaat die alleen in het hoofd van het team."
     }
    ],
    "versie": "A"
@@ -2793,7 +2868,8 @@
      "punten": [
       "1 en 2 als dooddoener herkend",
       "3 en 4 als bruikbaar herkend met reden"
-     ]
+     ],
+     "toelichting": "Een bruikbare les is concreet en laat zien wat er misging en waarom. Lessen 1 en 2 zijn zo algemeen dat je er niets mee kunt. Lessen 3 en 4 noemen een oorzaak en een gevolg, en daar kun je van leren. Ze zijn nog niet af, omdat ze beschrijven wat er misging en niet wat je voortaan doet. Een goede les kijkt vooruit."
     },
     {
      "vraag": "Maak van les 3 en 4 een concrete les en geef aan of het een best practice is en voor wie die waardevol is.",
@@ -2802,7 +2878,8 @@
       "Les 3 als concrete 'voortaan'-les",
       "Les 4 als concrete 'voortaan'-les",
       "Best practice en doelgroep benoemd"
-     ]
+     ],
+     "toelichting": "Een les wordt bruikbaar als je die omzet in een handeling: wat doe je voortaan? IT vanaf het eerste ontwerp betrekken voorkomt dat de inrichting niet aansluit op de techniek. Aannames over bezetting meten voordat je ontwerpt, voorkomt dat het concept niet past bij hoe mensen echt werken. Omdat beide lessen bij elk vergelijkbaar project gelden, zijn het best practices."
     }
    ],
    "versie": "B"
@@ -2821,7 +2898,8 @@
      "punten": [
       "Minstens vier stappen concreet",
       "Alle zes stappen concreet in de juiste volgorde"
-     ]
+     ],
+     "toelichting": "Het zesstappenplan maakt de overdracht volledig. Elke stap heeft een eigen functie: het dossier legt alles vast, de Tollgate sluit samen af, het toetsen laat zien of het doel is gehaald, en de formele overdracht maakt de front office manager eigenaar. Verankeren in de werkinstructies zorgt dat nieuwe medewerkers de checklist ook leren. Lessons learned borgen de kennis voor een volgend project."
     },
     {
      "vraag": "Hoe zorgt het team dat het eigenaarschap van de front office manager al vóór de Tollgate groeit?",
@@ -2829,7 +2907,8 @@
      "punten": [
       "Concreet instrument zoals dagstart of KPI-bord",
       "Eigenaar actief betrekken vóór de overdracht"
-     ]
+     ],
+     "toelichting": "Eigenaarschap groeit door het te doen, en niet door een document te lezen. Als de front office manager de KPI al in de dagstart bespreekt en samen de checklist bijstelt, wordt het proces van die manager. Een visueel bord maakt de wachttijd voor iedereen zichtbaar. Zo is de overdracht geen verrassing meer, en voorkom je wat de docent zegt: een standaard die van niemand is, verstoft."
     }
    ],
    "versie": "C"
@@ -3134,7 +3213,8 @@
     "Minstens twee opbrengsten van Control",
     "Uitleg 'één keer goed is toeval'"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "Control gaat over het verschil tussen een goed resultaat en een goed proces. Eén keer goed kan toeval zijn: misschien was het die dag rustig. Een verbetering is pas echt als het proces elke keer hetzelfde resultaat levert. Daarom gaat Control over minder variatie en over het snel zien van afwijkingen, zodat je kunt bijsturen voordat het probleem terug is."
   },
   {
    "id": "pp7-o2",
@@ -3148,7 +3228,8 @@
     "Consistent met toetsvraag",
     "Toegankelijk met toetsvraag"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "De drie criteria toetsen elk een ander risico van een dossier. Volledig gaat over bewijs: een claim zonder bron overtuigt niet. Consistent gaat over de redenering: als de oplossing niet bij de oorzaak past, klopt het advies niet. Toegankelijk gaat over de lezer: de proceseigenaar moet het zonder het team kunnen begrijpen, omdat het team vertrekt."
   },
   {
    "id": "pp7-o3",
@@ -3162,7 +3243,8 @@
     "Minstens twee retro-vragen",
     "Alle drie de retro-vragen"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "Lessons learned en de retrospective kijken allebei terug, maar naar iets anders. Lessons learned gaan over de aanpak van het project, zoals een aanname die niet klopte, en zijn waardevol voor de organisatie en een volgend team. De retrospective gaat over hoe jullie als team samenwerkten, en is vooral waardevol voor jezelf. De drie retro-vragen gaan van behouden naar verbeteren naar meenemen."
   },
   {
    "id": "pp7-o4",
@@ -3175,7 +3257,8 @@
     "Overeenkomst: dezelfde logica",
     "Minstens twee extra stappen juist genoemd"
    ],
-   "versie": "A"
+   "versie": "A",
+   "toelichting": "Beide plannen beschrijven dezelfde weg van project naar overdracht, maar op een ander detailniveau. Het tienstappenplan voegt een voorbereiding en een eindevaluatie toe en splitst verankeren en archiveren op, zodat je minder snel een stap overslaat. Het zesstappenplan is de compacte versie voor in een dossier of presentatie. Wie de overeenkomst ziet, begrijpt dat het om dezelfde logica gaat."
   },
   {
    "id": "pp7-o5",
@@ -3189,7 +3272,8 @@
     "Cyclus begint opnieuw (Kaizen)",
     "Borgen als mens- en communicatievraagstuk met voorbeeld"
    ],
-   "versie": "B"
+   "versie": "B",
+   "toelichting": "In de PDCA-cyclus is Act het moment om de verbetering de nieuwe standaard te maken. Daarom past afronden in Act. Een SOP schrijven is alleen het vastleggen; borgen betekent dat mensen het ook echt doen. Dat vraagt uitleg, iemand die erop let en zichtbaarheid, bijvoorbeeld met een KPI op een bord. Daarna begint de cyclus opnieuw, en blijft de organisatie zelf verbeteren."
   },
   {
    "id": "pp7-o6",
@@ -3203,7 +3287,8 @@
     "Beide met concreet getal plus norm",
     "Wie bewaakt of waar zichtbaar"
    ],
-   "versie": "C"
+   "versie": "C",
+   "toelichting": "Een goede KPI past bij de afbakening van het proces en meet het resultaat dat de gebruiker merkt. Een zaal die op tijd klaarstaat en een cateringaanvraag die op tijd binnen is, meten twee belangrijke punten in het proces. Een norm met een getal maakt duidelijk wanneer het goed is. Door ook te noemen wie de KPI bewaakt en waar die zichtbaar is, laat je zien dat de KPI echt gebruikt wordt."
   },
   {
    "id": "pp7-c1",
@@ -3221,7 +3306,8 @@
       "Proceseigenaar met rol",
       "Twee KPI's met concreet getal en norm",
       "Losse eindje software genoemd"
-     ]
+     ],
+     "toelichting": "De borgingskaart moet de nieuwe eigenaar in één oogopslag laten zien waar het proces over gaat en hoe je het bewaakt. De KPI's sluiten aan op de twee oude problemen: de doorlooptijd van 8 dagen en de 25% aanvragen die opnieuw moesten. Zo zie je meteen of het oude probleem terugkomt. De ontbrekende software is een los eindje, omdat de verbetering pas volledig werkt als de koppeling met de slagboom er is."
     },
     {
      "vraag": "Waarom raadt de docent aan eerst de afbakening en de proceseigenaar in te vullen en pas daarna de KPI's?",
@@ -3229,7 +3315,8 @@
      "punten": [
       "Meetpunten moeten bij het proces passen",
       "Koppeling aan de eigenaar die de KPI's bewaakt"
-     ]
+     ],
+     "toelichting": "Een KPI meet iets binnen een proces, en dat kan pas als je weet waar dat proces begint en eindigt. Zonder afbakening kies je makkelijk een KPI die buiten je proces valt, zoals iets wat de slagboomleverancier bepaalt. De eigenaar moet de KPI's bewaken, dus het helpt als die persoon al bekend is wanneer je ze kiest. Dan passen de meetpunten bij wat de eigenaar kan beïnvloeden."
     }
    ],
    "versie": "A"
@@ -3248,7 +3335,8 @@
      "punten": [
       "Bevinding 1 en 2 juist gekoppeld",
       "Bevinding 3 en 4 juist gekoppeld met uitleg"
-     ]
+     ],
+     "toelichting": "Elk criterium stelt een andere vraag aan het dossier. Volledig vraagt of alles onderbouwd en benoemd is: een claim zonder bron en een vergeten bestelling vallen daaronder. Consistent vraagt of de redenering klopt: een looproute als oorzaak met een schoonmaakmiddel als oplossing klopt niet. Toegankelijk vraagt of de lezer het zonder hulp begrijpt: afkortingen uit de lessen kent de proceseigenaar niet."
     },
     {
      "vraag": "Maak een actielijst met per actie een eigenaar.",
@@ -3256,7 +3344,8 @@
      "punten": [
       "Vier concrete acties",
       "Per actie een eigenaar"
-     ]
+     ],
+     "toelichting": "Een actielijst werkt alleen als elke actie een eigenaar heeft, anders denkt iedereen dat een ander het doet. Elke actie lost een van de gevonden fouten op: een bron toevoegen, het advies laten aansluiten op de oorzaak, het jargon uitleggen en de losse eindjes benoemen. De bestelling van de trolleys stem je af met de proceseigenaar, omdat die het na het vertrek van het team moet regelen."
     }
    ],
    "versie": "B"
@@ -3276,7 +3365,8 @@
       "Juiste deelnemers met proceseigenaar",
       "Agenda met succescriteria en formele overdracht",
       "Passende documenten"
-     ]
+     ],
+     "toelichting": "Bij de projectafsluiting draag je de verantwoordelijkheid formeel over, en daarom moet de proceseigenaar erbij zijn, net als de mensen die met het nieuwe proces werken. De agenda toetst het resultaat aan de vooraf afgesproken succescriteria, zodat de afsluiting op feiten rust. Met het dossier, de borgingskaart en de lijst losse eindjes heeft de eigenaar alles wat nodig is. De training van vrijwilligers en het besluit over de weekenden moeten daar expliciet op staan."
     },
     {
      "vraag": "Formuleer drie lessons learned en drie retro-uitkomsten die dit team zou kunnen vastleggen. Let op het verschil.",
@@ -3285,7 +3375,8 @@
       "Drie lessons over de aanpak, concreet",
       "Drie retro-uitkomsten over de samenwerking",
       "Verschil zichtbaar"
-     ]
+     ],
+     "toelichting": "Het verschil zit in waar je naar kijkt. Lessons learned gaan over de aanpak van het project en zijn nuttig voor de organisatie en een volgend team, zoals 'betrek de vrijwilligers vanaf de eerste week'. Een retro-uitkomst gaat over hoe jullie samenwerkten, zoals te laat taken verdelen, en is vooral nuttig voor jezelf. Goede lessen en retro-uitkomsten zeggen allebei wat je voortaan doet."
     }
    ],
    "versie": "C"
@@ -3494,7 +3585,8 @@
     "Passende structurele verbetering",
     "Uitleg: momentum en draagvlak versus oorzaak aanpakken"
    ],
-   "versie": "E"
+   "versie": "E",
+   "toelichting": "Een quick win geeft snel resultaat en laat zien dat de verandering werkt, en dat helpt om draagvlak te krijgen. Maar het probleem zit dieper: er wordt te vroeg besteld en alles wordt overgetypt, en dat los je alleen met een structurele verandering op. Bestellen aan bed met koken op bestelling pakt die oorzaak aan. Daarom kies je allebei: de quick win voor nu, en de structurele verbetering voor een blijvende oplossing."
   },
   {
    "id": "ppe-o2",
@@ -3508,7 +3600,8 @@
     "Gebruiker- en procesperspectief concreet",
     "Financiële én niet-financiële waarde benoemd"
    ],
-   "versie": "E"
+   "versie": "E",
+   "toelichting": "De drie perspectieven laten zien dat de oplossing het geheel dient en geen deelbelang. Voor de opdrachtgever tellen kosten, duurzaamheid en KPI's, voor de patiënt een warme maaltijd die past, en voor het proces minder overtypen en telefoontjes. Meervoudige waarde betekent dat je naast geld ook niet-financiële waarde noemt, zoals herstel en tevredenheid. Zo voorkom je de eenzijdige focus op kosten waar de docent voor waarschuwt."
   },
   {
    "id": "ppe-o3",
@@ -3522,7 +3615,8 @@
     "Minstens drie Kotter-light-stappen concreet",
     "Alle vier de stappen concreet voor deze casus"
    ],
-   "versie": "E"
+   "versie": "E",
+   "toelichting": "De 20-60-20-verdeling bepaalt waar je je energie op richt: niet op de tegenstanders, maar op zichtbaar succes van de voorstanders, zodat de middengroep volgt. Kotter-light geeft je de stappen. De eigen cijfers maken de urgentie concreet voor de verpleging, omdat het over hun eigen tijd en verspilling gaat. Ambassadeurs uit de eigen beroepsgroep overtuigen beter dan een projectteam. Een gevierde quick win op de pilotafdeling laat de twijfelaars zien dat het werkt."
   },
   {
    "id": "ppe-o4",
@@ -3537,7 +3631,8 @@
     "Advies met keuze, implementatie én borging",
     "Afgestemd op de beslisser of visueel uitgewerkt"
    ],
-   "versie": "E"
+   "versie": "E",
+   "toelichting": "PROA geeft de raad van bestuur een logische lijn: wat is het probleem, hoe groot is het, waar komt het vandaan, en wat stel je voor. Door elk blok aan een projectfase te koppelen, laat je zien dat het advies uit je analyse volgt. De cijfers maken het risico concreet. Een advies met keuze, invoering en borging laat zien dat je verder hebt gedacht dan de oplossing alleen. Visueel en kort presenteren helpt de raad om snel te beslissen."
   },
   {
    "id": "ppe-c1",
@@ -3553,7 +3648,8 @@
      "punten": [
       "Minstens drie stappen juist ingedeeld",
       "Alle vier juist met de bijbehorende ontwerpregel"
-     ]
+     ],
+     "toelichting": "De vraag bij elke stap is of de patiënt ervoor zou betalen. Lijsten ophalen en wijzigingen doorbellen zijn transport en herstelwerk, en die voegen niets toe: NVA. De dieetcontrole is nodig voor de veiligheid, maar de patiënt merkt er niets van, en daarom minimaliseer je die tot de gevallen die echt aandacht vragen. De maaltijd bereiden is waar het om draait, en dat versterk je. De ontwerpregels volgen direct uit de indeling."
     },
     {
      "vraag": "Het team scoorde de opties eerst en bepaalde daarna de gewichten, 'zodat de beste optie er goed uitkomt'. Wat is hier mis, en hoe hoort het volgens de vijf stappen van de PUGH-matrix?",
@@ -3561,7 +3657,8 @@
      "punten": [
       "Fout benoemd: weging na scoren stuurt de uitkomst",
       "Minstens vier van de vijf stappen juist"
-     ]
+     ],
+     "toelichting": "Als je de gewichten kiest nadat je al weet welke optie hoe scoort, kun je de uitkomst sturen, en dan is de matrix geen eerlijke vergelijking meer. Daarom spreek je de gewichten vooraf af. De vijf stappen zorgen dat de keuze navolgbaar is: een groep met verschillende belangen, een vaste baseline en dezelfde schaal voor elke optie. De waarde van de matrix zit in het gesprek en de transparantie, en dat gaat verloren als de weging wordt aangepast."
     },
     {
      "vraag": "Formuleer twee SMART-succescriteria voor de pilot en noem drie randvoorwaarden voor een goede pilot op Orthopedie.",
@@ -3569,7 +3666,8 @@
      "punten": [
       "Twee criteria die echt SMART zijn",
       "Drie passende randvoorwaarden"
-     ]
+     ],
+     "toelichting": "SMART-criteria leggen vooraf vast wanneer de pilot geslaagd is, met een getal, een startwaarde en een termijn. Zonder zo'n criterium wordt de evaluatie een kwestie van gevoel. De randvoorwaarden zorgen dat de pilot ook echt iets oplevert: zonder datacollectieplan heb je geen cijfers, en zonder training en communicatie werken mensen niet volgens de nieuwe werkwijze. Evalueren voor de verdere uitrol voorkomt dat je een fout naar alle afdelingen meeneemt."
     }
    ],
    "versie": "E"
@@ -3589,7 +3687,8 @@
       "Beide RPN's juist",
       "Maatregel met verantwoordelijke",
       "Juist aangegeven welke score daalt"
-     ]
+     ],
+     "toelichting": "Het RPN is ernst maal kans maal detectie. De wifi-storing scoort hoog, omdat een bestelling die niet aankomt ernstig is en niemand het direct merkt. Een lege tablet komt vaker voor, maar valt direct op en heeft weinig gevolgen. Een automatische melding verlaagt de detectiescore, omdat de keuken het meteen ziet; betere wifi verlaagt de kans. Een OCAP met de papieren lijst als terugval zorgt dat de patiënt altijd eten krijgt."
     },
     {
      "vraag": "Vul de borgingskaart in voor deze verbetering: afbakening, proceseigenaar, twee KPI's met norm, hoe geborgd, losse eindjes.",
@@ -3599,7 +3698,8 @@
       "Twee KPI's met concreet getal en norm",
       "Borging zichtbaar gemaakt",
       "Losse eindjes benoemd"
-     ]
+     ],
+     "toelichting": "De borgingskaart vat samen hoe de verbetering blijft werken na het vertrek van het team. De KPI over retourmaaltijden meet het probleem waar het project mee begon, en de ingrijpgrens laat op tijd zien als het terugloopt. Een KPI over op tijd bestellen bewaakt de werkwijze die het resultaat oplevert. De losse eindjes, extra tablets en wifi, horen erop omdat de uitrol anders vastloopt."
     },
     {
      "vraag": "Het team stelt voor om in de laatste week het dossier te mailen en meteen afscheid te nemen. Wat adviseer je op basis van de gouden regel en de Tollgate, en welke concrete les zou dit team kunnen vastleggen?",
@@ -3608,7 +3708,8 @@
       "Mailen afgewezen met de gouden regel",
       "Tollgate met deelnemers en agenda",
       "Concrete les ('wat doe je voortaan')"
-     ]
+     ],
+     "toelichting": "De gouden regel zegt dat je pas overdraagt als de proceseigenaar het kan dragen, en een gemaild dossier zorgt daar niet voor. Een Tollgate maakt de overdracht formeel en brengt de mensen bij elkaar die het proces moeten dragen: sponsor, eigenaar, verpleging en keuken. Daar benoem je ook de losse eindjes, zodat ze niet verdwijnen. De voorbeeldles werkt omdat die concreet zegt wat een volgend team voortaan anders doet."
     }
    ],
    "versie": "E"
@@ -3818,7 +3919,8 @@
     "5S of standaardisatie juist toegepast",
     "Elk idee gekoppeld aan een knelpunt uit de casus"
    ],
-   "versie": "E2"
+   "versie": "E2",
+   "toelichting": "Elk Lean-principe hoort bij een pijler en pakt een ander soort knelpunt aan. De enige baliemedewerker in de dagdienst is een bottleneck die de snelheid bepaalt. Verkeerde maten en werken zonder veiligheidsschoenen zijn kwaliteitsproblemen, en een Poka-Yoke of 'stop de lijn' voorkomt die bij de bron. Gelabelde vakken per maat (5S) voorkomen zoeken en verkeerd pakken. Een idee is pas sterk als je kunt aanwijzen welk knelpunt uit de casus het oplost."
   },
   {
    "id": "ppe2-o2",
@@ -3833,7 +3935,8 @@
     "Risico vergeleken",
     "Context vergeleken en keuze onderbouwd"
    ],
-   "versie": "E2"
+   "versie": "E2",
+   "toelichting": "De vier dimensies laten zien dat de optie met de meeste impact niet automatisch de beste is. Kluizen lossen ook het probleem van de avond- en nachtdienst op, maar vragen meer geld en techniek en hebben meer risico: als de koppeling faalt, staan medewerkers zonder schoenen. De KKT-driehoek maakt die afweging zichtbaar. De context weegt mee, omdat een koppeling met een HR-systeem dat uitzendkrachten laat registreert niet werkt. Daarom is eerst de eenvoudige optie goed te verdedigen."
   },
   {
    "id": "ppe2-o3",
@@ -3847,7 +3950,8 @@
     "Vier juist geplaatst met aanpak",
     "Twee keer weerstand met oorzaak en passende aanpak"
    ],
-   "versie": "E2"
+   "versie": "E2",
+   "toelichting": "Het rimpeleffect laat zien dat een verandering verder reikt dan de mensen die er direct mee werken: het uitzendbureau moet maten doorgeven, en HR en de leverancier merken het ook. De grid bepaalt hoeveel aandacht elke groep krijgt. Weerstand pak je aan via de oorzaak: een baliemedewerker die het als kritiek ervaart, heeft waardering nodig, en ploegleiders die extra werk krijgen, hebben tijd nodig. Een algemene aanpak raakt geen van beide oorzaken."
   },
   {
    "id": "ppe2-o4",
@@ -3861,7 +3965,8 @@
     "Denken vanuit de beslisser met veiligheid én kosten",
     "Twee passende visualisaties"
    ],
-   "versie": "E2"
+   "versie": "E2",
+   "toelichting": "Een presentatie overtuigt als die aansluit op wat de ontvanger belangrijk vindt en moet beslissen. Deze directeur let op veiligheid en kosten, dus je laat zien dat 1 op de 6 nu zonder veiligheidsschoenen begint en wat de oplossing kost en oplevert. Visualiseren werkt beter dan vertellen: een swimlane laat de knelpunten in één beeld zien, en een grafiek voor en na de pilot laat het effect zien. Een adviespresentatie is geen rapport, dus houd elke slide bij één boodschap."
   },
   {
    "id": "ppe2-c1",
@@ -3878,7 +3983,8 @@
       "Beide totalen juist (15 en 14)",
       "Advies met argument buiten de score",
       "Uitleg 'hulpmiddel, geen rechter'"
-     ]
+     ],
+     "toelichting": "Je vermenigvuldigt elke score met het gewicht en telt per optie op. Omdat het verschil maar één punt is, zijn de opties in de praktijk ongeveer gelijk. Dan mag je andere argumenten laten meewegen, zoals het risico en de aansluiting op de context, zolang je dat uitlegt. Daarom is de matrix een hulpmiddel en geen rechter: die maakt de afweging zichtbaar, maar het team neemt de beslissing."
     },
     {
      "vraag": "Het team werkt optie B uit en vindt drie risico's: (1) het uitzendbureau geeft een verkeerde maat door (E3, K4, D4); (2) een startpakket ligt niet klaar bij de start van de nachtdienst (E5, K2, D2); (3) een uitgifte wordt niet geregistreerd (E2, K3, D5). Bereken de RPN's, kies het toprisico en bedenk een maatregel met een verantwoordelijke. Welke score daalt?",
@@ -3888,7 +3994,8 @@
       "Toprisico juist gekozen met uitleg",
       "Maatregel met verantwoordelijke",
       "Juist aangegeven welke score daalt"
-     ]
+     ],
+     "toelichting": "Het toprisico is de verkeerde maat, ook al heeft het ontbrekende startpakket de hoogste ernst. Het RPN combineert ernst, kans en detectie, en een verkeerde maat komt vaak voor en wordt laat opgemerkt. Een maattabel verlaagt de kans, en de schoenen laten passen bij de start verlaagt de detectiescore, omdat je de fout ziet voordat iemand gaat werken. De ernst blijft hetzelfde, want een verkeerde schoen blijft even vervelend."
     },
     {
      "vraag": "Kies en onderbouw een invoeringsstrategie met de drie leidende criteria uit de notities, en noem drie randvoorwaarden voor een goede pilot.",
@@ -3897,7 +4004,8 @@
       "Drie criteria toegepast op de casus",
       "Strategie passend gekozen en onderbouwd",
       "Drie randvoorwaarden voor de pilot"
-     ]
+     ],
+     "toelichting": "De drie criteria wijzen hier naar een pilot met gefaseerde uitrol. Het operationele risico is groot, omdat de ploegen veilig moeten blijven werken. Het papieren formulier kan tijdelijk blijven, zodat je kunt schaduwdraaien, en per ploeg faseren is goed te doen. De nachtploeg is een logische start, omdat het probleem daar het grootst is en het effect dus het best te zien is. Big-bang heeft het hoogste risico."
     }
    ],
    "versie": "E2"
@@ -3918,7 +4026,8 @@
       "KPI met norm, ingrijpgrens en ritme",
       "Eigenaar met naam of rol",
       "Evaluatie (PDCA), overdracht en lessons learned concreet"
-     ]
+     ],
+     "toelichting": "De zes bouwstenen pakken elk een andere oorzaak van terugval aan. De SOP en gelabelde vakken maken de werkwijze duidelijk, de KPI met ingrijpgrens laat op tijd zien als het misgaat, en een eigenaar met naam zorgt dat er iemand ingrijpt. Een vast ritme koppelt de KPI aan de PDCA-cyclus. Omdat de uitrol naar de andere ploegen nog moet gebeuren, is een goede overdracht extra belangrijk: de eigenaar moet het zonder het team kunnen afmaken."
     },
     {
      "vraag": "Het team wil op de laatste dag het dossier mailen en daarna vertrekken. Wat adviseer je? Noem wat er in het overdrachtsdossier hoort, wie je uitnodigt voor de Tollgate en welke losse eindjes je expliciet benoemt.",
@@ -3928,7 +4037,8 @@
       "Inhoud van het dossier",
       "Tollgate met deelnemers en agenda",
       "Beide losse eindjes benoemd"
-     ]
+     ],
+     "toelichting": "Mailen en vertrekken laat de eigenaar alleen met een dossier dat die persoon misschien niet begrijpt. De gouden regel vraagt dat je pas overdraagt als de eigenaar het kan dragen. Een Tollgate met sponsor, eigenaar, balie en ploegleiders maakt de overdracht formeel en zorgt dat iedereen hetzelfde weet. De twee losse eindjes, het contract met het uitzendbureau en de avondopenstelling, moeten expliciet genoemd worden, omdat de werkwijze anders niet volledig kan blijven werken."
     },
     {
      "vraag": "Formuleer twee lessons learned en één retro-uitkomst die het team kan vastleggen. Leg het verschil uit en zeg voor wie de lessen waardevol zijn.",
@@ -3937,7 +4047,8 @@
       "Twee concrete lessons over de aanpak",
       "Eén retro-uitkomst over de samenwerking",
       "Verschil en voor wie waardevol"
-     ]
+     ],
+     "toelichting": "Lessons learned gaan over de aanpak van het project en helpen een volgend team en de organisatie. Een retro-uitkomst gaat over hoe het team samenwerkte en helpt vooral jezelf. Een goede les zegt wat je voortaan doet en waarom, zoals het uitzendbureau vanaf week 1 betrekken omdat daar de maatinformatie begint. Een aanname die niet klopte, is ook een waardevolle les. Een les die je bij elk vergelijkbaar project kunt gebruiken, is een kandidaat voor best practice."
     }
    ],
    "versie": "E2"

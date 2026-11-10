@@ -205,7 +205,8 @@
     "Benoemt dat quick wins vaak alleen een symptoom oplossen",
     "Legt uit dat een structurele verbetering de oorzaak aanpakt en daarom in het advies hoort",
     "Concreet voorbeeld van een quick win én een structurele verbetering"
-   ]
+   ],
+   "toelichting": "De Impact/Effort-matrix helpt kiezen, maar de kwadranten zeggen niets over oorzaak of symptoom. Een quick win is snel zichtbaar en geeft draagvlak, en daarom is die nuttig om mee te beginnen. Een structureel probleem los je alleen op met een maatregel die de oorzaak raakt, en die kost vaak meer moeite. Een advies met alleen quick wins laat de oorzaak liggen, zodat het probleem terugkomt. Door beide te combineren en te faseren, laat je zien dat je zowel snel resultaat als blijvende verbetering levert."
   },
   {
    "id": "pp-w1-11",
@@ -219,7 +220,8 @@
     "Noemt minstens twee andere toegevoegde waarden die onder druk komen, met uitleg",
     "Koppelt aan de toets aan missie, visie en strategie",
     "Geeft een alternatief of afweging tussen financiële en niet-financiële waarde"
-   ]
+   ],
+   "toelichting": "De 11 facilitaire toegevoegde waarden laten zien dat facility management meer oplevert dan lage kosten. Een voorstel dat alleen op kosten let, ziet de schade op andere waarden over het hoofd, zoals hygiëne, tevredenheid en imago. De docent waarschuwt daarom voor een eenzijdige focus op kostenreductie. Een goed advies weegt financiële en niet-financiële waarde tegen elkaar af en toetst aan de richting van de organisatie. Differentiëren naar gebruik laat zien dat je kosten kunt besparen zonder overal kwaliteit in te leveren."
   },
   {
    "id": "pp-w2-01",
@@ -368,7 +370,8 @@
     "Perspectief gebruiker: klantwaarde en beleving, redenerend vanuit de melder",
     "Perspectief proces: minder verspilling, kortere doorlooptijd of betere flow",
     "Toegepast op de casus met concrete elementen (formulier, FIFO, akkoordstap)"
-   ]
+   ],
+   "toelichting": "Een oplossing die alleen voor één partij beter is, krijgt weinig draagvlak. Daarom onderbouw je de waarde vanuit drie kanten: de opdrachtgever (wat levert het de organisatie op), de gebruiker (wat merkt de melder ervan) en het proces (waar verdwijnt verspilling). Voor de opdrachtgever werkt het het best als je diens taal spreekt, met KPI's en kosten. Door de concrete onderdelen van de oplossing te noemen, zoals het formulier en FIFO, laat je zien waar de winst vandaan komt."
   },
   {
    "id": "pp-w2-11",
@@ -382,7 +385,8 @@
     "Criteria en weging opnieuw bespreken, met het risico van achteraf sturen benoemd",
     "Gesprek en transparante onderbouwing zijn de echte waarde van de matrix",
     "Concrete vervolgstap (keuze onderbouwen, pilot of extra criterium)"
-   ]
+   ],
+   "toelichting": "De PUGH-matrix structureert een keuze, maar de uitkomst hangt af van welke criteria en wegingen je kiest. Bij een verschil van één punt zijn de opties in de praktijk gelijk, en dan is een sterk gevoel van het team een signaal dat er iets mist. De echte waarde van de matrix is het gesprek over criteria. Tegelijk moet je eerlijk blijven: de weging aanpassen tot je favoriet wint, is achteraf sturen. Door vast te leggen waarom je iets wijzigt, blijft de keuze controleerbaar."
   },
   {
    "id": "pp-w3-01",
@@ -531,7 +535,8 @@
     "Balie: ruimte geven, met concrete actie",
     "Technische dienst: meer werk als oorzaak",
     "Technische dienst: tijd vrijmaken, met concrete actie"
-   ]
+   ],
+   "toelichting": "Weerstand heeft een oorzaak, en de aanpak moet bij die oorzaak passen. De baliemedewerkers zijn bang hun rol en het contact met mensen kwijt te raken, en dat is verlies aan controle. Dan helpt het om ze invloed te geven op hoe het nieuwe systeem wordt ingericht. De technische dienst ziet vooral extra werk, en dan helpt het alleen om echt tijd vrij te maken en de registratie zo makkelijk mogelijk te maken. Een algemene oplossing zoals 'goed communiceren' raakt geen van beide oorzaken."
   },
   {
    "id": "pp-w3-11",
@@ -545,7 +550,8 @@
     "Minstens één R en logische C en I",
     "Toelichting met het verschil tussen Consulted en Informed",
     "De twee controles benoemd: één A, minstens één R"
-   ]
+   ],
+   "toelichting": "Een RACI maakt per activiteit duidelijk wie wat doet. Er is precies één A, omdat eindverantwoordelijkheid bij één persoon moet liggen; bij twee A's weet niemand wie beslist. Er moet minstens één R zijn, anders gebeurt het werk niet. Het verschil tussen C en I zit in de timing: Consulted wordt vooraf om advies gevraagd, Informed hoort achteraf wat er besloten is. ICT is C omdat de training afhangt van hoe het systeem werkt."
   },
   {
    "id": "pp-w4-01",
@@ -694,7 +700,8 @@
     "Nog twee randvoorwaarden juist en concreet uitgewerkt",
     "Evaluatie tegen vooraf vastgestelde doelen of succescriteria genoemd",
     "Toepassing op de situatie (verdieping, meldportaal) in plaats van alleen opsomming"
-   ]
+   ],
+   "toelichting": "Een pilot is een gecontroleerde test en geen 'gewoon proberen'. Zonder doelen weet je achteraf niet of de pilot geslaagd is, en zonder datacollectieplan heb je geen bewijs. Communicatie en training zijn nodig omdat een pilot ook mislukt als de mensen niet weten wat er verandert. De evaluatie vergelijkt de resultaten met de vooraf gestelde doelen. Door alles concreet te maken voor de verdieping en het portaal, laat je zien dat je het kunt toepassen."
   },
   {
    "id": "pp-w4-11",
@@ -708,7 +715,8 @@
     "Minstens één criterium uit de les gebruikt (operationeel risico, schaduwdraaien, faseren)",
     "Big-bang afgeraden vanwege het hoogste risico",
     "Afstemming met de operationele organisatie of accorderen door managers genoemd"
-   ]
+   ],
+   "toelichting": "De invoeringsstrategie hangt vooral af van hoeveel risico de organisatie kan dragen. Bij storingen aan de OK kan een fout direct gevolgen hebben voor patiënten, en daarom valt big-bang af: als het misgaat, gaat het overal tegelijk mis. Een pilot op een minder kritische afdeling laat je fouten vinden zonder groot risico. Schaduwdraaien met de telefoonlijn als vangnet zorgt dat kritische meldingen altijd aankomen. Omdat de operationele organisatie de gevolgen draagt, beslist die mee."
   },
   {
    "id": "pp-w5-01",
@@ -827,7 +835,8 @@
     "Twee andere bouwstenen juist en concreet voor deze casus",
     "KPI met norm én ingrijpgrens of meetritme",
     "Eigenaar met naam of rol (niet 'iemand')"
-   ]
+   ],
+   "toelichting": "Na een geslaagde pilot is terugvallen het grootste risico: zonder borging gaan mensen terug naar de oude gewoontes, zoals de gele briefjes. Elke bouwsteen pakt een andere oorzaak van terugval aan. Een SOP maakt de nieuwe werkwijze duidelijk, een KPI met ingrijpgrens laat op tijd zien dat het misgaat, en een eigenaar zorgt dat iemand ook echt ingrijpt. Een eigenaar zonder naam of rol werkt niet, omdat dan niemand zich verantwoordelijk voelt."
   },
   {
    "id": "pr-w5-01",
@@ -900,7 +909,8 @@
     "Minstens drie vragen over de ontvanger juist genoemd",
     "Denken vanuit de beslisser: wat is nodig om ja te zeggen",
     "Concrete gevolgen voor inhoud of opbouw van de presentatie"
-   ]
+   ],
+   "toelichting": "Een presentatie overtuigt pas als die aansluit op wat de ontvanger moet beslissen. Het hoofd Facilitair Bedrijf beslist over budget, dus die wil weten wat het probleem kost, wat de oplossing oplevert en welke risico's er zijn. Uitleg over dingen die de ontvanger al weet, kost tijd en aandacht. Door de vraag 'wat is nodig om ja te zeggen?' centraal te zetten, bouw je de presentatie op rond de beslissing. Een duidelijke vraag aan het eind maakt die beslissing ook makkelijk."
   },
   {
    "id": "pp-w6-01",
@@ -1004,7 +1014,8 @@
     "Alle vijf onderdelen juist",
     "Toegepast op de vergaderzalen",
     "Vuistregel: iemand moet zonder jullie verder kunnen"
-   ]
+   ],
+   "toelichting": "Het overdrachtsdossier moet ervoor zorgen dat de verbetering blijft bestaan als het projectteam weg is. De vijf onderdelen dekken samen alles wat de nieuwe eigenaar nodig heeft: hoe het werk gaat (werkstandaard), hoe je het bewaakt (borgingsplan), wie verantwoordelijk is (eigenaarschap), waarom het zo is ingericht (documentatie) en wat nog moet gebeuren (losse eindjes). De vuistregel maakt de toets eenvoudig: kan iemand er zonder jullie mee verder?"
   },
   {
    "id": "pr-w6-01",
@@ -1047,7 +1058,8 @@
     "Concrete aanpassing van de opbouw (advies eerder, PROA)",
     "Keuze onderbouwen met PUGH of de drie perspectieven",
     "Feedback vastleggen in het logboek als feedbackbron, met wat je ermee deed"
-   ]
+   ],
+   "toelichting": "De feedback geeft twee concrete problemen: het advies komt te laat en de keuze is niet onderbouwd. Met PROA en minder tijd voor de analyse komt het advies eerder. De onderbouwing los je op met de PUGH-matrix en de drie perspectieven, omdat die laten zien waarom deze oplossing beter is dan de andere. Voor het portfolio telt niet alleen dat je feedback hebt gekregen, maar vooral wat je ermee hebt gedaan. Daarom schrijf je zowel de feedback als je aanpassing op."
   },
   {
    "id": "pp-w7-01",
@@ -1151,7 +1163,8 @@
     "Proceseigenaar met rol",
     "Twee KPI's met concrete norm",
     "Borging (SOP, visueel bord) en een los eindje genoemd"
-   ]
+   ],
+   "toelichting": "De borgingskaart vat op één pagina samen hoe de verbetering blijft werken. De afbakening met begin en eind laat zien over welk proces het gaat, en leverancier en klant maken duidelijk wie het proces start en wie het resultaat ontvangt. Een proceseigenaar uit de organisatie is nodig omdat het projectteam vertrekt. KPI's zonder norm zeggen niets, want je weet dan niet wanneer het goed of fout gaat. Het losse eindje laat eerlijk zien wat nog geregeld moet worden."
   },
   {
    "id": "pp-w1-x01",
@@ -1285,7 +1298,8 @@
     "Minstens drie van de 11 toegevoegde waarden concreet",
     "Klantwaarde of 'technologie is een middel' genoemd",
     "Waarschuwing voor eenzijdige kostenfocus"
-   ]
+   ],
+   "toelichting": "Een idee dat niet past bij de richting van de organisatie krijgt weinig steun, hoe goed het verder ook is. Daarom toets je eerst aan missie, visie en strategie. Daarna laten de toegevoegde waarden zien wat het idee oplevert, en ook wat het kan kosten, zoals weerstand. Een app is een middel: de vraag is wat de medewerker nodig heeft, en of de app daarbij helpt. Wie alleen op minder vierkante meters let, mist de andere waarden en de risico's."
   },
   {
    "id": "pp-w2-x01",
@@ -1434,7 +1448,8 @@
     "Ontwerpregels toegepast: VA versterken, BNVA minimaliseren, NVA elimineren",
     "Samenhangende future state",
     "Winst benoemd als minder wachten of overdragen"
-   ]
+   ],
+   "toelichting": "Je kijkt naar elke stap vanuit de klant: betaalt de medewerker hier eigenlijk voor? Alleen het activeren en leveren van de kaart levert iets op dat de medewerker wil, en dat is VA. De controle op parkeerrecht is nodig voor de organisatie maar niet voor de klant, en daarom BNVA: minimaliseren. Printen, wachten en overtypen voegen niets toe en zijn NVA: weg ermee. De future state werkt omdat die de overdrachten en het wachten weghaalt, en daar zat de vertraging."
   },
   {
    "id": "pp-w3-x01",
@@ -1583,7 +1598,8 @@
     "Twee keer oorzaak van weerstand gekoppeld aan de passende aanpak",
     "Twee concrete Kotter-light-acties",
     "Rimpeleffect of 20-60-20 meegenomen"
-   ]
+   ],
+   "toelichting": "De belang-invloed-grid bepaalt hoeveel aandacht elke groep krijgt: wie veel invloed en belang heeft, betrek je nauw, en wie weinig van beide heeft, houd je in de gaten. Het rimpeleffect laat zien dat ook een groep met weinig belang, zoals de schoonmaak, toch gevolgen merkt. Weerstand pak je aan via de oorzaak. Kotter-light geeft de verandering energie: eigen cijfers maken de urgentie zichtbaar, en ambassadeurs uit de eigen groep overtuigen beter dan een projectteam van buiten."
   },
   {
    "id": "pp-w4-x01",
@@ -1732,7 +1748,8 @@
     "Juiste scores en RPN-berekening (product)",
     "Toprisico gekozen op RPN, niet op kans alleen",
     "Maatregel met verantwoordelijke en herscoren"
-   ]
+   ],
+   "toelichting": "Het RPN is het product van ernst, kans en detectie, en daarom kan een risico dat zelden voorkomt toch het grootste zijn. De kapotte scanner komt niet vaak voor, maar heeft grote gevolgen en wordt slecht opgemerkt. Wie alleen naar kans kijkt, pakt het verkeerde risico eerst aan. De maatregel richt zich op detectie, omdat je de ernst niet kunt verlagen maar het probleem wel sneller kunt zien. Opnieuw scoren laat zien of de maatregel werkt."
   },
   {
    "id": "pp-w5-x01",
@@ -1851,7 +1868,8 @@
     "Norm én ingrijpgrens",
     "Vast ritme en een eigenaar met naam of rol",
     "Actie bij afwijking via Check en Act"
-   ]
+   ],
+   "toelichting": "Een KPI borgt pas iets als iemand ernaar kijkt en weet wat te doen bij afwijking. De norm zegt wat goed is, en de ingrijpgrens zegt wanneer je actie onderneemt, zodat je niet reageert op elke kleine schommeling. Een vast ritme zorgt dat het meten niet wegzakt. De koppeling met Check en Act uit de PDCA-cyclus laat zien dat een afwijking leidt tot oorzaak zoeken en bijsturen, en niet alleen tot een cijfer op een bord."
   },
   {
    "id": "pr-w5-x01",
@@ -2015,7 +2033,8 @@
     "Minstens drie agendapunten van de Tollgate",
     "Toetsen aan succescriteria",
     "Gouden regel: pas overdragen als de eigenaar het kan dragen"
-   ]
+   ],
+   "toelichting": "De Tollgate is het formele moment van overdracht, en daarom moet de proceseigenaar erbij zijn. De agenda kijkt terug (wat ging goed en fout) en toetst aan de succescriteria die je vooraf hebt afgesproken, zodat je objectief kunt zeggen of het project is geslaagd. Overdragen kan pas als de eigenaar mandaat heeft en het dossier kent. Wie te vroeg overdraagt, laat een eigenaar achter die de verbetering niet kan volhouden, en dan valt het proces terug."
   },
   {
    "id": "pr-w6-x01",
@@ -2164,7 +2183,8 @@
     "(b) als onvolledig herkend met passende oplossing",
     "(c) proceseigenaar uit de organisatie met mandaat",
     "Actielijst of losse eindjes genoemd"
-   ]
+   ],
+   "toelichting": "Elk punt raakt een ander kwaliteitscriterium van het einddossier. Bij (a) lost de oplossing een ander probleem op dan de analyse liet zien, en dan klopt de redenering niet meer. Bij (b) staat er een claim zonder bewijs, en dat maakt het dossier onvolledig en minder overtuigend. Bij (c) is het projectteam als eigenaar genoemd, terwijl dat team vertrekt; dan heeft het proces na de overdracht geen eigenaar. Door dit te herkennen laat je zien dat je je eigen werk kritisch kunt toetsen."
   }
  ]
 }

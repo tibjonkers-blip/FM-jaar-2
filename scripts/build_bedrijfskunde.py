@@ -54,6 +54,16 @@ __APP__
 def read(name):
     return open(os.path.join(SRC, name), encoding="utf-8").read()
 
+def toelichting(slug):
+    """Uitleg per open vraag uit scripts/toelichting/<slug>.py (dict T), als JS-constante TOELICHTING."""
+    import importlib.util
+    f = os.path.join(HERE, "toelichting", slug + ".py")
+    if not os.path.exists(f):
+        return ""
+    spec = importlib.util.spec_from_file_location("tl_" + slug, f)
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    return "\nconst TOELICHTING = " + json.dumps(m.T, ensure_ascii=False) + ";\n"
+
 def build():
     css, markup, app = read("style.css"), read("markup.html"), read("app.js")
     for t in TOETSEN:
@@ -63,7 +73,7 @@ def build():
                    .replace("__HINT__", t["hint"]).replace("__FICTIE__", t["fictie"]))
         a = app.replace("__KEY__", t["key"]).replace("__HINT__", t["hint"])
         html = (PAGE.replace("__TITLE__", t["titel"]).replace("__LEAD__", t["lead"]).replace("__FONTS__", FONTS)
-                    .replace("__CSS__", css).replace("__MARKUP__", m).replace("__DATA__", read(t["data"])).replace("__APP__", a))
+                    .replace("__CSS__", css).replace("__MARKUP__", m).replace("__DATA__", read(t["data"]) + toelichting(t["slug"])).replace("__APP__", a))
         assert "__" not in html.replace("__proto__", ""), [l for l in html.splitlines() if "__" in l][:3]
         out = os.path.join(SITE, t["slug"])
         os.makedirs(out, exist_ok=True)
