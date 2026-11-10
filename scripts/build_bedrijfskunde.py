@@ -5,6 +5,7 @@ met TOPICS, CASES en QUESTIONS. Uitvoer: site/bedrijfskunde/<slug>/index.html.
 Nakijken door Claude werkt alleen als de pagina in Claude draait; op de site is zelf nakijken beschikbaar.
 """
 import os, json
+import sitenav
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "bedrijfskunde")
@@ -35,9 +36,11 @@ PAGE = """<!doctype html>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="__FONTS__">
 <style>
-:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{color-scheme:light;padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--sb-h,0px) + 12px)}
 body{margin:0}img{max-width:100%}
 __CSS__
+__NAV_CSS__
 </style>
 </head>
 <body>
@@ -47,6 +50,7 @@ __DATA__
 
 __APP__
 </script>
+__BAR_JS__
 </body>
 </html>
 """
@@ -67,13 +71,13 @@ def toelichting(slug):
 def build():
     css, markup, app = read("style.css"), read("markup.html"), read("app.js")
     for t in TOETSEN:
-        others = [o for o in TOETSEN if o is not t]
-        other = " ".join(f'Ook beschikbaar: <a href="../{o["slug"]}/">{o["titel"]}</a>.' for o in others)
-        m = (markup.replace("__H1__", t["titel"]).replace("__LEAD__", t["lead"]).replace("__OTHER__", other)
+        switch = "".join(f'<a href="../{o["slug"]}/"' + (' aria-current="page"' if o is t else "") + f'>{o["titel"].replace("Proeftoets ", "")}</a>' for o in TOETSEN)
+        m = (markup.replace("__H1__", t["titel"]).replace("__LEAD__", t["lead"]).replace("__SWITCH__", switch)
+                   .replace("__SITEBAR__", sitenav.bar("../../", "praktijkproject", "casus")).replace("__TABS__", sitenav.tabs("../../", "praktijkproject", "casus"))
                    .replace("__HINT__", t["hint"]).replace("__FICTIE__", t["fictie"]))
         a = app.replace("__KEY__", t["key"]).replace("__HINT__", t["hint"])
         html = (PAGE.replace("__TITLE__", t["titel"]).replace("__LEAD__", t["lead"]).replace("__FONTS__", FONTS)
-                    .replace("__CSS__", css).replace("__MARKUP__", m).replace("__DATA__", read(t["data"]) + toelichting(t["slug"])).replace("__APP__", a))
+                    .replace("__CSS__", css).replace("__NAV_CSS__", sitenav.TABS_CSS + sitenav.bar_css(1180)).replace("__BAR_JS__", sitenav.BAR_JS).replace("__MARKUP__", m).replace("__DATA__", read(t["data"]) + toelichting(t["slug"])).replace("__APP__", a))
         assert "__" not in html.replace("__proto__", ""), [l for l in html.splitlines() if "__" in l][:3]
         out = os.path.join(SITE, t["slug"])
         os.makedirs(out, exist_ok=True)

@@ -1,5 +1,6 @@
 """Bouwt de startpagina site/index.html en site/favicon.svg, met de aantallen uit de gebouwde vakpagina's."""
 import json, os
+import sitenav
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
@@ -129,11 +130,12 @@ main.in { display: flex; flex-direction: column; gap: 36px; padding-block: 28px 
 .how .nr { grid-row: span 2; width: 34px; height: 34px; border-radius: 50%; background: var(--lobby); color: #fff; display: grid; place-items: center; font-weight: 800; font-stretch: 116%; }
 .how b { font-size: 1.05rem; font-stretch: 108%; }
 .how p { font-size: 0.93rem; color: var(--ink-soft); }
+__BAR_CSS__
 footer { font-size: 0.86rem; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 16px; display: flex; flex-direction: column; gap: 4px; }
 </style>
 </head>
 <body>
-<header class="lobby">
+__SITEBAR__<header class="lobby">
   <div class="in">
     <div class="intro">
       <span class="where">Facility Management, jaar 2</span>
@@ -144,7 +146,7 @@ footer { font-size: 0.86rem; color: var(--ink-soft); border-top: 1px solid var(-
   </div>
 </header>
 <div class="stripe" aria-hidden="true"><i></i><i></i><i></i></div>
-<main class="in">
+<main class="in" id="main">
   <div class="grid">
     <section class="vak teal" aria-labelledby="v1">
       <div class="vak-head"><div class="vak-top"><span class="plate" aria-hidden="true">IR</span><span class="exam">Schriftelijk casustentamen</span></div><h2 id="v1">Inkoop en recht</h2><p>In ANS, inkoop en recht elk 50%. De helft van de inkooppunten is voor toepassen.</p></div>
@@ -206,6 +208,7 @@ footer { font-size: 0.86rem; color: var(--ink-soft); border-top: 1px solid var(-
   });
 })();
 </script>
+__BAR_JS__
 </body>
 </html>
 """
@@ -236,6 +239,7 @@ def build():
         f'\n        <a class="door" href="bedrijfskunde/{slug}/">{ICONS["C"]}<b>{c["titel"]}</b><small>{c["open"]} casusvragen en {c["mc"]} meerkeuzevragen recht</small><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span></a>'
         for slug, c in bk.items())
     vals = dict(
+        SITEBAR=sitenav.bar("", None, "home"), BAR_CSS=sitenav.bar_css(1080), BAR_JS=sitenav.BAR_JS,
         PROG=json.dumps(prog), DOORS_PP=doors_pp, IR_EIND=eind_txt(ir["eind"]), HRM_EIND=eind_txt(hrm["eind"]),
         BK=f'<p class="subhead">Casustoetsen bedrijfskunde, periode 1</p>\n      <nav class="doors">{bk_doors}\n      </nav>',
         IR_VRAGEN=ir["vragen"], IR_TOETSEN=ir["toetsen"], HRM_VRAGEN=hrm["vragen"], HRM_TOETSEN=hrm["toetsen"],

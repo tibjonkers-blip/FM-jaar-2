@@ -5,7 +5,8 @@ Het tabblad "Logboek portfolio" van Praktijkproject staat bewust niet op de site
 
 Gebruik: python3 scripts/build_samenvattingen.py
 """
-import html, os, re
+import html, importlib.util, json, os, re
+import sitenav
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "scripts", "samenvattingen")
@@ -15,19 +16,22 @@ VAKKEN = {
     "inkoop-recht": dict(
         heading="Inkoop en recht", oefen="../../inkoop-recht/",
         doc="https://claude.ai/artifact/VHXx8mhoAqU8B2DEmeEpsg",
-        accent=("#0b6f82", "#dff0f3", "#63cfe2", "#123447"), code="IR", band=("#0b6f82", "#0d5e6e"),
+        accent=("#0b6f82", "#dff0f3", "#63cfe2", "#123447"), code="IR", band=("#0b6f82", "#0d5e6e"), figuren="inkoop_recht",
+        chart=(("#0e86a0", "#b8690a", "#4a4f9c", "#1b7a46"), ("#1f9bb5", "#c08a1e", "#7a82e8", "#2fa870")),
         line="Per week de lesstof van Inkoop en van Recht, met de modellen, beginselen en arresten die je in het casustentamen moet kunnen toepassen.",
         quiz=("https://claude.ai/artifact/EiKpj8QHxrp7C9eTyErJyQ", "../../inkoop-recht/")),
     "hrm": dict(
         heading="HRM voor de FM-professional", oefen="../../hrm/",
         doc="https://claude.ai/artifact/F5i831ZTxpUePeyVdzXz8C",
-        accent=("#9a2d6c", "#f6e4ef", "#f095c9", "#3a1a3a"), code="HRM", band=("#8f2a65", "#7a2457"),
+        accent=("#9a2d6c", "#f6e4ef", "#f095c9", "#3a1a3a"), code="HRM", band=("#8f2a65", "#7a2457"), figuren="hrm",
+        chart=(("#9a2d6c", "#b8690a", "#4a4f9c", "#1b7a46"), ("#cf5aa2", "#c08a1e", "#7a82e8", "#2fa870")),
         line="Per week het theoriecollege HRM, het arbeidsrechtcollege en de workshop gespreksvoering, zodat je alles hardop kunt uitleggen op het mondeling.",
         quiz=("https://claude.ai/artifact/Y4EBH9n2uzMQ3i5KkDeVQY", "../../hrm/")),
     "praktijkproject": dict(
         heading="Praktijkproject Business Management", oefen="../../praktijkproject/",
         doc="https://claude.ai/artifact/MNHrxykYerRjrc76rQu4Qg",
-        accent=("#9a520a", "#fbecd8", "#f5b65e", "#3a2b1c"), code="BM", band=("#9a520a", "#8a4a0a"),
+        accent=("#9a520a", "#fbecd8", "#f5b65e", "#3a2b1c"), code="BM", band=("#9a520a", "#8a4a0a"), figuren="praktijkproject",
+        chart=(("#a85a0b", "#4a4f9c", "#1b7a46", "#9a2d6c"), ("#cc8122", "#7a82e8", "#2fa870", "#cf5aa2")),
         line="Per week de modellen voor je adviespresentatie, met tips voor je portfolio. Oefenvragen, weektoetsen en een eindtoets staan op de oefenpagina. Je logboek voor het portfolio staat alleen in je Claude-document.",
         quiz=None),
 }
@@ -233,8 +237,48 @@ def slugify(s):
         s = s.replace(a, b)
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")[:48]
 
-def render_week(key, label, md):
-    bl = blocks(md)
+def load_figuren(name):
+    """Leest scripts/figuren/<name>.py en geeft de lijst FIGUREN terug (leeg als het bestand er niet is)."""
+    d = os.path.join(ROOT, "scripts", "figuren")
+    f = os.path.join(d, name + ".py")
+    if not os.path.exists(f):
+        return []
+    import sys
+    if d not in sys.path:
+        sys.path.insert(0, d)
+    spec = importlib.util.spec_from_file_location("figuren_" + name, f)
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    return m.FIGUREN
+
+def place_figuren(bl, figs, key):
+    """Zet de figuren van deze week in de blokkenlijst: onder de genoemde kop, bovenaan, onderaan of na een blok met een stukje tekst.
+    Stopt met een foutmelding als de kop of de tekst niet precies één keer voorkomt, zodat een figuur nooit stil verdwijnt."""
+    out = list(bl)
+    for f in figs:
+        cur_les, hits = None, []
+        for i, (kind, data) in enumerate(out):
+            if kind == "h2":
+                cur_les = data
+                if f["kop"] is None and f["les"] in data:
+                    hits.append(i)
+            elif kind in ("h3", "h4") and f["kop"] is not None and cur_les and f["les"] in cur_les and html.unescape(plain(data)).strip() == f["kop"]:
+                hits.append(i)
+        assert len(hits) == 1, f"figuur in {key}: kop {f['les']!r} / {f['kop']!r} komt {len(hits)} keer voor"
+        start = hits[0]
+        end = next((i for i in range(start + 1, len(out)) if out[i][0] in ("h2", "h3", "h4")), len(out))
+        if f["after"]:
+            tx = [i for i in range(start + 1, end) if out[i][0] == "html" and f["after"] in html.unescape(re.sub(r"<[^>]+>", "", out[i][1]))]
+            assert tx, f"figuur in {key}: tekst {f['after']!r} niet gevonden onder {f['kop']!r}"
+            at = tx[0] + 1
+        elif f["pos"] == "top":
+            at = start + 1
+        else:
+            at = end
+        out.insert(at, ("html", f["html"]))
+    return out
+
+def render_week(key, label, md, after="", figs=()):
+    bl = place_figuren(blocks(md), figs, key)
     lessons, cur, sub = [], None, None
     intro = []
     for kind, data in bl:
@@ -283,6 +327,7 @@ def render_week(key, label, md):
                 out.append(f'<span class="tag {stream(l["tag"])}">{html.escape(l["tag"])}</span>')
             out.append(f"<h2>{inline(l['title'])}</h2></header>")
         out.append(f'<div class="prose">{body}</div></article>')
+    out.append(after)
     out.append("</section>")
     return "".join(out)
 
@@ -310,6 +355,7 @@ PAGE = r"""<!doctype html>
   --s3: #1b7a46; --s3-soft: #def2e6;
   --warn: #8f5d00; --warn-soft: #f9eed6;
   --mark: #fde99a;
+  --c1: __C1__; --c2: __C2__; --c3: __C3__; --c4: __C4__; /* grafiekkleuren, per thema gecontroleerd op onderscheid en contrast */
   --font-display: "Archivo", "Arial Nova", "Segoe UI", system-ui, sans-serif;
   --font-body: "Archivo", "Segoe UI", system-ui, sans-serif;
   --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
@@ -319,6 +365,7 @@ PAGE = r"""<!doctype html>
     --paper: #121b2b; --sheet: #1a2539; --sunk: #0e1624; --ink: #e8edf5; --ink-soft: #9eabbf; --rule: #2a3850;
     --accent: __A3__; --accent-soft: __A4__; --on-accent: #111a2a; --band: __B2__;
     --s2: #aab0f2; --s2-soft: #262c5a; --s3: #6fd6a0; --s3-soft: #143224; --warn: #f0c060; --warn-soft: #342a12; --mark: #5a4a12;
+    --c1: __D1__; --c2: __D2__; --c3: __D3__; --c4: __D4__;
     color-scheme: dark;
   }
 }
@@ -326,14 +373,14 @@ PAGE = r"""<!doctype html>
   --paper: #121b2b; --sheet: #1a2539; --sunk: #0e1624; --ink: #e8edf5; --ink-soft: #9eabbf; --rule: #2a3850;
   --accent: __A3__; --accent-soft: __A4__; --on-accent: #111a2a; --band: __B2__;
   --s2: #aab0f2; --s2-soft: #262c5a; --s3: #6fd6a0; --s3-soft: #143224; --warn: #f0c060; --warn-soft: #342a12; --mark: #5a4a12;
+  --c1: __D1__; --c2: __D2__; --c3: __D3__; --c4: __D4__;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 74px); }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + var(--sb-h, 0px) + 74px); }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--paper); z-index: 10; }
 .wrap { max-width: 792px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 14px 96px; }
 h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
@@ -347,11 +394,11 @@ a { color: var(--accent); text-underline-offset: 2px; }
 /* kop: de zoneband van het vak */
 .band { background: var(--band); color: #fff; }
 .band-in { max-width: 792px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 26px; }
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 0; }
 .band :focus-visible { outline-color: #fff; }
-.crumbs { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-size: 0.9rem; }
-.crumbs a { color: #fff; font-weight: 600; text-decoration: none; } .crumbs a:hover { text-decoration: underline; }
-.crumbs .ext::after { content: " ↗"; opacity: 0.75; }
+.lead a { color: #fff; font-weight: 600; white-space: nowrap; } .lead a::after { content: " ↗"; opacity: 0.75; }
+__TABS_CSS__
+__BAR_CSS__
 .title-row { display: flex; align-items: center; gap: 14px; min-width: 0; margin-top: 4px; }
 .title-row > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .kind { font-size: 0.92rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); }
@@ -375,7 +422,7 @@ a { color: var(--accent); text-underline-offset: 2px; }
 mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
 
 /* weekbalk */
-.weeknav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin-inline: -4px; padding: 8px 4px; background: var(--paper);
+.weeknav { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--sb-h, 0px)); z-index: 5; margin-inline: -4px; padding: 8px 4px; background: var(--paper);
   display: grid; grid-template-columns: auto repeat(7, minmax(0, 1fr)); gap: 4px; }
 .weeknav::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--rule); opacity: 0; transition: opacity .2s; }
 .weeknav.stuck::after { opacity: 1; }
@@ -400,6 +447,16 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
   padding: 2px 10px; border-radius: 999px; background: var(--s1-soft); color: var(--s1); white-space: nowrap; }
 .tag.s2 { background: var(--s2-soft); color: var(--s2); }
 .tag.s3 { background: var(--s3-soft); color: var(--s3); }
+
+/* einde van een week: door naar oefenen, de weektoets en de volgende week */
+.week-next { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 14px 16px; border-radius: 14px; background: var(--accent-soft); }
+.week-next .wn-label { flex: 1 1 100%; font-weight: 700; font-stretch: 104%; }
+.wn-btn { display: inline-flex; align-items: baseline; gap: 8px; padding: 9px 14px; border-radius: 8px; background: var(--sheet); border: 1px solid var(--rule); color: var(--ink); font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+.wn-btn:hover { border-color: var(--accent); }
+.wn-btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.wn-btn small { font-weight: 500; font-size: 0.8rem; opacity: 0.85; }
+.wn-btn.quiet { background: transparent; border-color: transparent; color: var(--accent); margin-left: auto; padding-inline: 6px; text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 480px) { .wn-btn { flex: 1 1 auto; justify-content: center; } .wn-btn.quiet { margin-left: 0; } }
 
 /* les */
 .lesson { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0;
@@ -459,6 +516,8 @@ pre { margin: 0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0
 .m-q.no b { color: var(--ink-soft); }
 .m-axis-x { grid-column: 2; display: flex; justify-content: space-between; align-items: baseline; font-weight: 600; font-size: 0.85rem; padding-inline: 4px; }
 
+__FIG_CSS__
+
 .foot { color: var(--ink-soft); font-size: 0.84rem; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--rule); padding-top: 16px; }
 .totop { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 6;
   width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); display: grid; place-items: center; text-decoration: none;
@@ -473,16 +532,16 @@ pre { margin: 0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0
 </style>
 </head>
 <body>
-<header class="band">
+__SITEBAR__<header class="band" id="top">
 <div class="band-in">
-  <nav class="crumbs" aria-label="Navigatie">__CRUMBS__</nav>
   <div class="title-row"><span class="plate" aria-hidden="true">__CODE__</span><div><span class="kind">Samenvattingen per week</span><h1>__HEADING__</h1></div></div>
-  <p class="lead">__LINE__</p>
+  <p class="lead">__LINE__ <a href="__DOC__" target="_blank" rel="noopener">Bewerkbare versie in Claude</a></p>
   <div class="search" role="search">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
     <input id="q" type="search" placeholder="Zoek een begrip, model of artikel" autocomplete="off" aria-label="Zoek in de samenvattingen">
   </div>
   <div class="results" id="results" hidden aria-live="polite"></div>
+  __TABS__
 </div>
 </header>
 <div class="wrap">
@@ -515,6 +574,18 @@ __WEEKS__
   window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; current(); }); } }, { passive: true });
   window.addEventListener("resize", current);
   current();
+
+  // Kom je binnen op een week of een les (#week-3), dan verschuift de tekst nog terwijl het lettertype laadt: zet de plek daarna goed.
+  if (location.hash.length > 1) {
+    var moved = false;
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (ev) { window.addEventListener(ev, function () { moved = true; }, { passive: true, once: true }); });
+    var realign = function () {
+      var el = document.getElementById(location.hash.slice(1));
+      if (el && !moved) { el.scrollIntoView({ behavior: "instant", block: "start" }); current(); }
+    };
+    window.addEventListener("load", realign);
+    if (document.fonts) { document.fonts.ready.then(realign); if (document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", realign); }
+  }
 
   // ---- zoeken
   var q = document.getElementById("q"), box = document.getElementById("results");
@@ -558,9 +629,18 @@ __WEEKS__
   });
 })();
 </script>
+__BAR_JS__
 </body>
 </html>
 """
+
+def figlib_css():
+    import sys
+    d = os.path.join(ROOT, "scripts", "figuren")
+    if d not in sys.path:
+        sys.path.insert(0, d)
+    import lib
+    return lib.CSS
 
 def build():
     import datetime
@@ -569,26 +649,49 @@ def build():
         src = os.path.join(SRC, slug)
         parts = [("overzicht", "Overzicht", "overzicht.md")] + [(f"week-{i}", f"Week {i}", f"week-{i}.md") for i in range(1, 8)]
         weeks, navs = [], []
+        # aantallen voor de knoppen onder elke week: oefenvragen en weektoetsen van die week
+        site_vak = os.path.join(ROOT, "site", slug)
+        vr = json.load(open(os.path.join(site_vak, "vragen.json"), encoding="utf-8"))
+        tw = set(json.load(open(os.path.join(site_vak, "toetsen.json"), encoding="utf-8"))["weken"])
+        les_week = {l["id"]: l["week"] for l in vr["lessen"]}
+        figuren = load_figuren(c["figuren"])
+        n_fig = 0
         for key, label, fn in parts:
             md = open(os.path.join(src, fn), encoding="utf-8").read()
             md = clean_source(md, slug, c)
-            weeks.append(render_week(key, label, md))
+            after = ""
+            if key != "overzicht":
+                w = int(key.split("-")[1])
+                n = sum(1 for q in vr["vragen"] if les_week.get(q["les"]) == w)
+                btn = [f'<span class="wn-label">Week {w} gelezen? Test of je het kunt.</span>']
+                if n:
+                    btn.append(f'<a class="wn-btn primary" href="{c["oefen"]}#oefenen-w{w}">Oefenvragen week {w} <small>{n} vragen</small></a>')
+                if w in tw:
+                    btn.append(f'<a class="wn-btn" href="{c["oefen"]}#toetsen-w{w}">Weektoets week {w}</a>')
+                if w < 7:
+                    btn.append(f'<a class="wn-btn quiet" href="#week-{w + 1}">Door naar week {w + 1}</a>')
+                after = f'<nav class="week-next" aria-label="Verder na week {w}">{"".join(btn)}</nav>'
+            wk = 0 if key == "overzicht" else int(key.split("-")[1])
+            figs = [f for f in figuren if f["week"] == wk]
+            n_fig += len(figs)
+            weeks.append(render_week(key, label, md, after, figs))
             short = "Info" if key == "overzicht" else label.replace("Week ", "W")
             navs.append(f'<a href="#{key}" aria-current="false"><span class="l">{label}</span><span class="s">{short}</span></a>')
-        crumbs = ['<a href="../../" id="top">← Studieplek</a>']
-        if c["oefen"]:
-            crumbs.append(f'<a href="{c["oefen"]}">Oefenvragen en weektoetsen</a>')
-        crumbs.append(f'<a class="ext" href="{c["doc"]}" target="_blank" rel="noopener">Bewerkbare versie in Claude</a>')
         a1, a2, a3, a4 = c["accent"]
         b1, b2 = c["band"]
         page = PAGE
-        for k, v in dict(HEADING=html.escape(c["heading"]), LINE=html.escape(c["line"]), CRUMBS="".join(crumbs), WEEKNAV="".join(navs),
+        for k, v in dict(HEADING=html.escape(c["heading"]), LINE=html.escape(c["line"]), DOC=c["doc"], WEEKNAV="".join(navs),
+                         SITEBAR=sitenav.bar("../../", slug, "sam"), TABS=sitenav.tabs("../../", slug, "sam"),
+                         FIG_CSS=figlib_css(), C1=c["chart"][0][0], C2=c["chart"][0][1], C3=c["chart"][0][2], C4=c["chart"][0][3],
+                         D1=c["chart"][1][0], D2=c["chart"][1][1], D3=c["chart"][1][2], D4=c["chart"][1][3],
+                         TABS_CSS=sitenav.TABS_CSS, BAR_CSS=sitenav.bar_css(792), BAR_JS=sitenav.BAR_JS,
                          WEEKS="\n".join(weeks), BUILT=built, A1=a1, A2=a2, A3=a3, A4=a4, B1=b1, B2=b2, CODE=c["code"]).items():
             page = page.replace(f"__{k}__", v)
         assert "__" not in page.replace("__proto__", ""), slug
         os.makedirs(os.path.join(OUT, slug), exist_ok=True)
         open(os.path.join(OUT, slug, "index.html"), "w", encoding="utf-8").write(page)
-        print("samenvatting", slug, len(page) // 1024, "KB")
+        assert n_fig == len(figuren), f"{slug}: {len(figuren) - n_fig} figuur/figuren met een week buiten 0-7"
+        print("samenvatting", slug, len(page) // 1024, "KB,", n_fig, "figuren")
 
 if __name__ == "__main__":
     build()

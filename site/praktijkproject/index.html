@@ -53,7 +53,7 @@
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + var(--sb-h, 0px) + 12px); }
 body {
   margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55;
   font-variant-numeric: tabular-nums;
@@ -86,9 +86,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .band-in:has(> .tabs[hidden]) .plate { min-width: 38px; height: 38px; font-size: 0.86rem; border-radius: 8px; }
 .band a { color: inherit; }
 .top { display: flex; flex-direction: column; gap: 10px; }
-.crumbs { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-size: 0.9rem; color: rgba(255, 255, 255, 0.78); }
-.crumbs a { font-weight: 600; text-decoration: none; color: #fff; }
-.crumbs a:hover { text-decoration: underline; }
 .title-row { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: #fff; color: var(--band);
   display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-stretch: 122%; font-size: 1.05rem; letter-spacing: 0.02em; }
@@ -97,16 +94,79 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .meta strong { color: #fff; }
 .examline { max-width: 64ch; color: rgba(255, 255, 255, 0.86); font-size: 0.95rem; }
 
-/* ---------- tabs: mappen op de band ---------- */
-.tabs { display: flex; gap: 4px; margin-top: 8px; max-width: 100%; flex-wrap: wrap; }
-.tab { border: 0; background: transparent; padding: 11px 18px 12px; border-radius: 10px 10px 0 0; font-weight: 600; color: rgba(255, 255, 255, 0.84);
-  text-decoration: none; font-size: 0.97rem; display: inline-flex; gap: 8px; align-items: baseline; }
-.tab:hover { color: #fff; background: rgba(255, 255, 255, 0.12); }
-.tab[aria-selected="true"] { background: var(--paper); color: var(--ink); }
-.tab[aria-selected="true"]:hover { background: var(--paper); }
+
+/* ---------- tabbladen: mappen op de zoneband, op elke pagina van een vak dezelfde ---------- */
+.tabs { display: flex; gap: 4px; margin-top: 8px; max-width: 100%; }
+.tab { border: 0; background: transparent; padding: 11px 18px 12px; border-radius: 10px 10px 0 0; font-weight: 600; color: rgba(255, 255, 255, 0.88);
+  text-decoration: none; font-size: 0.97rem; line-height: 1.3; display: inline-flex; gap: 8px; align-items: baseline; white-space: nowrap; }
+.tab:hover { color: #fff; background: rgba(255, 255, 255, 0.14); }
+.tab[aria-current="page"], .tab[aria-current="page"]:hover { background: var(--paper, var(--bg)); color: var(--ink); }
 .tab .n { font-size: 0.76rem; font-weight: 500; opacity: 0.75; }
-.tab[aria-selected="true"] .n { color: var(--accent); opacity: 1; font-weight: 700; }
-.tab.ext::after { content: "↗"; font-size: 0.8em; opacity: 0.75; }
+.tab[aria-current="page"] .n { color: var(--accent); opacity: 1; font-weight: 700; }
+.tab .s { display: none; }
+.tab.ext { order: 9; }
+.tab.ext::after { content: "\2197"; font-size: 0.8em; opacity: 0.75; }
+@media (max-width: 600px) {
+  .tabs { width: 100%; gap: 2px; }
+  .tab { flex: 1 1 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.88rem; font-stretch: 94%; }
+  .tab .l, .tab .n { display: none; } .tab .s { display: inline; }
+}
+@media (max-width: 350px) { .tab { font-size: 0.82rem; font-stretch: 88%; padding-inline: 2px; } }
+
+
+/* ---------- wegwijzerbalk: op elke pagina vast bovenaan ---------- */
+:root { --sb-h: 48px; --sb-bg: #1d2b4f; --z-ir: #0b6f82; --z-hrm: #8f2a65; --z-bm: #9a520a; --zt-ir: #0b6f82; --zt-hrm: #9a2d6c; --zt-bm: #9a520a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --sb-bg: #1f3160; --z-ir: #0d5e6e; --z-hrm: #7a2457; --z-bm: #8a4a0a; --zt-ir: #63cfe2; --zt-hrm: #f095c9; --zt-bm: #f5b65e; } }
+:root[data-theme="dark"] { --sb-bg: #1f3160; --z-ir: #0d5e6e; --z-hrm: #7a2457; --z-bm: #8a4a0a; --zt-ir: #63cfe2; --zt-hrm: #f095c9; --zt-bm: #f5b65e; }
+@media (max-width: 560px) { :root { --sb-h: 46px; } }
+.skip { position: absolute; left: 8px; top: -80px; z-index: 60; background: #fff; color: #16202f; padding: 10px 14px; border-radius: 8px; font-weight: 700; text-decoration: none; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 6px); }
+.sitebar { position: sticky; top: 0; z-index: 40; background: var(--sb-bg); color: #fff; padding-top: env(safe-area-inset-top, 0px);
+  font-family: "Archivo", "Segoe UI", system-ui, sans-serif; font-size: 16px; line-height: 1.2; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.14); }
+.sitebar :focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.sb-in { max-width: 812px; margin: 0 auto; height: var(--sb-h); display: flex; align-items: center; gap: 4px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.sb-home { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 11px 0 8px; margin-left: -8px; border-radius: 8px; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+.sb-home svg { width: 19px; height: 19px; flex: none; }
+.sb-home:hover, .sb-home[aria-current="page"] { background: rgba(255, 255, 255, 0.14); }
+.sb-zones { display: flex; align-items: stretch; height: 100%; gap: 2px; margin-left: 6px; padding-left: 10px; position: relative; }
+.sb-zones::before { content: ""; position: absolute; left: 0; top: 50%; height: 22px; margin-top: -11px; width: 1px; background: rgba(255, 255, 255, 0.24); }
+.sb-zone { display: inline-flex; align-items: center; gap: 8px; padding: 0 3px; color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+.sb-zone b { display: grid; place-items: center; min-width: 38px; height: 30px; padding: 0 7px; border-radius: 7px; font-weight: 800; font-stretch: 118%; font-size: 0.8rem; letter-spacing: 0.02em;
+  background: var(--zc); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3); }
+.sb-zone span { display: none; padding-right: 8px; color: rgba(255, 255, 255, 0.9); }
+.sb-zone:hover b { box-shadow: inset 0 0 0 2px #fff; }
+.sb-zone:hover span { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.sb-zone[aria-current="true"] b { background: #fff; color: var(--zc); box-shadow: none; }
+.sb-zone[aria-current="true"] span { color: #fff; font-weight: 700; }
+.sitebar .ir { --zc: var(--z-ir); --zt: var(--zt-ir); } .sitebar .hrm { --zc: var(--z-hrm); --zt: var(--zt-hrm); } .sitebar .bm { --zc: var(--z-bm); --zt: var(--zt-bm); }
+@media (min-width: 900px) { .sb-zone span { display: inline; } .sb-zones { gap: 6px; } }
+.sb-menu { margin-left: auto; position: relative; }
+.sb-menu > summary { list-style: none; display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px 0 10px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  cursor: pointer; font-weight: 700; font-size: 0.92rem; user-select: none; -webkit-user-select: none; }
+.sb-menu > summary::-webkit-details-marker { display: none; }
+.sb-menu > summary svg { width: 18px; height: 18px; flex: none; }
+.sb-menu > summary:hover { background: rgba(255, 255, 255, 0.14); }
+.sb-menu[open] > summary { background: #fff; color: #1d2b4f; box-shadow: none; }
+@media (max-width: 400px) { .sb-menu > summary { padding: 0 8px; } .sb-menu > summary span { display: none; } .sb-home { padding-right: 8px; } .sb-zones { margin-left: 2px; padding-left: 8px; } }
+.sb-panel { position: absolute; right: 0; top: calc(100% + 9px); width: min(700px, calc(100vw - 32px)); max-height: calc(100vh - var(--sb-h) - 28px); overflow-y: auto;
+  background: var(--sheet, var(--surface)); color: var(--ink); border: 1px solid var(--rule, var(--line)); border-radius: 14px; box-shadow: 0 14px 36px rgba(10, 18, 36, 0.28);
+  padding: 14px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.sb-col { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.sb-colhead { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 0.92rem; line-height: 1.15; min-height: 38px; padding: 2px 4px 6px; border-bottom: 2px solid var(--zc); }
+.sb-colhead b { display: grid; place-items: center; min-width: 34px; height: 26px; padding: 0 6px; border-radius: 6px; background: var(--zc); color: #fff; font-stretch: 118%; font-size: 0.74rem; letter-spacing: 0.02em; }
+.sb-links { display: flex; flex-direction: column; gap: 2px; }
+.sb-links a { display: flex; align-items: center; min-height: 40px; padding: 6px 10px; border-radius: 8px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+.sb-links a:hover { background: color-mix(in srgb, var(--zt) 14%, transparent); color: var(--zt); }
+.sb-links a[aria-current="page"] { background: color-mix(in srgb, var(--zt) 14%, transparent); color: var(--zt); font-weight: 700; }
+.sb-panel :focus-visible { outline-color: var(--zt); }
+@media (max-width: 620px) {
+  .sb-panel { grid-template-columns: 1fr; gap: 12px; }
+  .sb-links { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .sb-links a { border: 1px solid var(--rule, var(--line)); padding: 6px 12px; font-size: 0.92rem; }
+  .sb-links a[aria-current="page"] { border-color: var(--zt); }
+}
+
 .band :focus-visible { outline-color: #fff; }
 
 /* ---------- panels ---------- */
@@ -141,7 +201,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 /* ---------- oefenen: lessons ---------- */
 .lesson-list { display: flex; flex-direction: column; gap: 2px; }
-.week { font-size: 0.84rem; font-weight: 700; color: var(--ink-soft); margin: 14px 0 4px 12px; }
+.week { font-size: 0.84rem; font-weight: 700; color: var(--ink-soft); margin: 14px 12px 4px 12px; display: flex; flex-wrap: wrap; gap: 2px 14px; align-items: baseline; justify-content: space-between; }
+.week a, .tlabel .sam { font-weight: 600; font-size: 0.84rem; }
+.tlabel .sam { align-self: flex-start; }
+.trow.hit { animation: rowhit 2.4s ease-out; }
+@keyframes rowhit { from { background: var(--accent-soft); } to { background: transparent; } }
 .lesson { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; align-items: center; text-align: left; width: 100%;
   border: 1px solid transparent; background: transparent; border-radius: 10px; padding: 11px 12px; }
 .lesson:hover { background: var(--accent-soft); }
@@ -274,31 +338,25 @@ details.model[open] > summary { margin-bottom: 8px; }
   .score { grid-template-columns: 1fr; }
   .split-row { grid-template-columns: 96px minmax(0, 1fr) 56px; }
 }
-@media (max-width: 480px) { .summary-grid { grid-template-columns: 1fr; } .panel { padding: 16px; } .tabs { width: 100%; flex-wrap: nowrap; } .tab { flex: 1 1 auto; justify-content: center; padding: 8px 6px; font-size: 0.88rem; gap: 5px; } .tab .n { font-size: 0.66rem; } }
-@media (max-width: 374px) { .tab .n { display: none; } }
+@media (max-width: 480px) { .summary-grid { grid-template-columns: 1fr; } .panel { padding: 16px; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
-<header class="band">
+<a class="skip" href="#main">Naar de inhoud</a><header class="sitebar" id="sitebar"><div class="sb-in"><a class="sb-home" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9.5h11V10"/><path d="M10 19.5v-5h4v5"/></svg><span>Home</span></a><nav class="sb-zones" aria-label="Vakken"><a class="sb-zone ir" href="../inkoop-recht/" title="Inkoop en recht" aria-label="Inkoop en recht" data-carry><b>IR</b><span>Inkoop en recht</span></a><a class="sb-zone hrm" href="../hrm/" title="HRM" aria-label="HRM" data-carry><b>HRM</b></a><a class="sb-zone bm" href="../praktijkproject/" title="Business management" aria-label="Business management" aria-current="true" data-carry><b>BM</b><span>Business management</span></a></nav><details class="sb-menu"><summary aria-label="Menu: alle pagina's"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary><div class="sb-panel"><div class="sb-col ir"><span class="sb-colhead"><b>IR</b>Inkoop en recht</span><div class="sb-links"><a href="../samenvattingen/inkoop-recht/">Samenvatting</a><a href="../inkoop-recht/#oefenen" data-default>Oefenvragen</a><a href="../inkoop-recht/#toetsen">Weektoetsen</a></div></div><div class="sb-col hrm"><span class="sb-colhead"><b>HRM</b>HRM</span><div class="sb-links"><a href="../samenvattingen/hrm/">Samenvatting</a><a href="../hrm/#oefenen" data-default>Oefenvragen</a><a href="../hrm/#toetsen">Weektoetsen</a></div></div><div class="sb-col bm"><span class="sb-colhead"><b>BM</b>Business management</span><div class="sb-links"><a href="../samenvattingen/praktijkproject/">Samenvatting</a><a href="../praktijkproject/#oefenen" data-default>Oefenvragen</a><a href="../praktijkproject/#toetsen">Weektoetsen</a><a href="../bedrijfskunde/waalhop/">Casustoets Waalhop</a><a href="../bedrijfskunde/heidezoom/">Casustoets Heidezoom</a></div></div></div></details></div></header><header class="band">
   <div class="band-in">
-    <nav class="crumbs" aria-label="Navigatie"><a class="home" href="../">← Studieplek</a><span>Facility Management, jaar 2, periode 2</span></nav>
     <div class="title-row"><span class="plate" aria-hidden="true">BM</span><h1>Praktijkproject Business Management</h1></div>
     <div class="meta">
       <span>Toetsperiode <strong>11–22 januari 2027</strong></span>
       <span id="countdown"></span>
     </div>
     <p class="examline">Geen schriftelijk tentamen: je cijfer komt uit de adviespresentatie (30 minuten plus 15 minuten vragen) en je portfolio moet voldoende zijn. Oefen hier de modellen die je in je advies moet kunnen uitleggen en toepassen.</p>
-    <nav class="tabs" role="tablist" aria-label="Onderdelen van deze pagina" id="tabs">
-      <button class="tab" role="tab" id="tab-oefenen" aria-controls="pane-oefenen" aria-selected="true">Oefenen <span class="n" id="n-oefenen"></span></button>
-      <button class="tab" role="tab" id="tab-toetsen" aria-controls="pane-toetsen" aria-selected="false">Weektoetsen <span class="n" id="n-toetsen"></span></button>
-      <a class="tab " href="../samenvattingen/praktijkproject/" >Samenvattingen</a>
-    </nav>
+    <nav class="tabs" aria-label="Onderdelen van dit vak" id="tabs"><a class="tab" href="../samenvattingen/praktijkproject/">Samenvatting</a><a class="tab" href="#oefenen" id="tab-oefenen" aria-current="page">Oefenen <span class="n" id="n-oefenen"></span></a><a class="tab" href="#toetsen" id="tab-toetsen"><span class="l">Weektoetsen</span><span class="s">Toetsen</span> <span class="n" id="n-toetsen"></span></a><a class="tab" href="../bedrijfskunde/waalhop/"><span class="l">Casustoetsen</span><span class="s">Casus</span></a></nav>
   </div>
 </header>
 
-<div class="wrap">
+<div class="wrap" id="main">
   <!-- ===== Oefenen ===== -->
-  <div class="stack" id="pane-oefenen" role="tabpanel" aria-labelledby="tab-oefenen">
+  <div class="stack" id="pane-oefenen">
     <section class="panel" aria-labelledby="select-title">
       <div class="panel-head">
         <h2 id="select-title">Kies wat je oefent</h2>
@@ -332,7 +390,7 @@ details.model[open] > summary { margin-bottom: 8px; }
   </div>
 
   <!-- ===== Weektoetsen ===== -->
-  <div class="stack" id="pane-toetsen" role="tabpanel" aria-labelledby="tab-toetsen" hidden>
+  <div class="stack" id="pane-toetsen" hidden>
     <section class="panel" aria-labelledby="toets-title">
       <div class="panel-head">
         <h2 id="toets-title">Weektoetsen</h2>
@@ -363,6 +421,7 @@ details.model[open] > summary { margin-bottom: 8px; }
   let queue = [], qi = 0, sessionResults = [];
   const SEL_KEY = LS_KEY + ":selectie";
   const TAB_KEY = LS_KEY + ":tab";
+  const SAM_URL = "../samenvattingen/praktijkproject/"; // samenvatting van dit vak op de site; leeg in de Claude-versie
   const T_KEY = LS_KEY + ":toetsen";
   let sel = null, focusKey = null, T = {};
 
@@ -388,23 +447,28 @@ details.model[open] > summary { margin-bottom: 8px; }
   }
   function setTab(name, keepScroll) {
     const t = name === "toetsen" ? "toetsen" : "oefenen";
-    $("tab-oefenen").setAttribute("aria-selected", String(t === "oefenen"));
-    $("tab-toetsen").setAttribute("aria-selected", String(t === "toetsen"));
+    ["oefenen", "toetsen"].forEach((n) => { n === t ? $("tab-" + n).setAttribute("aria-current", "page") : $("tab-" + n).removeAttribute("aria-current"); });
     VIEWS.forEach((v) => ($(v).hidden = v !== "pane-" + t));
     $("tabs").hidden = false;
     lsSet(TAB_KEY, t);
     try { if (location.hash !== "#" + t) history.replaceState(null, "", "#" + t); } catch {}
     if (t === "toetsen") renderToetsIndex(); else renderIndex();
+    if (window.sitenavMark) window.sitenavMark();
     if (!keepScroll) window.scrollTo({ top: 0 });
   }
-  $("tab-oefenen").addEventListener("click", () => setTab("oefenen"));
-  $("tab-toetsen").addEventListener("click", () => setTab("toetsen"));
-  $("tabs").addEventListener("keydown", (e) => {
-    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-    const next = document.activeElement === $("tab-oefenen") ? "toetsen" : "oefenen";
-    setTab(next, true); $("tab-" + next).focus();
-  });
-  window.addEventListener("hashchange", () => { const h = location.hash.slice(1); if (h === "toetsen" || h === "oefenen") setTab(h); });
+  $("tab-oefenen").addEventListener("click", (e) => { e.preventDefault(); setTab("oefenen"); });
+  $("tab-toetsen").addEventListener("click", (e) => { e.preventDefault(); setTab("toetsen"); });
+  // #oefenen, #toetsen, of vanuit de samenvatting #oefenen-w3 (alleen week 3 kiezen) en #toetsen-w3 (naar de toetsen van week 3)
+  const parseHash = () => { const m = /^#(oefenen|toetsen)(?:-w(\d+))?$/.exec(location.hash); return m ? { tab: m[1], week: m[2] ? +m[2] : null } : null; };
+  function go(h, keepScroll) {
+    if (h.week && h.tab === "oefenen" && data && allWeeks().includes(h.week)) { if (!sel) loadSel(); sel.weeks = new Set([h.week]); saveSel(); }
+    setTab(h.tab, keepScroll);
+    if (h.week && h.tab === "toetsen") {
+      const row = $("tw" + h.week);
+      if (row) { row.classList.add("hit"); row.scrollIntoView({ block: "center" }); setTimeout(() => row.classList.remove("hit"), 2400); }
+    }
+  }
+  window.addEventListener("hashchange", () => { const h = parseHash(); if (h) go(h); });
 
   // ---------- storage ----------
   function storeNote(t) { $("store-note").textContent = t; }
@@ -519,7 +583,9 @@ details.model[open] > summary { margin-bottom: 8px; }
     shown.forEach((w) => {
       const ls = data.lessen.filter((l) => l.week === w && sel.parts.has(l.onderdeel));
       if (!ls.length) return;
-      const h = document.createElement("div"); h.className = "week"; h.textContent = "Week " + w; list.appendChild(h);
+      const h = document.createElement("div"); h.className = "week";
+      h.innerHTML = `<span>Week ${w}</span>` + (SAM_URL ? `<a href="${SAM_URL}#week-${w}">Samenvatting week ${w}</a>` : "");
+      list.appendChild(h);
       ls.forEach((l) => {
         const lq = data.vragen.filter((q) => q.les === l.id);
         const c = { goed: 0, deels: 0, fout: 0 };
@@ -797,9 +863,9 @@ Regel: "goed" alleen als alle punten behaald zijn; "fout" als minder dan de helf
     $("grid-key").innerHTML = `<span><b>A B C</b> vaste versies</span><span><b>MIX</b> elke keer nieuw</span><span>cijfer = je laatste poging, voldoende vanaf 5,5</span>`;
     const rows = $("trows"); rows.innerHTML = "";
     toetsen.weken.forEach((w) => {
-      const r = document.createElement("div"); r.className = "trow";
+      const r = document.createElement("div"); r.className = "trow"; r.id = "tw" + w;
       const topics = weekTopics(w);
-      r.innerHTML = `<div class="tlabel"><span class="wk">Week ${w}</span><span class="topics">${topics.map((l) => esc(l.titel)).join(" · ")}</span></div>`;
+      r.innerHTML = `<div class="tlabel"><span class="wk">Week ${w}</span><span class="topics">${topics.map((l) => esc(l.titel)).join(" · ")}</span>` + (SAM_URL ? `<a class="sam" href="${SAM_URL}#week-${w}">Samenvatting week ${w}</a>` : "") + `</div>`;
       VERSIES.concat(["mix"]).forEach((v) => {
         const key = `w${w}-${v}`; const s = cellState(key);
         const b = document.createElement("button"); b.className = "cell " + s.cls;
@@ -1067,14 +1133,43 @@ Geef alleen JSON terug in deze vorm:
   }
 
   // ---------- boot ----------
-  const startTab = (() => { const h = location.hash.slice(1); if (h === "toetsen" || h === "oefenen") return h; return lsGet(TAB_KEY, "oefenen"); })();
+  const startHash = parseHash() || { tab: lsGet(TAB_KEY, "oefenen"), week: null };
   Promise.all([
     fetch("vragen.json").then((r) => r.json()).then((d) => { data = d; $("n-oefenen").textContent = d.vragen.length; }),
     fetch("toetsen.json").then((r) => r.json()).then((d) => { toetsen = d; $("n-toetsen").textContent = d.weken.length * 4 + 1 + (d.eindtoetsen || []).length; }).catch(() => { $("toets-intro").textContent = "De weektoetsen konden niet worden geladen. Herlaad de pagina."; }),
-  ]).then(() => setTab(startTab, true))
+  ]).then(() => go(startHash, !(startHash.week && startHash.tab === "toetsen")))
     .catch(() => { $("lesson-list").innerHTML = '<p class="small">De vragen konden niet worden geladen. Herlaad de pagina.</p>'; });
   initStore();
   (async () => { try { sample = window.claude && window.claude.use ? await window.claude.use("sample") : null; } catch { sample = null; } })();
+})();
+</script>
+<script>
+(function () {
+  var bar = document.getElementById("sitebar"); if (!bar) return;
+  var menu = bar.querySelector("details");
+  document.addEventListener("click", function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menu.open) { menu.open = false; menu.querySelector("summary").focus(); } });
+  menu.addEventListener("click", function (e) { if (e.target.closest("a")) menu.open = false; });
+  function path(p) { return p.replace(/index\.html$/, ""); }
+  // in het menu de pagina markeren waar je nu bent
+  function mark() {
+    var here = path(location.pathname), hash = location.hash.replace(/-w\d+$/, "");
+    Array.prototype.forEach.call(bar.querySelectorAll(".sb-panel a"), function (a) {
+      var u = new URL(a.href, location.href);
+      var same = path(u.pathname) === here && (!u.hash || u.hash === hash || (!/^#(oefenen|toetsen)$/.test(hash) && a.hasAttribute("data-default")));
+      if (same) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+  }
+  window.sitenavMark = mark;
+  // naar een ander vak: blijf in hetzelfde onderdeel (oefenen, toetsen of dezelfde week van de samenvatting)
+  Array.prototype.forEach.call(bar.querySelectorAll("a[data-carry]"), function (a) {
+    a.addEventListener("click", function () {
+      var h = location.hash, wk = document.querySelector('.weeknav a[aria-current="true"]');
+      if (wk && window.scrollY > 200) h = wk.getAttribute("href");
+      if (/^#(oefenen|toetsen|week-\d)$/.test(h)) a.href = a.href.split("#")[0] + h;
+    });
+  });
+  window.addEventListener("hashchange", mark); mark();
 })();
 </script>
 
