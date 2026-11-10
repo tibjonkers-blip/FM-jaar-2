@@ -21,7 +21,7 @@ TOETSEN = [
          hint="Alle vragen samen: reken op ongeveer 3 uur. Per onderwerp: 20 tot 40 minuten."),
 ]
 
-FONTS = "https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
+FONTS = "https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap"
 
 PAGE = """<!doctype html>
 <html lang="nl">

@@ -15,19 +15,19 @@ VAKKEN = {
     "inkoop-recht": dict(
         heading="Inkoop en recht", oefen="../../inkoop-recht/",
         doc="https://claude.ai/artifact/VHXx8mhoAqU8B2DEmeEpsg",
-        accent=("#0b6a7d", "#e0eff2", "#62c4d7", "#13313a"),
+        accent=("#0b6f82", "#dff0f3", "#63cfe2", "#123447"), code="IR", band=("#0b6f82", "#0d5e6e"),
         line="Per week de lesstof van Inkoop en van Recht, met de modellen, beginselen en arresten die je in het casustentamen moet kunnen toepassen.",
         quiz=("https://claude.ai/artifact/EiKpj8QHxrp7C9eTyErJyQ", "../../inkoop-recht/")),
     "hrm": dict(
         heading="HRM voor de FM-professional", oefen="../../hrm/",
         doc="https://claude.ai/artifact/F5i831ZTxpUePeyVdzXz8C",
-        accent=("#7a3566", "#f4e6ef", "#e39ac9", "#34192b"),
+        accent=("#9a2d6c", "#f6e4ef", "#f095c9", "#3a1a3a"), code="HRM", band=("#8f2a65", "#7a2457"),
         line="Per week het theoriecollege HRM, het arbeidsrechtcollege en de workshop gespreksvoering, zodat je alles hardop kunt uitleggen op het mondeling.",
         quiz=("https://claude.ai/artifact/Y4EBH9n2uzMQ3i5KkDeVQY", "../../hrm/")),
     "praktijkproject": dict(
         heading="Praktijkproject Business Management", oefen="../../praktijkproject/",
         doc="https://claude.ai/artifact/MNHrxykYerRjrc76rQu4Qg",
-        accent=("#8a5a12", "#f5ead9", "#e3b466", "#33260f"),
+        accent=("#9a520a", "#fbecd8", "#f5b65e", "#3a2b1c"), code="BM", band=("#9a520a", "#8a4a0a"),
         line="Per week de modellen voor je adviespresentatie, met tips voor je portfolio. Oefenvragen, weektoetsen en een eindtoets staan op de oefenpagina. Je logboek voor het portfolio staat alleen in je Claude-document.",
         quiz=None),
 }
@@ -298,71 +298,78 @@ PAGE = r"""<!doctype html>
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap">
 <style>
-/* Een leesboek per vak: één smalle leeskolom, een vaste weekbalk bovenin, per les een kaart met een gekleurd label per leerlijn. */
+/* Een leesboek per vak, in dezelfde bewegwijzering als de rest van de studieplek: een gekleurde zoneband met het bordje van het vak
+   en de zoekbalk, daaronder een vaste weekbalk en per les een kaart met een gekleurd label per leerlijn. */
 :root {
-  --paper: #f1f4f3; --sheet: #ffffff; --sunk: #e8eeec; --ink: #14201c; --ink-soft: #54625e; --rule: #d5dedb;
-  --accent: __A1__; --accent-soft: __A2__; --on-accent: #ffffff;
+  --paper: #eef1f6; --sheet: #ffffff; --sunk: #e4e9f1; --ink: #16202f; --ink-soft: #5a6577; --rule: #d9dfe8;
+  --accent: __A1__; --accent-soft: __A2__; --on-accent: #ffffff; --band: __B1__;
   --s1: var(--accent); --s1-soft: var(--accent-soft);
   --s2: #4a4f9c; --s2-soft: #e6e7f5;
-  --s3: #1c7543; --s3-soft: #def1e5;
-  --warn: #8f5d00; --warn-soft: #f8edd3;
+  --s3: #1b7a46; --s3-soft: #def2e6;
+  --warn: #8f5d00; --warn-soft: #f9eed6;
   --mark: #fde99a;
-  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --font-display: "Archivo", "Arial Nova", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Archivo", "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #0f1514; --sheet: #172020; --sunk: #121a19; --ink: #e4ebe9; --ink-soft: #9badaa; --rule: #283432;
-    --accent: __A3__; --accent-soft: __A4__; --on-accent: #0f1514;
-    --s2: #a9aef0; --s2-soft: #23254a; --s3: #6dd39a; --s3-soft: #15301f; --warn: #efbd5a; --warn-soft: #33290f; --mark: #5a4a12;
+    --paper: #121b2b; --sheet: #1a2539; --sunk: #0e1624; --ink: #e8edf5; --ink-soft: #9eabbf; --rule: #2a3850;
+    --accent: __A3__; --accent-soft: __A4__; --on-accent: #111a2a; --band: __B2__;
+    --s2: #aab0f2; --s2-soft: #262c5a; --s3: #6fd6a0; --s3-soft: #143224; --warn: #f0c060; --warn-soft: #342a12; --mark: #5a4a12;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --paper: #0f1514; --sheet: #172020; --sunk: #121a19; --ink: #e4ebe9; --ink-soft: #9badaa; --rule: #283432;
-  --accent: __A3__; --accent-soft: __A4__; --on-accent: #0f1514;
-  --s2: #a9aef0; --s2-soft: #23254a; --s3: #6dd39a; --s3-soft: #15301f; --warn: #efbd5a; --warn-soft: #33290f; --mark: #5a4a12;
+  --paper: #121b2b; --sheet: #1a2539; --sunk: #0e1624; --ink: #e8edf5; --ink-soft: #9eabbf; --rule: #2a3850;
+  --accent: __A3__; --accent-soft: __A4__; --on-accent: #111a2a; --band: __B2__;
+  --s2: #aab0f2; --s2-soft: #262c5a; --s3: #6fd6a0; --s3-soft: #143224; --warn: #f0c060; --warn-soft: #342a12; --mark: #5a4a12;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 74px); }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-body {
-  margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 20px 0;
-}
+body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--paper); z-index: 10; }
-.wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px; padding-bottom: 96px; }
+.wrap { max-width: 792px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 14px 96px; }
 h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
-h1 { font-size: clamp(1.9rem, 5.2vw, 2.7rem); font-weight: 800; letter-spacing: -0.02em; }
+h1 { font-size: clamp(1.9rem, 5.2vw, 2.7rem); font-weight: 800; font-stretch: 116%; letter-spacing: -0.012em; line-height: 1.08; }
+h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
+@media (max-width: 400px) { h1 { font-size: 1.7rem; font-stretch: 104%; } .lesson-head h2 { font-stretch: 100%; } }
 p { margin: 0; }
 a { color: var(--accent); text-underline-offset: 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft); }
 
-/* kop */
-.top { display: flex; flex-direction: column; gap: 10px; }
-.crumbs { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-size: 0.88rem; font-weight: 500; }
-.crumbs a { text-decoration: none; } .crumbs a:hover { text-decoration: underline; }
-.crumbs .ext::after { content: " ↗"; color: var(--ink-soft); }
-.lead { max-width: 62ch; color: var(--ink-soft); font-size: 0.95rem; }
+/* kop: de zoneband van het vak */
+.band { background: var(--band); color: #fff; }
+.band-in { max-width: 792px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 26px; }
+.band :focus-visible { outline-color: #fff; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; font-size: 0.9rem; }
+.crumbs a { color: #fff; font-weight: 600; text-decoration: none; } .crumbs a:hover { text-decoration: underline; }
+.crumbs .ext::after { content: " ↗"; opacity: 0.75; }
+.title-row { display: flex; align-items: center; gap: 14px; min-width: 0; margin-top: 4px; }
+.title-row > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.kind { font-size: 0.92rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); }
+.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: #fff; color: var(--band);
+  display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-stretch: 122%; font-size: 1.05rem; letter-spacing: 0.02em; }
+.lead { max-width: 62ch; color: rgba(255, 255, 255, 0.86); font-size: 0.95rem; }
 
 /* zoeken */
-.search { position: relative; margin-top: 6px; }
-.search input { width: 100%; font: inherit; color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: 12px; padding: 11px 14px 11px 40px; }
-.search input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
-.search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); width: 17px; height: 17px; color: var(--ink-soft); pointer-events: none; }
-.results { background: var(--sheet); border: 1px solid var(--rule); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; }
+.search { position: relative; margin-top: 4px; }
+.search input { width: 100%; font: inherit; color: var(--ink); background: var(--sheet); border: 1px solid transparent; border-radius: 10px; padding: 12px 14px 12px 42px; }
+.search input:focus { outline: none; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.45); }
+.search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 17px; height: 17px; color: var(--ink-soft); pointer-events: none; }
+.results { background: var(--sheet); color: var(--ink); border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; }
 .results .count { padding: 10px 14px; font-size: 0.82rem; color: var(--ink-soft); border-bottom: 1px solid var(--rule); }
 .results a { display: flex; flex-direction: column; gap: 2px; padding: 10px 14px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--rule); min-width: 0; }
 .results a:last-child { border-bottom: 0; }
 .results a:hover { background: var(--accent-soft); }
-.results .where { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft); }
+.results .where { font-size: 0.78rem; font-weight: 600; color: var(--accent); }
 .results .what { font-weight: 600; }
 .results .snip { font-size: 0.88rem; color: var(--ink-soft); overflow-wrap: anywhere; }
 mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
@@ -372,10 +379,10 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
   display: grid; grid-template-columns: auto repeat(7, minmax(0, 1fr)); gap: 4px; }
 .weeknav::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--rule); opacity: 0; transition: opacity .2s; }
 .weeknav.stuck::after { opacity: 1; }
-.weeknav a { display: flex; align-items: center; justify-content: center; min-height: 40px; padding: 6px 10px; border-radius: 10px; background: var(--sunk);
+.weeknav a { display: flex; align-items: center; justify-content: center; min-height: 40px; padding: 6px 10px; border-radius: 8px; background: var(--sheet); border: 1px solid var(--rule);
   color: var(--ink-soft); font-weight: 600; font-size: 0.9rem; text-decoration: none; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .weeknav a:hover { color: var(--ink); }
-.weeknav a[aria-current="true"] { background: var(--accent); color: var(--on-accent); }
+.weeknav a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .weeknav .s { display: none; }
 @media (max-width: 560px) { .weeknav .l { display: none; } .weeknav .s { display: inline; } .weeknav a { padding: 6px 4px; font-size: 0.86rem; } }
 
@@ -383,27 +390,27 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 .week { display: flex; flex-direction: column; gap: 16px; }
 .week + .week { margin-top: 26px; }
 .week-head { display: flex; flex-direction: column; gap: 10px; }
-.week-no { font-family: var(--font-display); font-weight: 800; font-size: 1.7rem; letter-spacing: -0.015em; }
+.week-no { font-family: var(--font-display); font-weight: 800; font-stretch: 116%; font-size: 1.75rem; letter-spacing: -0.01em; }
 .toc { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
 .toc a { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; padding: 7px 10px; margin-inline: -10px; border-radius: 9px; color: var(--ink); text-decoration: none; }
 .toc a:hover { background: var(--sheet); }
 .toc a span:last-child { min-width: 0; }
 
-.tag { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 3px 8px; border-radius: 999px; background: var(--s1-soft); color: var(--s1); white-space: nowrap; }
+.tag { display: inline-block; font-size: 0.78rem; font-weight: 700;
+  padding: 2px 10px; border-radius: 999px; background: var(--s1-soft); color: var(--s1); white-space: nowrap; }
 .tag.s2 { background: var(--s2-soft); color: var(--s2); }
 .tag.s3 { background: var(--s3-soft); color: var(--s3); }
 
 /* les */
-.lesson { background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0;
+.lesson { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0;
   }
 .lesson-head { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-.lesson-head h2 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; }
+.lesson-head h2 { font-size: 1.4rem; font-weight: 800; font-stretch: 108%; }
 .prose { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .prose > p, .sub > p, .prose li, .sub li { max-width: 68ch; }
 .sub { display: flex; flex-direction: column; gap: 12px; padding-top: 14px; border-top: 1px solid var(--rule); min-width: 0; }
 .sub:first-child { border-top: 0; padding-top: 0; }
-.sub h3 { font-size: 1.1rem; font-weight: 700; }
+.sub h3 { font-size: 1.1rem; font-weight: 700; font-stretch: 104%; }
 .sub h4 { font-size: 1rem; font-weight: 700; }
 .sub.hit { animation: hit 1.6s ease-out; border-radius: 6px; }
 @keyframes hit { from { background: var(--mark); } to { background: transparent; } }
@@ -414,14 +421,14 @@ strong { font-weight: 600; }
 blockquote { margin: 0; padding: 12px 16px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; line-height: 1.45; }
 
 .callout { display: flex; flex-direction: column; gap: 4px; padding: 12px 16px; border-radius: 12px; background: var(--sunk); max-width: 72ch; }
-.callout .c-label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+.callout .c-label { font-size: 0.84rem; font-weight: 700; color: var(--ink-soft); }
 .callout.kern { background: var(--accent-soft); }
 .callout.kern .c-label { color: var(--accent); }
 .callout.kern p { font-size: 1.02rem; }
 .callout.warn { background: var(--warn-soft); }
 .callout.warn .c-label { color: var(--warn); }
-.callout.portfolio, .callout.product { background: transparent; border: 1px dashed var(--rule); }
-.from-notes { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 2px 6px; border-radius: 4px; margin-right: 2px; white-space: nowrap; vertical-align: 1px; }
+.callout.portfolio, .callout.product { background: transparent; border: 1px dashed var(--ink-soft); }
+.from-notes { font-size: 0.76rem; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 2px 6px; border-radius: 4px; margin-right: 2px; white-space: nowrap; vertical-align: 1px; }
 
 .scroll { overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; border: 1px solid var(--rule); border-radius: 12px; }
 table { border-collapse: collapse; width: 100%; font-size: 0.9rem; line-height: 1.45; }
@@ -444,7 +451,7 @@ pre { margin: 0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0
 .m-axis-y small, .m-axis-x small { color: var(--ink-soft); font-weight: 400; font-size: 0.75rem; }
 .m-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
 .m-q { border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 3px; background: var(--sunk); min-width: 0; font-size: 0.88rem; line-height: 1.4; overflow-wrap: anywhere; hyphens: auto; }
-.m-q b { font-family: var(--font-display); font-size: 1rem; }
+.m-q b { font-family: var(--font-display); font-size: 1rem; font-stretch: 108%; }
 .m-q small { color: var(--ink-soft); font-size: 0.78rem; }
 .m-q em { font-style: normal; color: var(--ink-soft); font-size: 0.82rem; margin-top: 4px; }
 .m-q.win { background: var(--s3-soft); } .m-q.win b { color: var(--s3); }
@@ -466,18 +473,19 @@ pre { margin: 0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="top">
+<header class="band">
+<div class="band-in">
   <nav class="crumbs" aria-label="Navigatie">__CRUMBS__</nav>
-  <span class="eyebrow">Samenvattingen · periode 2</span>
-  <h1>__HEADING__</h1>
+  <div class="title-row"><span class="plate" aria-hidden="true">__CODE__</span><div><span class="kind">Samenvattingen per week</span><h1>__HEADING__</h1></div></div>
   <p class="lead">__LINE__</p>
   <div class="search" role="search">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
     <input id="q" type="search" placeholder="Zoek een begrip, model of artikel" autocomplete="off" aria-label="Zoek in de samenvattingen">
   </div>
   <div class="results" id="results" hidden aria-live="polite"></div>
+</div>
 </header>
+<div class="wrap">
 <nav class="weeknav" id="weeknav" aria-label="Weken">__WEEKNAV__</nav>
 <main id="main">
 __WEEKS__
@@ -537,7 +545,7 @@ __WEEKS__
     hits.sort(function (a, b) { return (b.nt.indexOf(term) !== -1) - (a.nt.indexOf(term) !== -1); });
     var html = '<div class="count">' + (hits.length ? hits.length + (hits.length === 1 ? " plek" : " plekken") + " gevonden" + (hits.length > 12 ? ", de eerste 12:" : "") : "Niets gevonden. Probeer een ander woord of een kortere zoekterm.") + "</div>";
     hits.slice(0, 12).forEach(function (r) {
-      html += '<a href="#' + r.id + '"><span class="where">' + esc(r.week) + " · " + esc(r.lesson) + '</span><span class="what">' + esc(r.title) + '</span><span class="snip">' + snippet(r.text, r.n, term) + "</span></a>";
+      html += '<a href="#' + r.id + '"><span class="where">' + esc(r.week) + ", " + esc(r.lesson) + '</span><span class="what">' + esc(r.title) + '</span><span class="snip">' + snippet(r.text, r.n, term) + "</span></a>";
     });
     box.innerHTML = html; box.hidden = false;
   }
@@ -572,9 +580,10 @@ def build():
             crumbs.append(f'<a href="{c["oefen"]}">Oefenvragen en weektoetsen</a>')
         crumbs.append(f'<a class="ext" href="{c["doc"]}" target="_blank" rel="noopener">Bewerkbare versie in Claude</a>')
         a1, a2, a3, a4 = c["accent"]
+        b1, b2 = c["band"]
         page = PAGE
         for k, v in dict(HEADING=html.escape(c["heading"]), LINE=html.escape(c["line"]), CRUMBS="".join(crumbs), WEEKNAV="".join(navs),
-                         WEEKS="\n".join(weeks), BUILT=built, A1=a1, A2=a2, A3=a3, A4=a4).items():
+                         WEEKS="\n".join(weeks), BUILT=built, A1=a1, A2=a2, A3=a3, A4=a4, B1=b1, B2=b2, CODE=c["code"]).items():
             page = page.replace(f"__{k}__", v)
         assert "__" not in page.replace("__proto__", ""), slug
         os.makedirs(os.path.join(OUT, slug), exist_ok=True)
