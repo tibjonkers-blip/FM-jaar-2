@@ -66,7 +66,8 @@ def toelichting(slug):
         return ""
     spec = importlib.util.spec_from_file_location("tl_" + slug, f)
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
-    return "\nconst TOELICHTING = " + json.dumps(m.T, ensure_ascii=False) + ";\n"
+    # "</" escapen, zodat tekst als "</script>" in een uitleg het script niet voortijdig afsluit
+    return "\nconst TOELICHTING = " + json.dumps(m.T, ensure_ascii=False).replace("</", "<\\/") + ";\n"
 
 def build():
     css, markup, app = read("style.css"), read("markup.html"), read("app.js")
