@@ -915,7 +915,12 @@ const TOELICHTING = {"I1": "Een organisatie heeft altijd drie kenmerken: mensen 
 
   /* ---------- opslag ---------- */
   let state = { answers: {}, self: {}, mc: {}, mcChecked: {}, claude: {}, timer: { dur: 120, elapsed: 0, since: null } };
-  try { const raw = localStorage.getItem(KEY); if (raw) state = Object.assign(state, JSON.parse(raw)); } catch (e) {}
+  // Neem alleen bewaarde onderdelen over die nog de juiste vorm hebben; beschadigde opslag breekt de pagina dan niet.
+  try {
+    const raw = localStorage.getItem(KEY), saved = raw ? JSON.parse(raw) : null;
+    if (saved && typeof saved === "object" && !Array.isArray(saved))
+      for (const k of Object.keys(state)) if (saved[k] && typeof saved[k] === "object" && !Array.isArray(saved[k])) state[k] = saved[k];
+  } catch (e) {}
   let saveT;
   function save() { clearTimeout(saveT); saveT = setTimeout(() => { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }, 250); }
 
