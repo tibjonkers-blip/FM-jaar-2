@@ -12,8 +12,9 @@ Statische studiesite voor Facility Management jaar 2, periode 2, met drie vakken
 HRM en Praktijkproject Business Management (BM), plus twee casustoetsen Facilitaire Bedrijfskunde uit periode 1.
 Alle inhoud staat als Python-data en Markdown in `scripts/`. Python-bouwscripts maken daar kant-en-klare
 HTML- en JSON-bestanden van in `site/`. Die map staat in de repo en Netlify publiceert hem zoals hij is:
-er draait geen build op Netlify. Elke push naar `main` gaat automatisch live. Er is geen server, database
-of login: voortgang, cijfers en notities staan alleen in de browser van de gebruiker (`localStorage`).
+er draait geen build op Netlify. Elke push naar `main` gaat automatisch live. Voortgang, cijfers en notities staan
+in de browser van de gebruiker (`localStorage`). De enige server-kant is één Netlify Function die de eigen notities
+achter een wachtwoord online bewaart, zodat ze op meerdere apparaten hetzelfde zijn (zie "Eigen notities").
 
 ## Bouwen en publiceren
 
@@ -22,10 +23,12 @@ python3 scripts/build_site.py      # bouwt alles opnieuw in site/
 git add -A && git commit -m "..." && git push
 ```
 
-- Alleen Python 3 uit de standaardbibliotheek, geen pakketten.
+- Alleen Python 3 uit de standaardbibliotheek, geen pakketten. `package.json` is alleen voor de notitiefunctie
+  (`@netlify/blobs`); Netlify installeert dat zelf, `node_modules/` staat niet in de repo.
 - Bouw altijd opnieuw na een wijziging in `scripts/` en commit `site/` mee, anders verandert de live site niet.
 - `build_site.py --artifact DIR` maakt daarnaast een versie van de oefenpagina's IR en HRM voor de Claude-artifacts (zonder sitebalk).
-- `netlify.toml`: `publish = "site"`, geen build-commando, plus de beveiligingsheaders (zie Beveiliging).
+- `netlify.toml`: `publish = "site"`, een build-commando dat niets doet (alleen `echo`), functies in `netlify/functions/`,
+  en de beveiligingsheaders met de CSP.
 
 ## Mappen
 
@@ -40,6 +43,8 @@ git add -A && git commit -m "..." && git push
 | `scripts/samenvattingen/<vak>/` | Samenvattingen als Markdown (`overzicht.md`, `week-1.md` t/m `week-7.md`), export van de Claude-documenten. |
 | `scripts/figuren/` | Figuren in de samenvattingen: componenten in `lib.py`, per vak een lijst `FIGUREN`. |
 | `scripts/bedrijfskunde/` | Casustoetsen Waalhop en Heidezoom: gedeelde motor (`app.js`, `markup.html`, `style.css`) en per toets een databestand (`waalhop.js`, `heidezoom.js`). |
+| `scripts/samenvattingen/notitie-sleutels.json` | Alle les-ids die ooit een notitieveld hadden (door de bouw bijgehouden, zie "Eigen notities"). |
+| `netlify/functions/notities.mjs` | De online opslag van de eigen notities (Netlify Function + Netlify Blobs). |
 
 ## Pagina's en URL's
 
@@ -49,6 +54,7 @@ git add -A && git commit -m "..." && git push
 | `/<vak>/` (`inkoop-recht`, `hrm`, `praktijkproject`) | `build_site.py` | `scripts/vragen/template.html` + `vragen.json` + `toetsen.json` |
 | `/samenvattingen/<vak>/` | `build_samenvattingen.py` | `scripts/samenvattingen/<vak>/*.md` + `scripts/figuren/<vak>.py` |
 | `/bedrijfskunde/<toets>/` | `build_bedrijfskunde.py` | `scripts/bedrijfskunde/` |
+| `/api/notities?vak=<vak>` | `netlify/functions/notities.mjs` | Netlify Blobs, store `notities` (GET en PUT, alleen met wachtwoordsleutel) |
 
 Deeplinks: `/<vak>/#oefenen-wN`, `/<vak>/#toetsen-wN`, `/samenvattingen/<vak>/#week-N`.
 BM heet in de code `praktijkproject` (map, slug) en `pp` (toetsen).
@@ -105,10 +111,27 @@ in `build_bedrijfskunde.py` (plus `CASUS` in `sitenav.py`).
 
 ## Beveiliging
 
-`netlify.toml` stuurt voor elke pagina een Content-Security-Policy mee: alleen eigen bestanden en Google Fonts, inline scripts
-toegestaan, geen iframes, formulieren of andere domeinen. Daarnaast X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy
-en HSTS. Gevolg: **elke nieuwe externe bron (script, lettertype, afbeelding, API) moet eerst in de CSP**, anders blokkeert de
-browser hem. De samenvattingen laten alleen http(s)-, mail- en interne links door (`inline()` in `build_samenvattingen.py`).
+`netlify.toml` stuurt voor elke pagina een Content-Security-Policy mee: alleen eigen bestanden (ook `/api/...`) en Google Fonts,
+inline scripts toegestaan, geen iframes, formulieren of andere domeinen. Daarnaast X-Frame-Options, nosniff, Referrer-Policy,
+Permissions-Policy en HSTS. Gevolg: **elke nieuwe externe bron (script, lettertype, afbeelding, API op een ander domein) moet
+eerst in de CSP**, anders blokkeert de browser hem. De samenvattingen laten alleen http(s)-, mail- en interne links door
+(`inline()` in `build_samenvattingen.py`).
+
+## Eigen notities (samenvattingen)
+
+- Onder elke les een notitieveld (`NOTES_CSS`/`NOTES_JS` in `build_samenvattingen.py`, het veld zelf maakt het script).
+  Opslag in `localStorage` `fm-notities-<vak>`: `{ notes: { <les-id>: { t, u, l, b } }, pending, exported }`.
+  Onderaan elke samenvatting: downloaden als `.md` en terugzetten (voegt samen, overschrijft niets), "Meescrollen" houdt
+  het veld onderin beeld, en de zoekbalk zoekt ook in de notities.
+- Les-id = `week-N-<titel>`. `notitie-sleutels.json` bewaart alle ids; verdwijnt er een (lestitel veranderd), dan stopt de bouw.
+  Zet dan in `NOTITIE_ALIASSEN` het oude id op het nieuwe, dan verhuist de notitie mee. Een notitie zonder les staat onderaan in het paneel.
+- **Synchroniseren**: wie een apparaat koppelt, slaat in `localStorage` `fm-notities-sync` een sleutel op
+  (sha-256 van `"fm-notities:" + wachtwoord`, nooit het wachtwoord zelf); die geldt voor alle vakken. De browser praat met
+  `/api/notities` (`connect-src 'self'` in de CSP). De functie controleert de sleutel tegen de Netlify-omgevingsvariabele
+  `NOTITIES_WACHTWOORD` (minstens 12 tekens, anders 503) en bewaart per vak één JSON in Netlify Blobs (strong consistency,
+  schrijven alleen met ETag-voorwaarde). Elke notitie krijgt online een versie `v`; een apparaat mag alleen schrijven met de
+  versie die het kende (`b`), anders voegt de browser beide teksten samen. Er gaat dus geen tekst verloren. Rate limit:
+  90 verzoeken per minuut per IP (in `config` van de functie). Een gewijzigde `NOTITIES_WACHTWOORD` werkt pas na een nieuwe deploy.
 
 ## Vormgeving
 
@@ -123,14 +146,3 @@ Test elke gewijzigde pagina op 1280, 380 en 320 px breed, licht en donker.
 - Nooit de naam van een docent; schrijf "de docent". Namen in casussen zijn verzonnen.
 - Geen hij/zij voor verzonnen personen.
 - Bij MC is het juiste antwoord niet duidelijk het langste, en geen dubbele vragen.
-
-## Lopend werk (nog niet op `main`)
-
-Controleer of deze pull requests inmiddels gemerged zijn en verplaats de beschrijving dan naar de juiste sectie hierboven.
-
-- **PR #2, eigen notities per les**: onder elke les in de samenvattingen een notitieveld (`NOTES_CSS`/`NOTES_JS` in
-  `build_samenvattingen.py`). Opslag in `localStorage`, sleutel `fm-notities-<vak>`, nooit op de site of in de repo. Onderaan elke
-  samenvatting: alle notities downloaden als `.md` en terugzetten (samenvoegen, niets overschrijven), knop "Meescrollen", en de
-  zoekbalk doorzoekt ook de notities. Een notitie hangt aan het les-id (`week-N-<titel>`); `scripts/samenvattingen/notitie-sleutels.json`
-  houdt alle ids bij en de bouw stopt als er een verdwijnt. Lestitel veranderd? Zet het oude id op het nieuwe in `NOTITIE_ALIASSEN`.
-  Synchroniseren tussen apparaten wordt nog gebouwd.

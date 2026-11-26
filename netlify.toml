@@ -1,11 +1,17 @@
-# Statische site: geen build op Netlify, de gebouwde bestanden staan in site/.
+# Statische site: de gebouwde bestanden staan in site/, er wordt op Netlify niets gebouwd.
+# Netlify installeert wel package.json (alleen @netlify/blobs) voor de functie in netlify/functions/:
+# de online opslag van de eigen notities op /api/notities. Die werkt pas als de omgevingsvariabele
+# NOTITIES_WACHTWOORD in Netlify is ingesteld (zie OVERZICHT.md).
 [build]
   publish = "site"
-  command = ""
+  command = "echo 'Geen build: site/ is al gebouwd'"
+
+[functions]
+  directory = "netlify/functions"
 
 # Beveiligingsheaders voor elke pagina. De site laadt alleen eigen bestanden en het lettertype van Google Fonts.
 # Scripts staan inline in de pagina's, daarom 'unsafe-inline'; al het andere (andere domeinen, iframes, formulieren,
-# plug-ins, gegevens versturen naar derden) is dichtgezet.
+# plug-ins, gegevens versturen naar derden) is dichtgezet. connect-src 'self' laat de notitie-opslag (/api/notities) toe.
 [[headers]]
   for = "/*"
   [headers.values]
