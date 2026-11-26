@@ -538,6 +538,7 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
 .np-sync h3 { font-size: 1.05rem; font-weight: 700; font-stretch: 104%; }
 .np-sync > div { display: flex; flex-direction: column; gap: 10px; }
 .np-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.np-row .wn-btn { align-items: center; }
 .np-row input { flex: 1 1 220px; min-width: 0; font: inherit; color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 9px 12px; }
 .np-row input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
 .np-sync-state { font-weight: 600; }
@@ -771,7 +772,7 @@ button.wn-btn:disabled { opacity: 0.6; cursor: wait; }
       '<div class="note-box"><div class="note-bar"><span class="note-title">Mijn notities</span><span class="note-status" aria-live="polite"></span>' +
       (orphan ? "" : '<button type="button" class="note-pin" aria-pressed="false" title="Houd dit notitieveld onderin beeld terwijl je door deze les scrolt">' + PIN + "<span>Meescrollen</span></button>") +
       '</div><textarea class="note-text" rows="4" spellcheck="true" placeholder="' + esc(HINT) + '" aria-label="' + esc("Mijn notities bij " + label) + '"></textarea>' +
-      '<p class="note-foot"><span class="note-where"></span> <button type="button" class="note-dl">Download een kopie</button> · <a href="#notities">Hoe werkt dit?</a></p></div>';
+      '<p class="note-foot"><span class="note-where"></span> <button type="button" class="note-dl">Download een kopie</button> · <a href="#notities" class="note-more"></a></p></div>';
     var ta = sec.querySelector("textarea"), downInside = false;
     sec.addEventListener("pointerdown", function () { downInside = true; setTimeout(function () { downInside = false; }, 400); });
     ta.addEventListener("input", function () {
@@ -791,7 +792,10 @@ button.wn-btn:disabled { opacity: 0.6; cursor: wait; }
     where(sec);
     sec.hidden = false;
   }
-  function where(sec) { sec.querySelector(".note-where").textContent = token ? "Gesynchroniseerd met je andere apparaten." : "Alleen in deze browser bewaard."; }
+  function where(sec) {
+    sec.querySelector(".note-where").textContent = token ? "Gesynchroniseerd met je andere apparaten." : "Alleen op dit apparaat bewaard.";
+    sec.querySelector(".note-more").textContent = token ? "Hoe werkt dit?" : "Koppel je apparaten";
+  }
   function redraw() {  // na synchroniseren of terugzetten: velden bijwerken, behalve waar je net typt
     Object.keys(secs).forEach(function (id) { if (!dirty[id]) fill(secs[id]); });
     orphans(); info();
