@@ -51,8 +51,8 @@ Leerdoelen: je kent de procedures en weet welke het best bij welke situatie past
 
 | Procedure | Artikel | Hoe vaak? |
 | --- | --- | --- |
-| Openbare procedure | 2.26 Aw | Meest voorkomend |
-| Niet-openbare procedure | 2.27 Aw | Meest voorkomend |
+| Openbare procedure | 2.26 Aw (stappen) | Meest voorkomend |
+| Niet-openbare procedure | 2.27 Aw (stappen) | Meest voorkomend |
 | Concurrentiegerichte dialoog | 2.28 Aw | Zeldzaam |
 | Mededingingsprocedure met onderhandeling | 2.30 Aw | In uitzonderingsgevallen |
 | Innovatiepartnerschap | 2.31a Aw |  |
@@ -66,9 +66,11 @@ De slides noemen voor het wettelijk kader van de openbare en niet-openbare proce
 
 ### Openbare procedure
 
-**Eén fase**: iedereen mag inschrijven en levert de gegevens voor de kwalificatie en de offerte in één keer in. Stappen: (1) aankondiging verzenden, (2) sluiting, (3) selectie- en gunningsfase (beoordeling), (4) afwijzingen, (5) gunning en contracteren.
+**Eén fase**: iedereen mag inschrijven en levert de gegevens voor de kwalificatie en de offerte in één keer in. Stappen volgens de slide: (1) aankondiging verzenden, (2) sluiting, (3) selectie- en gunningsfase (beoordeling), (4) afwijzingen, (5) gunning en contracteren.
 
-- **Termijn**: volgens de slide 45 dagen vanaf verzending van de aankondiging tot de sluitingsdatum (art. 2.71 Aw). Verkorten kan met een vooraankondiging (art. 2.71 lid 5 en 6) en met 5 dagen als elektronisch inschrijven mogelijk is (art. 2.74b). Verlengen onder voorwaarden (art. 2.72 en 2.73). Ik neem deze getallen over van de slide; zoek ze op in je bundel, termijnvragen zijn makkelijke punten.
+De wettelijke stappen staan in **art. 2.26 Aw** (oefenmateriaal 4.4 vraagt ze in eigen woorden; gecontroleerd op wetten.overheid.nl). De dienst: (a) maakt de aankondiging bekend; (b) toetst de uitsluitingsgronden; (c) toetst de geschiktheidseisen; (d) toetst de technische specificaties, eisen en normen; (e) beoordeelt de geldige inschrijvingen op het gunningscriterium (art. 2.114) en de nadere criteria (art. 2.115); (f) maakt een proces-verbaal van de opdrachtverlening; (g) deelt de gunningsbeslissing mee; (h) kan de overeenkomst sluiten; (i) maakt de aankondiging van de gegunde opdracht bekend. Let op: selectiecriteria komen in dit rijtje niet voor. Deze lijst is je beste bron voor oefentoetsvraag 4 (week 7).
+
+- **Termijn**: volgens de slide 45 dagen vanaf verzending van de aankondiging tot de sluitingsdatum (art. 2.71 Aw). Verkorten kan met een vooraankondiging: tot 29 dagen, maar nooit minder dan 22 dagen (art. 2.71 lid 5, voorwaarden in lid 6), en met 5 dagen als elektronisch inschrijven mogelijk is (art. 2.74b). Verlengen onder voorwaarden (art. 2.72 en 2.73), bijvoorbeeld als de stukken niet elektronisch toegankelijk zijn (art. 2.66, +5 dagen volgens de slide). De termijnen van art. 2.71 lid 1 t/m 5 en art. 2.74b heb ik gecontroleerd op wetten.overheid.nl.
 
 | Voordelen t.o.v. niet-openbaar | Nadelen |
 | --- | --- |
@@ -79,13 +81,14 @@ De slides noemen voor het wettelijk kader van de openbare en niet-openbare proce
 
 Vuistregel (vraag aan het begin van les 5): verwacht je **weinig inschrijvers**, kies dan de **openbare** procedure; verwacht je er **veel**, dan de **niet-openbare**.
 
-Arresten: *Beentjes* (C-31/87): selectie en gunning zijn aparte stappen. *Deense brug* (Storebaelt): niet-acceptabele offertes afwijzen in plaats van na de inschrijving onderhandelen. De slide schrijft C-234/89; voor zover ik weet is het zaaknummer C-243/89, check dat even. Ook genoemd: *Waalse bussen* (C-87/94) en *Scan Office* (T-40/01).
+Arresten: *Beentjes* (C-31/87): selectie en gunning zijn aparte stappen. *Deense brug* (Storebaelt, **C-243/89**): niet-acceptabele offertes afwijzen in plaats van na de inschrijving onderhandelen. De slide schrijft C-234/89; dat is een typfout, op EUR-Lex staat het arrest als zaak C-243/89 (Commissie/Denemarken, 22 juni 1993). Ook genoemd: *Waalse bussen* (C-87/94) en *Scan Office* (T-40/01).
 
 ### Niet-openbare procedure
 
 **Twee fasen**: een selectiefase en een inschrijvingsfase. Na de selectie heten gegadigden **inschrijvers**. Je selecteert **minimaal 5** (art. 2.99 lid 3 Aw). Stappen: aankondiging, sluiting selectiefase, evaluatie, afwijzen, offerteaanvraag verzenden, sluiting gunningsfase, evaluatie, afwijzen, gunning en contract.
 
-- **Termijnen** volgens de slide: 30 dagen voor de verzoeken tot deelneming (art. 2.71 lid 2) en 40 dagen voor de inschrijvingen (art. 2.71 lid 4), met dezelfde verkortingen en verlengingen als hierboven.
+- **Termijnen**: 30 dagen voor de verzoeken tot deelneming (art. 2.71 lid 2) en 40 dagen voor de inschrijvingen, te rekenen vanaf de uitnodiging tot inschrijving (art. 2.71 lid 4), met dezelfde verkortingen en verlengingen als hierboven.
+- **Stappen**: art. 2.27 Aw. **Beperken** van het aantal gegadigden mag alleen bij twee-fasenprocedures (art. 2.99 lid 1); het aantal vermeld je in de aankondiging (lid 2).
 - Arresten: *Commissie/Italië* (C-362/90): geen gunningscriteria gebruiken in de selectiefase. *Universal Bau* (C-470/99): de weging van selectiecriteria vooraf bekendmaken. *Nord-Pas-de-Calais* (C-225/98): minimaal 5 kandidaten, maar niet bij voorbaat beperken tot precies 5.
 
 ### Concurrentiegerichte dialoog
@@ -94,17 +97,18 @@ Arresten: *Beentjes* (C-31/87): selectie en gunning zijn aparte stappen. *Deense
 - Voor **zeer complexe** opdrachten, als objectief niet te bepalen is welke middelen en oplossingen nodig zijn: infrastructuur, grote computernetwerken, complexe financiering.
 - De aanbestedende dienst stelt samen met marktpartijen het programma van eisen, de technische oplossing en de juridische constructie vast.
 - Selectie zoals bij niet-openbaar, maar met **minimaal 3** (art. 2.99 lid 3). Daarna dialoogrondes, het PvE vaststellen, offerteaanvraag, één inschrijving per partij waarover **niet onderhandeld** mag worden, evaluatie en gunning.
-- Gunnen altijd op **beste prijs-kwaliteitverhouding**, dus niet op laagste prijs. De slide noemt art. 2.110 Aw, het antwoordmodel van de oefentoets art. 2.29 sub i Aw.
+- Gunnen altijd op **beste prijs-kwaliteitverhouding**, dus niet op laagste prijs. De slide noemt art. 2.110 Aw, het antwoordmodel van de oefentoets art. 2.29 sub i Aw. Gecontroleerd op wetten.overheid.nl: **beide kloppen**. Art. 2.110 lid 1 zegt het rechtstreeks; art. 2.29 sub i staat in het stappenplan van de dialoog. Noem op het tentamen allebei.
+- Geen cherry picking staat in de wet: art. 2.110 lid 7 (oplossingen en vertrouwelijke inlichtingen niet zonder instemming aan anderen doorgeven); gelijke behandeling tijdens de dialoog: lid 6.
 - Geen **cherry picking**: oplossingen van de een niet doorspelen aan een ander.
 - Termijn: 30 dagen voor de verzoeken tot deelneming (art. 2.71 lid 3); voor de dialoog- en inschrijvingsfase geen wettelijke minimumtermijnen.
-- Voordeel: je benut de kennis van de markt. Nadeel: complex en tijdrovend. Alternatieven: prijsvraag, mededingingsprocedure met onderhandeling of een marktconsultatie.
+- Voordeel: je benut de kennis van de markt. Nadeel: complex en tijdrovend. Alternatieven: prijsvraag, mededingingsprocedure met onderhandeling (mits je voldoet aan art. 2.30 lid 1 jo. 2.28 lid 1 sub a en b) of een marktconsultatie.
 - Aandachtspunten: vertrouwelijk omgaan met informatie, een functionele (oplossingsvrije) vraag en de criteria al in de aankondiging. Volgens de slide is er in Europa nog nooit geprocedeerd over de vraag wat "zeer complex" is.
 
 **Onregelmatige en onaanvaardbare inschrijvingen** (art. 2.28 lid 3 en 4 Aw) zijn ook een grond om naar de dialoog of de mededingingsprocedure met onderhandeling te gaan, zonder de opdracht fundamenteel te wijzigen. Onregelmatig: afgestemde offertes (bouwfraude) of offertes die niet aan de essentiële voorwaarden voldoen. Onaanvaardbaar: ver boven het geraamde budget, of inschrijvers die niet aan de geschiktheidseisen voldoen.
 
 ### Mededingingsprocedure met onderhandeling
 
-- Art. 2.30 Aw: dezelfde omstandigheden als bij de concurrentiegerichte dialoog.
+- Art. 2.30 lid 1 Aw: dezelfde omstandigheden als bij de concurrentiegerichte dialoog (art. 2.28 lid 1 sub a en b).
 - **Grootste verschil**: hier schrijf je eerst in en wordt daarna onderhandeld; bij de dialoog komt de inschrijving na de dialoog.
 - **Minimaal 3** gegadigden (art. 2.99 lid 3); de selectiefase is identiek aan de niet-openbare procedure.
 - Geen cherry picking. Gefaseerde gunning is mogelijk.
@@ -113,17 +117,17 @@ Arresten: *Beentjes* (C-31/87): selectie en gunning zijn aparte stappen. *Deense
 
 ### Termijnen verkorten bij een dringende reden
 
-Bij de openbare, niet-openbare en mededingingsprocedure met onderhandeling (art. 2.74 Aw). De reden mag **niet te wijten zijn aan de aanbestedende dienst zelf** en moet in de aankondiging staan. Voorbeeld: de leverancier komt zijn verplichtingen niet na en het contract wordt ontbonden, of hij gaat failliet (oefentoets).
+Bij de openbare, niet-openbare en mededingingsprocedure met onderhandeling (art. 2.74 Aw). Gecontroleerd op wetten.overheid.nl: de minimumtermijnen worden dan 15 dagen voor inschrijvingen bij de openbare procedure (sub a), 15 dagen voor verzoeken tot deelneming (sub b) en 10 dagen voor inschrijvingen (sub c) bij de niet-openbare en mededingingsprocedure met onderhandeling. De wet spreekt van een "urgente situatie, die door de aanbestedende dienst naar behoren is onderbouwd". De reden mag **niet te wijten zijn aan de aanbestedende dienst zelf** en moet in de aankondiging staan. Voorbeeld: de leverancier komt zijn verplichtingen niet na en het contract wordt ontbonden, of hij gaat failliet (oefentoets).
 
 ### Onderhandelingsprocedure zonder voorafgaande aankondiging
 
 Art. 2.32 Aw, alleen als:
 
-- er bij een openbare of niet-openbare procedure geen (geschikte) inschrijvingen waren;
-- de opdracht om technische of artistieke redenen of door uitsluitende rechten maar door één ondernemer kan worden uitgevoerd;
+- er bij een openbare of niet-openbare procedure geen (geschikte) inschrijvingen waren (art. 2.32 lid 1 sub a);
+- de opdracht om technische of artistieke redenen of door uitsluitende rechten maar door één ondernemer kan worden uitgevoerd (art. 2.32 lid 1 sub b);
 - er **dwingende spoed** is (art. 2.32 lid 1 sub c): een onvoorzienbare gebeurtenis, niet te wijten aan de dienst, waardoor de minimumtermijnen niet haalbaar zijn. Een dijkdoorbraak is dwingende spoed (levensreddend werk), de dijkverhoging daarna niet.
 
-Overige gronden in art. 2.33 t/m 2.36. Procedure (art. 2.37): een proces-verbaal en een aankondiging van de gegunde opdracht met de reden voor deze procedure.
+Overige gronden in art. 2.33 t/m 2.36. Procedure (art. 2.37): onderhandelen, een proces-verbaal van de opdrachtverlening, de gunningsbeslissing meedelen, de overeenkomst sluiten en een aankondiging van de gegunde opdracht bekendmaken, met de reden voor deze procedure (zie ook art. 1.4 lid 3 Aw: motivering op verzoek).
 
 ### Marktconsultatie
 
@@ -133,16 +137,16 @@ Geen officiële procedure, maar vooraf aan de aanbesteding. Geeft inzicht in de 
 
 **Boven de drempel**: art. 2.127 e.v. en 4.15 e.v. Aw. **Onder de drempel of bij uitgezonderde opdrachten**: deze artikelen naar analogie, op grond van de algemene beginselen van behoorlijk bestuur (waaronder het fair-playbeginsel), met een Alcatel-termijn van **15 dagen**.
 
-**Standstill (Alcatel-termijn)**, art. 2.127 Aw: **20 dagen** na verzending van de afwijzing geen definitieve gunning en geen overeenkomst. De afwijzing moet aan de vormvoorschriften van art. 2.130 Aw voldoen (onder meer de redenen). Binnen die termijn kan een verliezer een kort geding starten; daarna rest alleen de bodemprocedure. Start een verliezer binnen de termijn een kort geding, dan loopt de standstill door tot de uitspraak (oefentoets vraag 8).
+**Standstill (Alcatel-termijn)**, art. 2.127 Aw: ten minste **20 kalenderdagen** (lid 3), te rekenen vanaf de dag na verzending van de mededeling van de gunningsbeslissing (lid 2), geen definitieve gunning en geen overeenkomst (lid 1). Uitzonderingen in lid 4 (onder meer opdrachten op basis van een raamovereenkomst). De mededeling moet aan art. 2.130 Aw voldoen: de relevante redenen (kenmerken en relatieve voordelen van de winnende inschrijving en de naam van de winnaar) en een nauwkeurige omschrijving van de opschortende termijn. Binnen die termijn kan een verliezer een kort geding starten; daarna rest alleen de bodemprocedure. Start een verliezer binnen de termijn een kort geding, dan loopt de standstill door tot de uitspraak (oefentoets vraag 8). Het antwoordmodel noemt hier geen artikel en in art. 2.127 Aw zelf staat het niet. Noem op het tentamen art. 2.127 als basis van de standstill en leg de verlenging uit zoals in het antwoordmodel; vraag de docent waar hij deze regel op baseert als je het artikel wilt kunnen noemen.
 
 | Kort geding (snel, voorlopig) | Bodemprocedure |
 | --- | --- |
 | Bevel of gebod, verbod, voorschot op schadevergoeding | Vernietiging van een beslissing of rechtshandeling |
 | Vaak: verbod tot gunning, staking van de procedure, herbeoordeling (marginaal getoetst), heraanbesteding | Verklaring voor recht |
 | Een voorschot, omdat de uitspraak voorlopig is | Bevel of verbod op straffe van een dwangsom |
-|  | Schadevergoeding (art. 6:162 BW) en ongedaanmaking van een overeenkomst in strijd met het aanbestedingsrecht (art. 4.15 e.v., 4.18 Aw) |
+|  | Schadevergoeding (art. 6:162 BW) en vernietiging van een overeenkomst in strijd met het aanbestedingsrecht (art. 4.15 lid 1 Aw, onder meer zonder vereiste aankondiging (sub a) of zonder de standstill in acht te nemen (sub b)); de rechter kan om dwingende redenen van algemeen belang van vernietiging afzien (art. 4.18 Aw) |
 
-**Toezicht**: de **ACM** kan een boete opleggen van maximaal **15%** van de opdrachtwaarde als een overeenkomst niet door de rechter wordt vernietigd (art. 4.21 Aw); de **Europese Commissie** bij verdragsschending; de **accountant** via de rechtmatigheidscontrole.
+**Toezicht**: de **ACM** legt een boete op van maximaal **15%** van de geraamde opdrachtwaarde als de rechter de overeenkomst op grond van art. 4.18 lid 1 niet vernietigt (art. 4.21 lid 1 en 4 Aw); de **Europese Commissie** bij verdragsschending; de **accountant** via de rechtmatigheidscontrole.
 
 ### Oefencasus (oefenmateriaal les 4)
 

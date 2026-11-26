@@ -94,11 +94,11 @@ De kern: overheden moeten bij inkoop iedereen een eerlijke kans geven, en de beg
 
 | Laag | Regels | Wat je moet weten |
 | --- | --- | --- |
-| Wereld (WTO) | Government Procurement Agreement (GPA) | Doel: vrije internationale handel. Non-discriminatie (art. III), transparantie (art. XVII), waardering opdracht (art. II). Drempels in SDR, excl. btw: werken 5.000.000, diensten en leveringen 200.000, nutssector D&L 400.000. |
-| Europa (EU) | Richtlijnen 2014/23, 2014/24 en 2014/25, interpretatieve mededelingen, arresten | Uit de arresten van het Hof van Justitie komen de algemene beginselen. |
+| Wereld (WTO) | Government Procurement Agreement (GPA) | Doel: vrije internationale handel. Non-discriminatie (art. III), transparantie (art. XVII), waardering opdracht (art. II), speciale regelingen voor ontwikkelingslanden (art. V). Drempels in SDR, excl. btw: werken 5.000.000, diensten en leveringen 200.000, nutssector D&L 400.000. |
+| Europa (EU) | VWEU (vrij verkeer van goederen, werken en diensten; mededingingsregels art. 101 en 102 VWEU), richtlijnen 2014/23, 2014/24 en 2014/25, interpretatieve mededelingen, arresten | Uit de arresten van het Hof van Justitie komen de algemene beginselen. |
 | Nederland | Aanbestedingswet 2012 (Aw), Aanbestedingsbesluit, Gids proportionaliteit, ARW 2016 | Ook: algemene beginselen van behoorlijk bestuur, precontractuele goede trouw, het clusterverbod (art. 1.5 Aw) en decentrale regels. |
 
-Kritische kanttekening: de slide noemt 2014/23 "klassieke overheid", 2014/24 "bijzondere sectoren" en 2014/25 "concessies". Voor zover ik weet is dat verwisseld: 2014/24 is de richtlijn voor de klassieke overheid, 2014/25 die voor de speciale sectoren (nutssectoren) en 2014/23 die voor concessies. Check dit in Boom Basics of vraag het de docent, want zo'n detail kan in een meerkeuzevraag zitten.
+Kritische kanttekening: de slide noemt 2014/23 "klassieke overheid", 2014/24 "bijzondere sectoren" en 2014/25 "concessies". Dat is verwisseld. Gecontroleerd op EUR-Lex (26 nov 2026): **2014/24/EU** gaat over het plaatsen van overheidsopdrachten (klassieke overheid), **2014/25/EU** over de sectoren water- en energievoorziening, vervoer en postdiensten (speciale sectoren of nutssectoren) en **2014/23/EU** over concessieovereenkomsten. Ook de Aw zelf verwijst voor gewone overheidsopdrachten steeds naar richtlijn 2014/24 (bijvoorbeeld art. 2.1 t/m 2.3 en 2.38 Aw).
 
 ### De zeven algemene beginselen
 
@@ -109,12 +109,16 @@ Ze zijn grotendeels in EU-rechtspraak ontwikkeld en vastgelegd in de richtlijnen
 | 1. Gelijkheid | 1.8 Aw | Gelijke gevallen gelijk behandelen, tenzij objectief gerechtvaardigd. Ook verkapte en indirecte discriminatie is verboden. | Zie hieronder |
 | 2. Non-discriminatie | 1.8 Aw | Geen onderscheid naar nationaliteit, direct of indirect (art. 18 VWEU). Omgekeerde discriminatie mag wel. | - |
 | 3. Transparantie | 1.9 Aw | Passende openbaarheid vooraf, duidelijke criteria tijdens, motivering van de gunning achteraf. Doel: controleren of gelijkheid en non-discriminatie worden nageleefd. | Telaustria C-324/98, Coname C-231/03 |
-| 4. Evenredigheid | Gids proportionaliteit | Eisen niet zwaarder dan nodig voor de opdracht, technisch, professioneel en financieel. | Valys C-171/15: gelijkheid gaat vóór evenredigheid |
-| 5. Wederzijdse erkenning | 2.75 t/m 2.77 Aw | Gelijkwaardige producten, certificaten en kwalificaties uit andere lidstaten accepteren. | Vestergaard C-59/00 |
-| 6. Objectiviteit | 2.87 lid 1 sub g Aw | Objectief handelen en controleerbare procedure, zonder subjectieve voorkeuren. Vraag: hoe betrek je ervaringen uit het verleden objectief? | - |
+| 4. Evenredigheid | 1.10 Aw en Gids proportionaliteit | Eisen niet zwaarder dan nodig voor de opdracht, technisch, professioneel en financieel. | Valys C-171/15: gelijkheid gaat vóór evenredigheid |
+| 5. Wederzijdse erkenning | 2.75 t/m 2.77 Aw, bijvoorbeeld 2.76 lid 4 sub b en 2.78a lid 3 Aw | Gelijkwaardige producten, certificaten en kwalificaties uit andere lidstaten accepteren. | Vestergaard C-59/00 |
+| 6. Objectiviteit | 1.4 lid 1 Aw; 2.87 lid 1 sub g Aw | Objectief handelen en controleerbare procedure, zonder subjectieve voorkeuren. Vraag: hoe betrek je ervaringen uit het verleden objectief? | - |
 | 7. Effectieve concurrentie | - | Op de slide alleen genoemd, niet uitgewerkt. | - |
 
-De drie belangrijkste volgens de slides zijn gelijkheid, non-discriminatie en transparantie.
+De drie belangrijkste volgens de slides zijn gelijkheid, non-discriminatie en transparantie (de herhaalvraag in week 2 noemt gelijkheid/non-discriminatie, transparantie en evenredigheid).
+
+**Waar komen de artikelnummers vandaan?** De slides van week 1 noemen bij evenredigheid alleen de Gids proportionaliteit en bij objectiviteit art. 2.87 lid 1 sub g. Het antwoordmodel van de oefentoets (week 7, vraag 5) gebruikt **art. 1.10 Aw** voor evenredigheid en **art. 1.4 Aw** voor objectiviteit. Gecontroleerd op wetten.overheid.nl: art. 1.10 lid 1 eist dat eisen, voorwaarden en criteria "in een redelijke verhouding staan tot het voorwerp van de opdracht" (lid 3 en 4: de Gids proportionaliteit, pas toe of leg uit), en art. 1.4 lid 1 eist dat de dienst de keuze voor de procedure en voor de toegelaten ondernemers "op basis van objectieve criteria" maakt. Art. 2.87 lid 1 sub g is de facultatieve uitsluitingsgrond voor eerdere slechte prestaties. Noem op het tentamen bij voorkeur 1.10 en 1.4, zoals in het antwoordmodel.
+
+Art. 1.8, 1.9 en 1.10 staan in **afdeling 1.2.2 Aw** (art. 1.7 t/m 1.10b), het antwoord op de herhaalvraag in week 2. Art. 1.4 tot en met 1.6 (objectiviteit en maatschappelijke waarde, clusterverbod, administratieve lasten) staan in afdeling 1.2.1.
 
 **Gelijkheid in drie fasen**
 
@@ -124,7 +128,7 @@ De drie belangrijkste volgens de slides zijn gelijkheid, non-discriminatie en tr
 
 **Transparantie in drie fasen**
 
-1. **Vooraf**: een toegankelijke aankondiging, ook voor inschrijvers uit andere lidstaten. Bij een aanbestedingsplichtige opdracht via TenderNed (art. 1.18 Aw).
+1. **Vooraf**: een toegankelijke aankondiging, ook voor inschrijvers uit andere lidstaten. Bij een aanbestedingsplichtige opdracht via TenderNed (art. 1.18 Aw). Een voldoende toegankelijke aankondiging: *Coname* (C-231/03); passende mate van openbaarheid: *Telaustria* (C-324/98).
 2. **Tijdens**: criteria duidelijk, precies en ondubbelzinnig. Gunningscriteria, subcriteria en wegingsfactoren staan uitputtend in de aankondiging en het bestek. Selectie- en gunningscriteria worden niet tussentijds gewijzigd.
 3. **Na**: verduidelijking mag alleen ter concretisering of om een kenbare omissie te herstellen. Dat mag niet leiden tot een nieuwe inschrijving.
 
@@ -139,7 +143,7 @@ De **algemene beginselen van behoorlijk bestuur** gelden altijd voor bestuursorg
 
 ### Zo gebruik je dit in een casusantwoord
 
-Gebruik de vaste opbouw: **beginsel + artikel → wat het inhoudt → toepassing op de feiten → conclusie**. Voorbeeld: een gemeente besteedt het schoonmaakonderhoud van haar kantoren aan en eist een jaaromzet van €20 miljoen, terwijl de opdracht €400.000 per jaar waard is. Volgens het evenredigheidsbeginsel (Gids proportionaliteit) mogen eisen niet zwaarder zijn dan nodig. Een omzeteis van vijftig keer de opdrachtwaarde sluit geschikte mkb-schoonmaakbedrijven onnodig uit. Conclusie: de eis is disproportioneel en in strijd met het evenredigheidsbeginsel.
+Gebruik de vaste opbouw: **beginsel + artikel → wat het inhoudt → toepassing op de feiten → conclusie**. Voorbeeld: een gemeente besteedt het schoonmaakonderhoud van haar kantoren aan en eist een jaaromzet van €20 miljoen, terwijl de opdracht €400.000 per jaar waard is. Volgens het evenredigheidsbeginsel (art. 1.10 lid 1 Aw en de Gids proportionaliteit) mogen eisen niet zwaarder zijn dan nodig. Een omzeteis mag bovendien niet hoger zijn dan driemaal de geraamde waarde (art. 2.90 lid 5 sub a Aw, week 3). Een omzeteis van vijftig keer de opdrachtwaarde sluit geschikte mkb-schoonmaakbedrijven onnodig uit. Conclusie: de eis is disproportioneel en in strijd met het evenredigheidsbeginsel.
 
 Noem het artikel en, als het past, het arrest. Een antwoord dat alleen zegt "dit is oneerlijk" scoort niet.
 

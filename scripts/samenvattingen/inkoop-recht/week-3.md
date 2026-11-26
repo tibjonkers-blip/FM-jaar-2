@@ -92,16 +92,18 @@ Leerdoelen: je herkent wanneer een opdracht Europees aanbestedingsplichtig is (v
 
 ### Drempelbedragen
 
-De Europese Commissie stelt de drempels **iedere twee jaar** opnieuw vast aan de hand van de koers van de euro ten opzichte van de SDR. Volgens de slide gelden per 1 januari 2026 deze bedragen (excl. btw):
+De Europese Commissie stelt de drempels **iedere twee jaar** opnieuw vast aan de hand van de koers van de euro ten opzichte van de SDR. De Aw noemt zelf geen bedragen maar verwijst naar art. 4 van richtlijn 2014/24 (art. 2.1 t/m 2.7 Aw; een nieuwe drempel geldt vanaf het besluit van de Commissie, art. 2.7). Volgens de slide gelden per 1 januari 2026 deze bedragen (excl. btw):
 
-| Type opdracht | Drempel |
-| --- | --- |
-| Werken (ook concessies voor werken en werken die voor meer dan 50% gesubsidieerd zijn) | €5.404.000 |
-| Leveringen en diensten door de **centrale overheid** (Rijk, ministeries) | €140.000 |
-| Leveringen en diensten door **andere aanbestedende diensten** (gemeenten, provincies, waterschappen, publiekrechtelijke instellingen) | €216.000 |
-| Gesubsidieerde diensten die verband houden met gesubsidieerde werken | €216.000 |
-| Sociale en andere specifieke diensten | €750.000 |
-| Concessies | €5.404.000 |
+| Type opdracht | Drempel | Artikel |
+| --- | --- | --- |
+| Werken (ook concessies voor werken en werken die voor meer dan 50% gesubsidieerd zijn) | €5.404.000 | 2.1 Aw (gesubsidieerd: 2.8 Aw) |
+| Leveringen en diensten door de **centrale overheid** (Rijk, ministeries) | €140.000 | 2.2 Aw ("door de staat") |
+| Leveringen en diensten door **andere aanbestedende diensten** (gemeenten, provincies, waterschappen, publiekrechtelijke instellingen) | €216.000 | 2.3 Aw |
+| Gesubsidieerde diensten die verband houden met gesubsidieerde werken | €216.000 | 2.8 Aw |
+| Sociale en andere specifieke diensten | €750.000 | 2.6a Aw |
+| Concessies | €5.404.000 | Deel 2A Aw |
+
+De kolom met artikelen staat niet op de slide. Ik heb hem aangevuld na controle op wetten.overheid.nl; de bedragen zelf komen van de slide.
 
 Voorbeeld (vraag aan het begin van les 4): de schoonmaak van een gemeente valt onder de drempel van **€216.000**. Voor een ministerie (centrale overheid) zou het €140.000 zijn. Welke organen precies als centrale overheid gelden, staat in een bijlage bij de richtlijn; vraag het na als je twijfelt.
 
@@ -111,9 +113,10 @@ Voorbeeld (vraag aan het begin van les 4): de schoonmaak van een gemeente valt o
 - **Splitsingsverbod** (art. 2.14 Aw): niet opknippen om onder de drempel te blijven.
 - Het **totale bedrag excl. btw**, inclusief **opties en verlengingen** (art. 2.15 lid 2 Aw).
 - Bij percelen tel je de **waarde van alle percelen samen** (art. 2.18 Aw).
-- Bij een overeenkomst van 4 jaar of langer reken je volgens de slide op basis van 4 jaar (art. 2.17 sub e Aw).
+- Bij een overeenkomst van 4 jaar of langer reken je volgens de slide op basis van 4 jaar (art. 2.17 sub e Aw). Precies volgens de wet: dit geldt voor een dienstenopdracht zonder totale prijs met onbepaalde duur of een looptijd van meer dan 48 maanden: het maandbedrag × 48. Is de looptijd 48 maanden of korter, dan tel je de totale waarde voor de hele looptijd (sub d).
+- Bij een raamovereenkomst tel je de geraamde waarde van alle opdrachten die je voor de hele looptijd verwacht (art. 2.15 lid 3 Aw).
 
-**Rekenvoorbeeld:** een gemeente sluit een schoonmaakcontract van 2 jaar à €90.000 per jaar met een optie op 2 keer 1 jaar verlenging. De raming is 4 × €90.000 = €360.000, dus boven €216.000. Wie alleen de eerste 2 jaar telt (€180.000) komt ten onrechte onder de drempel.
+**Rekenvoorbeeld:** een gemeente sluit een schoonmaakcontract van 2 jaar à €90.000 per jaar met een optie op 2 keer 1 jaar verlenging. De raming is 4 × €90.000 = €360.000 (art. 2.15 lid 2 Aw: inclusief opties en verlengingen), dus boven €216.000 (art. 2.3 Aw). Wie alleen de eerste 2 jaar telt (€180.000) komt ten onrechte onder de drempel.
 
 ### Beoordelingsinstrumenten in vaste volgorde
 
@@ -122,8 +125,8 @@ Voorbeeld (vraag aan het begin van les 4): de schoonmaak van een gemeente valt o
 | Instrument | Gaat over | Artikelen |
 | --- | --- | --- |
 | **Uitsluitingsgronden** | Mag deze ondernemer meedoen? (bijvoorbeeld veroordeeld voor fraude of omkoping, belastingschulden) | Art. 2.86 en 2.86a: dwingend ("moet"); art. 2.87: facultatief ("mag"); art. 2.88: de dienst "kan" afwijken; art. 2.89: bewijsstukken, ook voor buitenlandse inschrijvers. Bevoegdheid om het beroep uit te oefenen (handelsregister, vergunning): art. 2.84, met een eigen verklaring |
-| **Geschiktheidseisen** | Kan deze ondernemer de opdracht aan? Minimumeisen | Art. 2.90: financiële en economische draagkracht, technische bekwaamheid en beroepsbevoegdheid; art. 2.96 kwaliteitsnormen, 2.97 milieunormen, 2.98 beroepsbevoegdheid. Een omzeteis mag maximaal **drie keer de geraamde waarde** zijn (art. 2.90 lid 5 sub a, volgens het antwoordmodel van de oefentoets) |
-| **Selectiecriteria** | Wie van de geschikte gegadigden mag inschrijven? Alleen bij procedures met **twee fasen** | Art. 2.99. Vaak een verlengde geschiktheidseis: 3 jaar ervaring is de eis, meer ervaring telt als selectiecriterium. Minimumaantal te selecteren: 5 bij de niet-openbare procedure, 3 bij de concurrentiegerichte dialoog en de mededingingsprocedure met onderhandeling (art. 2.99 lid 3) |
+| **Geschiktheidseisen** | Kan deze ondernemer de opdracht aan? Minimumeisen | Art. 2.90: financiële en economische draagkracht, technische bekwaamheid en beroepsbevoegdheid; art. 2.96 kwaliteitsnormen, 2.97 milieunormen, 2.98 beroepsbevoegdheid. Een omzeteis mag alleen met zwaarwegende motivering (art. 2.90 lid 3) en maximaal **drie keer de geraamde waarde** zijn (art. 2.90 lid 5 sub a, antwoordmodel oefentoets; gecontroleerd op wetten.overheid.nl) |
+| **Selectiecriteria** | Wie van de geschikte gegadigden mag inschrijven? Alleen bij procedures met **twee fasen** | Art. 2.99 lid 1: alleen bij de niet-openbare procedure, de concurrentiegerichte dialoog, de mededingingsprocedure met onderhandeling en het innovatiepartnerschap. Vaak een verlengde geschiktheidseis: 3 jaar ervaring is de eis, meer ervaring telt als selectiecriterium. Minimumaantal te selecteren: 5 bij de niet-openbare procedure, 3 bij de concurrentiegerichte dialoog en de mededingingsprocedure met onderhandeling (art. 2.99 lid 3) |
 | **Technische specificaties** | Voldoet het aangebodene aan wat gevraagd wordt? | Vanaf art. 2.75. Geen merk eisen (art. 2.76 lid 3), tenzij een nauwkeurige omschrijving anders niet kan én je "of gelijkwaardig" toevoegt (lid 4) |
 | **Gunningscriteria** | Welke inschrijving is de beste? | Art. 2.114 e.v. (zie hieronder) |
 
@@ -131,14 +134,14 @@ Voorbeeld (vraag aan het begin van les 4): de schoonmaak van een gemeente valt o
 
 ### Gunning
 
-- Art. 2.114 Aw: standaard is **EMVI**, met daaronder drie methoden: **beste prijs-kwaliteitverhouding**, **laagste kosten** (op basis van kosteneffectiviteit) en **laagste prijs**. Voor zover ik weet moet de dienst een keuze voor laagste prijs of laagste kosten motiveren in de aanbestedingsstukken; check dat in art. 2.114 in je bundel.
+- Art. 2.114 Aw: standaard is **EMVI** (lid 1), vastgesteld op basis van drie methoden (lid 2): **beste prijs-kwaliteitverhouding** (sub a), **laagste kosten** op basis van kosteneffectiviteit, zoals levenscycluskosten (sub b), en **laagste prijs** (sub c). Uitgangspunt is beste prijs-kwaliteitverhouding (lid 3). Kiest de dienst laagste kosten of laagste prijs, dan **motiveert** hij dat in de aanbestedingsstukken (lid 4). Gecontroleerd op wetten.overheid.nl.
 - Vermeld het **relatieve gewicht** van de gunningscriteria (art. 2.115 lid 4 Aw).
 - **Abnormaal lage inschrijvingen**: art. 2.116 Aw.
-- Na de gunningsbeslissing geldt de **Alcatel-termijn** (standstill) van **20 dagen** (art. 2.127 lid 3 Aw).
+- Na de gunningsbeslissing geldt de **Alcatel-termijn** (standstill, in de wet "opschortende termijn") van **ten minste 20 kalenderdagen** (art. 2.127 lid 1 en 3 Aw), te rekenen vanaf de dag na verzending van de mededeling (lid 2).
 
 ### Oefencasus (oefenmateriaal les 3)
 
-Het UWV gunt de catering van al zijn vestigingen (€300.000) onderhands. Met de drie W's: het UWV is een **publiekrechtelijke instelling** (algemeen belang: uitkeringen, rechtspersoon, onder overheidstoezicht), het gaat om een **dienst** (schriftelijk, bezwarende titel, ondernemer en aanbestedende dienst) en de waarde ligt boven **€216.000**. Dus aanbestedingsplichtig, en onderhands gunnen mag niet.
+Het UWV gunt de catering van al zijn vestigingen (€300.000) onderhands. Met de drie W's: het UWV is een **publiekrechtelijke instelling** (algemeen belang: uitkeringen, rechtspersoon, onder overheidstoezicht; art. 1.1 Aw), het gaat om een **dienst** (schriftelijk, bezwarende titel, ondernemer en aanbestedende dienst; art. 1.1 Aw) en de waarde ligt boven **€216.000** (art. 2.3 Aw). Dus aanbestedingsplichtig, en onderhands gunnen mag niet.
 
 Was het een **concessie**, dan lag de waarde onder €5.404.000 en hoefde het niet. Bij een duidelijk grensoverschrijdend belang gelden dan wel de beginselen van afdeling 1.2.2 Aw.
 

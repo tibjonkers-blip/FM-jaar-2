@@ -60,7 +60,7 @@ mc("ir4-r06", W, R, "Voor welke situatie is de concurrentiegerichte dialoog bedo
    "De dialoog (art. 2.28 Aw) is voor complexe trajecten, zoals grote infrastructuur of computernetwerken. De dienst stelt samen met marktpartijen oplossingen vast, daarna doet elke inschrijver één aanbieding waarover niet meer wordt onderhandeld.")
 mc("ir4-r07", W, R, "Wat betekent 'geen cherry picking' bij de dialoog en de mededingingsprocedure met onderhandeling?",
    ["Je mag niet de goedkoopste kiezen", "Je mag ideeën of oplossingen van de ene inschrijver niet aan een andere inschrijver geven", "Je mag maar één inschrijver uitnodigen", "Je mag de procedure niet afbreken"], 1,
-   "Vertrouwelijkheid: oplossingen van de ene deelnemer mag je niet doorspelen aan een andere. Dat zou het gelijkheidsbeginsel en het bedrijfsgeheim schenden.")
+   "Vertrouwelijkheid: oplossingen van de ene deelnemer mag je niet doorspelen aan een andere (bij de dialoog: art. 2.110 lid 7 Aw). Dat zou het gelijkheidsbeginsel en het bedrijfsgeheim schenden.")
 mc("ir4-r08", W, R, "Een dijk breekt door en er moet direct worden gerepareerd. Welke procedure mag het waterschap gebruiken?",
    ["Alleen de openbare procedure", "Onderhandelingsprocedure zonder voorafgaande bekendmaking wegens dwingende spoed (art. 2.32 lid 1 sub c Aw)", "Concurrentiegerichte dialoog", "Een prijsvraag"], 1,
    "Dwingende spoed: niet te voorzien, niet aan de dienst zelf te wijten, en de wettelijke termijnen zijn niet haalbaar. De latere dijkverhoging is geen dwingende spoed meer.")
@@ -126,7 +126,7 @@ cs("ir4-rc2", W, R, "Nieuw campusconcept voor een universiteit",
      "De concurrentiegerichte dialoog (art. 2.28 Aw). De opdracht is zeer complex en het is objectief niet mogelijk vooraf te bepalen welke middelen en oplossingen nodig zijn, ook financieel en juridisch. In de dialoog stelt de universiteit samen met marktpartijen het programma van eisen en de oplossingen vast. Een verdedigbaar alternatief is de mededingingsprocedure met onderhandeling (art. 2.30 Aw), waarbij eerst wordt ingeschreven en dan onderhandeld.",
      ["Concurrentiegerichte dialoog gekozen", "Onderbouwd met complexiteit en het niet vooraf kunnen bepalen van de oplossing"]),
     ("Hoe wordt de zorg van de universiteit over de ideeën van marktpartijen geregeld?",
-     "Geen cherry picking: de dienst mag oplossingen of vertrouwelijke informatie van de ene deelnemer niet aan andere deelnemers doorgeven. Vertrouwelijkheid is een uitdrukkelijk aandachtspunt van de dialoog.",
+     "Geen cherry picking: de dienst mag oplossingen of vertrouwelijke informatie van de ene deelnemer niet aan andere deelnemers doorgeven zonder diens instemming (art. 2.110 lid 7 Aw). Vertrouwelijkheid is een uitdrukkelijk aandachtspunt van de dialoog.",
      ["Verbod op cherry picking / vertrouwelijkheid juist uitgelegd"]),
     ("Hoeveel gegadigden moet de universiteit minimaal uitnodigen, en wat gebeurt er na de dialoogfase?",
      "Minimaal 3 (art. 2.99 lid 3 Aw), tegenover 5 bij de niet-openbare procedure. Na de dialoog doet elke deelnemer één definitieve inschrijving waarover niet meer mag worden onderhandeld. Er wordt gegund op de economisch meest voordelige inschrijving op basis van de beste prijs-kwaliteitverhouding.",

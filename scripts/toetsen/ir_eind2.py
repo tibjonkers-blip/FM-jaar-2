@@ -54,7 +54,7 @@ mc("ire2-r03", W, R, "Een gemeente laat een nieuw stadskantoor bouwen (€ 7 mil
     "Een dienst, want onderhoud is altijd een dienst; boven € 216.000",
     "Een concessie voor werken, want het gebouw wordt geëxploiteerd",
     "Een levering, want bij leveringen en diensten telt de hoogste waarde"], 0,
-   "Bij werken met diensten bepaal je het hoofdvoorwerp: wat is essentieel en kenmerkend (Gestion Hotelera). Hier is dat de bouw; het onderhoud is bijkomstig. Er is geen exploitatierisico, dus geen concessie.")
+   "Bij werken met diensten bepaal je het hoofdvoorwerp (art. 2.12a lid 1 Aw): wat is essentieel en kenmerkend (Gestion Hotelera). Hier is dat de bouw; het onderhoud is bijkomstig. Er is geen exploitatierisico, dus geen concessie.")
 mc("ire2-r04", W, R, "Een gemeente wil het groenonderhoud zonder aanbesteding gunnen aan Groen B.V. Zij bezit alle aandelen en houdt toezicht als op een eigen dienst. Groen B.V. doet 70% van haar werk voor de gemeente en 30% voor bedrijven. Mag dat?",
    ["Ja, want de gemeente bezit alle aandelen en houdt toezicht als op een eigen dienst",
     "Nee, want meer dan 80% van de werkzaamheden moet voor de gemeente zijn",

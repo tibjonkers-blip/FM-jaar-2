@@ -410,9 +410,10 @@ FIGUREN = [
         "De termijnen bij koop naast elkaar",
         bars([
             dict(label="Ontbinden bij koop op afstand", sub="art. 6:230o BW", segs=[(14 / 30.4, "c1")], val="14 dagen"),
-            dict(label="Recht van reclame", sub="art. 7:39 BW: 6 weken na opeisbaarheid én 60 dagen na aflevering", segs=[(60 / 30.4, "c1")], val="60 dagen"),
-            dict(label="Klagen na ontdekking van het gebrek, consument", sub="art. 7:23 BW", segs=[(2, "c1")], val="2 maanden"),
-            dict(label="Bewijsvermoeden bij een gebrek, consument", sub="art. 7:18 lid 2 BW, termijn volgens de slide", segs=[(6, "c1")], val="6 maanden"),
+            dict(label="Recht van reclame", sub="art. 7:39 en 7:44 BW: vervalt pas als 6 weken na opeisbaarheid én 60 dagen na aflevering voorbij zijn", segs=[(60 / 30.4, "c1")], val="60 dagen"),
+            dict(label="Klagen na ontdekking van het gebrek, consument", sub="art. 7:23 lid 1 BW", segs=[(2, "c1")], val="2 maanden"),
+            dict(label="Bewijsvermoeden bij een gebrek, consument (slide)", sub="art. 7:18 lid 2 BW volgens de slide", segs=[(6, "c1")], val="6 maanden"),
+            dict(label="Bewijsvermoeden bij een gebrek, consument (huidige wet)", sub="art. 7:18a lid 2 BW, gecontroleerd op wetten.overheid.nl", segs=[(12, "c1")], val="1 jaar"),
             dict(label="Verjaring van de betaling, consumentenkoop", sub="art. 7:28 BW", segs=[(24, "c1")], val="2 jaar"),
         ], maxv=24, vw="5.5em", label="Lengte van de termijnen bij koop"),
         noot="De termijnen beginnen niet op hetzelfde moment: let per artikel op het startpunt (aflevering, ontdekking of opeisbaarheid). Is niet aan de informatieplicht voldaan, dan loopt de 14 dagen op tot 12 maanden.")),
