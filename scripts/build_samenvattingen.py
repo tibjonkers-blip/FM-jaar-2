@@ -36,6 +36,32 @@ VAKKEN = {
         quiz=None),
 }
 
+# ---------------------------------------------------------------- eigen notities per les
+# Onder elke les (niet bij het overzicht en losse inleidingen) staat een notitieveld. Wat je daarin typt, staat alleen in de browser
+# (localStorage, sleutel fm-notities-<vak>), nooit op de site of in deze repo. Een notitie hangt aan het id van haar les (week-N-<titel>).
+# Verandert de titel van een les, dan zou de notitie haar les kwijtraken. Daarom staan alle ids die ooit een notitieveld hadden in
+# NOTITIE_SLEUTELS, en stopt de bouw als er een verdwijnt. Zet dan in NOTITIE_ALIASSEN het oude id op het nieuwe; de pagina verhuist
+# de notitie bij het openen. (Een notitie zonder les gaat ook zonder alias niet verloren: ze staat dan onderaan in het notitiepaneel.)
+NOTITIE_SLEUTELS = os.path.join(SRC, "notitie-sleutels.json")
+NOTITIE_ALIASSEN = {"inkoop-recht": {}, "hrm": {}, "praktijkproject": {}}  # oud id -> nieuw id
+
+def check_note_ids(found):
+    """found: {vak: [ids]}. Stopt als een eerder bekend id verdwenen is zonder alias; werkt daarna de lijst bij."""
+    old = json.load(open(NOTITIE_SLEUTELS, encoding="utf-8")) if os.path.exists(NOTITIE_SLEUTELS) else {}
+    gone = []
+    for slug, ids in found.items():
+        alias = NOTITIE_ALIASSEN.get(slug, {})
+        for a, b in alias.items():
+            assert b in ids, f"notitie-alias {slug}: {a!r} wijst naar {b!r}, maar die les bestaat niet"
+        gone += [f"{slug}: {i}" for i in old.get(slug, []) if i not in ids and i not in alias]
+    if gone:
+        raise SystemExit("Deze lessen hadden een notitieveld maar bestaan niet meer (titel veranderd?):\n  " + "\n  ".join(gone) +
+                         "\nZet in NOTITIE_ALIASSEN (build_samenvattingen.py) per oud id het nieuwe id, zodat de notities meeverhuizen.")
+    new = {slug: sorted(set(ids) | set(NOTITIE_ALIASSEN.get(slug, {}))) for slug, ids in found.items()}
+    with open(NOTITIE_SLEUTELS, "w", encoding="utf-8") as f:
+        json.dump(new, f, ensure_ascii=False, indent=1)
+        f.write("\n")
+
 # ---------------------------------------------------------------- bronbewerking
 
 def clean_source(md, slug, c):
@@ -277,7 +303,8 @@ def place_figuren(bl, figs, key):
         out.insert(at, ("html", f["html"]))
     return out
 
-def render_week(key, label, md, after="", figs=()):
+def render_week(key, label, md, after="", figs=(), note_ids=None):
+    """note_ids: lijst waarin de ids van de lessen met een notitieveld worden verzameld (voor de sleutelcontrole)."""
     bl = place_figuren(blocks(md), figs, key)
     lessons, cur, sub = [], None, None
     intro = []
@@ -326,7 +353,15 @@ def render_week(key, label, md, after="", figs=()):
             if l["tag"]:
                 out.append(f'<span class="tag {stream(l["tag"])}">{html.escape(l["tag"])}</span>')
             out.append(f"<h2>{inline(l['title'])}</h2></header>")
-        out.append(f'<div class="prose">{body}</div></article>')
+        out.append(f'<div class="prose">{body}</div>')
+        if l["title"] and key != "overzicht":
+            # leeg notitieveld; het script onderaan de pagina vult het in (zonder script blijft het verborgen)
+            name = (f'{l["tag"]}: ' if l["tag"] else "") + html.unescape(plain(l["title"]))
+            out.append(f'<section class="note" id="notitie-{l["id"]}" data-note="{l["id"]}" '
+                       f'data-label="{html.escape(label + " · " + name)}" aria-label="{html.escape("Mijn notities bij " + name)}" hidden></section>')
+            if note_ids is not None:
+                note_ids.append(l["id"])
+        out.append("</article>")
     out.append(after)
     out.append("</section>")
     return "".join(out)
@@ -518,6 +553,8 @@ pre { margin: 0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0
 
 __FIG_CSS__
 
+__NOTES_CSS__
+
 .foot { color: var(--ink-soft); font-size: 0.84rem; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--rule); padding-top: 16px; }
 .totop { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 6;
   width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule); background: var(--sheet); color: var(--ink); display: grid; place-items: center; text-decoration: none;
@@ -548,6 +585,23 @@ __SITEBAR__<header class="band" id="top">
 <nav class="weeknav" id="weeknav" aria-label="Weken">__WEEKNAV__</nav>
 <main id="main">
 __WEEKS__
+<section class="notes-panel" id="notities" data-vak="__VAK__" data-heading="__HEADING__" data-alias="__NOTE_ALIAS__" aria-labelledby="np-title" hidden>
+  <h2 id="np-title">Je eigen notities</h2>
+  <p class="np-count" id="np-count"></p>
+  <p>Wat je onder een les typt, wordt alleen in deze browser op dit apparaat bewaard. Het staat niet op de site en niemand anders kan het zien. Open je de site op een ander apparaat of in een andere browser, dan staan je notities daar niet.</p>
+  <div class="callout warn" id="np-warn" hidden><span class="c-label">Deze browser bewaart niets</span><p>Je browser staat opslaan niet toe, bijvoorbeeld in een privévenster. Wat je typt, is weg als je deze pagina sluit. Download je notities voordat je de pagina sluit.</p></div>
+  <div class="callout"><span class="c-label">Download af en toe een kopie</span><p>Wis je je browsergegevens, dan zijn je notities weg. Safari kan bovendien gegevens wissen van een site die je ruim een week niet hebt geopend. Met een kopie zet je alles terug, ook op een ander apparaat. Bewaar het bestand bijvoorbeeld in OneDrive of Google Drive.</p></div>
+  <div class="np-actions">
+    <button type="button" class="wn-btn primary" id="np-download">Download al je notities</button>
+    <button type="button" class="wn-btn" id="np-import">Zet terug uit een bestand</button>
+    <input type="file" id="np-file" accept=".md,.txt,text/markdown,text/plain" hidden>
+  </div>
+  <p class="np-msg" id="np-msg" role="status" hidden></p>
+  <div class="np-orphans" id="np-orphans" hidden>
+    <h3>Notities bij lessen die niet meer op deze pagina staan</h3>
+    <p>De titel van deze lessen is veranderd. Je notities zijn er nog: kopieer ze naar de juiste les of laat ze hier staan. Ze gaan mee in je download.</p>
+  </div>
+</section>
 </main>
 <footer class="foot">
   <span>Gemaakt van je Claude-samenvattingen. Waar een slide alleen een afbeelding was, staat erbij dat de invulling gangbaar is en niet uit de slides komt; check die in de les.</span>
@@ -555,6 +609,7 @@ __WEEKS__
 </footer>
 </div>
 <a class="totop" href="#top" id="totop" aria-label="Naar boven" hidden>↑</a>
+__NOTES_JS__
 <script>
 (function () {
   var nav = document.getElementById("weeknav");
@@ -596,7 +651,8 @@ __WEEKS__
   }).map(function (el) {
     var week = el.closest("section.week"), lesson = el.closest(".lesson");
     var h = el.querySelector("h3, h4, h2"), ht = h ? h.textContent.trim() : "";
-    var text = (el.innerText || el.textContent).replace(/\s+/g, " ").trim();
+    var src = el.classList.contains("lesson") ? (el.querySelector(".prose") || el) : el;  // zonder het notitieveld
+    var text = (src.innerText || src.textContent).replace(/\s+/g, " ").trim();
     if (ht && text.indexOf(ht) === 0) text = text.slice(ht.length).trim();
     return { el: el, id: el.id, week: week.getAttribute("data-label"), lesson: lesson.getAttribute("data-lesson"),
              title: ht || lesson.getAttribute("data-lesson"), text: text, n: norm(text), nt: norm(ht) };
@@ -614,7 +670,12 @@ __WEEKS__
     if (term.length < 2) { box.hidden = true; box.innerHTML = ""; return; }
     var hits = index.filter(function (r) { return r.n.indexOf(term) !== -1 || r.nt.indexOf(term) !== -1; });
     hits.sort(function (a, b) { return (b.nt.indexOf(term) !== -1) - (a.nt.indexOf(term) !== -1); });
-    var html = '<div class="count">' + (hits.length ? hits.length + (hits.length === 1 ? " plek" : " plekken") + " gevonden" + (hits.length > 12 ? ", de eerste 12:" : "") : "Niets gevonden. Probeer een ander woord of een kortere zoekterm.") + "</div>";
+    var mine = window.fmNotes ? window.fmNotes.find(term, norm) : [];  // je eigen notities komen bovenaan
+    var total = hits.length + mine.length;
+    var html = '<div class="count">' + (total ? total + (total === 1 ? " plek" : " plekken") + " gevonden" + (mine.length ? " (" + mine.length + " in je notities)" : "") + (hits.length > 12 ? ", uit de samenvatting de eerste 12:" : "") : "Niets gevonden. Probeer een ander woord of een kortere zoekterm.") + "</div>";
+    mine.slice(0, 6).forEach(function (r) {
+      html += '<a href="#' + r.id + '"><span class="where">Mijn notitie</span><span class="what">' + esc(r.label) + '</span><span class="snip">' + snippet(r.text, norm(r.text), term) + "</span></a>";
+    });
     hits.slice(0, 12).forEach(function (r) {
       html += '<a href="#' + r.id + '"><span class="where">' + esc(r.week) + ", " + esc(r.lesson) + '</span><span class="what">' + esc(r.title) + '</span><span class="snip">' + snippet(r.text, r.n, term) + "</span></a>";
     });
@@ -634,6 +695,347 @@ __BAR_JS__
 </html>
 """
 
+NOTES_CSS = """/* eigen notities per les (alleen in de browser bewaard) */
+.lesson-head.has-jump { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px 12px; }
+.lesson-head.has-jump .tag { grid-column: 1; grid-row: 1; justify-self: start; }
+.lesson-head.has-jump h2 { grid-column: 1 / -1; grid-row: 2; }
+.note-jump { grid-column: 2; grid-row: 1; display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 3px 11px 3px 9px; border-radius: 999px;
+  border: 1px solid var(--rule); color: var(--ink-soft); font-size: 0.82rem; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.note-jump:hover { color: var(--accent); border-color: var(--accent); }
+.note-jump.has { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+.note-jump svg, .note-add svg, .note-pin svg { width: 16px; height: 16px; flex: none; }
+.toc a.has-note > span:last-child::after { content: "notitie"; display: inline-block; margin-left: 8px; padding: 0 7px; border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+  font-size: 0.72rem; font-weight: 700; line-height: 1.6; vertical-align: 1px; }
+
+.note { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.note-add { display: flex; align-items: center; gap: 10px; width: 100%; padding: 12px 14px; border: 1px dashed var(--ink-soft); border-radius: 12px; background: transparent;
+  color: var(--ink-soft); font: inherit; font-weight: 600; text-align: left; cursor: pointer; }
+.note-add:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+.note.open .note-add { display: none; }
+.note-box { display: none; flex-direction: column; gap: 8px; padding: 12px 14px 10px; border-radius: 12px; background: var(--sunk); border: 1px solid var(--rule); }
+.note.open .note-box { display: flex; }
+.note-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+.note-title { font-weight: 700; font-stretch: 104%; }
+.note-status { flex: 1 1 auto; font-size: 0.8rem; color: var(--ink-soft); }
+.note-status.err { color: var(--warn); font-weight: 600; flex-basis: 100%; order: 9; }
+.note-pin { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 5px 11px 5px 9px; border-radius: 8px; border: 1px solid var(--rule); background: var(--sheet);
+  color: var(--ink); font: inherit; font-size: 0.84rem; font-weight: 600; cursor: pointer; }
+.note-pin:hover { border-color: var(--accent); }
+.note-pin[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.note-text { display: block; width: 100%; min-height: 7.6em; resize: none; overflow: hidden; font: inherit; font-size: 1rem; line-height: 1.55; color: var(--ink);
+  background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; }
+.note-text:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.note-text::placeholder { color: var(--ink-soft); opacity: 0.85; }
+.note-foot { font-size: 0.8rem; color: var(--ink-soft); }
+.note-foot button { padding: 0; border: 0; background: none; font: inherit; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.note-label { font-weight: 600; font-size: 0.92rem; }
+.note.pinned { position: sticky; bottom: calc(var(--kb, 0px) + env(safe-area-inset-bottom, 0px) + 10px); z-index: 4; }
+.note.pinned .note-box { background: var(--sheet); border-color: var(--accent); box-shadow: 0 10px 32px rgba(10, 18, 36, 0.24); }
+.note.pinned .note-text { max-height: 30vh; overflow-y: auto; }
+.note.pinned .note-foot { display: none; }
+@media (max-width: 560px) {  /* telefoon: meescrollend veld compact houden, zodat de samenvatting leesbaar blijft */
+  .note.pinned .note-box { padding: 8px 10px; gap: 6px; }
+  .note.pinned .note-title, .note.pinned .note-status:not(.err) { display: none; }
+  .note.pinned .note-bar { justify-content: flex-end; }
+  .note.pinned .note-pin { min-height: 30px; padding-block: 3px; }
+  .note.pinned .note-text { min-height: 4.8em; max-height: 20vh; }
+}
+.note.hit .note-box { animation: hit 1.6s ease-out; }
+body.note-pinned .totop { display: none; }
+
+.notes-panel { margin-top: 26px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.notes-panel h2 { font-size: 1.4rem; font-weight: 800; font-stretch: 108%; }
+.notes-panel > p, .notes-panel .callout { max-width: 68ch; }
+.np-count { font-weight: 600; }
+.np-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+button.wn-btn { font-family: inherit; cursor: pointer; }
+.np-msg { padding: 10px 14px; border-radius: 10px; background: var(--s3-soft); color: var(--ink); max-width: 68ch; }
+.np-msg.err { background: var(--warn-soft); }
+.np-orphans { display: flex; flex-direction: column; gap: 12px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.np-orphans h3 { font-size: 1.1rem; font-weight: 700; font-stretch: 104%; }
+@media (max-width: 480px) { .notes-panel { padding: 16px; } .note-box { padding: 10px 11px 9px; } }
+@media print { .note:not(.open), .note-pin, .note-foot, .note-jump, .notes-panel { display: none !important; } .note-text { height: auto !important; } }"""
+
+NOTES_JS = r"""<script>
+/* Eigen notities per les. Ze staan alleen in deze browser (localStorage, sleutel fm-notities-<vak>), nooit op de site.
+   Per les: { t: tekst, u: laatst bewerkt (ISO), l: naam van de les }. Downloaden geeft een .md-bestand dat je ook weer terugzet. */
+(function () {
+  var panel = document.getElementById("notities");
+  if (!panel) return;
+  var VAK = panel.getAttribute("data-vak"), HEADING = panel.getAttribute("data-heading"), KEY = "fm-notities-" + VAK;
+  var ALIAS = {};
+  try { var al = JSON.parse(panel.getAttribute("data-alias") || "{}"); if (al && typeof al === "object" && !Array.isArray(al)) ALIAS = al; } catch (e) {}
+  var PEN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/></svg>';
+  var PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16v6"/><path d="M8.5 3h7l-1 6 3.5 4v3h-12v-3l3.5-4-1-6Z"/></svg>';
+  var HINT = "Typ hier tijdens of na de les mee: wat de docent benadrukt, voorbeelden, tentamentips en vragen die je nog hebt.";
+  var secs = Object.create(null), timers = Object.create(null), dirty = Object.create(null), pageIds = [], pinned = null;
+  var ID = /^[a-z0-9-]{1,90}$/;  // zo zien de ids van lessen eruit (week-3-sourcing); al het andere wordt genegeerd
+  var own = function (o, k) { return Object.prototype.hasOwnProperty.call(o, k); };
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+
+  // ---- opslag
+  var canStore = (function () { try { var k = KEY + ":test"; localStorage.setItem(k, "1"); localStorage.removeItem(k); return true; } catch (e) { return false; } })();
+  // Leest de bewaarde notities. Alleen tekst wordt overgenomen; wat beschadigd of van een ander type is, telt niet mee.
+  function read() {
+    var out = { notes: Object.create(null), exported: "" };
+    try {
+      var raw = localStorage.getItem(KEY); if (!raw) return out;
+      var v = JSON.parse(raw);
+      if (!v || typeof v !== "object" || Array.isArray(v)) return out;
+      if (v.notes && typeof v.notes === "object" && !Array.isArray(v.notes)) {
+        Object.keys(v.notes).forEach(function (id) {
+          var n = v.notes[id];
+          if (ID.test(id) && n && typeof n === "object" && typeof n.t === "string" && n.t.trim())
+            out.notes[id] = { t: n.t, u: typeof n.u === "string" ? n.u : "", l: typeof n.l === "string" ? n.l : "" };
+        });
+      }
+      if (typeof v.exported === "string") out.exported = v.exported;
+    } catch (e) {}
+    return out;
+  }
+  var store = canStore ? read() : { notes: Object.create(null), exported: "" };
+  function write() {
+    if (!canStore) return false;
+    try { localStorage.setItem(KEY, JSON.stringify({ v: 1, notes: store.notes, exported: store.exported })); return true; }
+    catch (e) { canStore = false; $("np-warn").hidden = false; return false; }  // vol of geblokkeerd: verder alleen in het geheugen
+  }
+  function refresh() { if (canStore) store = read(); }  // eerst ophalen wat een ander tabblad intussen bewaarde
+  var asked = false;
+  function askPersist() {  // vraagt de browser de notities niet zomaar op te ruimen
+    if (asked) return; asked = true;
+    try { if (navigator.storage && navigator.storage.persist) navigator.storage.persisted().then(function (p) { if (!p) return navigator.storage.persist(); }).catch(function () {}); } catch (e) {}
+  }
+
+  // ---- tijd
+  function when(iso, withTime) {
+    var d = new Date(iso); if (isNaN(d)) return "";
+    var t = d.toLocaleTimeString("nl-NL", { hour: "2-digit", minute: "2-digit" });
+    if (d.toDateString() === new Date().toDateString()) return withTime === false ? "vandaag" : "om " + t;
+    var day = d.toLocaleDateString("nl-NL", { day: "numeric", month: "short" });
+    return withTime === false ? day : "op " + day + " om " + t;
+  }
+  function full(iso, withTime) {  // voor in het bestand: altijd een volledige datum
+    var d = new Date(iso); if (isNaN(d)) return "";
+    var s = d.toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" });
+    return withTime ? s + " om " + d.toLocaleTimeString("nl-NL", { hour: "2-digit", minute: "2-digit" }) : s;
+  }
+  function stamp(d) { var p = function (x) { return (x < 10 ? "0" : "") + x; }; return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate()); }
+
+  // ---- een notitieveld
+  function labelOf(id) { return secs[id] ? secs[id].getAttribute("data-label") : (store.notes[id] && store.notes[id].l) || id; }
+  function grow(ta) { if (!ta.offsetParent) return; ta.style.height = "auto"; ta.style.height = (ta.scrollHeight + 2) + "px"; }
+  function setStatus(sec, state) {
+    var el = sec.querySelector(".note-status"), n = store.notes[sec.getAttribute("data-note")];
+    el.classList.toggle("err", state === "err");
+    el.textContent = state === "busy" ? "Wordt bewaard…"
+      : state === "err" ? "Niet bewaard: deze browser staat opslaan niet toe. Download je notities voordat je de pagina sluit."
+      : state === "saved" ? "Bewaard " + when(n ? n.u : new Date().toISOString())
+      : n && n.u ? "Laatst bewerkt " + when(n.u) : "";
+  }
+  function marks(id) {  // knop bij de les en label in de inhoudsopgave van de week
+    var has = !!store.notes[id], sec = secs[id]; if (!sec || sec.classList.contains("orphan")) return;
+    var jump = sec.parentNode.querySelector(".note-jump");
+    if (jump) { jump.classList.toggle("has", has); jump.lastChild.textContent = has ? "Mijn notities" : "Notitie maken"; }
+    var toc = document.querySelector('.toc a[href="#' + id + '"]');
+    if (toc) toc.classList.toggle("has-note", has);
+  }
+  function open(sec, focus) {
+    sec.classList.add("open");
+    var ta = sec.querySelector("textarea"); grow(ta);
+    if (focus) ta.focus({ preventScroll: true });
+  }
+  function save(id) {
+    clearTimeout(timers[id]); delete timers[id];
+    if (!dirty[id]) return; delete dirty[id];
+    var sec = secs[id], text = sec.querySelector("textarea").value;
+    refresh();
+    if (text.trim()) store.notes[id] = { t: text, u: new Date().toISOString(), l: sec.getAttribute("data-label") || "" };
+    else delete store.notes[id];
+    var ok = write(), has = !!text.trim();
+    setStatus(sec, has ? (ok ? "saved" : "err") : "");
+    marks(id); info();
+    if (ok && text.trim()) askPersist();
+  }
+  function flush() { Object.keys(dirty).forEach(save); }
+  function setPin(sec) {
+    if (pinned) { pinned.classList.remove("pinned"); var b = pinned.querySelector(".note-pin"); b.setAttribute("aria-pressed", "false"); b.lastChild.textContent = "Meescrollen"; }
+    pinned = sec || null;
+    if (pinned) { pinned.classList.add("pinned"); var c = pinned.querySelector(".note-pin"); c.setAttribute("aria-pressed", "true"); c.lastChild.textContent = "Meescrollen aan"; }
+    document.body.classList.toggle("note-pinned", !!pinned);
+  }
+  function fill(sec) {
+    var id = sec.getAttribute("data-note"), n = store.notes[id], ta = sec.querySelector("textarea");
+    ta.value = n ? n.t : "";
+    if (n || sec.classList.contains("orphan")) sec.classList.add("open");
+    else if (pinned !== sec && document.activeElement !== ta) sec.classList.remove("open");
+    grow(ta); setStatus(sec, ""); marks(id);
+  }
+  function build(sec, orphan) {
+    var id = sec.getAttribute("data-note"), label = sec.getAttribute("data-label") || id;
+    secs[id] = sec;
+    sec.innerHTML = (orphan ? '<p class="note-label">' + esc(label) + "</p>" : '<button type="button" class="note-add">' + PEN + "<span>Eigen notities bij deze les</span></button>") +
+      '<div class="note-box"><div class="note-bar"><span class="note-title">Mijn notities</span><span class="note-status" aria-live="polite"></span>' +
+      (orphan ? "" : '<button type="button" class="note-pin" aria-pressed="false" title="Houd dit notitieveld onderin beeld terwijl je door deze les scrolt">' + PIN + "<span>Meescrollen</span></button>") +
+      '</div><textarea class="note-text" rows="4" spellcheck="true" placeholder="' + esc(HINT) + '" aria-label="' + esc("Mijn notities bij " + label) + '"></textarea>' +
+      '<p class="note-foot">Alleen in deze browser bewaard. <button type="button" class="note-dl">Download een kopie</button> · <a href="#notities">Hoe werkt dit?</a></p></div>';
+    var ta = sec.querySelector("textarea"), downInside = false;
+    sec.addEventListener("pointerdown", function () { downInside = true; setTimeout(function () { downInside = false; }, 400); });
+    ta.addEventListener("input", function () {
+      dirty[id] = true; grow(ta); setStatus(sec, "busy");
+      clearTimeout(timers[id]); timers[id] = setTimeout(function () { save(id); }, 500);
+    });
+    ta.addEventListener("blur", function () {
+      save(id);
+      // leeg en weggeklikt: weer inklappen (niet als je op een knop in dit veld klikt)
+      setTimeout(function () { if (!orphan && !downInside && !ta.value.trim() && pinned !== sec && !sec.contains(document.activeElement)) sec.classList.remove("open"); }, 0);
+    });
+    sec.querySelector(".note-dl").addEventListener("click", download);
+    if (!orphan) {
+      sec.querySelector(".note-add").addEventListener("click", function () { open(sec, true); });
+      sec.querySelector(".note-pin").addEventListener("click", function () { setPin(pinned === sec ? null : sec); ta.focus({ preventScroll: true }); });
+    }
+    sec.hidden = false;
+  }
+
+  // ---- paneel onderaan
+  function info() {
+    var ids = Object.keys(store.notes), n = ids.length, txt;
+    if (!n) txt = "Je hebt nog geen notities bij dit vak. Klik onder een les op ‘Eigen notities bij deze les’ om te beginnen.";
+    else {
+      txt = "Je hebt notities bij " + n + (n === 1 ? " les" : " lessen") + " van dit vak.";
+      var since = ids.filter(function (id) { return !store.exported || (store.notes[id].u || "") > store.exported; }).length;
+      if (!store.exported) txt += " Je hebt nog geen kopie gedownload.";
+      else if (since) txt += " Sinds je laatste kopie (" + when(store.exported, false) + ") " + (since === 1 ? "is 1 notitie" : "zijn " + since + " notities") + " veranderd.";
+      else txt += " Je laatste kopie (" + when(store.exported, false) + ") bevat alles.";
+    }
+    $("np-count").textContent = txt;
+  }
+  function msg(text, err) { var el = $("np-msg"); el.textContent = text; el.classList.toggle("err", !!err); el.hidden = false; }
+  function orphans() {  // notities waarvan de les niet (meer) op deze pagina staat
+    var box = $("np-orphans");
+    Object.keys(store.notes).forEach(function (id) {
+      if (secs[id]) return;
+      var sec = document.createElement("section");
+      sec.className = "note open orphan"; sec.id = "notitie-" + id;
+      sec.setAttribute("data-note", id); sec.setAttribute("data-label", store.notes[id].l || id);
+      box.appendChild(sec); build(sec, true); fill(sec);
+    });
+    box.hidden = !box.querySelector(".note");
+  }
+
+  // ---- downloaden en terugzetten
+  function download() {
+    flush();
+    var ids = pageIds.concat(Object.keys(store.notes).filter(function (id) { return pageIds.indexOf(id) === -1; })).filter(function (id) { return store.notes[id]; });
+    if (!ids.length) { msg("Je hebt nog geen notities bij dit vak, dus er is nog niets te downloaden.", true); return; }
+    var now = new Date(), name = "notities-" + VAK + "-" + stamp(now) + ".md";
+    var L = ["# Mijn notities: " + HEADING, "", "<!-- fm-notities " + VAK + " v1 -->",
+      "Gedownload van de studieplek op " + full(now.toISOString(), true) + ". Zet dit bestand terug met de knop ‘Zet terug uit een bestand’ onderaan de samenvatting van " + HEADING + ".", ""];
+    ids.forEach(function (id) {
+      var x = store.notes[id];
+      L.push("## " + labelOf(id).replace(/\s+/g, " "), "<!-- notitie " + id + " " + (x.u || "-") + " -->", x.t, "<!-- /notitie -->", "");
+    });
+    var url = URL.createObjectURL(new Blob([L.join("\n")], { type: "text/markdown;charset=utf-8" }));
+    var a = document.createElement("a"); a.href = url; a.download = name; a.hidden = true;
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 2000);
+    refresh(); store.exported = now.toISOString(); write(); info();
+    msg("Gedownload: " + ids.length + (ids.length === 1 ? " notitie" : " notities") + " in " + name + ". Bewaar het bestand buiten je browser, bijvoorbeeld in OneDrive of Google Drive.");
+  }
+  function restore(txt) {
+    txt = txt.replace(/^﻿/, "").replace(/\r\n?/g, "\n");
+    var head = txt.match(/<!-- fm-notities (\S+) v1 -->/);
+    if (!head) { msg("Dit bestand komt niet van de knop ‘Download al je notities’. Er is niets veranderd.", true); return; }
+    if (head[1] !== VAK) {
+      var zone = /^[a-z-]{1,40}$/.test(head[1]) && document.querySelector('.sb-zone[href*="/' + head[1] + '/"]');
+      var other = zone ? zone.title : "een ander vak";
+      msg("Dit bestand hoort bij " + other + ". Open de samenvatting van dat vak en zet het daar terug. Er is niets veranderd.", true); return;
+    }
+    flush(); refresh();
+    var rx = /(?:^## (.*)\n)?<!-- notitie (\S+) (\S+) -->\n([\s\S]*?)\n?<!-- \/notitie -->/gm, m, added = 0, merged = 0, same = 0;
+    while ((m = rx.exec(txt))) {
+      var id = own(ALIAS, m[2]) ? ALIAS[m[2]] : m[2], u = isNaN(new Date(m[3])) ? "" : m[3], t = m[4];
+      if (!ID.test(id) || !t.trim()) continue;
+      var cur = store.notes[id];
+      if (!cur) { store.notes[id] = { t: t, u: u || new Date().toISOString(), l: secs[id] ? secs[id].getAttribute("data-label") : (m[1] || id) }; added++; }
+      else if (cur.t.indexOf(t) !== -1) same++;
+      else if (t.indexOf(cur.t) !== -1) { cur.t = t; cur.u = new Date().toISOString(); merged++; }
+      else { cur.t = cur.t.replace(/\s+$/, "") + "\n\nUit je kopie" + (u ? " van " + full(u) : "") + ":\n" + t; cur.u = new Date().toISOString(); merged++; }
+    }
+    if (!added && !merged && !same) { msg("In dit bestand staan geen notities. Er is niets veranderd.", true); return; }
+    var ok = write();
+    Object.keys(secs).forEach(function (id) { fill(secs[id]); });
+    orphans(); info();
+    var parts = [];
+    if (added) parts.push(added + (added === 1 ? " notitie teruggezet" : " notities teruggezet"));
+    if (merged) parts.push(merged + (merged === 1 ? " notitie aangevuld met de tekst uit het bestand" : " notities aangevuld met de tekst uit het bestand"));
+    if (same) parts.push(same + (same === 1 ? " stond er al" : " stonden er al"));
+    msg((ok ? "Klaar: " : "Teruggezet, maar alleen tot je deze pagina sluit: ") + parts.join(", ") + ". Je bestaande tekst is nergens overschreven.", !ok);
+  }
+  $("np-download").addEventListener("click", download);
+  $("np-import").addEventListener("click", function () { $("np-file").click(); });
+  $("np-file").addEventListener("change", function () {
+    var input = this, f = input.files && input.files[0]; if (!f) return;
+    if (f.size > 5e6) { msg("Dit bestand is te groot voor een notitiebestand. Er is niets veranderd.", true); input.value = ""; return; }
+    var r = new FileReader();
+    r.onload = function () { restore(String(r.result || "")); input.value = ""; };
+    r.onerror = function () { msg("Het bestand kon niet worden gelezen. Er is niets veranderd.", true); input.value = ""; };
+    r.readAsText(f, "utf-8");
+  });
+
+  // ---- opbouwen
+  Object.keys(ALIAS).forEach(function (old) {  // een les met een nieuwe titel: notitie verhuist mee
+    var a = store.notes[old], to = ALIAS[old]; if (!a || typeof to !== "string" || !ID.test(to)) return;
+    var b = store.notes[to];
+    store.notes[to] = b ? { t: b.t.indexOf(a.t) !== -1 ? b.t : b.t.replace(/\s+$/, "") + "\n\n" + a.t, u: b.u, l: b.l } : a;
+    delete store.notes[old]; write();
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("section.note[data-note]"), function (sec) {
+    var id = sec.getAttribute("data-note");
+    pageIds.push(id); build(sec, false);
+    var head = sec.parentNode.querySelector(".lesson-head");
+    if (head) {
+      var j = document.createElement("a");
+      j.className = "note-jump"; j.href = "#notitie-" + id; j.innerHTML = PEN + "<span>Notitie maken</span>";
+      j.addEventListener("click", function (e) {
+        e.preventDefault(); open(sec, false);
+        sec.scrollIntoView({ block: "center" }); sec.querySelector("textarea").focus({ preventScroll: true });
+      });
+      head.appendChild(j); head.classList.add("has-jump");
+    }
+    fill(sec);
+  });
+  orphans();
+  if (!canStore) $("np-warn").hidden = false;
+  info();
+  panel.hidden = false;
+
+  window.addEventListener("pagehide", flush);
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") flush(); });
+  window.addEventListener("storage", function (e) {  // zelfde vak open in een ander tabblad
+    if (e.key !== KEY) return;
+    refresh();
+    Object.keys(secs).forEach(function (id) { var ta = secs[id].querySelector("textarea"); if (!dirty[id] && document.activeElement !== ta) fill(secs[id]); });
+    orphans(); info();
+  });
+  var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { Object.keys(secs).forEach(function (id) { grow(secs[id].querySelector("textarea")); }); }, 150); });
+  if (document.fonts) document.fonts.ready.then(function () { Object.keys(secs).forEach(function (id) { grow(secs[id].querySelector("textarea")); }); });
+  if (window.visualViewport) {  // telefoon: het meescrollende veld boven het toetsenbord houden
+    var vv = window.visualViewport, kb = function () { document.documentElement.style.setProperty("--kb", Math.max(0, window.innerHeight - vv.height - vv.offsetTop) + "px"); };
+    vv.addEventListener("resize", kb); vv.addEventListener("scroll", kb);
+  }
+
+  window.fmNotes = {  // voor de zoekbalk
+    find: function (term, norm) {
+      return Object.keys(store.notes).filter(function (id) { return norm(store.notes[id].t).indexOf(term) !== -1; }).map(function (id) {
+        return { id: "notitie-" + id, label: labelOf(id), text: store.notes[id].t.replace(/\s+/g, " ").trim() };
+      });
+    }
+  };
+})();
+</script>"""
+
 def figlib_css():
     import sys
     d = os.path.join(ROOT, "scripts", "figuren")
@@ -645,7 +1047,9 @@ def figlib_css():
 def build():
     import datetime
     built = datetime.date.today().strftime("%-d-%-m-%Y")
+    note_ids = {}
     for slug, c in VAKKEN.items():
+        note_ids[slug] = []
         src = os.path.join(SRC, slug)
         parts = [("overzicht", "Overzicht", "overzicht.md")] + [(f"week-{i}", f"Week {i}", f"week-{i}.md") for i in range(1, 8)]
         weeks, navs = [], []
@@ -674,13 +1078,15 @@ def build():
             wk = 0 if key == "overzicht" else int(key.split("-")[1])
             figs = [f for f in figuren if f["week"] == wk]
             n_fig += len(figs)
-            weeks.append(render_week(key, label, md, after, figs))
+            weeks.append(render_week(key, label, md, after, figs, note_ids[slug]))
             short = "Info" if key == "overzicht" else label.replace("Week ", "W")
             navs.append(f'<a href="#{key}" aria-current="false"><span class="l">{label}</span><span class="s">{short}</span></a>')
         a1, a2, a3, a4 = c["accent"]
         b1, b2 = c["band"]
         page = PAGE
+        assert len(set(note_ids[slug])) == len(note_ids[slug]), f"{slug}: twee lessen met hetzelfde id, hun notities zouden door elkaar lopen"
         for k, v in dict(HEADING=html.escape(c["heading"]), LINE=html.escape(c["line"]), DOC=c["doc"], WEEKNAV="".join(navs),
+                         VAK=slug, NOTE_ALIAS=html.escape(json.dumps(NOTITIE_ALIASSEN.get(slug, {}))), NOTES_CSS=NOTES_CSS, NOTES_JS=NOTES_JS,
                          SITEBAR=sitenav.bar("../../", slug, "sam"), TABS=sitenav.tabs("../../", slug, "sam"),
                          FIG_CSS=figlib_css(), C1=c["chart"][0][0], C2=c["chart"][0][1], C3=c["chart"][0][2], C4=c["chart"][0][3],
                          D1=c["chart"][1][0], D2=c["chart"][1][1], D3=c["chart"][1][2], D4=c["chart"][1][3],
@@ -691,7 +1097,8 @@ def build():
         os.makedirs(os.path.join(OUT, slug), exist_ok=True)
         open(os.path.join(OUT, slug, "index.html"), "w", encoding="utf-8").write(page)
         assert n_fig == len(figuren), f"{slug}: {len(figuren) - n_fig} figuur/figuren met een week buiten 0-7"
-        print("samenvatting", slug, len(page) // 1024, "KB,", n_fig, "figuren")
+        print("samenvatting", slug, len(page) // 1024, "KB,", n_fig, "figuren,", len(note_ids[slug]), "notitievelden")
+    check_note_ids(note_ids)
 
 if __name__ == "__main__":
     build()
