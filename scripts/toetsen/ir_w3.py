@@ -42,10 +42,10 @@ mc("ir3-i12", W, I, "Een gemeente wil bij een aanbesteding ook lokale werkgelege
 # ---------- Recht MC ----------
 mc("ir3-r01", W, R, "Wat is volgens de slide het drempelbedrag (per 1 januari 2026, ex btw) voor diensten van een gemeente?",
    ["€140.000", "€216.000", "€750.000", "€5.404.000"], 1,
-   "Volgens het schema in de les: leveringen en diensten van centrale overheden €140.000, van andere aanbestedende diensten (zoals gemeenten) €216.000, sociale en andere specifieke diensten €750.000, werken en concessies €5.404.000.")
+   "Volgens het schema in de les: leveringen en diensten van centrale overheden €140.000, van andere aanbestedende diensten (zoals gemeenten) €216.000 (art. 2.3 Aw), sociale en andere specifieke diensten €750.000, werken en concessies €5.404.000.")
 mc("ir3-r02", W, R, "Een ministerie koopt meubilair voor €150.000 (ex btw). Moet dit Europees worden aanbesteed?",
    ["Nee, de drempel is €216.000", "Ja, voor leveringen door een centrale overheid geldt de drempel van €140.000", "Nee, meubilair is een werk", "Ja, maar alleen omdat meubilair een dienst is"], 1,
-   "Een ministerie is een orgaan van de centrale overheid. Voor leveringen geldt dan €140.000. De €216.000 geldt voor andere aanbestedende diensten.")
+   "Een ministerie is een orgaan van de centrale overheid. Voor leveringen geldt dan €140.000 (art. 2.2 Aw). De €216.000 geldt voor andere aanbestedende diensten.")
 mc("ir3-r03", W, R, "Hoe raam je de waarde van een schoonmaakcontract van 2 jaar à €70.000 per jaar met een optie tot verlenging van 2 keer 1 jaar?",
    ["€70.000", "€140.000", "€280.000, inclusief opties en verlengingen, exclusief btw", "€280.000 inclusief btw"], 2,
    "De geraamde waarde is het totaalbedrag exclusief btw, inclusief opties en verlengingen (art. 2.15 lid 2 Aw): 4 × €70.000 = €280.000. Bij een gemeente zit je dan boven de €216.000.")
@@ -54,7 +54,7 @@ mc("ir3-r04", W, R, "Een gemeente knipt een schoonmaakopdracht van €400.000 op
    "Opdrachten splitsen om onder de drempel te blijven is verboden. Voor de raming tel je alle percelen samen. Alleen via de percelenregeling mag een klein deel buiten de Europese procedure blijven.")
 mc("ir3-r05", W, R, "In welke volgorde gebruik je de beoordelingsinstrumenten?",
    ["Gunningscriteria, selectiecriteria, geschiktheidseisen, uitsluitingsgronden", "Uitsluitingsgronden, geschiktheidseisen, selectiecriteria, gunningscriteria", "Geschiktheidseisen, uitsluitingsgronden, gunningscriteria, selectiecriteria", "Selectiecriteria, uitsluitingsgronden, gunningscriteria, geschiktheidseisen"], 1,
-   "Eerst kijk je of de ondernemer uitgesloten moet of mag worden, dan of hij geschikt is, dan (bij tweefasige procedures) wie je selecteert, en tot slot welke inschrijving wint. De eerste drie gaan over de ondernemer, de gunningscriteria over de inschrijving.")
+   "Eerst kijk je of de ondernemer uitgesloten moet of mag worden (art. 2.86 t/m 2.87 Aw), dan of hij geschikt is (art. 2.90), dan (bij tweefasige procedures) wie je selecteert, en tot slot welke inschrijving wint. De eerste drie gaan over de ondernemer, de gunningscriteria over de inschrijving.")
 mc("ir3-r06", W, R, "Een inschrijver is onherroepelijk veroordeeld voor omkoping. Wat moet de aanbestedende dienst doen?",
    ["Niets, dat is privé", "Uitsluiten: dit is een dwingende uitsluitingsgrond (art. 2.86 Aw)", "De inschrijver mag kiezen of hij zich terugtrekt", "Alleen uitsluiten als de prijs te hoog is"], 1,
    "Art. 2.86 en 2.86a Aw bevatten dwingende uitsluitingsgronden ('moet'), zoals veroordelingen voor omkoping of fraude. Art. 2.87 bevat facultatieve gronden ('mag'), zoals faillissement of ernstige beroepsfouten.")
@@ -88,7 +88,7 @@ op("ir3-io3", W, I, "Noem vier Europese aanbestedingsprocedures (boven de drempe
    "Europees: openbare procedure, niet-openbare procedure, mededingingsprocedure met onderhandeling, concurrentiegerichte dialoog, onderhandelingsprocedure zonder voorafgaande aankondiging, innovatiepartnerschap, prijsvraag, procedure voor sociale en andere specifieke diensten. Nationaal: enkelvoudig onderhandse procedure, meervoudig onderhandse procedure, nationale openbare procedure, nationale niet-openbare procedure.",
    ["Vier juiste Europese procedures", "Twee juiste nationale procedures"])
 op("ir3-ro1", W, R, "Leg uit hoe je volgens de Aanbestedingswet de waarde van een opdracht raamt. Noem minstens vier regels met artikel.",
-   "De raming staat in art. 2.13 tot en met 2.22 Aw. Regels: het totaalbedrag exclusief btw (art. 2.15 lid 2), inclusief opties en verlengingen (art. 2.15 lid 2), geen splitsing om onder de drempel te blijven (art. 2.14), de waarde van alle percelen samen (art. 2.18), en bij een overeenkomst voor onbepaalde tijd, of langer dan vier jaar zonder vaste totaalprijs, rekenen op basis van vier jaar (de slide noemt art. 2.17 sub e; check de precieze regel in je bundel).",
+   "De raming staat in art. 2.13 tot en met 2.22 Aw. Regels: het totaalbedrag exclusief btw (art. 2.15 lid 2), inclusief opties en verlengingen (art. 2.15 lid 2), geen splitsing om onder de drempel te blijven (art. 2.14), de waarde van alle percelen samen (art. 2.18), en bij een overeenkomst voor onbepaalde tijd, of langer dan vier jaar zonder vaste totaalprijs, rekenen op basis van vier jaar (art. 2.17 sub e Aw, gecontroleerd op wetten.overheid.nl: bij een dienstenopdracht zonder totale prijs die voor onbepaalde duur is of langer dan 48 maanden loopt, reken je het maandbedrag × 48).",
    ["Exclusief btw", "Inclusief opties en verlengingen", "Splitsingsverbod en percelen samen", "Regel voor lange of onbepaalde looptijd", "Juiste artikelen erbij"])
 op("ir3-ro2", W, R, "Wat zijn uitsluitingsgronden, geschiktheidseisen, selectiecriteria en gunningscriteria? Leg per instrument uit waar het over gaat en geef een voorbeeld.",
    "Uitsluitingsgronden: redenen om een ondernemer niet toe te laten, dwingend (art. 2.86, bijvoorbeeld een veroordeling voor fraude) of facultatief (art. 2.87, bijvoorbeeld faillissement). Geschiktheidseisen: minimumeisen aan de ondernemer (art. 2.90), bijvoorbeeld een minimale omzet of drie referenties. Selectiecriteria: het rangschikken van geschikte gegadigden bij tweefasige procedures (art. 2.99), bijvoorbeeld meer ervaring scoort hoger. Gunningscriteria: beoordeling van de inschrijving zelf (art. 2.114 e.v.), bijvoorbeeld prijs 40% en kwaliteit 60%.",
@@ -112,7 +112,7 @@ cs("ir3-ic1", W, I, "Prestaties meten bij de facilitaire servicedesk",
 cs("ir3-rc1", W, R, "Drie opdrachten raming en drempel",
    "Je adviseert drie organisaties. Ga uit van de drempelbedragen uit de les.\n1. Het Ministerie van Financiën wil laptops kopen voor €145.000 (ex btw).\n2. Waterschap Rivierenland wil een schoonmaakcontract van 3 jaar à €60.000 per jaar, met een optie om met 2 jaar te verlengen.\n3. De gemeente Doetinchem wil groenonderhoud (een dienst) laten uitvoeren voor €190.000 ex btw. Ze overweegt de opdracht in twee delen te splitsen, één voor het noorden en één voor het zuiden van de gemeente, 'zodat lokale bedrijven makkelijker meedoen'.",
    [("Moet het ministerie de laptops Europees aanbesteden?",
-     "Ja. Een ministerie is een orgaan van de centrale overheid. Voor leveringen geldt dan een drempel van €140.000, en €145.000 ligt daarboven.",
+     "Ja. Een ministerie is een orgaan van de centrale overheid. Voor leveringen geldt dan een drempel van €140.000 (art. 2.2 Aw), en €145.000 ligt daarboven.",
      ["Centrale overheid herkend", "Juiste drempel (€140.000) en conclusie"]),
     ("Raam de waarde van het schoonmaakcontract van het waterschap en trek een conclusie.",
      "Inclusief de verlengingsoptie: 5 × €60.000 = €300.000 ex btw (art. 2.15 lid 2 Aw). Een waterschap is een decentrale overheid (categorie 1), dus geldt de drempel van €216.000. Conclusie: Europees aanbesteden.",

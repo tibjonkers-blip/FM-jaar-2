@@ -58,17 +58,17 @@ Vanaf nu vervolg je het verbintenissenrecht uit jaar 1. Leerdoelen: je kent de b
 
 ### Beginselen van het overeenkomstenrecht
 
-Beginselen zijn de grondslag van de artikelen in het BW en werken door in de toepassing ervan.
+Beginselen zijn de grondslag van de artikelen in het BW en werken door in de toepassing ervan. De slide noemt alleen bij maatschappelijke aanvaardbaarheid artikelen (3:40 en 6:248 BW). De artikelen in de derde kolom met "wet" erbij staan niet op de slide; ik heb ze opgezocht op wetten.overheid.nl, zodat je weet waar het beginsel in de wet terugkomt.
 
-| Beginsel | Kort gezegd |
-| --- | --- |
-| **Contractvrijheid** | Je kiest zelf of, met wie en wat je afspreekt |
-| **Vormvrijheid** | Een overeenkomst kan in elke vorm ontstaan, ook mondeling, tenzij de wet een vorm eist |
-| **Pacta sunt servanda** | Afspraak is afspraak: een overeenkomst is bindend (levert iemand een ander product dan afgesproken, dan is dat in strijd met dit beginsel) |
-| **Vertrouwensbeginsel** | Je mag uitgaan van wat de ander redelijkerwijs bij je deed vertrouwen, als dat vertrouwen gerechtvaardigd is |
-| **Risicobeginsel** | Wie een risico in het leven roept of zich ermee belast, draagt het |
-| **Relativiteit** | Een overeenkomst bindt in principe alleen de partijen zelf |
-| **Maatschappelijke aanvaardbaarheid** | Afspraken in strijd met goede zeden of openbare orde zijn nietig (art. 3:40 BW), en redelijkheid en billijkheid kunnen aanvullen of beperken (art. 6:248 BW) |
+| Beginsel | Kort gezegd | Artikel |
+| --- | --- | --- |
+| **Contractvrijheid** | Je kiest zelf of, met wie en wat je afspreekt | Geen apart artikel; een overeenkomst komt tot stand door aanbod en aanvaarding (art. 6:217 lid 1 BW, wet) |
+| **Vormvrijheid** | Een overeenkomst kan in elke vorm ontstaan, ook mondeling, tenzij de wet een vorm eist | Art. 3:37 lid 1 BW (wet): verklaringen kunnen in iedere vorm, tenzij anders bepaald |
+| **Pacta sunt servanda** | Afspraak is afspraak: een overeenkomst is bindend (levert iemand een ander product dan afgesproken, dan is dat in strijd met dit beginsel) | Niet nakomen is een tekortkoming: art. 6:74 BW (wet) |
+| **Vertrouwensbeginsel** | Je mag uitgaan van wat de ander redelijkerwijs bij je deed vertrouwen, als dat vertrouwen gerechtvaardigd is | Art. 3:35 BW (wet), naast de hoofdregel wil + verklaring van art. 3:33 BW |
+| **Risicobeginsel** | Wie een risico in het leven roept of zich ermee belast, draagt het | Geen artikel op de slide |
+| **Relativiteit** | Een overeenkomst bindt in principe alleen de partijen zelf | Geen artikel op de slide |
+| **Maatschappelijke aanvaardbaarheid** | Afspraken in strijd met goede zeden of openbare orde zijn nietig, en redelijkheid en billijkheid kunnen aanvullen of beperken | Art. 3:40 lid 1 BW en art. 6:248 lid 1 (aanvullend) en lid 2 (beperkend) BW |
 
 ### Afgebroken onderhandelingen
 
@@ -78,7 +78,7 @@ De regels komen uit rechtspraak: *Baris/Riezenkamp* → *Plas/Valburg* → *VSH/
 
 > Afbreken mag, **tenzij** dat op grond van het **gerechtvaardigd vertrouwen** in een overeenkomst of door **andere omstandigheden** onaanvaardbaar zou zijn.
 
-De rechter neemt dat niet snel aan (vergelijk de onaanvaardbaarheid van art. 6:248 lid 2 BW). Omstandigheden die meewegen:
+De rechter neemt dat niet snel aan (vergelijk de onaanvaardbaarheid van art. 6:248 lid 2 BW). De precontractuele fase zelf staat niet in de wet: de regels komen uit de genoemde arresten. Op het tentamen noem je dus het arrest (CBB/JPO) en art. 6:162 BW voor de aansprakelijkheid. Omstandigheden die meewegen:
 
 - in hoeverre de afbrekende partij zelf aan het vertrouwen heeft bijgedragen;
 - de verwijtbaarheid van de afbreker;
@@ -87,7 +87,7 @@ De rechter neemt dat niet snel aan (vergelijk de onaanvaardbaarheid van art. 6:2
 - de duur van de onderhandelingen;
 - en dat alles afgezet tegen het gehele verloop.
 
-**Grondslag** van aansprakelijkheid: er is nog geen overeenkomst, dus het is een **onrechtmatige daad** (art. 6:162 BW), niet wanprestatie.
+**Grondslag** van aansprakelijkheid: er is nog geen overeenkomst (art. 6:213 BW), dus geen wanprestatie (art. 6:74 BW) maar een **onrechtmatige daad** (art. 6:162 BW). De slide stelt precies deze vraag: "Art. 6:162 BW of art. 6:213 / 6:74 BW?"; het antwoord is 6:162.
 
 **Gevolgen** van onrechtmatig afbreken:
 
@@ -110,6 +110,7 @@ Algemene voorwaarden (AV) zijn een standaardset afspraken voor herhaald gebruik.
 **Begrippen (art. 6:231 BW)**
 
 - **AV**: schriftelijk opgestelde bedingen, opgesteld om in meerdere overeenkomsten te worden opgenomen, **behalve kernbedingen** (prijs, product, dienst).
+- **AV** zelf: art. 6:231 sub a BW.
 - **Gebruiker**: de partij van wie de AV afkomstig zijn (sub b).
 - **Wederpartij**: de partij die eraan gebonden wordt (sub c).
 
@@ -122,8 +123,10 @@ Algemene voorwaarden (AV) zijn een standaardset afspraken voor herhaald gebruik.
 
 **Let op art. 6:235 BW**: wie geen beroep op art. 6:233 (en 6:234, 6:236, 6:237) kan doen:
 
-- ondernemingen waar **50 of meer personen** werkzaam zijn;
-- ondernemingen die laatstelijk hun **jaarrekening openbaar** hebben gemaakt (art. 2:360 BW).
+- rechtspersonen die laatstelijk hun **jaarrekening openbaar** hebben gemaakt (art. 2:360 BW): **art. 6:235 lid 1 sub a BW**;
+- partijen waar bij het sluiten van de overeenkomst **50 of meer personen** werkzaam zijn: **art. 6:235 lid 1 sub b BW**.
+
+Het tijdstip is het sluiten van de overeenkomst (gecontroleerd op wetten.overheid.nl). Het antwoordmodel van de oefentoets (week 7, vraag 12) schrijft "art. 6:235 sub b"; dat is lid 1 sub b.
 
 | Type wederpartij | Waar kan zij een beroep op doen? |
 | --- | --- |

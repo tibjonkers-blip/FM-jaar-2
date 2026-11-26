@@ -89,7 +89,7 @@ De zaak moet aan de overeenkomst beantwoorden. Hij is **niet conform** als hij, 
 
 **Negatieve garantie**: een garantie die niet aansluit bij de redelijke verwachtingen en die de rechten van de koper eigenlijk **inperkt**. Bij een zakelijke koop kan dat (regelend recht). Bij **consumentenkoop niet**: art. 7:6 en 7:6a BW, de consument houdt naast de garantie al zijn wettelijke rechten.
 
-**Rechten bij non-conformiteit (art. 7:21 BW)**: aflevering van het ontbrekende, herstel of vervanging, op kosten van de verkoper. Daarnaast de rechten uit Boek 6, zoals ontbinding en schadevergoeding. Er geldt een **klachtplicht** (art. 7:23 BW): binnen bekwame tijd klagen.
+**Rechten bij non-conformiteit (art. 7:21 BW)**: aflevering van het ontbrekende (lid 1 sub a), herstel (sub b) of vervanging (sub c), op kosten van de verkoper (lid 2). Daarnaast de rechten uit Boek 6, zoals ontbinding en schadevergoeding. Er geldt een **klachtplicht** (art. 7:23 lid 1 BW): binnen bekwame tijd klagen nadat je het gebrek hebt ontdekt of had moeten ontdekken.
 
 **Extra bescherming bij consumentenkoop:**
 
@@ -97,19 +97,19 @@ De zaak moet aan de overeenkomst beantwoorden. Hij is **niet conform** als hij, 
 | --- | --- |
 | 7:6a | Naast een garantie houdt de consument alle andere rechten (negatieve garantie werkt niet) |
 | 7:7 | Ongevraagde toezending |
-| 7:18 lid 1 | Mededelingen van een vorige verkoper (bijvoorbeeld de fabrikant in reclame) tellen mee |
-| 7:18 lid 2 | **Bewijsvermoeden**: openbaart een gebrek zich binnen **6 maanden** na aflevering, dan wordt vermoed dat de zaak nooit conform was |
-| 7:22 | Prijsvermindering en ontbinding, maar pas na een poging tot herstel of vervanging (lid 2) |
-| 7:23 | Klagen binnen **twee maanden** na ontdekking is in ieder geval op tijd |
+| 7:18 (slide: lid 1; huidige wet: lid 2 sub d) | Publieke mededelingen van eerdere schakels in de keten (bijvoorbeeld de producent in reclame of op het etiket) tellen mee |
+| 7:18 lid 2 (slide); huidige wet: **7:18a lid 2** | **Bewijsvermoeden**: openbaart een gebrek zich binnen **6 maanden** (slide) na aflevering, dan wordt vermoed dat de zaak nooit conform was. In de huidige wet is dat **één jaar** |
+| 7:22 | Ontbinding (lid 1 sub a) en prijsvermindering (lid 1 sub b), maar pas als herstel en vervanging onmogelijk zijn of niet gevergd kunnen worden, of de verkoper tekortschiet (lid 2) |
+| 7:23 lid 1 | Klagen binnen **twee maanden** na ontdekking is in ieder geval op tijd |
 | 7:28 | De vordering van de verkoper tot betaling verjaart na **twee jaar** |
 
-Let op: het bewijsvermoeden van 6 maanden staat zo op de slide. In de wet is die termijn volgens mij inmiddels verlengd naar een jaar (sinds de implementatie van de Europese richtlijn in 2022). Vraag de docent welke termijn je op het tentamen moet gebruiken.
+**Let op, de slide is hier verouderd.** Gecontroleerd op wetten.overheid.nl (Boek 7, versie van oktober 2026): het bewijsvermoeden staat nu in **art. 7:18a lid 2 BW** en de termijn is **één jaar** na aflevering. Wat de slide als art. 7:18 lid 1 noemt (mededelingen van een vorige verkoper), staat nu in **art. 7:18 lid 2 sub d BW** ("publieke mededelingen ... in eerdere schakels van de transactieketen, waaronder de producent"). Het antwoordmodel van oefenopdracht 6.6 gebruikt nog de oude nummering en de 6 maanden. Vraag de docent welke versie op het tentamen telt, en noem in je antwoord allebei als je twijfelt: "art. 7:18a lid 2 BW (voorheen 7:18 lid 2): vermoeden van non-conformiteit binnen een jaar (op de slide: 6 maanden)".
 
 ### Als de koper niet presteert
 
 De koper moet **betalen** en de zaak **in ontvangst nemen**. Betaalt hij niet: schadevergoeding in de vorm van de **wettelijke rente** (art. 6:119 BW), nakoming of ontbinding, en bij koop het **recht van reclame**.
 
-**Recht van reclame (art. 7:39 BW)**: vergelijkbaar met ontbinding, de verkoper haalt de zaak terug. Werkt ook tijdens een faillissement, maar alleen als de zaak nog in dezelfde staat is (art. 7:41 BW), en met een korte vervaltermijn: binnen 6 weken nadat de betaling opeisbaar werd en binnen 60 dagen na de aflevering.
+**Recht van reclame (art. 7:39 BW)**: vergelijkbaar met ontbinding, de verkoper haalt de zaak terug. Werkt ook tijdens een faillissement, maar alleen als de zaak nog in dezelfde staat is (art. 7:41 BW), en met een korte vervaltermijn: binnen 6 weken nadat de betaling opeisbaar werd en binnen 60 dagen na de aflevering (art. 7:44 BW, gecontroleerd op wetten.overheid.nl). Precies gezegd: het recht vervalt pas als **zowel** 6 weken na opeisbaarheid **als** 60 dagen na aflevering (opslag bij de koper) voorbij zijn. Het recht van reclame geldt alleen voor roerende zaken die geen registergoed zijn en vereist dat aan de voorwaarden voor ontbinding (art. 6:265 BW) is voldaan (art. 7:39 lid 1).
 
 ### Verjaring en verval
 
@@ -121,11 +121,11 @@ Consumentenkoop met alleen communicatie op afstand (art. 6:230g jo. 6:230m BW). 
 
 ### Productaansprakelijkheid
 
-Niet de verkoper maar de **producent** is aansprakelijk voor schade door een gebrekkig product (art. 6:185 BW; ook verkopen aan een wederverkoper is in het verkeer brengen). Bij consumentenkoop is de verkoper toch aansprakelijk (art. 7:24 BW) als hij het gebrek kende of behoorde te kennen, de afwezigheid ervan heeft toegezegd, of als het alleen om zaakschade onder de €500 gaat.
+Niet de verkoper maar de **producent** is aansprakelijk voor schade door een gebrekkig product (art. 6:185 BW; ook verkopen aan een wederverkoper is in het verkeer brengen). Bij consumentenkoop is de verkoper toch aansprakelijk (art. 7:24 lid 2 BW) als hij het gebrek kende of behoorde te kennen, de afwezigheid ervan heeft toegezegd, of als het alleen om zaakschade onder de €500 gaat.
 
 ### Eigendomsoverdracht
 
-Drie voorwaarden (art. 3:84 BW):
+Drie voorwaarden (art. 3:84 lid 1 BW):
 
 1. **Geldige titel**, zoals een geldige koopovereenkomst.
 2. **Beschikkingsbevoegdheid**: mag de vervreemder over de zaak beschikken?
@@ -139,9 +139,9 @@ Belangrijke begrippen: **houder** (houdt voor een ander), **bezitter** (houdt vo
 
 | Vorm | Situatie | Voorbeeld van de slide |
 | --- | --- | --- |
-| **Constitutum possessorium** | De verkoper houdt de zaak na de verkoop zelf onder zich, nu als houder voor de koper | Maria verkoopt haar laptop aan Kees, maar mag hem nog een maand gebruiken voor haar scriptie |
-| **Brevi manu** | De koper had de zaak al als houder onder zich | Wibi huurt een piano van Anton en koopt hem daarna |
-| **Longa manu** | Een derde houdt de zaak; die gaat nu voor de koper houden | Anky verkoopt paard Bonfire, dat bij een manege staat, aan een slagerij |
+| **Constitutum possessorium** (art. 3:115 sub a BW) | De verkoper houdt de zaak na de verkoop zelf onder zich, nu als houder voor de koper | Maria verkoopt haar laptop aan Kees, maar mag hem nog een maand gebruiken voor haar scriptie |
+| **Brevi manu** (art. 3:115 sub b BW) | De koper had de zaak al als houder onder zich | Wibi huurt een piano van Anton en koopt hem daarna |
+| **Longa manu** (art. 3:115 sub c BW) | Een derde houdt de zaak; die gaat nu voor de koper houden. Het bezit gaat pas over als de derde de overdracht erkent | Anky verkoopt paard Bonfire, dat bij een manege staat, aan een slagerij |
 
 ### Oefencasus (oefenmateriaal les 6)
 
@@ -152,7 +152,7 @@ Belangrijke begrippen: **houder** (houdt voor een ander), **bezitter** (houdt vo
 3. **Eigendomsvoorbehoud**: de verkoper blijft eigenaar zolang er niet betaald is (art. 3:92 BW).
 4. **Kwart kapot na twee weken, geen garantie gegeven**: de verkoper zei dat de verlichting jaren meegaat, en dat mag je ook verwachten. Niet conform (art. 7:17), dus recht op herstel of vervanging (art. 7:21). Dat er geen garantie is, maakt niet uit: dan geldt gewoon de wet.
 5. **Wel een garantie van één maand, kapot na anderhalve maand (zakelijk)**: een negatieve garantie. Die stelt de verwachtingen bij en mag bij zakelijke koop. De verkoper heeft gelijk.
-6. **Hetzelfde bij een consument**: de verkoper heeft geen gelijk. Consumentenkoop is grotendeels dwingend (art. 7:6 lid 1), de garantie kan de verwachtingen niet inperken (art. 7:6a lid 1) en het gebrek openbaart zich binnen 6 maanden, dus het bewijsvermoeden van art. 7:18 lid 2 geldt. Recht op herstel of vervanging (art. 7:21).
+6. **Hetzelfde bij een consument**: de verkoper heeft geen gelijk. Consumentenkoop is grotendeels dwingend (art. 7:6 lid 1), de garantie kan de verwachtingen niet inperken (art. 7:6a lid 1) en het gebrek openbaart zich binnen 6 maanden, dus het bewijsvermoeden geldt (antwoordmodel: art. 7:18 lid 2; huidige wet: art. 7:18a lid 2, termijn één jaar, zie hierboven). Recht op herstel of vervanging (art. 7:21).
 
 **Kantoorpand van Draaier B.V.**: koopakte getekend en sleutels gegeven. Toch is Punidas **nog geen eigenaar**: levering van een onroerende zaak vereist een notariële akte en inschrijving in het Kadaster (art. 3:89 BW). En Punidas kan niet meer terug, want de bedenktijd van art. 7:2 lid 2 geldt alleen voor een particuliere koper van een woning.
 

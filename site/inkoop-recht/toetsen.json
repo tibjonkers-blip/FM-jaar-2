@@ -258,7 +258,7 @@
     "Nee, want na de inschrijving mag helemaal geen contact meer zijn"
    ],
    "juist": 2,
-   "uitleg": "Verduidelijken mag alleen ter concretisering of herstel van een kenbare omissie, en mag niet leiden tot een nieuwe inschrijving. Een lagere prijs is een inhoudelijke wijziging en schendt het gelijkheidsbeginsel. Er mag wel om duidelijkheid gevraagd worden, dus 'nooit contact' klopt niet.",
+   "uitleg": "Verduidelijken mag alleen ter concretisering of herstel van een kenbare omissie, en mag niet leiden tot een nieuwe inschrijving. Een lagere prijs is een inhoudelijke wijziging en schendt het gelijkheidsbeginsel (art. 1.8 Aw). Er mag wel om duidelijkheid gevraagd worden, dus 'nooit contact' klopt niet.",
    "versie": "C"
   },
   {
@@ -274,7 +274,7 @@
     "Vestergaard"
    ],
    "juist": 1,
-   "uitleg": "Pressetext (C-454/06) gaat over wezenlijke wijzigingen na de gunning. Een wezenlijke wijziging staat gelijk aan een nieuwe opdracht en raakt het gelijkheidsbeginsel na de procedure.",
+   "uitleg": "Pressetext (C-454/06) gaat over wezenlijke wijzigingen na de gunning. Een wezenlijke wijziging staat gelijk aan een nieuwe opdracht en raakt het gelijkheidsbeginsel (art. 1.8 Aw) na de procedure.",
    "versie": "A"
   },
   {
@@ -306,7 +306,7 @@
     "Transparantie achteraf"
    ],
    "juist": 0,
-   "uitleg": "Eisen mogen niet zwaarder zijn dan nodig voor de opdracht. Een omzeteis van ruim 60 keer de jaarwaarde is buitensporig en sluit mkb-bedrijven onnodig uit.",
+   "uitleg": "Eisen mogen niet zwaarder zijn dan nodig voor de opdracht. Een omzeteis van ruim 60 keer de jaarwaarde is buitensporig en sluit mkb-bedrijven onnodig uit (art. 1.10 lid 1 Aw; omzeteis maximaal driemaal de geraamde waarde, art. 2.90 lid 5 sub a Aw).",
    "versie": "C"
   },
   {
@@ -354,7 +354,7 @@
     "Alleen als de opdracht op TenderNed staat"
    ],
    "juist": 1,
-   "uitleg": "Bij een grensoverschrijdend belang gelden de algemene beginselen, met name de drie belangrijkste, ook bij niet-aanbestedingsplichtige opdrachten. Gezichtspunten: ligging dichtbij de grens, de omvang van het bedrag en de aard van de opdracht.",
+   "uitleg": "Bij een grensoverschrijdend belang gelden de algemene beginselen (afdeling 1.2.2 Aw), met name de drie belangrijkste, ook bij niet-aanbestedingsplichtige opdrachten. Gezichtspunten: ligging dichtbij de grens, de omvang van het bedrag en de aard van de opdracht.",
    "versie": "C"
   },
   {
@@ -386,7 +386,7 @@
     "Richtlijn 2004/18/EG"
    ],
    "juist": 1,
-   "uitleg": "Richtlijn 2014/24 is de klassieke richtlijn, 2014/25 gaat over de speciale sectoren (nutssectoren) en 2014/23 over concessies. Kritische noot: op slide 9 van week 1 staan de nummers door elkaar (2014/23 als klassieke overheid). Check bij de docent welke nummering op het tentamen telt.",
+   "uitleg": "Richtlijn 2014/24 is de klassieke richtlijn, 2014/25 gaat over de speciale sectoren (nutssectoren) en 2014/23 over concessies. Kritische noot: op slide 9 van week 1 staan de nummers door elkaar (2014/23 als klassieke overheid). Gecontroleerd op EUR-Lex: 2014/24 gaat over overheidsopdrachten, 2014/25 over water, energie, vervoer en post, 2014/23 over concessies. De Aw verwijst voor gewone overheidsopdrachten ook naar 2014/24 (art. 2.1 t/m 2.3 Aw).",
    "versie": "B"
   },
   {
@@ -402,7 +402,7 @@
     "Het vervangt de Aanbestedingswet 2012"
    ],
    "juist": 1,
-   "uitleg": "De Gids Proportionaliteit is aangewezen door het Aanbestedingsbesluit (een AMvB) en is daardoor verplicht. Afwijken mag alleen gemotiveerd ('pas toe of leg uit').",
+   "uitleg": "De Gids Proportionaliteit is aangewezen door het Aanbestedingsbesluit (een AMvB) en is daardoor verplicht. De grondslag staat in art. 1.10 lid 3 Aw; afwijken mag alleen gemotiveerd in de aanbestedingsstukken ('pas toe of leg uit', art. 1.10 lid 4 Aw).",
    "versie": "C"
   },
   {
@@ -547,7 +547,7 @@
    "subvragen": [
     {
      "vraag": "Gelden de algemene beginselen van het aanbestedingsrecht hier, ook al ligt de opdracht onder de drempel? Motiveer.",
-     "modelantwoord": "Ja, waarschijnlijk wel. Bij een duidelijk grensoverschrijdend belang gelden de algemene beginselen ook onder de drempel. De gezichtspunten zijn de ligging dichtbij de grens (Kerkrade ligt aan de grens met Aken), het bedrag en de aard van de opdracht. Dat een Duits bedrijf belangstelling heeft, ondersteunt dat.",
+     "modelantwoord": "Ja, waarschijnlijk wel. Bij een duidelijk grensoverschrijdend belang gelden de algemene beginselen (afdeling 1.2.2 Aw) ook onder de drempel. De gezichtspunten zijn de ligging dichtbij de grens (Kerkrade ligt aan de grens met Aken), het bedrag en de aard van de opdracht. Dat een Duits bedrijf belangstelling heeft, ondersteunt dat.",
      "punten": [
       "Juiste regel: beginselen gelden bij grensoverschrijdend belang",
       "Toepassing met de gezichtspunten op Kerkrade"
@@ -594,7 +594,7 @@
     },
     {
      "vraag": "Beoordeel de 'verduidelijking' bij inschrijver X.",
-     "modelantwoord": "Niet toegestaan. Een verduidelijking mag alleen ter concretisering of herstel van een kenbare omissie en mag niet leiden tot een nieuwe inschrijving. Een nieuwe, lagere prijs verandert de inschrijving inhoudelijk. Bovendien krijgt alleen X die kans, in strijd met het gelijkheidsbeginsel (SAG, Manova).",
+     "modelantwoord": "Niet toegestaan. Een verduidelijking mag alleen ter concretisering of herstel van een kenbare omissie en mag niet leiden tot een nieuwe inschrijving. Een nieuwe, lagere prijs verandert de inschrijving inhoudelijk. Bovendien krijgt alleen X die kans, in strijd met het gelijkheidsbeginsel (art. 1.8 Aw; SAG, Manova).",
      "punten": [
       "Niet toegestaan, verduidelijking mag geen nieuwe inschrijving worden",
       "Gelijkheidsbeginsel (alleen X krijgt de kans), eventueel met arrest"
@@ -603,7 +603,7 @@
     },
     {
      "vraag": "Mag de looptijd na de gunning van 4 naar 8 jaar? Noem het relevante arrest.",
-     "modelantwoord": "Nee. Een verdubbeling van de looptijd is een wezenlijke wijziging: andere inschrijvers hadden misschien anders ingeschreven of meegedaan. Volgens Pressetext (C-454/06) staat een wezenlijke wijziging na gunning gelijk aan een nieuwe opdracht, die opnieuw moet worden aanbesteed.",
+     "modelantwoord": "Nee. Een verdubbeling van de looptijd is een wezenlijke wijziging: andere inschrijvers hadden misschien anders ingeschreven of meegedaan. Volgens Pressetext (C-454/06) staat een wezenlijke wijziging na gunning gelijk aan een nieuwe opdracht, die opnieuw moet worden aanbesteed (gelijkheidsbeginsel, art. 1.8 Aw).",
      "punten": [
       "Nee, wezenlijke wijziging",
       "Pressetext genoemd en toegepast"
@@ -850,7 +850,7 @@
     "Omdat CZ in het buitenland gevestigd is"
    ],
    "juist": 1,
-   "uitleg": "CZ lijkt op een publiekrechtelijke instelling, maar werkt op commerciële beginselen. Daardoor voldoet CZ niet aan de eis 'anders dan van industriële of commerciële aard'.",
+   "uitleg": "CZ lijkt op een publiekrechtelijke instelling (art. 1.1 Aw), maar werkt op commerciële beginselen. Daardoor voldoet CZ niet aan de eis 'anders dan van industriële of commerciële aard'.",
    "versie": "C"
   },
   {
@@ -914,7 +914,7 @@
     "Nee, want leges zijn bestuursrecht"
    ],
    "juist": 1,
-   "uitleg": "Een bezwarende titel is alles wat op geld waardeerbaar is: een geldelijke vergoeding, kwijtschelding van belasting, vrijstelling van leges, enzovoort.",
+   "uitleg": "Een bezwarende titel (art. 1.1 Aw, definitie overheidsopdracht) is alles wat op geld waardeerbaar is: een geldelijke vergoeding, kwijtschelding van belasting, vrijstelling van leges, enzovoort.",
    "versie": "A"
   },
   {
@@ -946,7 +946,7 @@
     "Bij een concessie betaalt de overheid altijd meer"
    ],
    "juist": 1,
-   "uitleg": "Bij een concessie wordt de ondernemer betaald door de gebruikers (bijvoorbeeld tol of parkeergeld) en draagt hij zelf het exploitatierisico. Concessies voor leveringen bestaan niet.",
+   "uitleg": "Bij een concessie (definities in art. 1.1 Aw) wordt de ondernemer betaald door de gebruikers (bijvoorbeeld tol of parkeergeld) en draagt hij zelf het exploitatierisico. Concessies voor leveringen bestaan niet.",
    "versie": "C"
   },
   {
@@ -1063,10 +1063,10 @@
    "onderdeel": "Recht",
    "type": "open",
    "vraag": "Leg uit wat een raamovereenkomst is, hoe lang die maximaal mag duren en met hoeveel partijen je hem kunt sluiten. Noem de artikelen.",
-   "modelantwoord": "Een raamovereenkomst is een overeenkomst tussen een of meer aanbestedende diensten en een of meer ondernemers. Het doel is voor een bepaalde periode de voorwaarden vast te leggen voor opdrachten die later worden gegund, bijvoorbeeld de prijs of de beoogde hoeveelheid (art. 2.44 Aw). De looptijd is maximaal 4 jaar (art. 2.140 Aw; de slide noemt lid 3, de oefentoets lid 2, dus check je bundel). Je kunt hem met één of meer partijen sluiten (art. 2.143 lid 1 Aw).",
+   "modelantwoord": "Een raamovereenkomst is een overeenkomst tussen een of meer aanbestedende diensten en een of meer ondernemers. Het doel is voor een bepaalde periode de voorwaarden vast te leggen voor opdrachten die later worden gegund, bijvoorbeeld de prijs of de beoogde hoeveelheid (art. 2.44 Aw). De looptijd is maximaal 4 jaar, behalve in deugdelijk gemotiveerde uitzonderingsgevallen (art. 2.140 lid 3 Aw; gecontroleerd op wetten.overheid.nl, het antwoordmodel van de oefentoets noemt ten onrechte lid 2). Je kunt hem met één of meer partijen sluiten (art. 2.143 lid 1 Aw).",
    "punten": [
     "Definitie raamovereenkomst",
-    "Maximaal 4 jaar met art. 2.140",
+    "Maximaal 4 jaar met art. 2.140 lid 3",
     "Met een of meer partijen (art. 2.143)"
    ],
    "versie": "B",
@@ -1190,7 +1190,7 @@
     },
     {
      "vraag": "Wat verandert er als de commerciële afvalverwerker 20% van de aandelen krijgt, of als AfvalVallei 30% van haar werk voor bedrijven gaat doen?",
-     "modelantwoord": "Met 20% privaat kapitaal is niet meer voldaan aan de voorwaarde 'geen participatie van particulier kapitaal', dus moet worden aanbesteed. Bij 30% werk voor derden komt de BV onder de 80%-grens (70% voor de gemeenten), dus vervalt de uitzondering ook. In beide gevallen moet de opdracht Europees worden aanbesteed.",
+     "modelantwoord": "Met 20% privaat kapitaal is niet meer voldaan aan de voorwaarde 'geen participatie van particulier kapitaal' (art. 2.24b Aw), dus moet worden aanbesteed. Bij 30% werk voor derden komt de BV onder de 80%-grens (70% voor de gemeenten), dus vervalt de uitzondering ook. In beide gevallen moet de opdracht Europees worden aanbesteed.",
      "punten": [
       "Privaat kapitaal: uitzondering vervalt",
       "Onder 80%: uitzondering vervalt",
@@ -1406,7 +1406,7 @@
     "€5.404.000"
    ],
    "juist": 1,
-   "uitleg": "Volgens het schema in de les: leveringen en diensten van centrale overheden €140.000, van andere aanbestedende diensten (zoals gemeenten) €216.000, sociale en andere specifieke diensten €750.000, werken en concessies €5.404.000.",
+   "uitleg": "Volgens het schema in de les: leveringen en diensten van centrale overheden €140.000, van andere aanbestedende diensten (zoals gemeenten) €216.000 (art. 2.3 Aw), sociale en andere specifieke diensten €750.000, werken en concessies €5.404.000.",
    "versie": "A"
   },
   {
@@ -1422,7 +1422,7 @@
     "Ja, maar alleen omdat meubilair een dienst is"
    ],
    "juist": 1,
-   "uitleg": "Een ministerie is een orgaan van de centrale overheid. Voor leveringen geldt dan €140.000. De €216.000 geldt voor andere aanbestedende diensten.",
+   "uitleg": "Een ministerie is een orgaan van de centrale overheid. Voor leveringen geldt dan €140.000 (art. 2.2 Aw). De €216.000 geldt voor andere aanbestedende diensten.",
    "versie": "B"
   },
   {
@@ -1470,7 +1470,7 @@
     "Selectiecriteria, uitsluitingsgronden, gunningscriteria, geschiktheidseisen"
    ],
    "juist": 1,
-   "uitleg": "Eerst kijk je of de ondernemer uitgesloten moet of mag worden, dan of hij geschikt is, dan (bij tweefasige procedures) wie je selecteert, en tot slot welke inschrijving wint. De eerste drie gaan over de ondernemer, de gunningscriteria over de inschrijving.",
+   "uitleg": "Eerst kijk je of de ondernemer uitgesloten moet of mag worden (art. 2.86 t/m 2.87 Aw), dan of hij geschikt is (art. 2.90), dan (bij tweefasige procedures) wie je selecteert, en tot slot welke inschrijving wint. De eerste drie gaan over de ondernemer, de gunningscriteria over de inschrijving.",
    "versie": "B"
   },
   {
@@ -1636,7 +1636,7 @@
    "onderdeel": "Recht",
    "type": "open",
    "vraag": "Leg uit hoe je volgens de Aanbestedingswet de waarde van een opdracht raamt. Noem minstens vier regels met artikel.",
-   "modelantwoord": "De raming staat in art. 2.13 tot en met 2.22 Aw. Regels: het totaalbedrag exclusief btw (art. 2.15 lid 2), inclusief opties en verlengingen (art. 2.15 lid 2), geen splitsing om onder de drempel te blijven (art. 2.14), de waarde van alle percelen samen (art. 2.18), en bij een overeenkomst voor onbepaalde tijd, of langer dan vier jaar zonder vaste totaalprijs, rekenen op basis van vier jaar (de slide noemt art. 2.17 sub e; check de precieze regel in je bundel).",
+   "modelantwoord": "De raming staat in art. 2.13 tot en met 2.22 Aw. Regels: het totaalbedrag exclusief btw (art. 2.15 lid 2), inclusief opties en verlengingen (art. 2.15 lid 2), geen splitsing om onder de drempel te blijven (art. 2.14), de waarde van alle percelen samen (art. 2.18), en bij een overeenkomst voor onbepaalde tijd, of langer dan vier jaar zonder vaste totaalprijs, rekenen op basis van vier jaar (art. 2.17 sub e Aw, gecontroleerd op wetten.overheid.nl: bij een dienstenopdracht zonder totale prijs die voor onbepaalde duur is of langer dan 48 maanden loopt, reken je het maandbedrag × 48).",
    "punten": [
     "Exclusief btw",
     "Inclusief opties en verlengingen",
@@ -1729,7 +1729,7 @@
    "subvragen": [
     {
      "vraag": "Moet het ministerie de laptops Europees aanbesteden?",
-     "modelantwoord": "Ja. Een ministerie is een orgaan van de centrale overheid. Voor leveringen geldt dan een drempel van €140.000, en €145.000 ligt daarboven.",
+     "modelantwoord": "Ja. Een ministerie is een orgaan van de centrale overheid. Voor leveringen geldt dan een drempel van €140.000 (art. 2.2 Aw), en €145.000 ligt daarboven.",
      "punten": [
       "Centrale overheid herkend",
       "Juiste drempel (€140.000) en conclusie"
@@ -2099,7 +2099,7 @@
     "Je mag de procedure niet afbreken"
    ],
    "juist": 1,
-   "uitleg": "Vertrouwelijkheid: oplossingen van de ene deelnemer mag je niet doorspelen aan een andere. Dat zou het gelijkheidsbeginsel en het bedrijfsgeheim schenden.",
+   "uitleg": "Vertrouwelijkheid: oplossingen van de ene deelnemer mag je niet doorspelen aan een andere (bij de dialoog: art. 2.110 lid 7 Aw). Dat zou het gelijkheidsbeginsel en het bedrijfsgeheim schenden.",
    "versie": "A"
   },
   {
@@ -2367,7 +2367,7 @@
     },
     {
      "vraag": "Hoe wordt de zorg van de universiteit over de ideeën van marktpartijen geregeld?",
-     "modelantwoord": "Geen cherry picking: de dienst mag oplossingen of vertrouwelijke informatie van de ene deelnemer niet aan andere deelnemers doorgeven. Vertrouwelijkheid is een uitdrukkelijk aandachtspunt van de dialoog.",
+     "modelantwoord": "Geen cherry picking: de dienst mag oplossingen of vertrouwelijke informatie van de ene deelnemer niet aan andere deelnemers doorgeven zonder diens instemming (art. 2.110 lid 7 Aw). Vertrouwelijkheid is een uitdrukkelijk aandachtspunt van de dialoog.",
      "punten": [
       "Verbod op cherry picking / vertrouwelijkheid juist uitgelegd"
      ],
@@ -2607,7 +2607,7 @@
     "Of de partijen elkaar al kenden"
    ],
    "juist": 1,
-   "uitleg": "Relevant zijn onder meer: de bijdrage van de afbreker aan het vertrouwen, de verwijtbaarheid, de belangen van partijen, gewijzigde of onvoorziene omstandigheden en de duur, steeds afgezet tegen het hele verloop van de onderhandelingen.",
+   "uitleg": "Dit komt uit rechtspraak (CBB/JPO), niet uit de wet; aansprakelijkheid loopt via art. 6:162 BW. Relevant zijn onder meer: de bijdrage van de afbreker aan het vertrouwen, de verwijtbaarheid, de belangen van partijen, gewijzigde of onvoorziene omstandigheden en de duur, steeds afgezet tegen het hele verloop van de onderhandelingen.",
    "versie": "B"
   },
   {
@@ -2639,7 +2639,7 @@
     "Niets, want er is geen overeenkomst"
    ],
    "juist": 1,
-   "uitleg": "Het negatief contractsbelang (gemaakte kosten) is het standaard uitgangspunt. Het positief contractsbelang (gederfde winst) is een uitzondering, bijvoorbeeld bij schuld of opzet of een vergevorderd stadium.",
+   "uitleg": "Het negatief contractsbelang (gemaakte kosten) is het standaard uitgangspunt (onrechtmatige daad, art. 6:162 BW). Het positief contractsbelang (gederfde winst) is een uitzondering, bijvoorbeeld bij schuld of opzet of een vergevorderd stadium.",
    "versie": "A"
   },
   {
@@ -2703,7 +2703,7 @@
     "Een consument"
    ],
    "juist": 1,
-   "uitleg": "Art. 6:235 BW sluit ondernemingen met 50 of meer werkzame personen uit, net als ondernemingen die laatstelijk hun jaarrekening openbaar hebben gemaakt. Zij hebben alleen art. 6:248 lid 2 BW.",
+   "uitleg": "Art. 6:235 lid 1 BW sluit partijen met 50 of meer werkzame personen uit (sub b), net als rechtspersonen die laatstelijk hun jaarrekening openbaar hebben gemaakt (sub a). Zij hebben alleen art. 6:248 lid 2 BW.",
    "versie": "B"
   },
   {
@@ -2910,7 +2910,7 @@
    "subvragen": [
     {
      "vraag": "Mocht BouwBest de onderhandelingen afbreken? Bespreek het uitgangspunt en de relevante omstandigheden.",
-     "modelantwoord": "Uitgangspunt is contractvrijheid: afbreken mag, tenzij dat door gerechtvaardigd vertrouwen of andere omstandigheden onaanvaardbaar is (Plas/Valburg, CBB/JPO). Hier: vier maanden onderhandelen, een letter of intent zonder voorbehoud, BouwBest liet kosten maken en zei 'het is rond'. BouwBest heeft dus sterk bijgedragen aan het vertrouwen. Een iets lagere prijs van een ander is een zwakke reden in deze afrondende fase. Waarschijnlijk is het afbreken onaanvaardbaar en dus onrechtmatig.",
+     "modelantwoord": "Uitgangspunt is contractvrijheid: afbreken mag, tenzij dat door gerechtvaardigd vertrouwen of andere omstandigheden onaanvaardbaar is (Plas/Valburg, CBB/JPO). Onrechtmatig afbreken is een onrechtmatige daad (art. 6:162 BW). Hier: vier maanden onderhandelen, een letter of intent zonder voorbehoud, BouwBest liet kosten maken en zei 'het is rond'. BouwBest heeft dus sterk bijgedragen aan het vertrouwen. Een iets lagere prijs van een ander is een zwakke reden in deze afrondende fase. Waarschijnlijk is het afbreken onaanvaardbaar en dus onrechtmatig.",
      "punten": [
       "Uitgangspunt contractvrijheid en de uitzondering",
       "Minstens drie feiten uit de casus gewogen",
@@ -3413,12 +3413,12 @@
    "week": 6,
    "onderdeel": "Recht",
    "type": "open",
-   "vraag": "Leg uit wat het bewijsvermoeden van art. 7:18 lid 2 BW inhoudt, voor wie het geldt, en welke termijn je volgens de slide en volgens de huidige wet gebruikt.",
-   "modelantwoord": "Openbaart zich bij consumentenkoop binnen een bepaalde termijn na aflevering een gebrek, dan wordt vermoed dat de zaak bij aflevering al niet conform was. De verkoper moet dan het tegendeel bewijzen. Het geldt alleen bij consumentenkoop. Kritische noot: de slide noemt 6 maanden; volgens mij is de termijn sinds 2022 (Europese richtlijn) verlengd naar een jaar. Vraag de docent welke termijn op het tentamen telt.",
+   "vraag": "Leg uit wat het bewijsvermoeden bij consumentenkoop (art. 7:18a lid 2 BW, op de slide 7:18 lid 2) inhoudt, voor wie het geldt, en welke termijn je volgens de slide en volgens de huidige wet gebruikt.",
+   "modelantwoord": "Openbaart zich bij consumentenkoop binnen een bepaalde termijn na aflevering een gebrek, dan wordt vermoed dat de zaak bij aflevering al niet conform was. De verkoper moet dan het tegendeel bewijzen. Het geldt alleen bij consumentenkoop. Kritische noot: de slide noemt art. 7:18 lid 2 en 6 maanden. Gecontroleerd op wetten.overheid.nl: het vermoeden staat nu in art. 7:18a lid 2 BW en de termijn is één jaar na aflevering. Vraag de docent welke termijn op het tentamen telt.",
    "punten": [
     "Inhoud bewijsvermoeden (vermoeden non-conformiteit, bewijslast verkoper)",
     "Alleen bij consumentenkoop",
-    "Termijn met kanttekening (slide 6 maanden, wet waarschijnlijk 1 jaar)"
+    "Termijn met kanttekening (slide 6 maanden, huidige wet 1 jaar, art. 7:18a lid 2)"
    ],
    "versie": "A",
    "toelichting": "Het bewijsvermoeden beschermt de consument: die hoeft niet te bewijzen dat het gebrek er al was bij aflevering, als het zich binnen de termijn openbaart. De verkoper moet het tegendeel bewijzen. Dat is een grote hulp, omdat een consument technisch zelden kan aantonen waar een gebrek vandaan komt. Over de termijn spreken de slide en de wet elkaar mogelijk tegen; noem op het tentamen de termijn die de docent hanteert."
@@ -3561,11 +3561,11 @@
     },
     {
      "vraag": "Heeft KoffieKoning gelijk als zij herstel van de privé-espressomachine weigert vanwege de garantie van één maand?",
-     "modelantwoord": "Nee. Dit is consumentenkoop (art. 7:5 BW), dus is de regeling grotendeels dwingend (art. 7:6 lid 1 BW). De garantie kan de rechten van de consument niet inperken (art. 7:6a BW). Een espressomachine hoort langer dan zes weken mee te gaan (art. 7:17 BW), en omdat het gebrek zich snel na aflevering openbaart, geldt het bewijsvermoeden van art. 7:18 lid 2 BW. De medewerker heeft recht op herstel of vervanging (art. 7:21 BW).",
+     "modelantwoord": "Nee. Dit is consumentenkoop (art. 7:5 BW), dus is de regeling grotendeels dwingend (art. 7:6 lid 1 BW). De garantie kan de rechten van de consument niet inperken (art. 7:6a BW). Een espressomachine hoort langer dan zes weken mee te gaan (art. 7:17 BW), en omdat het gebrek zich snel na aflevering openbaart, geldt het bewijsvermoeden van art. 7:18a lid 2 BW (op de slide nog 7:18 lid 2). De medewerker heeft recht op herstel of vervanging (art. 7:21 BW).",
      "punten": [
       "Consumentenkoop herkend, dwingend recht",
       "Garantie perkt rechten niet in (7:6a)",
-      "Bewijsvermoeden 7:18 lid 2 en herstel/vervanging 7:21"
+      "Bewijsvermoeden 7:18a lid 2 (slide: 7:18 lid 2) en herstel/vervanging 7:21"
      ],
      "toelichting": "Zelfde verkoper, ander soort koper. De medewerker koopt privé, dus het is consumentenkoop en zijn de regels grotendeels dwingend. Een garantie van een maand kan de wettelijke rechten dan niet kleiner maken. Een espressomachine hoort langer dan zes weken te werken, en het bewijsvermoeden helpt de consument: hij hoeft niet te bewijzen dat het gebrek er al was."
     }
@@ -3864,7 +3864,7 @@
    "onderdeel": "Recht",
    "type": "open",
    "vraag": "Een printerleverancier geeft op een printer een garantie van drie maanden. Na vier maanden gaat de printer kapot. Situatie 1: de printer is gekocht door de facilitaire afdeling van een bedrijf. Situatie 2: dezelfde printer is gekocht door een medewerker voor thuis. Beoordeel per situatie of de koper recht heeft op herstel of vervanging.",
-   "modelantwoord": "Situatie 1 (zakelijke koop): Titel 1 Boek 7 is regelend recht. De garantie van drie maanden is een negatieve garantie: ze stelt de redelijke verwachtingen bij en dat mag bij zakelijke koop. De leverancier staat dan sterk; de koper kan nog betogen dat de printer niet conform is (art. 7:17), maar de garantie weegt mee. Situatie 2 (consumentenkoop, art. 7:5: roerende zaak, particuliere koper, professionele verkoper): grotendeels dwingend recht (art. 7:6 lid 1). De garantie perkt de rechten niet in (art. 7:6a); een printer hoort langer dan vier maanden mee te gaan, dus niet conform (art. 7:17). Het gebrek openbaart zich binnen het bewijsvermoeden (art. 7:18 lid 2), dus vermoed wordt dat hij nooit conform was. Recht op herstel of vervanging (art. 7:21), wel tijdig klagen (art. 7:23, binnen twee maanden is op tijd).",
+   "modelantwoord": "Situatie 1 (zakelijke koop): Titel 1 Boek 7 is regelend recht. De garantie van drie maanden is een negatieve garantie: ze stelt de redelijke verwachtingen bij en dat mag bij zakelijke koop. De leverancier staat dan sterk; de koper kan nog betogen dat de printer niet conform is (art. 7:17), maar de garantie weegt mee. Situatie 2 (consumentenkoop, art. 7:5: roerende zaak, particuliere koper, professionele verkoper): grotendeels dwingend recht (art. 7:6 lid 1). De garantie perkt de rechten niet in (art. 7:6a); een printer hoort langer dan vier maanden mee te gaan, dus niet conform (art. 7:17). Het gebrek openbaart zich binnen de termijn van het bewijsvermoeden (art. 7:18a lid 2 BW, op de slide 7:18 lid 2), dus vermoed wordt dat hij nooit conform was. Recht op herstel of vervanging (art. 7:21), wel tijdig klagen (art. 7:23, binnen twee maanden is op tijd).",
    "punten": [
     "Zakelijk: negatieve garantie mag, regelend recht",
     "Consument: dwingend recht, 7:6a en 7:17",
@@ -4152,7 +4152,7 @@
     "Een levering, want bij leveringen en diensten telt de hoogste waarde"
    ],
    "juist": 0,
-   "uitleg": "Bij werken met diensten bepaal je het hoofdvoorwerp: wat is essentieel en kenmerkend (Gestion Hotelera). Hier is dat de bouw; het onderhoud is bijkomstig. Er is geen exploitatierisico, dus geen concessie.",
+   "uitleg": "Bij werken met diensten bepaal je het hoofdvoorwerp (art. 2.12a lid 1 Aw): wat is essentieel en kenmerkend (Gestion Hotelera). Hier is dat de bouw; het onderhoud is bijkomstig. Er is geen exploitatierisico, dus geen concessie.",
    "versie": "E2"
   },
   {
@@ -4694,7 +4694,7 @@
    "onderdeel": "Recht",
    "type": "open",
    "vraag": "Noor, medewerker van een hogeschool, koopt via een webshop een bureaustoel van € 350 voor thuis. (a) Na tien dagen wil Noor de stoel terugsturen, omdat de kleur tegenvalt. Kan dat? (b) Na vijf maanden breekt de rugleuning. De webshop verwijst naar de fabrikant en zegt dat de garantie van drie maanden voorbij is. Wat zijn Noors rechten? (c) De webshop is vergeten de stoel te factureren en stuurt pas 26 maanden na de aflevering een rekening. Moet Noor nog betalen?",
-   "modelantwoord": "(a) Ja. Het is een consumentenkoop op afstand (art. 6:230g jo. 6:230m BW): Noor heeft een ontbindingsrecht van 14 dagen zonder opgaaf van reden (art. 6:230o BW), met het modelformulier of een andere verklaring. (b) Consumentenkoop (art. 7:5 BW): de regeling is dwingend (art. 7:6) en een garantie neemt de wettelijke rechten niet weg (art. 7:6a); een negatieve garantie werkt dus niet. Een bureaustoel hoort jaren mee te gaan, dus hij is niet conform (art. 7:17). Het gebrek openbaart zich binnen 6 maanden, dus geldt het bewijsvermoeden van art. 7:18 lid 2 (de slide noemt 6 maanden). Noor heeft recht op herstel of vervanging (art. 7:21) en kan daarvoor bij de webshop terecht: de verkoper is het aanspreekpunt, niet de fabrikant. Klagen binnen twee maanden na ontdekking is in ieder geval op tijd (art. 7:23). (c) Nee, in beginsel niet: bij consumentenkoop verjaart de vordering tot betaling na twee jaar (art. 7:28 BW), tenzij de verjaring is gestuit. Er blijft een natuurlijke verbintenis over (art. 6:3 BW): betaalt Noor toch, dan kan dat niet worden teruggevorderd.",
+   "modelantwoord": "(a) Ja. Het is een consumentenkoop op afstand (art. 6:230g jo. 6:230m BW): Noor heeft een ontbindingsrecht van 14 dagen zonder opgaaf van reden (art. 6:230o BW), met het modelformulier of een andere verklaring. (b) Consumentenkoop (art. 7:5 BW): de regeling is dwingend (art. 7:6) en een garantie neemt de wettelijke rechten niet weg (art. 7:6a); een negatieve garantie werkt dus niet. Een bureaustoel hoort jaren mee te gaan, dus hij is niet conform (art. 7:17). Het gebrek openbaart zich binnen 6 maanden, dus geldt het bewijsvermoeden van art. 7:18a lid 2 BW (de slide noemt 7:18 lid 2 en 6 maanden; volgens de huidige wet is de termijn één jaar, dus ook dan valt vijf maanden erbinnen). Noor heeft recht op herstel of vervanging (art. 7:21) en kan daarvoor bij de webshop terecht: de verkoper is het aanspreekpunt, niet de fabrikant. Klagen binnen twee maanden na ontdekking is in ieder geval op tijd (art. 7:23). (c) Nee, in beginsel niet: bij consumentenkoop verjaart de vordering tot betaling na twee jaar (art. 7:28 BW), tenzij de verjaring is gestuit. Er blijft een natuurlijke verbintenis over (art. 6:3 BW): betaalt Noor toch, dan kan dat niet worden teruggevorderd.",
    "punten": [
     "(a) Ontbindingsrecht 14 dagen bij koop op afstand",
     "(b) Dwingend recht, 7:6a, non-conformiteit en bewijsvermoeden",
@@ -4710,7 +4710,7 @@
    "onderdeel": "Recht",
    "type": "open",
    "vraag": "Elektroservice Oost v.o.f. (15 medewerkers, geen openbare jaarrekening) koopt warmtepompen bij een groothandel en verkoopt en installeert ze bij particulieren. In de algemene voorwaarden van de groothandel staat: (1) 'De groothandel is niet aansprakelijk voor gebreken aan de geleverde zaken.' (2) 'Alle geschillen worden beslecht door arbitrage.' Een particuliere klant heeft na drie maanden een kapotte warmtepomp en spreekt Elektroservice aan. (a) Moet Elektroservice de klant helpen? (b) Kan Elektroservice de groothandel aanspreken ondanks beding 1? (c) Wat betekent beding 2, en hoe verschilt dat van mediation?",
-   "modelantwoord": "(a) Ja. Het is een consumentenkoop (art. 7:5 BW), dus grotendeels dwingend recht. Een warmtepomp die na drie maanden kapot is, is niet conform (art. 7:17); de klant heeft recht op herstel of vervanging (art. 7:21), en het bewijsvermoeden van art. 7:18 lid 2 helpt de klant. Elektroservice is als verkoper het aanspreekpunt. (b) Ja, waarschijnlijk wel. Art. 6:244 BW beschermt de 'beklemde detaillist': die mag niet klem komen te zitten tussen zijn ruimere aansprakelijkheid tegenover de consument en een exoneratie van zijn eigen leverancier. Bovendien valt Elektroservice niet onder art. 6:235 (minder dan 50 personen, geen openbare jaarrekening), dus kan het beding ook worden vernietigd als het onredelijk bezwarend is (art. 6:233 sub a), of via sub b als de AV niet ter hand zijn gesteld. (c) Bij arbitrage beslissen arbiters en is de gewone rechter niet meer bevoegd; dat is vaak sneller en meestal duurder. Bij mediation of een andere vorm van ADR blijft de rechter bevoegd.",
+   "modelantwoord": "(a) Ja. Het is een consumentenkoop (art. 7:5 BW), dus grotendeels dwingend recht. Een warmtepomp die na drie maanden kapot is, is niet conform (art. 7:17); de klant heeft recht op herstel of vervanging (art. 7:21), en het bewijsvermoeden van art. 7:18a lid 2 BW (op de slide nog 7:18 lid 2) helpt de klant. Elektroservice is als verkoper het aanspreekpunt. (b) Ja, waarschijnlijk wel. Art. 6:244 BW beschermt de 'beklemde detaillist': die mag niet klem komen te zitten tussen zijn ruimere aansprakelijkheid tegenover de consument en een exoneratie van zijn eigen leverancier. Bovendien valt Elektroservice niet onder art. 6:235 (minder dan 50 personen, geen openbare jaarrekening), dus kan het beding ook worden vernietigd als het onredelijk bezwarend is (art. 6:233 sub a), of via sub b als de AV niet ter hand zijn gesteld. (c) Bij arbitrage beslissen arbiters en is de gewone rechter niet meer bevoegd; dat is vaak sneller en meestal duurder. Bij mediation of een andere vorm van ADR blijft de rechter bevoegd.",
    "punten": [
     "(a) Consumentenkoop, non-conformiteit en art. 7:21",
     "(b) Beklemde detaillist art. 6:244",
@@ -4760,9 +4760,9 @@
     },
     {
      "vraag": "Mag de raamovereenkomst voor klein onderhoud zes jaar duren? En hoe raam je de waarde ervan?",
-     "modelantwoord": "Nee, in beginsel niet. Een raamovereenkomst duurt maximaal 4 jaar (art. 2.140 Aw; zoek het lid na in je bundel), alleen in uitzonderlijke, goed gemotiveerde gevallen langer. Een looptijd van zes jaar 'gewoon omdat het handig is' kan dus niet. De waarde raam je als de totale waarde van alle opdrachten die je onder de raamovereenkomst verwacht te plaatsen, excl. btw en inclusief opties en verlengingen (art. 2.15 lid 2 Aw). Die vergelijk je met de drempel voor werken (€ 5.404.000) of voor diensten (€ 216.000), afhankelijk van wat het onderhoud is.",
+     "modelantwoord": "Nee, in beginsel niet. Een raamovereenkomst duurt maximaal 4 jaar (art. 2.140 lid 3 Aw), alleen in uitzonderlijke, deugdelijk gemotiveerde gevallen langer. Een looptijd van zes jaar 'gewoon omdat het handig is' kan dus niet. De waarde raam je als de totale waarde van alle opdrachten die je onder de raamovereenkomst verwacht te plaatsen, excl. btw en inclusief opties en verlengingen (art. 2.15 lid 2 en 3 Aw). Die vergelijk je met de drempel voor werken (€ 5.404.000) of voor diensten (€ 216.000), afhankelijk van wat het onderhoud is.",
      "punten": [
-      "Maximaal 4 jaar met art. 2.140",
+      "Maximaal 4 jaar met art. 2.140 lid 3",
       "Raming: totale waarde van alle verwachte opdrachten, incl. opties",
       "Juiste drempel genoemd"
      ],
