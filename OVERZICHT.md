@@ -106,6 +106,16 @@ in `build_bedrijfskunde.py` (plus `CASUS` in `sitenav.py`).
   voortgang, Claude kijkt open antwoorden na); op de site is dat er niet en kijkt de gebruiker zelf na met het modelantwoord.
 - **Casustoetsen**: `app.js` bewaart antwoorden in `localStorage` (sleutel per toets in `TOETSEN`), zelf nakijken met rubric.
 - **Navigatie**: elke pagina krijgt de balk en tabs uit `sitenav.py`, met `root` als relatief pad naar de startpagina.
+- **`localStorage` lezen**: `lsGet` in `template.html` en de lader in `bedrijfskunde/app.js` controleren het type van een bewaarde
+  waarde en vallen terug op de standaardwaarde. Houd dat patroon aan bij nieuwe sleutels.
+
+## Beveiliging
+
+`netlify.toml` stuurt voor elke pagina een Content-Security-Policy mee: alleen eigen bestanden (ook `/api/...`) en Google Fonts,
+inline scripts toegestaan, geen iframes, formulieren of andere domeinen. Daarnaast X-Frame-Options, nosniff, Referrer-Policy,
+Permissions-Policy en HSTS. Gevolg: **elke nieuwe externe bron (script, lettertype, afbeelding, API op een ander domein) moet
+eerst in de CSP**, anders blokkeert de browser hem. De samenvattingen laten alleen http(s)-, mail- en interne links door
+(`inline()` in `build_samenvattingen.py`).
 
 ## Eigen notities (samenvattingen)
 
@@ -136,12 +146,3 @@ Test elke gewijzigde pagina op 1280, 380 en 320 px breed, licht en donker.
 - Nooit de naam van een docent; schrijf "de docent". Namen in casussen zijn verzonnen.
 - Geen hij/zij voor verzonnen personen.
 - Bij MC is het juiste antwoord niet duidelijk het langste, en geen dubbele vragen.
-
-## Lopend werk (nog niet op `main` op 26-11-2026)
-
-Controleer of deze pull requests inmiddels gemerged zijn en verplaats de beschrijving dan naar de juiste sectie hierboven.
-
-- **PR #1, beveiliging**: `netlify.toml` krijgt een Content-Security-Policy (alleen eigen bestanden en Google Fonts, inline scripts
-  toegestaan, geen iframes, formulieren of andere domeinen) en andere beveiligingsheaders. Gevolg: elke nieuwe externe bron
-  (script, lettertype, afbeelding, API) moet eerst in de CSP, anders blokkeert de browser hem. Ook: `lsGet` controleert het type
-  van bewaarde waarden, en de samenvattingen laten alleen http(s)-, mail- en interne links door.
