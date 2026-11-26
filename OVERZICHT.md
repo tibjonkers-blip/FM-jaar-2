@@ -123,6 +123,10 @@ eerst in de CSP**, anders blokkeert de browser hem. De samenvattingen laten alle
   Opslag in `localStorage` `fm-notities-<vak>`: `{ notes: { <les-id>: { t, u, l, b } }, pending, exported }`.
   Onderaan elke samenvatting: downloaden als `.md` en terugzetten (voegt samen, overschrijft niets), "Meescrollen" houdt
   het veld onderin beeld, en de zoekbalk zoekt ook in de notities.
+- **Notitieblad**: knop rechtsonder opent een los blad (`#notitieblad`, `nb`-code in `NOTES_JS`), op brede schermen rechts
+  naast de tekst, smaller onderin beeld. Het kiest vanzelf de les in beeld tot je typt of zelf een les kiest. "Opslaan bij les"
+  (of Ctrl/Cmd+Enter) zet de tekst onder de notitie van die les; daarna gaat hij mee in sync en download. Het klad zelf staat
+  alleen op dit apparaat in `localStorage` `fm-notitieblad-<vak>` (`{ t, les, open }`) en wordt niet gesynchroniseerd.
 - Les-id = `week-N-<titel>`. `notitie-sleutels.json` bewaart alle ids; verdwijnt er een (lestitel veranderd), dan stopt de bouw.
   Zet dan in `NOTITIE_ALIASSEN` het oude id op het nieuwe, dan verhuist de notitie mee. Een notitie zonder les staat onderaan in het paneel.
 - **Synchroniseren**: wie een apparaat koppelt, slaat in `localStorage` `fm-notities-sync` een sleutel op
