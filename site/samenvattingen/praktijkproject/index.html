@@ -547,7 +547,49 @@ button.wn-btn:disabled { opacity: 0.6; cursor: wait; }
 .np-orphans { display: flex; flex-direction: column; gap: 12px; padding-top: 14px; border-top: 1px solid var(--rule); }
 .np-orphans h3 { font-size: 1.1rem; font-weight: 700; font-stretch: 104%; }
 @media (max-width: 480px) { .notes-panel { padding: 16px; } .note-box { padding: 10px 11px 9px; } }
-@media print { .note:not(.open), .note-pin, .note-foot, .note-jump, .notes-panel { display: none !important; } .note-text { height: auto !important; } }
+/* notitieblad: los blad dat in beeld blijft; opslaan zet de tekst bij de gekozen les */
+.nb-fab { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 7;
+  display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 10px 16px 10px 13px; border: 0; border-radius: 999px; background: var(--accent); color: var(--on-accent);
+  font: inherit; font-weight: 700; cursor: pointer; box-shadow: 0 8px 24px rgba(10, 18, 36, 0.28); }
+.nb-fab svg { width: 18px; height: 18px; flex: none; }
+.nb-fab:hover { filter: brightness(1.08); }
+body.has-nb .totop { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+body.nb-open .nb-fab, body.nb-open .totop { display: none; }
+.nb { position: fixed; z-index: 30; display: flex; flex-direction: column; gap: 10px; padding: 14px 16px 16px; background: var(--sheet); color: var(--ink);
+  border: 1px solid var(--accent); box-shadow: 0 14px 40px rgba(10, 18, 36, 0.3); min-width: 0; }
+.nb[hidden] { display: none; }
+.nb-head { display: flex; align-items: center; gap: 10px; }
+.nb-head h2 { flex: 1 1 auto; font-size: 1.15rem; font-weight: 800; font-stretch: 106%; }
+.nb-close { width: 36px; height: 36px; flex: none; border: 1px solid var(--rule); border-radius: 8px; background: var(--sheet); color: var(--ink); font: inherit; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+.nb-close:hover { border-color: var(--accent); color: var(--accent); }
+.nb-pick { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.nb-pick label { font-size: 0.84rem; font-weight: 700; color: var(--ink-soft); }
+.nb-row { display: flex; gap: 6px; min-width: 0; }
+.nb-row select { flex: 1 1 auto; min-width: 0; font: inherit; font-size: 0.92rem; color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; }
+.nb-here { flex: none; font: inherit; font-size: 0.84rem; font-weight: 600; padding: 6px 10px; border: 1px solid var(--rule); border-radius: 8px; background: var(--sheet); color: var(--ink); cursor: pointer; }
+.nb-here:hover { border-color: var(--accent); color: var(--accent); }
+.nb-row select:focus, .nb-text:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.nb-follow { font-size: 0.78rem; color: var(--ink-soft); min-height: 1.2em; }
+.nb-text { flex: 1 1 auto; min-height: 6em; width: 100%; resize: none; font: inherit; font-size: 1rem; line-height: 1.55; color: var(--ink); background: var(--sunk);
+  border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; }
+.nb-text::placeholder { color: var(--ink-soft); opacity: 0.85; }
+.nb-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
+.nb-status { font-size: 0.8rem; color: var(--ink-soft); }
+.nb-msg { font-size: 0.88rem; padding: 8px 12px; border-radius: 8px; background: var(--s3-soft); }
+.nb-msg.err { background: var(--warn-soft); }
+.nb-msg a { color: var(--accent); font-weight: 600; }
+@media (min-width: 1180px) {  /* laptop: blad rechts naast de samenvatting, de tekst schuift op */
+  .nb { top: calc(env(safe-area-inset-top, 0px) + var(--sb-h, 0px) + 14px); bottom: 16px; right: 16px; width: 372px; border-radius: 14px; }
+  body.nb-open .wrap, body.nb-open .band-in { margin-left: max(16px, calc((100vw - 792px - 404px) / 2)); margin-right: auto; }
+}
+@media (max-width: 1179.98px) {  /* telefoon en tablet: blad onderin, de samenvatting blijft erboven leesbaar */
+  .nb { left: 0; right: 0; bottom: var(--kb, 0px); max-width: 820px; margin: 0 auto; max-height: 52vh; border-radius: 14px 14px 0 0; border-bottom: 0;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)); gap: 8px; }
+  .nb-text { min-height: 5em; }
+  body.nb-open main { padding-bottom: 46vh; }
+}
+@media (max-width: 480px) { .nb { padding: 10px 12px; } .nb-head h2 { font-size: 1.05rem; } .nb-close { width: 32px; height: 32px; } .nb-follow { display: none; } }
+@media print { .note:not(.open), .note-pin, .note-foot, .note-jump, .notes-panel, .nb, .nb-fab { display: none !important; } .note-text { height: auto !important; } }
 
 .foot { color: var(--ink-soft); font-size: 0.84rem; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--rule); padding-top: 16px; }
 .totop { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 6;
@@ -638,6 +680,24 @@ button.wn-btn:disabled { opacity: 0.6; cursor: wait; }
 </footer>
 </div>
 <a class="totop" href="#top" id="totop" aria-label="Naar boven" hidden>↑</a>
+<button type="button" class="nb-fab" id="nb-fab" aria-expanded="false" aria-controls="notitieblad" hidden><span>Notitieblad</span></button>
+<aside class="nb" id="notitieblad" aria-labelledby="nb-title" hidden>
+  <div class="nb-head">
+    <h2 id="nb-title">Notitieblad</h2>
+    <button type="button" class="nb-close" id="nb-close" aria-label="Notitieblad sluiten" title="Sluiten (Esc)">×</button>
+  </div>
+  <div class="nb-pick">
+    <label for="nb-les">Koppel aan les</label>
+    <div class="nb-row"><select id="nb-les"></select><button type="button" class="nb-here" id="nb-here" title="Kies de les die nu in beeld is">Les in beeld</button></div>
+    <p class="nb-follow" id="nb-follow"></p>
+  </div>
+  <textarea id="nb-text" class="nb-text" spellcheck="true" placeholder="Typ hier mee tijdens de les. Klik daarna op Opslaan bij les." aria-label="Notitieblad"></textarea>
+  <div class="nb-foot">
+    <button type="button" class="wn-btn primary" id="nb-save">Opslaan bij les</button>
+    <span class="nb-status" id="nb-status" aria-live="polite"></span>
+  </div>
+  <p class="nb-msg" id="nb-msg" role="status" hidden></p>
+</aside>
 <script>
 /* Eigen notities per les. Ze staan in deze browser (localStorage, sleutel fm-notities-<vak>) en, als je dit apparaat koppelt,
    ook in je eigen online opslag op Netlify (/api/notities, achter je wachtwoord), zodat al je apparaten hetzelfde zien.
@@ -757,6 +817,7 @@ button.wn-btn:disabled { opacity: 0.6; cursor: wait; }
   }
   function flush() { Object.keys(dirty).forEach(save); }
   function setPin(sec) {
+    if (sec && document.body.classList.contains("nb-open")) nbOpen(false, false);  // niet twee meescrollende velden tegelijk
     if (pinned) { pinned.classList.remove("pinned"); var b = pinned.querySelector(".note-pin"); b.setAttribute("aria-pressed", "false"); b.lastChild.textContent = "Meescrollen"; }
     pinned = sec || null;
     if (pinned) { pinned.classList.add("pinned"); var c = pinned.querySelector(".note-pin"); c.setAttribute("aria-pressed", "true"); c.lastChild.textContent = "Meescrollen aan"; }
@@ -1066,6 +1127,88 @@ button.wn-btn:disabled { opacity: 0.6; cursor: wait; }
   if (window.visualViewport) {  // telefoon: het meescrollende veld boven het toetsenbord houden
     var vv = window.visualViewport, kb = function () { document.documentElement.style.setProperty("--kb", Math.max(0, window.innerHeight - vv.height - vv.offsetTop) + "px"); };
     vv.addEventListener("resize", kb); vv.addEventListener("scroll", kb);
+  }
+
+  // ---- notitieblad: los blad dat in beeld blijft. Het klad staat alleen hier (fm-notitieblad-<vak>);
+  //      "Opslaan bij les" zet de tekst onder de notitie van de gekozen les, en vanaf daar gaat hij mee in sync en download.
+  var NB_KEY = "fm-notitieblad-" + VAK, nbEl = $("notitieblad"), nbFab = $("nb-fab"), nbSel = $("nb-les"), nbTa = $("nb-text"), nbTimer, nbFollow = true;
+  var nb = (function () { try { var v = JSON.parse(localStorage.getItem(NB_KEY) || "null"); if (v && typeof v === "object") return { t: str(v.t, 500000), les: ID.test(v.les || "") ? v.les : "", open: v.open === true }; } catch (e) {} return { t: "", les: "", open: false }; })();
+  function nbWrite() { try { localStorage.setItem(NB_KEY, JSON.stringify(nb)); return true; } catch (e) { return false; } }
+  function nbMsg(html, err) { var el = $("nb-msg"); el.innerHTML = html; el.classList.toggle("err", !!err); el.hidden = !html; }
+  function inView() {  // de les waar je nu leest: de laatste les waarvan de bovenkant boven het midden van het scherm staat
+    var best = pageIds[0] || "", line = window.innerHeight * 0.45;
+    pageIds.forEach(function (id) { var art = secs[id].closest(".lesson"); if (art && art.getBoundingClientRect().top < line) best = id; });
+    return best;
+  }
+  function nbFollowText() { $("nb-follow").textContent = nbFollow ? "Volgt de les die in beeld is. Kies zelf een les om hem vast te zetten." : "Vastgezet op deze les."; }
+  function nbPick(id, manual) {
+    if (pageIds.indexOf(id) === -1) return;
+    nbSel.value = id; nb.les = id; nbWrite();
+    if (manual !== undefined) { nbFollow = !manual; nbFollowText(); }
+  }
+  function nbOpen(open, focus) {
+    nb.open = open; nbWrite();
+    nbEl.hidden = !open; nbFab.setAttribute("aria-expanded", open ? "true" : "false");
+    document.body.classList.toggle("nb-open", open);
+    if (open) {
+      if (pinned) setPin(null);  // twee meescrollende velden tegelijk is te veel
+      if (nbFollow || pageIds.indexOf(nb.les) === -1) nbPick(inView());
+      if (focus) nbTa.focus({ preventScroll: true });
+    } else if (focus) nbFab.focus();
+  }
+  function nbSave() {
+    var id = nbSel.value, text = nbTa.value.replace(/\s+$/, "").replace(/^\s*\n/, "");
+    if (!text.trim()) { nbMsg("Typ eerst iets op het notitieblad.", true); nbTa.focus(); return; }
+    if (!secs[id]) { nbMsg("Kies eerst een les.", true); nbSel.focus(); return; }
+    if (dirty[id]) save(id);  // wat je net onder de les typte, eerst bewaren
+    refresh();
+    var cur = live(id), ta = secs[id].querySelector("textarea");
+    ta.value = cur ? cur.t.replace(/\s+$/, "") + "\n\n" + text : text;
+    dirty[id] = true; save(id); fill(secs[id]); open(secs[id], false);
+    nbTa.value = ""; nb.t = ""; nbWrite(); $("nb-status").textContent = "";
+    nbFollow = true; nbFollowText();
+    nbMsg('Vastgemaakt aan ' + esc(labelOf(id)) + '. <a href="#notitie-' + id + '" data-go="' + id + '">Bekijk bij de les</a>');
+  }
+  if (nbEl && pageIds.length) {
+    var grp = null, gl = "";
+    pageIds.forEach(function (id) {  // per week een groep, zodat de namen kort blijven
+      var wk = secs[id].closest("section.week"), w = wk ? wk.getAttribute("data-label") || "" : "", o = document.createElement("option");
+      if (!grp || w !== gl) { grp = document.createElement("optgroup"); grp.label = gl = w; nbSel.appendChild(grp); }
+      var l = labelOf(id); o.value = id; o.textContent = w && l.indexOf(w + " · ") === 0 ? l.slice(w.length + 3) : l; grp.appendChild(o);
+    });
+    nbFab.insertAdjacentHTML("afterbegin", PEN);
+    nbTa.value = nb.t;
+    if (nb.les && pageIds.indexOf(nb.les) !== -1) { nbSel.value = nb.les; nbFollow = !nb.t.trim(); }
+    nbFollowText();
+    nbFab.hidden = false; document.body.classList.add("has-nb");
+    nbFab.addEventListener("click", function () { nbOpen(true, true); });
+    $("nb-close").addEventListener("click", function () { nbOpen(false, true); });
+    nbSel.addEventListener("change", function () { nbPick(nbSel.value, true); nbMsg(""); });
+    $("nb-here").addEventListener("click", function () { nbPick(inView(), false); nbMsg(""); });
+    $("nb-save").addEventListener("click", nbSave);
+    nbTa.addEventListener("input", function () {
+      nb.t = nbTa.value; nbMsg("");
+      if (nbFollow && nbTa.value.trim()) { nbFollow = false; nbFollowText(); }  // tijdens het typen springt de les niet meer weg
+      $("nb-status").textContent = "Klad wordt bewaard…";
+      clearTimeout(nbTimer); nbTimer = setTimeout(function () { $("nb-status").textContent = nbWrite() ? "Klad bewaard op dit apparaat" : "Klad niet bewaard: deze browser staat opslaan niet toe"; }, 400);
+    });
+    nbEl.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { e.preventDefault(); nbOpen(false, true); }
+      else if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); nbSave(); }
+    });
+    $("nb-msg").addEventListener("click", function (e) {
+      var a = e.target.closest("a[data-go]"); if (!a) return;
+      e.preventDefault(); var sec = secs[a.getAttribute("data-go")]; open(sec, false);
+      sec.classList.remove("hit"); void sec.offsetWidth; sec.classList.add("hit");
+      sec.scrollIntoView({ block: "center" });
+    });
+    var nbTick = false;
+    window.addEventListener("scroll", function () {
+      if (!nb.open || !nbFollow || nbTick) return; nbTick = true;
+      requestAnimationFrame(function () { nbTick = false; var id = inView(); if (id && id !== nbSel.value) nbPick(id); });
+    }, { passive: true });
+    window.addEventListener("pagehide", function () { clearTimeout(nbTimer); nb.t = nbTa.value; nbWrite(); });
+    if (nb.open) nbOpen(true, false);
   }
 
   window.fmNotes = {  // voor de zoekbalk
