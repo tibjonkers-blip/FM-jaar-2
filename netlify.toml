@@ -1,4 +1,9 @@
-# Statische site: geen build op Netlify, de gebouwde bestanden staan in site/.
+# Statische site: de gebouwde bestanden staan in site/, er wordt op Netlify niets gebouwd.
+# Netlify installeert wel package.json (alleen @netlify/blobs) voor de functie in netlify/functions/:
+# de online opslag van je eigen notities. Die werkt pas als NOTITIES_WACHTWOORD is ingesteld (zie README).
 [build]
   publish = "site"
-  command = ""
+  command = "echo 'Geen build: site/ is al gebouwd'"
+
+[functions]
+  directory = "netlify/functions"

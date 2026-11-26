@@ -534,6 +534,15 @@ body.note-pinned .totop { display: none; }
 button.wn-btn { font-family: inherit; cursor: pointer; }
 .np-msg { padding: 10px 14px; border-radius: 10px; background: var(--s3-soft); color: var(--ink); max-width: 68ch; }
 .np-msg.err { background: var(--warn-soft); }
+.np-sync { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--rule); max-width: 72ch; }
+.np-sync h3 { font-size: 1.05rem; font-weight: 700; font-stretch: 104%; }
+.np-sync > div { display: flex; flex-direction: column; gap: 10px; }
+.np-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.np-row input { flex: 1 1 220px; min-width: 0; font: inherit; color: var(--ink); background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 9px 12px; }
+.np-row input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.np-sync-state { font-weight: 600; }
+.np-sync-state.err { color: var(--warn); }
+button.wn-btn:disabled { opacity: 0.6; cursor: wait; }
 .np-orphans { display: flex; flex-direction: column; gap: 12px; padding-top: 14px; border-top: 1px solid var(--rule); }
 .np-orphans h3 { font-size: 1.1rem; font-weight: 700; font-stretch: 104%; }
 @media (max-width: 480px) { .notes-panel { padding: 16px; } .note-box { padding: 10px 11px 9px; } }
@@ -583,9 +592,28 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
 <section class="notes-panel" id="notities" data-vak="inkoop-recht" data-heading="Inkoop en recht" data-alias="{}" aria-labelledby="np-title" hidden>
   <h2 id="np-title">Je eigen notities</h2>
   <p class="np-count" id="np-count"></p>
-  <p>Wat je onder een les typt, wordt alleen in deze browser op dit apparaat bewaard. Het staat niet op de site en niemand anders kan het zien. Open je de site op een ander apparaat of in een andere browser, dan staan je notities daar niet.</p>
+  <p id="np-where-off">Wat je onder een les typt, wordt in deze browser op dit apparaat bewaard. Het staat niet op de site en niemand anders kan het zien. Wil je dezelfde notities op je laptop en je telefoon? Koppel dan hieronder elk apparaat met je wachtwoord.</p>
+  <p id="np-where-on" hidden>Wat je onder een les typt, wordt in deze browser bewaard en online in je eigen opslag op Netlify, achter je wachtwoord. Zo zie je dezelfde notities op elk apparaat dat je koppelt. Wie de site zonder jouw wachtwoord opent, ziet niets.</p>
+  <div class="np-sync">
+    <h3>Synchroniseren tussen je apparaten</h3>
+    <div id="np-sync-off">
+      <p>Vul het wachtwoord in dat je in Netlify bij NOTITIES_WACHTWOORD hebt gezet. Dit apparaat onthoudt daarna een sleutel, niet je wachtwoord zelf. Je koppelt één keer per apparaat; dat geldt dan voor alle drie de vakken.</p>
+      <div class="np-row">
+        <input type="password" id="np-pw" autocomplete="current-password" placeholder="Wachtwoord voor je notities" aria-label="Wachtwoord voor je notities">
+        <button type="button" class="wn-btn primary" id="np-link">Koppel dit apparaat</button>
+      </div>
+    </div>
+    <div id="np-sync-on" hidden>
+      <p class="np-sync-state" id="np-sync-state" aria-live="polite"></p>
+      <div class="np-actions">
+        <button type="button" class="wn-btn" id="np-sync-now">Nu synchroniseren</button>
+        <button type="button" class="wn-btn" id="np-unlink">Ontkoppel dit apparaat</button>
+      </div>
+    </div>
+    <p class="np-msg" id="np-sync-msg" role="status" hidden></p>
+  </div>
   <div class="callout warn" id="np-warn" hidden><span class="c-label">Deze browser bewaart niets</span><p>Je browser staat opslaan niet toe, bijvoorbeeld in een privévenster. Wat je typt, is weg als je deze pagina sluit. Download je notities voordat je de pagina sluit.</p></div>
-  <div class="callout"><span class="c-label">Download af en toe een kopie</span><p>Wis je je browsergegevens, dan zijn je notities weg. Safari kan bovendien gegevens wissen van een site die je ruim een week niet hebt geopend. Met een kopie zet je alles terug, ook op een ander apparaat. Bewaar het bestand bijvoorbeeld in OneDrive of Google Drive.</p></div>
+  <div class="callout"><span class="c-label">Download af en toe een kopie</span><p>Wis je je browsergegevens, dan zijn je notities op dit apparaat weg. Safari kan bovendien gegevens wissen van een site die je ruim een week niet hebt geopend. Heb je dit apparaat gekoppeld, dan staan ze nog online en komen ze terug zodra je opnieuw koppelt. Een gedownloade kopie is je reserve: daarmee zet je alles terug. Bewaar het bestand bijvoorbeeld in OneDrive of Google Drive.</p></div>
   <div class="np-actions">
     <button type="button" class="wn-btn primary" id="np-download">Download al je notities</button>
     <button type="button" class="wn-btn" id="np-import">Zet terug uit een bestand</button>
@@ -605,50 +633,58 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
 </div>
 <a class="totop" href="#top" id="totop" aria-label="Naar boven" hidden>↑</a>
 <script>
-/* Eigen notities per les. Ze staan alleen in deze browser (localStorage, sleutel fm-notities-<vak>), nooit op de site.
-   Per les: { t: tekst, u: laatst bewerkt (ISO), l: naam van de les }. Downloaden geeft een .md-bestand dat je ook weer terugzet. */
+/* Eigen notities per les. Ze staan in deze browser (localStorage, sleutel fm-notities-<vak>) en, als je dit apparaat koppelt,
+   ook in je eigen online opslag op Netlify (/api/notities, achter je wachtwoord), zodat al je apparaten hetzelfde zien.
+   Per les: { t: tekst, u: laatst bewerkt (ISO), l: naam van de les, b: versie online waarop deze tekst voortbouwt }.
+   Een gewiste notitie die online stond, blijft als { t: "", b } bewaard, zodat het wissen ook op je andere apparaten aankomt.
+   pending: lessen met wijzigingen die nog niet online staan. Downloaden geeft een .md-bestand dat je ook weer terugzet. */
 (function () {
   var panel = document.getElementById("notities");
   if (!panel) return;
-  var VAK = panel.getAttribute("data-vak"), HEADING = panel.getAttribute("data-heading"), KEY = "fm-notities-" + VAK;
-  var ALIAS = {};
-  try { var al = JSON.parse(panel.getAttribute("data-alias") || "{}"); if (al && typeof al === "object" && !Array.isArray(al)) ALIAS = al; } catch (e) {}
+  var VAK = panel.getAttribute("data-vak"), HEADING = panel.getAttribute("data-heading"), KEY = "fm-notities-" + VAK, SYNC_KEY = "fm-notities-sync";
+  var ID = /^[a-z0-9-]{1,90}$/;  // zo zien de ids van lessen eruit (week-3-sourcing); al het andere wordt genegeerd
+  var own = function (o, k) { return Object.prototype.hasOwnProperty.call(o, k); };
+  var ALIAS = Object.create(null);
+  try { var al = JSON.parse(panel.getAttribute("data-alias") || "{}"); if (al && typeof al === "object") Object.keys(al).forEach(function (k) { if (ID.test(k) && typeof al[k] === "string" && ID.test(al[k])) ALIAS[k] = al[k]; }); } catch (e) {}
   var PEN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/></svg>';
   var PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16v6"/><path d="M8.5 3h7l-1 6 3.5 4v3h-12v-3l3.5-4-1-6Z"/></svg>';
   var HINT = "Typ hier tijdens of na de les mee: wat de docent benadrukt, voorbeelden, tentamentips en vragen die je nog hebt.";
   var secs = Object.create(null), timers = Object.create(null), dirty = Object.create(null), pageIds = [], pinned = null;
-  var ID = /^[a-z0-9-]{1,90}$/;  // zo zien de ids van lessen eruit (week-3-sourcing); al het andere wordt genegeerd
-  var own = function (o, k) { return Object.prototype.hasOwnProperty.call(o, k); };
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var str = function (v, max) { return typeof v === "string" && v.length <= max ? v : ""; };
 
-  // ---- opslag
+  // ---- opslag in deze browser
   var canStore = (function () { try { var k = KEY + ":test"; localStorage.setItem(k, "1"); localStorage.removeItem(k); return true; } catch (e) { return false; } })();
+  function empty() { return { notes: Object.create(null), pending: Object.create(null), exported: "" }; }
   // Leest de bewaarde notities. Alleen tekst wordt overgenomen; wat beschadigd of van een ander type is, telt niet mee.
   function read() {
-    var out = { notes: Object.create(null), exported: "" };
+    var out = empty();
     try {
       var raw = localStorage.getItem(KEY); if (!raw) return out;
       var v = JSON.parse(raw);
       if (!v || typeof v !== "object" || Array.isArray(v)) return out;
       if (v.notes && typeof v.notes === "object" && !Array.isArray(v.notes)) {
         Object.keys(v.notes).forEach(function (id) {
-          var n = v.notes[id];
-          if (ID.test(id) && n && typeof n === "object" && typeof n.t === "string" && n.t.trim())
-            out.notes[id] = { t: n.t, u: typeof n.u === "string" ? n.u : "", l: typeof n.l === "string" ? n.l : "" };
+          var n = v.notes[id], b = n && str(n.b, 80);
+          if (ID.test(id) && n && typeof n === "object" && typeof n.t === "string" && (n.t.trim() || b))
+            out.notes[id] = { t: n.t, u: str(n.u, 40), l: str(n.l, 300), b: b };
         });
       }
+      if (v.pending && typeof v.pending === "object") Object.keys(v.pending).forEach(function (id) { if (own(out.notes, id)) out.pending[id] = 1; });
       if (typeof v.exported === "string") out.exported = v.exported;
     } catch (e) {}
     return out;
   }
-  var store = canStore ? read() : { notes: Object.create(null), exported: "" };
+  var store = canStore ? read() : empty();
   function write() {
     if (!canStore) return false;
-    try { localStorage.setItem(KEY, JSON.stringify({ v: 1, notes: store.notes, exported: store.exported })); return true; }
+    try { localStorage.setItem(KEY, JSON.stringify({ v: 1, notes: store.notes, pending: store.pending, exported: store.exported })); return true; }
     catch (e) { canStore = false; $("np-warn").hidden = false; return false; }  // vol of geblokkeerd: verder alleen in het geheugen
   }
   function refresh() { if (canStore) store = read(); }  // eerst ophalen wat een ander tabblad intussen bewaarde
+  function live(id) { var n = own(store.notes, id) ? store.notes[id] : null; return n && n.t.trim() ? n : null; }
+  function liveIds() { return Object.keys(store.notes).filter(live); }
   var asked = false;
   function askPersist() {  // vraagt de browser de notities niet zomaar op te ruimen
     if (asked) return; asked = true;
@@ -663,7 +699,7 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
     var day = d.toLocaleDateString("nl-NL", { day: "numeric", month: "short" });
     return withTime === false ? day : "op " + day + " om " + t;
   }
-  function full(iso, withTime) {  // voor in het bestand: altijd een volledige datum
+  function full(iso, withTime) {  // voor in een bestand of in de tekst: altijd een volledige datum
     var d = new Date(iso); if (isNaN(d)) return "";
     var s = d.toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" });
     return withTime ? s + " om " + d.toLocaleTimeString("nl-NL", { hour: "2-digit", minute: "2-digit" }) : s;
@@ -671,18 +707,22 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
   function stamp(d) { var p = function (x) { return (x < 10 ? "0" : "") + x; }; return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate()); }
 
   // ---- een notitieveld
-  function labelOf(id) { return secs[id] ? secs[id].getAttribute("data-label") : (store.notes[id] && store.notes[id].l) || id; }
+  function labelOf(id) { return secs[id] ? secs[id].getAttribute("data-label") : (own(store.notes, id) && store.notes[id].l) || id; }
   function grow(ta) { if (!ta.offsetParent) return; ta.style.height = "auto"; ta.style.height = (ta.scrollHeight + 2) + "px"; }
   function setStatus(sec, state) {
-    var el = sec.querySelector(".note-status"), n = store.notes[sec.getAttribute("data-note")];
+    var el = sec.querySelector(".note-status"), id = sec.getAttribute("data-note"), n = live(id);
+    if (state === "saved" && token) state = store.pending[id] ? (syncErr ? "local" : "pushing") : "synced";
     el.classList.toggle("err", state === "err");
     el.textContent = state === "busy" ? "Wordt bewaard…"
       : state === "err" ? "Niet bewaard: deze browser staat opslaan niet toe. Download je notities voordat je de pagina sluit."
+      : state === "pushing" ? "Bewaard, wordt gesynchroniseerd…"
+      : state === "local" ? "Bewaard op dit apparaat, nog niet online"
+      : state === "synced" ? "Bewaard en gesynchroniseerd " + when(lastSync || new Date().toISOString())
       : state === "saved" ? "Bewaard " + when(n ? n.u : new Date().toISOString())
       : n && n.u ? "Laatst bewerkt " + when(n.u) : "";
   }
   function marks(id) {  // knop bij de les en label in de inhoudsopgave van de week
-    var has = !!store.notes[id], sec = secs[id]; if (!sec || sec.classList.contains("orphan")) return;
+    var has = !!live(id), sec = secs[id]; if (!sec || sec.classList.contains("orphan")) return;
     var jump = sec.parentNode.querySelector(".note-jump");
     if (jump) { jump.classList.toggle("has", has); jump.lastChild.textContent = has ? "Mijn notities" : "Notitie maken"; }
     var toc = document.querySelector('.toc a[href="#' + id + '"]');
@@ -696,14 +736,18 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
   function save(id) {
     clearTimeout(timers[id]); delete timers[id];
     if (!dirty[id]) return; delete dirty[id];
-    var sec = secs[id], text = sec.querySelector("textarea").value;
+    var sec = secs[id], text = sec.querySelector("textarea").value, now = new Date().toISOString();
     refresh();
-    if (text.trim()) store.notes[id] = { t: text, u: new Date().toISOString(), l: sec.getAttribute("data-label") || "" };
+    var prev = own(store.notes, id) ? store.notes[id] : null;
+    if (text.trim()) store.notes[id] = { t: text, u: now, l: sec.getAttribute("data-label") || "", b: prev ? prev.b : "" };
+    else if (prev && prev.b) store.notes[id] = { t: "", u: now, l: prev.l, b: prev.b };  // wissen moet ook online gebeuren
     else delete store.notes[id];
+    if (own(store.notes, id)) store.pending[id] = 1; else delete store.pending[id];
     var ok = write(), has = !!text.trim();
-    setStatus(sec, has ? (ok ? "saved" : "err") : "");
+    setStatus(sec, has ? (ok || token ? "saved" : "err") : "");
     marks(id); info();
-    if (ok && text.trim()) askPersist();
+    if (ok && has) askPersist();
+    schedulePush();
   }
   function flush() { Object.keys(dirty).forEach(save); }
   function setPin(sec) {
@@ -713,10 +757,11 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
     document.body.classList.toggle("note-pinned", !!pinned);
   }
   function fill(sec) {
-    var id = sec.getAttribute("data-note"), n = store.notes[id], ta = sec.querySelector("textarea");
-    ta.value = n ? n.t : "";
+    var id = sec.getAttribute("data-note"), n = live(id), ta = sec.querySelector("textarea"), focused = document.activeElement === ta;
+    var text = n ? n.t : "";
+    if (ta.value !== text) { ta.value = text; if (focused) ta.setSelectionRange(text.length, text.length); }
     if (n || sec.classList.contains("orphan")) sec.classList.add("open");
-    else if (pinned !== sec && document.activeElement !== ta) sec.classList.remove("open");
+    else if (pinned !== sec && !focused) sec.classList.remove("open");
     grow(ta); setStatus(sec, ""); marks(id);
   }
   function build(sec, orphan) {
@@ -726,7 +771,7 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
       '<div class="note-box"><div class="note-bar"><span class="note-title">Mijn notities</span><span class="note-status" aria-live="polite"></span>' +
       (orphan ? "" : '<button type="button" class="note-pin" aria-pressed="false" title="Houd dit notitieveld onderin beeld terwijl je door deze les scrolt">' + PIN + "<span>Meescrollen</span></button>") +
       '</div><textarea class="note-text" rows="4" spellcheck="true" placeholder="' + esc(HINT) + '" aria-label="' + esc("Mijn notities bij " + label) + '"></textarea>' +
-      '<p class="note-foot">Alleen in deze browser bewaard. <button type="button" class="note-dl">Download een kopie</button> · <a href="#notities">Hoe werkt dit?</a></p></div>';
+      '<p class="note-foot"><span class="note-where"></span> <button type="button" class="note-dl">Download een kopie</button> · <a href="#notities">Hoe werkt dit?</a></p></div>';
     var ta = sec.querySelector("textarea"), downInside = false;
     sec.addEventListener("pointerdown", function () { downInside = true; setTimeout(function () { downInside = false; }, 400); });
     ta.addEventListener("input", function () {
@@ -743,12 +788,18 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
       sec.querySelector(".note-add").addEventListener("click", function () { open(sec, true); });
       sec.querySelector(".note-pin").addEventListener("click", function () { setPin(pinned === sec ? null : sec); ta.focus({ preventScroll: true }); });
     }
+    where(sec);
     sec.hidden = false;
+  }
+  function where(sec) { sec.querySelector(".note-where").textContent = token ? "Gesynchroniseerd met je andere apparaten." : "Alleen in deze browser bewaard."; }
+  function redraw() {  // na synchroniseren of terugzetten: velden bijwerken, behalve waar je net typt
+    Object.keys(secs).forEach(function (id) { if (!dirty[id]) fill(secs[id]); });
+    orphans(); info();
   }
 
   // ---- paneel onderaan
   function info() {
-    var ids = Object.keys(store.notes), n = ids.length, txt;
+    var ids = liveIds(), n = ids.length, txt;
     if (!n) txt = "Je hebt nog geen notities bij dit vak. Klik onder een les op ‘Eigen notities bij deze les’ om te beginnen.";
     else {
       txt = "Je hebt notities bij " + n + (n === 1 ? " les" : " lessen") + " van dit vak.";
@@ -762,7 +813,7 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
   function msg(text, err) { var el = $("np-msg"); el.textContent = text; el.classList.toggle("err", !!err); el.hidden = false; }
   function orphans() {  // notities waarvan de les niet (meer) op deze pagina staat
     var box = $("np-orphans");
-    Object.keys(store.notes).forEach(function (id) {
+    liveIds().forEach(function (id) {
       if (secs[id]) return;
       var sec = document.createElement("section");
       sec.className = "note open orphan"; sec.id = "notitie-" + id;
@@ -775,7 +826,7 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
   // ---- downloaden en terugzetten
   function download() {
     flush();
-    var ids = pageIds.concat(Object.keys(store.notes).filter(function (id) { return pageIds.indexOf(id) === -1; })).filter(function (id) { return store.notes[id]; });
+    var ids = pageIds.concat(Object.keys(store.notes).filter(function (id) { return pageIds.indexOf(id) === -1; })).filter(live);
     if (!ids.length) { msg("Je hebt nog geen notities bij dit vak, dus er is nog niets te downloaden.", true); return; }
     var now = new Date(), name = "notities-" + VAK + "-" + stamp(now) + ".md";
     var L = ["# Mijn notities: " + HEADING, "", "<!-- fm-notities " + VAK + " v1 -->",
@@ -797,29 +848,27 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
     if (!head) { msg("Dit bestand komt niet van de knop ‘Download al je notities’. Er is niets veranderd.", true); return; }
     if (head[1] !== VAK) {
       var zone = /^[a-z-]{1,40}$/.test(head[1]) && document.querySelector('.sb-zone[href*="/' + head[1] + '/"]');
-      var other = zone ? zone.title : "een ander vak";
-      msg("Dit bestand hoort bij " + other + ". Open de samenvatting van dat vak en zet het daar terug. Er is niets veranderd.", true); return;
+      msg("Dit bestand hoort bij " + (zone ? zone.title : "een ander vak") + ". Open de samenvatting van dat vak en zet het daar terug. Er is niets veranderd.", true); return;
     }
     flush(); refresh();
-    var rx = /(?:^## (.*)\n)?<!-- notitie (\S+) (\S+) -->\n([\s\S]*?)\n?<!-- \/notitie -->/gm, m, added = 0, merged = 0, same = 0;
+    var rx = /(?:^## (.*)\n)?<!-- notitie (\S+) (\S+) -->\n([\s\S]*?)\n?<!-- \/notitie -->/gm, m, added = 0, merged = 0, same = 0, now = new Date().toISOString();
     while ((m = rx.exec(txt))) {
-      var id = own(ALIAS, m[2]) ? ALIAS[m[2]] : m[2], u = isNaN(new Date(m[3])) ? "" : m[3], t = m[4];
+      var id = ALIAS[m[2]] || m[2], u = isNaN(new Date(m[3])) ? "" : m[3], t = m[4];
       if (!ID.test(id) || !t.trim()) continue;
-      var cur = store.notes[id];
-      if (!cur) { store.notes[id] = { t: t, u: u || new Date().toISOString(), l: secs[id] ? secs[id].getAttribute("data-label") : (m[1] || id) }; added++; }
+      var cur = live(id), base = own(store.notes, id) ? store.notes[id].b : "";
+      if (!cur) { store.notes[id] = { t: t, u: u || now, l: secs[id] ? secs[id].getAttribute("data-label") : str(m[1] || "", 300) || id, b: base }; store.pending[id] = 1; added++; }
       else if (cur.t.indexOf(t) !== -1) same++;
-      else if (t.indexOf(cur.t) !== -1) { cur.t = t; cur.u = new Date().toISOString(); merged++; }
-      else { cur.t = cur.t.replace(/\s+$/, "") + "\n\nUit je kopie" + (u ? " van " + full(u) : "") + ":\n" + t; cur.u = new Date().toISOString(); merged++; }
+      else if (t.indexOf(cur.t) !== -1) { cur.t = t; cur.u = now; store.pending[id] = 1; merged++; }
+      else { cur.t = cur.t.replace(/\s+$/, "") + "\n\nUit je kopie" + (u ? " van " + full(u) : "") + ":\n" + t; cur.u = now; store.pending[id] = 1; merged++; }
     }
     if (!added && !merged && !same) { msg("In dit bestand staan geen notities. Er is niets veranderd.", true); return; }
     var ok = write();
-    Object.keys(secs).forEach(function (id) { fill(secs[id]); });
-    orphans(); info();
+    redraw(); schedulePush();
     var parts = [];
     if (added) parts.push(added + (added === 1 ? " notitie teruggezet" : " notities teruggezet"));
     if (merged) parts.push(merged + (merged === 1 ? " notitie aangevuld met de tekst uit het bestand" : " notities aangevuld met de tekst uit het bestand"));
     if (same) parts.push(same + (same === 1 ? " stond er al" : " stonden er al"));
-    msg((ok ? "Klaar: " : "Teruggezet, maar alleen tot je deze pagina sluit: ") + parts.join(", ") + ". Je bestaande tekst is nergens overschreven.", !ok);
+    msg((ok || token ? "Klaar: " : "Teruggezet, maar alleen tot je deze pagina sluit: ") + parts.join(", ") + ". Je bestaande tekst is nergens overschreven.", !(ok || token));
   }
   $("np-download").addEventListener("click", download);
   $("np-import").addEventListener("click", function () { $("np-file").click(); });
@@ -832,12 +881,137 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
     r.readAsText(f, "utf-8");
   });
 
+  // ---- synchroniseren tussen je apparaten (online opslag op Netlify, zie netlify/functions/notities.mjs)
+  function readToken() { try { var v = JSON.parse(localStorage.getItem(SYNC_KEY) || "null"); return v && typeof v.k === "string" && /^[0-9a-f]{64}$/.test(v.k) ? v.k : ""; } catch (e) { return ""; } }
+  var token = readToken(), syncing = false, again = false, lastSync = "", syncErr = "", pushTimer = 0;
+  function api(method, body, keepalive) {
+    var h = { Authorization: "Bearer " + token }; if (body) h["Content-Type"] = "application/json";
+    return fetch("/api/notities?vak=" + encodeURIComponent(VAK), { method: method, headers: h, body: body ? JSON.stringify(body) : undefined, cache: "no-store", credentials: "same-origin", keepalive: !!keepalive })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; }).then(function (j) {
+          if (!r.ok || !j || typeof j.notes !== "object") { var e = new Error(j && j.fout || "http-" + r.status); e.status = r.status; throw e; }
+          return j;
+        });
+      });
+  }
+  // Verwerkt de stand online. Alleen wat op een ander apparaat veranderde, komt binnen; als een notitie hier én daar
+  // veranderde, worden beide teksten samengevoegd. Er verdwijnt dus nooit tekst.
+  function merge(S) {
+    Object.keys(S).forEach(function (id) {
+      var s = S[id]; if (!ID.test(id) || !s || typeof s.t !== "string" || typeof s.v !== "string" || dirty[id]) return;
+      var L = own(store.notes, id) ? store.notes[id] : null, pend = !!store.pending[id], take = function () {
+        // ook een online gewiste notitie onthouden (lege tekst), zodat een nieuwe notitie bij die les meteen online kan
+        store.notes[id] = { t: s.t.trim() ? s.t : "", u: str(s.u, 40), l: str(s.l, 300) || (L && L.l) || "", b: s.v };
+        delete store.pending[id];
+      };
+      if (L && L.b === s.v) return;                         // online niets nieuws voor deze les
+      if (!L) { take(); return; }
+      if (!pend || L.t === s.t) { take(); return; }         // alleen elders veranderd
+      if (!s.t.trim()) { L.b = s.v; return; }                // elders gewist, hier bewerkt: tekst blijft
+      if (!L.t.trim() || s.t.indexOf(L.t) !== -1) { take(); return; }
+      if (L.t.indexOf(s.t) !== -1) { L.b = s.v; return; }
+      L.t = s.t.replace(/\s+$/, "") + "\n\n[Samengevoegd: deze les is tegelijk op twee apparaten bewerkt. Hieronder de andere versie, van " + full(L.u, true) + ".]\n" + L.t;
+      L.u = new Date().toISOString(); L.b = s.v;
+    });
+    Object.keys(store.notes).forEach(function (id) {  // stond online, maar is daar weg (opslag leeggemaakt): opnieuw uploaden
+      var L = store.notes[id]; if (!L.b || own(S, id)) return;
+      L.b = ""; if (L.t.trim()) store.pending[id] = 1; else { delete store.notes[id]; delete store.pending[id]; }
+    });
+  }
+  function round(n) {
+    refresh();
+    var ids = Object.keys(store.pending).filter(function (id) { return own(store.notes, id) && !dirty[id]; }), sent = Object.create(null), body = { notes: {} };
+    ids.forEach(function (id) { var x = store.notes[id]; sent[id] = x.t; body.notes[id] = { t: x.t, u: x.u, l: x.l, b: x.b || "" }; });
+    return (ids.length ? api("PUT", body) : api("GET")).then(function (res) {
+      refresh();
+      (res.accepted || []).forEach(function (id) {
+        var x = own(store.notes, id) ? store.notes[id] : null, s = res.notes[id]; if (!x || !s) return;
+        x.b = s.v;
+        if (x.t === sent[id]) delete store.pending[id];
+      });
+      merge(res.notes); write();
+      var left = Object.keys(store.pending).some(function (id) { return !dirty[id]; });
+      if (left && ids.length && n < 3) return round(n + 1);
+    });
+  }
+  function sync() {
+    if (!token || !window.fetch) return;
+    if (syncing) { again = true; return; }
+    syncing = true; again = false; clearTimeout(pushTimer); flush(); syncInfo();
+    round(0).then(function () {
+      lastSync = new Date().toISOString(); syncErr = "";
+    }, function (e) {
+      syncErr = e.status === 401 ? "wachtwoord" : e.status === 503 ? "niet-ingesteld" : e.status === 429 || e.status === 409 ? "druk" : "offline";
+      if (syncErr === "druk") setTimeout(sync, 20000);
+      if (syncErr === "wachtwoord") unlink("Het wachtwoord voor je notities is veranderd. Koppel dit apparaat opnieuw met het nieuwe wachtwoord.");
+    }).then(function () {
+      syncing = false; redraw(); syncInfo();
+      Object.keys(secs).forEach(function (id) { if (!dirty[id] && live(id)) setStatus(secs[id], "saved"); });
+      if (again) sync();
+    });
+  }
+  function schedulePush() { if (!token) return; clearTimeout(pushTimer); pushTimer = setTimeout(sync, 2000); }
+  function syncInfo() {
+    $("np-sync-off").hidden = !!token; $("np-sync-on").hidden = !token;
+    $("np-where-off").hidden = !!token; $("np-where-on").hidden = !token;
+    Object.keys(secs).forEach(function (id) { where(secs[id]); });
+    if (!token) return;
+    var st = $("np-sync-state"), pend = Object.keys(store.pending).length;
+    st.classList.toggle("err", !!syncErr);
+    st.textContent = syncing ? "Bezig met synchroniseren…"
+      : syncErr === "offline" ? "Synchroniseren lukt nu niet (geen verbinding?). Je notities staan veilig op dit apparaat en gaan online zodra het weer lukt."
+      : syncErr === "niet-ingesteld" ? "De online opslag is uitgezet: NOTITIES_WACHTWOORD ontbreekt in Netlify. Je notities staan veilig op dit apparaat."
+      : syncErr === "druk" ? "Het is even druk. De pagina probeert het zo opnieuw; je notities staan veilig op dit apparaat."
+      : lastSync ? "Gekoppeld. Laatst gesynchroniseerd " + when(lastSync) + "." + (pend ? " " + pend + (pend === 1 ? " wijziging wacht" : " wijzigingen wachten") + " nog." : "")
+      : "Gekoppeld.";
+  }
+  function sha(text) {
+    return crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)).then(function (buf) {
+      return Array.prototype.map.call(new Uint8Array(buf), function (b) { return (b < 16 ? "0" : "") + b.toString(16); }).join("");
+    });
+  }
+  function link() {
+    var pw = $("np-pw").value, out = $("np-sync-msg");
+    var say = function (t, err) { out.textContent = t; out.classList.toggle("err", !!err); out.hidden = false; };
+    if (pw.length < 12) { say("Je wachtwoord voor de notities is minstens 12 tekens lang.", true); return; }
+    if (!window.crypto || !crypto.subtle || !window.fetch) { say("Deze browser kan niet synchroniseren. Gebruik een recente versie van Chrome, Edge, Firefox of Safari.", true); return; }
+    $("np-link").disabled = true; say("Bezig met koppelen…");
+    sha("fm-notities:" + pw).then(function (k) {
+      var was = token; token = k;
+      return api("GET").then(function (res) {
+        try { localStorage.setItem(SYNC_KEY, JSON.stringify({ k: k })); } catch (e) {}
+        flush(); refresh(); merge(res.notes);
+        liveIds().forEach(function (id) { if (!store.notes[id].b) store.pending[id] = 1; });  // wat hier al stond, gaat ook online
+        write(); $("np-pw").value = ""; out.hidden = true; syncErr = "";
+        sync();
+      }, function (e) {
+        token = was;
+        say(e.status === 401 ? "Dit wachtwoord klopt niet. Gebruik precies het wachtwoord dat in Netlify bij NOTITIES_WACHTWOORD staat."
+          : e.status === 503 ? "De online opslag is nog niet ingesteld. Zet in Netlify de omgevingsvariabele NOTITIES_WACHTWOORD (minstens 12 tekens) en publiceer de site daarna opnieuw."
+          : e.status === 429 ? "Te veel pogingen. Wacht een minuut en probeer het opnieuw."
+          : "De online opslag is niet bereikbaar. Ben je online? Werkt het daarna nog niet, dan staat de functie nog niet op Netlify.", true);
+      });
+    }).then(function () { $("np-link").disabled = false; syncInfo(); }, function () { $("np-link").disabled = false; say("Koppelen is mislukt. Probeer het opnieuw.", true); });
+  }
+  function unlink(why) {
+    token = ""; lastSync = ""; clearTimeout(pushTimer);
+    try { localStorage.removeItem(SYNC_KEY); } catch (e) {}
+    var out = $("np-sync-msg"); out.textContent = why; out.classList.toggle("err", /veranderd/.test(why)); out.hidden = false;
+    syncInfo(); redraw();
+  }
+  $("np-link").addEventListener("click", link);
+  $("np-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); link(); } });
+  $("np-sync-now").addEventListener("click", sync);
+  $("np-unlink").addEventListener("click", function () { unlink("Dit apparaat is ontkoppeld. Je notities staan nog hier en online; nieuwe notities blijven vanaf nu alleen op dit apparaat."); });
+
   // ---- opbouwen
   Object.keys(ALIAS).forEach(function (old) {  // een les met een nieuwe titel: notitie verhuist mee
-    var a = store.notes[old], to = ALIAS[old]; if (!a || typeof to !== "string" || !ID.test(to)) return;
-    var b = store.notes[to];
-    store.notes[to] = b ? { t: b.t.indexOf(a.t) !== -1 ? b.t : b.t.replace(/\s+$/, "") + "\n\n" + a.t, u: b.u, l: b.l } : a;
-    delete store.notes[old]; write();
+    var a = live(old), to = ALIAS[old]; if (!a) return;
+    var b = live(to);
+    store.notes[to] = b ? { t: b.t.indexOf(a.t) !== -1 ? b.t : b.t.replace(/\s+$/, "") + "\n\n" + a.t, u: b.u, l: b.l, b: b.b } : { t: a.t, u: a.u, l: a.l, b: "" };
+    store.pending[to] = 1;
+    if (a.b) { store.notes[old] = { t: "", u: new Date().toISOString(), l: a.l, b: a.b }; store.pending[old] = 1; } else { delete store.notes[old]; delete store.pending[old]; }
+    write();
   });
   Array.prototype.forEach.call(document.querySelectorAll("section.note[data-note]"), function (sec) {
     var id = sec.getAttribute("data-note");
@@ -856,16 +1030,27 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
   });
   orphans();
   if (!canStore) $("np-warn").hidden = false;
-  info();
+  info(); syncInfo();
   panel.hidden = false;
+  if (token) sync();
 
-  window.addEventListener("pagehide", flush);
-  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") flush(); });
+  window.addEventListener("pagehide", function () {
+    flush();
+    if (!token) return;  // laatste wijzigingen nog snel versturen; lukt dat niet, dan gaan ze de volgende keer mee
+    var body = { notes: {} }, size = 0;
+    Object.keys(store.pending).forEach(function (id) { var x = store.notes[id]; if (x) { body.notes[id] = { t: x.t, u: x.u, l: x.l, b: x.b || "" }; size += x.t.length; } });
+    if (size && size < 50000) { try { api("PUT", body, true).catch(function () {}); } catch (e) {} }
+  });
+  var lastPull = Date.now();
+  function pull() { if (token && document.visibilityState === "visible" && Date.now() - lastPull > 15000) { lastPull = Date.now(); sync(); } }
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") flush(); else pull(); });
+  window.addEventListener("focus", pull);
+  window.addEventListener("online", function () { if (token) sync(); });
+  setInterval(function () { if (token && document.visibilityState === "visible") { lastPull = Date.now(); sync(); } }, 120000);
   window.addEventListener("storage", function (e) {  // zelfde vak open in een ander tabblad
+    if (e.key === SYNC_KEY) { token = readToken(); syncInfo(); redraw(); return; }
     if (e.key !== KEY) return;
-    refresh();
-    Object.keys(secs).forEach(function (id) { var ta = secs[id].querySelector("textarea"); if (!dirty[id] && document.activeElement !== ta) fill(secs[id]); });
-    orphans(); info();
+    refresh(); redraw();
   });
   var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { Object.keys(secs).forEach(function (id) { grow(secs[id].querySelector("textarea")); }); }, 150); });
   if (document.fonts) document.fonts.ready.then(function () { Object.keys(secs).forEach(function (id) { grow(secs[id].querySelector("textarea")); }); });
@@ -876,7 +1061,7 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
 
   window.fmNotes = {  // voor de zoekbalk
     find: function (term, norm) {
-      return Object.keys(store.notes).filter(function (id) { return norm(store.notes[id].t).indexOf(term) !== -1; }).map(function (id) {
+      return liveIds().filter(function (id) { return norm(store.notes[id].t).indexOf(term) !== -1; }).map(function (id) {
         return { id: "notitie-" + id, label: labelOf(id), text: store.notes[id].t.replace(/\s+/g, " ").trim() };
       });
     }
