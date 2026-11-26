@@ -1,0 +1,8 @@
+{
+  "name": "fm-jaar-2",
+  "private": true,
+  "description": "Studiesite FM jaar 2. De site in site/ is al gebouwd; deze afhankelijkheid is alleen voor de functie netlify/functions/notities.mjs.",
+  "dependencies": {
+    "@netlify/blobs": "11.1.8"
+  }
+}
