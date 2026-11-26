@@ -89,6 +89,9 @@ def inline(s):
     s = html.escape(s, quote=False)
     def link(m):
         text, url = m.group(1), m.group(2)
+        # alleen gewone webadressen, mail en interne links; javascript:, data: e.d. worden platte tekst
+        if not re.match(r"(https?://|mailto:|#|\.{0,2}/|[\w-]+(/|\.html|#|$))", url):
+            return text
         ext = url.startswith("http")
         attrs = ' target="_blank" rel="noopener"' if ext else ""
         return f'<a href="{html.escape(url)}"{attrs}>{text}</a>'

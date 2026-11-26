@@ -428,7 +428,16 @@ details.model[open] > summary { margin-bottom: 8px; }
   // ---------- helpers ----------
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const lsGet = (k, d) => { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } };
+  // Leest een bewaarde waarde; is die beschadigd of van een ander type dan de standaardwaarde, dan geldt de standaardwaarde.
+  const lsGet = (k, d) => {
+    try {
+      const raw = localStorage.getItem(k); if (!raw) return d;
+      const v = JSON.parse(raw);
+      if (v == null) return d;
+      if (d != null && (typeof v !== typeof d || Array.isArray(v) !== Array.isArray(d))) return d;
+      return v;
+    } catch { return d; }
+  };
   const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
   const shuffle = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
   const nl = (x, d = 1) => x.toFixed(d).replace(".", ",");
