@@ -25,7 +25,7 @@ git add -A && git commit -m "..." && git push
 - Alleen Python 3 uit de standaardbibliotheek, geen pakketten.
 - Bouw altijd opnieuw na een wijziging in `scripts/` en commit `site/` mee, anders verandert de live site niet.
 - `build_site.py --artifact DIR` maakt daarnaast een versie van de oefenpagina's IR en HRM voor de Claude-artifacts (zonder sitebalk).
-- `netlify.toml`: `publish = "site"`, geen build-commando.
+- `netlify.toml`: `publish = "site"`, geen build-commando, plus de beveiligingsheaders (zie Beveiliging).
 
 ## Mappen
 
@@ -100,6 +100,15 @@ in `build_bedrijfskunde.py` (plus `CASUS` in `sitenav.py`).
   voortgang, Claude kijkt open antwoorden na); op de site is dat er niet en kijkt de gebruiker zelf na met het modelantwoord.
 - **Casustoetsen**: `app.js` bewaart antwoorden in `localStorage` (sleutel per toets in `TOETSEN`), zelf nakijken met rubric.
 - **Navigatie**: elke pagina krijgt de balk en tabs uit `sitenav.py`, met `root` als relatief pad naar de startpagina.
+- **`localStorage` lezen**: `lsGet` in `template.html` en de lader in `bedrijfskunde/app.js` controleren het type van een bewaarde
+  waarde en vallen terug op de standaardwaarde. Houd dat patroon aan bij nieuwe sleutels.
+
+## Beveiliging
+
+`netlify.toml` stuurt voor elke pagina een Content-Security-Policy mee: alleen eigen bestanden en Google Fonts, inline scripts
+toegestaan, geen iframes, formulieren of andere domeinen. Daarnaast X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy
+en HSTS. Gevolg: **elke nieuwe externe bron (script, lettertype, afbeelding, API) moet eerst in de CSP**, anders blokkeert de
+browser hem. De samenvattingen laten alleen http(s)-, mail- en interne links door (`inline()` in `build_samenvattingen.py`).
 
 ## Vormgeving
 
@@ -115,14 +124,10 @@ Test elke gewijzigde pagina op 1280, 380 en 320 px breed, licht en donker.
 - Geen hij/zij voor verzonnen personen.
 - Bij MC is het juiste antwoord niet duidelijk het langste, en geen dubbele vragen.
 
-## Lopend werk (nog niet op `main` op 26-11-2026)
+## Lopend werk (nog niet op `main`)
 
 Controleer of deze pull requests inmiddels gemerged zijn en verplaats de beschrijving dan naar de juiste sectie hierboven.
 
-- **PR #1, beveiliging**: `netlify.toml` krijgt een Content-Security-Policy (alleen eigen bestanden en Google Fonts, inline scripts
-  toegestaan, geen iframes, formulieren of andere domeinen) en andere beveiligingsheaders. Gevolg: elke nieuwe externe bron
-  (script, lettertype, afbeelding, API) moet eerst in de CSP, anders blokkeert de browser hem. Ook: `lsGet` controleert het type
-  van bewaarde waarden, en de samenvattingen laten alleen http(s)-, mail- en interne links door.
 - **PR #2, eigen notities per les**: onder elke les in de samenvattingen een notitieveld (`NOTES_CSS`/`NOTES_JS` in
   `build_samenvattingen.py`). Opslag in `localStorage`, sleutel `fm-notities-<vak>`, nooit op de site of in de repo. Onderaan elke
   samenvatting: alle notities downloaden als `.md` en terugzetten (samenvoegen, niets overschrijven), knop "Meescrollen", en de
