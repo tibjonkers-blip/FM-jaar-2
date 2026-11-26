@@ -3,6 +3,8 @@
 Statische studiesite voor Facility Management jaar 2, periode 2 (Inkoop en recht, HRM, Praktijkproject BM).
 Netlify publiceert de map `site/` (zie `netlify.toml`); er is geen build op Netlify.
 
+Hoe alles werkt en waar het staat: zie [OVERZICHT.md](OVERZICHT.md).
+
 ## Structuur
 
 - `site/`: de gepubliceerde site (startpagina, oefenvragen per vak, later weektoetsen en samenvattingen).

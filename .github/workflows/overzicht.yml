@@ -1,0 +1,46 @@
+# Controleert of OVERZICHT.md is bijgewerkt als de werking van de site verandert.
+# Pull request: de controle faalt (rood kruisje), zodat het opvalt vóór het mergen.
+# Push naar main: alleen een waarschuwing, de site gaat gewoon live.
+# Niet nodig? Zet "[overzicht ok]" in de beschrijving van de pull request of in het commitbericht.
+name: Overzicht bijgewerkt?
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Vergelijk gewijzigde bestanden
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
+            echo "Geen vergelijkingspunt, controle overgeslagen."; exit 0
+          fi
+          changed=$(git diff --name-only "$BASE" "$HEAD")
+          # Bestanden die de werking bepalen (inhoud zoals vragen, uitleg, samenvattingen en figuurlijsten telt niet).
+          code=$(echo "$changed" | grep -E '^(scripts/[^/]+\.py|scripts/vragen/template\.html|scripts/figuren/lib\.py|scripts/toetsen/lib\.py|scripts/bedrijfskunde/(app\.js|markup\.html|style\.css)|netlify\.toml|\.github/)' || true)
+          if [ -z "$code" ]; then echo "Geen codewijziging, in orde."; exit 0; fi
+          if echo "$changed" | grep -qx 'OVERZICHT.md'; then echo "OVERZICHT.md is bijgewerkt, in orde."; exit 0; fi
+          if printf '%s\n%s' "$PR_BODY" "$COMMIT_MSG" | grep -qi '\[overzicht ok\]'; then echo "Gemarkeerd als niet nodig."; exit 0; fi
+          echo "Code gewijzigd zonder OVERZICHT.md bij te werken:"; echo "$code"
+          if [ "$EVENT" = "pull_request" ]; then
+            echo "::error title=OVERZICHT.md niet bijgewerkt::Werk OVERZICHT.md bij, of zet [overzicht ok] in de beschrijving als het niet nodig is."
+            exit 1
+          else
+            echo "::warning title=OVERZICHT.md niet bijgewerkt::Code op main is veranderd zonder OVERZICHT.md bij te werken."
+          fi
