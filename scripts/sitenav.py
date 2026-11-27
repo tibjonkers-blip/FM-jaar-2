@@ -1,7 +1,7 @@
 """Gedeelde navigatie van de studieplek, gebruikt door alle bouwscripts.
 
 - bar():   de vaste wegwijzerbalk bovenaan elke pagina: Home, de drie vakken (bordjes IR, HRM, BM) en een menu met alle pagina's.
-- tabs():  de tabbladen op de zoneband, op elke pagina van een vak dezelfde: Samenvatting, Oefenen, Weektoetsen (en Casustoetsen bij BM).
+- tabs():  de tabbladen op de zoneband, op elke pagina van een vak dezelfde: Samenvatting, Begrippen, Oefenen, Weektoetsen (en Casustoetsen bij BM).
 - crumbs(): kruimelpad boven de titel van een vakpagina (Home / vak / onderdeel).
 - footer(): voettekst onderaan elke pagina met alle onderdelen per vak.
 - BAR_CSS (balk, menu en voettekst), TABS_CSS (kop van een vakpagina plus tabbladen), BAR_JS. De Claude-artifactversie krijgt alleen TABS_CSS.
@@ -22,10 +22,12 @@ MENU_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-w
 
 
 def bar(root, zone=None, kind="home"):
-    """kind: 'home', 'oefen' (vakpagina), 'sam' (samenvatting) of 'casus'. zone: slug van het vak waar je bent."""
+    """kind: 'home', 'oefen' (vakpagina), 'sam' (samenvatting), 'begrip' (begrippen) of 'casus'. zone: slug van het vak waar je bent."""
     def zone_href(z):
         if kind == "sam":
             return f"{root}samenvattingen/{z['slug']}/"
+        if kind == "begrip":
+            return f"{root}begrippen/{z['slug']}/"
         return f"{root}{z['slug']}/"
     out = ['<a class="skip" href="#main">Naar de inhoud</a>',
            '<header class="sitebar" id="sitebar"><div class="sb-in">']
@@ -34,7 +36,7 @@ def bar(root, zone=None, kind="home"):
     out.append('<nav class="sb-zones" aria-label="Vakken">')
     for z in ZONES:
         here = ' aria-current="true"' if z["slug"] == zone else ""
-        carry = " data-carry" if kind in ("sam", "oefen") else ""
+        carry = " data-carry" if kind in ("sam", "oefen", "begrip") else ""
         name = f'<span>{z["naam"]}</span>' if z["naam"] != z["code"] else ""
         out.append(f'<a class="sb-zone {z["cls"]}" href="{zone_href(z)}" title="{z["naam"]}" aria-label="{z["naam"]}"{here}{carry}><b>{z["code"]}</b>{name}</a>')
     out.append("</nav>")
@@ -42,6 +44,7 @@ def bar(root, zone=None, kind="home"):
     for z in ZONES:
         out.append(f'<div class="sb-col {z["cls"]}"><span class="sb-colhead"><b>{z["code"]}</b>{z["naam"]}</span><div class="sb-links">')
         out.append(f'<a href="{root}samenvattingen/{z["slug"]}/">Samenvatting</a>')
+        out.append(f'<a href="{root}begrippen/{z["slug"]}/">Begrippen</a>')
         out.append(f'<a href="{root}{z["slug"]}/#oefenen" data-default>Oefenvragen</a>')
         out.append(f'<a href="{root}{z["slug"]}/#toetsen">Weektoetsen</a>')
         if z["slug"] == "praktijkproject":
@@ -53,7 +56,7 @@ def bar(root, zone=None, kind="home"):
 
 
 def tabs(root, slug, current, ids=False, doc_ext=None):
-    """Tabbladen van één vak. current: 'sam', 'oefenen', 'toetsen' of 'casus'.
+    """Tabbladen van één vak. current: 'sam', 'begrip', 'oefenen', 'toetsen' of 'casus'.
     ids=True (vakpagina): Oefenen en Weektoetsen wisselen op de pagina zelf en krijgen een teller.
     doc_ext: in de Claude-artifactversie verwijst Samenvatting naar het Claude-document."""
     def tab(key, href, lang, kort, extra=""):
@@ -67,6 +70,7 @@ def tabs(root, slug, current, ids=False, doc_ext=None):
         out.append(f'<a class="tab ext" href="{doc_ext}" target="_blank" rel="noopener">Samenvatting</a>')
     else:
         out.append(tab("sam", f"{root}samenvattingen/{slug}/", "Samenvatting", "Samenvatting"))
+        out.append(tab("begrip", f"{root}begrippen/{slug}/", "Begrippen", "Begrippen"))
     page = "" if ids else f"{root}{slug}/"
     out.append(tab("oefenen", f"{page}#oefenen", "Oefenen", "Oefenen"))
     out.append(tab("toetsen", f"{page}#toetsen", "Weektoetsen", "Toetsen"))
@@ -94,11 +98,12 @@ def footer(root):
     """Voettekst onderaan elke pagina van de site: alle onderdelen per vak, zodat je vanaf het eind van een pagina verder kunt."""
     out = ['<footer class="sitefoot"><div class="sf-in">',
            f'<div class="sf-about"><a class="sf-home" href="{root or "./"}">Studieplek FM jaar 2</a>'
-           '<p>Periode 2: samenvattingen, oefenvragen en weektoetsen. Toetsperiode 11 t/m 22 januari 2027.</p>'
+           '<p>Periode 2: samenvattingen, begrippen, oefenvragen en weektoetsen. Toetsperiode 11 t/m 22 januari 2027.</p>'
            '<a class="sf-top" href="#">Terug naar boven</a></div>']
     for z in ZONES:
         out.append(f'<div class="sf-col {z["cls"]}"><span class="sf-head"><b>{z["code"]}</b>{z["naam"]}</span>')
         out.append(f'<a href="{root}samenvattingen/{z["slug"]}/">Samenvatting</a>')
+        out.append(f'<a href="{root}begrippen/{z["slug"]}/">Begrippen</a>')
         out.append(f'<a href="{root}{z["slug"]}/#oefenen">Oefenvragen</a>')
         out.append(f'<a href="{root}{z["slug"]}/#toetsen">Weektoetsen</a>')
         if z["slug"] == "praktijkproject":
@@ -149,8 +154,9 @@ TABS_CSS = HEAD_CSS + """
 .tab.ext { order: 9; }
 .tab.ext::after { content: "\\2197"; font-size: 0.8em; opacity: 0.75; }
 @media (max-width: 600px) {
-  .tabs { width: 100%; gap: 0; }
-  .tab, .tab:first-child { flex: 1 1 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.9rem; margin-left: 0; }
+  .tabs { width: 100%; gap: 0; overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab, .tab:first-child { flex: 1 0 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.9rem; margin-left: 0; }
   .tab .l, .tab .n { display: none; } .tab .s { display: inline; }
 }
 @media (max-width: 350px) { .tab { font-size: 0.84rem; padding-inline: 2px; } }
@@ -231,6 +237,9 @@ BAR_CSS = """
 
 BAR_JS = """<script>
 (function () {
+  /* smal scherm: passen de tabbladen niet, dan schuiven ze; het huidige tabblad staat in beeld */
+  var tb = document.querySelector(".tabs"), cur = tb && tb.querySelector('[aria-current="page"]');
+  if (cur && tb.scrollWidth > tb.clientWidth) tb.scrollLeft = cur.offsetLeft + cur.offsetWidth / 2 - tb.clientWidth / 2;
   var bar = document.getElementById("sitebar"); if (!bar) return;
   var menu = bar.querySelector("details");
   document.addEventListener("click", function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
@@ -252,7 +261,7 @@ BAR_JS = """<script>
     a.addEventListener("click", function () {
       var h = location.hash, wk = document.querySelector('.weeknav a[aria-current="true"]');
       if (wk && window.scrollY > 200) h = wk.getAttribute("href");
-      if (/^#(oefenen|toetsen|week-\\d)$/.test(h)) a.href = a.href.split("#")[0] + h;
+      if (/^#(oefenen|toetsen|week-\\d|lijst|kaarten|dictee)(-w\\d+)?$/.test(h)) a.href = a.href.split("#")[0] + h;
     });
   });
   window.addEventListener("hashchange", mark); mark();

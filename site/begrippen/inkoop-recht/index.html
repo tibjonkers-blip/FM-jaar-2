@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Begrippen Inkoop en recht</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Begrippenlijst Inkoop en recht per les, met flitskaarten en een dictee.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<style>
+/* Begrippen per vak, in de bewegwijzering van de studieplek: zoneband met bordje en tabbladen, daaronder een keuzepaneel
+   (weken en onderdelen) en drie manieren van oefenen: de lijst, flitskaarten en een dictee. */
+:root {
+  --paper: #eef1f6; --sheet: #ffffff; --sunk: #e4e9f1; --ink: #16202f; --ink-soft: #5a6577; --rule: #d9dfe8;
+  --accent: #0b6f82; --accent-soft: #dff0f3; --on-accent: #ffffff; --band: #0b6f82;
+  --good: #1b7a46; --good-soft: #def2e6; --bad: #b3261e; --bad-soft: #fbe3e1; --warn: #8f5d00; --warn-soft: #f9eed6; --mark: #fde99a;
+  --font: "Archivo", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121b2b; --sheet: #1a2539; --sunk: #0e1624; --ink: #e8edf5; --ink-soft: #9eabbf; --rule: #2a3850;
+    --accent: #63cfe2; --accent-soft: #123447; --on-accent: #111a2a; --band: #0d5e6e;
+    --good: #6fd6a0; --good-soft: #143224; --bad: #ff9a8f; --bad-soft: #3d1a1a; --warn: #f0c060; --warn-soft: #342a12; --mark: #5a4a12;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121b2b; --sheet: #1a2539; --sunk: #0e1624; --ink: #e8edf5; --ink-soft: #9eabbf; --rule: #2a3850;
+  --accent: #63cfe2; --accent-soft: #123447; --on-accent: #111a2a; --band: #0d5e6e;
+  --good: #6fd6a0; --good-soft: #143224; --bad: #ff9a8f; --bad-soft: #3d1a1a; --warn: #f0c060; --warn-soft: #342a12; --mark: #5a4a12;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.55; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+h1, h2, h3 { margin: 0; line-height: 1.15; text-wrap: balance; overflow-wrap: break-word; hyphens: auto; }
+h1 { font-size: clamp(1.9rem, 5.2vw, 2.7rem); font-weight: 800; font-stretch: 116%; letter-spacing: -0.012em; line-height: 1.08; }
+h2 { font-size: 1.25rem; font-weight: 800; font-stretch: 108%; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 400px) { h1 { font-size: 1.7rem; font-stretch: 104%; } }
+
+.band-in { max-width: 860px; }
+
+/* ---------- kop van een vakpagina: licht vlak met een streep in de vakkleur, bordje, kruimelpad en tabbladen ---------- */
+.band { background: var(--sheet, var(--surface)); color: var(--ink); border-bottom: 1px solid var(--rule, var(--line)); box-shadow: inset 0 4px 0 var(--accent); }
+.band-in { margin: 0 auto; display: flex; flex-direction: column; gap: 12px; padding-block: 26px 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.band :focus-visible { outline-color: var(--accent); }
+.band h1 { color: var(--ink); }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; font-size: 0.86rem; color: var(--ink-soft, var(--muted)); margin: -6px 0 -2px; }
+.crumbs a { color: inherit; text-decoration: none; font-weight: 500; }
+.crumbs a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs i { font-style: normal; opacity: 0.55; }
+.crumbs [aria-current] { color: var(--ink); font-weight: 600; }
+.title-row { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.title-row > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.title-row h1 { min-width: 0; }
+.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: var(--accent); color: var(--on-accent, var(--accent-ink, #fff));
+  display: grid; place-items: center; font-weight: 800; font-stretch: 112%; font-size: 1.02rem; letter-spacing: 0.02em; }
+.kind { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+.band .lead, .band .examline { max-width: 66ch; color: var(--ink-soft, var(--muted)); font-size: 0.96rem; margin: 0; }
+.band .lead a { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.band .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--ink-soft, var(--muted)); font-size: 0.93rem; }
+.band .meta strong { color: var(--ink); }
+@media (max-width: 400px) { .plate { min-width: 44px; height: 44px; font-size: 0.9rem; border-radius: 9px; } .title-row { gap: 12px; } }
+
+/* ---------- tabbladen: onderstreept, op elke pagina van een vak dezelfde ---------- */
+.tabs { display: flex; gap: 6px; margin-top: 6px; margin-bottom: -1px; max-width: 100%; }
+.tab { border: 0; background: transparent; padding: 11px 12px 12px; border-bottom: 3px solid transparent; font-weight: 600; color: var(--ink-soft, var(--muted));
+  text-decoration: none; font-size: 0.97rem; line-height: 1.3; display: inline-flex; gap: 8px; align-items: center; white-space: nowrap; }
+.tab:first-child { margin-left: -12px; }
+.tab:hover { color: var(--ink); border-bottom-color: var(--rule, var(--line)); }
+.tab[aria-current="page"], .tab[aria-current="page"]:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.tab .n { font-size: 0.74rem; font-weight: 600; padding: 1px 7px; border-radius: 999px; background: var(--sunk, var(--surface-2)); color: var(--ink-soft, var(--muted)); }
+.tab[aria-current="page"] .n { background: var(--accent-soft); color: var(--accent); }
+.tab .n:empty { display: none; }
+.tab .s { display: none; }
+.tab.ext { order: 9; }
+.tab.ext::after { content: "\2197"; font-size: 0.8em; opacity: 0.75; }
+@media (max-width: 600px) {
+  .tabs { width: 100%; gap: 0; overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab, .tab:first-child { flex: 1 0 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.9rem; margin-left: 0; }
+  .tab .l, .tab .n { display: none; } .tab .s { display: inline; }
+}
+@media (max-width: 350px) { .tab { font-size: 0.84rem; padding-inline: 2px; } }
+
+
+/* ---------- wegwijzerbalk: op elke pagina vast bovenaan ---------- */
+:root { --sb-h: 48px; --sb-bg: #1d2b4f; --z-ir: #0b6f82; --z-hrm: #8f2a65; --z-bm: #9a520a; --zt-ir: #0b6f82; --zt-hrm: #9a2d6c; --zt-bm: #9a520a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --sb-bg: #1f3160; --z-ir: #0d5e6e; --z-hrm: #7a2457; --z-bm: #8a4a0a; --zt-ir: #63cfe2; --zt-hrm: #f095c9; --zt-bm: #f5b65e; } }
+:root[data-theme="dark"] { --sb-bg: #1f3160; --z-ir: #0d5e6e; --z-hrm: #7a2457; --z-bm: #8a4a0a; --zt-ir: #63cfe2; --zt-hrm: #f095c9; --zt-bm: #f5b65e; }
+@media (max-width: 560px) { :root { --sb-h: 46px; } }
+.skip { position: absolute; left: 8px; top: -80px; z-index: 60; background: #fff; color: #16202f; padding: 10px 14px; border-radius: 8px; font-weight: 700; text-decoration: none; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 6px); }
+.sitebar { position: sticky; top: 0; z-index: 40; background: var(--sb-bg); color: #fff; padding-top: env(safe-area-inset-top, 0px);
+  font-family: "Archivo", "Segoe UI", system-ui, sans-serif; font-size: 16px; line-height: 1.2; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.14); }
+.sitebar :focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.sb-in { max-width: 1180px; margin: 0 auto; height: var(--sb-h); display: flex; align-items: center; gap: 4px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.sb-home { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 11px 0 8px; margin-left: -8px; border-radius: 8px; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+.sb-home svg { width: 19px; height: 19px; flex: none; }
+.sb-home:hover, .sb-home[aria-current="page"] { background: rgba(255, 255, 255, 0.14); }
+.sb-zones { display: flex; align-items: stretch; height: 100%; gap: 2px; margin-left: 6px; padding-left: 10px; position: relative; }
+.sb-zones::before { content: ""; position: absolute; left: 0; top: 50%; height: 22px; margin-top: -11px; width: 1px; background: rgba(255, 255, 255, 0.24); }
+.sb-zone { display: inline-flex; align-items: center; gap: 8px; padding: 0 3px; color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+.sb-zone b { display: grid; place-items: center; min-width: 38px; height: 30px; padding: 0 7px; border-radius: 7px; font-weight: 800; font-stretch: 118%; font-size: 0.8rem; letter-spacing: 0.02em;
+  background: var(--zc); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3); }
+.sb-zone span { display: none; padding-right: 8px; color: rgba(255, 255, 255, 0.9); }
+.sb-zone:hover b { box-shadow: inset 0 0 0 2px #fff; }
+.sb-zone:hover span { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.sb-zone[aria-current="true"] b { background: #fff; color: var(--zc); box-shadow: none; }
+.sb-zone[aria-current="true"] span { color: #fff; font-weight: 700; }
+.sitebar .ir { --zc: var(--z-ir); --zt: var(--zt-ir); } .sitebar .hrm { --zc: var(--z-hrm); --zt: var(--zt-hrm); } .sitebar .bm { --zc: var(--z-bm); --zt: var(--zt-bm); }
+@media (min-width: 900px) { .sb-zone span { display: inline; } .sb-zones { gap: 6px; } }
+.sb-menu { margin-left: auto; position: relative; }
+.sb-menu > summary { list-style: none; display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px 0 10px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  cursor: pointer; font-weight: 700; font-size: 0.92rem; user-select: none; -webkit-user-select: none; }
+.sb-menu > summary::-webkit-details-marker { display: none; }
+.sb-menu > summary svg { width: 18px; height: 18px; flex: none; }
+.sb-menu > summary:hover { background: rgba(255, 255, 255, 0.14); }
+.sb-menu[open] > summary { background: #fff; color: #1d2b4f; box-shadow: none; }
+@media (max-width: 400px) { .sb-menu > summary { padding: 0 8px; } .sb-menu > summary span { display: none; } .sb-home { padding-right: 8px; } .sb-zones { margin-left: 2px; padding-left: 8px; } }
+.sb-panel { position: absolute; right: 0; top: calc(100% + 9px); width: min(700px, calc(100vw - 32px)); max-height: calc(100vh - var(--sb-h) - 28px); overflow-y: auto;
+  background: var(--sheet, var(--surface)); color: var(--ink); border: 1px solid var(--rule, var(--line)); border-radius: 14px; box-shadow: 0 14px 36px rgba(10, 18, 36, 0.28);
+  padding: 14px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.sb-col { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.sb-colhead { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 0.92rem; line-height: 1.15; min-height: 38px; padding: 2px 4px 6px; border-bottom: 2px solid var(--zc); }
+.sb-colhead b { display: grid; place-items: center; min-width: 34px; height: 26px; padding: 0 6px; border-radius: 6px; background: var(--zc); color: #fff; font-stretch: 118%; font-size: 0.74rem; letter-spacing: 0.02em; }
+.sb-links { display: flex; flex-direction: column; gap: 2px; }
+.sb-links a { display: flex; align-items: center; min-height: 40px; padding: 6px 10px; border-radius: 8px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+.sb-links a:hover { background: color-mix(in srgb, var(--zt) 14%, transparent); color: var(--zt); }
+.sb-links a[aria-current="page"] { background: color-mix(in srgb, var(--zt) 14%, transparent); color: var(--zt); font-weight: 700; }
+.sb-panel :focus-visible { outline-color: var(--zt); }
+@media (max-width: 620px) {
+  .sb-panel { grid-template-columns: 1fr; gap: 12px; }
+  .sb-links { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .sb-links a { border: 1px solid var(--rule, var(--line)); padding: 6px 12px; font-size: 0.92rem; }
+  .sb-links a[aria-current="page"] { border-color: var(--zt); }
+}
+
+/* ---------- voettekst: alle onderdelen per vak ---------- */
+.sitefoot { margin-top: 40px; border-top: 1px solid var(--rule, var(--line)); background: var(--sheet, var(--surface)); color: var(--ink-soft, var(--muted));
+  font-family: "Archivo", "Segoe UI", system-ui, sans-serif; font-size: 0.9rem; line-height: 1.45; }
+.sf-in { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr)); gap: 28px;
+  padding: 30px max(16px, env(safe-area-inset-right, 0px)) calc(36px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sf-about { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.sf-about p { margin: 0; max-width: 34ch; }
+.sf-home { font-weight: 800; color: var(--ink); text-decoration: none; font-size: 1rem; }
+.sf-top { color: var(--ink-soft, var(--muted)); font-weight: 600; }
+.sf-col { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sf-head { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.sf-head b { display: grid; place-items: center; min-width: 32px; height: 22px; padding: 0 5px; border-radius: 5px; background: var(--zc); color: #fff; font-size: 0.7rem; font-stretch: 112%; letter-spacing: 0.02em; }
+.sf-col a { color: var(--ink-soft, var(--muted)); text-decoration: none; padding: 3px 0; }
+.sf-col a:hover { color: var(--zt); text-decoration: underline; text-underline-offset: 3px; }
+.sitefoot .ir { --zc: var(--z-ir); --zt: var(--zt-ir); } .sitefoot .hrm { --zc: var(--z-hrm); --zt: var(--zt-hrm); } .sitefoot .bm { --zc: var(--z-bm); --zt: var(--zt-bm); }
+@media (max-width: 820px) { .sf-in { grid-template-columns: repeat(3, minmax(0, 1fr)); } .sf-about { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .sf-in { grid-template-columns: 1fr 1fr; gap: 22px 16px; padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); } .sf-col.bm { grid-column: 1 / -1; } }
+
+
+.wrap { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 80px; }
+main { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.small { font-size: 0.9rem; color: var(--ink-soft); }
+.filter-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+.filter-label { font-weight: 700; }
+.linkbtn { border: 0; background: none; padding: 0; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-size: 0.9rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--rule); background: var(--sheet); color: var(--ink-soft); border-radius: 999px; padding: 7px 14px; font-weight: 500; display: inline-flex; gap: 8px; align-items: baseline; }
+.chip:hover { border-color: var(--accent); }
+.chip .n { font-size: 0.76rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 700; }
+.chip[aria-pressed="true"] .n { color: var(--accent); opacity: 0.8; }
+.sel-summary { font-weight: 600; }
+.bar { height: 8px; border-radius: 99px; background: var(--sunk); overflow: hidden; display: flex; }
+.bar i { display: block; height: 100%; background: var(--good); }
+
+/* modi */
+.modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; background: var(--sunk); border-radius: 12px; }
+.modes button { border: 0; background: transparent; border-radius: 9px; padding: 10px 8px; font-weight: 700; color: var(--ink-soft); }
+.modes button[aria-pressed="true"] { background: var(--sheet); color: var(--accent); box-shadow: 0 1px 3px rgba(10, 18, 36, 0.12); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.btn { border: 1px solid var(--rule); background: var(--sheet); border-radius: 9px; padding: 10px 16px; font-weight: 600; min-height: 44px; }
+.btn:hover:not(:disabled) { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.good { background: var(--good-soft); border-color: var(--good); color: var(--good); }
+.btn.bad { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.opt { display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+.opt input { width: 18px; height: 18px; accent-color: var(--accent); }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 9px; overflow: hidden; }
+.seg button { border: 0; background: var(--sheet); padding: 8px 12px; font-weight: 600; color: var(--ink-soft); font-size: 0.92rem; }
+.seg button + button { border-left: 1px solid var(--rule); }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+.empty { padding: 18px; border: 1px dashed var(--rule); border-radius: 12px; color: var(--ink-soft); }
+
+/* lijst */
+.search { position: relative; }
+.search input { width: 100%; border: 1px solid var(--rule); background: var(--sheet); border-radius: 10px; padding: 11px 14px 11px 40px; }
+.search input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); width: 17px; height: 17px; color: var(--ink-soft); pointer-events: none; }
+.les { display: flex; flex-direction: column; gap: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
+.les-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 14px 18px; background: var(--sunk); }
+.les-head > div:first-child { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 260px; }
+.les-head small { font-weight: 700; color: var(--accent); font-size: 0.82rem; }
+.les-head h3 { font-size: 1.05rem; font-weight: 700; }
+.les-head .row { gap: 6px; }
+.les-head .btn { min-height: 36px; padding: 6px 12px; font-size: 0.88rem; }
+dl { margin: 0; }
+.term { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, 1fr); gap: 4px 18px; padding: 12px 18px; border-top: 1px solid var(--rule); }
+.term dt { font-weight: 700; display: flex; gap: 8px; align-items: baseline; }
+.term dd { margin: 0; min-width: 0; }
+.term .art { display: block; margin-top: 3px; font-size: 0.86rem; font-weight: 600; color: var(--accent); }
+.dot { flex: none; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--ink-soft); transform: translateY(-1px); }
+.dot.k { background: var(--good); border-color: var(--good); }
+.dot.n { background: var(--bad); border-color: var(--bad); }
+mark { background: var(--mark); color: inherit; border-radius: 2px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.85rem; color: var(--ink-soft); align-items: center; }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+@media (max-width: 600px) { .term { grid-template-columns: 1fr; padding: 12px 16px; } .les-head { padding: 12px 16px; } }
+
+/* oefenen: kaart en dictee */
+.stage { display: flex; flex-direction: column; gap: 14px; }
+.meta { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 0.88rem; color: var(--ink-soft); font-weight: 600; }
+.card { position: relative; width: 100%; min-height: 260px; border: 1px solid var(--rule); border-radius: 16px; background: var(--sheet); padding: 26px 24px 22px;
+  display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; text-align: center; box-shadow: 0 2px 10px rgba(10, 18, 36, 0.06); }
+.card:hover { border-color: var(--accent); }
+.card .side { font-size: 0.8rem; font-weight: 700; color: var(--accent); }
+.card .front { font-size: clamp(1.35rem, 4.4vw, 1.9rem); font-weight: 800; font-stretch: 108%; line-height: 1.2; overflow-wrap: anywhere; hyphens: auto; }
+.card .front.long { font-size: 1.08rem; font-weight: 500; font-stretch: 100%; line-height: 1.5; max-width: 60ch; }
+.card .back { display: flex; flex-direction: column; gap: 8px; max-width: 60ch; padding-top: 14px; border-top: 1px solid var(--rule); width: 100%; }
+.card .back .ans { font-size: 1.05rem; }
+.card .back .ans.big { font-size: 1.4rem; font-weight: 800; font-stretch: 108%; }
+.card .art { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+.card .hint { font-size: 0.82rem; color: var(--ink-soft); }
+.answer-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+.answer-row .btn { min-height: 52px; }
+.prompt { background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+.prompt .q { font-size: 1.08rem; line-height: 1.55; }
+.prompt .q.big { font-size: 1.45rem; font-weight: 800; font-stretch: 108%; }
+.prompt label { font-weight: 700; font-size: 0.92rem; }
+.prompt input[type=text], .prompt textarea { width: 100%; border: 1.5px solid var(--rule); background: var(--paper); border-radius: 10px; padding: 12px 14px; font-size: 1.05rem; }
+.prompt textarea { min-height: 110px; resize: vertical; font-family: inherit; }
+.prompt input:focus, .prompt textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.fb { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.fb.good { background: var(--good-soft); } .fb.good b { color: var(--good); }
+.fb.bad { background: var(--bad-soft); } .fb.bad b { color: var(--bad); }
+.fb.self { background: var(--sunk); }
+.done { text-align: center; align-items: center; }
+.score { font-size: 2.6rem; font-weight: 800; font-stretch: 116%; line-height: 1; color: var(--accent); }
+.keys { font-size: 0.82rem; color: var(--ink-soft); }
+@media (max-width: 480px) { .panel { padding: 16px; } .card { min-height: 220px; padding: 22px 16px 18px; } .prompt { padding: 16px; } .keys { display: none; } }
+.foot { color: var(--ink-soft); font-size: 0.84rem; border-top: 1px solid var(--rule); padding-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a><header class="sitebar" id="sitebar"><div class="sb-in"><a class="sb-home" href="../../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9.5h11V10"/><path d="M10 19.5v-5h4v5"/></svg><span>Home</span></a><nav class="sb-zones" aria-label="Vakken"><a class="sb-zone ir" href="../../begrippen/inkoop-recht/" title="Inkoop en recht" aria-label="Inkoop en recht" aria-current="true" data-carry><b>IR</b><span>Inkoop en recht</span></a><a class="sb-zone hrm" href="../../begrippen/hrm/" title="HRM" aria-label="HRM" data-carry><b>HRM</b></a><a class="sb-zone bm" href="../../begrippen/praktijkproject/" title="Business management" aria-label="Business management" data-carry><b>BM</b><span>Business management</span></a></nav><details class="sb-menu"><summary aria-label="Menu: alle pagina's"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary><div class="sb-panel"><div class="sb-col ir"><span class="sb-colhead"><b>IR</b>Inkoop en recht</span><div class="sb-links"><a href="../../samenvattingen/inkoop-recht/">Samenvatting</a><a href="../../begrippen/inkoop-recht/">Begrippen</a><a href="../../inkoop-recht/#oefenen" data-default>Oefenvragen</a><a href="../../inkoop-recht/#toetsen">Weektoetsen</a></div></div><div class="sb-col hrm"><span class="sb-colhead"><b>HRM</b>HRM</span><div class="sb-links"><a href="../../samenvattingen/hrm/">Samenvatting</a><a href="../../begrippen/hrm/">Begrippen</a><a href="../../hrm/#oefenen" data-default>Oefenvragen</a><a href="../../hrm/#toetsen">Weektoetsen</a></div></div><div class="sb-col bm"><span class="sb-colhead"><b>BM</b>Business management</span><div class="sb-links"><a href="../../samenvattingen/praktijkproject/">Samenvatting</a><a href="../../begrippen/praktijkproject/">Begrippen</a><a href="../../praktijkproject/#oefenen" data-default>Oefenvragen</a><a href="../../praktijkproject/#toetsen">Weektoetsen</a><a href="../../bedrijfskunde/waalhop/">Casustoets Waalhop</a><a href="../../bedrijfskunde/heidezoom/">Casustoets Heidezoom</a></div></div></div></details></div></header><header class="band" id="top">
+<div class="band-in">
+  <nav class="crumbs" aria-label="Kruimelpad"><a href="../../">Home</a><i aria-hidden="true">/</i><a href="../../inkoop-recht/">Inkoop en recht</a><i aria-hidden="true">/</i><span aria-current="page">Begrippen</span></nav>
+  <div class="title-row"><span class="plate" aria-hidden="true">IR</span><div><span class="kind">Begrippen</span><h1>Inkoop en recht</h1></div></div>
+  <p class="lead">161 begrippen uit de samenvattingen, per les. Lees ze in de lijst, oefen met flitskaarten of typ ze in een dictee. Kies één les, een paar weken of alles.</p>
+  <nav class="tabs" aria-label="Onderdelen van dit vak" id="tabs"><a class="tab" href="../../samenvattingen/inkoop-recht/">Samenvatting</a><a class="tab" href="../../begrippen/inkoop-recht/" aria-current="page">Begrippen</a><a class="tab" href="../../inkoop-recht/#oefenen">Oefenen</a><a class="tab" href="../../inkoop-recht/#toetsen"><span class="l">Weektoetsen</span><span class="s">Toetsen</span></a></nav>
+</div>
+</header>
+<div class="wrap">
+<main id="main">
+  <section class="panel" aria-labelledby="sel-title">
+    <h2 id="sel-title">Kies wat je oefent</h2>
+    <div>
+      <div class="filter-head"><span class="filter-label" id="lbl-weeks">Weken</span><button class="linkbtn" id="weeks-all">alle weken</button><button class="linkbtn" id="weeks-none">geen</button></div>
+      <div class="chips" id="week-chips" role="group" aria-labelledby="lbl-weeks"></div>
+    </div>
+    <div>
+      <div class="filter-head"><span class="filter-label" id="lbl-parts">Onderdelen</span></div>
+      <div class="chips" id="part-chips" role="group" aria-labelledby="lbl-parts"></div>
+    </div>
+    <p class="sel-summary" id="sel-summary" aria-live="polite"></p>
+    <div class="bar" aria-hidden="true"><i id="sel-bar" style="width:0"></i></div>
+  </section>
+
+  <div class="modes" role="group" aria-label="Manier van oefenen">
+    <button type="button" data-mode="lijst" aria-pressed="true">Lijst</button>
+    <button type="button" data-mode="kaarten" aria-pressed="false">Flitskaarten</button>
+    <button type="button" data-mode="dictee" aria-pressed="false">Dictee</button>
+  </div>
+
+  <section id="pane-lijst" class="stage" aria-label="Begrippenlijst">
+    <div class="search" role="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Zoek een begrip, uitleg of artikel" autocomplete="off" aria-label="Zoek in de begrippen">
+    </div>
+    <div class="legend"><span><i class="dot k"></i>ken je</span><span><i class="dot n"></i>nog niet</span><span><i class="dot"></i>nog niet geoefend</span>
+      <label class="opt"><input type="checkbox" id="only-open"> alleen wat ik nog niet ken</label></div>
+    <div id="list"></div>
+  </section>
+
+  <section id="pane-kaarten" class="stage" aria-label="Flitskaarten" hidden>
+    <div class="panel">
+      <div class="row"><span class="filter-label">Voorkant</span>
+        <div class="seg" role="group" aria-label="Voorkant van de kaart"><button type="button" data-dir="b" aria-pressed="true">Begrip</button><button type="button" data-dir="u" aria-pressed="false">Uitleg</button></div></div>
+      <label class="opt"><input type="checkbox" id="k-open"> alleen wat ik nog niet ken</label>
+      <div class="row"><button type="button" class="btn primary" id="k-start">Start de kaarten</button><span class="small" id="k-info"></span></div>
+    </div>
+    <div id="k-stage" class="stage" hidden>
+      <div class="meta"><span id="k-where"></span><span id="k-count"></span></div>
+      <button type="button" class="card" id="k-card" aria-live="polite"></button>
+      <div class="answer-row"><button type="button" class="btn bad" id="k-no">Nog niet</button><button type="button" class="btn good" id="k-yes">Ken ik</button></div>
+      <p class="keys">Spatie draait de kaart om, pijl links is "nog niet", pijl rechts is "ken ik".</p>
+    </div>
+    <div id="k-done" class="panel done" hidden></div>
+  </section>
+
+  <section id="pane-dictee" class="stage" aria-label="Dictee" hidden>
+    <div class="panel">
+      <div class="row"><span class="filter-label">Je typt</span>
+        <div class="seg" role="group" aria-label="Wat typ je"><button type="button" data-dt="b" aria-pressed="true">Het begrip</button><button type="button" data-dt="u" aria-pressed="false">De uitleg</button></div></div>
+      <p class="small" id="d-uitleg-info">Je ziet de uitleg en typt het begrip. Kleine typfouten rekent de dictee goed, met de juiste spelling erbij.</p>
+      <label class="opt"><input type="checkbox" id="d-open"> alleen wat ik nog niet ken</label>
+      <div class="row"><button type="button" class="btn primary" id="d-start">Start het dictee</button><span class="small" id="d-info"></span></div>
+    </div>
+    <div id="d-stage" class="stage" hidden>
+      <div class="meta"><span id="d-where"></span><span id="d-count"></span></div>
+      <form class="prompt" id="d-form" autocomplete="off">
+        <p class="q" id="d-q"></p>
+        <label for="d-in" id="d-lbl">Welk begrip is dit?</label>
+        <input type="text" id="d-in" autocapitalize="off" autocorrect="off" spellcheck="false">
+        <textarea id="d-ta" hidden></textarea>
+        <div class="row" id="d-ask"><button type="submit" class="btn primary" id="d-check">Controleer</button><button type="button" class="btn" id="d-hint">Hint</button><button type="button" class="btn" id="d-skip">Weet ik niet</button></div>
+        <div id="d-fb" class="fb" hidden></div>
+        <div class="row" id="d-after" hidden></div>
+      </form>
+    </div>
+    <div id="d-done" class="panel done" hidden></div>
+  </section>
+</main>
+<footer class="foot">
+  <p>Alle begrippen komen uit de samenvattingen van de lessen. Staat er "gangbare invulling" bij, dan stond het niet uitgeschreven op de slides; check het dan in de les of je literatuur. Wetsartikelen staan erbij zoals in de samenvatting.</p>
+  <p>Wat je kent, onthoudt deze browser op dit apparaat. <button class="linkbtn" id="reset">Wis mijn voortgang voor deze selectie</button></p>
+</footer>
+</div>
+<script type="application/json" id="data">{"vak": "inkoop-recht", "lessen": [{"id": "ink-w1", "week": 1, "onderdeel": "Inkoop", "titel": "Inkoop en kosten, prijsstelling, TCO, marktvormen"}, {"id": "rec-w1", "week": 1, "onderdeel": "Recht", "titel": "Beginselen van het aanbestedingsrecht"}, {"id": "ink-w2", "week": 2, "onderdeel": "Inkoop", "titel": "Sourcingsbeleid, samenwerking en uitbesteden"}, {"id": "rec-w2", "week": 2, "onderdeel": "Recht", "titel": "Wie en wat is aanbestedingsplichtig"}, {"id": "ink-w3", "week": 3, "onderdeel": "Inkoop", "titel": "Europees aanbesteden, KPI's en SLA's"}, {"id": "rec-w3", "week": 3, "onderdeel": "Recht", "titel": "Drempelbedragen en beoordelingsinstrumenten"}, {"id": "ink-w4", "week": 4, "onderdeel": "Inkoop", "titel": "Aanbestedingsdocumenten beoordelen"}, {"id": "rec-w4", "week": 4, "onderdeel": "Recht", "titel": "Procedures en rechtsbescherming"}, {"id": "ink-w5", "week": 5, "onderdeel": "Inkoop", "titel": "Contractmanagement (NEVI, 5 pijlers)"}, {"id": "rec-w5", "week": 5, "onderdeel": "Recht", "titel": "Afgebroken onderhandelingen en algemene voorwaarden"}, {"id": "ink-w6", "week": 6, "onderdeel": "Inkoop", "titel": "Circulair inkopen en ethiek (NEVI-gedragscode)"}, {"id": "rec-w6", "week": 6, "onderdeel": "Recht", "titel": "Koop en eigendom"}], "items": [{"id": "ink-w1-inkoop", "les": "ink-w1", "begrip": "Inkoop", "uitleg": "Het van externe bronnen betrekken van alle goederen en diensten die noodzakelijk zijn voor de bedrijfsvoering en de instandhouding van een organisatie, tegen de meest gunstige voorwaarden.", "art": null, "ook": []}, {"id": "ink-w1-indirecte-inkoop", "les": "ink-w1", "begrip": "Indirecte inkoop", "uitleg": "Inkoop die niet productgerelateerd is. Facilitaire inkoop (schoonmaak, catering, beveiliging) valt hier meestal onder.", "art": null, "ook": []}, {"id": "ink-w1-directe-inkoop", "les": "ink-w1", "begrip": "Directe inkoop", "uitleg": "Productgerelateerde inkoop, ook wel primaire inkoop.", "art": null, "ook": ["primaire inkoop"]}, {"id": "ink-w1-make-or-buy-beslissing", "les": "ink-w1", "begrip": "Make-or-buy-beslissing", "uitleg": "De keuze waar alle inkoop mee begint: doe je het zelf of koop je het in?", "art": null, "ook": ["make or buy"]}, {"id": "ink-w1-brugfunctie-van-inkoop", "les": "ink-w1", "begrip": "Brugfunctie van inkoop", "uitleg": "Inkoopbeleid is afgeleid van het organisatiebeleid en sluit aan op de wensen van interne gebruikers; inkoop verbindt zo de gebruiker met de markt.", "art": null, "ook": ["brugfunctie"]}, {"id": "ink-w1-directe-kosten", "les": "ink-w1", "begrip": "Directe kosten", "uitleg": "Kosten die 100% bij het product of de dienst horen: grondstoffen, materialen, directe arbeid.", "art": null, "ook": []}, {"id": "ink-w1-indirecte-kosten", "les": "ink-w1", "begrip": "Indirecte kosten", "uitleg": "Kosten die voor alle producten worden gemaakt, zonder duidelijke relatie met één product. Voorbeeld: de receptioniste van de leverancier, die ook betaald wordt als er geen gast komt.", "art": null, "ook": ["overhead"]}, {"id": "ink-w1-dumping", "les": "ink-w1", "begrip": "Dumping", "uitleg": "Een leverancier vraagt in het buitenland een lagere prijs dan thuis, omdat de vaste kosten al door de thuismarkt zijn gedekt. De buitenlandse prijs hoeft alleen de variabele kosten te dekken.", "art": null, "ook": []}, {"id": "ink-w1-evenwichtsprijs", "les": "ink-w1", "begrip": "Evenwichtsprijs", "uitleg": "De prijs op het snijpunt van de vraag- en aanbodcurve.", "art": null, "ook": []}, {"id": "ink-w1-monopolie", "les": "ink-w1", "begrip": "Monopolie", "uitleg": "Marktvorm met één aanbieder; aan de vraagzijde: één vrager, dan heeft de inkoper veel macht.", "art": null, "ook": []}, {"id": "ink-w1-oligopolie", "les": "ink-w1", "begrip": "Oligopolie", "uitleg": "Marktvorm met een beperkte groep aanbieders (of vragers) die elkaars prijzen volgen.", "art": null, "ook": []}, {"id": "ink-w1-polypolie", "les": "ink-w1", "begrip": "Polypolie", "uitleg": "Marktvorm met veel aanbieders of vragers; de prijs is een concurrentiemiddel en de inkoper volgt de markt zonder invloed op de prijs.", "art": null, "ook": []}, {"id": "ink-w1-kostprijsplusmethode", "les": "ink-w1", "begrip": "Kostprijsplusmethode", "uitleg": "Prijsstelling waarbij de leverancier de kostprijs neemt en daar een bedrag of percentage bij optelt. Let op of de marge over de verkoopprijs of over de kostprijs gaat.", "art": null, "ook": ["kostprijsplus"]}, {"id": "ink-w1-should-cost-analyse", "les": "ink-w1", "begrip": "Should-cost-analyse", "uitleg": "De inkoper reconstrueert zelf de kostenopbouw van een product of dienst om de kostprijs te achterhalen.", "art": null, "ook": ["should cost"]}, {"id": "ink-w1-openboekcalculatie", "les": "ink-w1", "begrip": "Openboekcalculatie", "uitleg": "De leverancier geeft de inkoper zelf inzicht in de opbouw van zijn kosten.", "art": null, "ook": []}, {"id": "ink-w1-total-cost-of-ownership", "les": "ink-w1", "begrip": "Total Cost of Ownership", "uitleg": "Alle kosten en opbrengsten over de hele levensduur meenemen in een inkoopbeslissing, niet alleen de aanschafprijs: installatie, gebruik, onderhoud en restwaarde.", "art": null, "ook": ["TCO"]}, {"id": "rec-w1-gelijkheidsbeginsel", "les": "rec-w1", "begrip": "Gelijkheidsbeginsel", "uitleg": "Gelijke gevallen gelijk behandelen, tenzij objectief gerechtvaardigd. Ook verkapte en indirecte discriminatie is verboden; geldt vóór, tijdens en na de procedure.", "art": "art. 1.8 Aw", "ook": ["gelijkheid"]}, {"id": "rec-w1-non-discriminatiebeginsel", "les": "rec-w1", "begrip": "Non-discriminatiebeginsel", "uitleg": "Geen onderscheid naar nationaliteit, direct of indirect. Omgekeerde discriminatie mag wel.", "art": "art. 1.8 Aw; art. 18 VWEU", "ook": ["non-discriminatie"]}, {"id": "rec-w1-transparantiebeginsel", "les": "rec-w1", "begrip": "Transparantiebeginsel", "uitleg": "Passende openbaarheid vooraf, duidelijke criteria tijdens en motivering van de gunning achteraf, zodat te controleren is of gelijkheid en non-discriminatie worden nageleefd (Telaustria, Coname).", "art": "art. 1.9 Aw", "ook": ["transparantie"]}, {"id": "rec-w1-evenredigheidsbeginsel", "les": "rec-w1", "begrip": "Evenredigheidsbeginsel", "uitleg": "Eisen, voorwaarden en criteria staan in redelijke verhouding tot het voorwerp van de opdracht: niet zwaarder dan nodig, technisch, professioneel en financieel.", "art": "art. 1.10 Aw en de Gids proportionaliteit", "ook": ["evenredigheid", "proportionaliteit", "proportionaliteitsbeginsel"]}, {"id": "rec-w1-wederzijdse-erkenning", "les": "rec-w1", "begrip": "Wederzijdse erkenning", "uitleg": "Gelijkwaardige producten, certificaten en kwalificaties uit andere lidstaten accepteren (Vestergaard C-59/00).", "art": "art. 2.75 t/m 2.77 Aw", "ook": []}, {"id": "rec-w1-objectiviteitsbeginsel", "les": "rec-w1", "begrip": "Objectiviteitsbeginsel", "uitleg": "De dienst maakt de keuze voor de procedure en voor de toegelaten ondernemers op basis van objectieve criteria, zonder subjectieve voorkeuren.", "art": "art. 1.4 lid 1 Aw", "ook": ["objectiviteit"]}, {"id": "rec-w1-grensoverschrijdend-belang", "les": "rec-w1", "begrip": "Grensoverschrijdend belang", "uitleg": "Als dit er is, gelden de algemene beginselen altijd, ook onder de drempel. Het hangt af van onder meer de ligging dicht bij de grens, het bedrag en de aard van de opdracht.", "art": null, "ook": ["duidelijk grensoverschrijdend belang"]}, {"id": "rec-w1-clusterverbod", "les": "rec-w1", "begrip": "Clusterverbod", "uitleg": "Opdrachten niet onnodig samenvoegen, zodat ook het mkb kan meedoen.", "art": "art. 1.5 lid 1 Aw", "ook": []}, {"id": "rec-w1-gids-proportionaliteit", "les": "rec-w1", "begrip": "Gids Proportionaliteit", "uitleg": "Verplicht richtsnoer (pas toe of leg uit) dat inkopers helpt eisen en criteria in verhouding tot de opdracht te houden.", "art": "art. 1.10 lid 3 en 4 Aw", "ook": []}, {"id": "rec-w1-algemene-beginselen-van-behoorlijk-bestuur", "les": "rec-w1", "begrip": "Algemene beginselen van behoorlijk bestuur", "uitleg": "Beginselen die altijd gelden voor bestuursorganen: gelijkheid, zorgvuldigheid, rechtszekerheid, vertrouwen en evenredigheid.", "art": null, "ook": ["ABBB", "abbb"]}, {"id": "rec-w1-government-procurement-agreement", "les": "rec-w1", "begrip": "Government Procurement Agreement", "uitleg": "WTO-verdrag over overheidsopdrachten met als doel vrije internationale handel; de bovenste laag van het juridisch kader.", "art": null, "ook": ["GPA"]}, {"id": "ink-w2-sourcing", "les": "ink-w2", "begrip": "Sourcing", "uitleg": "De strategische keuze waar je inkoopt, bij wie en onder welke voorwaarden.", "art": null, "ook": []}, {"id": "ink-w2-single-sourcing", "les": "ink-w2", "begrip": "Single sourcing", "uitleg": "Bewust kiezen voor één leverancier.", "art": null, "ook": []}, {"id": "ink-w2-sole-sourcing", "les": "ink-w2", "begrip": "Sole sourcing", "uitleg": "Eén leverancier omdat die monopolist is: je hebt geen keus.", "art": null, "ook": []}, {"id": "ink-w2-dual-sourcing", "les": "ink-w2", "begrip": "Dual sourcing", "uitleg": "Afspraken met twee leveranciers.", "art": null, "ook": []}, {"id": "ink-w2-multiple-sourcing", "les": "ink-w2", "begrip": "Multiple sourcing", "uitleg": "Inkopen bij een veelvoud aan leveranciers; past vaak bij hefboomproducten.", "art": null, "ook": []}, {"id": "ink-w2-methode-van-kraljic", "les": "ink-w2", "begrip": "Methode van Kraljic", "uitleg": "Hiermee bepaal je op basis van financieel belang en leveringsrisico hoe belangrijk een product of dienst voor de organisatie is; daaruit volgt de sourcingstrategie (routine, hefboom, knelpunt, strategisch).", "art": null, "ook": ["Kraljic", "Kraljic-matrix"]}, {"id": "ink-w2-knelpuntproduct", "les": "ink-w2", "begrip": "Knelpuntproduct", "uitleg": "Kraljic-kwadrant met laag financieel belang en hoog risico: leveringszekerheid staat voorop, vaak noodgedwongen sole sourcing.", "art": null, "ook": ["knelpunt"]}, {"id": "ink-w2-hefboomproduct", "les": "ink-w2", "begrip": "Hefboomproduct", "uitleg": "Kraljic-kwadrant met hoog financieel belang, laag risico en veel aanbieders: concurrentie benutten.", "art": null, "ook": ["hefboom"]}, {"id": "ink-w2-co-makership", "les": "ink-w2", "begrip": "Co-makership", "uitleg": "De leverancier wordt verantwoordelijk voor een deel van het eindproduct, bijvoorbeeld een cateraar die samen met FM een restaurantconcept ontwikkelt.", "art": null, "ook": []}, {"id": "ink-w2-co-development", "les": "ink-w2", "begrip": "Co-development", "uitleg": "De leverancier helpt nieuwe producten of oplossingen ontwikkelen, bijvoorbeeld een beveiliger die meedenkt bij een herinrichting.", "art": null, "ook": ["co-design"]}, {"id": "ink-w2-leveranciersbeleid", "les": "ink-w2", "begrip": "Leveranciersbeleid", "uitleg": "Beleid gericht op het systematisch verbeteren, op peil houden of afbouwen van relaties met leveranciers.", "art": null, "ook": []}, {"id": "ink-w2-horizontale-samenwerking", "les": "ink-w2", "begrip": "Horizontale samenwerking", "uitleg": "Inkopers van organisaties die elkaars gelijken of concurrenten zijn, kopen samen in, bijvoorbeeld in een inkoopcombinatie.", "art": null, "ook": ["horizontaal samenwerken", "inkoopcombinatie"]}, {"id": "ink-w2-verticale-samenwerking", "les": "ink-w2", "begrip": "Verticale samenwerking", "uitleg": "Samenwerking tussen schakels in de logistieke keten: leverancier en inkopende organisatie.", "art": null, "ook": ["verticaal samenwerken"]}, {"id": "ink-w2-uitbesteden", "les": "ink-w2", "begrip": "Uitbesteden", "uitleg": "Een strategische beslissing en het daaropvolgende proces van overdracht, waarbij activiteiten die binnen het bedrijf werden uitgevoerd nu bij een externe leverancier worden ingekocht (Axelsson & Wynstra). Niet eenvoudig terug te draaien.", "art": null, "ook": ["outsourcing"]}, {"id": "ink-w2-turnkey-uitbesteden", "les": "ink-w2", "begrip": "Turnkey uitbesteden", "uitleg": "De hele activiteit gaat over naar de leverancier (tegenover partial: een deel).", "art": null, "ook": ["turnkey"]}, {"id": "ink-w2-on-site-uitbesteden", "les": "ink-w2", "begrip": "On-site uitbesteden", "uitleg": "Een derde voert de taak uit op jouw terrein, zoals schoonmaak of catering in je eigen pand.", "art": null, "ook": ["on-site"]}, {"id": "ink-w2-nearshore", "les": "ink-w2", "begrip": "Nearshore", "uitleg": "Uitbesteden binnen korte reisafstand of in dezelfde of een naburige tijdzone.", "art": null, "ook": ["nearshoring"]}, {"id": "ink-w2-offshore", "les": "ink-w2", "begrip": "Offshore", "uitleg": "Uitbesteden aan een organisatie in een ander, vaak ver, land.", "art": null, "ook": ["offshoring"]}, {"id": "rec-w2-drie-w-s", "les": "rec-w2", "begrip": "Drie W's", "uitleg": "Het vaste schema om aanbestedingsplicht te toetsen: Wie, Wat en Waarde.", "art": null, "ook": ["drie w", "3 w's"]}, {"id": "rec-w2-publiekrechtelijke-instelling", "les": "rec-w2", "begrip": "Publiekrechtelijke instelling", "uitleg": "Cumulatief: opgericht voor behoeften van algemeen belang, niet van industriële of commerciële aard; met rechtspersoonlijkheid; en met overheidsinvloed (financiering, toezicht of meer dan de helft van het bestuur aangewezen).", "art": "art. 1.1 Aw", "ook": []}, {"id": "rec-w2-gesubsidieerde-instelling", "les": "rec-w2", "begrip": "Gesubsidieerde instelling", "uitleg": "Krijgt meer dan 50% subsidie van de overheid voor de opdracht; aanbestedingsplichtig alleen voor werken en diensten boven de drempel.", "art": "art. 2.8 Aw", "ook": []}, {"id": "rec-w2-territoriaal-lichaam", "les": "rec-w2", "begrip": "Territoriaal lichaam", "uitleg": "Overheid met een eigen grondgebied: provincie, gemeente of waterschap.", "art": "art. 1.1 Aw", "ook": []}, {"id": "rec-w2-onder-bezwarende-titel", "les": "rec-w2", "begrip": "Onder bezwarende titel", "uitleg": "Er staat een op geld waardeerbare tegenprestatie tegenover de opdracht, zoals een vergoeding, kwijtschelding van belasting of vrijstelling van leges.", "art": "art. 1.1 Aw", "ook": ["bezwarende titel"]}, {"id": "rec-w2-werk", "les": "rec-w2", "begrip": "Werk", "uitleg": "Het product van bouwkundige of civieltechnische werken met een economische of technische functie; CPV-code begint met 45.", "art": "art. 1.1 Aw", "ook": []}, {"id": "rec-w2-dienst", "les": "rec-w2", "begrip": "Dienst", "uitleg": "De restcategorie van opdrachten: alles wat geen werk of levering is.", "art": null, "ook": []}, {"id": "rec-w2-sociale-en-andere-specifieke-diensten", "les": "rec-w2", "begrip": "Sociale en andere specifieke diensten", "uitleg": "Vroeger 2B-diensten, zoals huishoudelijke hulp, congressen en juridische dienstverlening; boven €750.000 geldt een lichter regime.", "art": "art. 2.38 en 2.39 Aw", "ook": ["2B-diensten", "sociale diensten"]}, {"id": "rec-w2-hoofdvoorwerp", "les": "rec-w2", "begrip": "Hoofdvoorwerp", "uitleg": "Bij een gemengde opdracht met onlosmakelijk verbonden onderdelen: wat essentieel en kenmerkend is bepaalt welke regels gelden. Bij leveringen plus diensten beslist de hoogste waarde.", "art": "art. 2.12a lid 1 en 2 Aw", "ook": []}, {"id": "rec-w2-raamovereenkomst", "les": "rec-w2", "begrip": "Raamovereenkomst", "uitleg": "Legt voor een bepaalde periode de voorwaarden vast (zoals prijs of hoeveelheid) voor opdrachten die later worden gegund; maximaal 4 jaar, behalve in deugdelijk gemotiveerde uitzonderingsgevallen.", "art": "art. 2.44 Aw; looptijd art. 2.140 lid 3 Aw", "ook": []}, {"id": "rec-w2-concessie", "les": "rec-w2", "begrip": "Concessie", "uitleg": "Overeenkomst waarmee de overheid de exploitatie van een economische activiteit (werken of diensten) aan een derde uitbesteedt, die het exploitatierisico draagt. Voorbeelden: parkeergarage, tolweg.", "art": "art. 1.1 Aw; Deel 2A Aw", "ook": ["concessieopdracht"]}, {"id": "rec-w2-percelenregeling", "les": "rec-w2", "begrip": "Percelenregeling", "uitleg": "Sommige percelen mag je zonder Europese aanbesteding gunnen: werken tot €1.000.000 en leveringen en diensten tot €80.000 per perceel, samen maximaal 20% van de totale waarde.", "art": "art. 2.18 en 2.19 Aw", "ook": []}, {"id": "rec-w2-splitsingsverbod", "les": "rec-w2", "begrip": "Splitsingsverbod", "uitleg": "Een opdracht niet opknippen om onder de drempel te blijven, behalve via de percelenregeling.", "art": "art. 2.14 Aw", "ook": []}, {"id": "rec-w2-quasi-inbesteden", "les": "rec-w2", "begrip": "Quasi-inbesteden", "uitleg": "De opdracht gaat zonder aanbesteding naar een eigen rechtspersoon als de dienst er toezicht houdt als op een eigen dienst, meer dan 80% van het werk voor die dienst is en er geen particulier kapitaal in zit.", "art": "art. 2.24a Aw", "ook": ["inbesteden"]}, {"id": "rec-w2-publiek-publieke-samenwerking", "les": "rec-w2", "begrip": "Publiek-publieke samenwerking", "uitleg": "Uitzondering waarbij overheden samenwerken in het openbaar belang, met of zonder gezamenlijke rechtspersoon, met maximaal 20% van de activiteiten op de open markt.", "art": "art. 2.24b en 2.24c Aw", "ook": []}, {"id": "rec-w2-voorbehouden-opdracht", "les": "rec-w2", "begrip": "Voorbehouden opdracht", "uitleg": "Wel aanbesteden, maar alleen sociale werkplaatsen (minimaal 30% personeel met een beperking of kansarm) mogen inschrijven.", "art": "art. 2.82 Aw", "ook": []}, {"id": "ink-w3-aanbestedende-dienst", "les": "ink-w3", "begrip": "Aanbestedende dienst", "uitleg": "Organisatie die moet aanbesteden: de Staat, provincies, gemeenten en waterschappen, publiekrechtelijke instellingen en de speciale-sectorbedrijven.", "art": null, "ook": []}, {"id": "ink-w3-cpv-code", "les": "ink-w3", "begrip": "CPV-code", "uitleg": "Europese code die aangeeft wat voor opdracht het is (werk, levering of dienst); overzicht bij PIANOo.", "art": null, "ook": ["CPV"]}, {"id": "ink-w3-tenderned", "les": "ink-w3", "begrip": "TenderNed", "uitleg": "Het Nederlandse online marktplein waar de overheid aanbestedingen publiceert.", "art": "art. 1.18 Aw", "ook": []}, {"id": "ink-w3-ted", "les": "ink-w3", "begrip": "TED", "uitleg": "Tenders Electronic Daily: de Europese plek voor publicatie van aanbestedingen.", "art": null, "ook": ["Tenders Electronic Daily"]}, {"id": "ink-w3-emvi", "les": "ink-w3", "begrip": "EMVI", "uitleg": "Economisch Meest Voordelige Inschrijving: het uitgangspunt bij gunnen.", "art": "art. 2.114 lid 1 Aw", "ook": ["Economisch Meest Voordelige Inschrijving"]}, {"id": "ink-w3-beste-prijs-kwaliteitverhouding", "les": "ink-w3", "begrip": "Beste prijs-kwaliteitverhouding", "uitleg": "De standaardmethode om EMVI vast te stellen; laagste prijs of laagste kosten mogen alleen met motivering.", "art": "art. 2.114 lid 2 sub a en lid 3 Aw", "ook": ["BPKV"]}, {"id": "ink-w3-best-value-procurement", "les": "ink-w3", "begrip": "Best Value Procurement", "uitleg": "Prestatie-inkoop: inschrijvingen gewaardeerd op de meeste waarde voor de laagste prijs. Werkt als de opdrachtgever weet wat hij wil bereiken, maar voor het hoe de expertise van de leverancier nodig heeft.", "art": null, "ook": ["BVP", "prestatie-inkoop"]}, {"id": "ink-w3-kritieke-succesfactor", "les": "ink-w3", "begrip": "Kritieke succesfactor", "uitleg": "Wat moet goed gaan om je doel te halen?", "art": null, "ook": ["KSF"]}, {"id": "ink-w3-kpi", "les": "ink-w3", "begrip": "KPI", "uitleg": "Een meetbare kwantitatieve of kwalitatieve grootheid die de toestand of ontwikkeling van een proces weergeeft; hiermee meet je hoe het staat met de KSF.", "art": null, "ook": ["kritieke prestatie-indicator", "key performance indicator", "prestatie-indicator"]}, {"id": "ink-w3-norm", "les": "ink-w3", "begrip": "Norm", "uitleg": "Het streefniveau voor een KPI. Zonder dit is een KPI geen afspraak.", "art": null, "ook": []}, {"id": "ink-w3-service-level-agreement", "les": "ink-w3", "begrip": "Service Level Agreement", "uitleg": "Het onderdeel van het contract waarin het niveau van dienstverlening in meetbare grootheden wordt omschreven: definities, overlegstructuur en prestatie-indicatoren met score (Van der Honing).", "art": null, "ook": ["SLA"]}, {"id": "rec-w3-drempelbedrag", "les": "rec-w3", "begrip": "Drempelbedrag", "uitleg": "Bedrag (excl. btw) waarboven Europees aanbesteden verplicht is, iedere twee jaar door de Europese Commissie vastgesteld. Per 2026: werken €5.404.000, centrale overheid €140.000, andere diensten €216.000.", "art": "art. 2.1 t/m 2.7 Aw", "ook": ["drempel", "drempelwaarde"]}, {"id": "rec-w3-geraamde-waarde", "les": "rec-w3", "begrip": "Geraamde waarde", "uitleg": "Het totale bedrag van de opdracht excl. btw, inclusief opties en verlengingen.", "art": "art. 2.13 t/m 2.22 Aw; art. 2.15 lid 2 Aw", "ook": ["raming"]}, {"id": "rec-w3-uitsluitingsgronden", "les": "rec-w3", "begrip": "Uitsluitingsgronden", "uitleg": "Bepalen of een ondernemer mag meedoen, bijvoorbeeld bij een veroordeling voor fraude of belastingschulden; dwingend of facultatief.", "art": "art. 2.86, 2.86a (dwingend) en 2.87 (facultatief) Aw", "ook": ["uitsluitingsgrond"]}, {"id": "rec-w3-geschiktheidseisen", "les": "rec-w3", "begrip": "Geschiktheidseisen", "uitleg": "Minimumeisen die bepalen of een ondernemer de opdracht aankan: financiële en economische draagkracht, technische bekwaamheid en beroepsbevoegdheid.", "art": "art. 2.90 Aw", "ook": ["geschiktheidseis"]}, {"id": "rec-w3-omzeteis", "les": "rec-w3", "begrip": "Omzeteis", "uitleg": "Geschiktheidseis die alleen met zwaarwegende motivering mag en maximaal drie keer de geraamde waarde mag zijn.", "art": "art. 2.90 lid 3 en lid 5 sub a Aw", "ook": []}, {"id": "rec-w3-selectiecriteria", "les": "rec-w3", "begrip": "Selectiecriteria", "uitleg": "Bepalen wie van de geschikte gegadigden mag inschrijven; alleen bij procedures met twee fasen.", "art": "art. 2.99 lid 1 Aw", "ook": ["selectiecriterium"]}, {"id": "rec-w3-technische-specificaties", "les": "rec-w3", "begrip": "Technische specificaties", "uitleg": "Bepalen of het aangebodene voldoet aan wat gevraagd wordt; een merk eisen mag alleen met 'of gelijkwaardig'.", "art": "art. 2.75 e.v.; art. 2.76 lid 3 en 4 Aw", "ook": []}, {"id": "rec-w3-gunningscriteria", "les": "rec-w3", "begrip": "Gunningscriteria", "uitleg": "Bepalen welke inschrijving de beste is; het relatieve gewicht moet vooraf bekend zijn.", "art": "art. 2.114 e.v.; art. 2.115 lid 4 Aw", "ook": ["gunningscriterium"]}, {"id": "rec-w3-abnormaal-lage-inschrijving", "les": "rec-w3", "begrip": "Abnormaal lage inschrijving", "uitleg": "Een inschrijving met een verdacht lage prijs, waarvoor de wet een aparte regeling heeft.", "art": "art. 2.116 Aw", "ook": []}, {"id": "rec-w3-alcatel-termijn", "les": "rec-w3", "begrip": "Alcatel-termijn", "uitleg": "Opschortende termijn (standstill) van ten minste 20 kalenderdagen na de gunningsbeslissing, waarin geen overeenkomst gesloten mag worden.", "art": "art. 2.127 lid 1 t/m 3 Aw", "ook": ["standstill", "opschortende termijn", "standstilltermijn"]}, {"id": "ink-w4-aankondiging", "les": "ink-w4", "begrip": "Aankondiging", "uitleg": "Het openbare bericht waarmee de aanbesteding start; samen met de eisen en de gunningscriteria het belangrijkste om te beoordelen of een aanbesteding eerlijk en toegankelijk is.", "art": null, "ook": []}, {"id": "ink-w4-of-gelijkwaardig", "les": "ink-w4", "begrip": "Of gelijkwaardig", "uitleg": "Toevoeging die verplicht is als een aanbesteder toch een merk noemt, omdat een nauwkeurige omschrijving anders niet kan.", "art": "art. 2.76 lid 4 Aw", "ook": []}, {"id": "ink-w4-percelen", "les": "ink-w4", "begrip": "Percelen", "uitleg": "Delen waarin een opdracht is opgeknipt, zodat ook kleinere bedrijven kunnen meedoen; kijk hiernaar bij de vraag of het mkb kan meedoen.", "art": null, "ook": ["perceel"]}, {"id": "rec-w4-openbare-procedure", "les": "rec-w4", "begrip": "Openbare procedure", "uitleg": "Procedure in één fase: iedereen mag inschrijven en levert kwalificatie en offerte in één keer in. Minimumtermijn 45 dagen.", "art": "art. 2.26 Aw; termijn art. 2.71 lid 1 Aw", "ook": []}, {"id": "rec-w4-niet-openbare-procedure", "les": "rec-w4", "begrip": "Niet-openbare procedure", "uitleg": "Procedure in twee fasen: eerst selectie (minimaal 5 gegadigden), daarna inschrijving. Past als je veel inschrijvers verwacht.", "art": "art. 2.27 Aw; art. 2.99 lid 3 Aw", "ook": []}, {"id": "rec-w4-concurrentiegerichte-dialoog", "les": "rec-w4", "begrip": "Concurrentiegerichte dialoog", "uitleg": "Procedure voor zeer complexe opdrachten waarbij de dienst samen met marktpartijen PvE en oplossing vaststelt; minimaal 3 gegadigden, gunnen altijd op beste prijs-kwaliteitverhouding.", "art": "art. 2.28 Aw; art. 2.110 lid 1 en art. 2.29 sub i Aw", "ook": []}, {"id": "rec-w4-mededingingsprocedure-met-onderhandeling", "les": "rec-w4", "begrip": "Mededingingsprocedure met onderhandeling", "uitleg": "Procedure in dezelfde omstandigheden als de dialoog, maar hier schrijf je eerst in en wordt daarna onderhandeld; minimaal 3 gegadigden, laagste prijs mag.", "art": "art. 2.30 lid 1 Aw", "ook": []}, {"id": "rec-w4-onderhandelingsprocedure-zonder-voorafgaande-aan", "les": "rec-w4", "begrip": "Onderhandelingsprocedure zonder voorafgaande aankondiging", "uitleg": "Uitzonderingsprocedure, alleen bij geen geschikte inschrijvingen, één mogelijke ondernemer of dwingende spoed.", "art": "art. 2.32 Aw", "ook": ["onderhandelingsprocedure zonder aankondiging"]}, {"id": "rec-w4-dwingende-spoed", "les": "rec-w4", "begrip": "Dwingende spoed", "uitleg": "Een onvoorzienbare gebeurtenis, niet te wijten aan de dienst, waardoor de minimumtermijnen niet haalbaar zijn. Een dijkdoorbraak wel, de dijkverhoging daarna niet.", "art": "art. 2.32 lid 1 sub c Aw", "ook": []}, {"id": "rec-w4-cherry-picking", "les": "rec-w4", "begrip": "Cherry picking", "uitleg": "Oplossingen van de ene deelnemer doorspelen aan een andere; verboden bij de dialoog en de mededingingsprocedure.", "art": "art. 2.110 lid 7 Aw", "ook": []}, {"id": "rec-w4-marktconsultatie", "les": "rec-w4", "begrip": "Marktconsultatie", "uitleg": "Geen officiële procedure, maar een verkenning vooraf aan de aanbesteding die inzicht geeft in de markt; ook hier gelden objectiviteit, transparantie en gelijkheid.", "art": null, "ook": []}, {"id": "rec-w4-kort-geding", "les": "rec-w4", "begrip": "Kort geding", "uitleg": "Snelle procedure voor voorlopige voorzieningen, zoals een verbod tot gunning of een herbeoordeling; daarom alleen een voorschot op schadevergoeding.", "art": null, "ook": []}, {"id": "rec-w4-bodemprocedure", "les": "rec-w4", "begrip": "Bodemprocedure", "uitleg": "Procedure na de standstill, voor vernietiging van een overeenkomst, een verklaring voor recht of schadevergoeding.", "art": "art. 4.15 lid 1 Aw; art. 6:162 BW", "ook": []}, {"id": "rec-w4-gegadigde", "les": "rec-w4", "begrip": "Gegadigde", "uitleg": "Een ondernemer die in de selectiefase verzoekt om deel te nemen; na de selectie heet die inschrijver.", "art": null, "ook": []}, {"id": "ink-w5-contractmanagement", "les": "ink-w5", "begrip": "Contractmanagement", "uitleg": "Het geheel van activiteiten gericht op het wederzijds doen nakomen van afspraken tussen leveranciers en opdrachtgevers, zodat maximale waarde ontstaat voor het bestede geld.", "art": null, "ook": []}, {"id": "ink-w5-contractbeheer", "les": "ink-w5", "begrip": "Contractbeheer", "uitleg": "Het administratieve deel van contractmanagement: contracten registreren, beheren en archiveren en mutaties verwerken.", "art": null, "ook": []}, {"id": "ink-w5-prestatiemanagement", "les": "ink-w5", "begrip": "Prestatiemanagement", "uitleg": "Het meten en sturen van de prestaties van de leverancier (en de eigen organisatie), met KPI's en SLA's.", "art": null, "ook": []}, {"id": "ink-w5-maverick-buying", "les": "ink-w5", "begrip": "Maverick buying", "uitleg": "Inkopen buiten de contracten om.", "art": null, "ook": []}, {"id": "ink-w5-vijf-pijlers-van-contractmanagement", "les": "ink-w5", "begrip": "Vijf pijlers van contractmanagement", "uitleg": "Het NEVI-model met governance, contractadministratie, prestatiemanagement, relatiemanagement en leveranciersmanagement en -ontwikkeling.", "art": null, "ook": ["vijf pijlers", "5 pijlers"]}, {"id": "ink-w5-governance", "les": "ink-w5", "begrip": "Governance", "uitleg": "Eerste NEVI-pijler: het raamwerk voor hoe contracten worden beheerd, met beleid, rollen, toezicht, risicobeheersing en compliance.", "art": null, "ook": []}, {"id": "ink-w5-contractadministratie", "les": "ink-w5", "begrip": "Contractadministratie", "uitleg": "NEVI-pijler die het belangrijkste instrument is: centraal inzicht in verplichtingen, afspraken en mijlpalen.", "art": null, "ook": []}, {"id": "ink-w5-relatiemanagement", "les": "ink-w5", "begrip": "Relatiemanagement", "uitleg": "NEVI-pijler gericht op sterke relaties met alle stakeholders, intern en extern, met consistente communicatie en constructieve conflictoplossing.", "art": null, "ook": []}, {"id": "rec-w5-contractvrijheid", "les": "rec-w5", "begrip": "Contractvrijheid", "uitleg": "Je kiest zelf of, met wie en wat je afspreekt; een overeenkomst komt tot stand door aanbod en aanvaarding.", "art": "art. 6:217 lid 1 BW", "ook": []}, {"id": "rec-w5-vormvrijheid", "les": "rec-w5", "begrip": "Vormvrijheid", "uitleg": "Een overeenkomst kan in elke vorm ontstaan, ook mondeling, tenzij de wet een vorm eist.", "art": "art. 3:37 lid 1 BW", "ook": []}, {"id": "rec-w5-pacta-sunt-servanda", "les": "rec-w5", "begrip": "Pacta sunt servanda", "uitleg": "Afspraak is afspraak: een overeenkomst is bindend; niet nakomen is een tekortkoming.", "art": "art. 6:74 BW", "ook": []}, {"id": "rec-w5-vertrouwensbeginsel", "les": "rec-w5", "begrip": "Vertrouwensbeginsel", "uitleg": "Je mag uitgaan van wat de ander je redelijkerwijs deed vertrouwen, als dat vertrouwen gerechtvaardigd is.", "art": "art. 3:35 BW (naast art. 3:33 BW)", "ook": []}, {"id": "rec-w5-risicobeginsel", "les": "rec-w5", "begrip": "Risicobeginsel", "uitleg": "Wie een risico in het leven roept of zich ermee belast, draagt het.", "art": null, "ook": []}, {"id": "rec-w5-relativiteit", "les": "rec-w5", "begrip": "Relativiteit", "uitleg": "Een overeenkomst bindt in principe alleen de partijen zelf.", "art": null, "ook": ["relativiteitsbeginsel"]}, {"id": "rec-w5-redelijkheid-en-billijkheid", "les": "rec-w5", "begrip": "Redelijkheid en billijkheid", "uitleg": "Kunnen een overeenkomst aanvullen of beperken; de beperkende werking is het laatste redmiddel tegen AV voor grote ondernemingen.", "art": "art. 6:248 lid 1 (aanvullend) en lid 2 (beperkend) BW", "ook": []}, {"id": "rec-w5-precontractuele-fase", "les": "rec-w5", "begrip": "Precontractuele fase", "uitleg": "De onderhandelingsfase vóór een overeenkomst; niet in de wet geregeld, maar beheerst door de redelijkheid en billijkheid. Afbreken mag, tenzij dat door gerechtvaardigd vertrouwen of andere omstandigheden onaanvaardbaar is (CBB/JPO).", "art": null, "ook": []}, {"id": "rec-w5-negatief-contractsbelang", "les": "rec-w5", "begrip": "Negatief contractsbelang", "uitleg": "Schadevergoeding voor de gemaakte kosten bij onrechtmatig afgebroken onderhandelingen; het standaarduitgangspunt.", "art": "art. 6:162 BW", "ook": []}, {"id": "rec-w5-positief-contractsbelang", "les": "rec-w5", "begrip": "Positief contractsbelang", "uitleg": "Schadevergoeding voor de gederfde winst; alleen bij hoge uitzondering, bijvoorbeeld bij opzet of afbreken zonder reden.", "art": "art. 6:162 BW", "ook": []}, {"id": "rec-w5-rompovereenkomst", "les": "rec-w5", "begrip": "Rompovereenkomst", "uitleg": "Een overeenkomst die al ontstaat zodra de essentiële punten vastliggen.", "art": null, "ook": []}, {"id": "rec-w5-voorbehoud", "les": "rec-w5", "begrip": "Voorbehoud", "uitleg": "Clausule in de onderhandelingen, zoals 'pas na schriftelijke vastlegging' of 'na instemming van het bestuur', om gerechtvaardigd vertrouwen en een rompovereenkomst te voorkomen.", "art": null, "ook": []}, {"id": "rec-w5-algemene-voorwaarden", "les": "rec-w5", "begrip": "Algemene voorwaarden", "uitleg": "Schriftelijk opgestelde bedingen, opgesteld om in meerdere overeenkomsten te worden opgenomen, behalve kernbedingen.", "art": "art. 6:231 sub a BW", "ook": ["AV"]}, {"id": "rec-w5-kernbeding", "les": "rec-w5", "begrip": "Kernbeding", "uitleg": "Beding over de kern van de prestatie (prijs, product, dienst), dat nooit onder de algemene voorwaarden valt.", "art": "art. 6:231 sub a BW", "ook": ["kernbedingen"]}, {"id": "rec-w5-gebruiker", "les": "rec-w5", "begrip": "Gebruiker", "uitleg": "De partij van wie de algemene voorwaarden afkomstig zijn.", "art": "art. 6:231 sub b BW", "ook": []}, {"id": "rec-w5-wederpartij", "les": "rec-w5", "begrip": "Wederpartij", "uitleg": "De partij die aan de algemene voorwaarden gebonden wordt.", "art": "art. 6:231 sub c BW", "ook": []}, {"id": "rec-w5-onredelijk-bezwarend", "les": "rec-w5", "begrip": "Onredelijk bezwarend", "uitleg": "Vernietigingsgrond voor een beding in AV, gelet op alle omstandigheden: aard en inhoud van de overeenkomst, hoe ze tot stand kwam en de kenbare belangen.", "art": "art. 6:233 sub a BW", "ook": []}, {"id": "rec-w5-informatieplicht-algemene-voorwaarden", "les": "rec-w5", "begrip": "Informatieplicht algemene voorwaarden", "uitleg": "De gebruiker moet de AV uiterlijk bij het sluiten ter hand stellen; anders is er geen redelijke mogelijkheid tot kennisneming en kan de wederpartij vernietigen.", "art": "art. 6:233 sub b jo. 6:234 BW", "ook": ["ter hand stellen", "terhandstelling"]}, {"id": "rec-w5-zwarte-lijst", "les": "rec-w5", "begrip": "Zwarte lijst", "uitleg": "Bedingen die als onredelijk bezwarend gelden, zonder tegenbewijs; alleen voor consumenten.", "art": "art. 6:236 BW", "ook": []}, {"id": "rec-w5-grijze-lijst", "les": "rec-w5", "begrip": "Grijze lijst", "uitleg": "Bedingen die vermoed worden onredelijk bezwarend te zijn; de gebruiker mag het tegendeel bewijzen.", "art": "art. 6:237 BW", "ook": []}, {"id": "rec-w5-reflexwerking", "les": "rec-w5", "begrip": "Reflexwerking", "uitleg": "Een kleine onderneming die vergelijkbaar is met een consument kan via de open norm toch de gedachte achter de zwarte en grijze lijst inroepen.", "art": null, "ook": []}, {"id": "rec-w5-battle-of-forms", "les": "rec-w5", "begrip": "Battle of forms", "uitleg": "Beide partijen verwijzen naar hun eigen AV; dan gelden die van wie het eerst verwijst, tenzij de ander ze uitdrukkelijk van de hand wijst.", "art": "art. 6:225 lid 3 BW", "ook": ["first-shot rule", "first shot rule"]}, {"id": "rec-w5-eigendomsvoorbehoud", "les": "rec-w5", "begrip": "Eigendomsvoorbehoud", "uitleg": "De leverancier blijft eigenaar tot er betaald is; belangrijk bij faillissement.", "art": "art. 3:92 BW", "ook": []}, {"id": "rec-w5-exoneratieclausule", "les": "rec-w5", "begrip": "Exoneratieclausule", "uitleg": "Beding waarmee een partij de eigen aansprakelijkheid beperkt of uitsluit, bijvoorbeeld tot de factuurwaarde.", "art": "toetsing aan art. 6:248 lid 2 BW", "ook": ["exoneratie", "exoneratiebeding"]}, {"id": "rec-w5-beklemde-detaillist", "les": "rec-w5", "begrip": "Beklemde detaillist", "uitleg": "Een detaillist mag niet vastzitten tussen ruimere aansprakelijkheid tegenover zijn klant en een exoneratie van zijn eigen leverancier.", "art": "art. 6:244 BW", "ook": []}, {"id": "rec-w5-overmacht", "les": "rec-w5", "begrip": "Overmacht", "uitleg": "Een tekortkoming die de schuldenaar niet kan worden toegerekend; regelend recht, dus de gebruiker breidt het in de AV voor zichzelf vaak uit.", "art": "art. 6:75 BW", "ook": []}, {"id": "rec-w5-arbitrage", "les": "rec-w5", "begrip": "Arbitrage", "uitleg": "Geschilbeslechting waarbij arbiters beslissen en de rechter niet meer bevoegd is: sneller, meestal duurder.", "art": null, "ook": []}, {"id": "ink-w6-sustainable-development-goals", "les": "ink-w6", "begrip": "Sustainable Development Goals", "uitleg": "De duurzaamheidsdoelen van de VN (2015-2030), die de millenniumdoelen vervingen en die inkopers vertalen naar contracten.", "art": null, "ook": ["SDG's", "SDGs", "SDG"]}, {"id": "ink-w6-groen-inkopen", "les": "ink-w6", "begrip": "Groen inkopen", "uitleg": "Inkopen met de focus op het verminderen van de milieu-impact.", "art": null, "ook": []}, {"id": "ink-w6-circulair-inkopen", "les": "ink-w6", "begrip": "Circulair inkopen", "uitleg": "Inkopen met de focus op het zo lang mogelijk behouden van de waarde van grondstoffen en producten ('afval bestaat niet').", "art": null, "ook": []}, {"id": "ink-w6-windowdressing", "les": "ink-w6", "begrip": "Windowdressing", "uitleg": "Fase 2 van het fasemodel duurzaam inkopen: duurzaamheid zit in communicatie en marketing, niet in de businessstrategie.", "art": null, "ook": []}, {"id": "ink-w6-fasemodel-duurzaam-inkopen", "les": "ink-w6", "begrip": "Fasemodel duurzaam inkopen", "uitleg": "Model met zes fasen: ontkenning, windowdressing, naleving wet- en regelgeving, drijfveer voor kostenbesparing, drijfveer voor innovatie en drijfveer voor maatschappelijke waarde.", "art": null, "ook": []}, {"id": "ink-w6-iso-20400", "les": "ink-w6", "begrip": "ISO 20400", "uitleg": "De norm voor duurzaam inkopen; in fase 6 van het fasemodel is de inkoopfunctie zo ingericht.", "art": null, "ook": []}, {"id": "ink-w6-nevi-gedragscode", "les": "ink-w6", "begrip": "NEVI-gedragscode", "uitleg": "Zelfregulering van de beroepsgroep zonder wettelijke grondslag, met drie principes: maatschappelijke waarde, integriteit en objectiviteit, en deskundigheid en verantwoording.", "art": null, "ook": ["gedragscode"]}, {"id": "ink-w6-wederkerigheid", "les": "ink-w6", "begrip": "Wederkerigheid", "uitleg": "Uitgangspunt van de NEVI-gedragscode: ook leveranciers houden zich aan gedragsregels; ethisch handelen is een gezamenlijke verantwoordelijkheid.", "art": null, "ook": []}, {"id": "rec-w6-koopovereenkomst", "les": "rec-w6", "begrip": "Koopovereenkomst", "uitleg": "Benoemde, wederkerige overeenkomst: een plicht tot leveren tegenover een plicht tot betalen.", "art": "art. 7:1 BW", "ook": ["koop"]}, {"id": "rec-w6-consumentenkoop", "les": "rec-w6", "begrip": "Consumentenkoop", "uitleg": "Koop van een roerende zaak door een koper die niet handelt in de uitoefening van een beroep of bedrijf, van een verkoper die dat wel doet; grotendeels dwingend recht.", "art": "art. 7:5 BW; art. 7:6 lid 1 BW", "ook": []}, {"id": "rec-w6-regelend-recht", "les": "rec-w6", "begrip": "Regelend recht", "uitleg": "Recht waarvan partijen in hun overeenkomst mogen afwijken; de koopregeling is dat, behalve bij consumentenkoop.", "art": null, "ook": []}, {"id": "rec-w6-dwingend-recht", "les": "rec-w6", "begrip": "Dwingend recht", "uitleg": "Recht waarvan partijen niet mogen afwijken, zoals het grootste deel van de consumentenkoop.", "art": null, "ook": []}, {"id": "rec-w6-conformiteit", "les": "rec-w6", "begrip": "Conformiteit", "uitleg": "De zaak beantwoordt aan de overeenkomst: ze voldoet, gelet op de aard en de mededelingen van de verkoper, aan de redelijke verwachtingen van de koper.", "art": "art. 7:17 BW", "ook": []}, {"id": "rec-w6-negatieve-garantie", "les": "rec-w6", "begrip": "Negatieve garantie", "uitleg": "Een garantie die de rechten van de koper eigenlijk inperkt; mag bij zakelijke koop, niet bij consumentenkoop.", "art": "art. 7:6 en 7:6a BW", "ook": []}, {"id": "rec-w6-bewijsvermoeden", "les": "rec-w6", "begrip": "Bewijsvermoeden", "uitleg": "Openbaart een gebrek zich kort na aflevering, dan wordt vermoed dat de zaak nooit conform was; volgens de huidige wet binnen één jaar (de slide noemt 6 maanden en art. 7:18 lid 2).", "art": "art. 7:18a lid 2 BW", "ook": []}, {"id": "rec-w6-klachtplicht", "les": "rec-w6", "begrip": "Klachtplicht", "uitleg": "De koper moet binnen bekwame tijd klagen nadat hij het gebrek heeft ontdekt of had moeten ontdekken; voor een consument is binnen twee maanden in ieder geval op tijd.", "art": "art. 7:23 lid 1 BW", "ook": []}, {"id": "rec-w6-recht-van-reclame", "les": "rec-w6", "begrip": "Recht van reclame", "uitleg": "Lijkt op ontbinding: de onbetaalde verkoper haalt de zaak terug, ook tijdens een faillissement, binnen 6 weken na opeisbaarheid en 60 dagen na aflevering.", "art": "art. 7:39, 7:41 en 7:44 BW", "ook": []}, {"id": "rec-w6-natuurlijke-verbintenis", "les": "rec-w6", "begrip": "Natuurlijke verbintenis", "uitleg": "Wat na verjaring of verval van een recht overblijft: niet meer afdwingbaar.", "art": "art. 6:3 BW", "ook": []}, {"id": "rec-w6-verjaring", "les": "rec-w6", "begrip": "Verjaring", "uitleg": "Een recht wordt na een termijn niet meer afdwingbaar, maar de termijn kan gestuit worden, bijvoorbeeld met een aanmaning. Hoofdregel 20 jaar, meestal 5 jaar.", "art": "art. 3:306 e.v. BW", "ook": []}, {"id": "rec-w6-verval", "les": "rec-w6", "begrip": "Verval", "uitleg": "Een recht gaat na een termijn verloren zonder dat die termijn gestuit kan worden.", "art": null, "ook": []}, {"id": "rec-w6-koop-op-afstand", "les": "rec-w6", "begrip": "Koop op afstand", "uitleg": "Consumentenkoop met alleen communicatie op afstand; de consument heeft een ontbindingsrecht van 14 dagen.", "art": "art. 6:230g jo. 6:230m en 6:230o BW", "ook": []}, {"id": "rec-w6-productaansprakelijkheid", "les": "rec-w6", "begrip": "Productaansprakelijkheid", "uitleg": "De producent (niet de verkoper) is aansprakelijk voor schade door een gebrekkig product.", "art": "art. 6:185 BW", "ook": []}, {"id": "rec-w6-eigendomsoverdracht", "les": "rec-w6", "begrip": "Eigendomsoverdracht", "uitleg": "Vereist een geldige titel, beschikkingsbevoegdheid en levering. Betaling is geen voorwaarde.", "art": "art. 3:84 lid 1 BW", "ook": []}, {"id": "rec-w6-beschikkingsbevoegdheid", "les": "rec-w6", "begrip": "Beschikkingsbevoegdheid", "uitleg": "Voorwaarde voor eigendomsoverdracht: mag de vervreemder over de zaak beschikken?", "art": "art. 3:84 lid 1 BW", "ook": []}, {"id": "rec-w6-levering-van-een-onroerende-zaak", "les": "rec-w6", "begrip": "Levering van een onroerende zaak", "uitleg": "Vereist een notariële akte en inschrijving in de openbare registers (het Kadaster).", "art": "art. 3:89 BW", "ook": []}, {"id": "rec-w6-houder", "les": "rec-w6", "begrip": "Houder", "uitleg": "Iemand die een zaak houdt voor een ander.", "art": null, "ook": []}, {"id": "rec-w6-bezitter", "les": "rec-w6", "begrip": "Bezitter", "uitleg": "Iemand die een zaak houdt voor zichzelf, middellijk of onmiddellijk.", "art": null, "ook": []}, {"id": "rec-w6-constitutum-possessorium", "les": "rec-w6", "begrip": "Constitutum possessorium", "uitleg": "Levering zonder feitelijke overdracht waarbij de verkoper de zaak zelf onder zich houdt, nu als houder voor de koper.", "art": "art. 3:115 sub a BW", "ook": []}, {"id": "rec-w6-brevi-manu", "les": "rec-w6", "begrip": "Brevi manu", "uitleg": "Levering zonder feitelijke overdracht waarbij de koper de zaak al als houder onder zich had, bijvoorbeeld een gehuurde piano die je koopt.", "art": "art. 3:115 sub b BW", "ook": []}, {"id": "rec-w6-longa-manu", "les": "rec-w6", "begrip": "Longa manu", "uitleg": "Levering zonder feitelijke overdracht waarbij een derde de zaak houdt en nu voor de koper gaat houden; het bezit gaat pas over als de derde dat erkent.", "art": "art. 3:115 sub c BW", "ook": []}]}</script>
+<script>
+(function () {
+  "use strict";
+  var D = JSON.parse(document.getElementById("data").textContent);
+  var LS = "fm-begrippen-" + D.vak;
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function isObj(v) { return v && typeof v === "object" && !Array.isArray(v); }
+  // localStorage lezen: type controleren en terugvallen op de standaardwaarde (zelfde patroon als lsGet in de oefenpagina)
+  function lsGet(fb) { try { var v = JSON.parse(localStorage.getItem(LS)); return isObj(v) ? v : fb; } catch (e) { return fb; } }
+  function lsSet(v) { try { localStorage.setItem(LS, JSON.stringify(v)); } catch (e) {} }
+  var store = lsGet({});
+  var st = isObj(store.st) ? store.st : {};
+  var LES = {}; D.lessen.forEach(function (l) { LES[l.id] = l; });
+  var W = []; var P = [];
+  D.lessen.forEach(function (l) { if (W.indexOf(l.week) < 0) W.push(l.week); if (P.indexOf(l.onderdeel) < 0) P.push(l.onderdeel); });
+  W.sort(function (a, b) { return a - b; });
+  var sel = { w: W.slice(), p: P.slice() };
+  if (isObj(store.sel)) {
+    if (Array.isArray(store.sel.w)) { var w = store.sel.w.filter(function (x) { return W.indexOf(x) >= 0; }); sel.w = w; }
+    if (Array.isArray(store.sel.p)) { var p = store.sel.p.filter(function (x) { return P.indexOf(x) >= 0; }); if (p.length) sel.p = p; }
+  }
+  var opts = { dir: store.dir === "u" ? "u" : "b", dt: store.dt === "u" ? "u" : "b" };
+  function save() { lsSet({ st: st, sel: sel, dir: opts.dir, dt: opts.dt }); }
+  function status(id) { var s = st[id]; return isObj(s) && typeof s.k === "boolean" ? (s.k ? "k" : "n") : ""; }
+  function mark(id, known) { st[id] = { k: known, t: Date.now() }; save(); }
+  function inSel(x) { var l = LES[x.les]; return sel.w.indexOf(l.week) >= 0 && sel.p.indexOf(l.onderdeel) >= 0; }
+  function current() { return D.items.filter(inSel); }
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function lesLabel(l) { return "Week " + l.week + " · " + l.onderdeel; }
+  function rangeLabel(ws) {
+    ws = ws.slice().sort(function (a, b) { return a - b; }); var out = [];
+    for (var i = 0; i < ws.length;) { var j = i; while (j + 1 < ws.length && ws[j + 1] === ws[j] + 1) j++; out.push(i === j ? String(ws[i]) : ws[i] + "–" + ws[j]); i = j + 1; }
+    return out.join(", ");
+  }
+  function selLabel() {
+    if (!sel.w.length) return "Geen week gekozen";
+    var s = sel.w.length === W.length ? "Alle weken" : (sel.w.length === 1 ? "Week " : "Weken ") + rangeLabel(sel.w);
+    if (sel.p.length !== P.length) s += " · " + P.filter(function (p) { return sel.p.indexOf(p) >= 0; }).join(", ");
+    return s;
+  }
+
+  // ---------- keuzepaneel
+  function chip(key, label, n, on, fn) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.dataset.key = key; b.setAttribute("aria-pressed", String(on));
+    b.innerHTML = "<span>" + esc(label) + "</span><span class=\"n\">" + n + "</span>";
+    b.setAttribute("aria-label", label + ", " + n + " begrippen");
+    b.addEventListener("click", function () { fn(); save(); refresh(key); });
+    return b;
+  }
+  function toggle(arr, v) { var i = arr.indexOf(v); if (i >= 0) arr.splice(i, 1); else arr.push(v); }
+  function renderSel(focusKey) {
+    var wc = $("week-chips"); wc.innerHTML = "";
+    W.forEach(function (w) {
+      var n = D.items.filter(function (x) { var l = LES[x.les]; return l.week === w && sel.p.indexOf(l.onderdeel) >= 0; }).length;
+      wc.appendChild(chip("w" + w, "Week " + w, n, sel.w.indexOf(w) >= 0, function () { toggle(sel.w, w); }));
+    });
+    var pc = $("part-chips"); pc.innerHTML = "";
+    P.forEach(function (p) {
+      var n = D.items.filter(function (x) { var l = LES[x.les]; return l.onderdeel === p && sel.w.indexOf(l.week) >= 0; }).length;
+      pc.appendChild(chip("p" + p, p, n, sel.p.indexOf(p) >= 0, function () { toggle(sel.p, p); if (!sel.p.length) sel.p = P.slice(); }));
+    });
+    if (focusKey) { var el = document.querySelector('.chip[data-key="' + focusKey + '"]'); if (el) el.focus(); }
+    var c = current(), k = c.filter(function (x) { return status(x.id) === "k"; }).length;
+    var n = c.filter(function (x) { return status(x.id) === "n"; }).length;
+    $("sel-summary").textContent = selLabel() + ": " + c.length + " begrippen" + (c.length ? " · " + k + " ken je, " + n + " nog niet, " + (c.length - k - n) + " nog niet geoefend" : "");
+    $("sel-bar").style.width = c.length ? (100 * k / c.length) + "%" : "0";
+  }
+  $("weeks-all").addEventListener("click", function () { sel.w = W.slice(); save(); refresh(); });
+  $("weeks-none").addEventListener("click", function () { sel.w = []; save(); refresh(); });
+  function onlyLesson(id) { var l = LES[id]; sel.w = [l.week]; sel.p = [l.onderdeel]; save(); }
+
+  // ---------- lijst
+  function norm(s) { return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+  function hl(text, q) {
+    var t = esc(text); if (!q) return t;
+    var n = norm(text), i = n.indexOf(q); if (i < 0) return t;
+    return esc(text.slice(0, i)) + "<mark>" + esc(text.slice(i, i + q.length)) + "</mark>" + esc(text.slice(i + q.length));
+  }
+  function renderList() {
+    var q = norm($("q").value.trim()), only = $("only-open").checked;
+    var c = current().filter(function (x) {
+      if (only && status(x.id) === "k") return false;
+      return !q || norm(x.begrip + " " + x.uitleg + " " + (x.art || "") + " " + x.ook.join(" ")).indexOf(q) >= 0;
+    });
+    var out = [];
+    D.lessen.forEach(function (l) {
+      var xs = c.filter(function (x) { return x.les === l.id; }); if (!xs.length) return;
+      out.push('<section class="les" id="les-' + l.id + '"><header class="les-head"><div><small>' + esc(lesLabel(l)) + '</small><h3>' + esc(l.titel) + '</h3></div>' +
+        '<div class="row"><button type="button" class="btn" data-les="' + l.id + '" data-go="kaarten">Flitskaarten</button><button type="button" class="btn" data-les="' + l.id + '" data-go="dictee">Dictee</button></div></header><dl>');
+      xs.forEach(function (x) {
+        var s = status(x.id);
+        out.push('<div class="term"><dt><i class="dot ' + s + '" title="' + (s === "k" ? "ken je" : s === "n" ? "nog niet" : "nog niet geoefend") + '"></i><span>' + hl(x.begrip, q) + '</span></dt><dd>' +
+          hl(x.uitleg, q) + (x.art ? '<span class="art">' + hl(x.art, q) + "</span>" : "") + "</dd></div>");
+      });
+      out.push("</dl></section>");
+    });
+    $("list").innerHTML = out.length ? out.join("") : '<p class="empty">' + (current().length ? "Geen begrippen gevonden met deze zoekterm of filter." : "Kies hierboven minstens één week.") + "</p>";
+  }
+  $("q").addEventListener("input", renderList);
+  $("only-open").addEventListener("change", renderList);
+  $("list").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-les]"); if (!b) return;
+    onlyLesson(b.dataset.les); setMode(b.dataset.go); refresh();
+    (b.dataset.go === "kaarten" ? startCards : startDictee)();
+    window.scrollTo({ top: $("main").offsetTop - 60 });
+  });
+
+  // ---------- modi en deeplinks (#lijst, #kaarten-w3, #dictee-w2)
+  var mode = "lijst";
+  function setMode(m) {
+    mode = m;
+    Array.prototype.forEach.call(document.querySelectorAll(".modes button"), function (b) { b.setAttribute("aria-pressed", String(b.dataset.mode === m)); });
+    ["lijst", "kaarten", "dictee"].forEach(function (k) { $("pane-" + k).hidden = k !== m; });
+    if (location.hash.replace(/-w\d+$/, "") !== "#" + m) history.replaceState(null, "", "#" + m);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".modes button"), function (b) { b.addEventListener("click", function () { setMode(b.dataset.mode); refresh(); }); });
+  function fromHash() {
+    var m = /^#(lijst|kaarten|dictee)(?:-w(\d+))?$/.exec(location.hash);
+    if (!m) return;
+    if (m[2] && W.indexOf(+m[2]) >= 0) { sel.w = [+m[2]]; sel.p = P.slice(); save(); }
+    setMode(m[1]);
+  }
+
+  // ---------- gedeelde stapel voor kaarten en dictee
+  function pool(onlyOpen) { var c = current(); if (onlyOpen) c = c.filter(function (x) { return status(x.id) !== "k"; }); return shuffle(c); }
+  function infoLine(id, onlyOpen) { var n = pool(onlyOpen).length; $(id).textContent = n ? n + " begrippen in deze ronde" : (current().length ? "Je kent alles in deze selectie." : "Kies hierboven minstens één week."); return n; }
+  function segInit(attr, key) {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-" + attr + "]"), function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset[attr] === opts[key]));
+      b.addEventListener("click", function () { opts[key] = b.dataset[attr]; save(); segInit2(attr, key); if (key === "dt") dtInfo(); });
+    });
+  }
+  function segInit2(attr, key) { Array.prototype.forEach.call(document.querySelectorAll("[data-" + attr + "]"), function (b) { b.setAttribute("aria-pressed", String(b.dataset[attr] === opts[key])); }); }
+  segInit("dir", "dir"); segInit("dt", "dt");
+
+  // masker: het begrip (en zijn andere namen) uit de uitleg halen, anders verklapt de vraag het antwoord
+  function reEsc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+  function masked(x) {
+    var t = x.uitleg;
+    [x.begrip].concat(x.ook).filter(function (s) { return s.length >= 3; }).sort(function (a, b) { return b.length - a.length; }).forEach(function (s) {
+      var re; try { re = new RegExp("(?<![\\p{L}\\p{N}])" + reEsc(s) + "(?![\\p{L}\\p{N}])", "giu"); } catch (e) { re = new RegExp(reEsc(s), "gi"); }
+      t = t.replace(re, "…");
+    });
+    return t;
+  }
+
+  // de ronde in beeld brengen (op een telefoon staat het keuzepaneel erboven)
+  function into(id) { var el = $(id), top = el.getBoundingClientRect().top + scrollY - 64; if (Math.abs(top - scrollY) > 40) window.scrollTo({ top: top }); }
+
+  // ---------- flitskaarten
+  var K = null;
+  function startCards() {
+    var list = pool($("k-open").checked);
+    $("k-done").hidden = true;
+    if (!list.length) { infoLine("k-info", $("k-open").checked); $("k-stage").hidden = true; return; }
+    K = { list: list, i: 0, flipped: false, yes: 0, miss: [] };
+    $("k-stage").hidden = false; showCard(); into("k-stage"); $("k-card").focus({ preventScroll: true });
+  }
+  function showCard() {
+    var x = K.list[K.i], l = LES[x.les], b = opts.dir === "b";
+    $("k-where").textContent = lesLabel(l) + ": " + l.titel;
+    $("k-count").textContent = (K.i + 1) + " van " + K.list.length;
+    var front = b ? '<span class="side">Begrip</span><span class="front">' + esc(x.begrip) + "</span>"
+                  : '<span class="side">Uitleg</span><span class="front long">' + esc(masked(x)) + "</span>";
+    var back = b ? '<span class="ans">' + esc(x.uitleg) + "</span>" : '<span class="ans big">' + esc(x.begrip) + "</span>";
+    if (x.art) back += '<span class="art">' + esc(x.art) + "</span>";
+    $("k-card").innerHTML = front + (K.flipped ? '<div class="back">' + back + "</div>" : '<span class="hint">Tik om om te draaien</span>');
+    $("k-card").setAttribute("aria-label", K.flipped ? "Kaart, achterkant zichtbaar" : "Kaart, tik om om te draaien");
+  }
+  function answerCard(known) {
+    if (!K) return;
+    var x = K.list[K.i]; mark(x.id, known);
+    if (known) K.yes++; else K.miss.push(x);
+    K.i++; K.flipped = false;
+    if (K.i >= K.list.length) return endCards();
+    showCard(); renderSel();
+  }
+  function endCards() {
+    $("k-stage").hidden = true; var d = $("k-done"); d.hidden = false;
+    d.innerHTML = '<span class="score">' + K.yes + " / " + K.list.length + '</span><p>' + (K.miss.length ? K.miss.length + " begrippen ken je nog niet. Oefen die meteen nog een keer." : "Alles gekend in deze ronde.") + "</p>" +
+      '<div class="row" style="justify-content:center">' + (K.miss.length ? '<button type="button" class="btn primary" id="k-again">Oefen de ' + K.miss.length + " die je nog niet kent</button>" : "") +
+      '<button type="button" class="btn" id="k-new">Nieuwe ronde</button></div>';
+    var miss = K.miss; K = null; refresh();
+    if (miss.length) $("k-again").addEventListener("click", function () { K = { list: shuffle(miss), i: 0, flipped: false, yes: 0, miss: [] }; d.hidden = true; $("k-stage").hidden = false; showCard(); $("k-card").focus(); });
+    $("k-new").addEventListener("click", startCards);
+    ($("k-again") || $("k-new")).focus();
+  }
+  $("k-start").addEventListener("click", startCards);
+  $("k-open").addEventListener("change", function () { infoLine("k-info", this.checked); });
+  $("k-card").addEventListener("click", function () { if (!K) return; K.flipped = !K.flipped; showCard(); });
+  $("k-yes").addEventListener("click", function () { answerCard(true); });
+  $("k-no").addEventListener("click", function () { answerCard(false); });
+  document.addEventListener("keydown", function (e) {
+    if (mode !== "kaarten" || !K || $("k-stage").hidden || e.altKey || e.ctrlKey || e.metaKey) return;
+    var t = e.target.tagName; if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
+    if (e.key === " " && e.target !== $("k-card")) { e.preventDefault(); K.flipped = !K.flipped; showCard(); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); answerCard(true); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); answerCard(false); }
+  });
+
+  // ---------- dictee
+  function simple(s) { return norm(s).replace(/\(.*?\)/g, " ").replace(/^(de|het|een)\s+/, "").replace(/[^a-z0-9]+/g, ""); }
+  function lev(a, b) {
+    var m = a.length, n = b.length, d = []; for (var i = 0; i <= m; i++) { d[i] = [i]; } for (var j = 1; j <= n; j++) d[0][j] = j;
+    for (i = 1; i <= m; i++) for (j = 1; j <= n; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    return d[m][n];
+  }
+  function judge(x, ans) {
+    var a = simple(ans); if (!a) return "leeg";
+    var names = [x.begrip].concat(x.ook).map(simple).filter(Boolean);
+    if (names.indexOf(a) >= 0) return "goed";
+    for (var i = 0; i < names.length; i++) { var t = names[i], max = t.length >= 10 ? 2 : t.length >= 5 ? 1 : 0; if (max && lev(a, t) <= max) return "bijna"; }
+    return "fout";
+  }
+  var Dc = null;
+  function dtInfo() {
+    $("d-uitleg-info").textContent = opts.dt === "b" ? "Je ziet de uitleg en typt het begrip. Kleine typfouten rekent de dictee goed, met de juiste spelling erbij."
+      : "Je ziet het begrip en schrijft de uitleg in je eigen woorden. Daarna vergelijk je met de samenvatting en kijk je zelf na.";
+  }
+  function startDictee() {
+    var list = pool($("d-open").checked);
+    $("d-done").hidden = true;
+    if (!list.length) { infoLine("d-info", $("d-open").checked); $("d-stage").hidden = true; return; }
+    Dc = { list: list, i: 0, good: 0, miss: [], hint: 0 };
+    $("d-stage").hidden = false; showQ(); into("d-stage");
+  }
+  function showQ() {
+    var x = Dc.list[Dc.i], l = LES[x.les], typeB = opts.dt === "b";
+    Dc.hint = 0; Dc.answered = false;
+    $("d-where").textContent = lesLabel(l) + ": " + l.titel;
+    $("d-count").textContent = (Dc.i + 1) + " van " + Dc.list.length + " · " + Dc.good + " goed";
+    $("d-q").className = typeB ? "q" : "q big";
+    $("d-q").textContent = typeB ? masked(x) : x.begrip;
+    $("d-lbl").textContent = typeB ? "Welk begrip is dit?" : "Wat betekent dit? Schrijf het in je eigen woorden.";
+    $("d-in").hidden = !typeB; $("d-ta").hidden = typeB; $("d-hint").hidden = !typeB;
+    $("d-lbl").setAttribute("for", typeB ? "d-in" : "d-ta");
+    $("d-in").value = ""; $("d-ta").value = ""; $("d-in").disabled = false; $("d-ta").disabled = false;
+    $("d-in").placeholder = "";
+    $("d-fb").hidden = true; $("d-after").hidden = true; $("d-ask").hidden = false;
+    (typeB ? $("d-in") : $("d-ta")).focus({ preventScroll: true });
+  }
+  function feedback(kind, html, buttons) {
+    var fb = $("d-fb"); fb.className = "fb " + kind; fb.innerHTML = html; fb.hidden = false;
+    $("d-ask").hidden = true; $("d-in").disabled = true; $("d-ta").disabled = true;
+    var a = $("d-after"); a.innerHTML = ""; a.hidden = false;
+    buttons.forEach(function (b) {
+      var el = document.createElement("button"); el.type = "button"; el.className = "btn" + (b.cls ? " " + b.cls : ""); el.textContent = b.label;
+      el.addEventListener("click", b.fn); a.appendChild(el);
+    });
+    a.firstChild.focus({ preventScroll: true });
+  }
+  function solution(x) { return "<span><strong>" + esc(x.begrip) + "</strong>" + (x.ook.length ? " <small>(ook: " + esc(x.ook.join(", ")) + ")</small>" : "") + "</span>" + (x.art ? '<span class="small">' + esc(x.art) + "</span>" : ""); }
+  function record(x, ok) { mark(x.id, ok); if (ok) Dc.good++; else Dc.miss.push(x); }
+  function nextQ() { Dc.i++; if (Dc.i >= Dc.list.length) return endDictee(); showQ(); renderSel(); }
+  var NEXT = function () { return { label: Dc && Dc.i + 1 >= Dc.list.length ? "Bekijk je score" : "Volgende", cls: "primary", fn: nextQ }; };
+  $("d-form").addEventListener("submit", function (e) {
+    e.preventDefault(); if (!Dc || Dc.answered) return;
+    var x = Dc.list[Dc.i];
+    if (opts.dt === "u") {
+      if (!$("d-ta").value.trim()) { $("d-ta").focus(); return; }
+      Dc.answered = true;
+      feedback("self", "<b>Vergelijk met de samenvatting</b><span>" + esc(x.uitleg) + "</span>" + (x.art ? '<span class="small">' + esc(x.art) + "</span>" : "") + "<span>Had je de kern goed?</span>",
+        [{ label: "Goed", cls: "good", fn: function () { record(x, true); nextQ(); } }, { label: "Nog niet", cls: "bad", fn: function () { record(x, false); nextQ(); } }]);
+      return;
+    }
+    var r = judge(x, $("d-in").value);
+    if (r === "leeg") { $("d-in").focus(); return; }
+    Dc.answered = true;
+    if (r === "goed" || r === "bijna") {
+      record(x, true);
+      feedback("good", "<b>" + (r === "goed" ? "Goed" : "Goed, let op de spelling") + "</b>" + solution(x), [NEXT()]);
+    } else {
+      record(x, false);
+      feedback("bad", "<b>Niet goed</b><span>Jij typte: " + esc($("d-in").value) + "</span>" + solution(x),
+        [NEXT(), { label: "Toch goed rekenen", fn: function () { Dc.miss.pop(); Dc.good++; mark(x.id, true); nextQ(); } }]);
+    }
+  });
+  $("d-hint").addEventListener("click", function () {
+    if (!Dc) return; var t = Dc.list[Dc.i].begrip; Dc.hint = Math.min(Dc.hint + 1, Math.max(1, t.length - 1));
+    $("d-in").placeholder = t.slice(0, Dc.hint) + t.slice(Dc.hint).replace(/[^\s\-\/]/g, "_");
+    $("d-in").focus();
+  });
+  $("d-skip").addEventListener("click", function () {
+    if (!Dc || Dc.answered) return; var x = Dc.list[Dc.i]; Dc.answered = true; record(x, false);
+    feedback("bad", "<b>Het antwoord</b>" + solution(x), [NEXT()]);
+  });
+  function endDictee() {
+    $("d-stage").hidden = true; var d = $("d-done"); d.hidden = false;
+    d.innerHTML = '<span class="score">' + Dc.good + " / " + Dc.list.length + '</span><p>' + (Dc.miss.length ? "Dit wist je nog niet: " + Dc.miss.map(function (x) { return esc(x.begrip); }).join(", ") + "." : "Alles goed in deze ronde.") + "</p>" +
+      '<div class="row" style="justify-content:center">' + (Dc.miss.length ? '<button type="button" class="btn primary" id="d-again">Oefen de ' + Dc.miss.length + " fouten opnieuw</button>" : "") +
+      '<button type="button" class="btn" id="d-new">Nieuw dictee</button></div>';
+    var miss = Dc.miss; Dc = null; refresh();
+    if (miss.length) $("d-again").addEventListener("click", function () { Dc = { list: shuffle(miss), i: 0, good: 0, miss: [], hint: 0 }; d.hidden = true; $("d-stage").hidden = false; showQ(); });
+    $("d-new").addEventListener("click", startDictee);
+    ($("d-again") || $("d-new")).focus();
+  }
+  $("d-start").addEventListener("click", startDictee);
+  $("d-open").addEventListener("change", function () { infoLine("d-info", this.checked); });
+
+  $("reset").addEventListener("click", function () { current().forEach(function (x) { delete st[x.id]; }); save(); refresh(); });
+
+  // selectie veranderd: lopende ronde stoppen, alles opnieuw tekenen
+  function refresh(focusKey) {
+    renderSel(focusKey); renderList();
+    if (typeof focusKey === "string") { K = null; Dc = null; $("k-stage").hidden = true; $("d-stage").hidden = true; $("k-done").hidden = true; $("d-done").hidden = true; }
+    infoLine("k-info", $("k-open").checked); infoLine("d-info", $("d-open").checked);
+  }
+  window.addEventListener("hashchange", function () { fromHash(); refresh(""); });
+  dtInfo(); fromHash(); refresh();
+})();
+</script>
+<footer class="sitefoot"><div class="sf-in"><div class="sf-about"><a class="sf-home" href="../../">Studieplek FM jaar 2</a><p>Periode 2: samenvattingen, begrippen, oefenvragen en weektoetsen. Toetsperiode 11 t/m 22 januari 2027.</p><a class="sf-top" href="#">Terug naar boven</a></div><div class="sf-col ir"><span class="sf-head"><b>IR</b>Inkoop en recht</span><a href="../../samenvattingen/inkoop-recht/">Samenvatting</a><a href="../../begrippen/inkoop-recht/">Begrippen</a><a href="../../inkoop-recht/#oefenen">Oefenvragen</a><a href="../../inkoop-recht/#toetsen">Weektoetsen</a></div><div class="sf-col hrm"><span class="sf-head"><b>HRM</b>HRM</span><a href="../../samenvattingen/hrm/">Samenvatting</a><a href="../../begrippen/hrm/">Begrippen</a><a href="../../hrm/#oefenen">Oefenvragen</a><a href="../../hrm/#toetsen">Weektoetsen</a></div><div class="sf-col bm"><span class="sf-head"><b>BM</b>Business management</span><a href="../../samenvattingen/praktijkproject/">Samenvatting</a><a href="../../begrippen/praktijkproject/">Begrippen</a><a href="../../praktijkproject/#oefenen">Oefenvragen</a><a href="../../praktijkproject/#toetsen">Weektoetsen</a><a href="../../bedrijfskunde/waalhop/">Casustoets Waalhop</a><a href="../../bedrijfskunde/heidezoom/">Casustoets Heidezoom</a></div></div></footer>
+<script>
+(function () {
+  /* smal scherm: passen de tabbladen niet, dan schuiven ze; het huidige tabblad staat in beeld */
+  var tb = document.querySelector(".tabs"), cur = tb && tb.querySelector('[aria-current="page"]');
+  if (cur && tb.scrollWidth > tb.clientWidth) tb.scrollLeft = cur.offsetLeft + cur.offsetWidth / 2 - tb.clientWidth / 2;
+  var bar = document.getElementById("sitebar"); if (!bar) return;
+  var menu = bar.querySelector("details");
+  document.addEventListener("click", function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menu.open) { menu.open = false; menu.querySelector("summary").focus(); } });
+  menu.addEventListener("click", function (e) { if (e.target.closest("a")) menu.open = false; });
+  function path(p) { return p.replace(/index\.html$/, ""); }
+  // in het menu de pagina markeren waar je nu bent
+  function mark() {
+    var here = path(location.pathname), hash = location.hash.replace(/-w\d+$/, "");
+    Array.prototype.forEach.call(bar.querySelectorAll(".sb-panel a"), function (a) {
+      var u = new URL(a.href, location.href);
+      var same = path(u.pathname) === here && (!u.hash || u.hash === hash || (!/^#(oefenen|toetsen)$/.test(hash) && a.hasAttribute("data-default")));
+      if (same) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+  }
+  window.sitenavMark = mark;
+  // naar een ander vak: blijf in hetzelfde onderdeel (oefenen, toetsen of dezelfde week van de samenvatting)
+  Array.prototype.forEach.call(bar.querySelectorAll("a[data-carry]"), function (a) {
+    a.addEventListener("click", function () {
+      var h = location.hash, wk = document.querySelector('.weeknav a[aria-current="true"]');
+      if (wk && window.scrollY > 200) h = wk.getAttribute("href");
+      if (/^#(oefenen|toetsen|week-\d|lijst|kaarten|dictee)(-w\d+)?$/.test(h)) a.href = a.href.split("#")[0] + h;
+    });
+  });
+  window.addEventListener("hashchange", mark); mark();
+})();
+</script>
+</body>
+</html>
