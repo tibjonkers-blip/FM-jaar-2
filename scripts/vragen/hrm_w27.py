@@ -445,7 +445,7 @@ V += [
     mc("ar-w5-07", "ar-w5", "Opzegtermijn · oefenmateriaal",
        "Dirk werkt 16 jaar bij de visafslag en is twee jaar ziek. Het UWV geeft toestemming voor opzegging; de procedure duurde precies een maand. De werkgever zegt op 15 maart 2026 op. Wanneer eindigt de arbeidsovereenkomst?",
        ["15 juli 2026", "30 juni 2026", "31 juli 2026", "15 juni 2026"], 1,
-       "Opzegtermijn 4 maanden (art. 7:672 lid 2 BW), minus de proceduretijd van 1 maand (er moet minstens een maand overblijven) = 3 maanden. 15 maart + 3 maanden = 15 juni, en opzegging gebeurt tegen het einde van de maand: 30 juni 2026. Let op: het antwoordmodel noemt voor de aftrek van de proceduretijd lid 5, de slide noemt lid 6. Kijk in je bundel welk lid het is."),
+       "Opzegtermijn 4 maanden (art. 7:672 lid 2 BW), minus de proceduretijd van 1 maand (er moet minstens een maand overblijven) = 3 maanden. 15 maart + 3 maanden = 15 juni, en opzegging gebeurt tegen het einde van de maand: 30 juni 2026. De aftrek van de proceduretijd staat in art. 7:672 lid 6 BW, zoals op de slide; het antwoordmodel noemt per vergissing lid 5."),
     mc("ar-w5-08", "ar-w5", "Ontslag op staande voet",
        "Aan welke voorwaarden moet een ontslag op staande voet voldoen (art. 7:677 BW)?",
        ["Een dringende reden, onverwijlde opzegging en onverwijlde mededeling van de reden", "Toestemming van het UWV", "Een opzegtermijn en een schriftelijke bevestiging", "Een transitievergoeding"], 0,

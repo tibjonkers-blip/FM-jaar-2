@@ -227,7 +227,7 @@ FIGUREN = [
             ("Onbepaalde tijd", "bij bepaalde tijd alleen met een motivering van zwaarwegende bedrijfs- of dienstbelangen"),
         ], ("Geldig beding", "art. 7:653 lid 1 en 2 BW")),
         noot="Ook een geldig beding kan de rechter geheel of gedeeltelijk vernietigen (lid 3)."),
-      after="de rechter kan een vergoeding toekennen"),
+      after="die komt uit de wettekst"),
 
     F(3, "Arbeidsrecht", "Overgang van onderneming (OvO)", fig(
         "Kapitaal- of arbeidsintensief: waar kijk je naar?",
