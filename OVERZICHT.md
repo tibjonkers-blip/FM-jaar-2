@@ -149,7 +149,7 @@ eerst in de CSP**, anders blokkeert de browser hem. De samenvattingen laten alle
   Onderaan elke samenvatting: downloaden als `.md` en terugzetten (voegt samen, overschrijft niets), "Meescrollen" houdt
   het veld onderin beeld, en de zoekbalk zoekt ook in de notities.
 - **Opmaak**: notitievelden en het notitieblad zijn `contenteditable`-velden (`rich()` in `NOTES_JS`) met knoppen en
-  Ctrl/Cmd+B/I/U (Ctrl/Cmd+Shift+8/7 voor lijsten). Bewaard en gesynchroniseerd wordt alleen Markdown-tekst: `**vet**`,
+  Ctrl/Cmd+B/I/U (Ctrl/Cmd+Shift+8/7 voor lijsten; Tab/Shift+Tab in een lijst springt in en terug). Bewaard en gesynchroniseerd wordt alleen Markdown-tekst: `**vet**`,
   `*cursief*`, `<u>onderstreept</u>`, `- punt`, `1. punt` (`mdSerialize`/`mdRender`/`mdInline`). Nooit HTML: plakken gaat als
   platte tekst en tonen gebeurt met `textContent`. Oude platte notities blijven gewoon werken; een los `*` wordt `\*`.
 - **Notitieblad**: knop rechtsonder opent een los blad (`#notitieblad`, `nb`-code in `NOTES_JS`), op brede schermen rechts
