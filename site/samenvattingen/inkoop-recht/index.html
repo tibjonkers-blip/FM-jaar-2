@@ -550,16 +550,30 @@ pre { margin: 0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0
   color: var(--ink); font: inherit; font-size: 0.84rem; font-weight: 600; cursor: pointer; }
 .note-pin:hover { border-color: var(--accent); }
 .note-pin[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.note-text { display: block; width: 100%; min-height: 7.6em; resize: none; overflow: hidden; font: inherit; font-size: 1rem; line-height: 1.55; color: var(--ink);
+.note-text { display: block; width: 100%; min-height: 7.6em; resize: none; overflow: hidden; white-space: pre-wrap; overflow-wrap: anywhere; cursor: text; font: inherit; font-size: 1rem; line-height: 1.55; color: var(--ink);
   background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; }
 .note-text:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
 .note-text::placeholder { color: var(--ink-soft); opacity: 0.85; }
+/* opmaak in notities: vet, cursief, onderstreept en opsommingen; bewaard als Markdown (**vet**, *cursief*, <u>onderstreept</u>, - punt) */
+.rt:empty::before { content: attr(data-ph); color: var(--ink-soft); opacity: 0.85; pointer-events: none; }
+.rt ul, .rt ol { margin: 0.15em 0; padding-left: 1.5em; }
+.rt li { margin: 0.1em 0; }
+.rt b, .rt strong { font-weight: 750; }
+.rt u { text-underline-offset: 2px; }
+.rt-tools { display: flex; flex-wrap: wrap; gap: 4px; }
+.rt-tools button { min-width: 34px; height: 32px; padding: 0 8px; border: 1px solid var(--rule); border-radius: 7px; background: var(--sheet); color: var(--ink);
+  font: inherit; font-size: 0.92rem; line-height: 1; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.rt-tools button:hover { border-color: var(--accent); }
+.rt-tools button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.rt-tools svg { width: 17px; height: 17px; }
+.rt-tools .sep { width: 1px; align-self: stretch; margin: 4px 3px; background: var(--rule); }
 .note-foot { font-size: 0.8rem; color: var(--ink-soft); }
 .note-foot button { padding: 0; border: 0; background: none; font: inherit; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
 .note-label { font-weight: 600; font-size: 0.92rem; }
 .note.pinned { position: sticky; bottom: calc(var(--kb, 0px) + env(safe-area-inset-bottom, 0px) + 10px); z-index: 4; }
 .note.pinned .note-box { background: var(--sheet); border-color: var(--accent); box-shadow: 0 10px 32px rgba(10, 18, 36, 0.24); }
 .note.pinned .note-text { max-height: 30vh; overflow-y: auto; }
+.note.pinned .rt-tools button { height: 28px; min-width: 30px; }
 .note.pinned .note-foot { display: none; }
 @media (max-width: 560px) {  /* telefoon: meescrollend veld compact houden, zodat de samenvatting leesbaar blijft */
   .note.pinned .note-box { padding: 8px 10px; gap: 6px; }
@@ -615,7 +629,7 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
 .nb-here:hover { border-color: var(--accent); color: var(--accent); }
 .nb-row select:focus, .nb-text:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
 .nb-follow { font-size: 0.78rem; color: var(--ink-soft); min-height: 1.2em; }
-.nb-text { flex: 1 1 auto; min-height: 6em; width: 100%; resize: none; font: inherit; font-size: 1rem; line-height: 1.55; color: var(--ink); background: var(--sunk);
+.nb-text { flex: 1 1 auto; min-height: 6em; width: 100%; resize: none; overflow-y: auto; white-space: pre-wrap; overflow-wrap: anywhere; cursor: text; font: inherit; font-size: 1rem; line-height: 1.55; color: var(--ink); background: var(--sunk);
   border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px; }
 .nb-text::placeholder { color: var(--ink-soft); opacity: 0.85; }
 .nb-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
@@ -634,7 +648,7 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
   body.nb-open main { padding-bottom: 46vh; }
 }
 @media (max-width: 480px) { .nb { padding: 10px 12px; } .nb-head h2 { font-size: 1.05rem; } .nb-close { width: 32px; height: 32px; } .nb-follow { display: none; } }
-@media print { .note:not(.open), .note-pin, .note-foot, .note-jump, .notes-panel, .nb, .nb-fab { display: none !important; } .note-text { height: auto !important; } }
+@media print { .note:not(.open), .note-pin, .note-foot, .note-jump, .notes-panel, .nb, .nb-fab, .rt-tools { display: none !important; } .note-text { height: auto !important; } }
 
 .foot { color: var(--ink-soft); font-size: 0.84rem; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--rule); padding-top: 16px; }
 .totop { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 6;
@@ -732,7 +746,7 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
     <div class="nb-row"><select id="nb-les"></select><button type="button" class="nb-here" id="nb-here" title="Kies de les die nu in beeld is">Les in beeld</button></div>
     <p class="nb-follow" id="nb-follow"></p>
   </div>
-  <textarea id="nb-text" class="nb-text" spellcheck="true" placeholder="Typ hier mee tijdens de les. Klik daarna op Opslaan bij les." aria-label="Notitieblad"></textarea>
+  <div id="nb-text" class="nb-text" data-ph="Typ hier mee tijdens de les. Klik daarna op Opslaan bij les." data-label="Notitieblad"></div>
   <div class="nb-foot">
     <button type="button" class="wn-btn primary" id="nb-save">Opslaan bij les</button>
     <span class="nb-status" id="nb-status" aria-live="polite"></span>
@@ -813,9 +827,253 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
   }
   function stamp(d) { var p = function (x) { return (x < 10 ? "0" : "") + x; }; return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate()); }
 
+  // ---- opmaak: een bewerkbaar veld (contenteditable) met .value als Markdown-tekst.
+  //      Bewaard en gesynchroniseerd wordt alleen die tekst: **vet**, *cursief*, <u>onderstreept</u>, "- punt" en "1. punt".
+  //      Nooit HTML: plakken gaat als platte tekst, en bij het tonen wordt alles met textContent opgebouwd.
+  var MAC = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent), MOD = MAC ? "⌘" : "Ctrl+";
+  function plainText(md) {  // zonder opmaaktekens, voor zoeken
+    return String(md).replace(/\\\\/g, "\u0002").replace(/\\\*/g, "\u0001").replace(/\\</g, "\u0003").replace(/<\/?u>|\*+/g, "")
+      .replace(/\u0001/g, "*").replace(/\u0002/g, "\\").replace(/\u0003/g, "<");
+  }
+  function caretEnd(el) { try { var r = document.createRange(); r.selectNodeContents(el); r.collapse(false); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); } catch (e) {} }
+  function mdInline(line) {  // tekst met **, *, <u> naar stukjes { s, b, i, u }; tekens zonder partner blijven gewone tekst
+    var tk = [], i = 0, buf = "";
+    var flush = function () { if (buf) { tk.push({ s: buf }); buf = ""; } };
+    while (i < line.length) {
+      var c = line[i];
+      if (c === "\\" && i + 1 < line.length && "\\*<".indexOf(line[i + 1]) !== -1) { buf += line[i + 1]; i += 2; continue; }
+      if (line.substr(i, 3) === "<u>" || line.substr(i, 4) === "</u>") { flush(); var cl = line[i + 1] === "/"; tk.push({ u: cl ? "c" : "o", raw: cl ? "</u>" : "<u>" }); i += cl ? 4 : 3; continue; }
+      if (c === "*") {
+        var n = 1; while (line[i + n] === "*") n++;
+        flush(); tk.push({ n: n, o: /\S/.test(line[i + n] || " "), c: /\S/.test(i > 0 ? line[i - 1] : " ") }); i += n; continue;
+      }
+      buf += c; i++;
+    }
+    flush();
+    // sterretjes koppelen zoals Markdown: een reeks sluit eerst de binnenste open opmaak (* = cursief, ** = vet), de rest opent.
+    // Wat aan het eind nog open staat, telt als gewone tekst; dan opnieuw rekenen.
+    var no = {}, acts;
+    for (var round = 0; round < 12; round++) {
+      var stack = [], uOpen = -1, left = [];
+      acts = tk.map(function () { return { close: [], open: [], lit: 0, u: false }; });
+      tk.forEach(function (t, k) {
+        if (t.u) {
+          if (t.u === "o" && uOpen < 0 && !no[k + "u"]) { uOpen = k; acts[k].u = true; }
+          else if (t.u === "c" && uOpen >= 0) { acts[k].u = true; uOpen = -1; }
+          return;
+        }
+        if (!t.n) return;
+        var n = t.n;
+        if (t.c) while (n > 0 && stack.length) {
+          var top = stack[stack.length - 1], need = top.k === "b" ? 2 : 1;
+          if (n < need) break;
+          stack.pop(); acts[k].close.push(top.k); n -= need;
+        }
+        acts[k].lit = 0;
+        if (t.o) while (n > 0) {
+          var kind = n >= 2 ? "b" : "i";
+          if (no[k + kind]) { if (kind === "b" && !no[k + "i"]) kind = "i"; else break; }
+          stack.push({ k: kind, at: k }); acts[k].open.push(kind); n -= kind === "b" ? 2 : 1;
+        }
+        acts[k].lit = n;
+      });
+      stack.forEach(function (s) { left.push(s.at + s.k); });
+      if (uOpen >= 0) left.push(uOpen + "u");
+      if (!left.length) break;
+      left.forEach(function (x) { no[x] = true; });
+    }
+    var st = { b: false, i: false, u: false }, out = [];
+    var push = function (s) { if (s) out.push({ s: s, b: st.b, i: st.i, u: st.u }); };
+    tk.forEach(function (t, k) {
+      var a = acts[k];
+      if (t.s != null) { push(t.s); return; }
+      if (t.u) { if (a.u) st.u = t.u === "o"; else push(t.raw); return; }
+      a.close.forEach(function (x) { st[x] = false; });
+      push(new Array(a.lit + 1).join("*"));
+      a.open.forEach(function (x) { st[x] = true; });
+    });
+    return out;
+  }
+  function mdRender(el, md) {
+    el.textContent = "";
+    var lines = String(md).replace(/\r\n?/g, "\n").split("\n"), lists = [];
+    var runs = function (parent, text) {
+      mdInline(text).forEach(function (r) {
+        if (!r.s) return;
+        var node = document.createTextNode(r.s), w;
+        if (r.i) { w = document.createElement("i"); w.appendChild(node); node = w; }
+        if (r.b) { w = document.createElement("b"); w.appendChild(node); node = w; }
+        if (r.u) { w = document.createElement("u"); w.appendChild(node); node = w; }
+        parent.appendChild(node);
+      });
+    };
+    if (lines.length === 1 && lines[0] === "") return;
+    lines.forEach(function (line) {
+      var m = /^( *)([-*]|\d{1,3}[.)]) (.*)$/.exec(line);
+      if (m) {
+        var depth = Math.min(Math.floor(m[1].length / 2), 4), tag = /\d/.test(m[2]) ? "OL" : "UL";
+        while (lists.length > depth + 1) lists.pop();
+        while (lists.length && lists.length === depth + 1 && lists[depth].tagName !== tag) lists.pop();
+        while (lists.length < depth + 1) {
+          var l = document.createElement(tag), host = lists.length ? lists[lists.length - 1].lastElementChild || lists[lists.length - 1] : el;
+          host.appendChild(l); lists.push(l);
+        }
+        var li = document.createElement("li"); runs(li, m[3]); if (!li.firstChild) li.appendChild(document.createElement("br"));
+        lists[depth].appendChild(li); return;
+      }
+      lists = [];
+      var d = document.createElement("div"); runs(d, line); if (!d.firstChild) d.appendChild(document.createElement("br"));
+      el.appendChild(d);
+    });
+  }
+  function mdSerialize(el) {
+    var lines = [[]], brOpen = false;
+    var cur = function () { return lines[lines.length - 1]; };
+    var nl = function () { lines.push([]); };
+    var isBlock = function (n) { return n.nodeType === 1 && /^(DIV|P|LI|UL|OL|H[1-6]|BLOCKQUOTE|PRE)$/.test(n.nodeName); };
+    function walk(node, f, depth) {
+      Array.prototype.forEach.call(node.childNodes, function (n, idx) {
+        if (n.nodeType === 3) { if (n.nodeValue) { cur().push({ s: n.nodeValue.replace(/\u00a0/g, " "), b: f.b, i: f.i, u: f.u }); brOpen = false; } return; }
+        if (n.nodeType !== 1) return;
+        var tag = n.nodeName;
+        if (tag === "BR") {  // een <br> aan het eind van een blok is alleen een plaatshouder
+          var last = (node === el || isBlock(node)) && (!n.nextSibling || isBlock(n.nextSibling));
+          if (!last) { nl(); brOpen = true; }
+          return;
+        }
+        var g = { b: f.b, i: f.i, u: f.u }, st = n.style || {};
+        if (tag === "B" || tag === "STRONG" || /^(bold|[6-9]00)$/.test(st.fontWeight || "")) g.b = true;
+        if (/^(normal|[1-5]00)$/.test(st.fontWeight || "")) g.b = false;
+        if (tag === "I" || tag === "EM" || st.fontStyle === "italic") g.i = true;
+        if (st.fontStyle === "normal") g.i = false;
+        if (tag === "U" || /underline/.test(st.textDecoration || st.textDecorationLine || "")) g.u = true;
+        if (tag === "UL" || tag === "OL") {
+          if (cur().length || brOpen) nl();
+          var k = 0;
+          Array.prototype.forEach.call(n.children, function (li) {
+            if (li.nodeName !== "LI") return;
+            if (cur().length) nl();
+            k++; cur().push({ raw: "  ".repeat(depth) + (tag === "OL" ? k + ". " : "- ") });
+            walk(li, g, depth + 1);
+            if (cur().length) nl();
+          });
+          brOpen = false; return;
+        }
+        if (isBlock(n)) {
+          if (cur().length || brOpen) nl();
+          brOpen = false;
+          var empty = !n.textContent;
+          walk(n, g, depth);
+          if (cur().length || brOpen || empty) nl();
+          brOpen = false; return;
+        }
+        walk(n, g, depth);
+      });
+    }
+    walk(el, { b: false, i: false, u: false }, 0);
+    var esc = function (t) {  // een * tussen spaties (5 * 3) kan geen opmaak zijn en blijft zoals hij is
+      return t.replace(/\\/g, "\\\\").replace(/<(\/?u>)/g, "\\<$1").replace(/\*+/g, function (m, i, all) {
+        return /\s/.test(all[i - 1] || "x") && /\s/.test(all[i + m.length] || "x") ? m : m.replace(/\*/g, "\\*");
+      });
+    };
+    var text = lines.map(function (runs) {
+      // spaties aan de rand van opgemaakte tekst gaan buiten de markering (** vet** werkt niet in Markdown)
+      var parts = [];
+      runs.forEach(function (r) {
+        if (r.raw) { parts.push(r); return; }
+        var p = parts[parts.length - 1];
+        if (p && !p.raw && p.b === r.b && p.i === r.i && p.u === r.u) p.s += r.s; else parts.push({ s: r.s, b: r.b, i: r.i, u: r.u });
+      });
+      var pieces = [];
+      parts.forEach(function (r) {
+        if (r.raw) { pieces.push(r); return; }
+        var m = /^(\s*)([\s\S]*?)(\s*)$/.exec(r.s);
+        [m[1], m[2], m[3]].forEach(function (x, j) { if (x) pieces.push({ s: x, b: r.b, i: r.i, u: r.u, ws: j !== 1 || !m[2] }); });
+      });
+      var NONE = { b: false, i: false, u: false };
+      var near = function (k, d) { for (k += d; k >= 0 && k < pieces.length; k += d) { if (pieces[k].raw) return NONE; if (!pieces[k].ws) return pieces[k]; } return NONE; };
+      pieces.forEach(function (r, k) {  // spaties krijgen de opmaak die links en rechts doorloopt (dus nooit ** vet ** met spatie aan de rand)
+        if (!r.ws) return;
+        var a = near(k, -1), z = near(k, 1);
+        r.b = a.b && z.b; r.i = a.i && z.i && !(z.b && !a.b); r.u = a.u && z.u;  // komt er vet bij, dan cursief al voor de spatie sluiten
+      });
+      var out = "", stack = [], MK = { u: ["<u>", "</u>"], b: ["**", "**"], i: ["*", "*"] };
+      var closeTo = function (k) { while (stack.length > k) out += MK[stack.pop()][1]; };
+      pieces.forEach(function (r) {
+        if (r.raw) { closeTo(0); out += r.raw; return; }
+        var k = 0; while (k < stack.length && r[stack[k]]) k++;
+        if (r.b && stack.indexOf("b") === -1 && stack.indexOf("i") !== -1) k = Math.min(k, stack.indexOf("i"));  // vet altijd buiten cursief
+        closeTo(k);
+        if (!r.ws) ["u", "b", "i"].forEach(function (f) { if (r[f] && stack.indexOf(f) === -1) { out += MK[f][0]; stack.push(f); } });  // nooit openen voor een spatie
+        out += esc(r.s);
+      });
+      closeTo(0);
+      return out;
+    }).join("\n");
+    return text.replace(/\n+$/, "");
+  }
+  function rich(el) {  // maakt van een div een notitieveld met opmaak; el.value werkt zoals bij een textarea
+    if (el._rt) return el;
+    el._rt = true;
+    el.classList.add("rt");
+    el.setAttribute("contenteditable", "true"); el.setAttribute("role", "textbox"); el.setAttribute("aria-multiline", "true");
+    el.setAttribute("spellcheck", "true"); el.setAttribute("aria-label", el.getAttribute("data-label") || "Notities");
+    el.setAttribute("aria-description", "Opmaak: " + MOD + "B vet, " + MOD + "I cursief, " + MOD + "U onderstreept");
+    var last = "";
+    Object.defineProperty(el, "value", {
+      get: function () { return mdSerialize(el); },
+      set: function (v) { mdRender(el, v || ""); last = String(v || ""); }
+    });
+    var tools = document.createElement("div");
+    tools.className = "rt-tools"; tools.setAttribute("role", "toolbar"); tools.setAttribute("aria-label", "Opmaak");
+    var B = [["bold", "<b>B</b>", "Vet (" + MOD + "B)"], ["italic", "<i>I</i>", "Cursief (" + MOD + "I)"], ["underline", "<u>U</u>", "Onderstreept (" + MOD + "U)"], ["sep"],
+      ["insertUnorderedList", '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1" fill="currentColor"/><circle cx="4.5" cy="12" r="1" fill="currentColor"/><circle cx="4.5" cy="18" r="1" fill="currentColor"/></svg>', "Opsomming (" + MOD + "Shift+8)"],
+      ["insertOrderedList", '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 6h10M10 12h10M10 18h10"/><path d="M4 5h1v4M4 9h2" stroke-width="1.6"/><path d="M4 14h2l-2 3h2" stroke-width="1.6"/></svg>', "Genummerde lijst (" + MOD + "Shift+7)"]];
+    tools.innerHTML = B.map(function (b) { return b[0] === "sep" ? '<span class="sep" aria-hidden="true"></span>' : '<button type="button" data-cmd="' + b[0] + '" aria-pressed="false" title="' + b[2] + '" aria-label="' + b[2] + '">' + b[1] + "</button>"; }).join("");
+    el.parentNode.insertBefore(tools, el);
+    var changed = function () {
+      if (!el.textContent && !el.querySelector("li")) el.textContent = "";  // leeg = echt leeg, dan verschijnt de hint weer
+      el.dispatchEvent(new Event("input", { bubbles: true }));
+    };
+    var state = function () {
+      Array.prototype.forEach.call(tools.querySelectorAll("button"), function (b) {
+        var on = false; try { on = document.activeElement === el && document.queryCommandState(b.getAttribute("data-cmd")); } catch (e) {}
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    };
+    var run = function (cmd) {
+      if (document.activeElement !== el) { el.focus({ preventScroll: true }); if (!el.contains(getSelection().anchorNode)) caretEnd(el); }
+      try { document.execCommand("styleWithCSS", false, false); } catch (e) {}
+      var before = el.innerHTML;
+      try { document.execCommand(cmd, false, null); } catch (e) {}
+      if (el.innerHTML !== before) changed();
+      state();
+    };
+    tools.addEventListener("mousedown", function (e) { if (e.target.closest("button")) e.preventDefault(); });  // selectie in het veld houden
+    tools.addEventListener("click", function (e) { var b = e.target.closest("button[data-cmd]"); if (b) run(b.getAttribute("data-cmd")); });
+    el.addEventListener("keydown", function (e) {
+      if (!(e.ctrlKey || e.metaKey) || e.altKey) return;
+      var k = (e.key || "").toLowerCase(), cmd = !e.shiftKey ? { b: "bold", i: "italic", u: "underline" }[k]
+        : (e.code === "Digit8" || k === "*") ? "insertUnorderedList" : (e.code === "Digit7" || k === "&") ? "insertOrderedList" : "";
+      if (cmd) { e.preventDefault(); run(cmd); }
+    });
+    el.addEventListener("input", function (e) { if (e.isTrusted && !el.textContent && !el.querySelector("li")) el.textContent = ""; });
+    el.addEventListener("paste", function (e) {  // alleen platte tekst plakken, geen opmaak of HTML van andere sites
+      var t = e.clipboardData && e.clipboardData.getData("text/plain"); if (t == null) return;
+      e.preventDefault(); document.execCommand("insertText", false, t);
+    });
+    el.addEventListener("drop", function (e) {
+      var t = e.dataTransfer && e.dataTransfer.getData("text/plain"); e.preventDefault();
+      if (t) { el.focus(); document.execCommand("insertText", false, t); }
+    });
+    document.addEventListener("selectionchange", function () { if (document.activeElement === el || tools.querySelector('[aria-pressed="true"]')) state(); });
+    el.addEventListener("blur", state);
+    return el;
+  }
+
   // ---- een notitieveld
   function labelOf(id) { return secs[id] ? secs[id].getAttribute("data-label") : (own(store.notes, id) && store.notes[id].l) || id; }
-  function grow(ta) { if (!ta.offsetParent) return; ta.style.height = "auto"; ta.style.height = (ta.scrollHeight + 2) + "px"; }
+  function grow(ta) { if (ta.tagName !== "TEXTAREA" || !ta.offsetParent) return; ta.style.height = "auto"; ta.style.height = (ta.scrollHeight + 2) + "px"; }
   function setStatus(sec, state) {
     var el = sec.querySelector(".note-status"), id = sec.getAttribute("data-note"), n = live(id);
     if (state === "saved" && token) state = store.pending[id] ? (syncErr ? "local" : "pushing") : "synced";
@@ -837,13 +1095,13 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
   }
   function open(sec, focus) {
     sec.classList.add("open");
-    var ta = sec.querySelector("textarea"); grow(ta);
+    var ta = sec.querySelector(".note-text"); grow(ta);
     if (focus) ta.focus({ preventScroll: true });
   }
   function save(id) {
     clearTimeout(timers[id]); delete timers[id];
     if (!dirty[id]) return; delete dirty[id];
-    var sec = secs[id], text = sec.querySelector("textarea").value, now = new Date().toISOString();
+    var sec = secs[id], text = sec.querySelector(".note-text").value, now = new Date().toISOString();
     refresh();
     var prev = own(store.notes, id) ? store.notes[id] : null;
     if (text.trim()) store.notes[id] = { t: text, u: now, l: sec.getAttribute("data-label") || "", b: prev ? prev.b : "" };
@@ -865,9 +1123,9 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
     document.body.classList.toggle("note-pinned", !!pinned);
   }
   function fill(sec) {
-    var id = sec.getAttribute("data-note"), n = live(id), ta = sec.querySelector("textarea"), focused = document.activeElement === ta;
+    var id = sec.getAttribute("data-note"), n = live(id), ta = sec.querySelector(".note-text"), focused = document.activeElement === ta;
     var text = n ? n.t : "";
-    if (ta.value !== text) { ta.value = text; if (focused) ta.setSelectionRange(text.length, text.length); }
+    if (ta.value !== text) { ta.value = text; if (focused) caretEnd(ta); }
     if (n || sec.classList.contains("orphan")) sec.classList.add("open");
     else if (pinned !== sec && !focused) sec.classList.remove("open");
     grow(ta); setStatus(sec, ""); marks(id);
@@ -878,9 +1136,9 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
     sec.innerHTML = (orphan ? '<p class="note-label">' + esc(label) + "</p>" : '<button type="button" class="note-add">' + PEN + "<span>Eigen notities bij deze les</span></button>") +
       '<div class="note-box"><div class="note-bar"><span class="note-title">Mijn notities</span><span class="note-status" aria-live="polite"></span>' +
       (orphan ? "" : '<button type="button" class="note-pin" aria-pressed="false" title="Houd dit notitieveld onderin beeld terwijl je door deze les scrolt">' + PIN + "<span>Meescrollen</span></button>") +
-      '</div><textarea class="note-text" rows="4" spellcheck="true" placeholder="' + esc(HINT) + '" aria-label="' + esc("Mijn notities bij " + label) + '"></textarea>' +
+      '</div><div class="note-text" data-ph="' + esc(HINT) + '" data-label="' + esc("Mijn notities bij " + label) + '"></div>' +
       '<p class="note-foot"><span class="note-where"></span> <button type="button" class="note-dl">Download een kopie</button> · <a href="#notities" class="note-more"></a></p></div>';
-    var ta = sec.querySelector("textarea"), downInside = false;
+    var ta = rich(sec.querySelector(".note-text")), downInside = false;
     sec.addEventListener("pointerdown", function () { downInside = true; setTimeout(function () { downInside = false; }, 400); });
     ta.addEventListener("input", function () {
       dirty[id] = true; grow(ta); setStatus(sec, "busy");
@@ -1133,7 +1391,7 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
       j.className = "note-jump"; j.href = "#notitie-" + id; j.innerHTML = PEN + "<span>Notitie maken</span>";
       j.addEventListener("click", function (e) {
         e.preventDefault(); open(sec, false);
-        sec.scrollIntoView({ block: "center" }); sec.querySelector("textarea").focus({ preventScroll: true });
+        sec.scrollIntoView({ block: "center" }); sec.querySelector(".note-text").focus({ preventScroll: true });
       });
       head.appendChild(j); head.classList.add("has-jump");
     }
@@ -1163,8 +1421,8 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
     if (e.key !== KEY) return;
     refresh(); redraw();
   });
-  var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { Object.keys(secs).forEach(function (id) { grow(secs[id].querySelector("textarea")); }); }, 150); });
-  if (document.fonts) document.fonts.ready.then(function () { Object.keys(secs).forEach(function (id) { grow(secs[id].querySelector("textarea")); }); });
+  var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { Object.keys(secs).forEach(function (id) { grow(secs[id].querySelector(".note-text")); }); }, 150); });
+  if (document.fonts) document.fonts.ready.then(function () { Object.keys(secs).forEach(function (id) { grow(secs[id].querySelector(".note-text")); }); });
   if (window.visualViewport) {  // telefoon: het meescrollende veld boven het toetsenbord houden
     var vv = window.visualViewport, kb = function () { document.documentElement.style.setProperty("--kb", Math.max(0, window.innerHeight - vv.height - vv.offsetTop) + "px"); };
     vv.addEventListener("resize", kb); vv.addEventListener("scroll", kb);
@@ -1172,7 +1430,7 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
 
   // ---- notitieblad: los blad dat in beeld blijft. Het klad staat alleen hier (fm-notitieblad-<vak>);
   //      "Opslaan bij les" zet de tekst onder de notitie van de gekozen les, en vanaf daar gaat hij mee in sync en download.
-  var NB_KEY = "fm-notitieblad-" + VAK, nbEl = $("notitieblad"), nbFab = $("nb-fab"), nbSel = $("nb-les"), nbTa = $("nb-text"), nbTimer, nbFollow = true;
+  var NB_KEY = "fm-notitieblad-" + VAK, nbEl = $("notitieblad"), nbFab = $("nb-fab"), nbSel = $("nb-les"), nbTa = rich($("nb-text")), nbTimer, nbFollow = true;
   var nb = (function () { try { var v = JSON.parse(localStorage.getItem(NB_KEY) || "null"); if (v && typeof v === "object") return { t: str(v.t, 500000), les: ID.test(v.les || "") ? v.les : "", open: v.open === true }; } catch (e) {} return { t: "", les: "", open: false }; })();
   function nbWrite() { try { localStorage.setItem(NB_KEY, JSON.stringify(nb)); return true; } catch (e) { return false; } }
   function nbMsg(html, err) { var el = $("nb-msg"); el.innerHTML = html; el.classList.toggle("err", !!err); el.hidden = !html; }
@@ -1203,7 +1461,7 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
     if (!secs[id]) { nbMsg("Kies eerst een les.", true); nbSel.focus(); return; }
     if (dirty[id]) save(id);  // wat je net onder de les typte, eerst bewaren
     refresh();
-    var cur = live(id), ta = secs[id].querySelector("textarea");
+    var cur = live(id), ta = secs[id].querySelector(".note-text");
     ta.value = cur ? cur.t.replace(/\s+$/, "") + "\n\n" + text : text;
     dirty[id] = true; save(id); fill(secs[id]); open(secs[id], false);
     nbTa.value = ""; nb.t = ""; nbWrite(); $("nb-status").textContent = "";
@@ -1254,8 +1512,8 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
 
   window.fmNotes = {  // voor de zoekbalk
     find: function (term, norm) {
-      return liveIds().filter(function (id) { return norm(store.notes[id].t).indexOf(term) !== -1; }).map(function (id) {
-        return { id: "notitie-" + id, label: labelOf(id), text: store.notes[id].t.replace(/\s+/g, " ").trim() };
+      return liveIds().filter(function (id) { return norm(plainText(store.notes[id].t)).indexOf(term) !== -1; }).map(function (id) {
+        return { id: "notitie-" + id, label: labelOf(id), text: plainText(store.notes[id].t).replace(/\s+/g, " ").trim() };
       });
     }
   };
