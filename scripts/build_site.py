@@ -80,6 +80,7 @@ def main():
                 shutil.copy(os.path.join(out, f), os.path.join(ad, f))
     subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_bedrijfskunde.py")], check=True)
     subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_samenvattingen.py")], check=True)
+    subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_artikelen.py")], check=True)
     subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_home.py")], check=True)
     print("site gebouwd in", SITE, "| artifacts in", art or "-")
 

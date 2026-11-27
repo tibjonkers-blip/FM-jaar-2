@@ -1,7 +1,8 @@
 """Gedeelde navigatie van de studieplek, gebruikt door alle bouwscripts.
 
 - bar():   de vaste wegwijzerbalk bovenaan elke pagina: Home, de drie vakken (bordjes IR, HRM, BM) en een menu met alle pagina's.
-- tabs():  de tabbladen op de zoneband, op elke pagina van een vak dezelfde: Samenvatting, Oefenen, Weektoetsen (en Casustoetsen bij BM).
+- tabs():  de tabbladen op de zoneband, op elke pagina van een vak dezelfde: Samenvatting, Oefenen, Weektoetsen (en Casustoetsen bij BM,
+           Wetsartikelen bij IR en HRM).
 - crumbs(): kruimelpad boven de titel van een vakpagina (Home / vak / onderdeel).
 - footer(): voettekst onderaan elke pagina met alle onderdelen per vak.
 - BAR_CSS (balk, menu en voettekst), TABS_CSS (kop van een vakpagina plus tabbladen), BAR_JS. De Claude-artifactversie krijgt alleen TABS_CSS.
@@ -16,6 +17,7 @@ ZONES = [
     dict(slug="praktijkproject", code="BM", naam="Business management", cls="bm"),
 ]
 CASUS = [("waalhop", "Waalhop"), ("heidezoom", "Heidezoom")]
+ARTIKELEN = ("inkoop-recht", "hrm")  # vakken met een lijst wetsartikelen (/artikelen/<vak>/, build_artikelen.py)
 
 HOME_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9.5h11V10"/><path d="M10 19.5v-5h4v5"/></svg>'
 MENU_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
@@ -44,6 +46,8 @@ def bar(root, zone=None, kind="home"):
         out.append(f'<a href="{root}samenvattingen/{z["slug"]}/">Samenvatting</a>')
         out.append(f'<a href="{root}{z["slug"]}/#oefenen" data-default>Oefenvragen</a>')
         out.append(f'<a href="{root}{z["slug"]}/#toetsen">Weektoetsen</a>')
+        if z["slug"] in ARTIKELEN:
+            out.append(f'<a href="{root}artikelen/{z["slug"]}/">Wetsartikelen</a>')
         if z["slug"] == "praktijkproject":
             for s, n in CASUS:
                 out.append(f'<a href="{root}bedrijfskunde/{s}/">Casustoets {n}</a>')
@@ -53,7 +57,7 @@ def bar(root, zone=None, kind="home"):
 
 
 def tabs(root, slug, current, ids=False, doc_ext=None):
-    """Tabbladen van één vak. current: 'sam', 'oefenen', 'toetsen' of 'casus'.
+    """Tabbladen van één vak. current: 'sam', 'oefenen', 'toetsen', 'casus' of 'art'.
     ids=True (vakpagina): Oefenen en Weektoetsen wisselen op de pagina zelf en krijgen een teller.
     doc_ext: in de Claude-artifactversie verwijst Samenvatting naar het Claude-document."""
     def tab(key, href, lang, kort, extra=""):
@@ -70,6 +74,8 @@ def tabs(root, slug, current, ids=False, doc_ext=None):
     page = "" if ids else f"{root}{slug}/"
     out.append(tab("oefenen", f"{page}#oefenen", "Oefenen", "Oefenen"))
     out.append(tab("toetsen", f"{page}#toetsen", "Weektoetsen", "Toetsen"))
+    if slug in ARTIKELEN and not doc_ext:
+        out.append(tab("art", f"{root}artikelen/{slug}/", "Wetsartikelen", "Artikelen"))
     if slug == "praktijkproject" and not doc_ext:
         out.append(tab("casus", f"{root}bedrijfskunde/{CASUS[0][0]}/", "Casustoetsen", "Casus"))
     out.append("</nav>")
@@ -101,6 +107,8 @@ def footer(root):
         out.append(f'<a href="{root}samenvattingen/{z["slug"]}/">Samenvatting</a>')
         out.append(f'<a href="{root}{z["slug"]}/#oefenen">Oefenvragen</a>')
         out.append(f'<a href="{root}{z["slug"]}/#toetsen">Weektoetsen</a>')
+        if z["slug"] in ARTIKELEN:
+            out.append(f'<a href="{root}artikelen/{z["slug"]}/">Wetsartikelen</a>')
         if z["slug"] == "praktijkproject":
             for s, n in CASUS:
                 out.append(f'<a href="{root}bedrijfskunde/{s}/">Casustoets {n}</a>')
