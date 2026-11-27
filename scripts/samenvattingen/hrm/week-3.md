@@ -14,7 +14,15 @@ De kern: met bedingen in de arbeidsovereenkomst beperkt de werkgever de vrijheid
 
 ### Oefenvraag vorige les: Dora
 
-Dora vertelde bij haar sollicitatie dat ze zwanger is, werd aangenomen en meldt zich in de proeftijd een week ziek door zwangerschapsklachten. De werkgever wil haar daarom in de proeftijd ontslaan. Antwoordmodel: **nee**. De ziekte komt door de zwangerschap. Iemand anders behandelen vanwege zwangerschap of een daaraan gekoppelde ziekte is **direct onderscheid op grond van geslacht** en dus niet toegestaan volgens de Awgb.
+Letterlijk uit de slides van lesweek 3.
+
+Dora is zwanger van haar eerste kind. Ze is daarover open geweest tijdens het sollicitatiegesprek en aangenomen voor de functie. Tijdens de proeftijd krijg Dora wat last van zwangerschapsklachten en meldt zich een week ziek. De werkgever heeft nu spijt dat zij Dora aangenomen heeft, want ziekte tijdens de proeftijd is geen goed teken voor de toekomst. Zij wil Dora nu ontslaan tijdens de proeftijd vanwege de ziekte.
+
+**Kan de werkgever Dora nu ontslaan tijdens de proeftijd vanwege de ziekmelding?**
+
+::: antwoord
+Antwoordmodel: Nee, dit kan niet. De ziekte komt door de zwangerschap. Een persoon anders behandelen vanwege zwangerschap of daaraan gekoppelde ziekte is direct onderscheid op grond van geslacht en om deze reden niet toegestaan volgens de Awgb.
+:::
 
 ### Bijzondere bedingen
 

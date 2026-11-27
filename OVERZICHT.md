@@ -4,7 +4,7 @@ Lees dit bestand voordat je iets aanpast. Het legt in het kort uit waar alles st
 zodat je niet de hele code hoeft door te lezen. Werk het bij in dezelfde wijziging als je de werking,
 de structuur of een afspraak verandert (zie `CLAUDE.md`).
 
-Laatst bijgewerkt: 26-11-2026
+Laatst bijgewerkt: 27-11-2026
 
 ## In één alinea
 
@@ -89,6 +89,8 @@ Elke nieuwe open vraag en casusdeelvraag hoort er een te krijgen. Ontbrekende vi
 **Samenvattingen** (`scripts/samenvattingen/<vak>/`). Markdown uit de Claude-documenten. `clean_source()` haalt Claude-specifieke
 regels weg, lege "Na de les aangevuld"-blokken verdwijnen. Een `##`-kop is een les, `###`/`####` zijn deelkoppen.
 Het BM-tabblad "Logboek portfolio" komt bewust niet op de site (persoonlijk, de site is openbaar).
+Een blok tussen `::: antwoord` en `:::` (eigen regels) wordt een knop "Toon antwoord" die de tekst openklapt (`<details class="reveal">`,
+geen JavaScript). Gebruikt bij "Oefenvraag vorige les" van arbeidsrecht; staat niet in de Claude-documenten, dus bewaar het bij een nieuwe export.
 
 **Figuren** (`scripts/figuren/<vak>.py`). `F(week, les, kop, fig(...), pos/after)`; de figuur komt onder de kop waarvan de tekst
 precies gelijk is aan `kop`. Komt die kop niet precies één keer voor, dan stopt de bouw. Componenten: `flow`, `phases`, `lanes`,
