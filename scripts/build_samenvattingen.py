@@ -213,6 +213,16 @@ def blocks(md):
         m = re.match(r"^(#{1,6})\s+(.*)$", line)
         if m:
             out.append((f"h{min(len(m.group(1)), 4)}", m.group(2).strip())); i += 1; continue
+        if re.match(r"^:::\s*antwoord\s*$", line):
+            # verborgen antwoord: alles tot de afsluitende ":::" komt achter een knop
+            j = i + 1
+            while j < len(lines) and lines[j].strip() != ":::": j += 1
+            assert j < len(lines), "':::' na '::: antwoord' ontbreekt"
+            inner = "".join(d for k, d in blocks("\n".join(lines[i + 1:j])) if k == "html")
+            out.append(("html", '<details class="reveal"><summary><span class="r-show">Toon antwoord</span>'
+                                '<span class="r-hide">Verberg antwoord</span></summary>'
+                                f'<div class="reveal-body">{inner}</div></details>'))
+            i = j + 1; continue
         if line.startswith("```"):
             j = i + 1
             while j < len(lines) and not lines[j].startswith("```"): j += 1
@@ -523,6 +533,16 @@ blockquote { margin: 0; padding: 12px 16px; border-left: 3px solid var(--accent)
 .callout.warn { background: var(--warn-soft); }
 .callout.warn .c-label { color: var(--warn); }
 .callout.portfolio, .callout.product { background: transparent; border: 1px dashed var(--ink-soft); }
+.reveal { max-width: 72ch; }
+.reveal summary { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 8px 14px; border-radius: 10px; cursor: pointer; list-style: none;
+  background: var(--sheet); border: 1px solid var(--accent); color: var(--accent); font-weight: 600; font-size: 0.92rem; }
+.reveal summary::-webkit-details-marker { display: none; }
+.reveal summary::before { content: "▸"; transition: transform .15s; }
+.reveal[open] summary::before { transform: rotate(90deg); }
+.reveal summary:hover { background: var(--accent-soft); }
+.reveal .r-hide, .reveal[open] .r-show { display: none; }
+.reveal[open] .r-hide { display: inline; }
+.reveal-body { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; padding: 12px 16px; border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; }
 .from-notes { font-size: 0.76rem; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 2px 6px; border-radius: 4px; margin-right: 2px; white-space: nowrap; vertical-align: 1px; }
 
 .scroll { overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; border: 1px solid var(--rule); border-radius: 12px; }
