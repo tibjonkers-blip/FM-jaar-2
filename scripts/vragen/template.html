@@ -8,7 +8,7 @@
    het zonebordje (IR, HRM, BM) en tabbladen die als mappen op de band staan. Daaronder één rustige leeskolom; een toets leest
    als één lang tentamen met vraagnummers in de kantlijn en een vaste inleverbalk onderaan. */
 :root {
-  --paper: #eef1f6;
+  --paper: #f3f5f8;
   --sheet: #ffffff;
   --sunk: #e4e9f1;
   --ink: #16202f;
@@ -53,11 +53,11 @@ body {
 .wrap { width: 100%; max-width: 812px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 72px; }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.12; }
-h1 { font-size: clamp(2rem, 5.4vw, 2.9rem); font-weight: 800; font-stretch: 116%; letter-spacing: -0.012em; }
-h2 { font-size: 1.3rem; font-weight: 700; font-stretch: 108%; }
-h3 { font-size: 1.04rem; font-weight: 700; font-stretch: 104%; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); font-weight: 750; letter-spacing: -0.02em; }
+h2 { font-size: 1.28rem; font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 1.04rem; font-weight: 700; }
 h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
-@media (max-width: 400px) { h1 { font-size: 1.7rem; font-stretch: 104%; } }
+@media (max-width: 400px) { h1 { font-size: 1.65rem; } }
 p { margin: 0; }
 a { color: var(--accent); text-underline-offset: 2px; }
 button { font: inherit; color: inherit; cursor: pointer; }
@@ -67,28 +67,17 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .note { font-size: 0.85rem; color: var(--ink-soft); }
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 
-/* ---------- kopband ---------- */
-.band { background: var(--band); color: var(--on-band); }
-.band-in { max-width: 812px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 0; }
-/* tijdens een oefenronde of toets: een smalle band, zodat de vragen de aandacht krijgen */
+/* ---------- kop: de gedeelde vormgeving staat in sitenav.py (TABS_CSS) ---------- */
+.band-in { max-width: 812px; }
+/* tijdens een oefenronde of toets: een smalle kop, zodat de vragen de aandacht krijgen */
 .band-in:has(> .tabs[hidden]) { padding-block: 16px 18px; gap: 8px; }
-.band-in:has(> .tabs[hidden]) .examline, .band-in:has(> .tabs[hidden]) .meta { display: none; }
+.band-in:has(> .tabs[hidden]) .examline, .band-in:has(> .tabs[hidden]) .meta, .band-in:has(> .tabs[hidden]) .crumbs { display: none; }
 .band-in:has(> .tabs[hidden]) h1 { font-size: clamp(1.35rem, 3.6vw, 1.75rem); }
 .band-in:has(> .tabs[hidden]) .plate { min-width: 38px; height: 38px; font-size: 0.86rem; border-radius: 8px; }
-.band a { color: inherit; }
 .top { display: flex; flex-direction: column; gap: 10px; }
-.title-row { display: flex; align-items: center; gap: 14px; min-width: 0; }
-.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: #fff; color: var(--band);
-  display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-stretch: 122%; font-size: 1.05rem; letter-spacing: 0.02em; }
-.title-row h1 { min-width: 0; }
-.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: rgba(255, 255, 255, 0.82); font-size: 0.93rem; }
-.meta strong { color: #fff; }
-.examline { max-width: 64ch; color: rgba(255, 255, 255, 0.86); font-size: 0.95rem; }
 
 __TABS_CSS__
 __BAR_CSS__
-.band :focus-visible { outline-color: #fff; }
 
 /* ---------- panels ---------- */
 .stack { display: flex; flex-direction: column; gap: 18px; }
@@ -171,7 +160,7 @@ __BAR_CSS__
 /* ---------- vragen (gedeeld door oefenen en toets) ---------- */
 .q { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 0 10px; padding-block: 22px; border-top: 1px solid var(--rule); }
 .q:first-of-type { border-top: 0; }
-.qnum { font-family: var(--font-display); font-stretch: 116%; font-weight: 800; font-size: 1.2rem; color: var(--accent); padding-top: 1px; font-variant-numeric: tabular-nums; }
+.qnum { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--accent); padding-top: 1px; font-variant-numeric: tabular-nums; }
 .qbody { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .qmeta { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag { font-size: 0.78rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 2px 10px; }
@@ -196,7 +185,7 @@ textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3
 .case { background: var(--sunk); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
 .case .ctext { white-space: pre-wrap; }
 .sub { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 0 8px; }
-.sub .sl { font-family: var(--font-display); font-stretch: 112%; font-weight: 800; color: var(--accent); }
+.sub .sl { font-family: var(--font-display); font-weight: 800; color: var(--accent); }
 .sub .sb { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .subs { display: flex; flex-direction: column; gap: 18px; }
 
@@ -231,7 +220,7 @@ details.model[open] > summary { margin-bottom: 8px; }
 
 /* ---------- resultaat ---------- */
 .score { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 28px; align-items: center; }
-.cijfer { font-family: var(--font-display); font-weight: 800; font-size: clamp(3.6rem, 13vw, 5.2rem); line-height: 0.9; font-stretch: 112%; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.cijfer { font-family: var(--font-display); font-weight: 800; font-size: clamp(3.6rem, 13vw, 5.2rem); line-height: 0.9; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .cijfer.pass { color: var(--good); } .cijfer.fail { color: var(--bad); } .cijfer.todo { color: var(--ink-soft); }
 .score .side { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .score .big { font-weight: 600; font-size: 1.05rem; }
@@ -265,6 +254,7 @@ details.model[open] > summary { margin-bottom: 8px; }
 
 __SITEBAR__<header class="band">
   <div class="band-in">
+    __CRUMBS__
     <div class="title-row"><span class="plate" aria-hidden="true">__CODE__</span><h1>__HEADING__</h1></div>
     <div class="meta">
       <span>Toetsperiode <strong>11–22 januari 2027</strong></span>
@@ -1073,4 +1063,5 @@ Geef alleen JSON terug in deze vorm:
   (async () => { try { sample = window.claude && window.claude.use ? await window.claude.use("sample") : null; } catch { sample = null; } })();
 })();
 </script>
+__SITEFOOT__
 __BAR_JS__

@@ -2,7 +2,10 @@
 
 - bar():   de vaste wegwijzerbalk bovenaan elke pagina: Home, de drie vakken (bordjes IR, HRM, BM) en een menu met alle pagina's.
 - tabs():  de tabbladen op de zoneband, op elke pagina van een vak dezelfde: Samenvatting, Oefenen, Weektoetsen (en Casustoetsen bij BM).
-- BAR_CSS, TABS_CSS, BAR_JS: de bijbehorende stijl en het script. De Claude-artifactversie krijgt alleen TABS_CSS.
+- crumbs(): kruimelpad boven de titel van een vakpagina (Home / vak / onderdeel).
+- footer(): voettekst onderaan elke pagina met alle onderdelen per vak.
+- BAR_CSS (balk, menu en voettekst), TABS_CSS (kop van een vakpagina plus tabbladen), BAR_JS. De Claude-artifactversie krijgt alleen TABS_CSS.
+  Kleuren komen uit de tokens van de pagina zelf (--accent, --ink, --sheet, ...), zodat kop en tabbladen op elke pagina hetzelfde zijn.
 
 Elke pagina geeft `root` mee: het relatieve pad naar de startpagina ("" op de startpagina, "../" op een vakpagina, "../../" daaronder).
 """
@@ -73,24 +76,84 @@ def tabs(root, slug, current, ids=False, doc_ext=None):
     return "".join(out)
 
 
-TABS_CSS = """
-/* ---------- tabbladen: mappen op de zoneband, op elke pagina van een vak dezelfde ---------- */
-.tabs { display: flex; gap: 4px; margin-top: 8px; max-width: 100%; }
-.tab { border: 0; background: transparent; padding: 11px 18px 12px; border-radius: 10px 10px 0 0; font-weight: 600; color: rgba(255, 255, 255, 0.88);
-  text-decoration: none; font-size: 0.97rem; line-height: 1.3; display: inline-flex; gap: 8px; align-items: baseline; white-space: nowrap; }
-.tab:hover { color: #fff; background: rgba(255, 255, 255, 0.14); }
-.tab[aria-current="page"], .tab[aria-current="page"]:hover { background: var(--paper, var(--bg)); color: var(--ink); }
-.tab .n { font-size: 0.76rem; font-weight: 500; opacity: 0.75; }
-.tab[aria-current="page"] .n { color: var(--accent); opacity: 1; font-weight: 700; }
+def crumbs(root, slug=None, here=None):
+    """Kruimelpad boven de titel: Home › vak › onderdeel. here: naam van deze pagina (laatste stap, zonder link)."""
+    z = next((z for z in ZONES if z["slug"] == slug), None)
+    out = ['<nav class="crumbs" aria-label="Kruimelpad">', f'<a href="{root or "./"}">Home</a>']
+    if z and here:
+        out.append(f'<i aria-hidden="true">/</i><a href="{root}{z["slug"]}/">{z["naam"]}</a>')
+    elif z:
+        out.append(f'<i aria-hidden="true">/</i><span aria-current="page">{z["naam"]}</span>')
+    if here:
+        out.append(f'<i aria-hidden="true">/</i><span aria-current="page">{here}</span>')
+    out.append("</nav>")
+    return "".join(out)
+
+
+def footer(root):
+    """Voettekst onderaan elke pagina van de site: alle onderdelen per vak, zodat je vanaf het eind van een pagina verder kunt."""
+    out = ['<footer class="sitefoot"><div class="sf-in">',
+           f'<div class="sf-about"><a class="sf-home" href="{root or "./"}">Studieplek FM jaar 2</a>'
+           '<p>Periode 2: samenvattingen, oefenvragen en weektoetsen. Toetsperiode 11 t/m 22 januari 2027.</p>'
+           '<a class="sf-top" href="#">Terug naar boven</a></div>']
+    for z in ZONES:
+        out.append(f'<div class="sf-col {z["cls"]}"><span class="sf-head"><b>{z["code"]}</b>{z["naam"]}</span>')
+        out.append(f'<a href="{root}samenvattingen/{z["slug"]}/">Samenvatting</a>')
+        out.append(f'<a href="{root}{z["slug"]}/#oefenen">Oefenvragen</a>')
+        out.append(f'<a href="{root}{z["slug"]}/#toetsen">Weektoetsen</a>')
+        if z["slug"] == "praktijkproject":
+            for s, n in CASUS:
+                out.append(f'<a href="{root}bedrijfskunde/{s}/">Casustoets {n}</a>')
+        out.append("</div>")
+    out.append("</div></footer>")
+    return "".join(out)
+
+
+HEAD_CSS = """
+/* ---------- kop van een vakpagina: licht vlak met een streep in de vakkleur, bordje, kruimelpad en tabbladen ---------- */
+.band { background: var(--sheet, var(--surface)); color: var(--ink); border-bottom: 1px solid var(--rule, var(--line)); box-shadow: inset 0 4px 0 var(--accent); }
+.band-in { margin: 0 auto; display: flex; flex-direction: column; gap: 12px; padding-block: 26px 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.band :focus-visible { outline-color: var(--accent); }
+.band h1 { color: var(--ink); }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; font-size: 0.86rem; color: var(--ink-soft, var(--muted)); margin: -6px 0 -2px; }
+.crumbs a { color: inherit; text-decoration: none; font-weight: 500; }
+.crumbs a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs i { font-style: normal; opacity: 0.55; }
+.crumbs [aria-current] { color: var(--ink); font-weight: 600; }
+.title-row { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.title-row > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.title-row h1 { min-width: 0; }
+.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: var(--accent); color: var(--on-accent, var(--accent-ink, #fff));
+  display: grid; place-items: center; font-weight: 800; font-stretch: 112%; font-size: 1.02rem; letter-spacing: 0.02em; }
+.kind { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+.band .lead, .band .examline { max-width: 66ch; color: var(--ink-soft, var(--muted)); font-size: 0.96rem; margin: 0; }
+.band .lead a { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.band .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--ink-soft, var(--muted)); font-size: 0.93rem; }
+.band .meta strong { color: var(--ink); }
+@media (max-width: 400px) { .plate { min-width: 44px; height: 44px; font-size: 0.9rem; border-radius: 9px; } .title-row { gap: 12px; } }
+"""
+
+TABS_CSS = HEAD_CSS + """
+/* ---------- tabbladen: onderstreept, op elke pagina van een vak dezelfde ---------- */
+.tabs { display: flex; gap: 6px; margin-top: 6px; margin-bottom: -1px; max-width: 100%; }
+.tab { border: 0; background: transparent; padding: 11px 12px 12px; border-bottom: 3px solid transparent; font-weight: 600; color: var(--ink-soft, var(--muted));
+  text-decoration: none; font-size: 0.97rem; line-height: 1.3; display: inline-flex; gap: 8px; align-items: center; white-space: nowrap; }
+.tab:first-child { margin-left: -12px; }
+.tab:hover { color: var(--ink); border-bottom-color: var(--rule, var(--line)); }
+.tab[aria-current="page"], .tab[aria-current="page"]:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.tab .n { font-size: 0.74rem; font-weight: 600; padding: 1px 7px; border-radius: 999px; background: var(--sunk, var(--surface-2)); color: var(--ink-soft, var(--muted)); }
+.tab[aria-current="page"] .n { background: var(--accent-soft); color: var(--accent); }
+.tab .n:empty { display: none; }
 .tab .s { display: none; }
 .tab.ext { order: 9; }
 .tab.ext::after { content: "\\2197"; font-size: 0.8em; opacity: 0.75; }
 @media (max-width: 600px) {
-  .tabs { width: 100%; gap: 2px; }
-  .tab { flex: 1 1 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.88rem; font-stretch: 94%; }
+  .tabs { width: 100%; gap: 0; }
+  .tab, .tab:first-child { flex: 1 1 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.9rem; margin-left: 0; }
   .tab .l, .tab .n { display: none; } .tab .s { display: inline; }
 }
-@media (max-width: 350px) { .tab { font-size: 0.82rem; font-stretch: 88%; padding-inline: 2px; } }
+@media (max-width: 350px) { .tab { font-size: 0.84rem; padding-inline: 2px; } }
 """
 
 BAR_CSS = """
@@ -146,6 +209,24 @@ BAR_CSS = """
   .sb-links a { border: 1px solid var(--rule, var(--line)); padding: 6px 12px; font-size: 0.92rem; }
   .sb-links a[aria-current="page"] { border-color: var(--zt); }
 }
+
+/* ---------- voettekst: alle onderdelen per vak ---------- */
+.sitefoot { margin-top: 40px; border-top: 1px solid var(--rule, var(--line)); background: var(--sheet, var(--surface)); color: var(--ink-soft, var(--muted));
+  font-family: "Archivo", "Segoe UI", system-ui, sans-serif; font-size: 0.9rem; line-height: 1.45; }
+.sf-in { max-width: __W__px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr)); gap: 28px;
+  padding: 30px max(16px, env(safe-area-inset-right, 0px)) calc(36px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sf-about { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.sf-about p { margin: 0; max-width: 34ch; }
+.sf-home { font-weight: 800; color: var(--ink); text-decoration: none; font-size: 1rem; }
+.sf-top { color: var(--ink-soft, var(--muted)); font-weight: 600; }
+.sf-col { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sf-head { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.sf-head b { display: grid; place-items: center; min-width: 32px; height: 22px; padding: 0 5px; border-radius: 5px; background: var(--zc); color: #fff; font-size: 0.7rem; font-stretch: 112%; letter-spacing: 0.02em; }
+.sf-col a { color: var(--ink-soft, var(--muted)); text-decoration: none; padding: 3px 0; }
+.sf-col a:hover { color: var(--zt); text-decoration: underline; text-underline-offset: 3px; }
+.sitefoot .ir { --zc: var(--z-ir); --zt: var(--zt-ir); } .sitefoot .hrm { --zc: var(--z-hrm); --zt: var(--zt-hrm); } .sitefoot .bm { --zc: var(--z-bm); --zt: var(--zt-bm); }
+@media (max-width: 820px) { .sf-in { grid-template-columns: repeat(3, minmax(0, 1fr)); } .sf-about { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .sf-in { grid-template-columns: 1fr 1fr; gap: 22px 16px; padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); } .sf-col.bm { grid-column: 1 / -1; } }
 """
 
 BAR_JS = """<script>
@@ -179,5 +260,8 @@ BAR_JS = """<script>
 </script>"""
 
 
-def bar_css(width):
-    return BAR_CSS.replace("__W__", str(width))
+BREEDTE = 1180  # breedte van balk en voettekst, op elke pagina gelijk zodat de navigatie niet verspringt
+
+
+def bar_css():
+    return BAR_CSS.replace("__W__", str(BREEDTE))
