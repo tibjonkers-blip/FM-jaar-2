@@ -112,7 +112,15 @@ De kern: er zijn **vier manieren** waarop een arbeidsovereenkomst eindigt. Je mo
 
 ### Oefenvraag vorige les: Dennis
 
-Dennis werkt 4 dagen per week, heeft 18 vakantiedagen en is 4 dagen ziek tijdens zijn vakantie; zijn contract zegt dat vakantiedagen dan doorlopen. Antwoordmodel: ziektedagen gelden in principe niet als vakantie (art. 7:638 lid 8 BW). Vooraf afspreken mag alleen voor **bovenwettelijke** dagen. Wettelijk: 4 x 4 = 16 dagen (art. 7:634), dus 2 bovenwettelijke. Alleen die **2** dagen mogen worden verrekend, niet 4.
+Letterlijk uit de slides van lesweek 5.
+
+Dennis werkt 4 dagen in de week voor een facilitair adviesbureau. Hij heeft op basis van zijn arbeidsovereenkomst recht op 18 vakantiedagen. Helaas wordt Dennis tijdens zijn vakantie ziek. Hij meldt zich netjes volgens de interne regels ziek en blijft ziek gedurende 4 dagen. In de arbeidsovereenkomst van Dennis staat dat als een werknemer ziek wordt tijdens de vakantie, de vakantiedagen doorlopen. De vier ziektedagen van Dennis zijn van zijn vakantiedagen ingehouden.
+
+**Is dit toegestaan?**
+
+::: antwoord
+Antwoordmodel: In principe gelden ziektedagen niet als vakantiedagen, aldus art. 7:638 lid 8 BW. Volgens hetzelfde lid mogen de ziektedagen toch van de vakantiedagen ingehouden worden, als dit van tevoren afgesproken is. Dit geldt alleen voor de bovenwettelijke dagen. Dennis werkt vier dagen in de week, dit betekent 16 wettelijke vakantiedagen (art. 7:634 BW). Dennis heeft 18 vakantiedagen en dus twee bovenwettelijke, alleen met die twee bovenwettelijke dagen mag het verrekend worden.
+:::
 
 ### De vier manieren
 

@@ -4,7 +4,7 @@ Lees dit bestand voordat je iets aanpast. Het legt in het kort uit waar alles st
 zodat je niet de hele code hoeft door te lezen. Werk het bij in dezelfde wijziging als je de werking,
 de structuur of een afspraak verandert (zie `CLAUDE.md`).
 
-Laatst bijgewerkt: 26-11-2026
+Laatst bijgewerkt: 27-11-2026
 
 ## In één alinea
 
@@ -36,7 +36,7 @@ git add -A && git commit -m "..." && git push
 |---|---|
 | `site/` | Gebouwde site. Niet met de hand aanpassen, alles komt uit `scripts/`. |
 | `scripts/build_*.py` | Bouwscripts (zie hieronder). |
-| `scripts/sitenav.py` | Gedeelde navigatie: vaste balk bovenaan, tabbladen per vak, CSS en JS daarvan. |
+| `scripts/sitenav.py` | Gedeelde navigatie en kop: vaste balk bovenaan, kruimelpad, kop en tabbladen per vak, voettekst, CSS en JS daarvan. |
 | `scripts/vragen/` | Oefenvragen per vak plus `template.html`, de oefenpagina (vragen én weektoetsen). |
 | `scripts/toetsen/` | Weektoetsen en eindtoetsen per vak per week (`ir_w1.py`, `hrm_eind.py`, ...), helpers in `lib.py`. |
 | `scripts/toelichting/` | Uitleg "Waarom dit klopt" bij open vragen en casusdeelvragen, één bestand per vak. |
@@ -89,6 +89,8 @@ Elke nieuwe open vraag en casusdeelvraag hoort er een te krijgen. Ontbrekende vi
 **Samenvattingen** (`scripts/samenvattingen/<vak>/`). Markdown uit de Claude-documenten. `clean_source()` haalt Claude-specifieke
 regels weg, lege "Na de les aangevuld"-blokken verdwijnen. Een `##`-kop is een les, `###`/`####` zijn deelkoppen.
 Het BM-tabblad "Logboek portfolio" komt bewust niet op de site (persoonlijk, de site is openbaar).
+Een blok tussen `::: antwoord` en `:::` (eigen regels) wordt een knop "Toon antwoord" die de tekst openklapt (`<details class="reveal">`,
+geen JavaScript). Gebruikt bij "Oefenvraag vorige les" van arbeidsrecht; staat niet in de Claude-documenten, dus bewaar het bij een nieuwe export.
 
 **Figuren** (`scripts/figuren/<vak>.py`). `F(week, les, kop, fig(...), pos/after)`; de figuur komt onder de kop waarvan de tekst
 precies gelijk is aan `kop`. Komt die kop niet precies één keer voor, dan stopt de bouw. Componenten: `flow`, `phases`, `lanes`,
@@ -105,7 +107,8 @@ in `build_bedrijfskunde.py` (plus `CASUS` in `sitenav.py`).
   (`LS_KEY` per vak, lezen via `lsGet`). Draait de pagina als Claude-artifact, dan gebruikt hij ook `window.claude` (db voor
   voortgang, Claude kijkt open antwoorden na); op de site is dat er niet en kijkt de gebruiker zelf na met het modelantwoord.
 - **Casustoetsen**: `app.js` bewaart antwoorden in `localStorage` (sleutel per toets in `TOETSEN`), zelf nakijken met rubric.
-- **Navigatie**: elke pagina krijgt de balk en tabs uit `sitenav.py`, met `root` als relatief pad naar de startpagina.
+- **Navigatie**: elke pagina krijgt uit `sitenav.py` de balk (`bar`), het kruimelpad (`crumbs`, niet op de startpagina), de tabs (`tabs`)
+  en de voettekst met alle onderdelen (`footer`), met `root` als relatief pad naar de startpagina. Een nieuwe pagina gebruikt die vier ook.
 - **`localStorage` lezen**: `lsGet` in `template.html` en de lader in `bedrijfskunde/app.js` controleren het type van een bewaarde
   waarde en vallen terug op de standaardwaarde. Houd dat patroon aan bij nieuwe sleutels.
 
@@ -139,9 +142,13 @@ eerst in de CSP**, anders blokkeert de browser hem. De samenvattingen laten alle
 
 ## Vormgeving
 
-"Bewegwijzering": per vak een zone met kleurband, wit codebordje (IR/HRM/BM) en tabbladen. Kleuren IR `#0b6f82`/`#63cfe2`,
-HRM `#9a2d6c`/`#f095c9`, BM `#9a520a`/`#f5b65e`, startpagina navy `#1d2b4f`, donkere achtergrond `#121b2b`.
-Eén lettertype: Archivo via Google Fonts. Geen monospace en geen hoofdletterlabels. Licht en donker thema.
+Rustig en zakelijk. Navy balk bovenaan (op elke pagina even breed: `BREEDTE` in `sitenav.py`), daaronder een lichte kop
+met een streep in de vakkleur, kruimelpad, gekleurd codebordje (IR/HRM/BM) en onderstreepte tabbladen. De kop- en tabstijl
+staat alleen in `TABS_CSS` van `sitenav.py` en gebruikt de tokens van de pagina (`--accent`, `--ink`, `--sheet`/`--surface`, ...);
+pagina's zetten zelf alleen de breedte van `.band-in`. Startpagina: lichte kop met de drie vakkleuren als streep, witte vakkaarten
+met een gekleurde bovenrand. Kleuren IR `#0b6f82`/`#63cfe2`, HRM `#9a2d6c`/`#f095c9`, BM `#9a520a`/`#f5b65e`, balk navy `#1d2b4f`,
+achtergrond licht `#f3f5f8`, donker `#121b2b`. Eén lettertype: Archivo via Google Fonts, op normale breedte (geen `font-stretch`
+behalve in de codebordjes). Geen monospace en geen hoofdletterlabels. Licht en donker thema.
 Test elke gewijzigde pagina op 1280, 380 en 320 px breed, licht en donker.
 
 ## Vaste afspraken voor inhoud

@@ -86,7 +86,15 @@ De kern: het uitgangspunt is **geen arbeid, wel loon** (art. 7:628 BW): de werkg
 
 ### Oefenvraag vorige les: Dion
 
-Dion verdient €4.500 bruto per maand en krijgt na een eerdere waarschuwing een boete van €500 voor werken zonder veiligheidshandschoenen; de boete gaat in de praktijk naar de werkgever. Antwoordmodel: **toegestaan**. Art. 7:650 BW is alleen volledig dwingend als de werknemer het minimumloon verdient (lid 6). Dion verdient meer, dus mag worden afgeweken van de maximale boete van een halve dag loon per week (lid 5) en van de bestemming (lid 3).
+Letterlijk uit de slides van lesweek 4.
+
+Dion is werkzaam bij een bedrijf in de metaalindustrie en verdient 4.500 euro bruto per maand. Vanwege de grote risico’s op een arbeidsongeval gelden er strenge regels wat betreft veilig werken, waaronder het gebruik van veiligheidsmiddelen, zoals veiligheidshandschoenen. Dion wordt nu voor de tweede keer betrapt op het niet werken met de veiligheidshandschoenen. De eerste keer heeft hij een waarschuwing gekregen, de tweede keer krijgt hij een boete volgens het personeelshandboek, dat onderdeel is van zijn arbeidsovereenkomst. De boete bedraagt 500 euro. Nergens is beschreven wat de bestemming van de boete is, in de praktijk gaat de boete naar de werkgever.
+
+**Is dit toegestaan?**
+
+::: antwoord
+Antwoordmodel: Ja, dit is toegestaan. Art. 7:650 BW is alleen volledig van dwingend recht indien de werknemer het minimumloon verdient (zie lid 6), Dion verdient meer dan het minimumloon. Dit betekent dat er afgeweken kan worden van de maximum boete van een halve dag loon per week (lid 5) en de bestemming van de boete (lid 3).
+:::
 
 ### Geen arbeid, wel loon: art. 7:628 BW
 

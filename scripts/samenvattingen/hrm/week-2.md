@@ -101,7 +101,17 @@ De kern: ook een uitzendkracht of oproepkracht heeft een arbeidsovereenkomst, me
 
 ### Oefenvraag vorige les: Davy
 
-Davy werkt al acht jaar als "zelfstandige" docent bij de HAN, met vast rooster, instructies van de manager, dezelfde taken als collega's en zonder vrije vervanging. Hij factureert met btw en zijn contract heet "overeenkomst van opdracht". Antwoordmodel: Davy is hoogstwaarschijnlijk **werknemer**. Alle elementen van art. 7:610 BW zijn er: persoonlijke arbeid, loon, zekere tijd en gezag. Materieel gezag: hij volgt instructies. Formeel gezag: de facturen met btw wijzen op zelfstandigheid, maar de continuïteit en de standaardfunctie wegen zwaarder. De titel boven het contract maakt niet uit, want art. 7:610 BW is **dwingend recht**.
+Letterlijk uit de slides van lesweek 2.
+
+Davy werkt bij de HAN als docent. Er is onduidelijkheid of Davy werkt op basis van een overeenkomst van opdracht of op basis van een arbeidsovereenkomst. Davy is 8 jaar geleden bij de HAN begonnen als zelfstandige. In principe gelden voor Davy dezelfde regels als voor de andere docenten, hij werkt volgens een vast rooster dat door de roosteraar wordt opgesteld, hij volgt de instructies op van de manager van de opleiding waarvoor hij werkzaam is, hij verricht dezelfde werkzaamheden als zijn collega’s en mag zich niet zomaar laten vervangen. Hij dient voor zijn werkzaamheden maandelijks facturen in met BTW en krijg ook netjes betaald volgens die facturen. De HAN heeft aangegeven dat zij niet meer verder wil met Davy en zegt de overeenkomst op. Nu vraagt Davy zich dus af of hij geen werknemer is van de HAN en eigenlijk in dienst is op basis van een arbeidsovereenkomst voor onbepaalde tijd. Boven de overeenkomst van Davy staat duidelijk als titel: OVEREENKOMST VAN OPDRACHT.
+
+**Leg uit of Davy werknemer of zelfstandige is.**
+
+::: antwoord
+Antwoord: Davy is hoogstwaarschijnlijk een werknemer van de HAN, de situatie voldoet namelijk aan de voorwaarden van art. 7:610 BW. Hij verricht arbeid (moet deze persoonlijk verrichten, mag zich niet zomaar laten vervangen), krijgt een beloning, het is gedurende zekere tijd en verder is hij in dienst van de HAN (gezag). Davy moet namelijk luisteren naar de instructies van de werkgever (materieel gezagscriterium). Verder volgens het formeel gezagscriterium is er wel sprake van facturen met BTW, maar is er aan de andere kant sprake van continuïteit, het is een standaardfunctie binnen de HAN. Wie aansprakelijk is voor fouten, is onduidelijk, maar gelet op alle andere omstandigheden niet zo relevant.
+
+Ondanks dat er duidelijk boven de overeenkomst OVEREENKOMST VAN OPDRACHT staat, is Davy werknemer van de HAN. Art. 7:610 BW is van dwingend recht.
+:::
 
 ### Flexibele arbeidsrelaties
 
