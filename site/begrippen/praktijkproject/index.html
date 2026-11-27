@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Begrippen Praktijkproject Business Management</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Begrippenlijst Praktijkproject Business Management per les, met flitskaarten en een dictee.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+<style>
+/* Begrippen per vak, in de bewegwijzering van de studieplek: zoneband met bordje en tabbladen, daaronder een keuzepaneel
+   (weken en onderdelen) en drie manieren van oefenen: de lijst, flitskaarten en een dictee. */
+:root {
+  --paper: #eef1f6; --sheet: #ffffff; --sunk: #e4e9f1; --ink: #16202f; --ink-soft: #5a6577; --rule: #d9dfe8;
+  --accent: #9a520a; --accent-soft: #fbecd8; --on-accent: #ffffff; --band: #9a520a;
+  --good: #1b7a46; --good-soft: #def2e6; --bad: #b3261e; --bad-soft: #fbe3e1; --warn: #8f5d00; --warn-soft: #f9eed6; --mark: #fde99a;
+  --font: "Archivo", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121b2b; --sheet: #1a2539; --sunk: #0e1624; --ink: #e8edf5; --ink-soft: #9eabbf; --rule: #2a3850;
+    --accent: #f5b65e; --accent-soft: #3a2b1c; --on-accent: #111a2a; --band: #8a4a0a;
+    --good: #6fd6a0; --good-soft: #143224; --bad: #ff9a8f; --bad-soft: #3d1a1a; --warn: #f0c060; --warn-soft: #342a12; --mark: #5a4a12;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121b2b; --sheet: #1a2539; --sunk: #0e1624; --ink: #e8edf5; --ink-soft: #9eabbf; --rule: #2a3850;
+  --accent: #f5b65e; --accent-soft: #3a2b1c; --on-accent: #111a2a; --band: #8a4a0a;
+  --good: #6fd6a0; --good-soft: #143224; --bad: #ff9a8f; --bad-soft: #3d1a1a; --warn: #f0c060; --warn-soft: #342a12; --mark: #5a4a12;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.55; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+h1, h2, h3 { margin: 0; line-height: 1.15; text-wrap: balance; overflow-wrap: break-word; hyphens: auto; }
+h1 { font-size: clamp(1.9rem, 5.2vw, 2.7rem); font-weight: 800; font-stretch: 116%; letter-spacing: -0.012em; line-height: 1.08; }
+h2 { font-size: 1.25rem; font-weight: 800; font-stretch: 108%; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 400px) { h1 { font-size: 1.7rem; font-stretch: 104%; } }
+
+.band-in { max-width: 860px; }
+
+/* ---------- kop van een vakpagina: licht vlak met een streep in de vakkleur, bordje, kruimelpad en tabbladen ---------- */
+.band { background: var(--sheet, var(--surface)); color: var(--ink); border-bottom: 1px solid var(--rule, var(--line)); box-shadow: inset 0 4px 0 var(--accent); }
+.band-in { margin: 0 auto; display: flex; flex-direction: column; gap: 12px; padding-block: 26px 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.band :focus-visible { outline-color: var(--accent); }
+.band h1 { color: var(--ink); }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; font-size: 0.86rem; color: var(--ink-soft, var(--muted)); margin: -6px 0 -2px; }
+.crumbs a { color: inherit; text-decoration: none; font-weight: 500; }
+.crumbs a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs i { font-style: normal; opacity: 0.55; }
+.crumbs [aria-current] { color: var(--ink); font-weight: 600; }
+.title-row { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.title-row > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.title-row h1 { min-width: 0; }
+.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: var(--accent); color: var(--on-accent, var(--accent-ink, #fff));
+  display: grid; place-items: center; font-weight: 800; font-stretch: 112%; font-size: 1.02rem; letter-spacing: 0.02em; }
+.kind { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+.band .lead, .band .examline { max-width: 66ch; color: var(--ink-soft, var(--muted)); font-size: 0.96rem; margin: 0; }
+.band .lead a { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.band .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--ink-soft, var(--muted)); font-size: 0.93rem; }
+.band .meta strong { color: var(--ink); }
+@media (max-width: 400px) { .plate { min-width: 44px; height: 44px; font-size: 0.9rem; border-radius: 9px; } .title-row { gap: 12px; } }
+
+/* ---------- tabbladen: onderstreept, op elke pagina van een vak dezelfde ---------- */
+.tabs { display: flex; gap: 6px; margin-top: 6px; margin-bottom: -1px; max-width: 100%; }
+.tab { border: 0; background: transparent; padding: 11px 12px 12px; border-bottom: 3px solid transparent; font-weight: 600; color: var(--ink-soft, var(--muted));
+  text-decoration: none; font-size: 0.97rem; line-height: 1.3; display: inline-flex; gap: 8px; align-items: center; white-space: nowrap; }
+.tab:first-child { margin-left: -12px; }
+.tab:hover { color: var(--ink); border-bottom-color: var(--rule, var(--line)); }
+.tab[aria-current="page"], .tab[aria-current="page"]:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.tab .n { font-size: 0.74rem; font-weight: 600; padding: 1px 7px; border-radius: 999px; background: var(--sunk, var(--surface-2)); color: var(--ink-soft, var(--muted)); }
+.tab[aria-current="page"] .n { background: var(--accent-soft); color: var(--accent); }
+.tab .n:empty { display: none; }
+.tab .s { display: none; }
+.tab.ext { order: 9; }
+.tab.ext::after { content: "\2197"; font-size: 0.8em; opacity: 0.75; }
+@media (max-width: 600px) {
+  .tabs { width: 100%; gap: 0; overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab, .tab:first-child { flex: 1 0 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.9rem; margin-left: 0; }
+  .tab .l, .tab .n { display: none; } .tab .s { display: inline; }
+}
+@media (max-width: 350px) { .tab { font-size: 0.84rem; padding-inline: 2px; } }
+
+
+/* ---------- wegwijzerbalk: op elke pagina vast bovenaan ---------- */
+:root { --sb-h: 48px; --sb-bg: #1d2b4f; --z-ir: #0b6f82; --z-hrm: #8f2a65; --z-bm: #9a520a; --zt-ir: #0b6f82; --zt-hrm: #9a2d6c; --zt-bm: #9a520a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --sb-bg: #1f3160; --z-ir: #0d5e6e; --z-hrm: #7a2457; --z-bm: #8a4a0a; --zt-ir: #63cfe2; --zt-hrm: #f095c9; --zt-bm: #f5b65e; } }
+:root[data-theme="dark"] { --sb-bg: #1f3160; --z-ir: #0d5e6e; --z-hrm: #7a2457; --z-bm: #8a4a0a; --zt-ir: #63cfe2; --zt-hrm: #f095c9; --zt-bm: #f5b65e; }
+@media (max-width: 560px) { :root { --sb-h: 46px; } }
+.skip { position: absolute; left: 8px; top: -80px; z-index: 60; background: #fff; color: #16202f; padding: 10px 14px; border-radius: 8px; font-weight: 700; text-decoration: none; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 6px); }
+.sitebar { position: sticky; top: 0; z-index: 40; background: var(--sb-bg); color: #fff; padding-top: env(safe-area-inset-top, 0px);
+  font-family: "Archivo", "Segoe UI", system-ui, sans-serif; font-size: 16px; line-height: 1.2; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.14); }
+.sitebar :focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.sb-in { max-width: 1180px; margin: 0 auto; height: var(--sb-h); display: flex; align-items: center; gap: 4px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.sb-home { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 11px 0 8px; margin-left: -8px; border-radius: 8px; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
+.sb-home svg { width: 19px; height: 19px; flex: none; }
+.sb-home:hover, .sb-home[aria-current="page"] { background: rgba(255, 255, 255, 0.14); }
+.sb-zones { display: flex; align-items: stretch; height: 100%; gap: 2px; margin-left: 6px; padding-left: 10px; position: relative; }
+.sb-zones::before { content: ""; position: absolute; left: 0; top: 50%; height: 22px; margin-top: -11px; width: 1px; background: rgba(255, 255, 255, 0.24); }
+.sb-zone { display: inline-flex; align-items: center; gap: 8px; padding: 0 3px; color: #fff; text-decoration: none; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+.sb-zone b { display: grid; place-items: center; min-width: 38px; height: 30px; padding: 0 7px; border-radius: 7px; font-weight: 800; font-stretch: 118%; font-size: 0.8rem; letter-spacing: 0.02em;
+  background: var(--zc); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3); }
+.sb-zone span { display: none; padding-right: 8px; color: rgba(255, 255, 255, 0.9); }
+.sb-zone:hover b { box-shadow: inset 0 0 0 2px #fff; }
+.sb-zone:hover span { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+.sb-zone[aria-current="true"] b { background: #fff; color: var(--zc); box-shadow: none; }
+.sb-zone[aria-current="true"] span { color: #fff; font-weight: 700; }
+.sitebar .ir { --zc: var(--z-ir); --zt: var(--zt-ir); } .sitebar .hrm { --zc: var(--z-hrm); --zt: var(--zt-hrm); } .sitebar .bm { --zc: var(--z-bm); --zt: var(--zt-bm); }
+@media (min-width: 900px) { .sb-zone span { display: inline; } .sb-zones { gap: 6px; } }
+.sb-menu { margin-left: auto; position: relative; }
+.sb-menu > summary { list-style: none; display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 12px 0 10px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  cursor: pointer; font-weight: 700; font-size: 0.92rem; user-select: none; -webkit-user-select: none; }
+.sb-menu > summary::-webkit-details-marker { display: none; }
+.sb-menu > summary svg { width: 18px; height: 18px; flex: none; }
+.sb-menu > summary:hover { background: rgba(255, 255, 255, 0.14); }
+.sb-menu[open] > summary { background: #fff; color: #1d2b4f; box-shadow: none; }
+@media (max-width: 400px) { .sb-menu > summary { padding: 0 8px; } .sb-menu > summary span { display: none; } .sb-home { padding-right: 8px; } .sb-zones { margin-left: 2px; padding-left: 8px; } }
+.sb-panel { position: absolute; right: 0; top: calc(100% + 9px); width: min(700px, calc(100vw - 32px)); max-height: calc(100vh - var(--sb-h) - 28px); overflow-y: auto;
+  background: var(--sheet, var(--surface)); color: var(--ink); border: 1px solid var(--rule, var(--line)); border-radius: 14px; box-shadow: 0 14px 36px rgba(10, 18, 36, 0.28);
+  padding: 14px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.sb-col { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.sb-colhead { display: flex; align-items: center; gap: 9px; font-weight: 800; font-size: 0.92rem; line-height: 1.15; min-height: 38px; padding: 2px 4px 6px; border-bottom: 2px solid var(--zc); }
+.sb-colhead b { display: grid; place-items: center; min-width: 34px; height: 26px; padding: 0 6px; border-radius: 6px; background: var(--zc); color: #fff; font-stretch: 118%; font-size: 0.74rem; letter-spacing: 0.02em; }
+.sb-links { display: flex; flex-direction: column; gap: 2px; }
+.sb-links a { display: flex; align-items: center; min-height: 40px; padding: 6px 10px; border-radius: 8px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+.sb-links a:hover { background: color-mix(in srgb, var(--zt) 14%, transparent); color: var(--zt); }
+.sb-links a[aria-current="page"] { background: color-mix(in srgb, var(--zt) 14%, transparent); color: var(--zt); font-weight: 700; }
+.sb-panel :focus-visible { outline-color: var(--zt); }
+@media (max-width: 620px) {
+  .sb-panel { grid-template-columns: 1fr; gap: 12px; }
+  .sb-links { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .sb-links a { border: 1px solid var(--rule, var(--line)); padding: 6px 12px; font-size: 0.92rem; }
+  .sb-links a[aria-current="page"] { border-color: var(--zt); }
+}
+
+/* ---------- voettekst: alle onderdelen per vak ---------- */
+.sitefoot { margin-top: 40px; border-top: 1px solid var(--rule, var(--line)); background: var(--sheet, var(--surface)); color: var(--ink-soft, var(--muted));
+  font-family: "Archivo", "Segoe UI", system-ui, sans-serif; font-size: 0.9rem; line-height: 1.45; }
+.sf-in { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr)); gap: 28px;
+  padding: 30px max(16px, env(safe-area-inset-right, 0px)) calc(36px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sf-about { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.sf-about p { margin: 0; max-width: 34ch; }
+.sf-home { font-weight: 800; color: var(--ink); text-decoration: none; font-size: 1rem; }
+.sf-top { color: var(--ink-soft, var(--muted)); font-weight: 600; }
+.sf-col { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sf-head { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.sf-head b { display: grid; place-items: center; min-width: 32px; height: 22px; padding: 0 5px; border-radius: 5px; background: var(--zc); color: #fff; font-size: 0.7rem; font-stretch: 112%; letter-spacing: 0.02em; }
+.sf-col a { color: var(--ink-soft, var(--muted)); text-decoration: none; padding: 3px 0; }
+.sf-col a:hover { color: var(--zt); text-decoration: underline; text-underline-offset: 3px; }
+.sitefoot .ir { --zc: var(--z-ir); --zt: var(--zt-ir); } .sitefoot .hrm { --zc: var(--z-hrm); --zt: var(--zt-hrm); } .sitefoot .bm { --zc: var(--z-bm); --zt: var(--zt-bm); }
+@media (max-width: 820px) { .sf-in { grid-template-columns: repeat(3, minmax(0, 1fr)); } .sf-about { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .sf-in { grid-template-columns: 1fr 1fr; gap: 22px 16px; padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); } .sf-col.bm { grid-column: 1 / -1; } }
+
+
+.wrap { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 80px; }
+main { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.small { font-size: 0.9rem; color: var(--ink-soft); }
+.filter-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+.filter-label { font-weight: 700; }
+.linkbtn { border: 0; background: none; padding: 0; color: var(--accent); text-decoration: underline; text-underline-offset: 2px; font-size: 0.9rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--rule); background: var(--sheet); color: var(--ink-soft); border-radius: 999px; padding: 7px 14px; font-weight: 500; display: inline-flex; gap: 8px; align-items: baseline; }
+.chip:hover { border-color: var(--accent); }
+.chip .n { font-size: 0.76rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 700; }
+.chip[aria-pressed="true"] .n { color: var(--accent); opacity: 0.8; }
+.sel-summary { font-weight: 600; }
+.bar { height: 8px; border-radius: 99px; background: var(--sunk); overflow: hidden; display: flex; }
+.bar i { display: block; height: 100%; background: var(--good); }
+
+/* modi */
+.modes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; background: var(--sunk); border-radius: 12px; }
+.modes button { border: 0; background: transparent; border-radius: 9px; padding: 10px 8px; font-weight: 700; color: var(--ink-soft); }
+.modes button[aria-pressed="true"] { background: var(--sheet); color: var(--accent); box-shadow: 0 1px 3px rgba(10, 18, 36, 0.12); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.btn { border: 1px solid var(--rule); background: var(--sheet); border-radius: 9px; padding: 10px 16px; font-weight: 600; min-height: 44px; }
+.btn:hover:not(:disabled) { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn.good { background: var(--good-soft); border-color: var(--good); color: var(--good); }
+.btn.bad { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.opt { display: inline-flex; align-items: center; gap: 8px; font-size: 0.95rem; }
+.opt input { width: 18px; height: 18px; accent-color: var(--accent); }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 9px; overflow: hidden; }
+.seg button { border: 0; background: var(--sheet); padding: 8px 12px; font-weight: 600; color: var(--ink-soft); font-size: 0.92rem; }
+.seg button + button { border-left: 1px solid var(--rule); }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); }
+.empty { padding: 18px; border: 1px dashed var(--rule); border-radius: 12px; color: var(--ink-soft); }
+
+/* lijst */
+.search { position: relative; }
+.search input { width: 100%; border: 1px solid var(--rule); background: var(--sheet); border-radius: 10px; padding: 11px 14px 11px 40px; }
+.search input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); width: 17px; height: 17px; color: var(--ink-soft); pointer-events: none; }
+.les { display: flex; flex-direction: column; gap: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; }
+.les-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 14px 18px; background: var(--sunk); }
+.les-head > div:first-child { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1 1 260px; }
+.les-head small { font-weight: 700; color: var(--accent); font-size: 0.82rem; }
+.les-head h3 { font-size: 1.05rem; font-weight: 700; }
+.les-head .row { gap: 6px; }
+.les-head .btn { min-height: 36px; padding: 6px 12px; font-size: 0.88rem; }
+dl { margin: 0; }
+.term { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, 1fr); gap: 4px 18px; padding: 12px 18px; border-top: 1px solid var(--rule); }
+.term dt { font-weight: 700; display: flex; gap: 8px; align-items: baseline; }
+.term dd { margin: 0; min-width: 0; }
+.term .art { display: block; margin-top: 3px; font-size: 0.86rem; font-weight: 600; color: var(--accent); }
+.dot { flex: none; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--ink-soft); transform: translateY(-1px); }
+.dot.k { background: var(--good); border-color: var(--good); }
+.dot.n { background: var(--bad); border-color: var(--bad); }
+mark { background: var(--mark); color: inherit; border-radius: 2px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.85rem; color: var(--ink-soft); align-items: center; }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+@media (max-width: 600px) { .term { grid-template-columns: 1fr; padding: 12px 16px; } .les-head { padding: 12px 16px; } }
+
+/* oefenen: kaart en dictee */
+.stage { display: flex; flex-direction: column; gap: 14px; }
+.meta { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 0.88rem; color: var(--ink-soft); font-weight: 600; }
+.card { position: relative; width: 100%; min-height: 260px; border: 1px solid var(--rule); border-radius: 16px; background: var(--sheet); padding: 26px 24px 22px;
+  display: flex; flex-direction: column; gap: 14px; align-items: center; justify-content: center; text-align: center; box-shadow: 0 2px 10px rgba(10, 18, 36, 0.06); }
+.card:hover { border-color: var(--accent); }
+.card .side { font-size: 0.8rem; font-weight: 700; color: var(--accent); }
+.card .front { font-size: clamp(1.35rem, 4.4vw, 1.9rem); font-weight: 800; font-stretch: 108%; line-height: 1.2; overflow-wrap: anywhere; hyphens: auto; }
+.card .front.long { font-size: 1.08rem; font-weight: 500; font-stretch: 100%; line-height: 1.5; max-width: 60ch; }
+.card .back { display: flex; flex-direction: column; gap: 8px; max-width: 60ch; padding-top: 14px; border-top: 1px solid var(--rule); width: 100%; }
+.card .back .ans { font-size: 1.05rem; }
+.card .back .ans.big { font-size: 1.4rem; font-weight: 800; font-stretch: 108%; }
+.card .art { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+.card .hint { font-size: 0.82rem; color: var(--ink-soft); }
+.answer-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+.answer-row .btn { min-height: 52px; }
+.prompt { background: var(--sheet); border: 1px solid var(--rule); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+.prompt .q { font-size: 1.08rem; line-height: 1.55; }
+.prompt .q.big { font-size: 1.45rem; font-weight: 800; font-stretch: 108%; }
+.prompt label { font-weight: 700; font-size: 0.92rem; }
+.prompt input[type=text], .prompt textarea { width: 100%; border: 1.5px solid var(--rule); background: var(--paper); border-radius: 10px; padding: 12px 14px; font-size: 1.05rem; }
+.prompt textarea { min-height: 110px; resize: vertical; font-family: inherit; }
+.prompt input:focus, .prompt textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.fb { border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.fb.good { background: var(--good-soft); } .fb.good b { color: var(--good); }
+.fb.bad { background: var(--bad-soft); } .fb.bad b { color: var(--bad); }
+.fb.self { background: var(--sunk); }
+.done { text-align: center; align-items: center; }
+.score { font-size: 2.6rem; font-weight: 800; font-stretch: 116%; line-height: 1; color: var(--accent); }
+.keys { font-size: 0.82rem; color: var(--ink-soft); }
+@media (max-width: 480px) { .panel { padding: 16px; } .card { min-height: 220px; padding: 22px 16px 18px; } .prompt { padding: 16px; } .keys { display: none; } }
+.foot { color: var(--ink-soft); font-size: 0.84rem; border-top: 1px solid var(--rule); padding-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Naar de inhoud</a><header class="sitebar" id="sitebar"><div class="sb-in"><a class="sb-home" href="../../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9.5h11V10"/><path d="M10 19.5v-5h4v5"/></svg><span>Home</span></a><nav class="sb-zones" aria-label="Vakken"><a class="sb-zone ir" href="../../begrippen/inkoop-recht/" title="Inkoop en recht" aria-label="Inkoop en recht" data-carry><b>IR</b><span>Inkoop en recht</span></a><a class="sb-zone hrm" href="../../begrippen/hrm/" title="HRM" aria-label="HRM" data-carry><b>HRM</b></a><a class="sb-zone bm" href="../../begrippen/praktijkproject/" title="Business management" aria-label="Business management" aria-current="true" data-carry><b>BM</b><span>Business management</span></a></nav><details class="sb-menu"><summary aria-label="Menu: alle pagina's"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary><div class="sb-panel"><div class="sb-col ir"><span class="sb-colhead"><b>IR</b>Inkoop en recht</span><div class="sb-links"><a href="../../samenvattingen/inkoop-recht/">Samenvatting</a><a href="../../begrippen/inkoop-recht/">Begrippen</a><a href="../../inkoop-recht/#oefenen" data-default>Oefenvragen</a><a href="../../inkoop-recht/#toetsen">Weektoetsen</a><a href="../../artikelen/inkoop-recht/">Wetsartikelen</a></div></div><div class="sb-col hrm"><span class="sb-colhead"><b>HRM</b>HRM</span><div class="sb-links"><a href="../../samenvattingen/hrm/">Samenvatting</a><a href="../../begrippen/hrm/">Begrippen</a><a href="../../hrm/#oefenen" data-default>Oefenvragen</a><a href="../../hrm/#toetsen">Weektoetsen</a><a href="../../artikelen/hrm/">Wetsartikelen</a></div></div><div class="sb-col bm"><span class="sb-colhead"><b>BM</b>Business management</span><div class="sb-links"><a href="../../samenvattingen/praktijkproject/">Samenvatting</a><a href="../../begrippen/praktijkproject/">Begrippen</a><a href="../../praktijkproject/#oefenen" data-default>Oefenvragen</a><a href="../../praktijkproject/#toetsen">Weektoetsen</a><a href="../../bedrijfskunde/waalhop/">Casustoets Waalhop</a><a href="../../bedrijfskunde/heidezoom/">Casustoets Heidezoom</a></div></div></div></details></div></header><header class="band" id="top">
+<div class="band-in">
+  <nav class="crumbs" aria-label="Kruimelpad"><a href="../../">Home</a><i aria-hidden="true">/</i><a href="../../praktijkproject/">Business management</a><i aria-hidden="true">/</i><span aria-current="page">Begrippen</span></nav>
+  <div class="title-row"><span class="plate" aria-hidden="true">BM</span><div><span class="kind">Begrippen</span><h1>Praktijkproject Business Management</h1></div></div>
+  <p class="lead">88 begrippen uit de samenvattingen, per les. Lees ze in de lijst, oefen met flitskaarten of typ ze in een dictee. Kies één les, een paar weken of alles.</p>
+  <nav class="tabs" aria-label="Onderdelen van dit vak" id="tabs"><a class="tab" href="../../samenvattingen/praktijkproject/">Samenvatting</a><a class="tab" href="../../begrippen/praktijkproject/" aria-current="page">Begrippen</a><a class="tab" href="../../praktijkproject/#oefenen">Oefenen</a><a class="tab" href="../../praktijkproject/#toetsen"><span class="l">Weektoetsen</span><span class="s">Toetsen</span></a><a class="tab" href="../../bedrijfskunde/waalhop/"><span class="l">Casustoetsen</span><span class="s">Casus</span></a></nav>
+</div>
+</header>
+<div class="wrap">
+<main id="main">
+  <section class="panel" aria-labelledby="sel-title">
+    <h2 id="sel-title">Kies wat je oefent</h2>
+    <div>
+      <div class="filter-head"><span class="filter-label" id="lbl-weeks">Weken</span><button class="linkbtn" id="weeks-all">alle weken</button><button class="linkbtn" id="weeks-none">geen</button></div>
+      <div class="chips" id="week-chips" role="group" aria-labelledby="lbl-weeks"></div>
+    </div>
+    <div>
+      <div class="filter-head"><span class="filter-label" id="lbl-parts">Onderdelen</span></div>
+      <div class="chips" id="part-chips" role="group" aria-labelledby="lbl-parts"></div>
+    </div>
+    <p class="sel-summary" id="sel-summary" aria-live="polite"></p>
+    <div class="bar" aria-hidden="true"><i id="sel-bar" style="width:0"></i></div>
+  </section>
+
+  <div class="modes" role="group" aria-label="Manier van oefenen">
+    <button type="button" data-mode="lijst" aria-pressed="true">Lijst</button>
+    <button type="button" data-mode="kaarten" aria-pressed="false">Flitskaarten</button>
+    <button type="button" data-mode="dictee" aria-pressed="false">Dictee</button>
+  </div>
+
+  <section id="pane-lijst" class="stage" aria-label="Begrippenlijst">
+    <div class="search" role="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Zoek een begrip, uitleg of artikel" autocomplete="off" aria-label="Zoek in de begrippen">
+    </div>
+    <div class="legend"><span><i class="dot k"></i>ken je</span><span><i class="dot n"></i>nog niet</span><span><i class="dot"></i>nog niet geoefend</span>
+      <label class="opt"><input type="checkbox" id="only-open"> alleen wat ik nog niet ken</label></div>
+    <div id="list"></div>
+  </section>
+
+  <section id="pane-kaarten" class="stage" aria-label="Flitskaarten" hidden>
+    <div class="panel">
+      <div class="row"><span class="filter-label">Voorkant</span>
+        <div class="seg" role="group" aria-label="Voorkant van de kaart"><button type="button" data-dir="b" aria-pressed="true">Begrip</button><button type="button" data-dir="u" aria-pressed="false">Uitleg</button></div></div>
+      <label class="opt"><input type="checkbox" id="k-open"> alleen wat ik nog niet ken</label>
+      <div class="row"><button type="button" class="btn primary" id="k-start">Start de kaarten</button><span class="small" id="k-info"></span></div>
+    </div>
+    <div id="k-stage" class="stage" hidden>
+      <div class="meta"><span id="k-where"></span><span id="k-count"></span></div>
+      <button type="button" class="card" id="k-card" aria-live="polite"></button>
+      <div class="answer-row"><button type="button" class="btn bad" id="k-no">Nog niet</button><button type="button" class="btn good" id="k-yes">Ken ik</button></div>
+      <p class="keys">Spatie draait de kaart om, pijl links is "nog niet", pijl rechts is "ken ik".</p>
+    </div>
+    <div id="k-done" class="panel done" hidden></div>
+  </section>
+
+  <section id="pane-dictee" class="stage" aria-label="Dictee" hidden>
+    <div class="panel">
+      <div class="row"><span class="filter-label">Je typt</span>
+        <div class="seg" role="group" aria-label="Wat typ je"><button type="button" data-dt="b" aria-pressed="true">Het begrip</button><button type="button" data-dt="u" aria-pressed="false">De uitleg</button></div></div>
+      <p class="small" id="d-uitleg-info">Je ziet de uitleg en typt het begrip. Kleine typfouten rekent de dictee goed, met de juiste spelling erbij.</p>
+      <label class="opt"><input type="checkbox" id="d-open"> alleen wat ik nog niet ken</label>
+      <div class="row"><button type="button" class="btn primary" id="d-start">Start het dictee</button><span class="small" id="d-info"></span></div>
+    </div>
+    <div id="d-stage" class="stage" hidden>
+      <div class="meta"><span id="d-where"></span><span id="d-count"></span></div>
+      <form class="prompt" id="d-form" autocomplete="off">
+        <p class="q" id="d-q"></p>
+        <label for="d-in" id="d-lbl">Welk begrip is dit?</label>
+        <input type="text" id="d-in" autocapitalize="off" autocorrect="off" spellcheck="false">
+        <textarea id="d-ta" hidden></textarea>
+        <div class="row" id="d-ask"><button type="submit" class="btn primary" id="d-check">Controleer</button><button type="button" class="btn" id="d-hint">Hint</button><button type="button" class="btn" id="d-skip">Weet ik niet</button></div>
+        <div id="d-fb" class="fb" hidden></div>
+        <div class="row" id="d-after" hidden></div>
+      </form>
+    </div>
+    <div id="d-done" class="panel done" hidden></div>
+  </section>
+</main>
+<footer class="foot">
+  <p>Alle begrippen komen uit de samenvattingen van de lessen. Staat er "gangbare invulling" bij, dan stond het niet uitgeschreven op de slides; check het dan in de les of je literatuur. Wetsartikelen staan erbij zoals in de samenvatting.</p>
+  <p>Wat je kent, onthoudt deze browser op dit apparaat. <button class="linkbtn" id="reset">Wis mijn voortgang voor deze selectie</button></p>
+</footer>
+</div>
+<script type="application/json" id="data">{"vak": "praktijkproject", "lessen": [{"id": "pp-w1", "week": 1, "onderdeel": "Verbeterproject", "titel": "Terugblik en verbeterrichtingen (Generate: divergeren)"}, {"id": "pp-w2", "week": 2, "onderdeel": "Verbeterproject", "titel": "Van verbeterrichtingen naar gekozen ontwerp (future state, PUGH)"}, {"id": "pp-w3", "week": 3, "onderdeel": "Verbeterproject", "titel": "Veranderaanpak en draagvlak (stakeholders, weerstand, Kotter-light, RACI)"}, {"id": "pp-w4", "week": 4, "onderdeel": "Verbeterproject", "titel": "Implementatie en risico's (implementatieplan, FMEA-light, invoeringsstrategie)"}, {"id": "pp-w5", "week": 5, "onderdeel": "Verbeterproject", "titel": "Borging en eigenaarschap (borgingsplan, SOP, KPI-opvolging, PDCA)"}, {"id": "pr-w5", "week": 5, "onderdeel": "Presentatie", "titel": "Training 3: de adviespresentatie (PROA, doelgroep, visualiseren)"}, {"id": "pp-w6", "week": 6, "onderdeel": "Verbeterproject", "titel": "Overdracht en lessons learned (proceseigenaar, dossier, Tollgate)"}, {"id": "pp-w7", "week": 7, "onderdeel": "Verbeterproject", "titel": "Afronding van het project (Control, einddossier, borgingskaart, retrospective)"}], "items": [{"id": "pp-w1-dmagic", "les": "pp-w1", "begrip": "DMAGIC", "uitleg": "Verbetermodel met de fasen Define, Measure, Analyze, Generate, Improve en Control; de Generate-fase is bewust toegevoegd aan DMAIC.", "art": null, "ook": []}, {"id": "pp-w1-generate-fase", "les": "pp-w1", "begrip": "Generate-fase", "uitleg": "De fase waarin je verbeterrichtingen bedenkt en kiest, zodat je niet te snel naar de eerste oplossing springt.", "art": null, "ook": ["generate"]}, {"id": "pp-w1-kaizen", "les": "pp-w1", "begrip": "Kaizen", "uitleg": "Continu verbeteren als gewoonte, in kleine stappen, door iedereen.", "art": null, "ook": []}, {"id": "pp-w1-gemba", "les": "pp-w1", "begrip": "Gemba", "uitleg": "De werkvloer: de plek waar het werk echt gebeurt en waar je de kansen ziet.", "art": null, "ook": []}, {"id": "pp-w1-divergeren", "les": "pp-w1", "begrip": "Divergeren", "uitleg": "Zoveel mogelijk ideeën verzamelen zonder te oordelen (week 1).", "art": null, "ook": []}, {"id": "pp-w1-convergeren", "les": "pp-w1", "begrip": "Convergeren", "uitleg": "Kiezen en onderbouwen van één voorkeursoplossing (week 2).", "art": null, "ook": []}, {"id": "pp-w1-klantwaarde", "les": "pp-w1", "begrip": "Klantwaarde", "uitleg": "Een activiteit is pas waardevol als de klant er echt iets aan heeft; Lean begint bij het specificeren van waarde vanuit de klant.", "art": null, "ook": []}, {"id": "pp-w1-11-facilitaire-toegevoegde-waarden", "les": "pp-w1", "begrip": "11 facilitaire toegevoegde waarden", "uitleg": "Toets voor elke verbeterrichting: productiviteit, kosten, risico's, waardestijging, flexibiliteit, cultuur, imago, innovatie, tevredenheid, duurzaamheid en healing environment.", "art": null, "ook": ["facilitaire toegevoegde waarden", "toegevoegde waarden"]}, {"id": "pp-w1-just-in-time", "les": "pp-w1", "begrip": "Just in Time", "uitleg": "Lean-principe (pijler snelheid): precies wat nodig is, op het juiste moment.", "art": null, "ook": ["JIT"]}, {"id": "pp-w1-jidoka", "les": "pp-w1", "begrip": "Jidoka", "uitleg": "Lean-pijler kwaliteit: bouw het goed in bij de bron en geef geen fout door naar de volgende stap.", "art": null, "ook": []}, {"id": "pp-w1-kanban", "les": "pp-w1", "begrip": "Kanban", "uitleg": "Pull-principe: start werk pas op een signaal, bijvoorbeeld een bord met nieuw, opgepakt en opgelost.", "art": null, "ook": ["pull"]}, {"id": "pp-w1-heijunka", "les": "pp-w1", "begrip": "Heijunka", "uitleg": "Lean-principe dat werkdruk en pieken spreidt.", "art": null, "ook": []}, {"id": "pp-w1-theory-of-constraints", "les": "pp-w1", "begrip": "Theory of Constraints", "uitleg": "Verbeter de zwakste schakel (bottleneck), want die bepaalt de output.", "art": null, "ook": ["TOC", "bottleneck"]}, {"id": "pp-w1-poka-yoke", "les": "pp-w1", "begrip": "Poka-Yoke", "uitleg": "Ontwerp het zo dat de fout niet gemaakt kán worden, zoals verplichte velden op een meldformulier.", "art": null, "ook": ["poka yoke"]}, {"id": "pp-w1-5s", "les": "pp-w1", "begrip": "5S", "uitleg": "Orde en netheid die fouten en variatie voorkomen; de vijfde S (Standhouden) vraagt discipline om de afspraak te blijven volgen.", "art": null, "ook": []}, {"id": "pp-w1-impact-effort-matrix", "les": "pp-w1", "begrip": "Impact/Effort-matrix", "uitleg": "Matrix waarin je elk idee op impact en moeite zet, om bewust minstens één quick win en één structurele verbetering te kiezen.", "art": null, "ook": ["impact effort matrix"]}, {"id": "pp-w1-quick-win", "les": "pp-w1", "begrip": "Quick win", "uitleg": "Verbetering met veel impact en weinig moeite; geeft momentum en draagvlak, maar lost vaak alleen een symptoom op.", "art": null, "ook": []}, {"id": "pp-w2-future-state", "les": "pp-w2", "begrip": "Future state", "uitleg": "Het beeld van het ideale proces met alleen waardetoevoegende stappen; je ontwerpt eerst de droom en redeneert terug naar wat haalbaar is.", "art": null, "ook": ["toekomstbeeld"]}, {"id": "pp-w2-current-state", "les": "pp-w2", "begrip": "Current state", "uitleg": "De beschrijving van de huidige situatie van het proces, gemaakt in periode 1.", "art": null, "ook": []}, {"id": "pp-w2-va", "les": "pp-w2", "begrip": "VA", "uitleg": "Value added: een stap waarvoor de klant wil betalen. Ontwerpregel: behouden en versterken.", "art": null, "ook": ["value added"]}, {"id": "pp-w2-bnva", "les": "pp-w2", "begrip": "BNVA", "uitleg": "Business non-value added: geen klantwaarde, maar wel noodzakelijk, zoals registratie of regelgeving. Ontwerpregel: minimaliseren.", "art": null, "ook": ["business non-value added"]}, {"id": "pp-w2-nva", "les": "pp-w2", "begrip": "NVA", "uitleg": "Non-value added: pure verspilling, zoals drie keer overtypen. Ontwerpregel: elimineren.", "art": null, "ook": ["non-value added"]}, {"id": "pp-w2-muda", "les": "pp-w2", "begrip": "Muda", "uitleg": "Lean-term voor verspilling.", "art": null, "ook": []}, {"id": "pp-w2-mura", "les": "pp-w2", "begrip": "Mura", "uitleg": "Lean-term voor onnodige variatie; ontstaat als een werkwijze niet is vastgelegd.", "art": null, "ook": []}, {"id": "pp-w2-muri", "les": "pp-w2", "begrip": "Muri", "uitleg": "Lean-term voor overbelasting.", "art": null, "ook": []}, {"id": "pp-w2-service-blueprint", "les": "pp-w2", "begrip": "Service blueprint", "uitleg": "Vorm om het toekomstbeeld vast te leggen die scheidt wat de gebruiker ziet (frontstage) van het werk erachter (backstage).", "art": null, "ook": []}, {"id": "pp-w2-future-state-map", "les": "pp-w2", "begrip": "Future-state map", "uitleg": "De volledige waardestroom van begin tot eind na verbetering, met tijden en informatiestromen; de meest complete vorm.", "art": null, "ook": []}, {"id": "pp-w2-one-piece-flow", "les": "pp-w2", "begrip": "One Piece Flow", "uitleg": "Stuk voor stuk door het proces in plaats van in batches. (Gangbare invulling: de slides leggen het niet uit.)", "art": null, "ook": []}, {"id": "pp-w2-takttijd", "les": "pp-w2", "begrip": "Takttijd", "uitleg": "De beschikbare tijd gedeeld door de klantvraag: het tempo waarin de klant vraagt. (Gangbare invulling: de slides leggen het niet uit.)", "art": null, "ook": []}, {"id": "pp-w2-fifo", "les": "pp-w2", "begrip": "FIFO", "uitleg": "First in, first out: oppakken in volgorde van binnenkomst. (Gangbare invulling: de slides leggen het niet uit.)", "art": null, "ook": ["first in first out"]}, {"id": "pp-w2-wet-van-de-concentratie", "les": "pp-w2", "begrip": "Wet van de concentratie", "uitleg": "Vaak veroorzaakt 20% van de activiteiten 80% van de problemen; pak die vitale 20% aan.", "art": null, "ook": ["80/20-regel", "Pareto"]}, {"id": "pp-w2-duivelsdriehoek", "les": "pp-w2", "begrip": "Duivelsdriehoek", "uitleg": "Kwaliteit, kosten en tijd: je kunt zelden alles tegelijk verbeteren.", "art": null, "ook": ["KKT-driehoek"]}, {"id": "pp-w2-pugh-matrix", "les": "pp-w2", "begrip": "PUGH-matrix", "uitleg": "Oplossingenmatrix (Stuart Pugh) waarin je alternatieven met gewogen criteria van −2 tot +2 scoort ten opzichte van de baseline; de hoogste totaalscore wint.", "art": null, "ook": ["PUGH", "oplossingenmatrix"]}, {"id": "pp-w2-baseline", "les": "pp-w2", "begrip": "Baseline", "uitleg": "In de PUGH-matrix de huidige situatie, die op elk criterium score 0 krijgt.", "art": null, "ook": []}, {"id": "pp-w2-pilot", "les": "pp-w2", "begrip": "Pilot", "uitleg": "Test op kleine schaal in de echte omgeving, met vooraf een plan, meetafspraken en getrainde medewerkers; de invoeringsstrategie met het laagste risico.", "art": null, "ook": []}, {"id": "pp-w3-stakeholder", "les": "pp-w3", "begrip": "Stakeholder", "uitleg": "Iedereen die invloed heeft op je verbetering óf er gevolgen van ondervindt.", "art": null, "ook": []}, {"id": "pp-w3-rimpeleffect", "les": "pp-w3", "begrip": "Rimpeleffect", "uitleg": "Een verandering raakt vaak ook afdelingen die dachten er niets mee te maken te hebben.", "art": null, "ook": []}, {"id": "pp-w3-sponsor", "les": "pp-w3", "begrip": "Sponsor", "uitleg": "Stakeholderrol: maakt mensen en middelen vrij en heeft mandaat.", "art": null, "ook": []}, {"id": "pp-w3-proceseigenaar", "les": "pp-w3", "begrip": "Proceseigenaar", "uitleg": "De lijnmanager met mandaat die verantwoordelijk is voor het proces en het na de overdracht voortzet en verder verbetert.", "art": null, "ook": []}, {"id": "pp-w3-belang-invloed-grid", "les": "pp-w3", "begrip": "Belang-invloed-grid", "uitleg": "Indeling van stakeholders op belang en invloed: nauw betrekken, tevreden houden, informeren of monitoren.", "art": null, "ook": ["belang-invloedmatrix", "stakeholdermatrix"]}, {"id": "pp-w3-weerstand", "les": "pp-w3", "begrip": "Weerstand", "uitleg": "Geen onwil maar een voorspelbare reactie op opgelegde verandering, bijvoorbeeld door verlies aan controle of onzekerheid.", "art": null, "ook": []}, {"id": "pp-w3-20-60-20-regel", "les": "pp-w3", "begrip": "20-60-20-regel", "uitleg": "Bij een verandering is grofweg 20% voorstander, 60% onbeslist en 20% tegenstander; de middengroep kiest de kant van de sterkste groep.", "art": null, "ook": ["20-60-20"]}, {"id": "pp-w3-kotter-light", "les": "pp-w3", "begrip": "Kotter-light", "uitleg": "Vereenvoudigde versie van Kotters acht stappen met vier stappen: urgentie, coalitie, communicatie en betrokkenheid.", "art": null, "ook": []}, {"id": "pp-w3-fasen-van-carnall", "les": "pp-w3", "begrip": "Fasen van Carnall", "uitleg": "Fasen die mensen bij verandering doorlopen: ontkenning, verdediging, verwerking, aanpassing en internalisatie.", "art": null, "ook": ["Carnall"]}, {"id": "pp-w3-raci", "les": "pp-w3", "begrip": "RACI", "uitleg": "Methode die per activiteit de rollen vastlegt: Responsible, Accountable (precies één), Consulted en Informed.", "art": null, "ook": []}, {"id": "pp-w3-accountable", "les": "pp-w3", "begrip": "Accountable", "uitleg": "RACI-rol die goedkeurt en eindverantwoordelijk is; altijd precies één per activiteit.", "art": null, "ook": []}, {"id": "pp-w3-consulted", "les": "pp-w3", "begrip": "Consulted", "uitleg": "RACI-rol die vooraf om advies wordt gevraagd: tweerichtingsverkeer.", "art": null, "ook": []}, {"id": "pp-w3-informed", "les": "pp-w3", "begrip": "Informed", "uitleg": "RACI-rol die achteraf op de hoogte wordt gebracht: eenrichtingsverkeer.", "art": null, "ook": []}, {"id": "pp-w3-tbv-s", "les": "pp-w3", "begrip": "TBV's", "uitleg": "Taken, bevoegdheden en verantwoordelijkheden die je per activiteit vastlegt.", "art": null, "ook": ["TBV", "taken bevoegdheden verantwoordelijkheden"]}, {"id": "pp-w3-rasci", "les": "pp-w3", "begrip": "RASCI", "uitleg": "Uitbreiding van RACI met S voor Support (ondersteunt actief).", "art": null, "ook": ["CAIRO"]}, {"id": "pp-w4-implementeren", "les": "pp-w4", "begrip": "Implementeren", "uitleg": "Het invoeren van de gekozen oplossing in het proces; in het implementatieplan staan alle activiteiten en wie wat wanneer doet.", "art": null, "ook": ["implementatie"]}, {"id": "pp-w4-mijlpaal", "les": "pp-w4", "begrip": "Mijlpaal", "uitleg": "Controleerbaar ijkmoment in de planning, zoals 'training afgerond' of 'go/no-go'.", "art": null, "ook": ["mijlpalen"]}, {"id": "pp-w4-randvoorwaarden", "les": "pp-w4", "begrip": "Randvoorwaarden", "uitleg": "Wat moet kloppen vóór je start, zoals een werkende systeemkoppeling, budget of toegang.", "art": null, "ook": []}, {"id": "pp-w4-succescriteria", "les": "pp-w4", "begrip": "Succescriteria", "uitleg": "SMART geformuleerde maatstaven waaraan je meet of de implementatie gelukt is, gekoppeld aan KPI's en klantwaarde.", "art": null, "ook": ["succescriterium"]}, {"id": "pp-w4-catchball", "les": "pp-w4", "begrip": "Catchball", "uitleg": "De oplossing met mensen invoeren door hen om feedback te vragen, zodat ze mede-eigenaar worden.", "art": null, "ook": []}, {"id": "pp-w4-fmea", "les": "pp-w4", "begrip": "FMEA", "uitleg": "Failure Mode and Effect Analysis: gestructureerd potentiële fouten in een proces opsporen en aanpakken vóórdat ze optreden (oorspronkelijk van de NASA).", "art": null, "ook": ["Failure Mode and Effect Analysis", "FMEA-light"]}, {"id": "pp-w4-failure-mode", "les": "pp-w4", "begrip": "Failure mode", "uitleg": "De faalmogelijkheid in een processtap: wat zou hier fout kunnen gaan?", "art": null, "ook": ["faalmogelijkheid"]}, {"id": "pp-w4-rpn", "les": "pp-w4", "begrip": "RPN", "uitleg": "Risk Priority Number: Ernst × Kans × Detectie; het hoogste getal krijgt de hoogste prioriteit (maximaal 125 op een schaal van 1-5).", "art": null, "ook": ["Risk Priority Number", "risicoprioriteitsgetal"]}, {"id": "pp-w4-detectiescore", "les": "pp-w4", "begrip": "Detectiescore", "uitleg": "FMEA-factor: een lage score betekent dat een fout makkelijk wordt opgemerkt, een hoge dat hij ongezien schade aanricht.", "art": null, "ook": ["detectie"]}, {"id": "pp-w4-schaduwdraaien", "les": "pp-w4", "begrip": "Schaduwdraaien", "uitleg": "Invoeringsstrategie waarbij oud en nieuw tijdelijk naast elkaar draaien.", "art": null, "ook": []}, {"id": "pp-w4-big-bang", "les": "pp-w4", "begrip": "Big-bang", "uitleg": "Invoeringsstrategie waarbij je in één keer overgaat; snel, maar met het hoogste risico.", "art": null, "ook": ["big bang"]}, {"id": "pp-w4-gefaseerd-invoeren", "les": "pp-w4", "begrip": "Gefaseerd invoeren", "uitleg": "Invoeringsstrategie waarbij je stap voor stap uitrolt, afdeling per afdeling.", "art": null, "ook": ["gefaseerd"]}, {"id": "pp-w4-ocap", "les": "pp-w4", "begrip": "OCAP", "uitleg": "Out of Control Action Plan: een vooraf klaarliggend noodplan met triggers en acties voor als het toch misgaat.", "art": null, "ook": ["Out of Control Action Plan"]}, {"id": "pp-w4-zeester", "les": "pp-w4", "begrip": "Zeester", "uitleg": "Retrospective-werkvorm met vijf vakken: blijven doen, meer van, minder van, stoppen en starten.", "art": null, "ook": []}, {"id": "pp-w5-borgen", "les": "pp-w5", "begrip": "Borgen", "uitleg": "De verbetering loskoppelen van de aanwezigheid van het studentteam, zodat ze blijft werken. Kernvraag: wat moet blijven bestaan als het team weg is?", "art": null, "ook": ["borging"]}, {"id": "pp-w5-control-fase", "les": "pp-w5", "begrip": "Control-fase", "uitleg": "De laatste DMAGIC-fase: zorgen dat het verbeterde proces betrouwbaar, voorspelbaar en herhaalbaar blijft en het probleem niet terugkomt.", "art": null, "ook": ["control"]}, {"id": "pp-w5-borgingsplan", "les": "pp-w5", "begrip": "Borgingsplan", "uitleg": "Plan met zes bouwstenen: standaardisatie, KPI-opvolging, eigenaarschap, evaluatiemomenten, overdracht en lessons learned.", "art": null, "ook": []}, {"id": "pp-w5-standaardwerk", "les": "pp-w5", "begrip": "Standaardwerk", "uitleg": "De afgesproken, vastgelegde manier van werken; volgens Lean de basis van verbetering.", "art": null, "ook": ["standaardisatie"]}, {"id": "pp-w5-sop", "les": "pp-w5", "begrip": "SOP", "uitleg": "Standard Operating Procedure: werkinstructie met afbakening, KPI's en voorschriften, volgorde van stappen en vastleggen.", "art": null, "ook": ["Standard Operating Procedure", "werkinstructie"]}, {"id": "pp-w5-visueel-management", "les": "pp-w5", "begrip": "Visueel management", "uitleg": "Zichtbaar maken of er volgens de standaard wordt gewerkt, bijvoorbeeld een SOP of KPI-bord bij de servicedesk.", "art": null, "ook": ["visual control"]}, {"id": "pp-w5-ingrijpgrens", "les": "pp-w5", "begrip": "Ingrijpgrens", "uitleg": "Vooraf bepaalde waarde van een KPI waarbij je ingrijpt, zodat je 'out of control' ziet aankomen.", "art": null, "ook": []}, {"id": "pp-w5-pdca-cyclus", "les": "pp-w5", "begrip": "PDCA-cyclus", "uitleg": "Plan, Do, Check, Act (Shewhart en Deming): de motor van continu verbeteren. Bij borging draait het vooral om Check en Act.", "art": null, "ook": ["PDCA", "Deming-cirkel"]}, {"id": "pp-w5-respect-voor-mensen", "les": "pp-w5", "begrip": "Respect voor mensen", "uitleg": "Lean-waarde: betrek medewerkers, neem hun zorgen serieus en vier successen, zodat hún verbetering het vertrek van het team overleeft.", "art": null, "ook": []}, {"id": "pp-w5-overdrachtsdossier", "les": "pp-w5", "begrip": "Overdrachtsdossier", "uitleg": "Bundel van SOP's, KPI-definities, eigenaarschap en evaluatieafspraken die je actief overdraagt, zo compleet dat iemand zonder jullie verder kan.", "art": null, "ook": []}, {"id": "pp-w5-lessons-learned", "les": "pp-w5", "begrip": "Lessons learned", "uitleg": "Vastgelegde lessen over wat goed ging, wat stroef liep en welke aannames niet klopten; borgt niet het proces maar de kennis.", "art": null, "ook": []}, {"id": "pr-w5-proa", "les": "pr-w5", "begrip": "PROA", "uitleg": "Structuur van de kern van een adviespresentatie: Probleem, Risico (omvang), Oorzaak en Advies.", "art": null, "ook": []}, {"id": "pr-w5-show-don-t-tell", "les": "pr-w5", "begrip": "Show, don't tell", "uitleg": "Visualiseringstip: laat zien in plaats van vertellen, bijvoorbeeld een getekend proces met gemarkeerde knelpunten.", "art": null, "ook": []}, {"id": "pr-w5-visuele-ruis", "les": "pr-w5", "begrip": "Visuele ruis", "uitleg": "Alles op een slide wat niet bijdraagt aan de boodschap en daardoor afleidt.", "art": null, "ook": []}, {"id": "pp-w6-lean-back", "les": "pp-w6", "begrip": "Lean Back", "uitleg": "Het studentteam stuurt en faciliteert, de proceseigenaar heeft het mandaat en is verantwoordelijk voor de uitvoering.", "art": null, "ook": []}, {"id": "pp-w6-epl", "les": "pp-w6", "begrip": "EPL", "uitleg": "Visuele werkinstructie van één A4; in Lean meestal 'één-punt-les'.", "art": null, "ook": ["één-punt-les", "een-punt-les"]}, {"id": "pp-w6-tollgate", "les": "pp-w6", "begrip": "Tollgate", "uitleg": "Formeel overdrachtsgesprek (projectafsluiting) met de belanghebbenden, waarop je toetst aan de succescriteria en de verantwoordelijkheid overdraagt.", "art": null, "ook": []}, {"id": "pp-w6-storyboard", "les": "pp-w6", "begrip": "Storyboard", "uitleg": "Korte samenvatting van het project, vaak op één pagina, die de rode draad toegankelijk maakt.", "art": null, "ook": []}, {"id": "pp-w6-best-practice", "les": "pp-w6", "begrip": "Best practice", "uitleg": "Een geleerde les die zo sterk is dat ze herbruikbaar is in vergelijkbare projecten.", "art": null, "ook": []}, {"id": "pp-w7-einddossier", "les": "pp-w7", "begrip": "Einddossier", "uitleg": "Alle tussenproducten samengebracht tot één definitief adviespakket, getoetst op volledig, consistent en toegankelijk.", "art": null, "ook": []}, {"id": "pp-w7-borgingskaart", "les": "pp-w7", "begrip": "Borgingskaart", "uitleg": "Mini-SOP van één pagina met proces en afbakening, proceseigenaar, twee KPI's met norm, hoe het geborgd is en de losse eindjes.", "art": null, "ook": []}, {"id": "pp-w7-sipoc", "les": "pp-w7", "begrip": "SIPOC", "uitleg": "Supplier, Input, Process, Output, Customer; helpt bij de afbakening van een proces. (Gangbare invulling: de slides leggen het niet uit.)", "art": null, "ook": []}, {"id": "pp-w7-retrospective", "les": "pp-w7", "begrip": "Retrospective", "uitleg": "Terugblik op de samenwerking in het team: wat ging goed, wat kon beter en wat nemen we mee. (Lessons learned gaan over de aanpak.)", "art": null, "ook": ["retro"]}, {"id": "pp-w7-losse-eindjes", "les": "pp-w7", "begrip": "Losse eindjes", "uitleg": "Wat de organisatie na de overdracht nog moet regelen, zoals een aankoop, training of besluit; benoem ze expliciet in het dossier.", "art": null, "ook": []}]}</script>
+<script>
+(function () {
+  "use strict";
+  var D = JSON.parse(document.getElementById("data").textContent);
+  var LS = "fm-begrippen-" + D.vak;
+  var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function isObj(v) { return v && typeof v === "object" && !Array.isArray(v); }
+  // localStorage lezen: type controleren en terugvallen op de standaardwaarde (zelfde patroon als lsGet in de oefenpagina)
+  function lsGet(fb) { try { var v = JSON.parse(localStorage.getItem(LS)); return isObj(v) ? v : fb; } catch (e) { return fb; } }
+  function lsSet(v) { try { localStorage.setItem(LS, JSON.stringify(v)); } catch (e) {} }
+  var store = lsGet({});
+  var st = isObj(store.st) ? store.st : {};
+  var LES = {}; D.lessen.forEach(function (l) { LES[l.id] = l; });
+  var W = []; var P = [];
+  D.lessen.forEach(function (l) { if (W.indexOf(l.week) < 0) W.push(l.week); if (P.indexOf(l.onderdeel) < 0) P.push(l.onderdeel); });
+  W.sort(function (a, b) { return a - b; });
+  var sel = { w: W.slice(), p: P.slice() };
+  if (isObj(store.sel)) {
+    if (Array.isArray(store.sel.w)) { var w = store.sel.w.filter(function (x) { return W.indexOf(x) >= 0; }); sel.w = w; }
+    if (Array.isArray(store.sel.p)) { var p = store.sel.p.filter(function (x) { return P.indexOf(x) >= 0; }); if (p.length) sel.p = p; }
+  }
+  var opts = { dir: store.dir === "u" ? "u" : "b", dt: store.dt === "u" ? "u" : "b" };
+  function save() { lsSet({ st: st, sel: sel, dir: opts.dir, dt: opts.dt }); }
+  function status(id) { var s = st[id]; return isObj(s) && typeof s.k === "boolean" ? (s.k ? "k" : "n") : ""; }
+  function mark(id, known) { st[id] = { k: known, t: Date.now() }; save(); }
+  function inSel(x) { var l = LES[x.les]; return sel.w.indexOf(l.week) >= 0 && sel.p.indexOf(l.onderdeel) >= 0; }
+  function current() { return D.items.filter(inSel); }
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function lesLabel(l) { return "Week " + l.week + " · " + l.onderdeel; }
+  function rangeLabel(ws) {
+    ws = ws.slice().sort(function (a, b) { return a - b; }); var out = [];
+    for (var i = 0; i < ws.length;) { var j = i; while (j + 1 < ws.length && ws[j + 1] === ws[j] + 1) j++; out.push(i === j ? String(ws[i]) : ws[i] + "–" + ws[j]); i = j + 1; }
+    return out.join(", ");
+  }
+  function selLabel() {
+    if (!sel.w.length) return "Geen week gekozen";
+    var s = sel.w.length === W.length ? "Alle weken" : (sel.w.length === 1 ? "Week " : "Weken ") + rangeLabel(sel.w);
+    if (sel.p.length !== P.length) s += " · " + P.filter(function (p) { return sel.p.indexOf(p) >= 0; }).join(", ");
+    return s;
+  }
+
+  // ---------- keuzepaneel
+  function chip(key, label, n, on, fn) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.dataset.key = key; b.setAttribute("aria-pressed", String(on));
+    b.innerHTML = "<span>" + esc(label) + "</span><span class=\"n\">" + n + "</span>";
+    b.setAttribute("aria-label", label + ", " + n + " begrippen");
+    b.addEventListener("click", function () { fn(); save(); refresh(key); });
+    return b;
+  }
+  function toggle(arr, v) { var i = arr.indexOf(v); if (i >= 0) arr.splice(i, 1); else arr.push(v); }
+  function renderSel(focusKey) {
+    var wc = $("week-chips"); wc.innerHTML = "";
+    W.forEach(function (w) {
+      var n = D.items.filter(function (x) { var l = LES[x.les]; return l.week === w && sel.p.indexOf(l.onderdeel) >= 0; }).length;
+      wc.appendChild(chip("w" + w, "Week " + w, n, sel.w.indexOf(w) >= 0, function () { toggle(sel.w, w); }));
+    });
+    var pc = $("part-chips"); pc.innerHTML = "";
+    P.forEach(function (p) {
+      var n = D.items.filter(function (x) { var l = LES[x.les]; return l.onderdeel === p && sel.w.indexOf(l.week) >= 0; }).length;
+      pc.appendChild(chip("p" + p, p, n, sel.p.indexOf(p) >= 0, function () { toggle(sel.p, p); if (!sel.p.length) sel.p = P.slice(); }));
+    });
+    if (focusKey) { var el = document.querySelector('.chip[data-key="' + focusKey + '"]'); if (el) el.focus(); }
+    var c = current(), k = c.filter(function (x) { return status(x.id) === "k"; }).length;
+    var n = c.filter(function (x) { return status(x.id) === "n"; }).length;
+    $("sel-summary").textContent = selLabel() + ": " + c.length + " begrippen" + (c.length ? " · " + k + " ken je, " + n + " nog niet, " + (c.length - k - n) + " nog niet geoefend" : "");
+    $("sel-bar").style.width = c.length ? (100 * k / c.length) + "%" : "0";
+  }
+  $("weeks-all").addEventListener("click", function () { sel.w = W.slice(); save(); refresh(); });
+  $("weeks-none").addEventListener("click", function () { sel.w = []; save(); refresh(); });
+  function onlyLesson(id) { var l = LES[id]; sel.w = [l.week]; sel.p = [l.onderdeel]; save(); }
+
+  // ---------- lijst
+  function norm(s) { return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+  function hl(text, q) {
+    var t = esc(text); if (!q) return t;
+    var n = norm(text), i = n.indexOf(q); if (i < 0) return t;
+    return esc(text.slice(0, i)) + "<mark>" + esc(text.slice(i, i + q.length)) + "</mark>" + esc(text.slice(i + q.length));
+  }
+  function renderList() {
+    var q = norm($("q").value.trim()), only = $("only-open").checked;
+    var c = current().filter(function (x) {
+      if (only && status(x.id) === "k") return false;
+      return !q || norm(x.begrip + " " + x.uitleg + " " + (x.art || "") + " " + x.ook.join(" ")).indexOf(q) >= 0;
+    });
+    var out = [];
+    D.lessen.forEach(function (l) {
+      var xs = c.filter(function (x) { return x.les === l.id; }); if (!xs.length) return;
+      out.push('<section class="les" id="les-' + l.id + '"><header class="les-head"><div><small>' + esc(lesLabel(l)) + '</small><h3>' + esc(l.titel) + '</h3></div>' +
+        '<div class="row"><button type="button" class="btn" data-les="' + l.id + '" data-go="kaarten">Flitskaarten</button><button type="button" class="btn" data-les="' + l.id + '" data-go="dictee">Dictee</button></div></header><dl>');
+      xs.forEach(function (x) {
+        var s = status(x.id);
+        out.push('<div class="term"><dt><i class="dot ' + s + '" title="' + (s === "k" ? "ken je" : s === "n" ? "nog niet" : "nog niet geoefend") + '"></i><span>' + hl(x.begrip, q) + '</span></dt><dd>' +
+          hl(x.uitleg, q) + (x.art ? '<span class="art">' + hl(x.art, q) + "</span>" : "") + "</dd></div>");
+      });
+      out.push("</dl></section>");
+    });
+    $("list").innerHTML = out.length ? out.join("") : '<p class="empty">' + (current().length ? "Geen begrippen gevonden met deze zoekterm of filter." : "Kies hierboven minstens één week.") + "</p>";
+  }
+  $("q").addEventListener("input", renderList);
+  $("only-open").addEventListener("change", renderList);
+  $("list").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-les]"); if (!b) return;
+    onlyLesson(b.dataset.les); setMode(b.dataset.go); refresh();
+    (b.dataset.go === "kaarten" ? startCards : startDictee)();
+    window.scrollTo({ top: $("main").offsetTop - 60 });
+  });
+
+  // ---------- modi en deeplinks (#lijst, #kaarten-w3, #dictee-w2)
+  var mode = "lijst";
+  function setMode(m) {
+    mode = m;
+    Array.prototype.forEach.call(document.querySelectorAll(".modes button"), function (b) { b.setAttribute("aria-pressed", String(b.dataset.mode === m)); });
+    ["lijst", "kaarten", "dictee"].forEach(function (k) { $("pane-" + k).hidden = k !== m; });
+    if (location.hash.replace(/-w\d+$/, "") !== "#" + m) history.replaceState(null, "", "#" + m);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".modes button"), function (b) { b.addEventListener("click", function () { setMode(b.dataset.mode); refresh(); }); });
+  function fromHash() {
+    var m = /^#(lijst|kaarten|dictee)(?:-w(\d+))?$/.exec(location.hash);
+    if (!m) return;
+    if (m[2] && W.indexOf(+m[2]) >= 0) { sel.w = [+m[2]]; sel.p = P.slice(); save(); }
+    setMode(m[1]);
+  }
+
+  // ---------- gedeelde stapel voor kaarten en dictee
+  function pool(onlyOpen) { var c = current(); if (onlyOpen) c = c.filter(function (x) { return status(x.id) !== "k"; }); return shuffle(c); }
+  function infoLine(id, onlyOpen) { var n = pool(onlyOpen).length; $(id).textContent = n ? n + " begrippen in deze ronde" : (current().length ? "Je kent alles in deze selectie." : "Kies hierboven minstens één week."); return n; }
+  function segInit(attr, key) {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-" + attr + "]"), function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset[attr] === opts[key]));
+      b.addEventListener("click", function () { opts[key] = b.dataset[attr]; save(); segInit2(attr, key); if (key === "dt") dtInfo(); });
+    });
+  }
+  function segInit2(attr, key) { Array.prototype.forEach.call(document.querySelectorAll("[data-" + attr + "]"), function (b) { b.setAttribute("aria-pressed", String(b.dataset[attr] === opts[key])); }); }
+  segInit("dir", "dir"); segInit("dt", "dt");
+
+  // masker: het begrip (en zijn andere namen) uit de uitleg halen, anders verklapt de vraag het antwoord
+  function reEsc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+  function masked(x) {
+    var t = x.uitleg;
+    [x.begrip].concat(x.ook).filter(function (s) { return s.length >= 3; }).sort(function (a, b) { return b.length - a.length; }).forEach(function (s) {
+      var re; try { re = new RegExp("(?<![\\p{L}\\p{N}])" + reEsc(s) + "(?![\\p{L}\\p{N}])", "giu"); } catch (e) { re = new RegExp(reEsc(s), "gi"); }
+      t = t.replace(re, "…");
+    });
+    return t;
+  }
+
+  // de ronde in beeld brengen (op een telefoon staat het keuzepaneel erboven)
+  function into(id) { var el = $(id), top = el.getBoundingClientRect().top + scrollY - 64; if (Math.abs(top - scrollY) > 40) window.scrollTo({ top: top }); }
+
+  // ---------- flitskaarten
+  var K = null;
+  function startCards() {
+    var list = pool($("k-open").checked);
+    $("k-done").hidden = true;
+    if (!list.length) { infoLine("k-info", $("k-open").checked); $("k-stage").hidden = true; return; }
+    K = { list: list, i: 0, flipped: false, yes: 0, miss: [] };
+    $("k-stage").hidden = false; showCard(); into("k-stage"); $("k-card").focus({ preventScroll: true });
+  }
+  function showCard() {
+    var x = K.list[K.i], l = LES[x.les], b = opts.dir === "b";
+    $("k-where").textContent = lesLabel(l) + ": " + l.titel;
+    $("k-count").textContent = (K.i + 1) + " van " + K.list.length;
+    var front = b ? '<span class="side">Begrip</span><span class="front">' + esc(x.begrip) + "</span>"
+                  : '<span class="side">Uitleg</span><span class="front long">' + esc(masked(x)) + "</span>";
+    var back = b ? '<span class="ans">' + esc(x.uitleg) + "</span>" : '<span class="ans big">' + esc(x.begrip) + "</span>";
+    if (x.art) back += '<span class="art">' + esc(x.art) + "</span>";
+    $("k-card").innerHTML = front + (K.flipped ? '<div class="back">' + back + "</div>" : '<span class="hint">Tik om om te draaien</span>');
+    $("k-card").setAttribute("aria-label", K.flipped ? "Kaart, achterkant zichtbaar" : "Kaart, tik om om te draaien");
+  }
+  function answerCard(known) {
+    if (!K) return;
+    var x = K.list[K.i]; mark(x.id, known);
+    if (known) K.yes++; else K.miss.push(x);
+    K.i++; K.flipped = false;
+    if (K.i >= K.list.length) return endCards();
+    showCard(); renderSel();
+  }
+  function endCards() {
+    $("k-stage").hidden = true; var d = $("k-done"); d.hidden = false;
+    d.innerHTML = '<span class="score">' + K.yes + " / " + K.list.length + '</span><p>' + (K.miss.length ? K.miss.length + " begrippen ken je nog niet. Oefen die meteen nog een keer." : "Alles gekend in deze ronde.") + "</p>" +
+      '<div class="row" style="justify-content:center">' + (K.miss.length ? '<button type="button" class="btn primary" id="k-again">Oefen de ' + K.miss.length + " die je nog niet kent</button>" : "") +
+      '<button type="button" class="btn" id="k-new">Nieuwe ronde</button></div>';
+    var miss = K.miss; K = null; refresh();
+    if (miss.length) $("k-again").addEventListener("click", function () { K = { list: shuffle(miss), i: 0, flipped: false, yes: 0, miss: [] }; d.hidden = true; $("k-stage").hidden = false; showCard(); $("k-card").focus(); });
+    $("k-new").addEventListener("click", startCards);
+    ($("k-again") || $("k-new")).focus();
+  }
+  $("k-start").addEventListener("click", startCards);
+  $("k-open").addEventListener("change", function () { infoLine("k-info", this.checked); });
+  $("k-card").addEventListener("click", function () { if (!K) return; K.flipped = !K.flipped; showCard(); });
+  $("k-yes").addEventListener("click", function () { answerCard(true); });
+  $("k-no").addEventListener("click", function () { answerCard(false); });
+  document.addEventListener("keydown", function (e) {
+    if (mode !== "kaarten" || !K || $("k-stage").hidden || e.altKey || e.ctrlKey || e.metaKey) return;
+    var t = e.target.tagName; if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
+    if (e.key === " " && e.target !== $("k-card")) { e.preventDefault(); K.flipped = !K.flipped; showCard(); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); answerCard(true); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); answerCard(false); }
+  });
+
+  // ---------- dictee
+  function simple(s) { return norm(s).replace(/\(.*?\)/g, " ").replace(/^(de|het|een)\s+/, "").replace(/[^a-z0-9]+/g, ""); }
+  function lev(a, b) {
+    var m = a.length, n = b.length, d = []; for (var i = 0; i <= m; i++) { d[i] = [i]; } for (var j = 1; j <= n; j++) d[0][j] = j;
+    for (i = 1; i <= m; i++) for (j = 1; j <= n; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    return d[m][n];
+  }
+  function judge(x, ans) {
+    var a = simple(ans); if (!a) return "leeg";
+    var names = [x.begrip].concat(x.ook).map(simple).filter(Boolean);
+    if (names.indexOf(a) >= 0) return "goed";
+    for (var i = 0; i < names.length; i++) { var t = names[i], max = t.length >= 10 ? 2 : t.length >= 5 ? 1 : 0; if (max && lev(a, t) <= max) return "bijna"; }
+    return "fout";
+  }
+  var Dc = null;
+  function dtInfo() {
+    $("d-uitleg-info").textContent = opts.dt === "b" ? "Je ziet de uitleg en typt het begrip. Kleine typfouten rekent de dictee goed, met de juiste spelling erbij."
+      : "Je ziet het begrip en schrijft de uitleg in je eigen woorden. Daarna vergelijk je met de samenvatting en kijk je zelf na.";
+  }
+  function startDictee() {
+    var list = pool($("d-open").checked);
+    $("d-done").hidden = true;
+    if (!list.length) { infoLine("d-info", $("d-open").checked); $("d-stage").hidden = true; return; }
+    Dc = { list: list, i: 0, good: 0, miss: [], hint: 0 };
+    $("d-stage").hidden = false; showQ(); into("d-stage");
+  }
+  function showQ() {
+    var x = Dc.list[Dc.i], l = LES[x.les], typeB = opts.dt === "b";
+    Dc.hint = 0; Dc.answered = false;
+    $("d-where").textContent = lesLabel(l) + ": " + l.titel;
+    $("d-count").textContent = (Dc.i + 1) + " van " + Dc.list.length + " · " + Dc.good + " goed";
+    $("d-q").className = typeB ? "q" : "q big";
+    $("d-q").textContent = typeB ? masked(x) : x.begrip;
+    $("d-lbl").textContent = typeB ? "Welk begrip is dit?" : "Wat betekent dit? Schrijf het in je eigen woorden.";
+    $("d-in").hidden = !typeB; $("d-ta").hidden = typeB; $("d-hint").hidden = !typeB;
+    $("d-lbl").setAttribute("for", typeB ? "d-in" : "d-ta");
+    $("d-in").value = ""; $("d-ta").value = ""; $("d-in").disabled = false; $("d-ta").disabled = false;
+    $("d-in").placeholder = "";
+    $("d-fb").hidden = true; $("d-after").hidden = true; $("d-ask").hidden = false;
+    (typeB ? $("d-in") : $("d-ta")).focus({ preventScroll: true });
+  }
+  function feedback(kind, html, buttons) {
+    var fb = $("d-fb"); fb.className = "fb " + kind; fb.innerHTML = html; fb.hidden = false;
+    $("d-ask").hidden = true; $("d-in").disabled = true; $("d-ta").disabled = true;
+    var a = $("d-after"); a.innerHTML = ""; a.hidden = false;
+    buttons.forEach(function (b) {
+      var el = document.createElement("button"); el.type = "button"; el.className = "btn" + (b.cls ? " " + b.cls : ""); el.textContent = b.label;
+      el.addEventListener("click", b.fn); a.appendChild(el);
+    });
+    a.firstChild.focus({ preventScroll: true });
+  }
+  function solution(x) { return "<span><strong>" + esc(x.begrip) + "</strong>" + (x.ook.length ? " <small>(ook: " + esc(x.ook.join(", ")) + ")</small>" : "") + "</span>" + (x.art ? '<span class="small">' + esc(x.art) + "</span>" : ""); }
+  function record(x, ok) { mark(x.id, ok); if (ok) Dc.good++; else Dc.miss.push(x); }
+  function nextQ() { Dc.i++; if (Dc.i >= Dc.list.length) return endDictee(); showQ(); renderSel(); }
+  var NEXT = function () { return { label: Dc && Dc.i + 1 >= Dc.list.length ? "Bekijk je score" : "Volgende", cls: "primary", fn: nextQ }; };
+  $("d-form").addEventListener("submit", function (e) {
+    e.preventDefault(); if (!Dc || Dc.answered) return;
+    var x = Dc.list[Dc.i];
+    if (opts.dt === "u") {
+      if (!$("d-ta").value.trim()) { $("d-ta").focus(); return; }
+      Dc.answered = true;
+      feedback("self", "<b>Vergelijk met de samenvatting</b><span>" + esc(x.uitleg) + "</span>" + (x.art ? '<span class="small">' + esc(x.art) + "</span>" : "") + "<span>Had je de kern goed?</span>",
+        [{ label: "Goed", cls: "good", fn: function () { record(x, true); nextQ(); } }, { label: "Nog niet", cls: "bad", fn: function () { record(x, false); nextQ(); } }]);
+      return;
+    }
+    var r = judge(x, $("d-in").value);
+    if (r === "leeg") { $("d-in").focus(); return; }
+    Dc.answered = true;
+    if (r === "goed" || r === "bijna") {
+      record(x, true);
+      feedback("good", "<b>" + (r === "goed" ? "Goed" : "Goed, let op de spelling") + "</b>" + solution(x), [NEXT()]);
+    } else {
+      record(x, false);
+      feedback("bad", "<b>Niet goed</b><span>Jij typte: " + esc($("d-in").value) + "</span>" + solution(x),
+        [NEXT(), { label: "Toch goed rekenen", fn: function () { Dc.miss.pop(); Dc.good++; mark(x.id, true); nextQ(); } }]);
+    }
+  });
+  $("d-hint").addEventListener("click", function () {
+    if (!Dc) return; var t = Dc.list[Dc.i].begrip; Dc.hint = Math.min(Dc.hint + 1, Math.max(1, t.length - 1));
+    $("d-in").placeholder = t.slice(0, Dc.hint) + t.slice(Dc.hint).replace(/[^\s\-\/]/g, "_");
+    $("d-in").focus();
+  });
+  $("d-skip").addEventListener("click", function () {
+    if (!Dc || Dc.answered) return; var x = Dc.list[Dc.i]; Dc.answered = true; record(x, false);
+    feedback("bad", "<b>Het antwoord</b>" + solution(x), [NEXT()]);
+  });
+  function endDictee() {
+    $("d-stage").hidden = true; var d = $("d-done"); d.hidden = false;
+    d.innerHTML = '<span class="score">' + Dc.good + " / " + Dc.list.length + '</span><p>' + (Dc.miss.length ? "Dit wist je nog niet: " + Dc.miss.map(function (x) { return esc(x.begrip); }).join(", ") + "." : "Alles goed in deze ronde.") + "</p>" +
+      '<div class="row" style="justify-content:center">' + (Dc.miss.length ? '<button type="button" class="btn primary" id="d-again">Oefen de ' + Dc.miss.length + " fouten opnieuw</button>" : "") +
+      '<button type="button" class="btn" id="d-new">Nieuw dictee</button></div>';
+    var miss = Dc.miss; Dc = null; refresh();
+    if (miss.length) $("d-again").addEventListener("click", function () { Dc = { list: shuffle(miss), i: 0, good: 0, miss: [], hint: 0 }; d.hidden = true; $("d-stage").hidden = false; showQ(); });
+    $("d-new").addEventListener("click", startDictee);
+    ($("d-again") || $("d-new")).focus();
+  }
+  $("d-start").addEventListener("click", startDictee);
+  $("d-open").addEventListener("change", function () { infoLine("d-info", this.checked); });
+
+  $("reset").addEventListener("click", function () { current().forEach(function (x) { delete st[x.id]; }); save(); refresh(); });
+
+  // selectie veranderd: lopende ronde stoppen, alles opnieuw tekenen
+  function refresh(focusKey) {
+    renderSel(focusKey); renderList();
+    if (typeof focusKey === "string") { K = null; Dc = null; $("k-stage").hidden = true; $("d-stage").hidden = true; $("k-done").hidden = true; $("d-done").hidden = true; }
+    infoLine("k-info", $("k-open").checked); infoLine("d-info", $("d-open").checked);
+  }
+  window.addEventListener("hashchange", function () { fromHash(); refresh(""); });
+  dtInfo(); fromHash(); refresh();
+})();
+</script>
+<footer class="sitefoot"><div class="sf-in"><div class="sf-about"><a class="sf-home" href="../../">Studieplek FM jaar 2</a><p>Periode 2: samenvattingen, begrippen, oefenvragen en weektoetsen. Toetsperiode 11 t/m 22 januari 2027.</p><a class="sf-top" href="#">Terug naar boven</a></div><div class="sf-col ir"><span class="sf-head"><b>IR</b>Inkoop en recht</span><a href="../../samenvattingen/inkoop-recht/">Samenvatting</a><a href="../../begrippen/inkoop-recht/">Begrippen</a><a href="../../inkoop-recht/#oefenen">Oefenvragen</a><a href="../../inkoop-recht/#toetsen">Weektoetsen</a><a href="../../artikelen/inkoop-recht/">Wetsartikelen</a></div><div class="sf-col hrm"><span class="sf-head"><b>HRM</b>HRM</span><a href="../../samenvattingen/hrm/">Samenvatting</a><a href="../../begrippen/hrm/">Begrippen</a><a href="../../hrm/#oefenen">Oefenvragen</a><a href="../../hrm/#toetsen">Weektoetsen</a><a href="../../artikelen/hrm/">Wetsartikelen</a></div><div class="sf-col bm"><span class="sf-head"><b>BM</b>Business management</span><a href="../../samenvattingen/praktijkproject/">Samenvatting</a><a href="../../begrippen/praktijkproject/">Begrippen</a><a href="../../praktijkproject/#oefenen">Oefenvragen</a><a href="../../praktijkproject/#toetsen">Weektoetsen</a><a href="../../bedrijfskunde/waalhop/">Casustoets Waalhop</a><a href="../../bedrijfskunde/heidezoom/">Casustoets Heidezoom</a></div></div></footer>
+<script>
+(function () {
+  /* smal scherm: passen de tabbladen niet, dan schuiven ze; het huidige tabblad staat in beeld */
+  var tb = document.querySelector(".tabs"), cur = tb && tb.querySelector('[aria-current="page"]');
+  if (cur && tb.scrollWidth > tb.clientWidth) tb.scrollLeft = cur.offsetLeft + cur.offsetWidth / 2 - tb.clientWidth / 2;
+  var bar = document.getElementById("sitebar"); if (!bar) return;
+  var menu = bar.querySelector("details");
+  document.addEventListener("click", function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menu.open) { menu.open = false; menu.querySelector("summary").focus(); } });
+  menu.addEventListener("click", function (e) { if (e.target.closest("a")) menu.open = false; });
+  function path(p) { return p.replace(/index\.html$/, ""); }
+  // in het menu de pagina markeren waar je nu bent
+  function mark() {
+    var here = path(location.pathname), hash = location.hash.replace(/-w\d+$/, "");
+    Array.prototype.forEach.call(bar.querySelectorAll(".sb-panel a"), function (a) {
+      var u = new URL(a.href, location.href);
+      var same = path(u.pathname) === here && (!u.hash || u.hash === hash || (!/^#(oefenen|toetsen)$/.test(hash) && a.hasAttribute("data-default")));
+      if (same) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+  }
+  window.sitenavMark = mark;
+  // naar een ander vak: blijf in hetzelfde onderdeel (oefenen, toetsen of dezelfde week van de samenvatting)
+  Array.prototype.forEach.call(bar.querySelectorAll("a[data-carry]"), function (a) {
+    a.addEventListener("click", function () {
+      var h = location.hash, wk = document.querySelector('.weeknav a[aria-current="true"]');
+      if (wk && window.scrollY > 200) h = wk.getAttribute("href");
+      if (/^#(oefenen|toetsen|week-\d|lijst|kaarten|dictee)(-w\d+)?$/.test(h)) a.href = a.href.split("#")[0] + h;
+    });
+  });
+  window.addEventListener("hashchange", mark); mark();
+})();
+</script>
+</body>
+</html>

@@ -40,6 +40,7 @@ git add -A && git commit -m "..." && git push
 | `scripts/vragen/` | Oefenvragen per vak plus `template.html`, de oefenpagina (vragen én weektoetsen). |
 | `scripts/toetsen/` | Weektoetsen en eindtoetsen per vak per week (`ir_w1.py`, `hrm_eind.py`, ...), helpers in `lib.py`. |
 | `scripts/toelichting/` | Uitleg "Waarom dit klopt" bij open vragen en casusdeelvragen, één bestand per vak. |
+| `scripts/begrippen/` | Begrippenlijsten per vak (`inkoop_recht.py`, `hrm.py`, `praktijkproject.py`), helper `b()` in `begrip.py`. |
 | `scripts/samenvattingen/<vak>/` | Samenvattingen als Markdown (`overzicht.md`, `week-1.md` t/m `week-7.md`), export van de Claude-documenten. |
 | `scripts/artikelen/` | Wetsartikelen per vak (`hrm.py`, `inkoop_recht.py`): per artikel nummer, titel, inhoud, weken en eventueel een "let op". |
 | `scripts/figuren/` | Figuren in de samenvattingen: componenten in `lib.py`, per vak een lijst `FIGUREN`. |
@@ -54,11 +55,13 @@ git add -A && git commit -m "..." && git push
 | `/` | `build_home.py` | aantallen uit de gebouwde `vragen.json`/`toetsen.json`; maakt ook `favicon.svg` |
 | `/<vak>/` (`inkoop-recht`, `hrm`, `praktijkproject`) | `build_site.py` | `scripts/vragen/template.html` + `vragen.json` + `toetsen.json` |
 | `/samenvattingen/<vak>/` | `build_samenvattingen.py` | `scripts/samenvattingen/<vak>/*.md` + `scripts/figuren/<vak>.py` |
+| `/begrippen/<vak>/` | `build_begrippen.py` | `scripts/begrippen/<vak>.py` + lessen uit de gebouwde `vragen.json` |
 | `/artikelen/<vak>/` (alleen `inkoop-recht` en `hrm`) | `build_artikelen.py` | `scripts/artikelen/<vak>.py` |
 | `/bedrijfskunde/<toets>/` | `build_bedrijfskunde.py` | `scripts/bedrijfskunde/` |
 | `/api/notities?vak=<vak>` | `netlify/functions/notities.mjs` | Netlify Blobs, store `notities` (GET en PUT, alleen met wachtwoordsleutel) |
 
-Deeplinks: `/<vak>/#oefenen-wN`, `/<vak>/#toetsen-wN`, `/samenvattingen/<vak>/#week-N`, `/artikelen/<vak>/#wN` (weekfilter).
+Deeplinks: `/<vak>/#oefenen-wN`, `/<vak>/#toetsen-wN`, `/samenvattingen/<vak>/#week-N`, `/begrippen/<vak>/#lijst`, `#kaarten-wN`, `#dictee-wN`,
+`/artikelen/<vak>/#wN` (weekfilter).
 BM heet in de code `praktijkproject` (map, slug) en `pp` (toetsen).
 
 ## Bouwvolgorde (`build_site.py`)
@@ -69,8 +72,8 @@ Per vak (instellingen in `VAKKEN` bovenin `build_site.py`: kleuren, titels, `LS_
 3. `build_toetsen.py <ir|hrm|pp>` → `site/<vak>/toetsen.json`.
 4. `add_toelichting.py` zet de uitleg uit `scripts/toelichting/` in beide JSON-bestanden.
 
-Daarna: `build_bedrijfskunde.py`, `build_samenvattingen.py` (leest de gebouwde JSON voor de knoppen onder elke week),
-`build_artikelen.py` en als laatste `build_home.py`.
+Daarna: `build_bedrijfskunde.py`, `build_begrippen.py`, `build_samenvattingen.py` (leest de gebouwde JSON en de begrippen voor de knoppen
+onder elke week), `build_artikelen.py` en als laatste `build_home.py`.
 
 ## Inhoud toevoegen
 
@@ -94,6 +97,12 @@ Het BM-tabblad "Logboek portfolio" komt bewust niet op de site (persoonlijk, de 
 Een blok tussen `::: antwoord` en `:::` (eigen regels) wordt een knop "Toon antwoord" die de tekst openklapt (`<details class="reveal">`,
 geen JavaScript). Gebruikt bij "Oefenvraag vorige les" van arbeidsrecht; staat niet in de Claude-documenten, dus bewaar het bij een nieuwe export.
 
+**Begrippen** (`scripts/begrippen/<vak>.py`, lijst `B`). `b(les, begrip, uitleg, art=None, ook=())`: `les` is een les-id uit `vragen.json`,
+`uitleg` zonder het begrip zelf, `art` het wetsartikel zoals in de samenvatting, `ook` andere antwoorden die de dictee goed rekent.
+Id = `<les>-<slug van begrip>`; verander een begrip dus liever niet van naam, anders raakt de voortgang ervan weg. Alleen begrippen
+uit de samenvattingen; staat iets er als gangbare invulling, dan staat dat in de uitleg (`G` en `E` in `hrm.py`). De bouw stopt bij
+een onbekende les of een dubbel begrip.
+
 **Figuren** (`scripts/figuren/<vak>.py`). `F(week, les, kop, fig(...), pos/after)`; de figuur komt onder de kop waarvan de tekst
 precies gelijk is aan `kop`. Komt die kop niet precies één keer voor, dan stopt de bouw. Componenten: `flow`, `phases`, `lanes`,
 `ladder`, `timeline`, `cycle`, `quad`, `nest`, `tree`, `som`, `poles`, `cards`, `stairs`, `pillars`, `iceberg`, `pgrid`, `chips`,
@@ -113,10 +122,15 @@ in `build_bedrijfskunde.py` (plus `CASUS` in `sitenav.py`).
   geschud (verwijs in teksten dus nooit naar "optie A" of een positie). Voortgang en toetscijfers in `localStorage`
   (`LS_KEY` per vak, lezen via `lsGet`). Draait de pagina als Claude-artifact, dan gebruikt hij ook `window.claude` (db voor
   voortgang, Claude kijkt open antwoorden na); op de site is dat er niet en kijkt de gebruiker zelf na met het modelantwoord.
+- **Begrippen** (`build_begrippen.py`): keuze van weken en onderdelen (zelfde patroon als de oefenpagina), en drie modi: lijst met zoeken,
+  flitskaarten (ken ik / nog niet) en dictee (uitleg zien, begrip typen; kleine typfouten tellen goed; of omgekeerd met zelf nakijken).
+  Het begrip wordt uit de uitleg weggemaskeerd. Opslag in `localStorage` `fm-begrippen-<vak>`: `{ st: { <id>: { k, t } }, sel: { w, p }, dir, dt }`.
 - **Wetsartikelen**: zoeken en het weekfilter werken in de browser; er wordt niets bewaard (geen `localStorage`).
 - **Casustoetsen**: `app.js` bewaart antwoorden in `localStorage` (sleutel per toets in `TOETSEN`), zelf nakijken met rubric.
 - **Navigatie**: elke pagina krijgt uit `sitenav.py` de balk (`bar`), het kruimelpad (`crumbs`, niet op de startpagina), de tabs (`tabs`)
   en de voettekst met alle onderdelen (`footer`), met `root` als relatief pad naar de startpagina. Een nieuwe pagina gebruikt die vier ook.
+  Tabs per vak: Samenvatting, Begrippen, Oefenen, Weektoetsen (BM ook Casustoetsen, IR en HRM ook Wetsartikelen). Passen ze op een smal scherm niet,
+  dan schuift de tabrij zijwaarts en zet `BAR_JS` het huidige tabblad in beeld (de pagina zelf schuift nooit opzij).
 - **`localStorage` lezen**: `lsGet` in `template.html` en de lader in `bedrijfskunde/app.js` controleren het type van een bewaarde
   waarde en vallen terug op de standaardwaarde. Houd dat patroon aan bij nieuwe sleutels.
 

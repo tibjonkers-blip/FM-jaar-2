@@ -1407,6 +1407,8 @@ def build():
         tw = set(json.load(open(os.path.join(site_vak, "toetsen.json"), encoding="utf-8"))["weken"])
         les_week = {l["id"]: l["week"] for l in vr["lessen"]}
         figuren = load_figuren(c["figuren"])
+        import build_begrippen
+        begr = build_begrippen.counts(slug)  # {week: aantal begrippen} voor de knop naar de flitskaarten
         n_fig = 0
         for key, label, fn in parts:
             md = open(os.path.join(src, fn), encoding="utf-8").read()
@@ -1420,6 +1422,8 @@ def build():
                     btn.append(f'<a class="wn-btn primary" href="{c["oefen"]}#oefenen-w{w}">Oefenvragen week {w} <small>{n} vragen</small></a>')
                 if w in tw:
                     btn.append(f'<a class="wn-btn" href="{c["oefen"]}#toetsen-w{w}">Weektoets week {w}</a>')
+                if begr.get(w):
+                    btn.append(f'<a class="wn-btn" href="../../begrippen/{slug}/#kaarten-w{w}">Begrippen week {w} <small>{begr[w]}</small></a>')
                 if w < 7:
                     btn.append(f'<a class="wn-btn quiet" href="#week-{w + 1}">Door naar week {w + 1}</a>')
                 after = f'<nav class="week-next" aria-label="Verder na week {w}">{"".join(btn)}</nav>'

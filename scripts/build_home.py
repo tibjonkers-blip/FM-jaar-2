@@ -27,7 +27,7 @@ PAGE = """<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Studieplek FM periode 2</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Samenvattingen, oefenvragen per les en weektoetsen voor Inkoop en recht, HRM en het praktijkproject.">
+<meta name="description" content="Samenvattingen, begrippen, oefenvragen per les en weektoetsen voor Inkoop en recht, HRM en het praktijkproject.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -217,12 +217,17 @@ ICONS = {
     "Q": '<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><path d="M12 17.5h.01"/></svg></span>',
     "T": '<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8l1.5 1.5L13 7M9 14l1.5 1.5L13 13"/><path d="M15 8.5h1M15 14.5h1"/></svg></span>',
     "C": '<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3"/><path d="M3 12h18"/></svg></span>',
+    "B": '<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/><path d="M7 11h6M7 15h4"/></svg></span>',
     "L": '<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>',
 }
 
 def door_sam(slug, small):
-    return (f'<a class="door" href="samenvattingen/{slug}/">{ICONS["S"]}<b>Samenvattingen</b>'
-            f'<small>{small}</small><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span></a>')
+    """De deur naar de samenvatting, met daaronder de deur naar de begrippen (lijst, flitskaarten, dictee)."""
+    import build_begrippen
+    n = sum(build_begrippen.counts(slug).values())
+    arr = '<span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>'
+    return (f'<a class="door" href="samenvattingen/{slug}/">{ICONS["S"]}<b>Samenvattingen</b><small>{small}</small>{arr}</a>\n'
+            f'        <a class="door" href="begrippen/{slug}/">{ICONS["B"]}<b>Begrippen</b><small>{n} begrippen per les, met flitskaarten en dictee</small>{arr}</a>')
 
 def build():
     ir, hrm, pp = counts("inkoop-recht"), counts("hrm"), counts("praktijkproject")
