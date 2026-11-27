@@ -51,7 +51,7 @@ mc("hrm5-a07", W, A, "Welke voorwaarde hoort niet bij een geldig ontslag op staa
    "De drie voorwaarden zijn een dringende reden, onverwijlde opzegging (met tijd voor onderzoek) en onverwijlde mededeling van de reden. Het UWV speelt hierbij geen rol.")
 mc("hrm5-a08", W, A, "Hoe hoog is de transitievergoeding volgens art. 7:673 BW?",
    ["Een maandsalaris per dienstjaar", "1/3 maandsalaris per dienstjaar, naar rato bij een deel van een jaar, met een maximum", "Altijd een vast bedrag van €5.000", "Een half maandsalaris per dienstjaar vanaf het tiende jaar"], 1,
-   "1/3 maandsalaris per dienstjaar, met een wettelijk maximum dat jaarlijks wordt geïndexeerd. De slide noemt nog €84.000; dat bedrag is verouderd (in 2025 al rond €98.000). Zoek het actuele bedrag op.")
+   "1/3 maandsalaris per dienstjaar, met een wettelijk maximum dat jaarlijks wordt geïndexeerd. De slide noemt nog €84.000; dat bedrag is verouderd. In 2026 is het maximum €102.000, of een jaarsalaris als dat hoger is.")
 
 # ---------- Gespreksvoering MC ----------
 mc("hrm5-g01", W, G, "Wanneer breng je in een slechtnieuwsgesprek de kernboodschap?",

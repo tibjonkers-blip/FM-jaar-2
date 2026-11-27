@@ -16,7 +16,7 @@
    het zonebordje (IR, HRM, BM) en tabbladen die als mappen op de band staan. Daaronder één rustige leeskolom; een toets leest
    als één lang tentamen met vraagnummers in de kantlijn en een vaste inleverbalk onderaan. */
 :root {
-  --paper: #eef1f6;
+  --paper: #f3f5f8;
   --sheet: #ffffff;
   --sunk: #e4e9f1;
   --ink: #16202f;
@@ -61,11 +61,11 @@ body {
 .wrap { width: 100%; max-width: 812px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 72px; }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.12; }
-h1 { font-size: clamp(2rem, 5.4vw, 2.9rem); font-weight: 800; font-stretch: 116%; letter-spacing: -0.012em; }
-h2 { font-size: 1.3rem; font-weight: 700; font-stretch: 108%; }
-h3 { font-size: 1.04rem; font-weight: 700; font-stretch: 104%; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); font-weight: 750; letter-spacing: -0.02em; }
+h2 { font-size: 1.28rem; font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 1.04rem; font-weight: 700; }
 h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
-@media (max-width: 400px) { h1 { font-size: 1.7rem; font-stretch: 104%; } }
+@media (max-width: 400px) { h1 { font-size: 1.65rem; } }
 p { margin: 0; }
 a { color: var(--accent); text-underline-offset: 2px; }
 button { font: inherit; color: inherit; cursor: pointer; }
@@ -75,43 +75,59 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .note { font-size: 0.85rem; color: var(--ink-soft); }
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 
-/* ---------- kopband ---------- */
-.band { background: var(--band); color: var(--on-band); }
-.band-in { max-width: 812px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 0; }
-/* tijdens een oefenronde of toets: een smalle band, zodat de vragen de aandacht krijgen */
+/* ---------- kop: de gedeelde vormgeving staat in sitenav.py (TABS_CSS) ---------- */
+.band-in { max-width: 812px; }
+/* tijdens een oefenronde of toets: een smalle kop, zodat de vragen de aandacht krijgen */
 .band-in:has(> .tabs[hidden]) { padding-block: 16px 18px; gap: 8px; }
-.band-in:has(> .tabs[hidden]) .examline, .band-in:has(> .tabs[hidden]) .meta { display: none; }
+.band-in:has(> .tabs[hidden]) .examline, .band-in:has(> .tabs[hidden]) .meta, .band-in:has(> .tabs[hidden]) .crumbs { display: none; }
 .band-in:has(> .tabs[hidden]) h1 { font-size: clamp(1.35rem, 3.6vw, 1.75rem); }
 .band-in:has(> .tabs[hidden]) .plate { min-width: 38px; height: 38px; font-size: 0.86rem; border-radius: 8px; }
-.band a { color: inherit; }
 .top { display: flex; flex-direction: column; gap: 10px; }
+
+
+/* ---------- kop van een vakpagina: licht vlak met een streep in de vakkleur, bordje, kruimelpad en tabbladen ---------- */
+.band { background: var(--sheet, var(--surface)); color: var(--ink); border-bottom: 1px solid var(--rule, var(--line)); box-shadow: inset 0 4px 0 var(--accent); }
+.band-in { margin: 0 auto; display: flex; flex-direction: column; gap: 12px; padding-block: 26px 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.band :focus-visible { outline-color: var(--accent); }
+.band h1 { color: var(--ink); }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; font-size: 0.86rem; color: var(--ink-soft, var(--muted)); margin: -6px 0 -2px; }
+.crumbs a { color: inherit; text-decoration: none; font-weight: 500; }
+.crumbs a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs i { font-style: normal; opacity: 0.55; }
+.crumbs [aria-current] { color: var(--ink); font-weight: 600; }
 .title-row { display: flex; align-items: center; gap: 14px; min-width: 0; }
-.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: #fff; color: var(--band);
-  display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-stretch: 122%; font-size: 1.05rem; letter-spacing: 0.02em; }
+.title-row > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .title-row h1 { min-width: 0; }
-.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: rgba(255, 255, 255, 0.82); font-size: 0.93rem; }
-.meta strong { color: #fff; }
-.examline { max-width: 64ch; color: rgba(255, 255, 255, 0.86); font-size: 0.95rem; }
+.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: var(--accent); color: var(--on-accent, var(--accent-ink, #fff));
+  display: grid; place-items: center; font-weight: 800; font-stretch: 112%; font-size: 1.02rem; letter-spacing: 0.02em; }
+.kind { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+.band .lead, .band .examline { max-width: 66ch; color: var(--ink-soft, var(--muted)); font-size: 0.96rem; margin: 0; }
+.band .lead a { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.band .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--ink-soft, var(--muted)); font-size: 0.93rem; }
+.band .meta strong { color: var(--ink); }
+@media (max-width: 400px) { .plate { min-width: 44px; height: 44px; font-size: 0.9rem; border-radius: 9px; } .title-row { gap: 12px; } }
 
-
-/* ---------- tabbladen: mappen op de zoneband, op elke pagina van een vak dezelfde ---------- */
-.tabs { display: flex; gap: 4px; margin-top: 8px; max-width: 100%; }
-.tab { border: 0; background: transparent; padding: 11px 18px 12px; border-radius: 10px 10px 0 0; font-weight: 600; color: rgba(255, 255, 255, 0.88);
-  text-decoration: none; font-size: 0.97rem; line-height: 1.3; display: inline-flex; gap: 8px; align-items: baseline; white-space: nowrap; }
-.tab:hover { color: #fff; background: rgba(255, 255, 255, 0.14); }
-.tab[aria-current="page"], .tab[aria-current="page"]:hover { background: var(--paper, var(--bg)); color: var(--ink); }
-.tab .n { font-size: 0.76rem; font-weight: 500; opacity: 0.75; }
-.tab[aria-current="page"] .n { color: var(--accent); opacity: 1; font-weight: 700; }
+/* ---------- tabbladen: onderstreept, op elke pagina van een vak dezelfde ---------- */
+.tabs { display: flex; gap: 6px; margin-top: 6px; margin-bottom: -1px; max-width: 100%; }
+.tab { border: 0; background: transparent; padding: 11px 12px 12px; border-bottom: 3px solid transparent; font-weight: 600; color: var(--ink-soft, var(--muted));
+  text-decoration: none; font-size: 0.97rem; line-height: 1.3; display: inline-flex; gap: 8px; align-items: center; white-space: nowrap; }
+.tab:first-child { margin-left: -12px; }
+.tab:hover { color: var(--ink); border-bottom-color: var(--rule, var(--line)); }
+.tab[aria-current="page"], .tab[aria-current="page"]:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.tab .n { font-size: 0.74rem; font-weight: 600; padding: 1px 7px; border-radius: 999px; background: var(--sunk, var(--surface-2)); color: var(--ink-soft, var(--muted)); }
+.tab[aria-current="page"] .n { background: var(--accent-soft); color: var(--accent); }
+.tab .n:empty { display: none; }
 .tab .s { display: none; }
 .tab.ext { order: 9; }
 .tab.ext::after { content: "\2197"; font-size: 0.8em; opacity: 0.75; }
 @media (max-width: 600px) {
-  .tabs { width: 100%; gap: 2px; }
-  .tab { flex: 1 1 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.88rem; font-stretch: 94%; }
+  .tabs { width: 100%; gap: 0; overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab, .tab:first-child { flex: 1 0 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.9rem; margin-left: 0; }
   .tab .l, .tab .n { display: none; } .tab .s { display: inline; }
 }
-@media (max-width: 350px) { .tab { font-size: 0.82rem; font-stretch: 88%; padding-inline: 2px; } }
+@media (max-width: 350px) { .tab { font-size: 0.84rem; padding-inline: 2px; } }
 
 
 /* ---------- wegwijzerbalk: op elke pagina vast bovenaan ---------- */
@@ -124,7 +140,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .sitebar { position: sticky; top: 0; z-index: 40; background: var(--sb-bg); color: #fff; padding-top: env(safe-area-inset-top, 0px);
   font-family: "Archivo", "Segoe UI", system-ui, sans-serif; font-size: 16px; line-height: 1.2; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.14); }
 .sitebar :focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
-.sb-in { max-width: 812px; margin: 0 auto; height: var(--sb-h); display: flex; align-items: center; gap: 4px;
+.sb-in { max-width: 1180px; margin: 0 auto; height: var(--sb-h); display: flex; align-items: center; gap: 4px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .sb-home { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 11px 0 8px; margin-left: -8px; border-radius: 8px; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
 .sb-home svg { width: 19px; height: 19px; flex: none; }
@@ -167,7 +183,24 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .sb-links a[aria-current="page"] { border-color: var(--zt); }
 }
 
-.band :focus-visible { outline-color: #fff; }
+/* ---------- voettekst: alle onderdelen per vak ---------- */
+.sitefoot { margin-top: 40px; border-top: 1px solid var(--rule, var(--line)); background: var(--sheet, var(--surface)); color: var(--ink-soft, var(--muted));
+  font-family: "Archivo", "Segoe UI", system-ui, sans-serif; font-size: 0.9rem; line-height: 1.45; }
+.sf-in { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr)); gap: 28px;
+  padding: 30px max(16px, env(safe-area-inset-right, 0px)) calc(36px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sf-about { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.sf-about p { margin: 0; max-width: 34ch; }
+.sf-home { font-weight: 800; color: var(--ink); text-decoration: none; font-size: 1rem; }
+.sf-top { color: var(--ink-soft, var(--muted)); font-weight: 600; }
+.sf-col { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sf-head { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.sf-head b { display: grid; place-items: center; min-width: 32px; height: 22px; padding: 0 5px; border-radius: 5px; background: var(--zc); color: #fff; font-size: 0.7rem; font-stretch: 112%; letter-spacing: 0.02em; }
+.sf-col a { color: var(--ink-soft, var(--muted)); text-decoration: none; padding: 3px 0; }
+.sf-col a:hover { color: var(--zt); text-decoration: underline; text-underline-offset: 3px; }
+.sitefoot .ir { --zc: var(--z-ir); --zt: var(--zt-ir); } .sitefoot .hrm { --zc: var(--z-hrm); --zt: var(--zt-hrm); } .sitefoot .bm { --zc: var(--z-bm); --zt: var(--zt-bm); }
+@media (max-width: 820px) { .sf-in { grid-template-columns: repeat(3, minmax(0, 1fr)); } .sf-about { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .sf-in { grid-template-columns: 1fr 1fr; gap: 22px 16px; padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); } .sf-col.bm { grid-column: 1 / -1; } }
+
 
 /* ---------- panels ---------- */
 .stack { display: flex; flex-direction: column; gap: 18px; }
@@ -250,7 +283,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* ---------- vragen (gedeeld door oefenen en toets) ---------- */
 .q { display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 0 10px; padding-block: 22px; border-top: 1px solid var(--rule); }
 .q:first-of-type { border-top: 0; }
-.qnum { font-family: var(--font-display); font-stretch: 116%; font-weight: 800; font-size: 1.2rem; color: var(--accent); padding-top: 1px; font-variant-numeric: tabular-nums; }
+.qnum { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--accent); padding-top: 1px; font-variant-numeric: tabular-nums; }
 .qbody { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .qmeta { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag { font-size: 0.78rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 2px 10px; }
@@ -275,7 +308,7 @@ textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3
 .case { background: var(--sunk); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
 .case .ctext { white-space: pre-wrap; }
 .sub { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 0 8px; }
-.sub .sl { font-family: var(--font-display); font-stretch: 112%; font-weight: 800; color: var(--accent); }
+.sub .sl { font-family: var(--font-display); font-weight: 800; color: var(--accent); }
 .sub .sb { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .subs { display: flex; flex-direction: column; gap: 18px; }
 
@@ -310,7 +343,7 @@ details.model[open] > summary { margin-bottom: 8px; }
 
 /* ---------- resultaat ---------- */
 .score { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 28px; align-items: center; }
-.cijfer { font-family: var(--font-display); font-weight: 800; font-size: clamp(3.6rem, 13vw, 5.2rem); line-height: 0.9; font-stretch: 112%; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.cijfer { font-family: var(--font-display); font-weight: 800; font-size: clamp(3.6rem, 13vw, 5.2rem); line-height: 0.9; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .cijfer.pass { color: var(--good); } .cijfer.fail { color: var(--bad); } .cijfer.todo { color: var(--ink-soft); }
 .score .side { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .score .big { font-weight: 600; font-size: 1.05rem; }
@@ -342,15 +375,16 @@ details.model[open] > summary { margin-bottom: 8px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
-<a class="skip" href="#main">Naar de inhoud</a><header class="sitebar" id="sitebar"><div class="sb-in"><a class="sb-home" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9.5h11V10"/><path d="M10 19.5v-5h4v5"/></svg><span>Home</span></a><nav class="sb-zones" aria-label="Vakken"><a class="sb-zone ir" href="../inkoop-recht/" title="Inkoop en recht" aria-label="Inkoop en recht" data-carry><b>IR</b><span>Inkoop en recht</span></a><a class="sb-zone hrm" href="../hrm/" title="HRM" aria-label="HRM" data-carry><b>HRM</b></a><a class="sb-zone bm" href="../praktijkproject/" title="Business management" aria-label="Business management" aria-current="true" data-carry><b>BM</b><span>Business management</span></a></nav><details class="sb-menu"><summary aria-label="Menu: alle pagina's"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary><div class="sb-panel"><div class="sb-col ir"><span class="sb-colhead"><b>IR</b>Inkoop en recht</span><div class="sb-links"><a href="../samenvattingen/inkoop-recht/">Samenvatting</a><a href="../inkoop-recht/#oefenen" data-default>Oefenvragen</a><a href="../inkoop-recht/#toetsen">Weektoetsen</a></div></div><div class="sb-col hrm"><span class="sb-colhead"><b>HRM</b>HRM</span><div class="sb-links"><a href="../samenvattingen/hrm/">Samenvatting</a><a href="../hrm/#oefenen" data-default>Oefenvragen</a><a href="../hrm/#toetsen">Weektoetsen</a></div></div><div class="sb-col bm"><span class="sb-colhead"><b>BM</b>Business management</span><div class="sb-links"><a href="../samenvattingen/praktijkproject/">Samenvatting</a><a href="../praktijkproject/#oefenen" data-default>Oefenvragen</a><a href="../praktijkproject/#toetsen">Weektoetsen</a><a href="../bedrijfskunde/waalhop/">Casustoets Waalhop</a><a href="../bedrijfskunde/heidezoom/">Casustoets Heidezoom</a></div></div></div></details></div></header><header class="band">
+<a class="skip" href="#main">Naar de inhoud</a><header class="sitebar" id="sitebar"><div class="sb-in"><a class="sb-home" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9.5h11V10"/><path d="M10 19.5v-5h4v5"/></svg><span>Home</span></a><nav class="sb-zones" aria-label="Vakken"><a class="sb-zone ir" href="../inkoop-recht/" title="Inkoop en recht" aria-label="Inkoop en recht" data-carry><b>IR</b><span>Inkoop en recht</span></a><a class="sb-zone hrm" href="../hrm/" title="HRM" aria-label="HRM" data-carry><b>HRM</b></a><a class="sb-zone bm" href="../praktijkproject/" title="Business management" aria-label="Business management" aria-current="true" data-carry><b>BM</b><span>Business management</span></a></nav><details class="sb-menu"><summary aria-label="Menu: alle pagina's"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary><div class="sb-panel"><div class="sb-col ir"><span class="sb-colhead"><b>IR</b>Inkoop en recht</span><div class="sb-links"><a href="../samenvattingen/inkoop-recht/">Samenvatting</a><a href="../begrippen/inkoop-recht/">Begrippen</a><a href="../inkoop-recht/#oefenen" data-default>Oefenvragen</a><a href="../inkoop-recht/#toetsen">Weektoetsen</a></div></div><div class="sb-col hrm"><span class="sb-colhead"><b>HRM</b>HRM</span><div class="sb-links"><a href="../samenvattingen/hrm/">Samenvatting</a><a href="../begrippen/hrm/">Begrippen</a><a href="../hrm/#oefenen" data-default>Oefenvragen</a><a href="../hrm/#toetsen">Weektoetsen</a></div></div><div class="sb-col bm"><span class="sb-colhead"><b>BM</b>Business management</span><div class="sb-links"><a href="../samenvattingen/praktijkproject/">Samenvatting</a><a href="../begrippen/praktijkproject/">Begrippen</a><a href="../praktijkproject/#oefenen" data-default>Oefenvragen</a><a href="../praktijkproject/#toetsen">Weektoetsen</a><a href="../bedrijfskunde/waalhop/">Casustoets Waalhop</a><a href="../bedrijfskunde/heidezoom/">Casustoets Heidezoom</a></div></div></div></details></div></header><header class="band">
   <div class="band-in">
+    <nav class="crumbs" aria-label="Kruimelpad"><a href="../">Home</a><i aria-hidden="true">/</i><span aria-current="page">Business management</span></nav>
     <div class="title-row"><span class="plate" aria-hidden="true">BM</span><h1>Praktijkproject Business Management</h1></div>
     <div class="meta">
       <span>Toetsperiode <strong>11–22 januari 2027</strong></span>
       <span id="countdown"></span>
     </div>
     <p class="examline">Geen schriftelijk tentamen: je cijfer komt uit de adviespresentatie (30 minuten plus 15 minuten vragen) en je portfolio moet voldoende zijn. Oefen hier de modellen die je in je advies moet kunnen uitleggen en toepassen.</p>
-    <nav class="tabs" aria-label="Onderdelen van dit vak" id="tabs"><a class="tab" href="../samenvattingen/praktijkproject/">Samenvatting</a><a class="tab" href="#oefenen" id="tab-oefenen" aria-current="page">Oefenen <span class="n" id="n-oefenen"></span></a><a class="tab" href="#toetsen" id="tab-toetsen"><span class="l">Weektoetsen</span><span class="s">Toetsen</span> <span class="n" id="n-toetsen"></span></a><a class="tab" href="../bedrijfskunde/waalhop/"><span class="l">Casustoetsen</span><span class="s">Casus</span></a></nav>
+    <nav class="tabs" aria-label="Onderdelen van dit vak" id="tabs"><a class="tab" href="../samenvattingen/praktijkproject/">Samenvatting</a><a class="tab" href="../begrippen/praktijkproject/">Begrippen</a><a class="tab" href="#oefenen" id="tab-oefenen" aria-current="page">Oefenen <span class="n" id="n-oefenen"></span></a><a class="tab" href="#toetsen" id="tab-toetsen"><span class="l">Weektoetsen</span><span class="s">Toetsen</span> <span class="n" id="n-toetsen"></span></a><a class="tab" href="../bedrijfskunde/waalhop/"><span class="l">Casustoetsen</span><span class="s">Casus</span></a></nav>
   </div>
 </header>
 
@@ -1152,8 +1186,12 @@ Geef alleen JSON terug in deze vorm:
   (async () => { try { sample = window.claude && window.claude.use ? await window.claude.use("sample") : null; } catch { sample = null; } })();
 })();
 </script>
+<footer class="sitefoot"><div class="sf-in"><div class="sf-about"><a class="sf-home" href="../">Studieplek FM jaar 2</a><p>Periode 2: samenvattingen, begrippen, oefenvragen en weektoetsen. Toetsperiode 11 t/m 22 januari 2027.</p><a class="sf-top" href="#">Terug naar boven</a></div><div class="sf-col ir"><span class="sf-head"><b>IR</b>Inkoop en recht</span><a href="../samenvattingen/inkoop-recht/">Samenvatting</a><a href="../begrippen/inkoop-recht/">Begrippen</a><a href="../inkoop-recht/#oefenen">Oefenvragen</a><a href="../inkoop-recht/#toetsen">Weektoetsen</a></div><div class="sf-col hrm"><span class="sf-head"><b>HRM</b>HRM</span><a href="../samenvattingen/hrm/">Samenvatting</a><a href="../begrippen/hrm/">Begrippen</a><a href="../hrm/#oefenen">Oefenvragen</a><a href="../hrm/#toetsen">Weektoetsen</a></div><div class="sf-col bm"><span class="sf-head"><b>BM</b>Business management</span><a href="../samenvattingen/praktijkproject/">Samenvatting</a><a href="../begrippen/praktijkproject/">Begrippen</a><a href="../praktijkproject/#oefenen">Oefenvragen</a><a href="../praktijkproject/#toetsen">Weektoetsen</a><a href="../bedrijfskunde/waalhop/">Casustoets Waalhop</a><a href="../bedrijfskunde/heidezoom/">Casustoets Heidezoom</a></div></div></footer>
 <script>
 (function () {
+  /* smal scherm: passen de tabbladen niet, dan schuiven ze; het huidige tabblad staat in beeld */
+  var tb = document.querySelector(".tabs"), cur = tb && tb.querySelector('[aria-current="page"]');
+  if (cur && tb.scrollWidth > tb.clientWidth) tb.scrollLeft = cur.offsetLeft + cur.offsetWidth / 2 - tb.clientWidth / 2;
   var bar = document.getElementById("sitebar"); if (!bar) return;
   var menu = bar.querySelector("details");
   document.addEventListener("click", function (e) { if (menu.open && !menu.contains(e.target)) menu.open = false; });
@@ -1175,7 +1213,7 @@ Geef alleen JSON terug in deze vorm:
     a.addEventListener("click", function () {
       var h = location.hash, wk = document.querySelector('.weeknav a[aria-current="true"]');
       if (wk && window.scrollY > 200) h = wk.getAttribute("href");
-      if (/^#(oefenen|toetsen|week-\d)$/.test(h)) a.href = a.href.split("#")[0] + h;
+      if (/^#(oefenen|toetsen|week-\d|lijst|kaarten|dictee)(-w\d+)?$/.test(h)) a.href = a.href.split("#")[0] + h;
     });
   });
   window.addEventListener("hashchange", mark); mark();

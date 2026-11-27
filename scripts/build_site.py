@@ -47,10 +47,11 @@ def render(tpl, c, target, slug):
     vals = {k: v for k, v in c.items() if k.isupper() and k != "CLAUDE_DOC"}
     vals["TABS_CSS"] = sitenav.TABS_CSS
     if target == "site":
-        vals.update(SITEBAR=sitenav.bar("../", slug, "oefen"), BAR_CSS=sitenav.bar_css(812), BAR_JS=sitenav.BAR_JS,
+        vals.update(SITEBAR=sitenav.bar("../", slug, "oefen"), BAR_CSS=sitenav.bar_css(), BAR_JS=sitenav.BAR_JS,
+                    CRUMBS=sitenav.crumbs("../", slug), SITEFOOT=sitenav.footer("../"),
                     TABS=sitenav.tabs("../", slug, "oefenen", ids=True), SAM_URL=f"../samenvattingen/{slug}/")
     else:  # Claude-artifact: geen sitebalk, de samenvatting staat in het Claude-document
-        vals.update(SITEBAR="", BAR_CSS="", BAR_JS="", SAM_URL="",
+        vals.update(SITEBAR="", BAR_CSS="", BAR_JS="", SAM_URL="", CRUMBS="", SITEFOOT="",
                     TABS=sitenav.tabs("", slug, "oefenen", ids=True, doc_ext=c["CLAUDE_DOC"]))
     html = tpl
     for k, v in vals.items():

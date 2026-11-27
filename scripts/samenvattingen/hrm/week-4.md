@@ -86,7 +86,15 @@ De kern: het uitgangspunt is **geen arbeid, wel loon** (art. 7:628 BW): de werkg
 
 ### Oefenvraag vorige les: Dion
 
-Dion verdient €4.500 bruto per maand en krijgt na een eerdere waarschuwing een boete van €500 voor werken zonder veiligheidshandschoenen; de boete gaat in de praktijk naar de werkgever. Antwoordmodel: **toegestaan**. Art. 7:650 BW is alleen volledig dwingend als de werknemer het minimumloon verdient (lid 6). Dion verdient meer, dus mag worden afgeweken van de maximale boete van een halve dag loon per week (lid 5) en van de bestemming (lid 3).
+Letterlijk uit de slides van lesweek 4.
+
+Dion is werkzaam bij een bedrijf in de metaalindustrie en verdient 4.500 euro bruto per maand. Vanwege de grote risico’s op een arbeidsongeval gelden er strenge regels wat betreft veilig werken, waaronder het gebruik van veiligheidsmiddelen, zoals veiligheidshandschoenen. Dion wordt nu voor de tweede keer betrapt op het niet werken met de veiligheidshandschoenen. De eerste keer heeft hij een waarschuwing gekregen, de tweede keer krijgt hij een boete volgens het personeelshandboek, dat onderdeel is van zijn arbeidsovereenkomst. De boete bedraagt 500 euro. Nergens is beschreven wat de bestemming van de boete is, in de praktijk gaat de boete naar de werkgever.
+
+**Is dit toegestaan?**
+
+::: antwoord
+Antwoordmodel: Ja, dit is toegestaan. Art. 7:650 BW is alleen volledig van dwingend recht indien de werknemer het minimumloon verdient (zie lid 6), Dion verdient meer dan het minimumloon. Dit betekent dat er afgeweken kan worden van de maximum boete van een halve dag loon per week (lid 5) en de bestemming van de boete (lid 3).
+:::
 
 ### Geen arbeid, wel loon: art. 7:628 BW
 
@@ -97,14 +105,14 @@ Voor rekening van de werknemer is bijvoorbeeld werkweigering. Voor rekening van 
 - bedrijfsrisico's;
 - stakingen (let op het verschil tussen een georganiseerde en een wilde staking, en tussen werkwilligen en stakers).
 
-Let op lid 5: daar staat hoe ver je bij overeenkomst van het artikel kunt afwijken. Uitwerkingen van het principe: art. 7:629 (ziekte), 7:639 (vakantie), de verloven uit de WAZO en 7:674 (overlijden).
+Let op lid 5: daar staat hoe ver je bij overeenkomst van het artikel kunt afwijken. Volgens het oefenmateriaal is lid 5 semidwingend en lid 7 driekwartdwingend. Uitwerkingen van het principe: art. 7:629 (ziekte), 7:639 (vakantie), de verloven uit de WAZO en 7:674 (overlijden).
 
 ### Ziekte: art. 7:629 BW
 
 | Onderwerp | Regel |
 | --- | --- |
-| Duur | 104 weken, tenzij de arbeidsovereenkomst eerder eindigt. Kortere periode voor de werknemers uit lid 2 |
-| Hoogte | Eerste 52 weken 70%, maar minimaal het minimumloon. Tweede 52 weken 70%, ook als dat onder het minimumloon ligt |
+| Duur (lid 1) | 104 weken, tenzij de arbeidsovereenkomst eerder eindigt. Kortere periode voor de werknemers uit lid 2, bijvoorbeeld maximaal 6 weken na de AOW-leeftijd (lid 2 sub b) |
+| Hoogte (lid 1) | Eerste 52 weken 70%, maar minimaal het minimumloon. Tweede 52 weken 70%, ook als dat onder het minimumloon ligt |
 | Maximum | 70% van het maximum dagloon. De slide rekent met het bedrag van 2021 (€225,57 per dag); dat is verouderd, zoek het actuele bedrag op |
 | Herhaalde ziekmeldingen | Lid 10: wanneer periodes bij elkaar worden opgeteld |
 | Uitsluitingsgronden (lid 3) | Bijvoorbeeld opzettelijk veroorzaakte ziekte, genezing belemmeren, passende arbeid weigeren. Gevolg: **loonstaking**, geen loon tot de werknemer zich aan zijn plichten houdt, ook niet met terugwerkende kracht |
@@ -131,9 +139,9 @@ In workshop 6 staat dezelfde tijdlijn als week 6, 8, 42, 52 en 91 (91 = 104 min 
 | Artikel | Regel |
 | --- | --- |
 | 7:639 | Tijdens vakantie recht op loon |
-| 7:634 | Wettelijk minimum: 4 keer de overeengekomen arbeidsduur per week. Bij 5 dagen per week dus 20 dagen. Opbouw is gekoppeld aan het recht op loon, dus ook tijdens ziekte. Meer via contract of cao heet bovenwettelijk |
+| 7:634 lid 1 | Wettelijk minimum: 4 keer de overeengekomen arbeidsduur per week. Bij 5 dagen per week dus 20 dagen. Opbouw is gekoppeld aan het recht op loon, dus ook tijdens ziekte. Meer via contract of cao heet bovenwettelijk |
 | 7:635 | Geen loon, wel opbouw, bijvoorbeeld bij bepaalde soorten onbetaald verlof |
-| 7:637 | Ziektedagen als vakantie aanmerken: alleen met instemming of vooraf in het contract afgesproken, en dan alleen voor bovenwettelijke dagen |
+| 7:637 | Ziektedagen als vakantie aanmerken: alleen met instemming van de werknemer (lid 1) of vooraf schriftelijk in het contract afgesproken (lid 2, volgens het antwoordmodel bij Ad), en dan alleen voor bovenwettelijke dagen |
 | 7:638 lid 1 | De werkgever moet de werknemer in staat stellen vakantie op te nemen |
 | 7:638 lid 2 | Periode volgens cao of contract, anders volgens de wensen van de werknemer, tenzij gewichtige redenen (niet snel, bijvoorbeeld een seizoenspiek). Reageert de werkgever niet binnen twee weken op een verzoek, dan staat de vakantie vast |
 | 7:638 lid 5 | Verschuiven na vaststelling alleen bij gewichtige redenen, en de werkgever vergoedt de schade |
@@ -147,7 +155,12 @@ In workshop 6 staat dezelfde tijdlijn als week 6, 8, 42, 52 en 91 (91 = 104 min 
 **Oefenvragen uit het oefenmateriaal (antwoorden docent)**
 
 - **Karel** (langdurig ziek): 104 weken loondoorbetaling, 70% en in het eerste jaar minimaal het minimumloon. Heeft hij de AOW-leeftijd, dan maximaal 6 weken (art. 7:629 lid 2 sub b). Weigert hij de bedrijfsarts: eerst waarschuwen (lid 7), dan loon opschorten (lid 6).
-- **Ad** (vijf fouten rond vakantie): het antwoordmodel noemt art. 7:634 lid 1, 7:638 lid 2, 7:640a, 7:638 lid 8 en 7:637 lid 2. Lees de casus na in het oefenmateriaal om te zien welke fout bij welk artikel hoort.
+- **Ad** (40 uur op 5 dagen, 5 vakantiedagen die de werkgever inplant, vervallen aan het eind van het jaar, ziek tijdens vakantie en ziekmeldingen gaan van de vakantie af): vijf fouten volgens het antwoordmodel:
+  1. Te weinig dagen: 5 in plaats van 20 (art. 7:634 lid 1 BW).
+  2. De werkgever bepaalt de vakantie, terwijl er geen vaste periode in contract of cao staat; dan gelden de wensen van de werknemer (art. 7:638 lid 2 BW).
+  3. Wettelijke dagen vervallen pas een half jaar na het opbouwjaar, niet aan het eind van het jaar (art. 7:640a BW).
+  4. Ziek tijdens vakantie telt als vakantie: kan alleen voor bovenwettelijke dagen, en Ad heeft die niet (art. 7:638 lid 8 BW).
+  5. Ziektedagen buiten de vakantie gaan van de vakantiedagen af: kan alleen schriftelijk en voor bovenwettelijke dagen (art. 7:637 lid 2 BW).
 
 ### Verlof (WAZO)
 
@@ -168,7 +181,7 @@ Afwijken van het geboorteverlof: art. 4:6 en 4:7 WAZO. Let op een typfout in het
 **Oefenvragen uit het oefenmateriaal (antwoorden docent)**
 
 - **Marianne** (drieling): zwangerschapsverlof 10 weken voor de vermoedelijke datum, uiterlijk 8 weken (art. 3:1 lid 2 WAZO); bevallingsverlof 10 weken plus wat het zwangerschapsverlof korter duurde.
-- **Robin** (partner): calamiteitenverlof rond de bevalling (4:1 lid 2 sub a), geboorteverlof 1 week binnen 4 weken (4:2 lid 1), aanvullend 5 weken binnen 6 maanden (4:2a), ouderschapsverlof 26 weken per kind tot het kind 8 is. Betaald: calamiteiten- en geboorteverlof. Aanvullend geboorteverlof: onbetaald met uitkering (4:2a jo 4:2b). Ouderschapsverlof: onbetaald, 9 weken uitkering als je het opneemt voor het kind 1 is.
+- **Robin** (partner): calamiteitenverlof rond de bevalling (4:1 lid 2 sub a), geboorteverlof 1 week binnen 4 weken (4:2 lid 1), aanvullend 5 weken binnen 6 maanden (4:2a lid 1 en 2), ouderschapsverlof voor elk kind (6:1), ouderschapsverlof 26 weken per kind tot het kind 8 is. Betaald: calamiteiten- en geboorteverlof. Aanvullend geboorteverlof: onbetaald met uitkering (4:2a jo 4:2b). Ouderschapsverlof: onbetaald, 9 weken uitkering als je het opneemt voor het kind 1 is.
 
 ### Overlijden: art. 7:674 BW
 

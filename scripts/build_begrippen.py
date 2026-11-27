@@ -111,16 +111,7 @@ a { color: var(--accent); text-underline-offset: 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media (max-width: 400px) { h1 { font-size: 1.7rem; font-stretch: 104%; } }
 
-.band { background: var(--band); color: #fff; }
-.band-in { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 0; }
-.band :focus-visible { outline-color: #fff; }
-.title-row { display: flex; align-items: center; gap: 14px; min-width: 0; margin-top: 4px; }
-.title-row > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.kind { font-size: 0.92rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); }
-.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: #fff; color: var(--band);
-  display: grid; place-items: center; font-weight: 800; font-stretch: 122%; font-size: 1.05rem; letter-spacing: 0.02em; }
-.lead { max-width: 62ch; color: rgba(255, 255, 255, 0.86); font-size: 0.95rem; }
+.band-in { max-width: 860px; }
 __TABS_CSS__
 __BAR_CSS__
 
@@ -223,6 +214,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; }
 <body>
 __SITEBAR__<header class="band" id="top">
 <div class="band-in">
+  __CRUMBS__
   <div class="title-row"><span class="plate" aria-hidden="true">__CODE__</span><div><span class="kind">Begrippen</span><h1>__HEADING__</h1></div></div>
   <p class="lead">__N__ begrippen uit de samenvattingen, per les. Lees ze in de lijst, oefen met flitskaarten of typ ze in een dictee. Kies één les, een paar weken of alles.</p>
   __TABS__
@@ -305,7 +297,6 @@ __SITEBAR__<header class="band" id="top">
 </footer>
 </div>
 <script type="application/json" id="data">__DATA__</script>
-__BAR_JS__
 <script>
 (function () {
   "use strict";
@@ -619,6 +610,8 @@ __BAR_JS__
   dtInfo(); fromHash(); refresh();
 })();
 </script>
+__SITEFOOT__
+__BAR_JS__
 </body>
 </html>
 """
@@ -635,7 +628,8 @@ def build():
         page = PAGE
         for k, v in dict(HEADING=html.escape(c["heading"]), CODE=c["code"], N=str(len(items)), DATA=js,
                          SITEBAR=sitenav.bar("../../", slug, "begrip"), TABS=sitenav.tabs("../../", slug, "begrip"),
-                         TABS_CSS=sitenav.TABS_CSS, BAR_CSS=sitenav.bar_css(860), BAR_JS=sitenav.BAR_JS,
+                         CRUMBS=sitenav.crumbs("../../", slug, "Begrippen"), SITEFOOT=sitenav.footer("../../"),
+                         TABS_CSS=sitenav.TABS_CSS, BAR_CSS=sitenav.bar_css(), BAR_JS=sitenav.BAR_JS,
                          A1=a1, A2=a2, A3=a3, A4=a4, B1=b1, B2=b2).items():
             page = page.replace(f"__{k}__", v)
         assert "__" not in page.replace("__proto__", ""), slug

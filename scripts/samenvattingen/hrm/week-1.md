@@ -85,6 +85,8 @@ De kolom met herkenningswoorden is mijn eigen geheugensteun, geen tekst van de s
 
 **Oefening uit de les** (antwoorden van de docent): art. 7:634 lid 2 BW is driekwartdwingend; art. 7:634 lid 1 BW is dwingend; art. 7:638 lid 8 BW bevat aanvullend én semidwingend recht; art. 5:16 WAZO bevat driekwart- én 5/8e dwingend recht.
 
+**Oefenmateriaal week 1, opdracht 1** (antwoorden van de docent): art. 7:628 lid 5 BW is semidwingend; art. 7:628 lid 7 BW is driekwartdwingend; art. 7:645 BW en art. 7:646 BW zijn dwingend; art. 4:7 WAZO is driekwartdwingend, en 5/8e dwingend als er geen cao is.
+
 ### Waar staat het arbeidsrecht?
 
 In veel regelingen (Arbowet, Arbeidstijdenwet, gelijkebehandelingswetgeving). Voor dit vak zijn vooral van belang: **Boek 7 BW**, de **Wet arbeid en zorg (WAZO)** en de **Algemene wet gelijke behandeling**.
