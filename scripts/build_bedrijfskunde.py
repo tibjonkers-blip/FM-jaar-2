@@ -75,10 +75,11 @@ def build():
         switch = "".join(f'<a href="../{o["slug"]}/"' + (' aria-current="page"' if o is t else "") + f'>{o["titel"].replace("Proeftoets ", "")}</a>' for o in TOETSEN)
         m = (markup.replace("__H1__", t["titel"]).replace("__LEAD__", t["lead"]).replace("__SWITCH__", switch)
                    .replace("__SITEBAR__", sitenav.bar("../../", "praktijkproject", "casus")).replace("__TABS__", sitenav.tabs("../../", "praktijkproject", "casus"))
+                   .replace("__CRUMBS__", sitenav.crumbs("../../", "praktijkproject", "Casustoetsen"))
                    .replace("__HINT__", t["hint"]).replace("__FICTIE__", t["fictie"]))
         a = app.replace("__KEY__", t["key"]).replace("__HINT__", t["hint"])
         html = (PAGE.replace("__TITLE__", t["titel"]).replace("__LEAD__", t["lead"]).replace("__FONTS__", FONTS)
-                    .replace("__CSS__", css).replace("__NAV_CSS__", sitenav.TABS_CSS + sitenav.bar_css(1180)).replace("__BAR_JS__", sitenav.BAR_JS).replace("__MARKUP__", m).replace("__DATA__", read(t["data"]) + toelichting(t["slug"])).replace("__APP__", a))
+                    .replace("__CSS__", css).replace("__NAV_CSS__", sitenav.TABS_CSS + sitenav.bar_css()).replace("__BAR_JS__", sitenav.footer("../../") + sitenav.BAR_JS).replace("__MARKUP__", m).replace("__DATA__", read(t["data"]) + toelichting(t["slug"])).replace("__APP__", a))
         assert "__" not in html.replace("__proto__", ""), [l for l in html.splitlines() if "__" in l][:3]
         out = os.path.join(SITE, t["slug"])
         os.makedirs(out, exist_ok=True)

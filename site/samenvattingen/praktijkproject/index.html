@@ -13,7 +13,7 @@
 /* Een leesboek per vak, in dezelfde bewegwijzering als de rest van de studieplek: een gekleurde zoneband met het bordje van het vak
    en de zoekbalk, daaronder een vaste weekbalk en per les een kaart met een gekleurd label per leerlijn. */
 :root {
-  --paper: #eef1f6; --sheet: #ffffff; --sunk: #e4e9f1; --ink: #16202f; --ink-soft: #5a6577; --rule: #d9dfe8;
+  --paper: #f3f5f8; --sheet: #ffffff; --sunk: #e4e9f1; --ink: #16202f; --ink-soft: #5a6577; --rule: #d9dfe8;
   --accent: #9a520a; --accent-soft: #fbecd8; --on-accent: #ffffff; --band: #9a520a;
   --s1: var(--accent); --s1-soft: var(--accent-soft);
   --s2: #4a4f9c; --s2-soft: #e6e7f5;
@@ -49,37 +49,59 @@ body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-
 .wrap { max-width: 792px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 14px 96px; }
 h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
-h1 { font-size: clamp(1.9rem, 5.2vw, 2.7rem); font-weight: 800; font-stretch: 116%; letter-spacing: -0.012em; line-height: 1.08; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); font-weight: 750; letter-spacing: -0.02em; line-height: 1.08; }
 h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
-@media (max-width: 400px) { h1 { font-size: 1.7rem; font-stretch: 104%; } .lesson-head h2 { font-stretch: 100%; } }
+@media (max-width: 400px) { h1 { font-size: 1.65rem; } }
 p { margin: 0; }
 a { color: var(--accent); text-underline-offset: 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* kop: de zoneband van het vak */
-.band { background: var(--band); color: #fff; }
-.band-in { max-width: 792px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 0; }
-.band :focus-visible { outline-color: #fff; }
-.lead a { color: #fff; font-weight: 600; white-space: nowrap; } .lead a::after { content: " ↗"; opacity: 0.75; }
+/* kop: de gedeelde vormgeving staat in sitenav.py (TABS_CSS) */
+.band-in { max-width: 792px; }
+.band .lead a::after { content: " \2197"; opacity: 0.75; }
 
-/* ---------- tabbladen: mappen op de zoneband, op elke pagina van een vak dezelfde ---------- */
-.tabs { display: flex; gap: 4px; margin-top: 8px; max-width: 100%; }
-.tab { border: 0; background: transparent; padding: 11px 18px 12px; border-radius: 10px 10px 0 0; font-weight: 600; color: rgba(255, 255, 255, 0.88);
-  text-decoration: none; font-size: 0.97rem; line-height: 1.3; display: inline-flex; gap: 8px; align-items: baseline; white-space: nowrap; }
-.tab:hover { color: #fff; background: rgba(255, 255, 255, 0.14); }
-.tab[aria-current="page"], .tab[aria-current="page"]:hover { background: var(--paper, var(--bg)); color: var(--ink); }
-.tab .n { font-size: 0.76rem; font-weight: 500; opacity: 0.75; }
-.tab[aria-current="page"] .n { color: var(--accent); opacity: 1; font-weight: 700; }
+/* ---------- kop van een vakpagina: licht vlak met een streep in de vakkleur, bordje, kruimelpad en tabbladen ---------- */
+.band { background: var(--sheet, var(--surface)); color: var(--ink); border-bottom: 1px solid var(--rule, var(--line)); box-shadow: inset 0 4px 0 var(--accent); }
+.band-in { margin: 0 auto; display: flex; flex-direction: column; gap: 12px; padding-block: 26px 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.band :focus-visible { outline-color: var(--accent); }
+.band h1 { color: var(--ink); }
+.crumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; font-size: 0.86rem; color: var(--ink-soft, var(--muted)); margin: -6px 0 -2px; }
+.crumbs a { color: inherit; text-decoration: none; font-weight: 500; }
+.crumbs a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.crumbs i { font-style: normal; opacity: 0.55; }
+.crumbs [aria-current] { color: var(--ink); font-weight: 600; }
+.title-row { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.title-row > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.title-row h1 { min-width: 0; }
+.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: var(--accent); color: var(--on-accent, var(--accent-ink, #fff));
+  display: grid; place-items: center; font-weight: 800; font-stretch: 112%; font-size: 1.02rem; letter-spacing: 0.02em; }
+.kind { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+.band .lead, .band .examline { max-width: 66ch; color: var(--ink-soft, var(--muted)); font-size: 0.96rem; margin: 0; }
+.band .lead a { color: var(--accent); font-weight: 600; white-space: nowrap; }
+.band .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--ink-soft, var(--muted)); font-size: 0.93rem; }
+.band .meta strong { color: var(--ink); }
+@media (max-width: 400px) { .plate { min-width: 44px; height: 44px; font-size: 0.9rem; border-radius: 9px; } .title-row { gap: 12px; } }
+
+/* ---------- tabbladen: onderstreept, op elke pagina van een vak dezelfde ---------- */
+.tabs { display: flex; gap: 6px; margin-top: 6px; margin-bottom: -1px; max-width: 100%; }
+.tab { border: 0; background: transparent; padding: 11px 12px 12px; border-bottom: 3px solid transparent; font-weight: 600; color: var(--ink-soft, var(--muted));
+  text-decoration: none; font-size: 0.97rem; line-height: 1.3; display: inline-flex; gap: 8px; align-items: center; white-space: nowrap; }
+.tab:first-child { margin-left: -12px; }
+.tab:hover { color: var(--ink); border-bottom-color: var(--rule, var(--line)); }
+.tab[aria-current="page"], .tab[aria-current="page"]:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.tab .n { font-size: 0.74rem; font-weight: 600; padding: 1px 7px; border-radius: 999px; background: var(--sunk, var(--surface-2)); color: var(--ink-soft, var(--muted)); }
+.tab[aria-current="page"] .n { background: var(--accent-soft); color: var(--accent); }
+.tab .n:empty { display: none; }
 .tab .s { display: none; }
 .tab.ext { order: 9; }
 .tab.ext::after { content: "\2197"; font-size: 0.8em; opacity: 0.75; }
 @media (max-width: 600px) {
-  .tabs { width: 100%; gap: 2px; }
-  .tab { flex: 1 1 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.88rem; font-stretch: 94%; }
+  .tabs { width: 100%; gap: 0; }
+  .tab, .tab:first-child { flex: 1 1 auto; justify-content: center; padding: 10px 4px 11px; font-size: 0.9rem; margin-left: 0; }
   .tab .l, .tab .n { display: none; } .tab .s { display: inline; }
 }
-@media (max-width: 350px) { .tab { font-size: 0.82rem; font-stretch: 88%; padding-inline: 2px; } }
+@media (max-width: 350px) { .tab { font-size: 0.84rem; padding-inline: 2px; } }
 
 
 /* ---------- wegwijzerbalk: op elke pagina vast bovenaan ---------- */
@@ -92,7 +114,7 @@ a { color: var(--accent); text-underline-offset: 2px; }
 .sitebar { position: sticky; top: 0; z-index: 40; background: var(--sb-bg); color: #fff; padding-top: env(safe-area-inset-top, 0px);
   font-family: "Archivo", "Segoe UI", system-ui, sans-serif; font-size: 16px; line-height: 1.2; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.14); }
 .sitebar :focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
-.sb-in { max-width: 792px; margin: 0 auto; height: var(--sb-h); display: flex; align-items: center; gap: 4px;
+.sb-in { max-width: 1180px; margin: 0 auto; height: var(--sb-h); display: flex; align-items: center; gap: 4px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 .sb-home { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 11px 0 8px; margin-left: -8px; border-radius: 8px; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem; }
 .sb-home svg { width: 19px; height: 19px; flex: none; }
@@ -135,19 +157,31 @@ a { color: var(--accent); text-underline-offset: 2px; }
   .sb-links a[aria-current="page"] { border-color: var(--zt); }
 }
 
-.title-row { display: flex; align-items: center; gap: 14px; min-width: 0; margin-top: 4px; }
-.title-row > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.kind { font-size: 0.92rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); }
-.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: #fff; color: var(--band);
-  display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-stretch: 122%; font-size: 1.05rem; letter-spacing: 0.02em; }
-.lead { max-width: 62ch; color: rgba(255, 255, 255, 0.86); font-size: 0.95rem; }
+/* ---------- voettekst: alle onderdelen per vak ---------- */
+.sitefoot { margin-top: 40px; border-top: 1px solid var(--rule, var(--line)); background: var(--sheet, var(--surface)); color: var(--ink-soft, var(--muted));
+  font-family: "Archivo", "Segoe UI", system-ui, sans-serif; font-size: 0.9rem; line-height: 1.45; }
+.sf-in { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr repeat(3, minmax(0, 1fr)); gap: 28px;
+  padding: 30px max(16px, env(safe-area-inset-right, 0px)) calc(36px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sf-about { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.sf-about p { margin: 0; max-width: 34ch; }
+.sf-home { font-weight: 800; color: var(--ink); text-decoration: none; font-size: 1rem; }
+.sf-top { color: var(--ink-soft, var(--muted)); font-weight: 600; }
+.sf-col { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sf-head { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.sf-head b { display: grid; place-items: center; min-width: 32px; height: 22px; padding: 0 5px; border-radius: 5px; background: var(--zc); color: #fff; font-size: 0.7rem; font-stretch: 112%; letter-spacing: 0.02em; }
+.sf-col a { color: var(--ink-soft, var(--muted)); text-decoration: none; padding: 3px 0; }
+.sf-col a:hover { color: var(--zt); text-decoration: underline; text-underline-offset: 3px; }
+.sitefoot .ir { --zc: var(--z-ir); --zt: var(--zt-ir); } .sitefoot .hrm { --zc: var(--z-hrm); --zt: var(--zt-hrm); } .sitefoot .bm { --zc: var(--z-bm); --zt: var(--zt-bm); }
+@media (max-width: 820px) { .sf-in { grid-template-columns: repeat(3, minmax(0, 1fr)); } .sf-about { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .sf-in { grid-template-columns: 1fr 1fr; gap: 22px 16px; padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)); } .sf-col.bm { grid-column: 1 / -1; } }
+
 
 /* zoeken */
 .search { position: relative; margin-top: 4px; }
-.search input { width: 100%; font: inherit; color: var(--ink); background: var(--sheet); border: 1px solid transparent; border-radius: 10px; padding: 12px 14px 12px 42px; }
-.search input:focus { outline: none; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.45); }
+.search input { width: 100%; font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px 12px 42px; }
+.search input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 17px; height: 17px; color: var(--ink-soft); pointer-events: none; }
-.results { background: var(--sheet); color: var(--ink); border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; }
+.results { background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 10px; box-shadow: 0 10px 28px rgba(16, 24, 40, 0.12); display: flex; flex-direction: column; overflow: hidden; }
 .results .count { padding: 10px 14px; font-size: 0.82rem; color: var(--ink-soft); border-bottom: 1px solid var(--rule); }
 .results a { display: flex; flex-direction: column; gap: 2px; padding: 10px 14px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--rule); min-width: 0; }
 .results a:last-child { border-bottom: 0; }
@@ -173,7 +207,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 .week { display: flex; flex-direction: column; gap: 16px; }
 .week + .week { margin-top: 26px; }
 .week-head { display: flex; flex-direction: column; gap: 10px; }
-.week-no { font-family: var(--font-display); font-weight: 800; font-stretch: 116%; font-size: 1.75rem; letter-spacing: -0.01em; }
+.week-no { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; letter-spacing: -0.01em; }
 .toc { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
 .toc a { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; padding: 7px 10px; margin-inline: -10px; border-radius: 9px; color: var(--ink); text-decoration: none; }
 .toc a:hover { background: var(--sheet); }
@@ -186,7 +220,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 
 /* einde van een week: door naar oefenen, de weektoets en de volgende week */
 .week-next { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 14px 16px; border-radius: 14px; background: var(--accent-soft); }
-.week-next .wn-label { flex: 1 1 100%; font-weight: 700; font-stretch: 104%; }
+.week-next .wn-label { flex: 1 1 100%; font-weight: 700; }
 .wn-btn { display: inline-flex; align-items: baseline; gap: 8px; padding: 9px 14px; border-radius: 8px; background: var(--sheet); border: 1px solid var(--rule); color: var(--ink); font-weight: 600; font-size: 0.95rem; text-decoration: none; }
 .wn-btn:hover { border-color: var(--accent); }
 .wn-btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
@@ -198,12 +232,12 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 .lesson { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0;
   }
 .lesson-head { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-.lesson-head h2 { font-size: 1.4rem; font-weight: 800; font-stretch: 108%; }
+.lesson-head h2 { font-size: 1.4rem; font-weight: 800; }
 .prose { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .prose > p, .sub > p, .prose li, .sub li { max-width: 68ch; }
 .sub { display: flex; flex-direction: column; gap: 12px; padding-top: 14px; border-top: 1px solid var(--rule); min-width: 0; }
 .sub:first-child { border-top: 0; padding-top: 0; }
-.sub h3 { font-size: 1.1rem; font-weight: 700; font-stretch: 104%; }
+.sub h3 { font-size: 1.1rem; font-weight: 700; }
 .sub h4 { font-size: 1rem; font-weight: 700; }
 .sub.hit { animation: hit 1.6s ease-out; border-radius: 6px; }
 @keyframes hit { from { background: var(--mark); } to { background: transparent; } }
@@ -254,7 +288,7 @@ pre { margin: 0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0
 .m-axis-y small, .m-axis-x small { color: var(--ink-soft); font-weight: 400; font-size: 0.75rem; }
 .m-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
 .m-q { border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 3px; background: var(--sunk); min-width: 0; font-size: 0.88rem; line-height: 1.4; overflow-wrap: anywhere; hyphens: auto; }
-.m-q b { font-family: var(--font-display); font-size: 1rem; font-stretch: 108%; }
+.m-q b { font-family: var(--font-display); font-size: 1rem; }
 .m-q small { color: var(--ink-soft); font-size: 0.78rem; }
 .m-q em { font-style: normal; color: var(--ink-soft); font-size: 0.82rem; margin-top: 4px; }
 .m-q.win { background: var(--s3-soft); } .m-q.win b { color: var(--s3); }
@@ -508,7 +542,7 @@ pre { margin: 0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0
 .note-box { display: none; flex-direction: column; gap: 8px; padding: 12px 14px 10px; border-radius: 12px; background: var(--sunk); border: 1px solid var(--rule); }
 .note.open .note-box { display: flex; }
 .note-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
-.note-title { font-weight: 700; font-stretch: 104%; }
+.note-title { font-weight: 700; }
 .note-status { flex: 1 1 auto; font-size: 0.8rem; color: var(--ink-soft); }
 .note-status.err { color: var(--warn); font-weight: 600; flex-basis: 100%; order: 9; }
 .note-pin { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 5px 11px 5px 9px; border-radius: 8px; border: 1px solid var(--rule); background: var(--sheet);
@@ -537,7 +571,7 @@ pre { margin: 0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0
 body.note-pinned .totop { display: none; }
 
 .notes-panel { margin-top: 26px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
-.notes-panel h2 { font-size: 1.4rem; font-weight: 800; font-stretch: 108%; }
+.notes-panel h2 { font-size: 1.4rem; font-weight: 800; }
 .notes-panel > p, .notes-panel .callout { max-width: 68ch; }
 .np-count { font-weight: 600; }
 .np-actions { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -545,7 +579,7 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
 .np-msg { padding: 10px 14px; border-radius: 10px; background: var(--s3-soft); color: var(--ink); max-width: 68ch; }
 .np-msg.err { background: var(--warn-soft); }
 .np-sync { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--rule); max-width: 72ch; }
-.np-sync h3 { font-size: 1.05rem; font-weight: 700; font-stretch: 104%; }
+.np-sync h3 { font-size: 1.05rem; font-weight: 700; }
 .np-sync > div { display: flex; flex-direction: column; gap: 10px; }
 .np-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .np-row .wn-btn { align-items: center; }
@@ -555,7 +589,7 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
 .np-sync-state.err { color: var(--warn); }
 button.wn-btn:disabled { opacity: 0.6; cursor: wait; }
 .np-orphans { display: flex; flex-direction: column; gap: 12px; padding-top: 14px; border-top: 1px solid var(--rule); }
-.np-orphans h3 { font-size: 1.1rem; font-weight: 700; font-stretch: 104%; }
+.np-orphans h3 { font-size: 1.1rem; font-weight: 700; }
 @media (max-width: 480px) { .notes-panel { padding: 16px; } .note-box { padding: 10px 11px 9px; } }
 /* notitieblad: los blad dat in beeld blijft; opslaan zet de tekst bij de gekozen les */
 .nb-fab { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 7;
@@ -569,7 +603,7 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
   border: 1px solid var(--accent); box-shadow: 0 14px 40px rgba(10, 18, 36, 0.3); min-width: 0; }
 .nb[hidden] { display: none; }
 .nb-head { display: flex; align-items: center; gap: 10px; }
-.nb-head h2 { flex: 1 1 auto; font-size: 1.15rem; font-weight: 800; font-stretch: 106%; }
+.nb-head h2 { flex: 1 1 auto; font-size: 1.15rem; font-weight: 800; }
 .nb-close { width: 36px; height: 36px; flex: none; border: 1px solid var(--rule); border-radius: 8px; background: var(--sheet); color: var(--ink); font: inherit; font-size: 1.4rem; line-height: 1; cursor: pointer; }
 .nb-close:hover { border-color: var(--accent); color: var(--accent); }
 .nb-pick { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
@@ -617,6 +651,7 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
 <body>
 <a class="skip" href="#main">Naar de inhoud</a><header class="sitebar" id="sitebar"><div class="sb-in"><a class="sb-home" href="../../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5"/><path d="M6.5 10v9.5h11V10"/><path d="M10 19.5v-5h4v5"/></svg><span>Home</span></a><nav class="sb-zones" aria-label="Vakken"><a class="sb-zone ir" href="../../samenvattingen/inkoop-recht/" title="Inkoop en recht" aria-label="Inkoop en recht" data-carry><b>IR</b><span>Inkoop en recht</span></a><a class="sb-zone hrm" href="../../samenvattingen/hrm/" title="HRM" aria-label="HRM" data-carry><b>HRM</b></a><a class="sb-zone bm" href="../../samenvattingen/praktijkproject/" title="Business management" aria-label="Business management" aria-current="true" data-carry><b>BM</b><span>Business management</span></a></nav><details class="sb-menu"><summary aria-label="Menu: alle pagina's"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></summary><div class="sb-panel"><div class="sb-col ir"><span class="sb-colhead"><b>IR</b>Inkoop en recht</span><div class="sb-links"><a href="../../samenvattingen/inkoop-recht/">Samenvatting</a><a href="../../inkoop-recht/#oefenen" data-default>Oefenvragen</a><a href="../../inkoop-recht/#toetsen">Weektoetsen</a></div></div><div class="sb-col hrm"><span class="sb-colhead"><b>HRM</b>HRM</span><div class="sb-links"><a href="../../samenvattingen/hrm/">Samenvatting</a><a href="../../hrm/#oefenen" data-default>Oefenvragen</a><a href="../../hrm/#toetsen">Weektoetsen</a></div></div><div class="sb-col bm"><span class="sb-colhead"><b>BM</b>Business management</span><div class="sb-links"><a href="../../samenvattingen/praktijkproject/">Samenvatting</a><a href="../../praktijkproject/#oefenen" data-default>Oefenvragen</a><a href="../../praktijkproject/#toetsen">Weektoetsen</a><a href="../../bedrijfskunde/waalhop/">Casustoets Waalhop</a><a href="../../bedrijfskunde/heidezoom/">Casustoets Heidezoom</a></div></div></div></details></div></header><header class="band" id="top">
 <div class="band-in">
+  <nav class="crumbs" aria-label="Kruimelpad"><a href="../../">Home</a><i aria-hidden="true">/</i><a href="../../praktijkproject/">Business management</a><i aria-hidden="true">/</i><span aria-current="page">Samenvatting</span></nav>
   <div class="title-row"><span class="plate" aria-hidden="true">BM</span><div><span class="kind">Samenvattingen per week</span><h1>Praktijkproject Business Management</h1></div></div>
   <p class="lead">Per week de modellen voor je adviespresentatie, met tips voor je portfolio. Oefenvragen, weektoetsen en een eindtoets staan op de oefenpagina. Je logboek voor het portfolio staat alleen in je Claude-document. <a href="https://claude.ai/artifact/MNHrxykYerRjrc76rQu4Qg" target="_blank" rel="noopener">Bewerkbare versie in Claude</a></p>
   <div class="search" role="search">
@@ -1310,6 +1345,7 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
   });
 })();
 </script>
+<footer class="sitefoot"><div class="sf-in"><div class="sf-about"><a class="sf-home" href="../../">Studieplek FM jaar 2</a><p>Periode 2: samenvattingen, oefenvragen en weektoetsen. Toetsperiode 11 t/m 22 januari 2027.</p><a class="sf-top" href="#">Terug naar boven</a></div><div class="sf-col ir"><span class="sf-head"><b>IR</b>Inkoop en recht</span><a href="../../samenvattingen/inkoop-recht/">Samenvatting</a><a href="../../inkoop-recht/#oefenen">Oefenvragen</a><a href="../../inkoop-recht/#toetsen">Weektoetsen</a></div><div class="sf-col hrm"><span class="sf-head"><b>HRM</b>HRM</span><a href="../../samenvattingen/hrm/">Samenvatting</a><a href="../../hrm/#oefenen">Oefenvragen</a><a href="../../hrm/#toetsen">Weektoetsen</a></div><div class="sf-col bm"><span class="sf-head"><b>BM</b>Business management</span><a href="../../samenvattingen/praktijkproject/">Samenvatting</a><a href="../../praktijkproject/#oefenen">Oefenvragen</a><a href="../../praktijkproject/#toetsen">Weektoetsen</a><a href="../../bedrijfskunde/waalhop/">Casustoets Waalhop</a><a href="../../bedrijfskunde/heidezoom/">Casustoets Heidezoom</a></div></div></footer>
 <script>
 (function () {
   var bar = document.getElementById("sitebar"); if (!bar) return;

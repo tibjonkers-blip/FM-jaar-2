@@ -396,7 +396,7 @@ PAGE = r"""<!doctype html>
 /* Een leesboek per vak, in dezelfde bewegwijzering als de rest van de studieplek: een gekleurde zoneband met het bordje van het vak
    en de zoekbalk, daaronder een vaste weekbalk en per les een kaart met een gekleurd label per leerlijn. */
 :root {
-  --paper: #eef1f6; --sheet: #ffffff; --sunk: #e4e9f1; --ink: #16202f; --ink-soft: #5a6577; --rule: #d9dfe8;
+  --paper: #f3f5f8; --sheet: #ffffff; --sunk: #e4e9f1; --ink: #16202f; --ink-soft: #5a6577; --rule: #d9dfe8;
   --accent: __A1__; --accent-soft: __A2__; --on-accent: #ffffff; --band: __B1__;
   --s1: var(--accent); --s1-soft: var(--accent-soft);
   --s2: #4a4f9c; --s2-soft: #e6e7f5;
@@ -432,34 +432,25 @@ body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-
 .wrap { max-width: 792px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px;
   padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 14px 96px; }
 h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
-h1 { font-size: clamp(1.9rem, 5.2vw, 2.7rem); font-weight: 800; font-stretch: 116%; letter-spacing: -0.012em; line-height: 1.08; }
+h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); font-weight: 750; letter-spacing: -0.02em; line-height: 1.08; }
 h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
-@media (max-width: 400px) { h1 { font-size: 1.7rem; font-stretch: 104%; } .lesson-head h2 { font-stretch: 100%; } }
+@media (max-width: 400px) { h1 { font-size: 1.65rem; } }
 p { margin: 0; }
 a { color: var(--accent); text-underline-offset: 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* kop: de zoneband van het vak */
-.band { background: var(--band); color: #fff; }
-.band-in { max-width: 792px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;
-  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 0; }
-.band :focus-visible { outline-color: #fff; }
-.lead a { color: #fff; font-weight: 600; white-space: nowrap; } .lead a::after { content: " ↗"; opacity: 0.75; }
+/* kop: de gedeelde vormgeving staat in sitenav.py (TABS_CSS) */
+.band-in { max-width: 792px; }
+.band .lead a::after { content: " \2197"; opacity: 0.75; }
 __TABS_CSS__
 __BAR_CSS__
-.title-row { display: flex; align-items: center; gap: 14px; min-width: 0; margin-top: 4px; }
-.title-row > div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.kind { font-size: 0.92rem; font-weight: 600; color: rgba(255, 255, 255, 0.8); }
-.plate { flex: none; min-width: 52px; height: 52px; padding-inline: 8px; border-radius: 10px; background: #fff; color: var(--band);
-  display: grid; place-items: center; font-family: var(--font-display); font-weight: 800; font-stretch: 122%; font-size: 1.05rem; letter-spacing: 0.02em; }
-.lead { max-width: 62ch; color: rgba(255, 255, 255, 0.86); font-size: 0.95rem; }
 
 /* zoeken */
 .search { position: relative; margin-top: 4px; }
-.search input { width: 100%; font: inherit; color: var(--ink); background: var(--sheet); border: 1px solid transparent; border-radius: 10px; padding: 12px 14px 12px 42px; }
-.search input:focus { outline: none; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.45); }
+.search input { width: 100%; font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px 12px 42px; }
+.search input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 17px; height: 17px; color: var(--ink-soft); pointer-events: none; }
-.results { background: var(--sheet); color: var(--ink); border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; }
+.results { background: var(--sheet); color: var(--ink); border: 1px solid var(--rule); border-radius: 10px; box-shadow: 0 10px 28px rgba(16, 24, 40, 0.12); display: flex; flex-direction: column; overflow: hidden; }
 .results .count { padding: 10px 14px; font-size: 0.82rem; color: var(--ink-soft); border-bottom: 1px solid var(--rule); }
 .results a { display: flex; flex-direction: column; gap: 2px; padding: 10px 14px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--rule); min-width: 0; }
 .results a:last-child { border-bottom: 0; }
@@ -485,7 +476,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 .week { display: flex; flex-direction: column; gap: 16px; }
 .week + .week { margin-top: 26px; }
 .week-head { display: flex; flex-direction: column; gap: 10px; }
-.week-no { font-family: var(--font-display); font-weight: 800; font-stretch: 116%; font-size: 1.75rem; letter-spacing: -0.01em; }
+.week-no { font-family: var(--font-display); font-weight: 800; font-size: 1.75rem; letter-spacing: -0.01em; }
 .toc { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
 .toc a { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; padding: 7px 10px; margin-inline: -10px; border-radius: 9px; color: var(--ink); text-decoration: none; }
 .toc a:hover { background: var(--sheet); }
@@ -498,7 +489,7 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 
 /* einde van een week: door naar oefenen, de weektoets en de volgende week */
 .week-next { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 14px 16px; border-radius: 14px; background: var(--accent-soft); }
-.week-next .wn-label { flex: 1 1 100%; font-weight: 700; font-stretch: 104%; }
+.week-next .wn-label { flex: 1 1 100%; font-weight: 700; }
 .wn-btn { display: inline-flex; align-items: baseline; gap: 8px; padding: 9px 14px; border-radius: 8px; background: var(--sheet); border: 1px solid var(--rule); color: var(--ink); font-weight: 600; font-size: 0.95rem; text-decoration: none; }
 .wn-btn:hover { border-color: var(--accent); }
 .wn-btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
@@ -510,12 +501,12 @@ mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1
 .lesson { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0;
   }
 .lesson-head { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-.lesson-head h2 { font-size: 1.4rem; font-weight: 800; font-stretch: 108%; }
+.lesson-head h2 { font-size: 1.4rem; font-weight: 800; }
 .prose { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
 .prose > p, .sub > p, .prose li, .sub li { max-width: 68ch; }
 .sub { display: flex; flex-direction: column; gap: 12px; padding-top: 14px; border-top: 1px solid var(--rule); min-width: 0; }
 .sub:first-child { border-top: 0; padding-top: 0; }
-.sub h3 { font-size: 1.1rem; font-weight: 700; font-stretch: 104%; }
+.sub h3 { font-size: 1.1rem; font-weight: 700; }
 .sub h4 { font-size: 1rem; font-weight: 700; }
 .sub.hit { animation: hit 1.6s ease-out; border-radius: 6px; }
 @keyframes hit { from { background: var(--mark); } to { background: transparent; } }
@@ -566,7 +557,7 @@ pre { margin: 0; padding: 12px 14px; font-family: var(--font-mono); font-size: 0
 .m-axis-y small, .m-axis-x small { color: var(--ink-soft); font-weight: 400; font-size: 0.75rem; }
 .m-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
 .m-q { border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 3px; background: var(--sunk); min-width: 0; font-size: 0.88rem; line-height: 1.4; overflow-wrap: anywhere; hyphens: auto; }
-.m-q b { font-family: var(--font-display); font-size: 1rem; font-stretch: 108%; }
+.m-q b { font-family: var(--font-display); font-size: 1rem; }
 .m-q small { color: var(--ink-soft); font-size: 0.78rem; }
 .m-q em { font-style: normal; color: var(--ink-soft); font-size: 0.82rem; margin-top: 4px; }
 .m-q.win { background: var(--s3-soft); } .m-q.win b { color: var(--s3); }
@@ -594,6 +585,7 @@ __NOTES_CSS__
 <body>
 __SITEBAR__<header class="band" id="top">
 <div class="band-in">
+  __CRUMBS__
   <div class="title-row"><span class="plate" aria-hidden="true">__CODE__</span><div><span class="kind">Samenvattingen per week</span><h1>__HEADING__</h1></div></div>
   <p class="lead">__LINE__ <a href="__DOC__" target="_blank" rel="noopener">Bewerkbare versie in Claude</a></p>
   <div class="search" role="search">
@@ -750,6 +742,7 @@ __NOTES_JS__
   });
 })();
 </script>
+__SITEFOOT__
 __BAR_JS__
 </body>
 </html>
@@ -775,7 +768,7 @@ NOTES_CSS = """/* eigen notities per les (alleen in de browser bewaard) */
 .note-box { display: none; flex-direction: column; gap: 8px; padding: 12px 14px 10px; border-radius: 12px; background: var(--sunk); border: 1px solid var(--rule); }
 .note.open .note-box { display: flex; }
 .note-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
-.note-title { font-weight: 700; font-stretch: 104%; }
+.note-title { font-weight: 700; }
 .note-status { flex: 1 1 auto; font-size: 0.8rem; color: var(--ink-soft); }
 .note-status.err { color: var(--warn); font-weight: 600; flex-basis: 100%; order: 9; }
 .note-pin { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 5px 11px 5px 9px; border-radius: 8px; border: 1px solid var(--rule); background: var(--sheet);
@@ -804,7 +797,7 @@ NOTES_CSS = """/* eigen notities per les (alleen in de browser bewaard) */
 body.note-pinned .totop { display: none; }
 
 .notes-panel { margin-top: 26px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
-.notes-panel h2 { font-size: 1.4rem; font-weight: 800; font-stretch: 108%; }
+.notes-panel h2 { font-size: 1.4rem; font-weight: 800; }
 .notes-panel > p, .notes-panel .callout { max-width: 68ch; }
 .np-count { font-weight: 600; }
 .np-actions { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -812,7 +805,7 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
 .np-msg { padding: 10px 14px; border-radius: 10px; background: var(--s3-soft); color: var(--ink); max-width: 68ch; }
 .np-msg.err { background: var(--warn-soft); }
 .np-sync { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--rule); max-width: 72ch; }
-.np-sync h3 { font-size: 1.05rem; font-weight: 700; font-stretch: 104%; }
+.np-sync h3 { font-size: 1.05rem; font-weight: 700; }
 .np-sync > div { display: flex; flex-direction: column; gap: 10px; }
 .np-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .np-row .wn-btn { align-items: center; }
@@ -822,7 +815,7 @@ button.wn-btn { font-family: inherit; cursor: pointer; }
 .np-sync-state.err { color: var(--warn); }
 button.wn-btn:disabled { opacity: 0.6; cursor: wait; }
 .np-orphans { display: flex; flex-direction: column; gap: 12px; padding-top: 14px; border-top: 1px solid var(--rule); }
-.np-orphans h3 { font-size: 1.1rem; font-weight: 700; font-stretch: 104%; }
+.np-orphans h3 { font-size: 1.1rem; font-weight: 700; }
 @media (max-width: 480px) { .notes-panel { padding: 16px; } .note-box { padding: 10px 11px 9px; } }
 /* notitieblad: los blad dat in beeld blijft; opslaan zet de tekst bij de gekozen les */
 .nb-fab { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 7;
@@ -836,7 +829,7 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
   border: 1px solid var(--accent); box-shadow: 0 14px 40px rgba(10, 18, 36, 0.3); min-width: 0; }
 .nb[hidden] { display: none; }
 .nb-head { display: flex; align-items: center; gap: 10px; }
-.nb-head h2 { flex: 1 1 auto; font-size: 1.15rem; font-weight: 800; font-stretch: 106%; }
+.nb-head h2 { flex: 1 1 auto; font-size: 1.15rem; font-weight: 800; }
 .nb-close { width: 36px; height: 36px; flex: none; border: 1px solid var(--rule); border-radius: 8px; background: var(--sheet); color: var(--ink); font: inherit; font-size: 1.4rem; line-height: 1; cursor: pointer; }
 .nb-close:hover { border-color: var(--accent); color: var(--accent); }
 .nb-pick { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
@@ -1443,9 +1436,10 @@ def build():
         for k, v in dict(HEADING=html.escape(c["heading"]), LINE=html.escape(c["line"]), DOC=c["doc"], WEEKNAV="".join(navs),
                          VAK=slug, NOTE_ALIAS=html.escape(json.dumps(NOTITIE_ALIASSEN.get(slug, {}))), NOTES_CSS=NOTES_CSS, NOTES_JS=NOTES_JS,
                          SITEBAR=sitenav.bar("../../", slug, "sam"), TABS=sitenav.tabs("../../", slug, "sam"),
+                         CRUMBS=sitenav.crumbs("../../", slug, "Samenvatting"), SITEFOOT=sitenav.footer("../../"),
                          FIG_CSS=figlib_css(), C1=c["chart"][0][0], C2=c["chart"][0][1], C3=c["chart"][0][2], C4=c["chart"][0][3],
                          D1=c["chart"][1][0], D2=c["chart"][1][1], D3=c["chart"][1][2], D4=c["chart"][1][3],
-                         TABS_CSS=sitenav.TABS_CSS, BAR_CSS=sitenav.bar_css(792), BAR_JS=sitenav.BAR_JS,
+                         TABS_CSS=sitenav.TABS_CSS, BAR_CSS=sitenav.bar_css(), BAR_JS=sitenav.BAR_JS,
                          WEEKS="\n".join(weeks), BUILT=built, A1=a1, A2=a2, A3=a3, A4=a4, B1=b1, B2=b2, CODE=c["code"]).items():
             page = page.replace(f"__{k}__", v)
         assert "__" not in page.replace("__proto__", ""), slug

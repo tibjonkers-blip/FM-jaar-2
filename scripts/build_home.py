@@ -36,7 +36,7 @@ PAGE = """<!doctype html>
 /* Bewegwijzering zoals in een gebouw: een donkerblauwe lobbyband, daaronder een streep in de drie zonekleuren en per vak
    een zone met een eigen signaalkleur, een zonebordje (IR, HRM, BM) en drie deuren: lezen, oefenen, toetsen. */
 :root {
-  --paper: #eef1f6; --sheet: #ffffff; --sunk: #e4e9f1; --ink: #16202f; --ink-soft: #5a6577; --rule: #d9dfe8;
+  --paper: #f3f5f8; --sheet: #ffffff; --sunk: #e4e9f1; --ink: #16202f; --ink-soft: #5a6577; --rule: #d9dfe8;
   --lobby: #1d2b4f; --on-band: #ffffff;
   --teal: #0b6f82; --teal-soft: #dff0f3; --teal-band: #0b6f82;
   --plum: #9a2d6c; --plum-soft: #f6e4ef; --plum-band: #8f2a65;
@@ -61,27 +61,25 @@ PAGE = """<!doctype html>
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 1.55; font-variant-numeric: tabular-nums; }
-.in { width: 100%; max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
-h1, h2 { margin: 0; line-height: 1.08; text-wrap: balance; font-stretch: 116%; }
-h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 800; letter-spacing: -0.015em; }
-h2 { font-size: 1.45rem; font-weight: 800; }
+.in { width: 100%; max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2 { margin: 0; line-height: 1.1; text-wrap: balance; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.1rem, 5.6vw, 3.2rem); font-weight: 750; }
+h2 { font-size: 1.4rem; font-weight: 750; }
 p { margin: 0; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
 /* lobbyband */
-.lobby { background: var(--lobby); color: var(--on-band); }
+.lobby { background: var(--sheet); color: var(--ink); border-bottom: 1px solid var(--rule); }
 .lobby .in { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 32px; align-items: end; padding-block: 34px 40px; }
 .intro { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-.where { font-size: 0.92rem; color: rgba(255, 255, 255, 0.75); }
-.lead { color: rgba(255, 255, 255, 0.86); max-width: 58ch; font-size: 1.02rem; }
-.clock { background: #fff; color: #16202f; border-radius: 12px; padding: 14px 20px 16px; display: flex; flex-direction: column; gap: 2px; min-width: 210px; }
-.clock strong { font-weight: 800; font-stretch: 120%; font-size: 3rem; line-height: 1; letter-spacing: -0.01em; color: var(--lobby); }
-:root[data-theme="dark"] .clock strong { color: #1d2b4f; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .clock strong { color: #1d2b4f; } }
-.clock span { font-size: 0.88rem; color: #5a6577; }
-.clock #days-l { color: #16202f; font-weight: 600; }
-.stripe { display: grid; grid-template-columns: repeat(3, 1fr); height: 6px; }
+.where { font-size: 0.92rem; font-weight: 600; color: var(--ink-soft); }
+.lead { color: var(--ink-soft); max-width: 58ch; font-size: 1.02rem; }
+.clock { background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: 12px; padding: 14px 20px 16px; display: flex; flex-direction: column; gap: 2px; min-width: 210px; }
+.clock strong { font-weight: 750; font-size: 3rem; line-height: 1; letter-spacing: -0.02em; color: var(--ink); }
+.clock span { font-size: 0.88rem; color: var(--ink-soft); }
+.clock #days-l { color: var(--ink); font-weight: 600; }
+.stripe { display: grid; grid-template-columns: repeat(3, 1fr); height: 4px; }
 .stripe i:nth-child(1) { background: var(--teal-band); } .stripe i:nth-child(2) { background: var(--plum-band); } .stripe i:nth-child(3) { background: var(--ochre-band); }
 @media (max-width: 640px) {
   .lobby .in { grid-template-columns: 1fr; padding-block: 26px 30px; }
@@ -89,20 +87,20 @@ a { color: inherit; }
   .clock strong { font-size: 2.2rem; order: -2; } #days-l { order: -1; } .clock span:first-child { flex-basis: 100%; }
 }
 
-main.in { display: flex; flex-direction: column; gap: 36px; padding-block: 28px 64px; }
+main.in { display: flex; flex-direction: column; gap: 36px; padding-block: 28px 0; }
 
 /* zones */
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; }
 @media (max-width: 920px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
-.vak { background: var(--sheet); border: 1px solid var(--rule); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
-.vak-head { padding: 18px 20px 20px; background: var(--c-band); color: #fff; display: flex; flex-direction: column; gap: 8px; }
+.vak { background: var(--sheet); border: 1px solid var(--rule); border-top: 4px solid var(--c-band); border-radius: 14px; box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05); overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.vak-head { padding: 18px 20px 16px; border-bottom: 1px solid var(--rule); color: var(--ink); display: flex; flex-direction: column; gap: 8px; }
 .vak-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.plate { min-width: 46px; height: 46px; padding-inline: 8px; border-radius: 9px; background: #fff; color: var(--c-band); display: grid; place-items: center;
-  font-weight: 800; font-stretch: 122%; font-size: 0.98rem; letter-spacing: 0.02em; }
-.exam { font-size: 0.86rem; font-weight: 600; color: rgba(255, 255, 255, 0.9); text-align: right; }
+.plate { min-width: 46px; height: 46px; padding-inline: 8px; border-radius: 9px; background: var(--c-band); color: #fff; display: grid; place-items: center;
+  font-weight: 800; font-size: 0.98rem; letter-spacing: 0.02em; }
+.exam { font-size: 0.84rem; font-weight: 600; color: var(--c); background: var(--c-soft); border-radius: 999px; padding: 3px 10px; text-align: right; }
 .vak-head h2 { margin-top: 6px; }
-.vak-head p { font-size: 0.92rem; color: rgba(255, 255, 255, 0.86); }
+.vak-head p { font-size: 0.92rem; color: var(--ink-soft); }
 .doors { display: flex; flex-direction: column; padding: 8px; gap: 2px; }
 .door { display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; gap: 2px 12px; align-items: center; padding: 11px 10px; border-radius: 10px; text-decoration: none; }
 .door:hover { background: var(--c-soft); }
@@ -127,15 +125,16 @@ main.in { display: flex; flex-direction: column; gap: 36px; padding-block: 28px 
 .how { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 @media (max-width: 760px) { .how { grid-template-columns: 1fr; } }
 .how div { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 2px 12px; align-items: start; }
-.how .nr { grid-row: span 2; width: 34px; height: 34px; border-radius: 50%; background: var(--lobby); color: #fff; display: grid; place-items: center; font-weight: 800; font-stretch: 116%; }
-.how b { font-size: 1.05rem; font-stretch: 108%; }
+.how .nr { grid-row: span 2; width: 34px; height: 34px; border-radius: 50%; background: var(--lobby); color: #fff; display: grid; place-items: center; font-weight: 800; }
+.how b { font-size: 1.05rem; }
 .how p { font-size: 0.93rem; color: var(--ink-soft); }
 __BAR_CSS__
-footer { font-size: 0.86rem; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 16px; display: flex; flex-direction: column; gap: 4px; }
+.note-foot { font-size: 0.86rem; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 16px; display: flex; flex-direction: column; gap: 4px; }
 </style>
 </head>
 <body>
-__SITEBAR__<header class="lobby">
+__SITEBAR__<div class="stripe" aria-hidden="true"><i></i><i></i><i></i></div>
+<header class="lobby">
   <div class="in">
     <div class="intro">
       <span class="where">Facility Management, jaar 2</span>
@@ -145,7 +144,6 @@ __SITEBAR__<header class="lobby">
     <div class="clock" aria-live="polite"><span>Toetsperiode 11 t/m 22 januari 2027</span><strong id="days">–</strong><span id="days-l">dagen te gaan</span></div>
   </div>
 </header>
-<div class="stripe" aria-hidden="true"><i></i><i></i><i></i></div>
 <main class="in" id="main">
   <div class="grid">
     <section class="vak teal" aria-labelledby="v1">
@@ -181,10 +179,10 @@ __SITEBAR__<header class="lobby">
     <div><span class="nr">3</span><b>Eind van de week</b><p>Maak versie A van de weektoets. Twijfel je nog, doe dan later B of C; die hebben andere vragen.</p></div>
   </section>
 
-  <footer>
+  <div class="note-foot">
     <span>Je voortgang en toetscijfers worden alleen in deze browser bewaard. Op een andere telefoon of laptop begin je opnieuw.</span>
     <span>Deze site is openbaar. Persoonlijke dingen, zoals je logboek, staan er bewust niet op.</span>
-  </footer>
+  </div>
 </main>
 <script>
 (function () {
@@ -208,6 +206,7 @@ __SITEBAR__<header class="lobby">
   });
 })();
 </script>
+__SITEFOOT__
 __BAR_JS__
 </body>
 </html>
@@ -239,7 +238,7 @@ def build():
         f'\n        <a class="door" href="bedrijfskunde/{slug}/">{ICONS["C"]}<b>{c["titel"]}</b><small>{c["open"]} casusvragen en {c["mc"]} meerkeuzevragen recht</small><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span></a>'
         for slug, c in bk.items())
     vals = dict(
-        SITEBAR=sitenav.bar("", None, "home"), BAR_CSS=sitenav.bar_css(1080), BAR_JS=sitenav.BAR_JS,
+        SITEBAR=sitenav.bar("", None, "home"), BAR_CSS=sitenav.bar_css(), BAR_JS=sitenav.BAR_JS, SITEFOOT=sitenav.footer(""),
         PROG=json.dumps(prog), DOORS_PP=doors_pp, IR_EIND=eind_txt(ir["eind"]), HRM_EIND=eind_txt(hrm["eind"]),
         BK=f'<p class="subhead">Casustoetsen bedrijfskunde, periode 1</p>\n      <nav class="doors">{bk_doors}\n      </nav>',
         IR_VRAGEN=ir["vragen"], IR_TOETSEN=ir["toetsen"], HRM_VRAGEN=hrm["vragen"], HRM_TOETSEN=hrm["toetsen"],
