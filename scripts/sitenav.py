@@ -1,7 +1,7 @@
 """Gedeelde navigatie van de studieplek, gebruikt door alle bouwscripts.
 
 - bar():   de vaste wegwijzerbalk bovenaan elke pagina: Home, de drie vakken (bordjes IR, HRM, BM) en een menu met alle pagina's.
-- tabs():  de tabbladen op de zoneband, op elke pagina van een vak dezelfde: Samenvatting, Oefenen, Weektoetsen (en Casustoetsen bij BM).
+- tabs():  de tabbladen op de zoneband, op elke pagina van een vak dezelfde: Samenvatting, Begrippen, Oefenen, Weektoetsen (en Casustoetsen bij BM).
 - BAR_CSS, TABS_CSS, BAR_JS: de bijbehorende stijl en het script. De Claude-artifactversie krijgt alleen TABS_CSS.
 
 Elke pagina geeft `root` mee: het relatieve pad naar de startpagina ("" op de startpagina, "../" op een vakpagina, "../../" daaronder).
@@ -19,10 +19,12 @@ MENU_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-w
 
 
 def bar(root, zone=None, kind="home"):
-    """kind: 'home', 'oefen' (vakpagina), 'sam' (samenvatting) of 'casus'. zone: slug van het vak waar je bent."""
+    """kind: 'home', 'oefen' (vakpagina), 'sam' (samenvatting), 'begrip' (begrippen) of 'casus'. zone: slug van het vak waar je bent."""
     def zone_href(z):
         if kind == "sam":
             return f"{root}samenvattingen/{z['slug']}/"
+        if kind == "begrip":
+            return f"{root}begrippen/{z['slug']}/"
         return f"{root}{z['slug']}/"
     out = ['<a class="skip" href="#main">Naar de inhoud</a>',
            '<header class="sitebar" id="sitebar"><div class="sb-in">']
@@ -31,7 +33,7 @@ def bar(root, zone=None, kind="home"):
     out.append('<nav class="sb-zones" aria-label="Vakken">')
     for z in ZONES:
         here = ' aria-current="true"' if z["slug"] == zone else ""
-        carry = " data-carry" if kind in ("sam", "oefen") else ""
+        carry = " data-carry" if kind in ("sam", "oefen", "begrip") else ""
         name = f'<span>{z["naam"]}</span>' if z["naam"] != z["code"] else ""
         out.append(f'<a class="sb-zone {z["cls"]}" href="{zone_href(z)}" title="{z["naam"]}" aria-label="{z["naam"]}"{here}{carry}><b>{z["code"]}</b>{name}</a>')
     out.append("</nav>")
@@ -39,6 +41,7 @@ def bar(root, zone=None, kind="home"):
     for z in ZONES:
         out.append(f'<div class="sb-col {z["cls"]}"><span class="sb-colhead"><b>{z["code"]}</b>{z["naam"]}</span><div class="sb-links">')
         out.append(f'<a href="{root}samenvattingen/{z["slug"]}/">Samenvatting</a>')
+        out.append(f'<a href="{root}begrippen/{z["slug"]}/">Begrippen</a>')
         out.append(f'<a href="{root}{z["slug"]}/#oefenen" data-default>Oefenvragen</a>')
         out.append(f'<a href="{root}{z["slug"]}/#toetsen">Weektoetsen</a>')
         if z["slug"] == "praktijkproject":
@@ -50,7 +53,7 @@ def bar(root, zone=None, kind="home"):
 
 
 def tabs(root, slug, current, ids=False, doc_ext=None):
-    """Tabbladen van één vak. current: 'sam', 'oefenen', 'toetsen' of 'casus'.
+    """Tabbladen van één vak. current: 'sam', 'begrip', 'oefenen', 'toetsen' of 'casus'.
     ids=True (vakpagina): Oefenen en Weektoetsen wisselen op de pagina zelf en krijgen een teller.
     doc_ext: in de Claude-artifactversie verwijst Samenvatting naar het Claude-document."""
     def tab(key, href, lang, kort, extra=""):
@@ -64,6 +67,7 @@ def tabs(root, slug, current, ids=False, doc_ext=None):
         out.append(f'<a class="tab ext" href="{doc_ext}" target="_blank" rel="noopener">Samenvatting</a>')
     else:
         out.append(tab("sam", f"{root}samenvattingen/{slug}/", "Samenvatting", "Samenvatting"))
+        out.append(tab("begrip", f"{root}begrippen/{slug}/", "Begrippen", "Begrippen"))
     page = "" if ids else f"{root}{slug}/"
     out.append(tab("oefenen", f"{page}#oefenen", "Oefenen", "Oefenen"))
     out.append(tab("toetsen", f"{page}#toetsen", "Weektoetsen", "Toetsen"))
@@ -171,7 +175,7 @@ BAR_JS = """<script>
     a.addEventListener("click", function () {
       var h = location.hash, wk = document.querySelector('.weeknav a[aria-current="true"]');
       if (wk && window.scrollY > 200) h = wk.getAttribute("href");
-      if (/^#(oefenen|toetsen|week-\\d)$/.test(h)) a.href = a.href.split("#")[0] + h;
+      if (/^#(oefenen|toetsen|week-\\d|lijst|kaarten|dictee)(-w\\d+)?$/.test(h)) a.href = a.href.split("#")[0] + h;
     });
   });
   window.addEventListener("hashchange", mark); mark();

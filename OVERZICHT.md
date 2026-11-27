@@ -4,7 +4,7 @@ Lees dit bestand voordat je iets aanpast. Het legt in het kort uit waar alles st
 zodat je niet de hele code hoeft door te lezen. Werk het bij in dezelfde wijziging als je de werking,
 de structuur of een afspraak verandert (zie `CLAUDE.md`).
 
-Laatst bijgewerkt: 26-11-2026
+Laatst bijgewerkt: 27-11-2026
 
 ## In één alinea
 
@@ -40,6 +40,7 @@ git add -A && git commit -m "..." && git push
 | `scripts/vragen/` | Oefenvragen per vak plus `template.html`, de oefenpagina (vragen én weektoetsen). |
 | `scripts/toetsen/` | Weektoetsen en eindtoetsen per vak per week (`ir_w1.py`, `hrm_eind.py`, ...), helpers in `lib.py`. |
 | `scripts/toelichting/` | Uitleg "Waarom dit klopt" bij open vragen en casusdeelvragen, één bestand per vak. |
+| `scripts/begrippen/` | Begrippenlijsten per vak (`inkoop_recht.py`, `hrm.py`, `praktijkproject.py`), helper `b()` in `begrip.py`. |
 | `scripts/samenvattingen/<vak>/` | Samenvattingen als Markdown (`overzicht.md`, `week-1.md` t/m `week-7.md`), export van de Claude-documenten. |
 | `scripts/figuren/` | Figuren in de samenvattingen: componenten in `lib.py`, per vak een lijst `FIGUREN`. |
 | `scripts/bedrijfskunde/` | Casustoetsen Waalhop en Heidezoom: gedeelde motor (`app.js`, `markup.html`, `style.css`) en per toets een databestand (`waalhop.js`, `heidezoom.js`). |
@@ -53,10 +54,11 @@ git add -A && git commit -m "..." && git push
 | `/` | `build_home.py` | aantallen uit de gebouwde `vragen.json`/`toetsen.json`; maakt ook `favicon.svg` |
 | `/<vak>/` (`inkoop-recht`, `hrm`, `praktijkproject`) | `build_site.py` | `scripts/vragen/template.html` + `vragen.json` + `toetsen.json` |
 | `/samenvattingen/<vak>/` | `build_samenvattingen.py` | `scripts/samenvattingen/<vak>/*.md` + `scripts/figuren/<vak>.py` |
+| `/begrippen/<vak>/` | `build_begrippen.py` | `scripts/begrippen/<vak>.py` + lessen uit de gebouwde `vragen.json` |
 | `/bedrijfskunde/<toets>/` | `build_bedrijfskunde.py` | `scripts/bedrijfskunde/` |
 | `/api/notities?vak=<vak>` | `netlify/functions/notities.mjs` | Netlify Blobs, store `notities` (GET en PUT, alleen met wachtwoordsleutel) |
 
-Deeplinks: `/<vak>/#oefenen-wN`, `/<vak>/#toetsen-wN`, `/samenvattingen/<vak>/#week-N`.
+Deeplinks: `/<vak>/#oefenen-wN`, `/<vak>/#toetsen-wN`, `/samenvattingen/<vak>/#week-N`, `/begrippen/<vak>/#lijst`, `#kaarten-wN`, `#dictee-wN`.
 BM heet in de code `praktijkproject` (map, slug) en `pp` (toetsen).
 
 ## Bouwvolgorde (`build_site.py`)
@@ -67,8 +69,8 @@ Per vak (instellingen in `VAKKEN` bovenin `build_site.py`: kleuren, titels, `LS_
 3. `build_toetsen.py <ir|hrm|pp>` → `site/<vak>/toetsen.json`.
 4. `add_toelichting.py` zet de uitleg uit `scripts/toelichting/` in beide JSON-bestanden.
 
-Daarna: `build_bedrijfskunde.py`, `build_samenvattingen.py` (leest de gebouwde JSON voor de knoppen onder elke week),
-en als laatste `build_home.py`.
+Daarna: `build_bedrijfskunde.py`, `build_begrippen.py`, `build_samenvattingen.py` (leest de gebouwde JSON en de begrippen voor de knoppen
+onder elke week), en als laatste `build_home.py`.
 
 ## Inhoud toevoegen
 
@@ -90,6 +92,12 @@ Elke nieuwe open vraag en casusdeelvraag hoort er een te krijgen. Ontbrekende vi
 regels weg, lege "Na de les aangevuld"-blokken verdwijnen. Een `##`-kop is een les, `###`/`####` zijn deelkoppen.
 Het BM-tabblad "Logboek portfolio" komt bewust niet op de site (persoonlijk, de site is openbaar).
 
+**Begrippen** (`scripts/begrippen/<vak>.py`, lijst `B`). `b(les, begrip, uitleg, art=None, ook=())`: `les` is een les-id uit `vragen.json`,
+`uitleg` zonder het begrip zelf, `art` het wetsartikel zoals in de samenvatting, `ook` andere antwoorden die de dictee goed rekent.
+Id = `<les>-<slug van begrip>`; verander een begrip dus liever niet van naam, anders raakt de voortgang ervan weg. Alleen begrippen
+uit de samenvattingen; staat iets er als gangbare invulling, dan staat dat in de uitleg (`G` en `E` in `hrm.py`). De bouw stopt bij
+een onbekende les of een dubbel begrip.
+
 **Figuren** (`scripts/figuren/<vak>.py`). `F(week, les, kop, fig(...), pos/after)`; de figuur komt onder de kop waarvan de tekst
 precies gelijk is aan `kop`. Komt die kop niet precies één keer voor, dan stopt de bouw. Componenten: `flow`, `phases`, `lanes`,
 `ladder`, `timeline`, `cycle`, `quad`, `nest`, `tree`, `som`, `poles`, `cards`, `stairs`, `pillars`, `iceberg`, `pgrid`, `chips`,
@@ -104,8 +112,11 @@ in `build_bedrijfskunde.py` (plus `CASUS` in `sitenav.py`).
   geschud (verwijs in teksten dus nooit naar "optie A" of een positie). Voortgang en toetscijfers in `localStorage`
   (`LS_KEY` per vak, lezen via `lsGet`). Draait de pagina als Claude-artifact, dan gebruikt hij ook `window.claude` (db voor
   voortgang, Claude kijkt open antwoorden na); op de site is dat er niet en kijkt de gebruiker zelf na met het modelantwoord.
+- **Begrippen** (`build_begrippen.py`): keuze van weken en onderdelen (zelfde patroon als de oefenpagina), en drie modi: lijst met zoeken,
+  flitskaarten (ken ik / nog niet) en dictee (uitleg zien, begrip typen; kleine typfouten tellen goed; of omgekeerd met zelf nakijken).
+  Het begrip wordt uit de uitleg weggemaskeerd. Opslag in `localStorage` `fm-begrippen-<vak>`: `{ st: { <id>: { k, t } }, sel: { w, p }, dir, dt }`.
 - **Casustoetsen**: `app.js` bewaart antwoorden in `localStorage` (sleutel per toets in `TOETSEN`), zelf nakijken met rubric.
-- **Navigatie**: elke pagina krijgt de balk en tabs uit `sitenav.py`, met `root` als relatief pad naar de startpagina.
+- **Navigatie**: elke pagina krijgt de balk en tabs uit `sitenav.py`, met `root` als relatief pad naar de startpagina. Tabs per vak: Samenvatting, Begrippen, Oefenen, Weektoetsen (BM ook Casustoetsen).
 - **`localStorage` lezen**: `lsGet` in `template.html` en de lader in `bedrijfskunde/app.js` controleren het type van een bewaarde
   waarde en vallen terug op de standaardwaarde. Houd dat patroon aan bij nieuwe sleutels.
 
