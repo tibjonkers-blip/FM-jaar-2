@@ -42,6 +42,7 @@ git add -A && git commit -m "..." && git push
 | `scripts/toelichting/` | Uitleg "Waarom dit klopt" bij open vragen en casusdeelvragen, één bestand per vak. |
 | `scripts/begrippen/` | Begrippenlijsten per vak (`inkoop_recht.py`, `hrm.py`, `praktijkproject.py`), helper `b()` in `begrip.py`. |
 | `scripts/samenvattingen/<vak>/` | Samenvattingen als Markdown (`overzicht.md`, `week-1.md` t/m `week-7.md`), export van de Claude-documenten. |
+| `scripts/artikelen/` | Wetsartikelen per vak (`hrm.py`, `inkoop_recht.py`): per artikel nummer, titel, inhoud, weken en eventueel een "let op". |
 | `scripts/figuren/` | Figuren in de samenvattingen: componenten in `lib.py`, per vak een lijst `FIGUREN`. |
 | `scripts/bedrijfskunde/` | Casustoetsen Waalhop en Heidezoom: gedeelde motor (`app.js`, `markup.html`, `style.css`) en per toets een databestand (`waalhop.js`, `heidezoom.js`). |
 | `scripts/samenvattingen/notitie-sleutels.json` | Alle les-ids die ooit een notitieveld hadden (door de bouw bijgehouden, zie "Eigen notities"). |
@@ -55,10 +56,12 @@ git add -A && git commit -m "..." && git push
 | `/<vak>/` (`inkoop-recht`, `hrm`, `praktijkproject`) | `build_site.py` | `scripts/vragen/template.html` + `vragen.json` + `toetsen.json` |
 | `/samenvattingen/<vak>/` | `build_samenvattingen.py` | `scripts/samenvattingen/<vak>/*.md` + `scripts/figuren/<vak>.py` |
 | `/begrippen/<vak>/` | `build_begrippen.py` | `scripts/begrippen/<vak>.py` + lessen uit de gebouwde `vragen.json` |
+| `/artikelen/<vak>/` (alleen `inkoop-recht` en `hrm`) | `build_artikelen.py` | `scripts/artikelen/<vak>.py` |
 | `/bedrijfskunde/<toets>/` | `build_bedrijfskunde.py` | `scripts/bedrijfskunde/` |
 | `/api/notities?vak=<vak>` | `netlify/functions/notities.mjs` | Netlify Blobs, store `notities` (GET en PUT, alleen met wachtwoordsleutel) |
 
-Deeplinks: `/<vak>/#oefenen-wN`, `/<vak>/#toetsen-wN`, `/samenvattingen/<vak>/#week-N`, `/begrippen/<vak>/#lijst`, `#kaarten-wN`, `#dictee-wN`.
+Deeplinks: `/<vak>/#oefenen-wN`, `/<vak>/#toetsen-wN`, `/samenvattingen/<vak>/#week-N`, `/begrippen/<vak>/#lijst`, `#kaarten-wN`, `#dictee-wN`,
+`/artikelen/<vak>/#wN` (weekfilter).
 BM heet in de code `praktijkproject` (map, slug) en `pp` (toetsen).
 
 ## Bouwvolgorde (`build_site.py`)
@@ -70,7 +73,7 @@ Per vak (instellingen in `VAKKEN` bovenin `build_site.py`: kleuren, titels, `LS_
 4. `add_toelichting.py` zet de uitleg uit `scripts/toelichting/` in beide JSON-bestanden.
 
 Daarna: `build_bedrijfskunde.py`, `build_begrippen.py`, `build_samenvattingen.py` (leest de gebouwde JSON en de begrippen voor de knoppen
-onder elke week), en als laatste `build_home.py`.
+onder elke week), `build_artikelen.py` en als laatste `build_home.py`.
 
 ## Inhoud toevoegen
 
@@ -105,6 +108,11 @@ precies gelijk is aan `kop`. Komt die kop niet precies één keer voor, dan stop
 `ladder`, `timeline`, `cycle`, `quad`, `nest`, `tree`, `som`, `poles`, `cards`, `stairs`, `pillars`, `iceberg`, `pgrid`, `chips`,
 `legend`, `bars`, `seg`, `svg`.
 
+**Wetsartikelen** (`scripts/artikelen/<vak>.py`). `A(wet, nummer, titel, inhoud, weken, let=None)`; `wet` is een code uit `WETTEN`
+(code, volledige naam, korte naam), de volgorde in het bestand is de volgorde op de pagina. Inhoud met twee of meer "Lid N: ..."
+wordt vanzelf een lijstje. Alleen artikelen uit de samenvattingen, slides en het oefenmateriaal; `let` voor verschillen tussen slide,
+antwoordmodel en wet. Welke vakken een tabblad Wetsartikelen krijgen, staat in `ARTIKELEN` in `sitenav.py`.
+
 **Casustoetsen bedrijfskunde**: een nieuwe toets = nieuw databestand met `TOPICS`, `CASES`, `QUESTIONS` en een regel in `TOETSEN`
 in `build_bedrijfskunde.py` (plus `CASUS` in `sitenav.py`).
 
@@ -117,10 +125,11 @@ in `build_bedrijfskunde.py` (plus `CASUS` in `sitenav.py`).
 - **Begrippen** (`build_begrippen.py`): keuze van weken en onderdelen (zelfde patroon als de oefenpagina), en drie modi: lijst met zoeken,
   flitskaarten (ken ik / nog niet) en dictee (uitleg zien, begrip typen; kleine typfouten tellen goed; of omgekeerd met zelf nakijken).
   Het begrip wordt uit de uitleg weggemaskeerd. Opslag in `localStorage` `fm-begrippen-<vak>`: `{ st: { <id>: { k, t } }, sel: { w, p }, dir, dt }`.
+- **Wetsartikelen**: zoeken en het weekfilter werken in de browser; er wordt niets bewaard (geen `localStorage`).
 - **Casustoetsen**: `app.js` bewaart antwoorden in `localStorage` (sleutel per toets in `TOETSEN`), zelf nakijken met rubric.
 - **Navigatie**: elke pagina krijgt uit `sitenav.py` de balk (`bar`), het kruimelpad (`crumbs`, niet op de startpagina), de tabs (`tabs`)
   en de voettekst met alle onderdelen (`footer`), met `root` als relatief pad naar de startpagina. Een nieuwe pagina gebruikt die vier ook.
-  Tabs per vak: Samenvatting, Begrippen, Oefenen, Weektoetsen (BM ook Casustoetsen). Passen ze op een smal scherm niet,
+  Tabs per vak: Samenvatting, Begrippen, Oefenen, Weektoetsen (BM ook Casustoetsen, IR en HRM ook Wetsartikelen). Passen ze op een smal scherm niet,
   dan schuift de tabrij zijwaarts en zet `BAR_JS` het huidige tabblad in beeld (de pagina zelf schuift nooit opzij).
 - **`localStorage` lezen**: `lsGet` in `template.html` en de lader in `bedrijfskunde/app.js` controleren het type van een bewaarde
   waarde en vallen terug op de standaardwaarde. Houd dat patroon aan bij nieuwe sleutels.

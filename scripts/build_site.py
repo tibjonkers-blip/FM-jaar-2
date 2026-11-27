@@ -81,6 +81,7 @@ def main():
     subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_bedrijfskunde.py")], check=True)
     subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_begrippen.py")], check=True)
     subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_samenvattingen.py")], check=True)
+    subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_artikelen.py")], check=True)
     subprocess.run([sys.executable, os.path.join(SCRIPTS, "build_home.py")], check=True)
     print("site gebouwd in", SITE, "| artifacts in", art or "-")
 
