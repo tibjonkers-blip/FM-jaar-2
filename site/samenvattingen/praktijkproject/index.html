@@ -954,14 +954,17 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
         if (tag === "U" || /underline/.test(st.textDecoration || st.textDecorationLine || "")) g.u = true;
         if (tag === "UL" || tag === "OL") {
           if (cur().length || brOpen) nl();
-          var k = 0;
-          Array.prototype.forEach.call(n.children, function (li) {
-            if (li.nodeName !== "LI") return;
-            if (cur().length) nl();
-            k++; cur().push({ raw: "  ".repeat(depth) + (tag === "OL" ? k + ". " : "- ") });
-            walk(li, g, depth + 1);
-            if (cur().length) nl();
-          });
+          (function list(ul, d) {  // een lijst direct in een lijst (zo maakt Tab soms een subniveau) telt als een niveau dieper
+            var k = 0, ol = ul.nodeName === "OL";
+            Array.prototype.forEach.call(ul.children, function (li) {
+              if (li.nodeName === "UL" || li.nodeName === "OL") { if (cur().length) nl(); list(li, d + 1); return; }
+              if (li.nodeName !== "LI") return;
+              if (cur().length) nl();
+              k++; cur().push({ raw: "  ".repeat(d) + (ol ? k + ". " : "- ") });
+              walk(li, g, d + 1);
+              if (cur().length) nl();
+            });
+          })(n, depth);
           brOpen = false; return;
         }
         if (isBlock(n)) {
@@ -1057,6 +1060,12 @@ body.nb-open .nb-fab, body.nb-open .totop { display: none; }
     tools.addEventListener("mousedown", function (e) { if (e.target.closest("button")) e.preventDefault(); });  // selectie in het veld houden
     tools.addEventListener("click", function (e) { var b = e.target.closest("button[data-cmd]"); if (b) run(b.getAttribute("data-cmd")); });
     el.addEventListener("keydown", function (e) {
+      if (e.key === "Tab" && !e.ctrlKey && !e.metaKey && !e.altKey) {  // in een opsomming: Tab springt in, Shift+Tab terug; elders blijft Tab gewoon Tab
+        var sel = getSelection(), node = sel.rangeCount ? sel.anchorNode : null;
+        var li = node && (node.nodeType === 1 ? node : node.parentNode).closest("li");
+        if (li && el.contains(li)) { e.preventDefault(); run(e.shiftKey ? "outdent" : "indent"); }
+        return;
+      }
       if (!(e.ctrlKey || e.metaKey) || e.altKey) return;
       var k = (e.key || "").toLowerCase(), cmd = !e.shiftKey ? { b: "bold", i: "italic", u: "underline" }[k]
         : (e.code === "Digit8" || k === "*") ? "insertUnorderedList" : (e.code === "Digit7" || k === "&") ? "insertOrderedList" : "";
