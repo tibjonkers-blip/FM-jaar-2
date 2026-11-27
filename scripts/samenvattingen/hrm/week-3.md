@@ -36,10 +36,10 @@ De les richt zich op de bedingen die in de wet geregeld staan.
 - **Lid 1**: alleen geldig als het **schriftelijk** is afgesproken, met een **meerderjarige** werknemer, in een contract voor **onbepaalde tijd**.
 - **Lid 2**: bij bepaalde tijd alleen als de werkgever in het beding **motiveert** dat het nodig is vanwege **zwaarwegende bedrijfs- of dienstbelangen**.
 - **Lid 3**: de rechter kan het beding geheel of gedeeltelijk vernietigen als het niet noodzakelijk is, of na een belangenafweging.
-- **Lid 4**: in bepaalde gevallen kan de werkgever er geen rechten aan ontlenen.
-- **Lid 5**: de rechter kan een vergoeding toekennen.
+- **Lid 4**: de werkgever kan er geen rechten aan ontlenen als de arbeidsovereenkomst eindigt door ernstig verwijtbaar handelen of nalaten van de werkgever.
+- **Lid 5**: de rechter kan de werkgever een vergoeding laten betalen als het beding de werknemer in belangrijke mate belemmert om ander werk te doen.
 
-De precieze inhoud van lid 4 en 5 staat niet op de slide; lees ze na in je bundel.
+De inhoud van lid 4 en 5 staat niet op de slide; die komt uit de wettekst.
 
 **Verbod op nevenwerkzaamheden, art. 7:653a BW**: geldt ook voor werk als zelfstandige en mag alleen als de werkgever een **objectieve rechtvaardiging** heeft (passend, geschikt en noodzakelijk, net als bij gelijke behandeling), bijvoorbeeld gezondheid, veiligheid of de Arbeidstijdenwet. Is het gekoppeld aan toestemming, dan mag de werkgever die alleen met een objectieve rechtvaardiging weigeren. Lid 2 is een **benadelingsverbod**.
 
@@ -50,8 +50,8 @@ De precieze inhoud van lid 4 en 5 staat niet op de slide; lees ze na in je bunde
 | 1 | Voor beide partijen gelijk |
 | 2 | Schriftelijk |
 | 3 | Onbepaalde tijd: hoogstens 2 maanden |
-| 4 | Geen proeftijd bij een contract van 6 maanden of korter; bij langere tijdelijke contracten geldt een maximale lengte (lees na in de wet) |
-| 5 | Proeftijd als het einde van het contract niet aan een datum is gekoppeld |
+| 4 | Bepaalde tijd: geen proeftijd bij een contract van 6 maanden of korter; hoogstens 1 maand bij een contract korter dan 2 jaar; hoogstens 2 maanden bij 2 jaar of langer |
+| 5 | Hoogstens 1 maand als het einde van het contract niet aan een kalenderdatum is gekoppeld |
 | 6 | Wat niet mag, bijvoorbeeld herhaaldelijk een proeftijd afspreken |
 | 7 | Afwijken bij cao |
 | 8 | Wat nietig is |
@@ -72,7 +72,7 @@ Opzeggen tijdens de proeftijd: art. 7:676 BW.
 | 5 | Maximale hoogte |
 | 6 | Dwingend recht, met een uitzondering |
 
-Art. 7:651 BW: boete of schadevergoeding, niet allebei (lees na).
+Art. 7:651 BW: boete of schadevergoeding, niet allebei. De werkgever kan voor hetzelfde feit niet zowel de boete als schadevergoeding eisen.
 
 **Oefenvraag aan het begin van les 4 (Dion)**: een boete van €500 mag, omdat Dion meer dan het minimumloon verdient. Via lid 6 mag dan worden afgeweken van lid 5 (maximaal een halve dag loon per week) en lid 3 (de bestemming). Zie week 4.
 

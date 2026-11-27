@@ -137,7 +137,7 @@ Dennis werkt 4 dagen per week, heeft 18 vakantiedagen en is 4 dagen ziek tijdens
 - Er wordt onderhandeld over bijvoorbeeld een vergoeding, opzegtermijn, vakantiedagen, outplacement en vrijstelling van werk.
 - Voor de werknemer essentieel (vanwege de WW): het initiatief lag bij de werkgever, er is geen dringende reden, en er is rekening gehouden met de fictieve opzegtermijn.
 - Voor de werkgever essentieel: **finale kwijting**.
-- De werknemer mag binnen **14 dagen** zonder reden schriftelijk ontbinden (maar 1 keer per 6 maanden). Staat dat recht niet in de overeenkomst, dan wordt het **3 weken**.
+- De werknemer mag binnen **14 dagen** zonder reden schriftelijk ontbinden (lid 2; maar 1 keer per 6 maanden). Staat dat recht niet in de overeenkomst, dan wordt het **3 weken** (lid 3).
 - Er is **geen** wettelijke transitievergoeding; die is onderdeel van de onderhandeling.
 
 ### Opzegverboden
@@ -157,14 +157,14 @@ Voor bijna alle gronden geldt ook lid 1: **herplaatsing binnen een redelijke ter
 
 **Opzegtermijnen, art. 7:672 BW**
 
-| Duur dienstverband | Termijn werkgever |
+| Duur dienstverband (lid 2) | Termijn werkgever |
 | --- | --- |
 | Korter dan 5 jaar | 1 maand |
 | 5 tot 10 jaar | 2 maanden |
 | 10 tot 15 jaar | 3 maanden |
 | 15 jaar of langer | 4 maanden |
 
-Opzeggen tegen het einde van de maand (lid 1). De werknemer heeft 1 maand (lid 4). **Aftrek van de proceduretijd** bij het UWV (lid 6), maar er blijft minimaal een maand over. Bij cao kan de termijn van de werkgever korter (lid 7); de termijn van de werknemer kan schriftelijk tot 6 maanden worden verlengd, als die van de werkgever dan het dubbele is (lid 8); bij cao mogen ze gelijk (lid 9).
+Opzeggen tegen het einde van de maand (lid 1). Heeft de werknemer de AOW-leeftijd bereikt, dan is de termijn van de werkgever 1 maand (lid 3; staat niet op de slide, wel in de wet). De werknemer heeft 1 maand (lid 4). **Aftrek van de proceduretijd** bij het UWV (lid 6), maar er blijft minimaal een maand over. Bij cao kan de termijn van de werkgever korter (lid 7); de termijn van de werknemer kan schriftelijk tot 6 maanden worden verlengd, als die van de werkgever dan het dubbele is (lid 8); bij cao mogen ze gelijk (lid 9).
 
 **Opzegging tijdens de proeftijd (art. 7:676)**: geen opzegtermijn; op verzoek een schriftelijke toelichting.
 
@@ -193,14 +193,14 @@ De rechter toetst de voorwaarden van de grond en de jurisprudentie, en houdt rek
 - opzegging door de werkgever, ontbinding op verzoek van de werkgever, en een einde van rechtswege op initiatief van de werkgever (lid 1 sub a);
 - een einde op initiatief van de werknemer vanwege ernstig verwijtbaar handelen van de werkgever (lid 1 sub b, niet snel).
 
-**Niet** bij wederzijds goedvinden. Hoogte: **1/3 maandsalaris per dienstjaar**, naar rato bij een deel van een jaar. Maximum: de slide noemt €84.000 of een jaarsalaris als dat hoger is. **Dat bedrag is verouderd**: het wordt jaarlijks geïndexeerd en was in 2025 al rond de €98.000. Zoek het bedrag voor 2026 op. Niet verschuldigd in de gevallen van lid 7, bijvoorbeeld bij ernstig verwijtbaar handelen van de werknemer (meestal bij ontslag op staande voet). Bij ontslag na twee jaar ziekte (de b-grond) kan de werkgever compensatie krijgen.
+**Niet** bij wederzijds goedvinden. Hoogte: **1/3 maandsalaris per dienstjaar**, naar rato bij een deel van een jaar. Maximum: de slide noemt €84.000 of een jaarsalaris als dat hoger is. **Dat bedrag is verouderd**: het wordt jaarlijks geïndexeerd. In 2025 was het €98.000, in **2026 is het €102.000** (of een jaarsalaris als dat hoger is). Niet verschuldigd in de gevallen van lid 7, bijvoorbeeld bij ernstig verwijtbaar handelen van de werknemer (meestal bij ontslag op staande voet). Bij ontslag na twee jaar ziekte (de b-grond) kan de werkgever compensatie krijgen.
 
 **Billijke vergoeding**: bij ernstig verwijtbaar handelen van de werkgever. Niet snel aan de orde; het wordt ook wel het **muizengaatje** genoemd.
 
 **Oefenvragen uit het oefenmateriaal (antwoorden docent)**
 
-- **Peter** (wederzijds goedvinden): art. 7:670b; geen transitievergoeding; 14 dagen bedenktijd (lid 2), 3 weken als dat niet in de overeenkomst staat (lid 3). Lukt een regeling over zijn disfunctioneren niet, dan loopt de route via de **kantonrechter** (art. 7:671b met art. 7:669 lid 3 sub d), niet via het UWV, want dat doet alleen de a- en b-grond.
-- **Dirk** (16 dienstjaren, twee jaar ziek, UWV-procedure van een maand, opgezegd op 15-3-2026): opzegtermijn 4 maanden min 1 maand proceduretijd = 3 maanden, tegen het einde van de maand, dus einde op **30-6-2026**. Transitievergoeding is verschuldigd (art. 7:673 lid 1 sub a); de werkgever kan compensatie aanvragen bij het UWV. Let op: het antwoordmodel noemt art. 7:672 **lid 5** voor de aftrek, de slide **lid 6**. Controleer in je bundel welk lid het is.
+- **Peter** (wederzijds goedvinden): art. 7:670b; geen transitievergoeding; 14 dagen bedenktijd (lid 2), 3 weken als dat niet in de overeenkomst staat (lid 3). Lukt een regeling over zijn disfunctioneren niet, dan loopt de route via de **kantonrechter** (art. 7:671b met art. 7:669 lid 3 sub d), niet via het UWV, want dat doet alleen de a- en b-grond. Het antwoordmodel noemt voor de kantonrechter de gronden c t/m h; de slide zegt terecht c t/m i, want sinds 2020 is er ook de i-grond (de combinatiegrond).
+- **Dirk** (16 dienstjaren, twee jaar ziek, UWV-procedure van een maand, opgezegd op 15-3-2026): opzegtermijn 4 maanden min 1 maand proceduretijd = 3 maanden, tegen het einde van de maand, dus einde op **30-6-2026**. Transitievergoeding is verschuldigd (art. 7:673 lid 1 sub a); de werkgever kan compensatie aanvragen bij het UWV. Let op: het antwoordmodel noemt art. 7:672 **lid 5** voor de aftrek, de slide **lid 6**. De slide klopt: in de wettekst staat de aftrek van de proceduretijd in **lid 6**; lid 5 gaat over oproepkrachten. De opzegtermijn van 4 maanden staat in lid 2 sub d.
 
 **Bij een mondelinge vraag** als "Hoe kom je van een disfunctionerende medewerker af?": noem eerst de vier routes, kies dan: wederzijds goedvinden (7:670b, schriftelijk, bedenktijd) of ontbinding via de kantonrechter op de d-grond (7:671b jo 7:669 lid 3 sub d), met de eis van een dossier en herplaatsing (7:669 lid 1). Noem tot slot de transitievergoeding.
 

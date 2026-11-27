@@ -98,7 +98,7 @@ Onafhankelijk medisch adviseur, gespecialiseerd in arbeid en gezondheid; de medi
 
 ## Arbeidsrecht les 6: uitloop
 
-Les 6 is volgens de slides van les 5 uitloop en vragen stellen. Neem je vragen mee over de oefencasussen (week 1 t/m 5 in het oefenmateriaal) en over de punten waar het antwoordmodel en de slides elkaar tegenspreken, zoals art. 7:672 lid 5 of lid 6 bij de aftrek van de proceduretijd (week 5).
+Les 6 is volgens de slides van les 5 uitloop en vragen stellen. Neem je vragen mee over de oefencasussen (week 1 t/m 5 in het oefenmateriaal) en over de punten waar het antwoordmodel en de slides elkaar tegenspreken, zoals art. 7:672 bij de aftrek van de proceduretijd: het antwoordmodel noemt lid 5, maar volgens de wettekst is het lid 6, zoals op de slide (week 5).
 
 Herhaal voor het mondeling de grote lijnen: arbeidsovereenkomst (7:610), flexibel werk en gelijke behandeling, bedingen en OvO, geen arbeid wel loon, en ontslag. Er komen vier arbeidsrechtvragen over de hele periode.
 
